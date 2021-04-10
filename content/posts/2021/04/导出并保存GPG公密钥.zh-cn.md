@@ -7,8 +7,8 @@ authorLink: "https://guzhongren.github.io"
 description: ""
 license: "Creative Commons Attribution 4.0 International license"
 
-tags: ["GPG", "公钥", "密钥", "保存"]
-categories: [""]
+tags: ["GPG", "公钥", "密钥", "保存", "Auth", "security"]
+categories: ["Auth"]
 featuredImage: "https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 images: [""]
 ---
