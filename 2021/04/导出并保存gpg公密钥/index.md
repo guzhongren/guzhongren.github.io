@@ -77,3 +77,7 @@ xxxx.key 可以是公钥，也可以是私钥。
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)
 
+## 赞助
+
+![赞助](/images/pay/PayForGuzhongren.svg)
+
