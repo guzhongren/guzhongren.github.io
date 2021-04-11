@@ -10,5 +10,8 @@ featuredImage: ""
 ---
 > 来日方长，慢慢道来...
 
+
+GPG KeyID: [D18AEC180356622D](https://github.com/guzhongren.gpg)
+
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)
