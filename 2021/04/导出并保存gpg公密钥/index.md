@@ -83,5 +83,5 @@ xxxx.key 可以是公钥，也可以是私钥。
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
 
-> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： gpg --verify PayForGuzhongren.svg.sig
+> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
 
