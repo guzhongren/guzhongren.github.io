@@ -73,6 +73,18 @@ xxxx.key 可以是公钥，也可以是私钥。
 
 推荐将你的公钥和私钥都保存在像`1password`, `lastpassword` 或者`Bitwarden`里，我用的是 `bitwarden`; 因为不能存文件，只能将公钥和私钥的内容复制并拷贝进去。但效果是一样的。
 
+#### 缓存
+
+在设置了强密码的前提下， 我们可以稍微的牺牲一些安全性， 通过配置gpg-agent的 default-cache-ttl， 让我们解密后的私钥在内存中存在的时间稍微长一些（默认10分钟）， 比如， 一天：
+
+```shell
+#~/.gnupg/gpg-agent.conf
+
+default-cache-ttl-ssh 86400
+
+max-cache-ttl-ssh 86400
+```
+
 ## 分发
 
 将公钥发送到CA管理中间机构，方便别人验证。
