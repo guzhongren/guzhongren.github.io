@@ -73,6 +73,22 @@ xxxx.key 可以是公钥，也可以是私钥。
 
 推荐将你的公钥和私钥都保存在像`1password`, `lastpassword` 或者`Bitwarden`里，我用的是 `bitwarden`; 因为不能存文件，只能将公钥和私钥的内容复制并拷贝进去。但效果是一样的。
 
+## 分发
+
+将公钥发送到CA管理中间机构，方便别人验证。
+
+```shell
+❯ gpg -k
+/Users/c4/.gnupg/pubring.kbx
+----------------------------
+pub   rsa4096 2021-04-11 [SC]
+      3D4DC54CDDA6FAFDD13A4970D18Axxxxxxxxxx
+uid           [ 绝对 ] guzhongren (used for git&message) <guzhongren@live.cn>
+sub   rsa4096 2021-04-11 [E]
+
+
+❯ gpg --send-key 3D4DC54CDDA6FAFDD13A4970D18Axxxxxxxxxx
+```
 ## ⚠️ 注意
 
 你的私钥差不多就是计算机世界里的另一个你，所以，把你自己保护好。
