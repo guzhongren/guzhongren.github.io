@@ -7,7 +7,7 @@ authorLink: "https://guzhongren.github.io"
 description: "工具的价值完全取决于你使用他的方式方法"
 license: "Creative Commons Attribution 4.0 International license"
 
-tags: ["iWatch",  "生产力", "效率"]
+tags: ["iWatch", "生产力", "效率"]
 categories: ["碎碎念"]
 featuredImage: "https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
 images: [""]
