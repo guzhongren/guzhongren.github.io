@@ -104,9 +104,9 @@
 * [图床:https://sm.ms/](https://sm.ms/)
 * [Technical Debt:https://www.productplan.com/glossary/technical-debt/](https://www.productplan.com/glossary/technical-debt/)
 * [Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4](https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4)
-## Hereby declared（特此申明）
+## Statement（特此申明）
 
-本文仅代表个人观点，与[ThoughtWorks](https://www.thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)

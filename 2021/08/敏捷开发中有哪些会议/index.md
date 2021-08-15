@@ -11,7 +11,7 @@
 |Showcase|	Fortnightly|	30’|	Team member take turns|	All team member and your PO PM and so on|	Show delivery value|
 |Code Review	|Everyday|	1h|	Every dev|	All dev|	Go thought your code which is written today, feedback to others from tech and biz perspective|
 |Backlog grooming|	Fortnightly|	1h|	BA|	All team member	|BA and others will explain what /why we will do|
-|Tech Huddle|	Twice a week(1 short , 1 long)|	30’ or 1h|	Every dev take turns|	All dev	Show some new tech, or deep work in some domain, Expand your influence|
+|Tech Huddle|	Twice a week(1 short , 1 long)|	30’ or 1h|	Every dev take turns|	All dev	|Show some new tech, or deep work in some domain, Expand your influence|
 |Retro|	Fortnightly|	1h|	Every dev take turns|	All team member, PO, PM|	Collection some tips which can improve team member work efficiency and make work env more safe and happy|
 |Delivery Health Check|	Fortnightly|	30’|	BA / TL/ Volunteer|	All team member	|Check spring’s all cards and hight light the abnormal card， explain it and collection some tips to improve the  accuracy of estimating|
 |Poker Planning|	Fortnightly|	1h|	BA|	All team member|	Estimate cost which you do the specific card, and BA will pull some cards into next spring which all points match some number|
@@ -26,7 +26,7 @@
 |:---|:---|:---|:---|:---|:---|
 |Vertical or All Hands|	Monthly	|1h|	Volunteer or someone who has impact|	All team member and customer|	understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence|
 |Developer Cop(community of Practice)|	Monthly|	1h|	TL/ Volunteer/TP|	All dev and customer|	Show some useful and practice tech, make everyone know and use your tech according to your suggestion|
-|Gamba work|	Once a year or  half-yearly	|1h|	TL/ Volunteer/TP|	All team member｜	Show what your team members are doing and daily work to customer|
+|Gamba work|	Once a year or  half-yearly	|1h|	TL/ Volunteer/TP|	All team member|	Show what your team members are doing and daily work to customer|
 
 ## 按需裁减
 
@@ -37,9 +37,9 @@
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [图床:https://sm.ms/](https://sm.ms/)
 
-## Hereby declared（特此申明）
+## Statement（特此申明）
 
-本文仅代表个人观点，与[ThoughtWorks](https://www.thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)

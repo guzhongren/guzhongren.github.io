@@ -262,9 +262,9 @@ describe('multiple', () => {
 * [5.Global Object defineProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 * [6.test double](https://www.jyt0532.com/2018/01/24/jinyong-test-double/)
 
-## Hereby declared（特此申明）
+## Statement（特此申明）
 
-本文仅代表个人观点，与[ThoughtWorks](https://www.thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)
