@@ -57,9 +57,9 @@ export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Co
 * [2.图床:https://sm.ms/](https://sm.ms/)
 * [3. grcov](https://github.com/mozilla/grcov/issues/433)
 
-## Hereby declared（特此申明）
+## Statement（特此申明）
 
-本文仅代表个人观点，与[ThoughtWorks](https://www.thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)

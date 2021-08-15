@@ -338,7 +338,7 @@ enableEmoji = true
           # 主页显示的网站标题
           title = "谷中仁的博客"
           # 主页显示的网站副标题
-          subtitle = "一位极客、全栈开发者、freeCodeCamp 西安社区组织者、ThoughtWorks 咨询师..."
+          subtitle = "一位极客、全栈开发者、freeCodeCamp 西安社区组织者、Thoughtworks 咨询师..."
           # 是否为副标题显示打字机动画
           typeit = true
           # 是否显示社交账号

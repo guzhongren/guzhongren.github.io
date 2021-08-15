@@ -64,9 +64,9 @@ $ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.原文：https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY](https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY)
 
-## Hereby declared（特此申明）
+## Statement（特此申明）
 
-本文仅代表个人观点，与[ThoughtWorks](https://www.thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)
