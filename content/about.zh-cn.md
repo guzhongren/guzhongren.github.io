@@ -11,12 +11,12 @@ featuredImage: ""
 
 ## 简单的自我介绍
 
-哈喽， 大家好， 我是谷中仁， 一枚地理信息系统专业（2015年毕业）的开发者， [freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn)组织者, 开源爱好者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名 Senior Consultant;
+哈喽， 大家好， 我是谷中仁， 一枚地理信息系统专业（2015年毕业）的[农名工](http://www.mohrss.gov.cn/SYrlzyhshbzb/jiuye/gzdt/202108/t20210816_420736.html) (开发者)， [freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn)组织者, 开源爱好者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名 Senior Consultant;
 
 - 2015.03 ~ 2016.10 Esri (中国) 信息技术有限公司西安分公司  售前，售后，技术支持
 - 2016.10 ~ 2017.07 图智信息技术有限公司  前端工程师
-- 2017.10 ~ 2019.01 西安山脉科技股份有限公司  高级 GIS 开发工程师， 前端架构师
-- 2019.01 ～ 特沃克软件技术（西安）有限公司 高级咨询师
+- 2017.10 ~ 2019.01 西安山脉科技股份有限公司  高级 GIS 开发工程师，前端架构师
+- 2019.01 ～ 特沃克软件技术（西安）有限公司  高级咨询师
 
 ## 关于社区
 
