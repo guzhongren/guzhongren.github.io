@@ -12,9 +12,17 @@
 
 ## 作品
 
+- [BuildKite Dashboard](https://github.com/guzhongren/Buildkite-Dashboard)
+- [Markdown 编辑器](https://guzhongren.github.io/geekmd/)
+
+## 开源项目贡献
+
+- [maptalks](https://maptalks.org/): 开源23 D GIS 框架
+- [hlj](https://github.com/codingstyle-cn/hlj): 开源 JS 测试框架，自举测试
+
 ## 技术栈
 
-### 前端
+### [前端](https://stackblitz.com/edit/frontend-capability-editoro?file=index.js)
 
 <iframe src="https://frontend-capability-editoro.stackblitz.io" style="
     border: none;
@@ -22,7 +30,7 @@
     width: 100%;
 "></iframe>
 
-### 后端
+### [后端](https://stackblitz.com/edit/backend-capability-editor?file=index.js)
 
 <iframe src="https://backend-capability-editor.stackblitz.io" style="
     border: none;
@@ -30,7 +38,7 @@
     width: 100%;
 "></iframe>
 
-### DevOps
+### [DevOps](https://stackblitz.com/edit/devops-capability-editor?file=index.js)
 
 <iframe src="https://devops-capability-editor.stackblitz.io" style="
     border: none;
@@ -38,7 +46,7 @@
     width: 100%;
 "></iframe>
 
-### 敏捷
+### [敏捷](https://stackblitz.com/edit/agile-capability-editor?file=index.js)
 
 <iframe src="https://agile-capability-editor.stackblitz.io" style="
     border: none;
@@ -46,7 +54,7 @@
     width: 100%;
 "></iframe>
 
-### 工具
+### [工具](https://stackblitz.com/edit/tools-capability-editor?file=index.js)
 
 <iframe src="https://tools-capability-editor.stackblitz.io" style="
     border: none;
