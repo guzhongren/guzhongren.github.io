@@ -90,7 +90,7 @@ featuredImage: ""
         ]
     }]
 }
-
+{{< /echarts >}}
 ```
 ## 关于社区
 
