@@ -16,74 +16,7 @@
 
 ### 前端
 
-```json
-{{</* echarts */>}}
-{
-    title: {
-        text: '前端能力图谱',
-        subtext: '取值范围0～5: 0 Do not want to Learn; 1 Want to learn; 2 Practiced some; 3 Can do it; \n 4 Scretching for leadership; 5 Practiced leader.',
-        left: 'center',
-        align: 'right'
-    },
-    tooltip: {},
-    legend: {
-        data: ['期望值', '实际值'],
-        left: 10
-    },
-    toolbox: {
-        feature: {
-            dataZoom: {
-                yAxisIndex: 'none'
-            },
-            restore: {},
-            saveAsImage: {}
-        }
-    },
-    radar: {
-        // shape: 'circle',
-        name: {
-            textStyle: {
-                color: '#fff',
-                backgroundColor: '#999',
-                borderRadius: 3,
-                padding: [3, 5]
-            }
-        },
-        indicator: [{ name: 'JavaScript', max: 5},
-                    { name: 'HTML', max: 5},
-                    { name: 'CSS', max: 5},
-                    { name: 'Less', max: 5},
-                    { name: 'Sass', max: 5},
-                    { name: 'TypeScript', max: 5},
-                    { name: 'React', max: 5},
-                    { name: 'Redux', max: 5},
-                    { name: 'Vue', max: 5},
-                    { name: 'Vuex', max: 5},
-                    { name: 'Angular', max: 5},
-                    { name: 'Svelte', max: 5},
-                    { name: 'RxJS', max: 5},
-                    { name: 'Webpack', max: 5},
-                    { name: 'Rollup', max: 5},
-                    { name: 'Parcel', max: 5}],
-    },
-    series: [{
-        name: 'Padding(期望-实际)',
-        type: 'radar',
-        // areaStyle: {normal: {}},
-        data: [
-            {
-                value: [5,5,5,5,5,4,4,4,4,4,3,4,4,4,4,4],
-                name: '期望值'
-            },
-            {
-                value: [4,4,4,4,3,3,4,3,3,2,2,1,3,3,3,3],
-                name: '实际值'
-            }
-        ]
-    }]
-}
-
-```
+<iframe src="https://stackblitz.com/edit/frontend-capability-editoro?embed=1" height= "200px" width="100%"></iframe>  
 ## 关于社区
 
 2018 年 8 月份与韩亦乐一起组织 FCC 西安社区的第一次前端大会，并在 12 月由我和另外几位小伙伴一起负责西安社区建设和运营。
@@ -93,6 +26,9 @@
 ## 关于......
 
 > 来日方长，慢慢道来...
+
+{{< mapbox lng=108.953636 lat=34.265373 zoom=10 marked=false light-style="mapbox://styles/mapbox/navigation-preview-day-v4" dark-style="mapbox://styles/mapbox/navigation-preview-night-v4" >}}
+
 
 
 GPG KeyID: [D18AEC180356622D](https://github.com/guzhongren.gpg)
