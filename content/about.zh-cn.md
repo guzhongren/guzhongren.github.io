@@ -102,6 +102,9 @@ featuredImage: ""
 
 > 来日方长，慢慢道来...
 
+{{< mapbox lng=108.953636 lat=34.265373 zoom=10 marked=false light-style="mapbox://styles/mapbox/navigation-preview-day-v4" dark-style="mapbox://styles/mapbox/navigation-preview-night-v4" >}}
+
+
 
 GPG KeyID: [D18AEC180356622D](https://github.com/guzhongren.gpg)
 
