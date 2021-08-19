@@ -51,4 +51,5 @@ always-auth=true
 [1.https://yarnpkg.com/](https://yarnpkg.com/)
 
 ----
-![谷哥说-微信公众号](/images/wechat/扫码_搜索联合传播样式-标准色版.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+
