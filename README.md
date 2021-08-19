@@ -5,7 +5,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fguzhongren%2Fguzhongren.github.io.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fguzhongren%2Fguzhongren.github.io?ref=badge_shield)
 
 
-![谷哥说-微信公众号](https://ftp.bmp.ovh/imgs/2020/02/b7282c60d4d581ad.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
 
 ## 生成模板文章
 
