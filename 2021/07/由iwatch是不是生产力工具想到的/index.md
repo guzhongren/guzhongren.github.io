@@ -17,10 +17,10 @@
 
 去买吧，用一次小小的尝试去满足一下你的小小的好奇心，下次，你就知道了你要买的东西值不值了。
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 
 ## Statement（特此申明）
 

@@ -164,7 +164,7 @@ brew cask install tencent-lemon
 ```
 
 
-## Reference
+## Refs
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Todo: https://todo.microsoft.com/tasks/](https://todo.microsoft.com/tasks/)

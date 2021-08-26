@@ -50,7 +50,7 @@ sh -x run.sh
 
 > 好习惯都是踩坑踩出来的
 
-## Reference
+## Refs
 
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)

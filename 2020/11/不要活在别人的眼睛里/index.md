@@ -27,7 +27,7 @@
 > 但愿有一天，可以找回小时候的自己。
 
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 

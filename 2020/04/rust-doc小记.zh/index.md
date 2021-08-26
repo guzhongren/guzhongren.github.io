@@ -69,7 +69,7 @@ $ cargo doc --open
 Rust 的编译器相当严谨，结合TDD 写代码应该会很爽。
 
 
-## Reference
+## Refs
 
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)

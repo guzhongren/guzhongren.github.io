@@ -253,7 +253,7 @@ describe('multiple', () => {
 
 源代码：[https://github.com/AndorLab/test-window-object](https://github.com/AndorLab/test-window-object)
 
-## Reference
+## Refs
 
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)

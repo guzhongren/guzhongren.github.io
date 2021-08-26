@@ -33,10 +33,10 @@
 * 多学点法律知识，干什么事都要有合同，要有验收标准，自己的钱只能到最后才能给别人。不然你就会成为下一个孙子。
 
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 
 ## Statement（特此申明）
 

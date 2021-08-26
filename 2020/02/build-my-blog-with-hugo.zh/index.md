@@ -68,7 +68,7 @@ comment: true
 ---
 
 
-## Reference
+## Refs
 
 
 ----
@@ -224,7 +224,7 @@ pub:
 
 > 尽情享用吧...🎉🎉🎉🎉🎉
 
-## Reference
+## Refs
 
 * 1.[https://gohugo.io/](https://gohugo.io/)
 * 2.[https://golang.google.cn/](https://golang.google.cn/)

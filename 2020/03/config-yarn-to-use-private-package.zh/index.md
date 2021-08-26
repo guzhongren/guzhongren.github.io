@@ -46,7 +46,7 @@ always-auth=true
 
 
 
-## Reference
+## Refs
 
 [1.https://yarnpkg.com/](https://yarnpkg.com/)
 

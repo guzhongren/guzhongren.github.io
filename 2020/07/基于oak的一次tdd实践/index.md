@@ -1007,11 +1007,11 @@ Application started, and listen to 127.0.0.1:1234
 
 最后感谢[海门](https://yihaimen.github.io/)和[亦乐](https://github.com/hylerrix)的校对与指导；在他们的帮助下，我顺利完成了这篇博客。
 
-## Reference
+## Refs
 
 * [源码: https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 * [Denoland: https://deno.land/](https://deno.land/)
 * [VS Code: https://code.visualstudio.com/](https://code.visualstudio.com/)
 * [Docker: https://www.docker.com/](https://www.docker.com/)

@@ -93,10 +93,10 @@ sub   rsa4096 2021-04-11 [E]
 
 你的私钥差不多就是计算机世界里的另一个你，所以，把你自己保护好。
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 
 ## Statement（特此申明）
 
