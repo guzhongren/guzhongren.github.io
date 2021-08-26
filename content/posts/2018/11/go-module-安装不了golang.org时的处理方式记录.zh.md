@@ -42,7 +42,7 @@ $ go mod edit -replace=golang.org/x/sys@v0.0.0=github.com/golang/sys@latest
 
 
 
-## Reference
+## Refs
 
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床：https://sm.ms/](https://sm.ms/)

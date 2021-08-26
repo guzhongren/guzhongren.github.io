@@ -26,10 +26,10 @@ images: [""]
 
 再也不用为删除单个单词，整行代码，左右快速跳转烦恼了。
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 
 ## Statement（特此申明）
 

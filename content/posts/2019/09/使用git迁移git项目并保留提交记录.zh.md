@@ -59,7 +59,7 @@ $ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git
 ![git.mirror.png](https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png)
 
 
-## Reference
+## Refs
 
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.原文：https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY](https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY)

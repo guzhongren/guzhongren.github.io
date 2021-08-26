@@ -85,7 +85,7 @@ error[E0308]: mismatched types
 Rust的闭包感觉和js的函数的写法很像，感觉到了Rust又借鉴了部分js的语法。
 
 
-## Reference
+## Refs
 
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床：https://sm.ms/](https://sm.ms/)

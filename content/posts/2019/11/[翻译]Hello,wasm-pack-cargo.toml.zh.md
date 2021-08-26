@@ -86,7 +86,7 @@ wee_alloc = { version = "0.4.2", optional = true }
 
 
 
-## Reference
+## Refs
 
 [1.https://guzhongren.github.io/](https://guzhongren.github.io/)
 

@@ -37,7 +37,7 @@ import( . “fmt” ), 这个点操作的含义就是这个包导入之后在你
 
 _操作其实只是引入该包。当导入一个包时，它所有的init()函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的init()函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其init函数()。
 
-## Reference
+## Refs
 
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)

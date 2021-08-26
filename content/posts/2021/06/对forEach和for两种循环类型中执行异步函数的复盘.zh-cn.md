@@ -170,10 +170,10 @@ Promise {<pending>}
 * **零信任** 要有质疑精神，只要不是自己写的，就有可能有bug， 不然那么多漏洞是怎么发现的
 * Keep simple, Keep run
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 * [Array.prototype.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 
 ## Statement（特此申明）

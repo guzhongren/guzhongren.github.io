@@ -125,7 +125,7 @@ TBD 的适用情况与git-flow 的适用情况恰好相反，可自行脑补。
 > 软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。
 
 
-## Reference
+## Refs
 
 * [1.https://rc.sydney.edu.au/git-user-guide/history.html](https://rc.sydney.edu.au/git-user-guide/history.html)
 * [2.https://nvie.com/files/Git-branching-model.pdf](https://nvie.com/files/Git-branching-model.pdf)

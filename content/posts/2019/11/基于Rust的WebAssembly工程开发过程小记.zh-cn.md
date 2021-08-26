@@ -342,7 +342,7 @@ function addElement() {
 
 ## 仓库地址：<https://github.com/AndorLab/web_assembly/tree/based_rust>
 
-## Reference
+## Refs
 
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)

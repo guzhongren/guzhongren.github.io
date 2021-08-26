@@ -112,7 +112,7 @@ ok      benchmark       1.297s
 
 
 
-## Reference
+## Refs
 
 [1.https://golang.google.cn/](https://golang.google.cn/)
 [2.Golang 依赖注入(Dependency Injection)](https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/)

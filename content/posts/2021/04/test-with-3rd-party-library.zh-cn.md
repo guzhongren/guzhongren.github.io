@@ -86,10 +86,10 @@ it("jwt", () => {
 Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test
 
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 * [mocking-modules: https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options]:(https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
 
 ## Statement（特此申明）

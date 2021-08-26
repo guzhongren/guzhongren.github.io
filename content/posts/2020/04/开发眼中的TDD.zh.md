@@ -20,7 +20,7 @@ featuredImage: "https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png"
 
 > 方法论很多，重要的是使用方法论的人～单元测试  -- from @haihaio
 
-## Reference
+## Refs
 
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.http://agiledata.org/essays/tdd.html](http://agiledata.org/essays/tdd.html)

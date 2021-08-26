@@ -55,10 +55,10 @@ brew install visual-studio-code
 
 打开deno 相关的项目。CMD + Shift + P ， 输入 `deno：init`，应该不会再弹出命令找不到的错误提示了。
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
+
 
 ## Statement（特此申明）
 

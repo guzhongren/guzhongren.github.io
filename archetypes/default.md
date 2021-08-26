@@ -16,10 +16,9 @@ images: [""]
 
 
 
-## Reference
+## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [图床:https://sm.ms/](https://sm.ms/)
 
 ## Statement（特此申明）
 
