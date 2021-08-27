@@ -66,7 +66,7 @@
 
 ![Trivy in TW tech radar](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png)
 
-Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 Adopt，说明 Trivy 是有用的、有价值的和可行的。
+Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 __Adopt__，说明 Trivy 是有用的、有价值的和可行的。
 
 ## Trivy 的工作原理
 
