@@ -160,7 +160,7 @@ https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566
 * [https://cve.mitre.org/index.html](https://cve.mitre.org/index.html)
 [https://nvd.nist.gov](https://nvd.nist.gov)
 * [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ## Statement（特此申明）
 
