@@ -17,7 +17,7 @@
 * [4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
 * [5.https://dzone.com/articles/7-popular-unit-test-naming](https://dzone.com/articles/7-popular-unit-test-naming)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

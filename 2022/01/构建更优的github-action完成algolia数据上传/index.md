@@ -257,7 +257,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 * [Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer](https://github.com/marketplace/actions/algolia-docsearch-indexer)
 * [GitHub Action: https://docs.github.com/en/actions](https://docs.github.com/en/actions)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

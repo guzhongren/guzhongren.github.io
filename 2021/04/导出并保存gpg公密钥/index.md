@@ -98,7 +98,7 @@ sub   rsa4096 2021-04-11 [E]
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

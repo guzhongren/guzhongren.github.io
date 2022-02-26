@@ -80,7 +80,7 @@ Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScrip
 
 * [mocking-modules: https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options]:(https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

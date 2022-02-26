@@ -1019,7 +1019,7 @@ Application started, and listen to 127.0.0.1:1234
 * [Node: https://nodejs.org/](https://nodejs.org/)
 * [mock: https://github.com/udibo/mock](https://github.com/udibo/mock)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

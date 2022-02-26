@@ -247,7 +247,7 @@ Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-com
 
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

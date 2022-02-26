@@ -245,7 +245,7 @@ git-crypt unlock /path/to/git-crypt.key
 * [Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO (中文版)](https://www.gnupg.org/howtos/zh/index.html)
 * [transcrypt使用案例](https://www.lnmpy.com/blog/transcrypt-intro/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

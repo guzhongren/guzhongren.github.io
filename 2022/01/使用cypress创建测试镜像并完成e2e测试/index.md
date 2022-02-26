@@ -96,7 +96,7 @@ services:
 * [Powerboard: https://github.com/guzhongren/Powerboard](https://github.com/guzhongren/Powerboard)
 
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

@@ -57,7 +57,7 @@ sh -x run.sh
 * [3.编写可靠bash脚本的一些技巧:https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q](https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q)
 *
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

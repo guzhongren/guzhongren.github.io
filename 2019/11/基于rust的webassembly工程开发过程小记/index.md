@@ -335,7 +335,7 @@ function addElement() {
 * [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.图床:https://sm.ms/](https://sm.ms/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

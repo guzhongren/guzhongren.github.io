@@ -45,7 +45,7 @@ export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Co
 * [2.图床:https://sm.ms/](https://sm.ms/)
 * [3. grcov](https://github.com/mozilla/grcov/issues/433)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

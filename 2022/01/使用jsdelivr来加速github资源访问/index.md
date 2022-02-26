@@ -68,7 +68,7 @@ CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一�
 * [prospectone: https://prospectone.io/](https://prospectone.io/)
 * [CDN: https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF](https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

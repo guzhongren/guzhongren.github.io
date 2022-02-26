@@ -119,7 +119,7 @@ ADR 在大型项目或者大公司的项目中经常会用到，不管是对现�
 * [架构设计实践之架构决策记录: https://zhuanlan.zhihu.com/p/141385447](https://zhuanlan.zhihu.com/p/141385447)
 * [【译文】架构决策记录（Architecture Decision Records）](https://www.phodal.com/blog/documenting-architecture-decisions/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

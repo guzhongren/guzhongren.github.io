@@ -149,7 +149,7 @@ Security is a very important issue no matter where you are. We can __Shift Left 
 * [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
 * [https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

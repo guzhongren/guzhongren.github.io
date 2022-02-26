@@ -81,7 +81,7 @@ IEEE 754 标准的 64 位双精度浮点数的小数部分最多支持 53 位二
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

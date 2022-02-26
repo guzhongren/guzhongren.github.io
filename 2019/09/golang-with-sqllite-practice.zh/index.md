@@ -22,7 +22,7 @@
   - [运行结果展示](#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA)
 - [总结](#%E6%80%BB%E7%BB%93)
 - [Reference](#reference)
-- [Statement（特此申明）](#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E)
+- [Disclaimer](#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E)
 
 <!-- /TOC -->
 
@@ -302,7 +302,7 @@ SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速�
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
 * [2.原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3](https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

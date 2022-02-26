@@ -24,7 +24,7 @@ GIS 是个好东西，可惜在现在的传统行业中体现不出它的价值�
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

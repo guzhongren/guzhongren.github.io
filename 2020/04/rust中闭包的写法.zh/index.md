@@ -81,7 +81,7 @@ Rust的闭包感觉和js的函数的写法很像，感觉到了Rust又借鉴了�
 * [3.茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html](https://zhidao.baidu.com/question/1448503662321920660.html)
 * [4.Rust 闭包：https://doc.rust-lang.org/rust-by-example/fn/closures.html](https://doc.rust-lang.org/rust-by-example/fn/closures.html)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

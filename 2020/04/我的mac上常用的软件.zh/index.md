@@ -178,7 +178,7 @@ brew cask install tencent-lemon
 * [Adobe XD: https://www.adobe.com/cn/products/xd.html](https://www.adobe.com/cn/products/xd.html)
 * [Itsycal:https://www.mowglii.com/itsycal/](https://www.mowglii.com/itsycal/itsycalbanner2@2x.png)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

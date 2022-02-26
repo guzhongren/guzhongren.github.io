@@ -53,7 +53,7 @@ $ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git
 * [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2.原文：https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY](https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

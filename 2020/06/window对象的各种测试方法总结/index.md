@@ -262,7 +262,7 @@ describe('multiple', () => {
 * [5.Global Object defineProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 * [6.test double](https://www.jyt0532.com/2018/01/24/jinyong-test-double/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

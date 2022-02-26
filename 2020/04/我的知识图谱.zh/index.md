@@ -46,7 +46,7 @@
 * [3.Figma: https://www.figma.com/](https://www.figma.com/)
 * [4.Zeplin: https://app.zeplin.io/](https://app.zeplin.io/)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

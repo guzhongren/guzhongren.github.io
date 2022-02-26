@@ -163,7 +163,7 @@
 
 * [Performance Testing Tutorial: What is, Types, Metrics & Example: https://www.guru99.com/performance-testing.html](https://www.guru99.com/performance-testing.html)
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 

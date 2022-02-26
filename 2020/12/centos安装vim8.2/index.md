@@ -111,7 +111,7 @@ VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2020 23:04:31)
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 
-## Statement（特此申明）
+## Disclaimer
 
 本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
