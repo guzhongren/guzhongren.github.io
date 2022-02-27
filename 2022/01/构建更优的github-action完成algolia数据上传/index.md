@@ -1,12 +1,11 @@
-# 构建更优的GitHub Action完成Algolia数据上传
+# 构建更优的 GitHub Action 完成 Algolia 数据上传
 
 
 ## 场景
 
 程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 [lunrjs](https://lunrjs.com/) 或者 [algolia](https://www.algolia.com/) 等。我的 Blog 是基于 [Hugo](https://gohugo.io/) 构建的，使用的主题是 [LoveIt](https://hugoloveit.com/), 集成的是 algolia 的搜索方式。
 
-对于存储在 algolia 上的数据，我是通过 GitHub Action：[Algolia Docsearch Indexer](https://github.com/marketplace/actions/algolia-docsearch-indexer) 来上传的, 之前使用是没有问题的。
-
+对于存储在 algolia 上的数据，我是通过 GitHub Action：[Algolia Docsearch Indexer](https://github.com/marketplace/actions/algolia-docsearch-indexer) 来上传的，之前使用是没有问题的。
 
 ## 问题
 
@@ -77,18 +76,18 @@ AttributeError: 'list' object has no attribute 'items'
 ```
 
 面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
-打开 GitHub 上这个 Action 的[源码](https://github.com/darrenjennings/algolia-docsearch-action), 根据对 Action 构建的了解和现有代码，作者使用的是 Python 和 algolia 自己在 GitHub 上开源的[工具](https://github.com/algolia/docsearch-scraper.git), 然后执行一个  Python 脚本上传文件到 algolia 的；根据以往经验，由 Python 构建的项目镜像一般都比较大，在本地测试了一下，果不其然的大。
+打开 GitHub 上这个 Action 的 [源码](https://github.com/darrenjennings/algolia-docsearch-action), 根据对 Action 构建的了解和现有代码，作者使用的是 Python 和 algolia 自己在 GitHub 上开源的 [工具](https://github.com/algolia/docsearch-scraper.git), 然后执行一个  Python 脚本上传文件到 algolia 的；根据以往经验，由 Python 构建的项目镜像一般都比较大，在本地测试了一下，果不其然的大。
 
 ### 面临的问题
 
 - 工具损坏
 - 镜像体积大
 
-## 方案Spike
+## 方案 Spike
 
-|Item|Option1 使用algolia 自己的 Restful 接口|Option 2 algolia SDK|
+|Item|Option1 使用 algolia 自己的 Restful 接口|Option 2 algolia SDK|
 |--|--|--|
-|描述|使用 algolia自己的Restful 接口实现上传|使用其官方提供的SDK 编写代码来集成|
+|描述|使用 algolia 自己的 Restful 接口实现上传|使用其官方提供的 SDK 编写代码来集成|
 |是否推荐|No|Yes|
 |实现难度|Middle|Low|
 |优点|流程可控|简单直接，无需担心错误情况的处理|
@@ -97,19 +96,18 @@ AttributeError: 'list' object has no attribute 'items'
 |相对难度|Middle|Low|
 |相对成本|Middle|Low|
 
-
 综上分析，使用 Option2 SDK 的方案更佳。
 
 ## 执行方案
 
 新建 GitHub Action 项目，我们使用 Dockerfile 的方式构建上传索引的方案；
-*  新建 entrypoint.sh 并写入如下代码, 脚本执行需要传入如下几个变量：
+*  新建 entrypoint.sh 并写入如下代码，脚本执行需要传入如下几个变量：
 
 |Name|Description|Required|
 |--|--|--|
 |FILE_PATH|要上传的文件路径|Yes|
-|ALGOLIA_APPLICATION_ID|Algolia 平台的应用Id|Yes|
-|ADMIN_API_KEY|Algolia 上传所用的API Key|Yes|
+|ALGOLIA_APPLICATION_ID|Algolia 平台的应用 Id|Yes|
+|ADMIN_API_KEY|Algolia 上传所用的 API Key|Yes|
 |INDEX_NAME|在 Algolia 上你所创建的索引名|Yes|
 
   ```shell
@@ -136,7 +134,7 @@ COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 ```
 
-* 更新README, 完善使用文档。
+* 更新 README, 完善使用文档。
 
 详细代码请参考 [algolia-docsearch-upload-action](https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile)。
 
@@ -174,7 +172,7 @@ ENTRYPOINT ["/entrypoint.sh"]
     "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"] 
   },
   "yAxis": {
-    "name": "耗时(s)",
+    "name": "耗时 (s)",
     "type": "value"
   },
   "series": [
@@ -227,7 +225,7 @@ ENTRYPOINT ["/entrypoint.sh"]
     "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"] 
   },
   "yAxis": {
-    "name": "镜像大小(M)",
+    "name": "镜像大小 (M)",
     "type": "value"
   },
   "series": [
@@ -253,7 +251,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 {{< /echarts >}}
 ## Refs
 
-* [博客: https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer](https://github.com/marketplace/actions/algolia-docsearch-indexer)
 * [GitHub Action: https://docs.github.com/en/actions](https://docs.github.com/en/actions)
 
@@ -262,7 +260,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助
@@ -270,5 +268,5 @@ ENTRYPOINT ["/entrypoint.sh"]
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
 
-> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+> 使用此 [文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig) 进行校验： `gpg --verify PayForGuzhongren.svg.sig`
 

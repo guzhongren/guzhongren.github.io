@@ -2,17 +2,17 @@
 
 ## 场景
  
-在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装Harbor 做一个记录。
+在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。
 
 ## 分析
 
-因为 Harbor 是用 docker 跑起来的，所以我们的机器上必须有 docker 环境，还有比较中要的一点，Harbor 需要使用docker-compose, 所以需要 docker-compose。
+因为 Harbor 是用 docker 跑起来的，所以我们的机器上必须有 docker 环境，还有比较中要的一点，Harbor 需要使用 docker-compose, 所以需要 docker-compose。
 
 ## 安装
 
 ### docker 安装
 
-略...（相信你肯定不会怪我）
+略。..（相信你肯定不会怪我）
 
 ### docker-compose 安装
 
@@ -22,7 +22,7 @@ $ sudo chmod +x /usr/local/bin/docker-compose
 $ docker-compose --version
 docker-compose version 1.24.0, build 1110ad01
 ```
-### 安装Harbor
+### 安装 Harbor
 
 > 离线安装版
 
@@ -39,7 +39,7 @@ $ tar xvf harbor-offline-installer-v1.8.0.tgz
 $ cd Harbor
 $ vim /Harbor.yaml
 ```
-需要配置的地方有几处，但最重要的是hostname, hostname 必须指定为域名，不能使localhost,127.0.0.1 这样的地址，别的密码、端口可可定义。如下是我的配置
+需要配置的地方有几处，但最重要的是 hostname, hostname 必须指定为域名，不能使 localhost,127.0.0.1 这样的地址，别的密码、端口可可定义。如下是我的配置
 
 ```yaml
 # Configuration file of Harbor
@@ -190,7 +190,7 @@ Creating nginx             ... done
 Now you should be able to visit the admin portal at http://hub.k8s.com.
 For more details, please visit https://github.com/goharbor/harbor .
 ```
-最后出现如上提示就安装成功了。将hub.k8s.com解析到本地即可访问。
+最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。
 
 ![harbor](https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg)
 
@@ -202,7 +202,7 @@ For more details, please visit https://github.com/goharbor/harbor .
 $ vim /etc/docker/daemon.json
 {
   "registry-mirrors": ["https://gmjjwogo.mirror.aliyuncs.com"],
-  "insecure-registries": ["hub.k8s.com"] # 追加内容，必须符合json规范
+  "insecure-registries": ["hub.k8s.com"] # 追加内容，必须符合 json 规范
 }
 ```
 
@@ -211,7 +211,7 @@ $ vim /etc/docker/daemon.json
 ```shell
 $ systemctl restart docker
 ```
-#### 将本地golang 镜像推送到私有仓库
+#### 将本地 golang 镜像推送到私有仓库
 
 ```shell
 $ docker login hub.k8s.com
@@ -223,7 +223,7 @@ https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
 ```
-#### 为golang 打标签并推送镜像
+#### 为 golang 打标签并推送镜像
 
 ```shell
 $ docker tag golang:alpine hub.k8s.com/cms/golang:alpine
@@ -241,16 +241,14 @@ alpine: digest: sha256:5ec3232b32e6876c0941d66d8392f667c77ca1ef14cafb85991deea43
 
 Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。
 
-
-
 ## Refs
 
-* [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

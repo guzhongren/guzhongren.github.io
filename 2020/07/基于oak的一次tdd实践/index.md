@@ -1,4 +1,4 @@
-# 基于oak的一次TDD实践
+# 基于 oak 的一次 TDD 实践
 
 
 ## `Talking is cheap! Show me code!`
@@ -34,7 +34,7 @@
 
 ## 目标
 
-基于对以上的基础知识的认识，我们计划开发一个用户管理的`API`平台；对于后端简单来说，就是提供关于用户的增删改查（`CURD`）操作。所以我们的主要目标就是提供4个对用户`CURD`的接口。
+基于对以上的基础知识的认识，我们计划开发一个用户管理的`API`平台；对于后端简单来说，就是提供关于用户的增删改查（`CURD`）操作。所以我们的主要目标就是提供 4 个对用户`CURD`的接口。
 
 ## 工具
 
@@ -48,7 +48,7 @@
 
 [`Deno`](https://deno.land/), [`Typescript`](https://www.typescriptlang.org/), [`Node`](https://nodejs.org/)
 
-> 注： Node 是用来调试 Deno的
+> 注： Node 是用来调试 Deno 的
 
 ## 基础环境信息
 
@@ -85,11 +85,11 @@ deno-restful-api-with-postgresql-tdd
 ├── LICENSE         // 仓库许可
 ├── README.md       // 项目说明，包括数据库连接，简化后的运行命令等
 ├── _resources      // 基础资源
-│   ├── IaaS        // 基础设施，docker-compose 启动postgresql
-│   ├── httpClient  // http请求测试
+│   ├── IaaS        // 基础设施，docker-compose 启动 postgresql
+│   ├── httpClient  // http 请求测试
 │   └── migration   // 负责生成数据库表
 ├── deps.ts         // 项目依赖的库及项目中要用到的资源（import）
-├── lock.json       // 完整性检查与锁定文件, 参考：https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html
+├── lock.json       // 完整性检查与锁定文件，参考：https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html
 ├── makefile        // 将开发需要的命令行简化后目录
 ├── src             // 源代码目录
 └── tests           // 测试目录
@@ -100,9 +100,9 @@ deno-restful-api-with-postgresql-tdd
 
 ## 实现过程
 
-> 先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的`health`和`addUser`(`post`接口)为例， 其他接口请参考[代码实现](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)。
+> 先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的`health`和`addUser`(`post`接口）为例， 其他接口请参考 [代码实现](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)。
 
-### 启动基础设施(数据库)并初始化数据表
+### 启动基础设施（数据库）并初始化数据表
 
 #### 启动数据库
 
@@ -159,7 +159,7 @@ src
 8 directories, 16 files
 ```
 
-在开始之前，我们先定义一些常用的结构体和对象，如: response，exception 等
+在开始之前，我们先定义一些常用的结构体和对象，如：response，exception 等
 
 ```ts
 // src/controllers/model/IResponse.ts
@@ -208,7 +208,7 @@ export default class NotFoundException extends Error {
 
 Deno 没有像 Node 一样的诸如`package.json`来管理依赖，因为`Deno`的依赖是去中心化的，也就是以远程文件作为库，这一点和`Golang`很像。
 
-我将系统中用到的依赖存放在根目录的`deps.ts`中，在最终提交的时候做一次[`完整性检查与锁定文件`](https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html), 来保证我所有的依赖在与其他协作者之间是相同的。
+我将系统中用到的依赖存放在根目录的`deps.ts`中，在最终提交的时候做一次 [`完整性检查与锁定文件`](https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html), 来保证我所有的依赖在与其他协作者之间是相同的。
 
 首先导入用到的测试相关的依赖。**在后面开发中用到的相关依赖请自行添加到本文件中。** 比较重要的我会列出来。
 
@@ -261,7 +261,7 @@ export const TEST_PORT = 9000
 
 `health` 接口可以作为系统的健康检查的一个出口，在运维平台中非常实用。对于此接口，我们只需要返回一个状态`OK`即可。其他情况可忽略。那么对应的`Todo`应该如下：
 
-> 当访问到系统的时候，应该返回系统的状态，且为OK。
+> 当访问到系统的时候，应该返回系统的状态，且为 OK。
 
 所以，测试代码如下：
 
@@ -311,22 +311,22 @@ test("health check", async () => {
 > - 上面的代码中，首先声明了我们期望的数据结构，即`expectResponse`；
 > - 然后创建一个应用程序和一个路由，
 > - 再创建一个终止应用的控制器，且从中取到信号标识，
-> - 接着， 向路由中添加一个`health`路由及其handler；
+> - 接着， 向路由中添加一个`health`路由及其 handler；
 > - 然后将路由挂在到应用程序上；
 > - 监听应用程序端口，且传入应用程序信号。
 
 #### when
 
-> - 给启动的应用发一个get请求，请求路径为`/health`;
+> - 给启动的应用发一个 get 请求，请求路径为`/health`;
 
 #### then
 
-> - 根据fetch到的结果进行判定，看收到的`response`是不是和期望的一致， 且在最后终止上面的应用程序。
+> - 根据 fetch 到的结果进行判定，看收到的`response`是不是和期望的一致， 且在最后终止上面的应用程序。
 > - 到此，如果运行测试肯定会发生错误，解决问题的也很简单，就是去实现`getHealthInfo` handler。
 
 #### 实现 `getHealthInfo` handler
 
-在src/controller下新建`health.ts`，并以最简单的方案实现上面期望的结果，如下：
+在 src/controller 下新建`health.ts`，并以最简单的方案实现上面期望的结果，如下：
 
 ```ts
 // src/controllers/health.ts
@@ -346,7 +346,7 @@ export const getHealthInfo = ({ response }: { response: Response }) => {
 
 #### 运行测试
 
-运行测试命令，测试通过;
+运行测试命令，测试通过；
 
 ```shell
 ❯ make test
@@ -373,7 +373,7 @@ export const API_VERSION = env.API_VERSION || "/api/v1";
 
 ```
 
-配置文件中，记录了应用程序启动的默认host, 端口，及数据库相关的信息，最后记录了应用程序api的前缀。
+配置文件中，记录了应用程序启动的默认 host, 端口，及数据库相关的信息，最后记录了应用程序 api 的前缀。
 
 在开始之前，需要在`deps.ts`中引入所需要的库；
 
@@ -417,7 +417,6 @@ import { Application, send } from "../deps.ts";
 import { APP_HOST, APP_PORT } from "./config.ts";
 import router from "./router.ts";
 
-
 export const listenToServer = async (app: Application) => {
   console.info(`Application started, and listen to ${APP_HOST}:${APP_PORT}`);
   await app.listen({
@@ -441,7 +440,7 @@ if (import.meta.main) {
 
 ##### 启动应用
 
-如果是`VSCode`， 可以使用`F5`功能键，快速启动应用，在低版本的 `VS Code(1.47.2以下)` 中可以启动调试。也可以以下命令启动；
+如果是`VSCode`， 可以使用`F5`功能键，快速启动应用，在低版本的 `VS Code(1.47.2 以下）` 中可以启动调试。也可以以下命令启动；
 
 ```shell
 ❯ make dev
@@ -452,7 +451,7 @@ Application started, and listen to 127.0.0.1:8000
 
 ##### 调用接口测试结果
 
-这里使用`VS Code` 的[`Rest Client`](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)插件进行辅助测试。
+这里使用`VS Code` 的 [`Rest Client`](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) 插件进行辅助测试。
 
 ###### 请求体
 
@@ -477,7 +476,7 @@ content-type: application/json; charset=utf-8
 
 至此，完成第一个接口，有 `Oak` 提供应用服务，经过了`Unit test`和 `RestClient`的测试。完成了开始的`Todo`。
 
-### 添加用户接口(`addUser`)
+### 添加用户接口 (`addUser`)
 
 添加用户涉及到`Controller`, `Service` 和 `Repository`, 所以我们分三步来实现该接口。
 
@@ -489,7 +488,7 @@ content-type: application/json; charset=utf-8
 > * 参数必须输入，否则抛异常
 > * 如果输入错误参数，则抛异常
 
-在此过程中，我们需要用到[`mock`](https://github.com/udibo/mock)来 `mock` 第三方依赖。
+在此过程中，我们需要用到 [`mock`](https://github.com/udibo/mock) 来 `mock` 第三方依赖。
 
 导入所需依赖，并新建`UserController.test.ts`，在`Coding` 过程中需要实现`UserService`, 但不需要实现`addUser`方法； 测试如下：
 
@@ -512,7 +511,6 @@ import InvalidedParamsException from "../../src/exception/InvalidedParamsExcepti
 import {TEST_PORT} from '../testFixtures.ts'
 
 const { test } = Deno;
-
 
 const userId = v4.generate();
 const registrationDate = (new Date()).toISOString();
@@ -642,7 +640,7 @@ test("#addUser should throw exception about no correct params given wrong params
   await response.body!.cancel();
 ```
 
-`controller` 这一层需要调用`service`的服; 作为`service`，对于`controller`是一个第三方服务，因此需要将`service`的方法`mock`，并以参数的形式传入`Controller`;下面这段代码就是`mock`的应用；
+`controller` 这一层需要调用`service`的服；作为`service`，对于`controller`是一个第三方服务，因此需要将`service`的方法`mock`，并以参数的形式传入`Controller`; 下面这段代码就是`mock`的应用；
 
 ```ts
   const userService = new UserService();
@@ -660,23 +658,23 @@ test("#addUser should throw exception about no correct params given wrong params
 
 ##### given
 
-> * mock `UserService`,给UserService的 `addUser`方法打桩，并返回特定的用户结构;
-> * 新建测试服务，并将 `UserController`注册给post接口 `/users`;
+> * mock `UserService`, 给 UserService 的 `addUser`方法打桩，并返回特定的用户结构；
+> * 新建测试服务，并将 `UserController`注册给 post 接口 `/users`;
 
 ##### when
 
-> * 传入正确的form类型的参数，用`fetch`请求`http://127.0.0.1:9000/users`;
+> * 传入正确的 form 类型的参数，用`fetch`请求`http://127.0.0.1:9000/users`;
 
 ##### then
 
 > * 对获取到的结果进行判定，并中断测试应用，将打桩的方法恢复。
 
-在此解释两个测试，第二个测试即`#addUser should throw exception about no params given no params when add user`; `given`和`when`与第一个测试的`given`和`when`查不多，只是`body`参数为空;最重要的不同点是这次的`then`是在`when`里面，因为抛异常会在`handler`上抛，所以，需要将`then`的判定放在`handler` 上。这里用到了`Deno`的`assertThrowsAsync`来捕获异常并判定异常。
+在此解释两个测试，第二个测试即`#addUser should throw exception about no params given no params when add user`; `given`和`when`与第一个测试的`given`和`when`查不多，只是`body`参数为空；最重要的不同点是这次的`then`是在`when`里面，因为抛异常会在`handler`上抛，所以，需要将`then`的判定放在`handler` 上。这里用到了`Deno`的`assertThrowsAsync`来捕获异常并判定异常。
 
 ##### given
 
-> * `mock` `UserService`,给UserService的 `addUser`方法打桩，并返回特定的用户结构;
-> * 新建测试服务，并将 `UserController`注册给post接口 `/users`;
+> * `mock` `UserService`, 给 UserService 的 `addUser`方法打桩，并返回特定的用户结构；
+> * 新建测试服务，并将 `UserController`注册给 post 接口 `/users`;
 
 ##### when
 
@@ -786,7 +784,7 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out (38ms
 
 #### Repository
 
-`Repository`通常和数据库交互，将传入的数据持久化到数据库中；对于添加用户这个接口，我们的需求因该是将传入的信息以数据库要求的格式存储起来，并将结果返回给`Service`;因此，`Todo`大致如下：
+`Repository`通常和数据库交互，将传入的数据持久化到数据库中；对于添加用户这个接口，我们的需求因该是将传入的信息以数据库要求的格式存储起来，并将结果返回给`Service`; 因此，`Todo`大致如下：
 
 > * 将传入的用户存入数据亏并返回特定数据结构的信息
 > * 如果参数中缺少基本字段则抛异常
@@ -971,7 +969,7 @@ content-type: application/json; charset=utf-8
 
 ## 打包
 
-按照上面的步骤，我们可以完成查询单个用户(`GET`:`/users/:id`), 查询所有用户(`GET`:`/users`)和删除(`DELETE`:`/users/:id`)等接口，快速且高效。当我们完成测试和接口后，使用`deno`的命令行工具，我们可以将整个工程打包为一个`.js`文件;
+按照上面的步骤，我们可以完成查询单个用户 (`GET`:`/users/:id`), 查询所有用户 (`GET`:`/users`) 和删除 (`DELETE`:`/users/:id`) 等接口，快速且高效。当我们完成测试和接口后，使用`deno`的命令行工具，我们可以将整个工程打包为一个`.js`文件；
 
 ```shell
 ❯ make bundle
@@ -998,19 +996,19 @@ Application started, and listen to 127.0.0.1:1234
 
 ## 乱中取整
 
-通过学习`Deno`,有了一些心得体会；
+通过学习`Deno`, 有了一些心得体会；
 
 * 兼容浏览器`API`,`Deno`工程可以使用`Javascript`和`Typescript`进行编程，大大降低了认知复杂度和学习难度；
 * 如果使用`Typescript`开发，那么会避免`动态一时爽，重构火葬场`的尴尬局面，所以推荐使用`Typescript`来写应用；
 * 去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，`Deno`提供了生成`lock.json`的形式来保证不同协作者之间的版本依赖；
 * ...
 
-最后感谢[海门](https://yihaimen.github.io/)和[亦乐](https://github.com/hylerrix)的校对与指导；在他们的帮助下，我顺利完成了这篇博客。
+最后感谢 [海门](https://yihaimen.github.io/) 和 [亦乐](https://github.com/hylerrix) 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。
 
 ## Refs
 
-* [源码: https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 * [Denoland: https://deno.land/](https://deno.land/)
 * [VS Code: https://code.visualstudio.com/](https://code.visualstudio.com/)
@@ -1021,8 +1019,8 @@ Application started, and listen to 127.0.0.1:1234
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

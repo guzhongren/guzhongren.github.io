@@ -43,11 +43,11 @@
 
 * 某个后端提供前端资源， 这个资源是由这个后端服务团队维护，且这个服务需要在前端使用
 
-在此， 我们将这个后端资源暂时抽象为`jquery.js`, 提供jquery.js服务的团队就是被我们 Platform 屏蔽起来的服务团队， 对我们本次实践来说就是某一个提供Jquery的CDN服务商。
+在此， 我们将这个后端资源暂时抽象为`jquery.js`, 提供 jquery.js 服务的团队就是被我们 Platform 屏蔽起来的服务团队， 对我们本次实践来说就是某一个提供 Jquery 的 CDN 服务商。
 
-具体的[Code](https://github.com/ByteWars/forwardJS) 在此，如有需要可随时查看。在实现过程中也有两种方案，
+具体的 [Code](https://github.com/ByteWars/forwardJS) 在此，如有需要可随时查看。在实现过程中也有两种方案，
 
-资源请求的前端页面代码如下, **重点就是 `script`标签中`src`的获取是一个 `GET`请求！**
+资源请求的前端页面代码如下，**重点就是 `script`标签中`src`的获取是一个 `GET`请求！**
 
 ```html
 <head>
@@ -59,7 +59,7 @@
 
 ```
 
-##### 方案1
+##### 方案 1
 
 ```Typescript
 // handlers/fetchJquery.ts
@@ -70,9 +70,9 @@ export const redirect = async ({ response }: { response: Response }) => {
 
 ```
 
-这种方案是将资源的请求转发到jquery的资源服务地址上，让浏览器自动302跳转到该地址，进行资源获取。
+这种方案是将资源的请求转发到 jquery 的资源服务地址上，让浏览器自动 302 跳转到该地址，进行资源获取。
 
-##### 方案2
+##### 方案 2
 
 ```Typescript
 // handlers/fetchJquery.ts
@@ -80,7 +80,6 @@ export const redirect = async ({ response }: { response: Response }) => {
 export const getContent = async ({ response }: { response: Response }) => {
   response.body = await fetchResponse(jqueryUrl);
 };
-
 
 // services/fetchResource.ts
 export default async (url: string) => {
@@ -93,15 +92,15 @@ export default async (url: string) => {
 
 ## 总结
 
-对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好,而且压力会在Platform和被屏蔽的服务那里，多了不必要的麻烦。
+对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。
 
 ## Refs
 
-* [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床:https://sm.ms/](https://sm.ms/)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
 * [3.ForwardJS](https://github.com/ByteWars/forwardJS)
-* [4.了不起的 Deno 实战教程](https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw)
+* [4. 了不起的 Deno 实战教程](https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw)
 
 ----
-![微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

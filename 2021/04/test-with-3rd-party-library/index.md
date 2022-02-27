@@ -45,10 +45,9 @@ moduleName(); // Will return 42
 foo(); // Will return 43
 ```
 
-很明显这是不符合我么场景的。通过观察可知，jest.mock 的第二参数是工参数，返回了一个对象，然后通过调用个这个对象的方法，返回特定的mock数据。 那么对于我们这种情况，我们只需要返回一个 mock 后的方法即可。
+很明显这是不符合我么场景的。通过观察可知，jest.mock 的第二参数是工参数，返回了一个对象，然后通过调用个这个对象的方法，返回特定的 mock 数据。 那么对于我们这种情况，我们只需要返回一个 mock 后的方法即可。
 
 so, 方案可整理如下
-
 
 ```js
 import jwt_decode from "jwt-decode";
@@ -70,22 +69,20 @@ it("jwt", () => {
 
 然后运行 test，通过。
 
-
 Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test
-
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 * [mocking-modules: https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options]:(https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助
@@ -93,5 +90,5 @@ Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScrip
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
 
-> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+> 使用此 [文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig) 进行校验： `gpg --verify PayForGuzhongren.svg.sig`
 

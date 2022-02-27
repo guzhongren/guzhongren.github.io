@@ -1,7 +1,7 @@
 # How to Encrypt Git Files
 
 
-## 为什么需要crypt
+## 为什么需要 crypt
 
 在开发过程中经常会遇到一个问题：
 
@@ -9,7 +9,7 @@
 
 常用的解决方法如下：
 
-* 使用如 AWS 的 KMS, ParameterStore等服务，给不同的用户以访问该数据的角色；
+* 使用如 AWS 的 KMS, ParameterStore 等服务，给不同的用户以访问该数据的角色；
 * 有专人托管，在需要的时候联系他，由特定方式转发给你，如加密邮件等
 
 ### 分析
@@ -18,33 +18,33 @@
 
 针对第一种情况，当我们的数据越来多的时候，我们需要将其状态可控起来，其实就是 `date as code`, 每次对数据的增删改查，我们都可以有追踪和数据保存。
 
-## 有哪些方案呢?
+## 有哪些方案呢？
 
 * [git-crypt](https://github.com/AGWA/git-crypt)
 * [transcrypt](https://github.com/elasticdog/transcrypt)
 
 在这里，我推荐使用 `git-crypt`, 其特点如下：
 
-* 加密后上传git，在git上保存的是`二进制`文件；
-* 分发`密钥`给可信开发人员，进行解密，维护配置文件;
-* 解密后为明文内容，如需上传，不用再进行加密，工具`自动`(配合`git hook`)会生成最新的二进制文件后上传;
+* 加密后上传 git，在 git 上保存的是`二进制`文件；
+* 分发`密钥`给可信开发人员，进行解密，维护配置文件；
+* 解密后为明文内容，如需上传，不用再进行加密，工具`自动`（配合`git hook`) 会生成最新的二进制文件后上传；
 * 由`c++`编写；
-* Mac 可以通过`brew等`方式下载;
+* Mac 可以通过`brew 等`方式下载；
 * 利用了加密工具`gpg`进行加密处理。
 
 ### GPG
 
 ![GPG](https://ruanyifeng.com/blogimg/asset/201307/bg2013071202.png)
 
-要了解什么是GPG，就要先了解PGP。
+要了解什么是 GPG，就要先了解 PGP。
 
-1991年，程序员Phil Zimmermann为了避开政府监视，开发了加密软件PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个PGP的替代品，取名为GnuPG。这就是GPG的由来。
+1991 年，程序员 Phil Zimmermann 为了避开政府监视，开发了加密软件 PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个 PGP 的替代品，取名为 GnuPG。这就是 GPG 的由来。
 
-gpg 可以对密钥的`增删改查`进行操作,也可以将公钥发送到pgp等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 [《GPG入门教程》](https://ruanyifeng.com/blog/2013/07/gpg.html)
+gpg 可以对密钥的`增删改查`进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 [《GPG 入门教程》](https://ruanyifeng.com/blog/2013/07/gpg.html)
 
 ## git-crypt 操作
 
-### 安装gpg 和 git-crypt
+### 安装 gpg 和 git-crypt
 
 ```shell
 brew install git-crypt
@@ -67,9 +67,9 @@ Home: /Users/c4/.gnupg
 密文： IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
     CAMELLIA128, CAMELLIA192, CAMELLIA256
 散列： SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
-压缩：  不压缩, ZIP, ZLIB, BZIP2
+压缩：  不压缩，ZIP, ZLIB, BZIP2
 ```
-### 生成gpg userId
+### 生成 gpg userId
 
 ```shell
 gpg --full-generate-key
@@ -122,7 +122,7 @@ uid                      guzhongren (guzhongren) <guzhongren@live.cn>
 sub   rsa4096 2020-07-11 [E]
 ```
 
-### 获取UserID
+### 获取 UserID
 
 ```shell
 gpg --list-secret-keys --keyid-format LONG
@@ -140,13 +140,13 @@ ssb   rsa4096/DCC72940818AB355 2020-07-11 [E]
 
 ```
 
-`sec   rsa4096/25DD25A47AEF036A 2020-07-11 [SC]` 中 `25DD25A47AEF036A`就是gpg userId
+`sec   rsa4096/25DD25A47AEF036A 2020-07-11 [SC]` 中 `25DD25A47AEF036A`就是 gpg userId
 
 ## git-crypt 操作
 
 ### 初始化
 
-进入需要做加密的git repo 做 git-crypt 初始化操作,并将上面获取到的gpg userId 添加进去
+进入需要做加密的 git repo 做 git-crypt 初始化操作，并将上面获取到的 gpg userId 添加进去
 
 ```shell
 git-crypt init
@@ -171,14 +171,14 @@ git rm -r –cached config
 
 ### 添加需要加密的文件和数据
 
-在`secretdir`文件夹下添加 `secret.yaml`,并添加如下内容：
+在`secretdir`文件夹下添加 `secret.yaml`, 并添加如下内容：
 
 ```yaml
 username:password
 ```
 ### 上传到 git 仓库
 
-此步不用担心你的`secret.yaml`文件以明文的形式上传，git-crypt会在 commit 之前将过滤后的数据加密成二进制，所以不用担心在仓库中存储敏感信息。
+此步不用担心你的`secret.yaml`文件以明文的形式上传，git-crypt 会在 commit 之前将过滤后的数据加密成二进制，所以不用担心在仓库中存储敏感信息。
 
 ```shell
 git add .
@@ -186,20 +186,20 @@ git commit -m ‘git-crypt’
 git push
 ```
 
-如果你去git仓库中浏览secret.yaml文件，会是一个二进制文件，如图：
+如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：
 
 ![git-crypt.png](https://i.loli.net/2020/07/12/lXVnNw5EbKCcvhe.png)
 
 ## 协作
 
-与他人协作，别人需要知道对应解密的key
+与他人协作，别人需要知道对应解密的 key
 
 ### 导出密钥
 
 ```shell
 git-crypt export-key ~/Desktop/git-crypt.key
 ```
-得到git-crypt.key后，将该密钥分发给可信的团队成员，团队成员将仓库 clone 下来后，使用如下命令解密即可
+得到 git-crypt.key 后，将该密钥分发给可信的团队成员，团队成员将仓库 clone 下来后，使用如下命令解密即可
 
 ```shell
 git-crypt unlock /path/to/git-crypt.key
@@ -209,7 +209,7 @@ git-crypt unlock /path/to/git-crypt.key
 
 ### 更新密钥
 
-因为git-crypt没有提供删除或者更新密钥的命令，所以参考了一个issue: https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;步骤如下：
+因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759; 步骤如下：
 
 * Make a backup (with decrypted files): cp -r . /path/to/backup
 * Save a list of files that are encrypted: git crypt status | grep -v 'not encrypted' > ../encrypted-files.txt
@@ -220,35 +220,34 @@ git-crypt unlock /path/to/git-crypt.key
 * Copy the decrypted files from the backup: awk '{print $2}' ../encrypted-files.txt | while read l; do cp /path/to/backup/$l $l; done
 * Commit (at this point you are done, but be sure to verify things are properly encrypted before publishing)
 
-实践结果：在更新完成之后，协作者需要重新clone 仓库，然后用新的密钥来解密，对密钥管理者来说操作比较麻烦
+实践结果：在更新完成之后，协作者需要重新 clone 仓库，然后用新的密钥来解密，对密钥管理者来说操作比较麻烦
 ### 总结
 
-在敏感数据越来越多的时候，作为开发者，我们更应该将所有的数据都`as code`,为以后维护提供方便。`git-crypt`确实是一个比较好的选择。
+在敏感数据越来越多的时候，作为开发者，我们更应该将所有的数据都`as code`, 为以后维护提供方便。`git-crypt`确实是一个比较好的选择。
 
 但是`git-crypt`有一个最大的缺点：
 
 * 只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置
 
-
 ## Refs
 
 * [Demo: git-crypt-test](https://github.com/beef-noodles/git-crypt-test)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 * [https://gnupg.org/](https://gnupg.org/)
 * [AGWA/git-crypt](https://github.com/AGWA/git-crypt)
 * [git-crypt 使用](http://einverne.github.io/post/2019/11/git-crypt-usage.html)
-* [git上的配置文件如何加密？](https://www.jianshu.com/p/a40fc90df943)
+* [git 上的配置文件如何加密？](https://www.jianshu.com/p/a40fc90df943)
 * [Easy Git Crypt User Identification](https://www.devopsgroup.com/blog/easy-git-crypt-user-identification/)
 * [Update git crypt key](https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759)
 * [List gpg user](https://github.com/AGWA/git-crypt/issues/189#issuecomment-549787656)
-* [Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO (中文版)](https://www.gnupg.org/howtos/zh/index.html)
-* [transcrypt使用案例](https://www.lnmpy.com/blog/transcrypt-intro/)
+* [Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO （中文版）](https://www.gnupg.org/howtos/zh/index.html)
+* [transcrypt 使用案例](https://www.lnmpy.com/blog/transcrypt-intro/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

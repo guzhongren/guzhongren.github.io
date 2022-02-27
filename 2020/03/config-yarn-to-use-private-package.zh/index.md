@@ -14,9 +14,9 @@ $ # 或者
 ```
 但是有时候，公司内部开发的工具库只想放在公司内部的服务器上，那么我们就需要对 npm 源进行配置了。因为 yarn 可以利用缓存，其速度比较快，且 npm 包是公司内部网络，鉴于效率，我们采用 yarn 来提速。
 
-## 配置.npmrc
+## 配置。npmrc
 
-下面是 .npmrc 的通常配置， 这里的 `https://npm.xxx.com/npm` 就是私服的地址， 下面`//`开头的内容就是用来鉴权的token。
+下面是 .npmrc 的通常配置， 这里的 `https://npm.xxx.com/npm` 就是私服的地址， 下面`//`开头的内容就是用来鉴权的 token。
 ```shell
 # .npmrc
 registry=https://npm.xxx.com/npm
@@ -44,12 +44,10 @@ always-auth=true
 
 再次执行 `yarn add xxx` 之后就会正常安装了，以后就可以愉快的安装私服或者公网上的 package 了。
 
-
-
 ## Refs
 
 [1.https://yarnpkg.com/](https://yarnpkg.com/)
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

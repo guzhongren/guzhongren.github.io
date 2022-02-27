@@ -1,4 +1,4 @@
-# 基于Rust的WebAssembly工程开发过程小记
+# 基于 Rust 的 WebAssembly 工程开发过程小记
 
 
 ## 初始化工程
@@ -86,7 +86,6 @@ wasm-bindgen-futures = "0.3.22"
 ```
 Rust 的依赖会在启动 Web 程序的时候自动安装。
 
-
 ## 启动程序
 
 ```
@@ -151,7 +150,7 @@ index.js  897 KiB   index  [emitted]  index
  + 2 hidden assets
 ```
 
-## 在src中新建parse.rs 并编写处理 markdown 的 rust 代码
+## 在 src 中新建 parse.rs 并编写处理 markdown 的 rust 代码
 
 ```rust
 struct Parser {
@@ -287,13 +286,12 @@ function addElement() {
   document.body.appendChild(markdown)
   const parseBtn = document.createElement('button')
   parseBtn.id = 'parse'
-  parseBtn.innerHTML = '解析markdown'
+  parseBtn.innerHTML = '解析 markdown'
   document.body.appendChild(parseBtn)
 
   const previewArea = document.createElement('div')
   previewArea.id = 'preview'
   document.body.appendChild(previewArea)
-
 
   const rust = import('../pkg/index.js')
 
@@ -307,7 +305,6 @@ function addElement() {
     })
   })
 }
-
 
 // import("../pkg/index.js").then(module => {
 //   const input = '1233'
@@ -332,13 +329,13 @@ function addElement() {
 
 ## Refs
 
-* [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床:https://sm.ms/](https://sm.ms/)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

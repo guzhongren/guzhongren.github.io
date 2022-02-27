@@ -1,4 +1,4 @@
-# Window对象的各种测试方法总结
+# Window 对象的各种测试方法总结
 
 ## 前言
 
@@ -6,16 +6,16 @@
 
 ## Window 对象测试分析
 
-window 对象有属性(`property`)和方法(`method`), 在此我们以`href`, `window.location.href` + hash 和 `postMessage`几个特性来测试， 对每个类型(property/method)将使用至少三种方法来展示，测试方法可以分为如下四类：
+window 对象有属性 (`property`) 和方法 (`method`), 在此我们以`href`, `window.location.href` + hash 和 `postMessage`几个特性来测试， 对每个类型 (property/method) 将使用至少三种方法来展示，测试方法可以分为如下四类：
 
-* delete - 在原对象window上进行测试
+* delete - 在原对象 window 上进行测试
 * Object.defineProperty - 重新定义属性
 * mockfile - mock 整个被测文件
-* spyOn - 对特定方法进行mock
+* spyOn - 对特定方法进行 mock
 
 ## 被测文件
 
-在这可以不用遵循`TDD`的流程，直接给出被测文件内容, 也可在github
+在这可以不用遵循`TDD`的流程，直接给出被测文件内容，也可在 github
 
 ```typescript
 export const changeHref = (value: string) => {
@@ -255,8 +255,8 @@ describe('multiple', () => {
 
 ## Refs
 
-* [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床:https://sm.ms/](https://sm.ms/)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
 * [3.mock-window-location](https://remarkablemark.org/blog/2018/11/17/mock-window-location/)
 * [4.jest-how-to-mock-window-location-href](https://wildwolf.name/jest-how-to-mock-window-location-href/)
 * [5.Global Object defineProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
@@ -264,8 +264,8 @@ describe('multiple', () => {
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

@@ -12,7 +12,7 @@
 ## 1 引言
 
 :(fab fa-markdown): **Markdown** 是一种用于编写结构化文档的纯文本格式。它基于电子邮件和论坛文章的格式所约定。
-它由 John Gruber (在 Aaron Swartz 的帮助下)开发，于 2004 年以语法描述和用于将 Markdown 转换为 HTML 的 Perl 脚本 (Markdown.pl) 的形式发布。
+它由 John Gruber （在 Aaron Swartz 的帮助下）开发，于 2004 年以语法描述和用于将 Markdown 转换为 HTML 的 Perl 脚本 (Markdown.pl) 的形式发布。
 
 在接下来的十年中，许多实现被开发出来。一些用脚注、表和其他文档元素的约定扩展了原始 Markdown 语法。
 有些允许 Markdown 文档以 HTML 以外的格式呈现。 像 reddit，StackOverflow 和 GitHub 这样的网站有上百万的用户在使用 Markdown。
@@ -22,8 +22,8 @@ Markdown 开始被应用于网络以外的领域，包括作者书籍、文章�
 
 我们可以把一个文档看成一系列的块，如段落、引用、列表、标题和代码块。
 
-有些块(如引号和列表)可以包含其它的块，即 **容器块**；
-其他的块(如标题和段落)则包含内联元素(如文本、链接、强调、图像、内联代码等)，即 **叶子块**。
+有些块（如引号和列表）可以包含其它的块，即 **容器块**；
+其他的块（如标题和段落）则包含内联元素（如文本、链接、强调、图像、内联代码等），即 **叶子块**。
 
 块的符号总是优先于内联元素的符号。例如：
 
@@ -281,7 +281,6 @@ func main() {
 | ~~橙色~~    | 橘子         | **胡萝卜**        |
 | 绿色         | ~~***梨子***~~ | 菠菜           |
 
-
 ## 3. 页内锚
 
 ```markdown
@@ -295,13 +294,13 @@ func main() {
 ## 4. 脚注 {#footnote}
 
 ```markdown
-这是一个基本的数字脚注[^1]
+这是一个基本的数字脚注 [^1]
 
-带有 "label" 标签的脚注[^label]
+带有 "label" 标签的脚注 [^label]
 
-下定义的脚注[^!DEF]
+下定义的脚注 [^!DEF]
 
-带有链接的脚注[^pa]
+带有链接的脚注 [^pa]
 
 [^1]: 这是一个基本的数字脚注
 [^label]: 带有 "label" 标签的脚注
@@ -309,13 +308,13 @@ func main() {
 [^!DEF]: 下定义的脚注
 ```
 
-这是一个基本的数字脚注[^1]
+这是一个基本的数字脚注 [^1]
 
-带有 "label" 标签的脚注[^label]
+带有 "label" 标签的脚注 [^label]
 
-下定义的脚注[^!DEF]
+下定义的脚注 [^!DEF]
 
-带有链接的脚注[^pa]
+带有链接的脚注 [^pa]
 
 [^1]: 这是一个基本的数字脚注
 [^label]: 带有 "label" 标签的脚注
@@ -540,7 +539,6 @@ Mixed Lists
 - item 2
 - item 3
 
-
 Really Mixed Lists
 
 - item 1
@@ -567,7 +565,6 @@ Mixed Lists
   * [X] item C
 - item 2
 - item 3
-
 
 Really Mixed Lists
 
@@ -917,5 +914,5 @@ This is the content of the admonition.
 {{% /admonition %}}
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

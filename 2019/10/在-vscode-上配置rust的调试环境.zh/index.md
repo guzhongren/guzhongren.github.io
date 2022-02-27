@@ -1,4 +1,4 @@
-# 在 VSCode 上配置Rust的调试环境
+# 在 VSCode 上配置 Rust 的调试环境
 
 
 ![Photo by Jan Kopřiva from Pexels](https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260)
@@ -6,8 +6,8 @@
 ## 插件
 
 在 VS Code 上进行 Rust 的开发，需要使用一下两个库
-* RLS(vscode搜索插件rls)
-* lldb(vscode搜索插件codelldb)
+* RLS(vscode 搜索插件 rls)
+* lldb(vscode 搜索插件 codelldb)
 
 安装很简单，不用说
 
@@ -17,12 +17,12 @@
 {
   // 使用 IntelliSense 了解相关属性。 
   // 悬停以查看现有属性的描述。
-  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  // 欲了解更多信息，请访问：https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
       "name": "Debug executable 'show_posts'", // 配置名称，将会在调试配置下拉列表中显示
-      "type": "lldb", // 调试器类型：Windows表示器使用cppvsdbg；GDB和LLDB使用cppdbg。该值自动生成
+      "type": "lldb", // 调试器类型：Windows 表示器使用 cppvsdbg；GDB 和 LLDB 使用 cppdbg。该值自动生成
       "request": "launch", // 调试方式
       "cargo": { // 运行的参数
         "args": [
@@ -47,13 +47,10 @@
 
 ![Debug](https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png)
 
-
-
-
 ## Refs
 
 [1.https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

@@ -1,12 +1,12 @@
 # Config ssh to Keychina
 
 
-## 将生成的ssh 私钥添加到 Mac 的keychain 中， 如果是其他操作系统，可忽略此步骤
+## 将生成的 ssh 私钥添加到 Mac 的 keychain 中， 如果是其他操作系统，可忽略此步骤
 
 ```shell
 $ ssh-add -K .ssh/is_rsa
 ```
-## 将登录信息配置到.ssh/config中
+## 将登录信息配置到。ssh/config 中
 
 ```shell
 $ touch ~/.ssh/config
@@ -27,7 +27,6 @@ $ ssh myvm
 
 <https://blog.infox.ren/2019/10/24/ssh-guide/>
 
-
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

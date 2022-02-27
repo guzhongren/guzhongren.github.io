@@ -1,4 +1,4 @@
-# Golang 依赖注入(Dependency Injection)
+# Golang 依赖注入 (Dependency Injection)
 
 
 # Dependency Injection 🧪
@@ -32,9 +32,9 @@ go mod init dependency-injection
 
 ```go
 func TestGreet(t *testing.T) {
-	// 申明 buffer，准备接受数据， 因为bytes.Buffer， 重点：bytes.Buffer实现了 io.Writer
+	// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer
 	buffer := bytes.Buffer{}
-	// 将buffer 传入，此时就是依赖注入的入口，
+	// 将 buffer 传入，此时就是依赖注入的入口，
 	Greet(&buffer, "chris")
 	// 获取程序运行的结果
 	got := buffer.String()
@@ -60,7 +60,6 @@ func Greet(w io.Writer, name string) {
 测试需要拿到打印的内容，就需要将内容用标准输出；当然可以变相的先用其他打印函数将结果打印出来，然后再将结果 return 出去，
 在测试中，接受返回值，再比较；这样做不标准而已，学了今天内容其实就可以用 DI 来解决了。
 
-
 ## 运行测试
 
 * 基本测试
@@ -75,11 +74,10 @@ ok      dependency-injection    0.006s
 
 基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。
 
-
 ## Refs
 
 [1.https://golang.google.cn/](https://golang.google.cn/)
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

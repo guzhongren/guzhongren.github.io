@@ -1,4 +1,4 @@
-# Js数据精度之521.3*100
+# Js 数据精度之 521.3*100
 
 
 ## 原罪
@@ -30,11 +30,11 @@
 
 为什么会是这样？
 
-首先，十进制的0.1和0.2都会被转换成二进制，但由于浮点数用二进制表达时是无穷的
+首先，十进制的 0.1 和 0.2 都会被转换成二进制，但由于浮点数用二进制表达时是无穷的
 
 ```js
-0.1 -> 0.0001100110011001...(无限)
-0.2 -> 0.0011001100110011...(无限)
+0.1 -> 0.0001100110011001...（无限）
+0.2 -> 0.0011001100110011...（无限）
 ```
 
 IEEE 754 标准的 64 位双精度浮点数的小数部分最多支持 53 位二进制位，所以两者相加之后得到二进制为：
@@ -78,15 +78,14 @@ IEEE 754 标准的 64 位双精度浮点数的小数部分最多支持 53 位二
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助
@@ -94,5 +93,5 @@ IEEE 754 标准的 64 位双精度浮点数的小数部分最多支持 53 位二
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
 
-> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+> 使用此 [文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig) 进行校验： `gpg --verify PayForGuzhongren.svg.sig`
 

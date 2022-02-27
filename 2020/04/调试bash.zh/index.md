@@ -1,4 +1,4 @@
-# 调试bash
+# 调试 bash
 
 
 最近在做 DevOps 的工作，主要是做一个蓝绿部署的方案，在这部分中涉及到了写 shell， Shell 作为一种程序语言，那么对于开发人员肯定是要在部署到正式或者生产环境前进行调试的，在 coding 过程中，发现 shell 的调试其实和平时写的 JS, Java, Rust 等的调试不同，Shell 只能看你每一步执行的语句，至于具体执行是否正确，得由 coding 的人来写正确；好吧，有点难理解，那么我来举个🌰；
@@ -52,15 +52,15 @@ sh -x run.sh
 
 ## Refs
 
-* [1.博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床:https://sm.ms/](https://sm.ms/)
-* [3.编写可靠bash脚本的一些技巧:https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q](https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
+* [3. 编写可靠 bash 脚本的一些技巧：https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q](https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q)
 *
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

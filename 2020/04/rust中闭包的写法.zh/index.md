@@ -1,9 +1,9 @@
-# Rust中闭包的写法
+# Rust 中闭包的写法
 
 
 在鲁迅的文章《孔乙己》中说，茴香豆的茴字有好几种写法，记得没错的话应该是四种，具体哪四种请参考下文引用。
 
-在Rust 中，闭包也有好几种写法，今天就来总结一哈。
+在 Rust 中，闭包也有好几种写法，今天就来总结一哈。
 
 ## 闭包的写法
 
@@ -34,7 +34,7 @@
 
 ## 重点说明
 
-> 闭包定义会为每个参数和返回值类型推导一个具体的类型，但是不能推导两次(不能让俩次或多次使用是不同类型的参数进行调用)
+> 闭包定义会为每个参数和返回值类型推导一个具体的类型，但是不能推导两次（不能让俩次或多次使用是不同类型的参数进行调用）
 
 语言描述有点模糊，那么用代码说明问题
 
@@ -44,17 +44,17 @@
 
  let s = example_closure(String::from("hello"));
  println!("第一次{}", s);
- // 如果参数为数字5 ，则报错
+ // 如果参数为数字 5 ，则报错
  // let n = example_closure(5);
  let n = example_closure(5.to_string());
  println!("第二次{}", n);
 ```
 
-在上面我们定义了一个参数为x, 返回值为x的闭包，但是x的类型我们并没有指定。
+在上面我们定义了一个参数为 x, 返回值为 x 的闭包，但是 x 的类型我们并没有指定。
 
-经过第一次调用，传入参数类型为字符串， 得到的结果s也为字符串 `hello`,
+经过第一次调用，传入参数类型为字符串， 得到的结果 s 也为字符串 `hello`,
 
-第二次调用如果传入参数为数字5， 那么程序就会报错，如下
+第二次调用如果传入参数为数字 5， 那么程序就会报错，如下
 
 ```shell
 error[E0308]: mismatched types
@@ -67,24 +67,23 @@ error[E0308]: mismatched types
    |                             help: try using a conversion method: `5.to_string()`
 
 ```
-如果将数字5转换为字符串5，那么程序就运行正常。
+如果将数字 5 转换为字符串 5，那么程序就运行正常。
 
 ## 总结
 
-Rust的闭包感觉和js的函数的写法很像，感觉到了Rust又借鉴了部分js的语法。
-
+Rust 的闭包感觉和 js 的函数的写法很像，感觉到了 Rust 又借鉴了部分 js 的语法。
 
 ## Refs
 
-* [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床：https://sm.ms/](https://sm.ms/)
-* [3.茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html](https://zhidao.baidu.com/question/1448503662321920660.html)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
+* [3. 茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html](https://zhidao.baidu.com/question/1448503662321920660.html)
 * [4.Rust 闭包：https://doc.rust-lang.org/rust-by-example/fn/closures.html](https://doc.rust-lang.org/rust-by-example/fn/closures.html)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

@@ -3,17 +3,17 @@
 
 ## 缘起
 
-在2020年公司的最后一天(12月29号)，客户也放了圣诞节和新年的假，我们还在公司吭哧吭哧写着代码，因为我们做的是支付相关的业务，这块比较敏感，所以在客户放假期间，禁止一切代码部署到生产环境。而我就在这一天给自己加戏了。
+在 2020 年公司的最后一天 (12 月 29 号），客户也放了圣诞节和新年的假，我们还在公司吭哧吭哧写着代码，因为我们做的是支付相关的业务，这块比较敏感，所以在客户放假期间，禁止一切代码部署到生产环境。而我就在这一天给自己加戏了。
 
-在做关于使用Sumo Logic 做Dashboard的卡，正值下午，感觉没睡醒，因为要在UAT 环境做测试，不经意间点开了一个pipeline, 然后点了部署按钮，也没注意，以为是部署到UAT， 没想到，pipeline 挂了！pipeline 挂了！ 再次跑了一次测试，还是挂了，仔细一看，`env: prod`? 啊？ 明明跑的UAT 为撒是 PROD, 内心的那个马啊，此处省去一万字。
+在做关于使用 Sumo Logic 做 Dashboard 的卡，正值下午，感觉没睡醒，因为要在 UAT 环境做测试，不经意间点开了一个 pipeline, 然后点了部署按钮，也没注意，以为是部署到 UAT， 没想到，pipeline 挂了！pipeline 挂了！ 再次跑了一次测试，还是挂了，仔细一看，`env: prod`? 啊？ 明明跑的 UAT 为撒是 PROD, 内心的那个马啊，此处省去一万字。
 
-然后报告了组里的TL兼安全员，按照流程，看了日志，商讨了解决方案，心惊胆战的终于在下班前成功的让 pipeline 绿了。将生产环境的程序部署正确。
+然后报告了组里的 TL 兼安全员，按照流程，看了日志，商讨了解决方案，心惊胆战的终于在下班前成功的让 pipeline 绿了。将生产环境的程序部署正确。
 
 ## 事发生了，下次怎么避免呢
 
 ### 不要相信自己
 
-再拿上面这件事说，客户都code freeze了，但我们作为人并不能通过管理自己来达到不能部署代码到生产环境这种事，但是工具可以，只要设定了，工具就回毫无疑问，毫无感情的执行。
+再拿上面这件事说，客户都 code freeze 了，但我们作为人并不能通过管理自己来达到不能部署代码到生产环境这种事，但是工具可以，只要设定了，工具就回毫无疑问，毫无感情的执行。
 
 ### 不要相信别人
 
@@ -27,13 +27,12 @@
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

@@ -5,7 +5,7 @@
 
 设计评审过程中，需要各种文档或者其他资料来辅助，在此总结一番，以供后续查阅。
 
-  * 产品PRD：当有疑问时可以拿出来给评审者查看
+  * 产品 PRD：当有疑问时可以拿出来给评审者查看
   * 设计分析文档：用来沟通关于行业内对于同类型功能的设计优缺点的分析
   * 数据分析文档：用来展示当前版本数据上的表现和问题，以及可以帮助进行下一步改善
   * 功能逻辑图：复杂功能可以使用图形化表现功能逻辑，便于评审者理解
@@ -17,18 +17,15 @@
 
 [https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b](https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b)
 
-
-
-
 ## Refs
 
-* [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床：https://sm.ms/](https://sm.ms/)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

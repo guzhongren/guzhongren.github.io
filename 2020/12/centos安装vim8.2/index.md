@@ -1,16 +1,16 @@
-# Centos安装vim8.2
+# Centos 安装 vim8.2
 
 
-## 删除已有的vim
+## 删除已有的 vim
 
 ```shell
 yum remove vim
 ```
 
-## 下载最新的 vim 到你的centos上
+## 下载最新的 vim 到你的 centos 上
 
-vim官网：https://www.vim.org/
-Vim8.2下载：https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2
+vim 官网：https://www.vim.org/
+Vim8.2 下载：https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2
 
 ```shell
 wget https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2
@@ -62,7 +62,7 @@ sudo make install
  tencent@VM-0-9-centos  ~  vim --version                               ✔  242  23:14:30
 VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2020 23:04:31)
 编译者 tencent@VM-0-9-centos
-巨型版本 无图形界面。  可使用(+)与不可使用(-)的功能:
+巨型版本 无图形界面。  可使用 (+) 与不可使用 (-) 的功能：
 +acl               -farsi             -mouse_sysmouse    -tag_old_static
 +arabic            +file_in_path      +mouse_urxvt       -tag_any_white
 +autocmd           +find_in_path      +mouse_xterm       -tcl
@@ -95,26 +95,25 @@ VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2020 23:04:31)
 +eval              -mouse_jsbterm     -sun_workshop      -xterm_clipboard
 +ex_extra          +mouse_netterm     +syntax            -xterm_save
 +extra_search      +mouse_sgr         +tag_binary
-     系统 vimrc 文件: "$VIM/vimrc"
-     用户 vimrc 文件: "$HOME/.vimrc"
- 第二用户 vimrc 文件: "~/.vim/vimrc"
-      用户 exrc 文件: "$HOME/.exrc"
+     系统 vimrc 文件："$VIM/vimrc"
+     用户 vimrc 文件："$HOME/.vimrc"
+ 第二用户 vimrc 文件："~/.vim/vimrc"
+      用户 exrc 文件："$HOME/.exrc"
        defaults file: "$VIMRUNTIME/defaults.vim"
-         $VIM 预设值: "/usr/local/share/vim"
-编译方式: gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
-链接方式: gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf  -ldl
+         $VIM 预设值："/usr/local/share/vim"
+编译方式：gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=1
+链接方式：gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf  -ldl
 
 ```
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

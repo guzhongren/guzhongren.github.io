@@ -20,9 +20,9 @@
 #!/bin/bash
 # 关闭防火墙
 systemctl stop firewalld && systemctl disable firewalld
-# 关闭SELINUX
+# 关闭 SELINUX
 setenforce 0 && sed -i "s/SELINUX=enforcing/SELINUX=disabled/g" /etc/selinux/config
-# 关闭Swap
+# 关闭 Swap
 swapoff -a && sed -i "s/\/dev\/mapper\/centos-swap/\#\/dev\/mapper\/centos-swap/g" /etc/fstab
 
 [root@master ~]# vim /etc/sysctl.d/k8s.conf
@@ -66,7 +66,6 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service 
 }
 EOF
 
-
 {
   "registry-mirrors": ["https://gmjjwogo.mirror.aliyuncs.com"],
   "exec-opts": ["native.cgroupdriver=systemd"]
@@ -76,7 +75,7 @@ EOF
 [root@master ~]# docker info |grep Cgroup
 Cgroup Driver: systemd
 
-[root@master ~]# # kube-proxy开启ipvs的前置条件
+[root@master ~]# # kube-proxy 开启 ipvs 的前置条件
 [root@master ~]# cat > /etc/sysconfig/modules/ipvs.modules <<EOF
 #!/bin/bash
 modprobe -- ip_vs
@@ -95,8 +94,8 @@ nf_defrag_ipv4         12729  1 nf_conntrack_ipv4
 nf_conntrack          133095  7 ip_vs,nf_nat,nf_nat_ipv4,xt_conntrack,nf_nat_masquerade_ipv4,nf_conntrack_netlink,nf_conntrack_ipv4
 libcrc32c              12644  4 xfs,ip_vs,nf_nat,nf_conntrack
 
-[root@master ~]# # 安装kubernetes初始化工具
-[root@master ~]# # 使用阿里云的kubernetes源
+[root@master ~]# # 安装 kubernetes 初始化工具
+[root@master ~]# # 使用阿里云的 kubernetes 源
 [root@master ~]# cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
 name=Kubernetes
@@ -106,7 +105,7 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-[root@master ~]# # 安装k8s 工具 1.15版本
+[root@master ~]# # 安装 k8s 工具 1.15 版本
 [root@master ~]# yum install -y kubelet kubeadm kubectl
 
 Installed:
@@ -151,7 +150,6 @@ kube-apiserver:${KUBE_VERSION}
 pause:${KUBE_PAUSE_VERSION}
 etcd:${ETCD_VERSION}
 coredns:${CORE_DNS_VERSION})
-
 
 for imageName in ${images[@]} ; do
   docker pull $ALIYUN_URL/$imageName
@@ -306,7 +304,6 @@ images=(kube-proxy:${KUBE_VERSION}
 pause:${KUBE_PAUSE_VERSION}
 coredns:${CORE_DNS_VERSION})
 
-
 for imageName in ${images[@]} ; do
   docker pull $ALIYUN_URL/$imageName
   docker tag  $ALIYUN_URL/$imageName $GCR_URL/$imageName
@@ -361,12 +358,12 @@ Run 'kubectl get nodes' on the control-plane to see this node join the cluster.
 ## master 节点操作
 
 ```shell
-[root@master ~]# #将master节点也作为工作节点进行pod部署
+[root@master ~]# #将 master 节点也作为工作节点进行 pod 部署
 [root@master ~]# kubectl taint nodes master node-role.kubernetes.io/master-
 node/master untainted
 ```
 
-## 打label
+## 打 label
 
 ```shell
 [root@master temp]# kubectl label node master nodename=master
@@ -492,18 +489,16 @@ ingress.extensions "nginx" deleted
 
 ```
 
-
-
 ## Refs
 
-* [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.图床：https://sm.ms/](https://sm.ms/)
-* [3.原文：https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj](https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [2. 图床：https://sm.ms/](https://sm.ms/)
+* [3. 原文：https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj](https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 

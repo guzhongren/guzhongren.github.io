@@ -1,16 +1,15 @@
-# 使用Cypress创建测试镜像并完成E2E测试
+# 使用 Cypress 创建测试镜像并完成 E2E 测试
 
 
 ## 缘由
 
-最近在做一个 Buildkite 的 Dashboard 的项目 [Powerboard](https://github.com/guzhongren/Powerboard)，项目是托管在 GitHub 的 Git Pages 上的; 项目只是一个纯前端项目，且 E2E 测试是用 [Cypress](https://www.cypress.io/)构建的；如果要进行 E2E 测试一般情况都是对着部署在 Git Pages 上的网站直接测试，而且也是这么做的😄。
+最近在做一个 Buildkite 的 Dashboard 的项目 [Powerboard](https://github.com/guzhongren/Powerboard)，项目是托管在 GitHub 的 Git Pages 上的；项目只是一个纯前端项目，且 E2E 测试是用 [Cypress](https://www.cypress.io/) 构建的；如果要进行 E2E 测试一般情况都是对着部署在 Git Pages 上的网站直接测试，而且也是这么做的😄。
 
 ## 痛点
 
 ### 测试滞后
 
 这么做肯定是有问题的，产品都上线了才做测试，肯定已经迟了；如果程序有问题，那么就会影响所有用户。这种情况应该算是 P1 级别的产品事故，对用户来说简直就是灾难。应该在部署之前就应该完成 E2E 测试，如果测试通过不了，就不应该部署代码。所以测试应该前移。
-
 
 ## 解决方案
 
@@ -30,7 +29,7 @@ cypress/included 可以让我们挂载 cypress 的测试脚本，然后自动执
 
 ### 构建应用镜像
 
-在测试之前需要将应用构建好并部署好，我们可以用 Node 镜像打包应用，并利用容器的多阶段构建([multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)) 完成应用轻量化构建，并部署在 [Nginx](https://hub.docker.com/_/nginx) 中。
+在测试之前需要将应用构建好并部署好，我们可以用 Node 镜像打包应用，并利用容器的多阶段构建 ([multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)) 完成应用轻量化构建，并部署在 [Nginx](https://hub.docker.com/_/nginx) 中。
 
 ```yaml
 FROM node:17-alpine as distPackage
@@ -89,19 +88,18 @@ services:
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Cypress: https://www.cypress.io/](https://www.cypress.io/)
 * [cypress/included: https://hub.docker.com/r/cypress/included](https://hub.docker.com/r/cypress/included)
 * [GitHub Actions: https://docs.github.com/en/actions](https://docs.github.com/en/actions)
 * [Powerboard: https://github.com/guzhongren/Powerboard](https://github.com/guzhongren/Powerboard)
-
 
 ## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助
@@ -109,5 +107,5 @@ services:
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
 
-> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+> 使用此 [文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig) 进行校验： `gpg --verify PayForGuzhongren.svg.sig`
 

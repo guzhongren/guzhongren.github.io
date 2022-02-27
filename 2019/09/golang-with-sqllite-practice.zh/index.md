@@ -28,14 +28,14 @@
 
 ## 简介
 
-[SQLite](about:blank) 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用SQLLite 也相当简单，只需要安装 SQLLite 的Golang  包即可使用；
+[SQLite](about:blank) 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用 SQLLite 也相当简单，只需要安装 SQLLite 的 Golang  包即可使用；
 Golang 就不多介绍了，能看到这个肯定对 [Golang](https://golang.google.cn/) 有一定的了解。
 
 仓库地址：<https://github.com/AndorLab/golang-sqllite>
 
 ## 目标
 
-使用 SQLLite 通过构建一个社区用户表，包含如下字段; 通过 SQLLite 的 API 实现对社区用户表进行增删改查。
+使用 SQLLite 通过构建一个社区用户表，包含如下字段；通过 SQLLite 的 API 实现对社区用户表进行增删改查。
 
 | 序号 | 字段     | 类型   | 说明     |
 | ---- | -------- | ------ | -------- |
@@ -146,7 +146,7 @@ func initDB() {
 
 ### 用户模型构建及原子操作
 
-构建现代程序，强调程序的健壮性，封装就是比较重要的；用 MVC、 MVVM 的观点，我们需要有一个 Model 来提供对象的原子操作。在这，我们将用户抽象为UserModel，对用户的增删改查封装到 *insert*、*dleete*、*update* 和 *query*。
+构建现代程序，强调程序的健壮性，封装就是比较重要的；用 MVC、 MVVM 的观点，我们需要有一个 Model 来提供对象的原子操作。在这，我们将用户抽象为 UserModel，对用户的增删改查封装到 *insert*、*dleete*、*update* 和 *query*。
 
 #### 用户模型
 
@@ -238,7 +238,7 @@ func (u UserModel) query() ([]UserModel, error) {
   initDB()
 ```
 
-调用用户操作的增删改查并打印结果, 对于不同的操作，我们应该有不同的数据，所以在程序中会有 *user*、和 *updateUser* 两个对象
+调用用户操作的增删改查并打印结果，对于不同的操作，我们应该有不同的数据，所以在程序中会有 *user*、和 *updateUser* 两个对象
 
 ```golang
 # server.go
@@ -251,7 +251,7 @@ func (u UserModel) query() ([]UserModel, error) {
   result, err := user.insert()
   id, err := result.LastInsertId()
   checkErr(id, err)
-  log.Info("增：操作数据的id:", id)
+  log.Info("增：操作数据的 id:", id)
   // update
   updateUser := UserModel{
   	skills: `golang`,
@@ -275,7 +275,7 @@ func (u UserModel) query() ([]UserModel, error) {
 ```shell
 $ make run
 go run *.go
-{"time":"2019-08-31T14:21:48.941164+08:00","level":"INFO","prefix":"-","file":"server.go","line":"21","message":"增：操作数据的id:1"}
+{"time":"2019-08-31T14:21:48.941164+08:00","level":"INFO","prefix":"-","file":"server.go","line":"21","message":"增：操作数据的 id:1"}
 {"time":"2019-08-31T14:21:48.941842+08:00","level":"INFO","prefix":"-","file":"server.go","line":"27","message":"改：影响的行数：1"}
 {"time":"2019-08-31T14:21:48.942034+08:00","level":"INFO","prefix":"-","file":"server.go","line":"31","message":"查：[{1 谷中仁 西安 golang 1567232508}]"}
 {"time":"2019-08-31T14:21:48.942599+08:00","level":"INFO","prefix":"-","file":"server.go","line":"34","message":"删：1"}
@@ -284,7 +284,7 @@ go run *.go
 
 ## 总结
 
-SQLLite 对开发者非常友好，不用安装在机器上，只要指定SQLLite的驱动和数据库存储文件即可对 SQLLite 数据库进行操作；Golang 作为比较流行的语言，对数据库也非常友好，提供了基本的数据库接口，
+SQLLite 对开发者非常友好，不用安装在机器上，只要指定 SQLLite 的驱动和数据库存储文件即可对 SQLLite 数据库进行操作；Golang 作为比较流行的语言，对数据库也非常友好，提供了基本的数据库接口，
 至于用户需要什么样的数据库，自己开发对应的数据库驱动即可。当然在 GitHub 已经有很多开源爱好者开发了比较流行的数据库的驱动可以直接拿来用。
 
 SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速入手。
@@ -295,17 +295,15 @@ SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速�
 
 原文链接：<https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/>
 
-
-
 ## Refs
 
-* [1.博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
-* [2.原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3](https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3)
+* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
+* [2. 原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3](https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3)
 
 ## Disclaimer
 
-本文仅代表个人观点，与[Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 
