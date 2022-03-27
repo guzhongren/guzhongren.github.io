@@ -190,10 +190,9 @@ jobs:
  - 它的优势是: `Open-Source`, `Free`, `Self-hosted` data and Server, `Easy to integrate`。
 
 ## Refs
- Get Down to Business: Why the Web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/
- 为什么速度很重要？: https://web.dev/i18n/zh/why-speed-matters
- Lighthouse: https://developers.google.cn/web/tools/lighthouse
-
+ - Get Down to Business: Why the Web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/
+ - 为什么速度很重要？: https://web.dev/i18n/zh/why-speed-matters
+ - Lighthouse: https://developers.google.cn/web/tools/lighthouse
 ## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
