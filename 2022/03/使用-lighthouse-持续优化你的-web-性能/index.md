@@ -27,9 +27,11 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 
 目前市场上 Web 性能度量的产品大多都是 `Sass` 产品，使用其产品我们只能得到一个运行完性能测试的可视化结果页面，但是不能持续的记录 Web 网页性能的改进记录，不能很好的量化一个 Web 产品性能的生命周期。当然也有实现历史记录的 Web 性能测试工具，例如 [treo](https://treo.sh/)
 ### 费用
-- 开源免费的 Web 性能测试工具有不少，但是用起来可能没有那么爽；如果需要更多的特性，如持续记录 Web 网页性能，一般只有商业产品会支持，而且收费还不低。
- CI 集成困难
-- 如前面所说，很多工具要么是本地不能运行，要么就是 Sass 产品，不能很好的与 Pipeline 集成， 导致 Web 性能结果反馈周期长、工程效率低等问题。
+
+开源免费的 Web 性能测试工具有不少，但是用起来可能没有那么爽；如果需要更多的特性，如持续记录 Web 网页性能，一般只有商业产品会支持，而且收费还不低。
+### CI 集成困难
+
+如前面所说，很多工具要么是本地不能运行，要么就是 Sass 产品，不能很好的与 Pipeline 集成， 导致 Web 性能结果反馈周期长、工程效率低等问题。
 ## Lighthouse
 
  > Lighthouse 是一个开源的、自动化的工具，用以提高网页质量。你可以在任何网页上运行它，公开的或需要认证的。它对性能、可访问性、渐进式web应用程序、SEO 等进行审计。
@@ -48,7 +50,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 > 为每个提交自动化运行Lighthouse，查看更改，并防止回归
 > -- [GoogleChrome/lighthouse-ci](https://github.com/GoogleChrome/lighthouse-ci)
 
-`Lighthouse CI` 是 Google Chrome 团队开发的一套可以让持续运行、保存、检索和对Lighthouse结果进行`断言`变得尽可能简单的工具。可以很方便的集成在 CI 上。
+`Lighthouse CI` 是 `Google Chrome` 团队开发的一套可以让持续运行、保存、检索和对Lighthouse结果进行`断言`变得尽可能简单的工具。可以很方便的集成在 CI 上。
 
 #### 使用
 `LHCI` 提供 `npm` 安装包，可以很好的在 Pipeline 上集成，只需要在对应目录下运行 `autorun` 命令即可，命令如下
@@ -85,8 +87,6 @@ on:
   push:
     branches:
       - main
-  schedule:
-    - cron: '0 0 * * *'
 jobs:
   lhci:
     name: Lighthouse
@@ -182,11 +182,11 @@ jobs:
 ## 总结
 
  - 对于：开发人员、技术领导或者市场营销人员
- - 他们想：持续量化并展示 Web 页面的 #性能
+ - 他们想：`持续量化`并展示 Web 页面的`性能`
  - 这个：Lighthouse CI
  - 是一个：由 `Google` 编写的一套工具，可以持续运行、保存、检索并对 `Lighthouse` 结果进行断言变得尽可能简单。它可以评估 Web 应用和页面，以及从开发的最佳实践中收集性能指标和洞见等信息
  - 它可以：测试你的 Web 页面，得到 Web 页面的 `Performance` 、 `Accessibility` 、 `Best-Practices` 、 `SEO` 和 `PWA` 在不同`设备`上的分数, 这些分数可以用于分析产品性能，帮助提升用户转化率等
- - 不同于：[treo](https://treo.sh/)
+ - 不同于：[treo](https://treo.sh/) 和其他一些性能测试工具
  - 它的优势是: `Open-Source`, `Free`, `Self-hosted` data and Server, `Easy to integrate`。
 ## Refs
 
