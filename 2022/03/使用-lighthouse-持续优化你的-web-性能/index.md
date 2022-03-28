@@ -35,9 +35,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 ## Lighthouse
 
  > Lighthouse 是一个开源的、自动化的工具，用以提高网页质量。你可以在任何网页上运行它，公开的或需要认证的。它对性能、可访问性、渐进式web应用程序、SEO 等进行审计。
-
- 你可以在 `Chrome DevTools`、 命令行甚至是 `Node` 模块中运行 `Lighthouse`.
- 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。
+ > 你可以在 `Chrome DevTools`、 命令行甚至是 `Node` 模块中运行 `Lighthouse`。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。
 
  使用方法非常简单，可以看一下我对我的开源项目 `Powerboard` 审计的结果。
  ![Lighthouse-Chrome-DevTools](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp)
@@ -186,7 +184,7 @@ jobs:
  - 这个：Lighthouse CI
  - 是一个：由 `Google` 编写的一套工具，可以持续运行、保存、检索并对 `Lighthouse` 结果进行断言变得尽可能简单。它可以评估 Web 应用和页面，以及从开发的最佳实践中收集性能指标和洞见等信息
  - 它可以：测试你的 Web 页面，得到 Web 页面的 `Performance` 、 `Accessibility` 、 `Best-Practices` 、 `SEO` 和 `PWA` 在不同`设备`上的分数, 这些分数可以用于分析产品性能，帮助提升用户转化率等
- - 不同于：[treo](https://treo.sh/) 和其他一些性能测试工具
+ - 不同于：[treo](https://treo.sh/) 或者其他一些 Web 性能测试工具
  - 它的优势是: `Open-Source`, `Free`, `Self-hosted` data and Server, `Easy to integrate`。
 ## Refs
 
