@@ -1,12 +1,238 @@
-<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>性能优化 Accept-Encoding - 谷中仁的博客</title><meta name=Description content="借助 Accept-Encoding/Content-Encoding 优化网络请求"><meta property="og:title" content="性能优化 Accept-Encoding"><meta property="og:description" content="借助 Accept-Encoding/Content-Encoding 优化网络请求"><meta property="og:type" content="article"><meta property="og:url" content="https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:published_time" content="2021-10-20T21:43:03+08:00"><meta property="article:modified_time" content="2021-10-20T21:43:03+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://guzhongren.github.io"><meta name=twitter:title content="性能优化 Accept-Encoding"><meta name=twitter:description content="借助 Accept-Encoding/Content-Encoding 优化网络请求"><meta name=application-name content="LoveIt"><meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/><link rel=prev href=https://guzhongren.github.io/2021/10/container-image-scanner-trivy/><link rel=next href=https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"性能优化 Accept-Encoding","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2021\/10\/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding\/"},"genre":"posts","keywords":"Performance, GZIP, Accept-Encoding","wordcount":2665,"url":"https:\/\/guzhongren.github.io\/2021\/10\/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding\/","datePublished":"2021-10-20T21:43:03+08:00","dateModified":"2021-10-20T21:43:03+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"借助 Accept-Encoding/Content-Encoding 优化网络请求"}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>所有文章 </a><a class=menu-item href=/tags/>标签 </a><a class=menu-item href=/categories/>分类 </a><a class=menu-item href=/geekmd/>GeekMd </a><a class=menu-item href=/slides/>Slides </a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" rel="noopener noreffer" target=_blank>知识图谱 </a><a class=menu-item href=/about/>关于 </a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
-<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ selected>简体中文</option></select>
-</a><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/posts/>所有文章</a><a class=menu-item href=/tags/>标签</a><a class=menu-item href=/categories/>分类</a><a class=menu-item href=/geekmd/>GeekMd</a><a class=menu-item href=/slides/>Slides</a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" rel="noopener noreffer" target=_blank>知识图谱</a><a class=menu-item href=/about/>关于</a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
-<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
-<select class=language-select onchange="location=this.value;"><option value=/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">性能优化 Accept-Encoding</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/web/><i class="far fa-folder fa-fw"></i>Web</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-20>2021-10-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2665 字&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div></div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png title="借助 Accept-Encoding/Content-Encoding 优化网络请求"></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#以前的网页请求>以前的网页请求</a></li><li><a href=#人类总是在追求快更快>人类总是在追求快，更快</a></li><li><a href=#内容协商的基本原则>内容协商的基本原则</a><ul><li><a href=#内容协商类别>内容协商类别</a></li><li><a href=#服务端驱动型内容协商机制流程>服务端驱动型内容协商机制流程</a><ul><li><a href=#用于启动服务端驱动型内容协商标准消息头>用于启动服务端驱动型内容协商标准消息头</a></li><li><a href=#vary-响应首部>Vary 响应首部</a></li></ul></li><li><a href=#代理驱动型内容协商机制>代理驱动型内容协商机制</a></li></ul></li><li><a href=#accept-encoding>Accept-Encoding</a><ul><li><a href=#压缩的好处>压缩的好处</a></li><li><a href=#gzip-的缺点>Gzip 的缺点</a></li><li><a href=#gzip-是如何压缩的>Gzip 是如何压缩的</a></li><li><a href=#语法>语法</a></li><li><a href=#示例>示例</a></li><li><a href=#浏览器兼容性>浏览器兼容性</a></li></ul></li><li><a href=#最佳实践>最佳实践</a></li><li><a href=#refs>Refs</a></li><li><a href=#disclaimer>Disclaimer</a></li><li><a href=#赞助>赞助</a></li></ul></nav></div></div><div class=content id=content><h2 id=以前的网页请求>以前的网页请求</h2><div class=mermaid id=id-1></div><h2 id=人类总是在追求快更快>人类总是在追求快，更快</h2><p>随着带宽和基础设施的快速发展，网页显示速度也有迫切需求，随之，就出现了各种各样加速显示网页的技术。</p><div class="details admonition tip open"><div class="details-summary admonition-title"><i class="icon fas fa-lightbulb fa-fw"></i>HTTP compression<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><strong>HTTP compression</strong> is a capability that can be built into web servers and web clients to improve transfer speed and bandwidth utilization. &ndash;wikipedia</div></div></div><div class="details admonition tip open"><div class="details-summary admonition-title"><i class="icon fas fa-lightbulb fa-fw"></i>Content Negotiation<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><p>In HTTP, content negotiation is the mechanism that is used for serving different representations of a resource to the same URI to help the user agent specify which representation is best suited for the user (for example, which document language, which image format, or which content encoding).</p><p>在 HTTP 协议中，内容协商是这样一种机制，通过为同一 URI 指向的资源提供不同的展现形式，可以使用户代理选择与用户需求相适应的最佳匹配（例如，文档使用的自然语言，图片的格式，或者内容编码形式）。</p></div></div></div><h2 id=内容协商的基本原则>内容协商的基本原则</h2><blockquote><p>一份特定的文件称为一项资源。当客户端获取资源的时候，会使用其对应的 URL 发送请求。服务器通过这个 URL 来选择它指向的资源的某一变体——每一个变体称为一种展现形式——然后将这个选定的展现形式返回给客户端。整个资源，连同它的各种展现形式，共享一个特定的 URL 。当一项资源被访问的时候，特定展现形式的选取是通过内容协商机制来决定的，并且客户端和服务器端之间存在多种协商方式。</p></blockquote><p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13789/HTTPNego.png data-srcset="https://mdn.mozillademos.org/files/13789/HTTPNego.png, https://mdn.mozillademos.org/files/13789/HTTPNego.png 1.5x, https://mdn.mozillademos.org/files/13789/HTTPNego.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13789/HTTPNego.png title="Content Negotiation Principle"></p><h3 id=内容协商类别>内容协商类别</h3><div class=mermaid id=id-2></div><p>随着时间的推移，也有其他一些内容协商的提案被提出来，比如透明内容协商以及 Alternates 首部。但是它们都没有获得人们的认可从而被遗弃。</p><h3 id=服务端驱动型内容协商机制流程>服务端驱动型内容协商机制流程</h3><div class=mermaid id=id-3></div><p>当客户端携带消息头（header）发送请求给服务端后，服务端使用消息头里的指定的可接受的压缩方式，自己通过内部特定的算法，找出最佳的压缩方案，然后将数据压缩并返回给客户端。</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png data-srcset="https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png, https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png 1.5x, https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png title=HTTPNegoServer></p><h4 id=用于启动服务端驱动型内容协商标准消息头>用于启动服务端驱动型内容协商标准消息头</h4><div class=mermaid id=id-4></div><p>这些消息头都是可以带有 Q 因子的清单；比如</p><table><thead><tr><th>Item</th><th>Example</th><th>Note</th></tr></thead><tbody><tr><td>Accept</td><td></td><td>在获取 HTML 页面、图片文件、视频文件或者是脚本文件的时候，无论是通过在地址栏中输入资源地址来获取还是通过<code>&lt;img></code>、<code>&lt;video></code> 或 <code>&lt;audio></code> 元素引用都是不一样的。浏览器可以自由使用它们认为最为合适的首部值；</td></tr><tr><td>Accept-Charset</td><td><code>ISO-8859-1,utf-8;q=0.7,*;q=0.7</code></td><td>如今 UTF-8 编码已经得到了广泛的支持，成为首选的字符编码类型，为了通过减少基于配置信息的信息熵来更好地保护隐私信息， 大多数浏览器会将 Accept-Charset 首部移除：Internet Explorer 8、Safari 5、Opera 11 以及 Firefox 10 都已经不再发送该首部。</td></tr><tr><td>Accept-Encoding</td><td><code>br, gzip;q=0.8</code></td><td>将 HTTP 消息进行压缩是一种最重要的提升 Web 站点性能的方法。该方法会减小所要传输的数据量的大小，节省可用带宽。浏览器总是会发送该首部，服务器则应该配置为接受它，并且采用一定的压缩方案。</td></tr><tr><td>Accept-Language</td><td><code>de, en;q=0.7</code></td><td>用户代理的图形界面上所采用的语言通常可以用来设置为默认值，但是大多数浏览器允许设置不同优先级的语言选项。</td></tr></tbody></table><p>某些情况下，服务器会使用 <a href=https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary target=_blank rel="noopener noreffer">Vary</a> 消息头来说明实际上哪些消息头被用作内容协商的参考依据（确切来说是与之相关的响应消息头），这样可以使 <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching target=_blank rel="noopener noreffer">缓存</a> 的运作更有效。</p><h4 id=vary-响应首部>Vary 响应首部</h4><p>前面列举的 Accept-* 形式的首部都是由客户端 (Web Client) 给服务端的，<a href=https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary target=_blank rel="noopener noreffer">Vary</a> 首部是由服务器在响应 (Response) 中发送的。它标示了服务器在服务端驱动型内容协商阶段所使用的首部清单。这个首部是必要的，它是可以用来通知缓存服务器决策的依据，这样它可以进行复现，使得缓存服务器在预防将错误内容提供给用户方面发挥作用。</p><div class="details admonition tip open"><div class="details-summary admonition-title"><i class="icon fas fa-lightbulb fa-fw"></i>Vary<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><ul><li>如果 Response 中 Vary 的值是&rsquo;*'， 那么意味着在服务端驱动型内容协商过程中同时采纳了未在首部中传递的信息来选择合适的内容。</li><li>并且 Vary 的值是区分大消息的。</li></ul></div></div></div><h3 id=代理驱动型内容协商机制>代理驱动型内容协商机制</h3><p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13795/HTTPNego3.png data-srcset="https://mdn.mozillademos.org/files/13795/HTTPNego3.png, https://mdn.mozillademos.org/files/13795/HTTPNego3.png 1.5x, https://mdn.mozillademos.org/files/13795/HTTPNego3.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13795/HTTPNego3.png title=代理驱动型内容协商机制></p><p>服务端驱动型内容协商机制由于一些缺点而为人诟病——它在<strong>规模化</strong>方面存在问题。在协商机制中，每一个特性需要对应一个首部。如果想要使用屏幕大小、分辨率或者其他方面的特性，就需要创建一个新的首部。而且在每一次请求中都必须发送这些首部。在首部很少的时候，这并不是问题，但是随着数量的增多，消息体的体积会导致性能的下降。带有精确信息的首部发送的越多，信息熵就会越大，也就准许了更多 HTTP 指纹识别行为，以及与此相关的<strong>隐私问题</strong>的发生。</p><p>从 HTTP 协议制定之初，该协议就准许另外一种协商机制：代理驱动型内容协商机制，或称为响应式协商机制。<em>在这种协商机制中，当面临不明确的请求时，服务器会返回一个页面，其中包含了可供选择的资源的链接。资源呈现给用户，由用户做出选择。</em></p><p>不幸的是，HTTP 标准没有明确指定提供<strong>可选资源链接的页面的格式</strong>，这一点阻碍了将这一过程无痛自动化。除了退回至服务端驱动型内容协商机制外，这种自动化方法几乎无一例外都是通过<strong>脚本技术</strong>来完成的，尤其是 JavaScript 重定向技术：在检测了协商的条件之后，脚本会触发重定向动作。另外一个问题是，为了获得实际的资源，需要<strong>额外发送一次请求</strong>，<strong>减慢了将资源呈现给用户的速度</strong>。</p><h2 id=accept-encoding>Accept-Encoding</h2><p>HTTP Request Header 中的 <code>Accept-Encoding</code> 会将客户端（e.g. 浏览器）能够理解的内容编码方式（通常是某种压缩算法）通知给服务端。通过内容协商的方式，服务端会选择一个客户端提议的方式，使用并在响应头 Content-Encoding 中通知客户端该选择。</p><h3 id=压缩的好处>压缩的好处</h3><p>http 压缩对纯文本可以压缩至原内容的 40%, 从而节省了 60%的数据传输。</p><p>实例：访问我的博客网站，可以看到是进过 gzip 压缩的，原始大小为 34kB, 经过压缩后为 7.3kB，只有原先的 21%，在带宽上有很大的性能提升。</p><p>文件大小</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png title=gzip></p><p>gzip 压缩</p><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png title=accept-encoding></p><h3 id=gzip-的缺点>Gzip 的缺点</h3><p>JPEG 这类文件用 gzip 压缩的不够好。</p><h3 id=gzip-是如何压缩的>Gzip 是如何压缩的</h3><p>简单来说， Gzip 压缩是在一个文本文件中找出类似的字符串， 并临时替换他们，使整个文件变小。这种形式的压缩对 Web 来说非常适合， 因为 HTML 和 CSS 文件通常包含大量的重复的字符串，例如空格，标签。</p><h3 id=语法>语法</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>性能优化 Accept-Encoding - 谷中仁的博客</title><meta name=Description content="借助 Accept-Encoding/Content-Encoding 优化网络请求"><meta property="og:title" content="性能优化 Accept-Encoding">
+<meta property="og:description" content="借助 Accept-Encoding/Content-Encoding 优化网络请求">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-10-20T21:43:03+08:00">
+<meta property="article:modified_time" content="2021-10-20T21:43:03+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://guzhongren.github.io">
+<meta name=twitter:title content="性能优化 Accept-Encoding">
+<meta name=twitter:description content="借助 Accept-Encoding/Content-Encoding 优化网络请求">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/><link rel=prev href=https://guzhongren.github.io/2021/10/container-image-scanner-trivy/><link rel=next href=https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"性能优化 Accept-Encoding","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2021\/10\/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding\/"},"genre":"posts","keywords":"Performance, GZIP, Accept-Encoding","wordcount":2692,"url":"https:\/\/guzhongren.github.io\/2021\/10\/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding\/","datePublished":"2021-10-20T21:43:03+08:00","dateModified":"2021-10-20T21:43:03+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"借助 Accept-Encoding/Content-Encoding 优化网络请求"}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/geekmd/> GeekMd </a><a class=menu-item href=/slides/> Slides </a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" rel="noopener noreffer" target=_blank> 知识图谱 </a><a class=menu-item href=/about/> 关于 </a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/geekmd/ title>GeekMd</a><a class=menu-item href=/slides/ title>Slides</a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" title rel="noopener noreffer" target=_blank>知识图谱</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">性能优化 Accept-Encoding</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/web/><i class="far fa-folder fa-fw"></i>Web</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-10-20>2021-10-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2692 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png title="借助 Accept-Encoding/Content-Encoding 优化网络请求"></div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#以前的网页请求>以前的网页请求</a></li>
+<li><a href=#人类总是在追求快更快>人类总是在追求快，更快</a></li>
+<li><a href=#内容协商的基本原则>内容协商的基本原则</a>
+<ul>
+<li><a href=#内容协商类别>内容协商类别</a></li>
+<li><a href=#服务端驱动型内容协商机制流程>服务端驱动型内容协商机制流程</a>
+<ul>
+<li><a href=#用于启动服务端驱动型内容协商标准消息头>用于启动服务端驱动型内容协商标准消息头</a></li>
+<li><a href=#vary-响应首部>Vary 响应首部</a></li>
+</ul>
+</li>
+<li><a href=#代理驱动型内容协商机制>代理驱动型内容协商机制</a></li>
+</ul>
+</li>
+<li><a href=#accept-encoding>Accept-Encoding</a>
+<ul>
+<li><a href=#压缩的好处>压缩的好处</a></li>
+<li><a href=#gzip-的缺点>Gzip 的缺点</a></li>
+<li><a href=#gzip-是如何压缩的>Gzip 是如何压缩的</a></li>
+<li><a href=#语法>语法</a></li>
+<li><a href=#示例>示例</a></li>
+<li><a href=#浏览器兼容性>浏览器兼容性</a></li>
+</ul>
+</li>
+<li><a href=#最佳实践>最佳实践</a></li>
+<li><a href=#refs>Refs</a></li>
+<li><a href=#disclaimer>Disclaimer</a></li>
+<li><a href=#赞助>赞助</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=以前的网页请求>以前的网页请求</h2>
+<div class=mermaid id=id-1></div>
+<h2 id=人类总是在追求快更快>人类总是在追求快，更快</h2>
+<p>随着带宽和基础设施的快速发展，网页显示速度也有迫切需求，随之，就出现了各种各样加速显示网页的技术。</p>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i>HTTP compression<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><strong>HTTP compression</strong> is a capability that can be built into web servers and web clients to improve transfer speed and bandwidth utilization. &ndash;wikipedia</div>
+</div>
+</div>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i>Content Negotiation<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><p>In HTTP, content negotiation is the mechanism that is used for serving different representations of a resource to the same URI to help the user agent specify which representation is best suited for the user (for example, which document language, which image format, or which content encoding).</p>
+<p>在 HTTP 协议中，内容协商是这样一种机制，通过为同一 URI 指向的资源提供不同的展现形式，可以使用户代理选择与用户需求相适应的最佳匹配（例如，文档使用的自然语言，图片的格式，或者内容编码形式）。</p>
+</div>
+</div>
+</div>
+<h2 id=内容协商的基本原则>内容协商的基本原则</h2>
+<blockquote>
+<p>一份特定的文件称为一项资源。当客户端获取资源的时候，会使用其对应的 URL 发送请求。服务器通过这个 URL 来选择它指向的资源的某一变体——每一个变体称为一种展现形式——然后将这个选定的展现形式返回给客户端。整个资源，连同它的各种展现形式，共享一个特定的 URL 。当一项资源被访问的时候，特定展现形式的选取是通过内容协商机制来决定的，并且客户端和服务器端之间存在多种协商方式。</p>
+</blockquote>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13789/HTTPNego.png data-srcset="https://mdn.mozillademos.org/files/13789/HTTPNego.png, https://mdn.mozillademos.org/files/13789/HTTPNego.png 1.5x, https://mdn.mozillademos.org/files/13789/HTTPNego.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13789/HTTPNego.png title="Content Negotiation Principle"></p>
+<h3 id=内容协商类别>内容协商类别</h3>
+<div class=mermaid id=id-2></div>
+<p>随着时间的推移，也有其他一些内容协商的提案被提出来，比如透明内容协商以及 Alternates 首部。但是它们都没有获得人们的认可从而被遗弃。</p>
+<h3 id=服务端驱动型内容协商机制流程>服务端驱动型内容协商机制流程</h3>
+<div class=mermaid id=id-3></div>
+<p>当客户端携带消息头（header）发送请求给服务端后，服务端使用消息头里的指定的可接受的压缩方式，自己通过内部特定的算法，找出最佳的压缩方案，然后将数据压缩并返回给客户端。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png data-srcset="https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png, https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png 1.5x, https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png title=HTTPNegoServer></p>
+<h4 id=用于启动服务端驱动型内容协商标准消息头>用于启动服务端驱动型内容协商标准消息头</h4>
+<div class=mermaid id=id-4></div>
+<p>这些消息头都是可以带有 Q 因子的清单；比如</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Example</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accept</td>
+<td></td>
+<td>在获取 HTML 页面、图片文件、视频文件或者是脚本文件的时候，无论是通过在地址栏中输入资源地址来获取还是通过<code>&lt;img></code>、<code>&lt;video></code> 或 <code>&lt;audio></code> 元素引用都是不一样的。浏览器可以自由使用它们认为最为合适的首部值；</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td><code>ISO-8859-1,utf-8;q=0.7,*;q=0.7</code></td>
+<td>如今 UTF-8 编码已经得到了广泛的支持，成为首选的字符编码类型，为了通过减少基于配置信息的信息熵来更好地保护隐私信息， 大多数浏览器会将 Accept-Charset 首部移除：Internet Explorer 8、Safari 5、Opera 11 以及 Firefox 10 都已经不再发送该首部。</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td><code>br, gzip;q=0.8</code></td>
+<td>将 HTTP 消息进行压缩是一种最重要的提升 Web 站点性能的方法。该方法会减小所要传输的数据量的大小，节省可用带宽。浏览器总是会发送该首部，服务器则应该配置为接受它，并且采用一定的压缩方案。</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td><code>de, en;q=0.7</code></td>
+<td>用户代理的图形界面上所采用的语言通常可以用来设置为默认值，但是大多数浏览器允许设置不同优先级的语言选项。</td>
+</tr>
+</tbody>
+</table>
+<p>某些情况下，服务器会使用 <a href=https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary target=_blank rel="noopener noreffer">Vary</a> 消息头来说明实际上哪些消息头被用作内容协商的参考依据（确切来说是与之相关的响应消息头），这样可以使 <a href=https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching target=_blank rel="noopener noreffer">缓存</a> 的运作更有效。</p>
+<h4 id=vary-响应首部>Vary 响应首部</h4>
+<p>前面列举的 Accept-* 形式的首部都是由客户端 (Web Client) 给服务端的，<a href=https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Vary target=_blank rel="noopener noreffer">Vary</a> 首部是由服务器在响应 (Response) 中发送的。它标示了服务器在服务端驱动型内容协商阶段所使用的首部清单。这个首部是必要的，它是可以用来通知缓存服务器决策的依据，这样它可以进行复现，使得缓存服务器在预防将错误内容提供给用户方面发挥作用。</p>
+<div class="details admonition tip open">
+<div class="details-summary admonition-title">
+<i class="icon fas fa-lightbulb fa-fw"></i>Vary<i class="details-icon fas fa-angle-right fa-fw"></i>
+</div>
+<div class=details-content>
+<div class=admonition-content><ul>
+<li>如果 Response 中 Vary 的值是'*'， 那么意味着在服务端驱动型内容协商过程中同时采纳了未在首部中传递的信息来选择合适的内容。</li>
+<li>并且 Vary 的值是区分大消息的。</li>
+</ul>
+</div>
+</div>
+</div>
+<h3 id=代理驱动型内容协商机制>代理驱动型内容协商机制</h3>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://mdn.mozillademos.org/files/13795/HTTPNego3.png data-srcset="https://mdn.mozillademos.org/files/13795/HTTPNego3.png, https://mdn.mozillademos.org/files/13795/HTTPNego3.png 1.5x, https://mdn.mozillademos.org/files/13795/HTTPNego3.png 2x" data-sizes=auto alt=https://mdn.mozillademos.org/files/13795/HTTPNego3.png title=代理驱动型内容协商机制></p>
+<p>服务端驱动型内容协商机制由于一些缺点而为人诟病——它在<strong>规模化</strong>方面存在问题。在协商机制中，每一个特性需要对应一个首部。如果想要使用屏幕大小、分辨率或者其他方面的特性，就需要创建一个新的首部。而且在每一次请求中都必须发送这些首部。在首部很少的时候，这并不是问题，但是随着数量的增多，消息体的体积会导致性能的下降。带有精确信息的首部发送的越多，信息熵就会越大，也就准许了更多 HTTP 指纹识别行为，以及与此相关的<strong>隐私问题</strong>的发生。</p>
+<p>从 HTTP 协议制定之初，该协议就准许另外一种协商机制：代理驱动型内容协商机制，或称为响应式协商机制。<em>在这种协商机制中，当面临不明确的请求时，服务器会返回一个页面，其中包含了可供选择的资源的链接。资源呈现给用户，由用户做出选择。</em></p>
+<p>不幸的是，HTTP 标准没有明确指定提供<strong>可选资源链接的页面的格式</strong>，这一点阻碍了将这一过程无痛自动化。除了退回至服务端驱动型内容协商机制外，这种自动化方法几乎无一例外都是通过<strong>脚本技术</strong>来完成的，尤其是 JavaScript 重定向技术：在检测了协商的条件之后，脚本会触发重定向动作。另外一个问题是，为了获得实际的资源，需要<strong>额外发送一次请求</strong>，<strong>减慢了将资源呈现给用户的速度</strong>。</p>
+<h2 id=accept-encoding>Accept-Encoding</h2>
+<p>HTTP Request Header 中的 <code>Accept-Encoding</code> 会将客户端（e.g. 浏览器）能够理解的内容编码方式（通常是某种压缩算法）通知给服务端。通过内容协商的方式，服务端会选择一个客户端提议的方式，使用并在响应头 Content-Encoding 中通知客户端该选择。</p>
+<h3 id=压缩的好处>压缩的好处</h3>
+<p>http 压缩对纯文本可以压缩至原内容的 40%, 从而节省了 60%的数据传输。</p>
+<p>实例：访问我的博客网站，可以看到是进过 gzip 压缩的，原始大小为 34kB, 经过压缩后为 7.3kB，只有原先的 21%，在带宽上有很大的性能提升。</p>
+<p>文件大小</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png title=gzip></p>
+<p>gzip 压缩</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png title=accept-encoding></p>
+<h3 id=gzip-的缺点>Gzip 的缺点</h3>
+<p>JPEG 这类文件用 gzip 压缩的不够好。</p>
+<h3 id=gzip-是如何压缩的>Gzip 是如何压缩的</h3>
+<p>简单来说， Gzip 压缩是在一个文本文件中找出类似的字符串， 并临时替换他们，使整个文件变小。这种形式的压缩对 Web 来说非常适合， 因为 HTML 和 CSS 文件通常包含大量的重复的字符串，例如空格，标签。</p>
+<h3 id=语法>语法</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -16,27 +242,83 @@
 </span><span class=lnt> 8
 </span><span class=lnt> 9
 </span><span class=lnt>10
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-http data-lang=http><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>g</span><span class=err>z</span><span class=err>i</span><span class=err>p</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>c</span><span class=err>o</span><span class=err>m</span><span class=err>p</span><span class=err>r</span><span class=err>e</span><span class=err>s</span><span class=err>s</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>d</span><span class=err>e</span><span class=err>f</span><span class=err>l</span><span class=err>a</span><span class=err>t</span><span class=err>e</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>b</span><span class=err>r</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>i</span><span class=err>d</span><span class=err>e</span><span class=err>n</span><span class=err>t</span><span class=err>i</span><span class=err>t</span><span class=err>y</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>*</span><span class=err>
-</span><span class=err></span><span class=err>
-</span><span class=err></span><span class=err>/</span><span class=err>/</span><span class=err> </span><span class=err>M</span><span class=err>u</span><span class=err>l</span><span class=err>t</span><span class=err>i</span><span class=err>p</span><span class=err>l</span><span class=err>e</span><span class=err> </span><span class=err>a</span><span class=err>l</span><span class=err>g</span><span class=err>o</span><span class=err>r</span><span class=err>i</span><span class=err>t</span><span class=err>h</span><span class=err>m</span><span class=err>s</span><span class=err>,</span><span class=err> </span><span class=err>w</span><span class=err>e</span><span class=err>i</span><span class=err>g</span><span class=err>h</span><span class=err>t</span><span class=err>e</span><span class=err>d</span><span class=err> </span><span class=err>w</span><span class=err>i</span><span class=err>t</span><span class=err>h</span><span class=err> </span><span class=err>t</span><span class=err>h</span><span class=err>e</span><span class=err> </span><span class=err>q</span><span class=err>u</span><span class=err>a</span><span class=err>l</span><span class=err>i</span><span class=err>t</span><span class=err>y</span><span class=err> </span><span class=err>v</span><span class=err>a</span><span class=err>l</span><span class=err>u</span><span class=err>e</span><span class=err> </span><span class=err>s</span><span class=err>y</span><span class=err>n</span><span class=err>t</span><span class=err>a</span><span class=err>x</span><span class=err>:</span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>d</span><span class=err>e</span><span class=err>f</span><span class=err>l</span><span class=err>a</span><span class=err>t</span><span class=err>e</span><span class=err>,</span><span class=err> </span><span class=err>g</span><span class=err>z</span><span class=err>i</span><span class=err>p</span><span class=err>;</span><span class=err>q</span><span class=err>=</span><span class=err>1</span><span class=err>.</span><span class=err>0</span><span class=err>,</span><span class=err> </span><span class=err>*</span><span class=err>;</span><span class=err>q</span><span class=err>=</span><span class=err>0</span><span class=err>.</span><span class=err>5</span><span class=err>
-</span><span class=err></span><span class=err>
-</span></code></pre></td></tr></table></div></div><table><thead><tr><th>Accept-Encoding type</th><th>Note</th></tr></thead><tbody><tr><td>gzip</td><td>表示采用 <a href=http://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77 target=_blank rel="noopener noreffer">Lempel-Ziv coding (LZ77)</a> 压缩算法，以及 32 位 CRC 校验的编码方式。gzip 是 GNU zip 的缩写，是 GNU 自由软件的文件压缩程序，也用来表示 gzip 文件格式。<strong>浏览器支持的比较好</strong>。</td></tr><tr><td>compress</td><td>采用 <a href=http://en.wikipedia.org/wiki/LZW target=_blank rel="noopener noreffer">Lempel-Ziv-Welch (LZW)</a> 压缩算法。</td></tr><tr><td>deflate</td><td>采用 <a href=http://en.wikipedia.org/wiki/Zlib target=_blank rel="noopener noreffer">zlib</a> 结构和 <a href=http://en.wikipedia.org/wiki/DEFLATE target=_blank rel="noopener noreffer">deflate</a> 压缩算法。使用 LZ77 算法于哈夫曼编码（Huffman Coding）的一种无损压缩算法</td></tr><tr><td>br</td><td>表示采用 <a href=https://en.wikipedia.org/wiki/Brotli target=_blank rel="noopener noreffer">Brotli</a> 算法的编码方式。</td></tr><tr><td>identity</td><td>用于指代自身（例如：未经过压缩和修改）。除非特别指明，这个标记始终可以被接受。</td></tr><tr><td>*</td><td>匹配其他任意未在该请求头字段中列出的编码方式。假如该请求头字段不存在的话，这个值是默认值。它并不代表任意算法都支持，而仅仅表示算法之间无优先次序。</td></tr><tr><td>;q= （权重系数）</td><td>值代表优先顺序，用相对 <a href=https://developer.mozilla.org/en-US/docs/Glossary/Quality_values target=_blank rel="noopener noreffer">权重系数</a> 表示，又称为质量价值。</td></tr></tbody></table><h3 id=示例>示例</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-http data-lang=http><span class=err>Accept-Encoding: gzip
+</span><span class=err>Accept-Encoding: compress
+</span><span class=err>Accept-Encoding: deflate
+</span><span class=err>Accept-Encoding: br
+</span><span class=err>Accept-Encoding: identity
+</span><span class=err>Accept-Encoding: *
+</span><span class=err>
+</span><span class=err>// Multiple algorithms, weighted with the quality value syntax:
+</span><span class=err>Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
+</span><span class=err>
+</span></code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>Accept-Encoding type</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gzip</td>
+<td>表示采用 <a href=http://en.wikipedia.org/wiki/LZ77_and_LZ78#LZ77 target=_blank rel="noopener noreffer">Lempel-Ziv coding (LZ77)</a> 压缩算法，以及 32 位 CRC 校验的编码方式。gzip 是 GNU zip 的缩写，是 GNU 自由软件的文件压缩程序，也用来表示 gzip 文件格式。<strong>浏览器支持的比较好</strong>。</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>采用 <a href=http://en.wikipedia.org/wiki/LZW target=_blank rel="noopener noreffer">Lempel-Ziv-Welch (LZW)</a> 压缩算法。</td>
+</tr>
+<tr>
+<td>deflate</td>
+<td>采用 <a href=http://en.wikipedia.org/wiki/Zlib target=_blank rel="noopener noreffer">zlib</a> 结构和 <a href=http://en.wikipedia.org/wiki/DEFLATE target=_blank rel="noopener noreffer">deflate</a> 压缩算法。使用 LZ77 算法于哈夫曼编码（Huffman Coding）的一种无损压缩算法</td>
+</tr>
+<tr>
+<td>br</td>
+<td>表示采用 <a href=https://en.wikipedia.org/wiki/Brotli target=_blank rel="noopener noreffer">Brotli</a> 算法的编码方式。</td>
+</tr>
+<tr>
+<td>identity</td>
+<td>用于指代自身（例如：未经过压缩和修改）。除非特别指明，这个标记始终可以被接受。</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配其他任意未在该请求头字段中列出的编码方式。假如该请求头字段不存在的话，这个值是默认值。它并不代表任意算法都支持，而仅仅表示算法之间无优先次序。</td>
+</tr>
+<tr>
+<td>;q= （权重系数）</td>
+<td>值代表优先顺序，用相对 <a href=https://developer.mozilla.org/en-US/docs/Glossary/Quality_values target=_blank rel="noopener noreffer">权重系数</a> 表示，又称为质量价值。</td>
+</tr>
+</tbody>
+</table>
+<h3 id=示例>示例</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-http data-lang=http><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>g</span><span class=err>z</span><span class=err>i</span><span class=err>p</span><span class=err>
-</span><span class=err></span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>g</span><span class=err>z</span><span class=err>i</span><span class=err>p</span><span class=err>,</span><span class=err> </span><span class=err>c</span><span class=err>o</span><span class=err>m</span><span class=err>p</span><span class=err>r</span><span class=err>e</span><span class=err>s</span><span class=err>s</span><span class=err>,</span><span class=err> </span><span class=err>b</span><span class=err>r</span><span class=err>
-</span><span class=err></span><span class=err>
-</span><span class=err></span><span class=err>A</span><span class=err>c</span><span class=err>c</span><span class=err>e</span><span class=err>p</span><span class=err>t</span><span class=err>-</span><span class=err>E</span><span class=err>n</span><span class=err>c</span><span class=err>o</span><span class=err>d</span><span class=err>i</span><span class=err>n</span><span class=err>g</span><span class=err>:</span><span class=err> </span><span class=err>b</span><span class=err>r</span><span class=err>;</span><span class=err>q</span><span class=err>=</span><span class=err>1</span><span class=err>.</span><span class=err>0</span><span class=err>,</span><span class=err> </span><span class=err>g</span><span class=err>z</span><span class=err>i</span><span class=err>p</span><span class=err>;</span><span class=err>q</span><span class=err>=</span><span class=err>0</span><span class=err>.</span><span class=err>8</span><span class=err>,</span><span class=err> </span><span class=err>*</span><span class=err>;</span><span class=err>q</span><span class=err>=</span><span class=err>0</span><span class=err>.</span><span class=err>1</span><span class=err>
-</span></code></pre></td></tr></table></div></div><h3 id=浏览器兼容性>浏览器兼容性</h3><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png title=caniuse></p><h2 id=最佳实践>最佳实践</h2><p>对于 Accept-Encoding, 这个除了是后端请求，其他的只能由浏览器来自行设定，建议使用最新的浏览器即可。</p><p>对于 content-encoding 这个 header 只能由服务器来指定。针对不同的环境如 Nginx, Apache Tomcat 和 IIS 等，都有不同的配置，这里以 Nginx 为例，在 Nginx 的 *.conf 文件中加入如下代码即可。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-http data-lang=http><span class=err>Accept-Encoding: gzip
+</span><span class=err>
+</span><span class=err>Accept-Encoding: gzip, compress, br
+</span><span class=err>
+</span><span class=err>Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id=浏览器兼容性>浏览器兼容性</h3>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png title=caniuse></p>
+<h2 id=最佳实践>最佳实践</h2>
+<p>对于 Accept-Encoding, 这个除了是后端请求，其他的只能由浏览器来自行设定，建议使用最新的浏览器即可。</p>
+<p>对于 content-encoding 这个 header 只能由服务器来指定。针对不同的环境如 Nginx, Apache Tomcat 和 IIS 等，都有不同的配置，这里以 Nginx 为例，在 Nginx 的 *.conf 文件中加入如下代码即可。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -51,7 +333,9 @@
 </span><span class=lnt>13
 </span><span class=lnt>14
 </span><span class=lnt>15
-</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-diff data-lang=diff>[root@linux /]# vim /usr/local/nginx/conf.d/www.conf
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-diff data-lang=diff>[root@linux /]# vim /usr/local/nginx/conf.d/www.conf
 server {
   listen 80;
   server_name www.endvv.com endvv.com;
@@ -61,10 +345,69 @@ server {
   include /usr/local/nginx/php/www.conf;
   include /usr/local/nginx/wjt/typecho.conf;
 <span class=gi>+ gzip on;
-</span><span class=gi></span><span class=gi>+ gzip_buffers 4 16k;
-</span><span class=gi></span><span class=gi>+ gzip_comp_level 6;
-</span><span class=gi></span><span class=gi>+ gzip_vary on;
-</span><span class=gi></span><span class=gi>+ gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+</span><span class=gi>+ gzip_buffers 4 16k;
+</span><span class=gi>+ gzip_comp_level 6;
+</span><span class=gi>+ gzip_vary on;
+</span><span class=gi>+ gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 </span><span class=gi></span>}
-</code></pre></td></tr></table></div></div><h2 id=refs>Refs</h2><ul><li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客：https://guzhongren.github.io/</a></li><li><a href=https://en.wikipedia.org/wiki/HTTP_compression#cite_note-1 target=_blank rel="noopener noreffer">HTTP compression</a></li></ul><h2 id=disclaimer>Disclaimer</h2><p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p><hr><p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p><blockquote><p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p></blockquote><h2 id=赞助>赞助</h2><p><img class=lazyload src=/svg/loading.min.svg data-src=/images/pay/PayForGuzhongren.svg data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x" data-sizes=auto alt=/images/pay/PayForGuzhongren.svg title=PayForGuzhongren></p><blockquote><p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p></blockquote><blockquote><p>使用此 <a href=https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig target=_blank rel="noopener noreffer">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p></blockquote></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 2021-10-20</span></div><div class=post-info-license><span><a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc/4.0/80x15.png></a></span></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-hashtags=Performance,GZIP,Accept-Encoding><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-hashtag=Performance><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-image=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-description="借助 Accept-Encoding/Content-Encoding 优化网络请求"><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-description="借助 Accept-Encoding/Content-Encoding 优化网络请求"><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding"><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/performance/>Performance</a>,&nbsp;<a href=/tags/gzip/>GZIP</a>,&nbsp;<a href=/tags/accept-encoding/>Accept-Encoding</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span></section></div><div class=post-nav><a href=/2021/10/container-image-scanner-trivy/ class=prev rel=prev title="Container Image Scanner - Trivy"><i class="fas fa-angle-left fa-fw"></i>Container Image Scanner - Trivy</a>
-<a href=/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/ class=next rel=next title=工作的常态是被打断>工作的常态是被打断<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>友情链接:<div style=display:flex;justify-content:center;align-items:center><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://yihaimen.github.io><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://yihaimen.github.io/images/avatar.png><span>易海门的博客</span></span></a><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://bytewars.cc><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://bytewars.github.io/images/avatar.png><span>ByteWars社区</span></span></a></div></div><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.64.0">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://guzhongren.github.io/ target=_blank>谷中仁</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"title","label":"utterances","lightTheme":"github-light","repo":"guzhongren/guzhongren.github.io"}},"search":{"algoliaAppID":"8FBSWQTAD1","algoliaIndex":"index.zh-cn","algoliaSearchKey":"f8e94db6f14a6320dcdcb4db3f7256aa","highlightTag":"em","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"algolia"}};</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-158950474-1',{'anonymize_ip':true});</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-158950474-1" async></script></body></html>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=refs>Refs</h2>
+<ul>
+<li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客：https://guzhongren.github.io/</a></li>
+<li><a href=https://en.wikipedia.org/wiki/HTTP_compression#cite_note-1 target=_blank rel="noopener noreffer">HTTP compression</a></li>
+</ul>
+<h2 id=disclaimer>Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
+<blockquote>
+<p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id=赞助>赞助</h2>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=/images/pay/PayForGuzhongren.svg data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x" data-sizes=auto alt=/images/pay/PayForGuzhongren.svg title=PayForGuzhongren></p>
+<blockquote>
+<p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href=https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig target=_blank rel="noopener noreffer">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2021-10-20</span>
+</div>
+<div class=post-info-license><span><a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc/4.0/80x15.png></a></span></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-hashtags=Performance,GZIP,Accept-Encoding><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-hashtag=Performance><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding"><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-image=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-description="借助 Accept-Encoding/Content-Encoding 优化网络请求"><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding" data-description="借助 Accept-Encoding/Content-Encoding 优化网络请求"><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2021/10/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-accept-encoding/ data-title="性能优化 Accept-Encoding"><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/performance/>Performance</a>,&nbsp;<a href=/tags/gzip/>GZIP</a>,&nbsp;<a href=/tags/accept-encoding/>Accept-Encoding</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/2021/10/container-image-scanner-trivy/ class=prev rel=prev title="Container Image Scanner - Trivy"><i class="fas fa-angle-left fa-fw"></i>Container Image Scanner - Trivy</a>
+<a href=/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/ class=next rel=next title=工作的常态是被打断>工作的常态是被打断<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id=comments><div id=utterances></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>友情链接: <div style=display:flex;justify-content:center;align-items:center><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://yihaimen.github.io><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://yihaimen.github.io/images/avatar.png><span>易海门的博客</span></span></a><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://bytewars.cc><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://bytewars.github.io/images/avatar.png><span>ByteWars社区</span></span></a></div></div><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://guzhongren.github.io/ target=_blank>谷中仁</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/mermaid/mermaid.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/mermaid/mermaid.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{utterances:{darkTheme:"github-dark",issueTerm:"title",label:"utterances",lightTheme:"github-light",repo:"guzhongren/guzhongren.github.io"}},data:{"id-1":"sequenceDiagram\n    participant Browser\n    participant Server\n    Browser-\u003e\u003eServer: Can you send me a page?\n    Server--\u003e\u003eBrowser: Ok（100Kb）\n    Browser-\u003e\u003eServer: So large?\n    Server--\u003e\u003eBrowser: Yes","id-2":"graph LR;\n    C{内容协商分类}\n    C --\u003e|标准方式| D[客户端设置特定的 HTTP 首部又称为服务端驱动型内容协商机制或者主动协商机制]\n    C --\u003e|备选方案| E[服务器返回 300 MultipleChoices 或者 406 Not Acceptable HTTP 状态码又称为代理驱动型协商机制或者响应式协商机制]","id-3":"sequenceDiagram\n    participant Browser\n    participant Server\n    Browser-\u003e\u003eServer: Can you send me a page?[Accept-Encoding: br]\n    Server--\u003e\u003eBrowser: Ok（20Kb）[Content-Encoding: br]\n    Browser-\u003e\u003eServer: So fast!\n    Server--\u003e\u003eBrowser: Yes","id-4":"graph LR;\n    C{内容协商分类}\n    C --\u003e|Accept| D[该首部的值由浏览器或其他类型的用户代理确定并且会由于上下文环境的不同而不同]\n    C --\u003e|Accept-Charset| E[用于告知服务器该客户代理可以理解何种形式的字符编码]\n    C --\u003e| Accept-Encoding| F[明确说明了接收端可以接受的内容编码形式所支持的压缩算法]\n    C --\u003e| Accept-Language| G[用来提示用户期望获得的自然语言的优先顺序]"},search:{algoliaAppID:"8FBSWQTAD1",algoliaIndex:"index.zh-cn",algoliaSearchKey:"f8e94db6f14a6320dcdcb4db3f7256aa",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-158950474-1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-158950474-1" async></script></body>
+</html>
