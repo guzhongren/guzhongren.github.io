@@ -1,9 +1,9 @@
 # About
 
 
-## 简单的自我介绍
+## 个人介绍
 
-哈喽， 大家好， 我是谷中仁， 一枚地理信息系统专业（2015 年毕业）的程序员， [freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者，开源爱好者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名 Senior Consultant;
+嗨， 我是谷中仁， 一枚地理信息系统专业（2015 年毕业）的程序员、 高级咨询师、 开源爱好者、[freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名高级咨询师;
 
 - 2015.03 ~ 2016.10 ESRI （中国） 信息技术有限公司西安分公司  售前，售后，技术支持
 - 2016.10 ~ 2017.07 图智信息技术有限公司  前端工程师
@@ -14,9 +14,9 @@
 
 ### Coding
 
-- [Powerboard](https://github.com/guzhongren/Powerboard)
-- [ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap)
-- [Markdown 编辑器](https://guzhongren.github.io/geekmd/)
+- [Powerboard](https://github.com/guzhongren/Powerboard) 一款可拖拽、可配置的 Buildkite Dashboard 应用。
+- [ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap) 基于 ArcGIS API 的地图上展示图标的库。
+- [Markdown 编辑器](https://guzhongren.github.io/geekmd/) 一款定制的 Markdown 编辑器，可用于发微信、邮件等。
 
 ### Articles
 
@@ -83,7 +83,7 @@
 
 社区运营实行轮流制。每年会举办一些前端，后端技术会议，当然也有一些线下 10 多人人的 Workshop。社区也提供招聘宣传，会议合作等服务，如有需求，可以通过 e-mail, 微信等方式联系我。
 
-## 关于。.....
+## 关于......
 
 > 来日方长，慢慢道来。..
 
