@@ -3,7 +3,7 @@
 
 ## 个人介绍
 
-嗨， 我是谷中仁， 一枚地理信息系统专业（2015 年毕业）的程序员、 高级咨询师、 开源爱好者、[freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名高级咨询师;
+嗨， 我是谷中仁， 一位地理信息系统专业（2015 年毕业）的程序员、 高级咨询师、 开源爱好者、[freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名高级咨询师;
 
 - 2015.03 ~ 2016.10 ESRI （中国） 信息技术有限公司西安分公司  售前，售后，技术支持
 - 2016.10 ~ 2017.07 图智信息技术有限公司  前端工程师
