@@ -1,0 +1,416 @@
+<!doctype html><html lang=zh-cn>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>真的需要在测试中打log么？ - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:title" content="真的需要在测试中打log么？">
+<meta property="og:description" content="引言 &ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO 写了 log 并且出错的程序 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 describe('multiple', () => { it('should be send when">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2022-06-11T20:03:35+08:00">
+<meta property="article:modified_time" content="2022-06-11T20:03:35+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://guzhongren.github.io">
+<meta name=twitter:title content="真的需要在测试中打log么？">
+<meta name=twitter:description content="引言 &ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO 写了 log 并且出错的程序 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 describe('multiple', () => { it('should be send when">
+<meta name=application-name content="LoveIt">
+<meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/><link rel=prev href=https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"真的需要在测试中打log么？","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/06\/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88\/"},"genre":"posts","keywords":"test, log","wordcount":1107,"url":"https:\/\/guzhongren.github.io\/2022\/06\/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88\/","datePublished":"2022-06-11T20:03:35+08:00","dateModified":"2022-06-11T20:03:35+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/> 所有文章 </a><a class=menu-item href=/tags/> 标签 </a><a class=menu-item href=/categories/> 分类 </a><a class=menu-item href=/geekmd/> GeekMd </a><a class=menu-item href=/slides/> Slides </a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" rel="noopener noreffer" target=_blank> 知识图谱 </a><a class=menu-item href=/about/> 关于 </a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i> </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value"><option value=/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title=谷中仁的博客><img class="lazyload logo" src=/svg/loading.min.svg data-src=/images/avatar.svg data-srcset="/images/avatar.svg, /images/avatar.svg 1.5x, /images/avatar.svg 2x" data-sizes=auto alt=/images/avatar.svg title=/images/avatar.svg>谷中仁的博客</a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+取消
+</a>
+</div><a class=menu-item href=/posts/ title>所有文章</a><a class=menu-item href=/tags/ title>标签</a><a class=menu-item href=/categories/ title>分类</a><a class=menu-item href=/geekmd/ title>GeekMd</a><a class=menu-item href=/slides/ title>Slides</a><a class=menu-item href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" title rel="noopener noreffer" target=_blank>知识图谱</a><a class=menu-item href=/about/ title>关于</a><a class=menu-item href=https://github.com/guzhongren title=GitHub rel="noopener noreffer" target=_blank><i class="fab fa-github fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i>
+</a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value"><option value=/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ selected>简体中文</option></select>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class=toc id=toc-auto>
+<h2 class=toc-title>目录</h2>
+<div class=toc-content id=toc-content-auto></div>
+</div><article class="page single"><h1 class="single-title animated flipInX">真的需要在测试中打log么？</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/test/><i class="far fa-folder fa-fw"></i>Test</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2022-06-11>2022-06-11</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1107 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" data-srcset="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80, https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 1.5x, https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" title="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div><div class="details toc" id=toc-static kept>
+<div class="details-summary toc-title">
+<span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span>
+</div>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
+<ul>
+<li><a href=#引言>引言</a></li>
+<li><a href=#写了-log-并且出错的程序>写了 log 并且出错的程序</a></li>
+<li><a href=#在测试中写-log-有什么用>在测试中写 log 有什么用？</a>
+<ul>
+<li><a href=#影响总体的测试输出>影响总体的测试输出</a></li>
+<li><a href=#日志对测试运行的成败没有任何好处>日志对测试运行的成败没有任何好处</a></li>
+</ul>
+</li>
+<li><a href=#生产代码中的日志被测试打印出来可以吗>生产代码中的日志被测试打印出来，可以吗？</a></li>
+<li><a href=#解决方案>解决方案</a></li>
+<li><a href=#refs>Refs</a></li>
+<li><a href=#disclaimer>Disclaimer</a></li>
+<li><a href=#赞助>赞助</a></li>
+</ul>
+</nav></div>
+</div><div class=content id=content><h2 id=引言>引言</h2>
+<blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
+</blockquote>
+<h2 id=写了-log-并且出错的程序>写了 log 并且出错的程序</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>describe</span><span class=p>(</span><span class=s1>&#39;multiple&#39;</span><span class=p>,</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>it</span><span class=p>(</span><span class=s1>&#39;should be send when invoke the method sendMessage&#39;</span><span class=p>,</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+    <span class=nb>Object</span><span class=p>.</span><span class=nx>defineProperty</span><span class=p>(</span><span class=nb>window</span><span class=p>,</span> <span class=s1>&#39;top&#39;</span><span class=p>,</span> <span class=p>{</span>
+      <span class=nx>value</span><span class=o>:</span> <span class=nb>window</span><span class=p>,</span>
+      <span class=nx>writable</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nx>enumerable</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nx>configurable</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+    <span class=p>})</span>
+    <span class=nb>Object</span><span class=p>.</span><span class=nx>defineProperty</span><span class=p>(</span><span class=nb>window</span><span class=p>,</span> <span class=s1>&#39;postMessage&#39;</span><span class=p>,</span> <span class=p>{</span>
+      <span class=nx>writable</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nx>value</span><span class=o>:</span> <span class=nx>jest</span><span class=p>.</span><span class=nx>fn</span><span class=p>(),</span>
+    <span class=p>})</span>
+
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>window</span><span class=p>.</span><span class=nx>top</span><span class=o>?</span><span class=p>.</span><span class=nx>postMessage</span><span class=p>)</span>
+    <span class=nx>sendMessage</span><span class=p>(</span><span class=s1>&#39;message&#39;</span><span class=p>)</span>
+    <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>window</span><span class=p>.</span><span class=nx>top</span><span class=o>?</span><span class=p>.</span><span class=nx>postMessage</span><span class=p>)</span>
+
+    <span class=nx>expect</span><span class=p>(</span><span class=nb>window</span><span class=p>.</span><span class=nx>parent</span><span class=p>.</span><span class=nx>postMessage</span><span class=p>).</span><span class=nx>toBeCalledTimes</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+  <span class=p>})</span>
+<span class=p>})</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>运行输出</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js>  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span>
+    <span class=p>[</span><span class=nb>Function</span><span class=o>:</span> <span class=nx>mockConstructor</span><span class=p>]</span> <span class=p>{</span>
+      <span class=nx>_isMockFunction</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nx>getMockImplementation</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mock</span><span class=o>:</span> <span class=p>[</span><span class=nx>Getter</span><span class=o>/</span><span class=nx>Setter</span><span class=p>],</span>
+      <span class=nx>mockClear</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReset</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRestore</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockResolvedValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRejectedValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockResolvedValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRejectedValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockImplementationOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockImplementation</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnThis</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockName</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>getMockName</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)]</span>
+    <span class=p>}</span>
+
+      <span class=nx>at</span> <span class=nb>Object</span><span class=p>.</span><span class=o>&lt;</span><span class=nx>anonymous</span><span class=o>&gt;</span> <span class=p>(</span><span class=nx>__test__</span><span class=o>/</span><span class=nx>method_sendMessage_mult_tests</span><span class=p>.</span><span class=nx>spec</span><span class=p>.</span><span class=nx>ts</span><span class=o>:</span><span class=mi>16</span><span class=o>:</span><span class=mi>13</span><span class=p>)</span>
+
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span>
+    <span class=p>[</span><span class=nb>Function</span><span class=o>:</span> <span class=nx>mockConstructor</span><span class=p>]</span> <span class=p>{</span>
+      <span class=nx>_isMockFunction</span><span class=o>:</span> <span class=kc>true</span><span class=p>,</span>
+      <span class=nx>getMockImplementation</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mock</span><span class=o>:</span> <span class=p>[</span><span class=nx>Getter</span><span class=o>/</span><span class=nx>Setter</span><span class=p>],</span>
+      <span class=nx>mockClear</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReset</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRestore</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockResolvedValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRejectedValueOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockResolvedValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockRejectedValue</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockImplementationOnce</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockImplementation</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockReturnThis</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>mockName</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)],</span>
+      <span class=nx>getMockName</span><span class=o>:</span> <span class=p>[</span><span class=nb>Function</span> <span class=p>(</span><span class=nx>anonymous</span><span class=p>)]</span>
+    <span class=p>}</span>
+
+      <span class=nx>at</span> <span class=nb>Object</span><span class=p>.</span><span class=o>&lt;</span><span class=nx>anonymous</span><span class=o>&gt;</span> <span class=p>(</span><span class=nx>__test__</span><span class=o>/</span><span class=nx>method_sendMessage_mult_tests</span><span class=p>.</span><span class=nx>spec</span><span class=p>.</span><span class=nx>ts</span><span class=o>:</span><span class=mi>18</span><span class=o>:</span><span class=mi>13</span><span class=p>)</span>
+
+ <span class=nx>FAIL</span>  <span class=nx>__test__</span><span class=o>/</span><span class=nx>method_sendMessage_mult_tests</span><span class=p>.</span><span class=nx>spec</span><span class=p>.</span><span class=nx>ts</span>
+  <span class=nx>multiple</span>
+    <span class=err>✕</span> <span class=nx>should</span> <span class=nx>be</span> <span class=nx>send</span> <span class=nx>when</span> <span class=nx>invoke</span> <span class=nx>the</span> <span class=nx>method</span> <span class=nx>sendMessage</span> <span class=p>(</span><span class=mi>12</span> <span class=nx>ms</span><span class=p>)</span>
+
+  <span class=err>●</span> <span class=nx>multiple</span> <span class=err>›</span> <span class=nx>should</span> <span class=nx>be</span> <span class=nx>send</span> <span class=nx>when</span> <span class=nx>invoke</span> <span class=nx>the</span> <span class=nx>method</span> <span class=nx>sendMessage</span>
+
+    <span class=nx>expect</span><span class=p>(</span><span class=nx>jest</span><span class=p>.</span><span class=nx>fn</span><span class=p>()).</span><span class=nx>toBeCalledTimes</span><span class=p>(</span><span class=nx>expected</span><span class=p>)</span>
+
+    <span class=nx>Expected</span> <span class=nx>number</span> <span class=k>of</span> <span class=nx>calls</span><span class=o>:</span> <span class=mi>2</span>
+    <span class=nx>Received</span> <span class=nx>number</span> <span class=k>of</span> <span class=nx>calls</span><span class=o>:</span> <span class=mi>1</span>
+
+      <span class=mi>17</span> <span class=o>|</span>     <span class=nx>sendMessage</span><span class=p>(</span><span class=s1>&#39;message&#39;</span><span class=p>)</span>
+      <span class=mi>18</span> <span class=o>|</span>     <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nb>window</span><span class=p>.</span><span class=nx>top</span><span class=o>?</span><span class=p>.</span><span class=nx>postMessage</span><span class=p>)</span>
+    <span class=o>&gt;</span> <span class=mi>19</span> <span class=o>|</span>     <span class=nx>expect</span><span class=p>(</span><span class=nb>window</span><span class=p>.</span><span class=nx>parent</span><span class=p>.</span><span class=nx>postMessage</span><span class=p>).</span><span class=nx>toBeCalledTimes</span><span class=p>(</span><span class=mi>2</span><span class=p>)</span>
+         <span class=o>|</span>                                       <span class=o>^</span>
+      <span class=mi>20</span> <span class=o>|</span>   <span class=p>})</span>
+      <span class=mi>21</span> <span class=o>|</span> <span class=p>})</span>
+
+      <span class=nx>at</span> <span class=nb>Object</span><span class=p>.</span><span class=o>&lt;</span><span class=nx>anonymous</span><span class=o>&gt;</span> <span class=p>(</span><span class=nx>__test__</span><span class=o>/</span><span class=nx>method_sendMessage_mult_tests</span><span class=p>.</span><span class=nx>spec</span><span class=p>.</span><span class=nx>ts</span><span class=o>:</span><span class=mi>19</span><span class=o>:</span><span class=mi>39</span><span class=p>)</span>
+      <span class=nx>at</span> <span class=nx>processTicksAndRejections</span> <span class=p>(</span><span class=nx>node</span><span class=o>:</span><span class=nx>internal</span><span class=o>/</span><span class=nx>process</span><span class=o>/</span><span class=nx>task_queues</span><span class=o>:</span><span class=mi>96</span><span class=o>:</span><span class=mi>5</span><span class=p>)</span>
+
+<span class=nx>Test</span> <span class=nx>Suites</span><span class=o>:</span> <span class=mi>1</span> <span class=nx>failed</span><span class=p>,</span> <span class=mi>1</span> <span class=nx>total</span>
+<span class=nx>Tests</span><span class=o>:</span>       <span class=mi>1</span> <span class=nx>failed</span><span class=p>,</span> <span class=mi>1</span> <span class=nx>total</span>
+<span class=nx>Snapshots</span><span class=o>:</span>   <span class=mi>0</span> <span class=nx>total</span>
+<span class=nx>Time</span><span class=o>:</span>        <span class=mf>1.077</span> <span class=nx>s</span>
+<span class=nx>Ran</span> <span class=nx>all</span> <span class=nx>test</span> <span class=nx>suites</span> <span class=nx>matching</span> <span class=o>/</span><span class=err>\</span><span class=o>/</span><span class=nx>Users</span><span class=err>\</span><span class=o>/</span><span class=nx>zhongren</span><span class=err>\</span><span class=p>.</span><span class=nx>gu</span><span class=err>\</span><span class=o>/</span><span class=mi>01</span><span class=err>\</span><span class=p>.</span><span class=nx>Project</span><span class=err>\</span><span class=o>/</span><span class=nx>test</span><span class=o>-</span><span class=nb>window</span><span class=o>-</span><span class=nx>object</span><span class=err>\</span><span class=o>/</span><span class=nx>__test__</span><span class=err>\</span><span class=o>/</span><span class=nx>method_sendMessage_mult_tests</span><span class=err>\</span><span class=p>.</span><span class=nx>spec</span><span class=err>\</span><span class=p>.</span><span class=nx>ts</span><span class=o>/</span><span class=nx>i</span> <span class=kd>with</span> <span class=nx>tests</span> <span class=nx>matching</span> <span class=s2>&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class=p>.</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=在测试中写-log-有什么用>在测试中写 log 有什么用？</h2>
+<blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
+</blockquote>
+<p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
+<p>在我看来，有以下几点：</p>
+<h3 id=影响总体的测试输出>影响总体的测试输出</h3>
+<p>如果测试中存在很多的 log，并且有部分测试会失败，当你找失败的测试的时候就会变得非常困难，会被log 迷惑。测试结果列表不是那么整齐，给人以测试混乱，不够整洁的感觉，影响开发体验。</p>
+<h3 id=日志对测试运行的成败没有任何好处>日志对测试运行的成败没有任何好处</h3>
+<p>测试在运行失败后，会自动打印出真实值（Received）和 期望值（Expected), 对于优秀的程序员，大家都用 TDD 开发，按照 TDD 的套路，程序的期望值是已知的；如果测试失败，你应该修改你的产品代码，让你的产品代码的输出符合你测试的期望值; 而不是在你的测试代码中调试，打 log。</p>
+<p>如果在测试中打印了 Log，程序员最多在测试日志中看看某个变量的值，对生产代码没有任何影响; 同时你还得花时间去找你想要的日志，纯属浪费时间。</p>
+<p>如果真的需要看测试的某个变量或者看生产代码中某行代码的运行时值，通过调试你的测试代码，在你的生产代码中打断点即可，完全没有必要将测试中的日志永久的留在代码库中。</p>
+<h2 id=生产代码中的日志被测试打印出来可以吗>生产代码中的日志被测试打印出来，可以吗？</h2>
+<p>不行。没有意义。</p>
+<p>运行测试，我们只想知道所有测试是否成功，至于中间打印出生产代码中的日志也没有意义。
+如果测试失败，只需要 Fix 对应的测试即可, 无论什么方法。</p>
+<h2 id=解决方案>解决方案</h2>
+<p>怎么让测试的输出中不输出 log 信息呢？</p>
+<ul>
+<li>对于前端，我们可以在所有测试运行前 Spy <code>console.*</code>的所有的方法，</li>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>jest</span><span class=p>.</span><span class=nx>spyOn</span><span class=p>(</span><span class=nx>console</span><span class=p>,</span> <span class=s1>&#39;log&#39;</span><span class=p>).</span><span class=nx>mockReturnValue</span><span class=p>();</span>
+<span class=nx>jest</span><span class=p>.</span><span class=nx>spyOn</span><span class=p>(</span><span class=nx>console</span><span class=p>,</span> <span class=s1>&#39;info&#39;</span><span class=p>).</span><span class=nx>mockReturnValue</span><span class=p>();</span>
+<span class=nx>jest</span><span class=p>.</span><span class=nx>spyOn</span><span class=p>(</span><span class=nx>console</span><span class=p>,</span> <span class=s1>&#39;warn&#39;</span><span class=p>).</span><span class=nx>mockReturnValue</span><span class=p>();</span>
+<span class=nx>jest</span><span class=p>.</span><span class=nx>spyOn</span><span class=p>(</span><span class=nx>console</span><span class=p>,</span> <span class=s1>&#39;error&#39;</span><span class=p>).</span><span class=nx>mockReturnValue</span><span class=p>();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>这段代码需要写在 <code>tests/jest-setup.[t|j]s</code> 中。</p>
+<ul>
+<li>或者使用第三方成熟的 npm 包， 像 <a href=https://www.npmjs.com/package/jest-mock-console target=_blank rel="noopener noreffer">jest-mock-console</a>, 这个包功能更强大一点。</li>
+</ul>
+<h2 id=refs>Refs</h2>
+<ul>
+<li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客: https://guzhongren.github.io/</a></li>
+<li><a href=http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger target=_blank rel="noopener noreffer">Mock logger in jest: http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger</a></li>
+</ul>
+<h2 id=disclaimer>Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
+<blockquote>
+<p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id=赞助>赞助</h2>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=/images/pay/PayForGuzhongren.svg data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x" data-sizes=auto alt=/images/pay/PayForGuzhongren.svg title=PayForGuzhongren></p>
+<blockquote>
+<p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href=https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig target=_blank rel="noopener noreffer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+</div><div class=post-footer id=post-footer>
+<div class=post-info>
+<div class=post-info-line>
+<div class=post-info-mod>
+<span>更新于 2022-06-11</span>
+</div>
+<div class=post-info-license><span><a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc/4.0/80x15.png></a></span></div>
+</div>
+<div class=post-info-line>
+<div class=post-info-md></div>
+<div class=post-info-share>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？ data-hashtags=test,log><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-hashtag=test><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？ data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？ data-image="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Myspace" data-sharer=myspace data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？ data-description><i data-svg-src=/lib/simple-icons/icons/myspace.min.svg></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？ data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/ data-title=真的需要在测试中打log么？><i class="fab fa-evernote fa-fw"></i></a></span>
+</div>
+</div>
+</div>
+<div class=post-info-more>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/test/>test</a>,&nbsp;<a href=/tags/log/>log</a></section>
+<section>
+<span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
+</section>
+</div>
+<div class=post-nav><a href=/2022/04/continuously-optimize-your-website-with-lighthouse-ci/ class=prev rel=prev title="Continuously Optimize Your Website With Lighthouse CI"><i class="fas fa-angle-left fa-fw"></i>Continuously Optimize Your Website With Lighthouse CI</a></div>
+</div>
+<div id=comments><div id=utterances></div><noscript>
+Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.
+</noscript></div></article></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line>友情链接: <div style=display:flex;justify-content:center;align-items:center><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://yihaimen.github.io><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://yihaimen.github.io/images/avatar.png><span>易海门的博客</span></span></a><a style="display:flex;justify-content:center;align-items:center;margin:0 1rem" href=https://bytewars.cc><span style=display:flex;justify-content:center;align-items:center><img style=height:24px src=https://bytewars.github.io/images/avatar.png><span>ByteWars社区</span></span></a></div></div><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.91.2">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+</div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2020 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://guzhongren.github.io/ target=_blank>谷中仁</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部>
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title=查看评论>
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/algoliasearch/algoliasearch-lite.umd.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"复制到剪贴板",maxShownLines:10},comment:{utterances:{darkTheme:"github-dark",issueTerm:"title",label:"utterances",lightTheme:"github-light",repo:"guzhongren/guzhongren.github.io"}},search:{algoliaAppID:"8FBSWQTAD1",algoliaIndex:"index.zh-cn",algoliaSearchKey:"f8e94db6f14a6320dcdcb4db3f7256aa",highlightTag:"em",maxResultLength:10,noResultsFound:"没有找到结果",snippetLength:50,type:"algolia"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-158950474-1',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-158950474-1" async></script></body>
+</html>
