@@ -137,18 +137,20 @@ Ran all test suites matching /\/Users\/zhongren\.gu\/01\.Project\/test-window-ob
 
 ## 解决方案
 
+如果真的需要在测试时调试代码，可以加 `debug` 级别的调试代码，这样就可以通过日志来调试了，但还是需要通过其他的方式，比如 `eslint` 来限制将 `debug` 日志提交到 Repo 中。
+
 怎么让测试的输出中不输出 log 信息呢？
 
 - 对于前端，我们可以在所有测试运行前 Spy `console.*`的所有的方法，
 
-```js
-jest.spyOn(console, 'log').mockReturnValue();
-jest.spyOn(console, 'info').mockReturnValue();
-jest.spyOn(console, 'warn').mockReturnValue();
-jest.spyOn(console, 'error').mockReturnValue();
-```
+  ```js
+  jest.spyOn(console, 'log').mockReturnValue();
+  jest.spyOn(console, 'info').mockReturnValue();
+  jest.spyOn(console, 'warn').mockReturnValue();
+  jest.spyOn(console, 'error').mockReturnValue();
+  ```
 
-这段代码需要写在 `tests/jest-setup.[t|j]s` 中。
+  这段代码需要写在 `tests/jest-setup.[t|j]s` 中。
 
 - 或者使用第三方成熟的 npm 包， 像 [jest-mock-console](https://www.npmjs.com/package/jest-mock-console), 这个包功能更强大一点。
 
