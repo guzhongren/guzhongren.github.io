@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/><link rel=prev href=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"代码质量和Dora Metrics， 哪个更重要？","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/"},"genre":"posts","keywords":"Dora Metrics, Code Quality, 4 Key Metrics, 代码质量","wordcount":1062,"url":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/","datePublished":"2022-06-23T20:14:48+08:00","dateModified":"2022-06-23T20:14:48+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"代码质量和Dora Metrics， 哪个更重要？","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/"},"genre":"posts","keywords":"Dora Metrics, Code Quality, 4 Key Metrics, 代码质量","wordcount":1196,"url":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/","datePublished":"2022-06-23T20:14:48+08:00","dateModified":"2022-06-23T20:14:48+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">代码质量和Dora Metrics， 哪个更重要？</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/agile/><i class="far fa-folder fa-fw" aria-hidden=true></i>Agile</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-06-23>2022-06-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1062 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-06-23>2022-06-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1196 字&nbsp;
 <i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" data-srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 1.5x, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" title="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
@@ -104,7 +104,7 @@
 <li><a href=#如果更关心代码质量>如果更关心代码质量</a></li>
 </ul>
 </li>
-<li><a href=#如何做呢>如何做呢</a></li>
+<li><a href=#哪个更重要呢>哪个更重要呢？</a></li>
 <li><a href=#refs>Refs</a></li>
 <li><a href=#disclaimer>Disclaimer</a></li>
 <li><a href=#赞助>赞助</a></li>
@@ -126,13 +126,17 @@
 </ul>
 <p>在我们这个场景下，大家关心的是<code>变更失败率</code> 和 <code>代码质量</code> 哪个更重要。</p>
 <h3 id=如果更关心变更失败率>如果更关心变更失败率</h3>
-<p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题，如大家提交了低质量的代码，因为没有质量门禁来拦截，人们大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累越来越多，项目将难以维护，CI/CD 的失败变更率肯定会随之提高。</p>
+<p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题; 如大家提交了低质量的代码，因为没有质量门禁来拦截，开发者大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累会越来越多，项目将难以维护，CI/CD 的失败变更率必然会随之提高。</p>
 <h3 id=如果更关心代码质量>如果更关心代码质量</h3>
-<p>如果更关心代码质量， 那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将Pipelien 阻断，造成<code>变更失败率</code>指标的升高。</p>
-<h2 id=如何做呢>如何做呢</h2>
-<p>那么对于这两项，哪个更为重要，或者有什么办法使两者都可以兼得呢？</p>
-<p>个人认为，在正常的软件交付过程中，代码质量更为重要。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
-<p>但是有时候，事情也不是绝对的。我们可以给质量门禁给予一定的容忍度，可以让有小问题的代码通过门禁并且部署到生产环境。比如，略微降低代码的测试覆盖率，或者降低安全问题的级别。但是这样做就需要每次在合并代码到主分支之前，将所有的代码质量问题都解决，而这必须成为团队的规约，大家必须遵守。</p>
+<p>如果更关心代码质量，那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将 Pipeline 阻断，造成<code>变更失败率</code>指标的升高。</p>
+<h2 id=哪个更重要呢>哪个更重要呢？</h2>
+<p>很多时候大家都会拿出那句名言 &ldquo;视场景而定&rdquo;。
+但对于软件工程，我们追求的应该是稳定，要对自己的产品要有信心。对开发者而言，信心来自经过测试、符合规范的代码。
+上线固然重要，但不能降低质量。就像在 Simple Design 中的"通过测试"，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
+<p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
+<blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
 <h2 id=refs>Refs</h2>
 <ul>
 <li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客:https://guzhongren.github.io/</a></li>
