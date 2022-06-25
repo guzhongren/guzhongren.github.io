@@ -1,6 +1,8 @@
 # 代码质量和Dora Metrics， 哪个更重要？
 
 
+> 勿以恶小而为之，勿以善小而不为 --《三国志·蜀志传》
+
 ## 起因
 
 最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。
