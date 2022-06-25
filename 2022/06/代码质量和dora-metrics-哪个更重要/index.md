@@ -15,7 +15,7 @@
 
 代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。
 
-[Dora Metrics]() 是一套衡量软件交付效能的指标，有
+[Dora Metrics](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/), 又称 `4 Key Metrics` 是一套衡量软件交付效能的指标，有
 - 部署频率（Deployment frequency）
 - 前置时间（Lead time for change）
 - 变更失败率（Change failure rate）
@@ -43,8 +43,7 @@
 
 ## Refs
 
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Dora Metrics:https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/)    
+* [Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/)    
 ## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。

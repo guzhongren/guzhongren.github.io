@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/><link rel=prev href=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"代码质量和Dora Metrics， 哪个更重要？","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/"},"genre":"posts","keywords":"Dora Metrics, Code Quality, 4 Key Metrics, 代码质量","wordcount":1196,"url":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/","datePublished":"2022-06-23T20:14:48+08:00","dateModified":"2022-06-23T20:14:48+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"代码质量和Dora Metrics， 哪个更重要？","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/"},"genre":"posts","keywords":"Dora Metrics, Code Quality, 4 Key Metrics, 代码质量","wordcount":1170,"url":"https:\/\/guzhongren.github.io\/2022\/06\/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81\/","datePublished":"2022-06-23T20:14:48+08:00","dateModified":"2022-06-23T20:14:48+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">代码质量和Dora Metrics， 哪个更重要？</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/agile/><i class="far fa-folder fa-fw" aria-hidden=true></i>Agile</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-06-23>2022-06-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1196 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-06-23>2022-06-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1170 字&nbsp;
 <i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" data-srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 1.5x, https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" title="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
@@ -117,7 +117,7 @@
 <h2 id=分析>分析</h2>
 <p>所有的问题都是解决“人”的问题。</p>
 <p>代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。</p>
-<p><a href rel>Dora Metrics</a> 是一套衡量软件交付效能的指标，有</p>
+<p><a href=https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/ target=_blank rel="noopener noreffer">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
 <ul>
 <li>部署频率（Deployment frequency）</li>
 <li>前置时间（Lead time for change）</li>
@@ -139,8 +139,7 @@
 </blockquote>
 <h2 id=refs>Refs</h2>
 <ul>
-<li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客:https://guzhongren.github.io/</a></li>
-<li><a href=https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/ target=_blank rel="noopener noreffer">Dora Metrics:https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
+<li><a href=https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/ target=_blank rel="noopener noreffer">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
 </ul>
 <h2 id=disclaimer>Disclaimer</h2>
 <p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>
