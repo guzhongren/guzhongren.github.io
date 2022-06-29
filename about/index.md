@@ -78,6 +78,13 @@
     width: 100%;
 "></iframe>
 
+### [领域](https://stackblitz.com/edit/domain-capability-editor?file=index.js)
+
+<iframe src="https://domain-capability-editor.stackblitz.io" style="
+    border: none;
+    height: 40rem;
+    width: 100%;
+"></iframe>
 ## 关于社区
 
 2018 年 8 月份与韩亦乐一起组织 FCC 西安社区的第一次前端大会，并在 12 月由我和另外几位小伙伴一起负责西安社区建设和运营。
