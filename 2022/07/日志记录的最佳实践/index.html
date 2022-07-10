@@ -166,14 +166,15 @@
 </li>
 </ul>
 <h3 id=按需记录日志>按需记录日志</h3>
+<img src="https://git.poker/guzhongren/data-hosting/blob/main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp?raw=true" alt="Log Level" style=width:100%;position:center>
 <p>日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。</p>
 <ul>
 <li>Debug: 记录技术细节，和一些帮助理解系统运行的日志</li>
 <li>Info: 记录业务信息的日志</li>
 <li>Warn: 非紧急且可控的可接受的错误信息</li>
-<li>Error: 非期望的错误或者系统表现，通常是由系统bug或者环境问题导致<br>
-<img src="https://git.poker/guzhongren/data-hosting/blob/main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp?raw=true" alt="Log Level" style=width:100%;position:center>
-同时不是所有的日志都需要记录，我们要做到按需记录。下表是推荐在不同的环境选择不同的日志级别。
+<li>Error: 非期望的错误或者系统表现，通常是由系统bug或者环境问题导致</li>
+</ul>
+<p>同时不是所有的日志都需要记录，我们要做到按需记录。下表是推荐在不同的环境选择不同的日志级别。 </p>
 <table>
 <thead>
 <tr>
@@ -200,8 +201,6 @@
 </tr>
 </tbody>
 </table>
-</li>
-</ul>
 <h2 id=工具推荐>工具推荐</h2>
 <p>不同的编程语言有不同的日志工具；比较著名的是 Apache 的 <a href=https://logging.apache.org/log4j target=_blank rel="noopener noreffer">Log4j</a>, Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 <a href=https://docs.python.org/3/library/logging.html target=_blank rel="noopener noreffer">logging</a>, NodeJS 中的<a href=https://www.npmjs.com/package/log4js target=_blank rel="noopener noreffer">log4js</a>, Rust 中的<a href=https://crates.io/crates/log4rs target=_blank rel="noopener noreffer">log4rs</a>。</p>
 <h2 id=注意点>注意点</h2>

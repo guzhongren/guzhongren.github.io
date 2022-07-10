@@ -39,12 +39,14 @@
 		- 对于错误信息格式化，也可以按照 Key：Value 的形式进行组织。  
 ### 按需记录日志  
   
+<img src='https://git.poker/guzhongren/data-hosting/blob/main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp?raw=true' alt='Log Level' style="width: 100%; position: center" />
+
 日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。  
 - Debug: 记录技术细节，和一些帮助理解系统运行的日志  
 - Info: 记录业务信息的日志  
 - Warn: 非紧急且可控的可接受的错误信息  
 - Error: 非期望的错误或者系统表现，通常是由系统bug或者环境问题导致  
-<img src='https://git.poker/guzhongren/data-hosting/blob/main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp?raw=true' alt='Log Level' style="width: 100%; position: center" />
+
 同时不是所有的日志都需要记录，我们要做到按需记录。下表是推荐在不同的环境选择不同的日志级别。  
 	| Environment | Log Leave |
 	|---|---|
