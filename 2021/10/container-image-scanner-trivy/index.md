@@ -8,7 +8,7 @@ With more and more applications containerized, container security is also becomi
 
 ## Pain points on application environment security
 
-![Pain points on application environment security](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png)
+![Pain points on application environment security](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png)
 
 Now, we use advanced technology to build up our application, like NodeJS, Java and so on,  then store the code repository on git platforms like GitHub, Gitlab and so on. Code repository consists of our code and dependencies; For dependencies, we can use tools to ensure security like npm audit of NodeJS, and Dependabot of GitHub; And for our business code, there is another security tool to scan, like [SoneQube](https://www.sonarqube.org/).
 
@@ -26,7 +26,7 @@ The work we do is to make our clients succeed. Only if our customers succeed, we
 
 ## Best 2 solutions to keep container images secure
 
-![Best 2 solutions to keep container images secure](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2050.1czb512thukg.png)
+![Best 2 solutions to keep container images secure](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/Group%2050.1czb512thukg.png)
 
 ### Solution 1: Scan the image at a regular time in the image registry
 
@@ -64,19 +64,19 @@ March 16, 2020, Aqua Security, the leading platform provider for securing cloud-
 
 ## Trivy in Thoughtworks Technology radar volume 23
 
-![Trivy in TW tech radar](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-tw-radar.2543ysqo6wf4.png)
+![Trivy in TW tech radar](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/trivy-tw-radar.2543ysqo6wf4.png)
 
 Thoughtworks Technology Radar is famous for accurately responding to technological trends; In the latest technology radar, Thoughtworks put the Trivy into the __adopt__ area, which means Trivy is useful, valuable and practicable.
 
 ## Inner working of Trivy
 
-![Inner working of Trivy](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2051.4icjkydqu3s0.png)
+![Inner working of Trivy](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/Group%2051.4icjkydqu3s0.png)
 
 Before we use Trivy, we need to know how Trivy works inside. As you see, there are 2 steps; first, we run the Trivy command, Trivy will download the vulnerability DB from the [NVD](https://nvd.nist.gov) website into the local machine. And then Trivy uses the vulnerability data to scan every layer of your image.
 
 ## How To Use Trivy
 
-![trivy in pipeline](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-in-pipeline.6ksfsma323c0.png)
+![trivy in pipeline](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/trivy-in-pipeline.6ksfsma323c0.png)
 
 ### Pipeline
 
@@ -120,12 +120,12 @@ Below is a demo to show how the trivy breaks the pipeline and what happens when 
 
 In this build job, we use [Nignx:1.18](https://hub.docker.com/_/nginx) as a base image to build application images. This build failed because there are some vulnerabilities.
 
-![Trivy Dashboard Failed](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-failed.4bffhau2xvk0.png)
+![Trivy Dashboard Failed](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-failed.4bffhau2xvk0.png)
 
 Now, we must fix this issue to continue delivery. There are 2 steps to do, firstly, we should use the latest Nginx image as a base image; secondly, we could ignore unfixed vulnerabilities, because maybe we are unable to fix vulnerabilities at the system level. You can review the change of code by clicking this link:
 [https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303](https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303)
 
-![Trivy Dashboard Successfully](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-successfully.28w37b5otts0.png)
+![Trivy Dashboard Successfully](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-successfully.28w37b5otts0.png)
 
 ## Summary
 
@@ -153,7 +153,7 @@ Security is a very important issue no matter where you are. We can __Shift Left 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

@@ -30,12 +30,12 @@
 
 从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。
 
-![cdn-around-the-world](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-around-the-world.12nesnyias8w.webp)
+![cdn-around-the-world](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/cdn/cdn-around-the-world.12nesnyias8w.webp)
 
 #### 模式
 
 ```
-https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
+https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
 ```
 
 - usernameOrOrgName: GitHub 用户名或者组织名
@@ -50,10 +50,10 @@ https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
 按照上面 jsdelivr 的模式配置路径，效果如下：
 
 ```
-https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json
+https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json
 ```
 
-![jsdelivr 效果](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-github-data.5f2n2k3it68.webp)
+![jsdelivr 效果](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/cdn/cdn-github-data.5f2n2k3it68.webp)
 
 ## 总结
 
@@ -71,7 +71,7 @@ CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一�
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

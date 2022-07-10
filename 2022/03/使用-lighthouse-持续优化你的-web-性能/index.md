@@ -39,7 +39,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
  > 你可以在 `Chrome DevTools`、 命令行甚至是 `Node` 模块中运行 `Lighthouse`。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。
 
  使用方法非常简单，可以看一下我对我的开源项目 `Powerboard` 审计的结果。
- ![Lighthouse-Chrome-DevTools](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp)
+ ![Lighthouse-Chrome-DevTools](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp)
 
 ## Lighthouse CI 及 Lighthouse Server 的使用
 
@@ -66,7 +66,7 @@ lhci autorun
   > The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
   > LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。
   
-  | ![lhci-server](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp) | ![lhci-server-compare](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp) |
+  | ![lhci-server](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp) | ![lhci-server-compare](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp) |
   |---|---|
   
 #### LHCI Server 的安装和使用
@@ -175,7 +175,7 @@ jobs:
 ```
 - 需要将 `lhci Server` 生成的 `Build token` 和 `lhci Server` 的地址存放在 GitHub 项目的 Secrets 中
 - 这里执行了两次 `lhci` 命令。因为 `lhci autorun` 运行完成后会运行默认的断言(`Assertion`), 第一次用没有断言的命令，目的是将当前的网页性能可以上到 Server 端; 第二次配置了各项指标的阈值，如果不满足要求，Pipeline 将会阻断，实现 `Web 性能测试左移`。
-- ![Powerboard Lighthouse Actions](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp)
+- ![Powerboard Lighthouse Actions](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp)
 
 ## 总结
 
@@ -198,7 +198,7 @@ jobs:
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

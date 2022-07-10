@@ -114,11 +114,11 @@ http 压缩对纯文本可以压缩至原内容的 40%, 从而节省了 60%的�
 
 文件大小
 
-![gzip](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png)
+![gzip](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png)
 
 gzip 压缩
 
-![accept-encoding](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png)
+![accept-encoding](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png)
 
 ### Gzip 的缺点
 
@@ -164,7 +164,7 @@ Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
 ```
 ### 浏览器兼容性
 
-![caniuse](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png)
+![caniuse](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png)
 
 ## 最佳实践
 
@@ -200,7 +200,7 @@ server {
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

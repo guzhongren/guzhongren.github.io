@@ -70,7 +70,7 @@ comment: true
 ## Refs
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 ```
 生成文章后，直接更新需要更新的字段，如标签（tags）和分类（categories）等，然后在中间直接写文章就可以。
 
@@ -230,5 +230,5 @@ pub:
 * 5.[https://github.com/settings/tokens](https://github.com/settings/tokens)
 * 6.[生成 icon: https://realfavicongenerator.net/](https://realfavicongenerator.net/)
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 
