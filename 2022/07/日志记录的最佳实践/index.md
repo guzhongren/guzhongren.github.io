@@ -53,7 +53,12 @@
 	| UAT | Info |
 	| Prod | Info |
 ## 工具推荐  
-不同的编程语言有不同的日志工具；比较著名的是 Apache 的 [Log4j](https://logging.apache.org/log4j), Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 [logging](https://docs.python.org/3/library/logging.html), NodeJS 中的[log4js](https://www.npmjs.com/package/log4js), Rust 中的[log4rs](https://crates.io/crates/log4rs)。  
+不同的编程语言有不同的日志工具；比较著名的是 Apache 的 [Log4j](https://logging.apache.org/log4j), Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 [logging](https://docs.python.org/3/library/logging.html), NodeJS 中的[log4js](https://www.npmjs.com/package/log4js), Rust 中的[log4rs](https://crates.io/crates/log4rs)。
+## 注意点  
+
+- 避免打印或记录任何敏感信息，包括单不限于各种PII，PCI信息，一定要记得遵守当地的各种法律法规，如中国的《个人信息保护法》（PILI）, 欧洲的一般数据保护条例GDPR等  
+- 按需选择合适的日志级别 
+- ...... 
 ## 总结  
 好的日志不仅可以为程序开发提供便利，为故障排除提供最重要的辅助信息，更可以为业务或基础设施提供优化建议或数据统计。 
 
