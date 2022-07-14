@@ -168,7 +168,7 @@
 </ul>
 <h3 id=链式追踪>链式追踪</h3>
 <p>记录下了日志，如果只是一行行简单的文字说明，那是没有太大意义的。在复杂系统或业务操作频繁的系统中，会产生非常多的日志，在这种情况下，我们就得花时间去过滤出相关的日志。
-解决上面问题的最好办法是日志的链式追踪；简单说就是，在每条日志中加入业务系统中的一个或者多个<strong>唯一</strong>的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。</p>
+解决上面问题的最好办法是日志的<strong>链式追踪</strong>；简单说就是，在每条日志中加入业务系统中的一个或者多个<strong>唯一</strong>的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。</p>
 <h3 id=按需记录日志>按需记录日志</h3>
 <img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp alt="Log Level" style=width:100%;position:center>
 <p>日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。</p>
