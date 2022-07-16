@@ -1,25 +1,32 @@
 # 日志记录的最佳实践
 
+## 简介
+
+日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
+Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。
+
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/01.16c529yynfj4.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+
 ## 日志的重要性
 
 要理解为什么日志在产品或者系统中扮演着重要的角色，我们必须了解它的价值。至少到现在，日志被应用最广泛的是**报警**、**故障排除**和**业务数据可视化**。
 
 ### 报警  
-日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。
- <img src='https://grafana.com/static/img/logs/logs-prometheus-alterting.svg' alt='Alert with logs' style="width: 100%; position: center" />
+日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。  
+ <img src='https://grafana.com/static/img/logs/logs-prometheus-alterting.svg' alt='Alert with logs' style="clear: both; display: block; margin: auto;" />
 ### 故障排除  
-这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。
-<img src='https://grafana.com/static/img/logs/logs-effective-debugging.gif' alt='Debug with logs' style="width: 100%; position: center" />
+这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。  
+<img src='https://grafana.com/static/img/logs/logs-effective-debugging.gif' alt='Debug with logs' style="clear: both; display: block; margin: auto;" />
 ### 业务数据可视化  
 很多公司可以利用存储在自己数据库里的生产环境的日志，结合相应的工具可以对业务进行业务数据可视化。这里最典型的代表是 Grafana 和 SumoLogic。
-<img src='https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png' alt='Grafana - Fitbit Health MonitorDebug with logs' style="width: 100%; position: center"/>
+<img src='https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png' alt='Grafana - Fitbit Health MonitorDebug with logs' style="clear: both; display: block; margin: auto;"/>
 
-<img src='https://help.sumologic.com/@api/deki/files/7186/Slack_File_And_App_Audit.png?revision=1' alt='SumoLogic - Slack File And App Audit' style="width: 100%; position: center" />
+<img src='https://help.sumologic.com/@api/deki/files/7186/Slack_File_And_App_Audit.png?revision=1' alt='SumoLogic - Slack File And App Audit' style="clear: both; display: block; margin: auto;" />
 
 ## 怎么做  
 ### 模版化
-为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp' alt='Logging Format' style="width: 100%; position: center" />
+为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。  
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" />
 - 基础版本  
 	- 对于日志，**时间**，**日志级别**，和**日志信息**最为重要，所以一个合格的日志应该至少包含这些信息。
 - 高级版本  
@@ -47,7 +54,7 @@
 
 ### 按需记录日志  
   
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp' alt='Log Level' style="width: 100%; position: center" />
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 
 日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。 
 

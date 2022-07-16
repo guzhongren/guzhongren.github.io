@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/><link rel=prev href=https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"日志记录的最佳实践","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/07\/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5\/"},"genre":"posts","keywords":"Engineering, logging, log, conversion","wordcount":1718,"url":"https:\/\/guzhongren.github.io\/2022\/07\/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5\/","datePublished":"2022-07-10T12:01:50+08:00","dateModified":"2022-07-10T12:01:50+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"不要把时间浪费在日志格式上"}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"日志记录的最佳实践","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/07\/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5\/"},"genre":"posts","keywords":"Engineering, logging, log, conversion","wordcount":1870,"url":"https:\/\/guzhongren.github.io\/2022\/07\/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5\/","datePublished":"2022-07-10T12:01:50+08:00","dateModified":"2022-07-10T12:01:50+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"不要把时间浪费在日志格式上"}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">日志记录的最佳实践</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/engineering/><i class="far fa-folder fa-fw" aria-hidden=true></i>Engineering</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-07-10>2022-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1718 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-07-10>2022-07-10</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1870 字&nbsp;
 <i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp title=不要把时间浪费在日志格式上></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
@@ -97,6 +97,7 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
+<li><a href=#简介>简介</a></li>
 <li><a href=#日志的重要性>日志的重要性</a>
 <ul>
 <li><a href=#报警>报警</a></li>
@@ -120,22 +121,26 @@
 <li><a href=#赞助>赞助</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=日志的重要性>日志的重要性</h2>
+</div><div class=content id=content><h2 id=简介>简介</h2>
+<p>日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
+Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。</p>
+<img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/01.16c529yynfj4.webp alt="Pillars of Observability" style=clear:both;display:block;margin:auto>
+<h2 id=日志的重要性>日志的重要性</h2>
 <p>要理解为什么日志在产品或者系统中扮演着重要的角色，我们必须了解它的价值。至少到现在，日志被应用最广泛的是<strong>报警</strong>、<strong>故障排除</strong>和<strong>业务数据可视化</strong>。</p>
 <h3 id=报警>报警</h3>
-<p>日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。
-<img src=https://grafana.com/static/img/logs/logs-prometheus-alterting.svg alt="Alert with logs" style=width:100%;position:center></p>
+<p>日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。<br>
+<img src=https://grafana.com/static/img/logs/logs-prometheus-alterting.svg alt="Alert with logs" style=clear:both;display:block;margin:auto></p>
 <h3 id=故障排除>故障排除</h3>
-<p>这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。
-<img src=https://grafana.com/static/img/logs/logs-effective-debugging.gif alt="Debug with logs" style=width:100%;position:center></p>
+<p>这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。<br>
+<img src=https://grafana.com/static/img/logs/logs-effective-debugging.gif alt="Debug with logs" style=clear:both;display:block;margin:auto></p>
 <h3 id=业务数据可视化>业务数据可视化</h3>
 <p>很多公司可以利用存储在自己数据库里的生产环境的日志，结合相应的工具可以对业务进行业务数据可视化。这里最典型的代表是 Grafana 和 SumoLogic。
-<img src=https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png alt="Grafana - Fitbit Health MonitorDebug with logs" style=width:100%;position:center></p>
-<img src="https://help.sumologic.com/@api/deki/files/7186/Slack_File_And_App_Audit.png?revision=1" alt="SumoLogic - Slack File And App Audit" style=width:100%;position:center>
+<img src=https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png alt="Grafana - Fitbit Health MonitorDebug with logs" style=clear:both;display:block;margin:auto></p>
+<img src="https://help.sumologic.com/@api/deki/files/7186/Slack_File_And_App_Audit.png?revision=1" alt="SumoLogic - Slack File And App Audit" style=clear:both;display:block;margin:auto>
 <h2 id=怎么做>怎么做</h2>
 <h3 id=模版化>模版化</h3>
-<p>为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。
-<img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp alt="Logging Format" style=width:100%;position:center></p>
+<p>为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。<br>
+<img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp alt="Logging Format" style=clear:both;display:block;margin:auto></p>
 <ul>
 <li>基础版本
 <ul>
@@ -170,7 +175,7 @@
 <p>记录下了日志，如果只是一行行简单的文字说明，那是没有太大意义的。在复杂系统或业务操作频繁的系统中，会产生非常多的日志，在这种情况下，我们就得花时间去过滤出相关的日志。
 解决上面问题的最好办法是日志的<strong>链式追踪</strong>；简单说就是，在每条日志中加入业务系统中的一个或者多个<strong>唯一</strong>的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。</p>
 <h3 id=按需记录日志>按需记录日志</h3>
-<img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp alt="Log Level" style=width:100%;position:center>
+<img src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp alt="Log Level" style=clear:both;display:block;margin:auto>
 <p>日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。</p>
 <ul>
 <li><strong>Debug</strong>: 记录技术细节，和一些帮助理解系统运行的日志;</li>
