@@ -53,6 +53,8 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 解决上面问题的最好办法是日志的**链式追踪**；简单说就是，在每条日志中加入业务系统中的一个或者多个**唯一**的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。
 
 ### 按需记录日志  
+
+#### 日志级别
   
 <img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 
@@ -70,6 +72,15 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 | Test | Debug |
 | UAT | Info |
 | Prod | Info |
+
+#### 日志位置
+
+有了日志级别，日志打印的位置也需要明确。一般情况下：
+- 其他系统调用自有系统时需要在收到请求和完成请求时各打印一次日志；
+- 自有系统调用第三方系统的接口前和收到返回信息后各打印一次日志；
+- 在系统任何有异常的地方需要打印日志；
+
+还有一种特殊情况是，像消息传递之类的系统，为了节省日志存储和减少查看干扰，大多时候我们不需要在收到消息后直接打印该消息，一般建议在收到消息后，如果系统处理有异常，在异常中将原始消息打印。
 ## 工具推荐  
 不同的编程语言有不同的日志工具；比较著名的是 Apache 的 [Log4j](https://logging.apache.org/log4j), Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 [logging](https://docs.python.org/3/library/logging.html), NodeJS 中的[log4js](https://www.npmjs.com/package/log4js), Rust 中的[log4rs](https://crates.io/crates/log4rs)。
 ## 注意点  
