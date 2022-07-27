@@ -5,7 +5,7 @@
 日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
 Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。
 
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/01.16c529yynfj4.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Pillars-of-observability.5dei5vlkhm80.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
 
 ## 日志的重要性
 
@@ -26,7 +26,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 ## 怎么做  
 ### 模版化
 为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。  
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.4arsrenuk1a0.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" />
 - 基础版本  
 	- 对于日志，**时间**，**日志级别**，和**日志信息**最为重要，所以一个合格的日志应该至少包含这些信息。
 - 高级版本  
@@ -56,7 +56,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 
 #### 日志级别
   
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.6gl3led33qc0.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 
 日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。 
 
