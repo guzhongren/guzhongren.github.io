@@ -22,7 +22,65 @@
 - 应用-其他-配置
 #### 配置信息
 
-{{< gist guzhongren 5d80dc7c31f3fe76db9cff5a327a7f35 >}}
+```json
+{
+  "customFonts": [
+    "Noto Serif SC",
+    "Bitter",
+    "Arial",
+    "Inter"
+  ],
+  "presetColors": [
+    "none",
+    "000000",
+    "ffffff",
+    "666666",
+    "edf1f3",
+    "003d4f",
+    "f2617a",
+    "cc850a",
+    "6b9e78",
+    "47a1ad",
+    "634f7d"
+  ],
+  "customColorSchemes": [
+    [
+      {
+        "fill": "none",
+        "stroke": "none"
+      },
+      {
+        "fill": "#003d4f",
+        "stroke": "#003d4f"
+      },
+      {
+        "fill": "#f2617a",
+        "stroke": "#f2617a"
+      },
+      {
+        "fill": "#cc850a",
+        "stroke": "#cc850a"
+      },
+      {
+        "fill": "#6b9e78",
+        "stroke": "#6b9e78"
+      },
+      {
+        "fill": "#47a1ad",
+        "stroke": "#47a1ad"
+      },
+      {
+        "fill": "#634f7d",
+        "stroke": "#634f7d"
+      },
+      {
+        "fill": "#000000",
+        "stroke": "#000000"
+      }
+    ]
+  ]
+}
+```
 
 #### 效果
 ![web-style](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/DrawIO/web-style.2z3v7akawpe0.webp)
