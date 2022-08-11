@@ -46,8 +46,8 @@
   "customColorSchemes": [
     [
       {
-        "fill": "none",
-        "stroke": "none"
+        "fill": "#ffffff",
+        "stroke": "#ffffff"
       },
       {
         "fill": "#003d4f",
