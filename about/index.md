@@ -22,6 +22,7 @@
 
 - [容器安全扫描工具推荐-Thoughtworks洞见](https://insights.thoughtworks.cn/container-scanning-tools-recommendation/)
 - [Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)
+- [如何记录日志-Thoughtworks洞见](https://insights.thoughtworks.cn/how-to-logging/)
 
 ## 开源项目贡献
 
