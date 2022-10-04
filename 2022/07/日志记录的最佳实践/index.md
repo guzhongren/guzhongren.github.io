@@ -5,7 +5,7 @@
 日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
 Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。
 
-<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Pillars-of-observability.5dei5vlkhm80.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
 
 ## 日志的重要性
 
