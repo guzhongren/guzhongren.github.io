@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <title>一些做运维工作的小总结 - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:title" content="一些做运维工作的小总结">
-<meta property="og:description" content="Refs 博客:https://guzhongren.github.io/ Disclaimer 本文仅代表个人观点，与 Thoughtworks 公司无任何关系。 SHA256 checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6 赞助 SHA256 checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c 使用此文件进行校">
+<meta property="og:description" content="简介 最近上了一个Ops 的项目，此Ops 非彼Ops。 一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-09-30T21:03:02+08:00">
@@ -12,13 +12,13 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://guzhongren.github.io">
 <meta name=twitter:title content="一些做运维工作的小总结">
-<meta name=twitter:description content="Refs 博客:https://guzhongren.github.io/ Disclaimer 本文仅代表个人观点，与 Thoughtworks 公司无任何关系。 SHA256 checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6 赞助 SHA256 checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c 使用此文件进行校">
+<meta name=twitter:description content="简介 最近上了一个Ops 的项目，此Ops 非彼Ops。 一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/><link rel=prev href=https://guzhongren.github.io/2022/08/some-good-practices-of-logging/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些做运维工作的小总结","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/09\/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93\/"},"genre":"posts","keywords":"","wordcount":75,"url":"https:\/\/guzhongren.github.io\/2022\/09\/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93\/","datePublished":"2022-09-30T21:03:02+08:00","dateModified":"2022-09-30T21:03:02+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"一些做运维工作的小总结","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/09\/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93\/"},"genre":"posts","keywords":"DevOps, Summary","wordcount":945,"url":"https:\/\/guzhongren.github.io\/2022\/09\/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93\/","datePublished":"2022-09-30T21:03:02+08:00","dateModified":"2022-09-30T21:03:02+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -87,9 +87,9 @@
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">一些做运维工作的小总结</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/><i class="far fa-folder fa-fw" aria-hidden=true></i>Categories</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-09-30>2022-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 75 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
+<div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/devops/><i class="far fa-folder fa-fw" aria-hidden=true></i>DevOps</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2022-09-30>2022-09-30</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 945 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" data-srcset="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260, https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 1.5x, https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260 2x" data-sizes=auto alt="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" title="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -97,12 +97,36 @@
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
 <ul>
+<li><a href=#简介>简介</a></li>
+<li><a href=#onboarding>Onboarding</a></li>
+<li><a href=#流程化>流程化</a></li>
+<li><a href=#记录>记录</a></li>
+<li><a href=#总结>总结</a></li>
 <li><a href=#refs>Refs</a></li>
 <li><a href=#disclaimer>Disclaimer</a></li>
 <li><a href=#赞助>赞助</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><h2 id=refs>Refs</h2>
+</div><div class=content id=content><h2 id=简介>简介</h2>
+<p>最近上了一个Ops 的项目，此Ops 非彼Ops。
+一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色。需要在开发上线之后解决所有生产环境的问题，并且为客户方解决他们日常管理中的各种问题，还有为客户产品的使用者解决线上生产问题或着寻找他们提出的各种问题的原因。</p>
+<p>由于项目非常大，有多达20+的微服务，还有各种用户设备；而我们团队在这方面没有什么经验，而且Onboarding 基本都没有，大多时候都需要猜。</p>
+<h2 id=onboarding>Onboarding</h2>
+<p>没有Onboarding，那我们就创造 Onboarding。</p>
+<p>项目很大，同事给的Onboarding 很短，只是一些链接。在已有知识的基础上，利用Logseq 整理了Onboarding 文档，为未来加入项目的同事提供更好的Onboardign流程。</p>
+<p>利用在之前项目上的总结，形成了这个项目上的Oboarding 流程。包含项目背景，期望，词汇目录，组织架构，工具集，Leave Plan, Ops Flow, 工作模板等。</p>
+<h2 id=流程化>流程化</h2>
+<p>有时候Ops 的工作其实很流程化，比如每周或者每天都要给特定的人发送Report, 那我们就可以将经常用的SQL，邮件模板等存起来，到时候一运行直接发送即可。</p>
+<p>还有，比如收到了线上的 Issue, 可以利用 Logseq 的模板功能，直接生成处理流程目录，这样就省了很多时间去思考应该考虑哪些方面或者需要有什么样的输出。</p>
+<h2 id=记录>记录</h2>
+<p>凡事都要记着。好记性不如烂笔头。</p>
+<p>俗话说的真好，在Ops 工作流程中，也是一样。因为很多东西不是一天两天就能搞定，对于时间长的工作来说，如果有个记录那么就能很快想起以前干过什么，之后要干什么了。有时候需要一些截图，可以直接放在笔记工具中，这样也可以很快找到所谓的证据。证据在Ops工作中可是非常重要的东西。</p>
+<p>在自己的笔记工具中记录是一方面，另一方面，我们需要让客户知道我们每天的进度，那么我们也需要将我们的进度通过不同的方式共享给他们，作为文字，当然是首选方式。</p>
+<h2 id=总结>总结</h2>
+<p>多经历一些项目吧，你认为的只是你认为的。
+新加坡人挺卷的，是的，挺卷的。
+项目也挺卷的，今天还有人找我想让我去做新加坡某项目的前端&mldr;&mldr;</p>
+<h2 id=refs>Refs</h2>
 <ul>
 <li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客:https://guzhongren.github.io/</a></li>
 </ul>
@@ -132,12 +156,12 @@
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-hashtags><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-hashtag><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-image="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-hashtags=DevOps,Summary><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-hashtag=DevOps><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-image="https://images.pexels.com/photos/2881785/pexels-photo-2881785.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结 data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/ data-title=一些做运维工作的小总结><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/>Tags</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw" aria-hidden=true></i>&nbsp;<a href=/tags/devops/>DevOps</a>,&nbsp;<a href=/tags/summary/>Summary</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>返回</a></span>&nbsp;|&nbsp;<span><a href=/>主页</a></span>
 </section>
