@@ -31,7 +31,7 @@
 
 ## 技术栈
 
-### [前端](https://stackblitz.com/edit/frontend-capability-editoro?file=index.js)
+### [前端](https://stackblitz.com/edit/frontend-capability-editor?file=index.js)
 
 <iframe src="https://frontend-capability-editoro.stackblitz.io" style="
     border: none;
