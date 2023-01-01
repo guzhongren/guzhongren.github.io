@@ -1,0 +1,53 @@
+# 年终总结-现在，最好的祝福就是不要去打扰
+
+
+现代社会每个人都有自己的社交圈子，也有自己的信息茧房。某天突然的一个信息可能会破坏原有的信任关系。比如突然的一个年终总结。
+
+最好的总结，总是自驱的，规律性的，有目的性的。
+
+## 现象
+
+相信大家在这段时间，不管是在朋友圈还是微博微信上，抑或是公众号，视频号上都可以看到铺天盖地的年终总结，在我看来，大部分都是在完成自己的"日常打卡"，博取流量或者别人的关注。试问自己，不发这个总结，难道你就对自己过去一年没有底么？
+
+## 为什么
+
+我相信，很多人发年终总结，大都是跟风，炫耀一下自己"曾经来过"，还做了些事，证明自己没有虚度光阴。
+
+而对于真正的年终总结，或者说好的年终总结，大都是持续的，有调理的， 负责人的....
+
+### 持续的
+
+持续不断的总结，总会在每时每刻发生，而不是特定的时间，比如一年的最后一天。
+
+### 有调理的
+
+总结，一定要有"汇报对象"，抑或是你的客户，抑或是你自己。否则，你的总结就是空洞的，没有意义的，浪费自己的精力而已。
+
+## 改进
+
+- 时刻总结，而不是"跟风总结"。平时为自己将要做的事列个Todo, 并为每件事记录所投入的时间，精力，困难和帮助。只有通过量化，并在不断的反思中我们才能成长，总结才有意义。我用的是Logseq,可以记录上面提到的点。
+
+- 定期发布。定期发布会让别人有期待，对你将要发生的事很确定，给大家以"靠谱"的标签，增加自己在别人眼中的影响力。
+
+- 量化。凡事皆可量化，所有的不可直接量化的事物，皆可通过抽象来量化。比如能力，很难直接用数字量化，但是你可以通过抽象，讲每个能力阶段量化为一组有序的数字就可以为别人呈现出直观的效果。比如我的[前端能力图谱](https://stackblitz.com/edit/frontend-capability-editor?file=index.js)。
+
+
+## Refs
+
+* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+
+## Disclaimer
+
+本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+
+----
+![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+> [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
+
+## 赞助
+
+![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
+> [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
+
+> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+
