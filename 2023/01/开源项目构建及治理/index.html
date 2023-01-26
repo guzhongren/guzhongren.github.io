@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/><link rel=prev href=https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"开源项目构建及治理","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/"},"genre":"posts","keywords":"open source, build","wordcount":2828,"url":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/","datePublished":"2023-01-23T17:22:10+08:00","dateModified":"2023-01-23T17:22:10+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"开源项目构建及治理","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/"},"genre":"posts","keywords":"open source, build","wordcount":3725,"url":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/","datePublished":"2023-01-23T17:22:10+08:00","dateModified":"2023-01-23T17:22:10+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,8 +88,8 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">开源项目构建及治理</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/open-source/><i class="far fa-folder fa-fw" aria-hidden=true></i>Open Source</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-01-23>2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 2828 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-01-23>2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 3725 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" data-srcset="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80, https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 1.5x, https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" title="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -115,6 +115,7 @@
 <ul>
 <li><a href=#行为规范code-of-conduct>行为规范(Code of Conduct)</a></li>
 <li><a href=#贡献策略contributing>贡献策略(Contributing)</a></li>
+<li><a href=#代码请求pr>代码请求(PR)</a></li>
 <li><a href=#安全security>安全(Security)</a></li>
 <li><a href=#合规性compliance>合规性(Compliance)</a></li>
 <li><a href=#文档即代码doc-as-code>文档即代码(Doc as code)</a></li>
@@ -130,7 +131,7 @@
 </nav></div>
 </div><div class=content id=content><h2 id=前言>前言</h2>
 <p>计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度开源,在Apache 毕业的 EChart。开源不仅可以展示自己的技术能力，而且还可以为他人提供免费"物料"，减少重复造轮子的事的发生，&ldquo;间接为全球碳中和做贡献&rdquo;。</p>
-<p>因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了；同时也在这里做个总结。</p>
+<p>因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了, 同时也在这里做个总结。</p>
 <h2 id=一图胜千言>一图胜千言</h2>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.3owdrno2fvk0.webp data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.3owdrno2fvk0.webp, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.3owdrno2fvk0.webp 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.3owdrno2fvk0.webp 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/开源项目构建及治理.3owdrno2fvk0.webp title=开源项目构建及治理></p>
 <h2 id=产品product>产品（Product）</h2>
@@ -177,9 +178,77 @@
 <p>所谓反馈一般指两种，一种是来自最终用户的反馈，可能包含夸赞、诋毁或者建议意见，良好的反馈循环可以将某些反馈转化为需求；另一种是间接产生的反馈，如贡献者或者使用该项目的开发者发现的不足，这类反馈一般都是比较重要的 bug，作为开源项目的维护者，应及时关注并解决。</p>
 <p>反馈系统的类型也是多种多样，通常是在产品官网或者产品社区网站提供一个对话框或者留言板，允许用户进行留言, 这种方式主要针对最终用户；还有一种通过使用代码托管平台创建 Issue, 这种方式主要针对开发者。 这里可以使用其他开发者开源的一些应用，如：<a href=https://utteranc.es/ target=_blank rel="noopener noreffer">uterance.es</a>、 <a href=https://github.com/imsun/gitment target=_blank rel="noopener noreffer">gitment</a>和 <a href=https://github.com/gitalk/gitalk target=_blank rel="noopener noreffer">gitalk</a>。</p>
 <h3 id=代码code>代码(Code)</h3>
-<p>作为开源项目，毋庸置疑必须以代码为基础，但是在写代码之前一定要考虑一些事，比如项目组的行为规范(Code of conduct)、贡献策略(Contributing)、安全(Security)、合规性(Compliance)、及产品文档(Doc as code)&mldr;&mldr;</p>
+<p>作为开源项目，毋庸置疑必须以代码为基础，但是在写代码之前一定要考虑一些事，比如项目组的行为规范(Code of conduct)、贡献策略(Contributing)、代码请求(PR)、安全(Security)、合规性(Compliance)、及产品文档(Doc as code)&mldr;&mldr;</p>
 <h4 id=行为规范code-of-conduct>行为规范(Code of Conduct)</h4>
+<p>&ldquo;无规矩不成方言&rdquo;。好的开源社区的特质总是相似的，平等、没有各种歧视、激励性发言和没有骚柔等等的，在社区内容是一些默认"规矩"，大家都默认遵守。Code of Conduct 包含各个方面，人文、政治、地理、宗教和性别等。这里可以参考 Microsoft 和 Thoughtworks 与 <a href=https://www.contributor-covenant.org/ target=_blank rel="noopener noreffer">Contributor Convenant</a>的行为规范。</p>
+<ul>
+<li><a href=https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md target=_blank rel="noopener noreffer">Microsoft Open Source Code of Conduct: https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md</a></li>
+<li><a href=https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf target=_blank rel="noopener noreffer">Thoughtworks Code of Conduct: https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf</a></li>
+<li><a href=https://www.contributor-covenant.org/ target=_blank rel="noopener noreffer">Contributor Convenant</a></li>
+</ul>
 <h4 id=贡献策略contributing>贡献策略(Contributing)</h4>
+<p>开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好的协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的<code>[Contributing](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md)</code> 文档里阐述了如何为其项目贡献的贡献策略。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://allcontributors.org/img/icons/android-icon-192x192.png data-srcset="https://allcontributors.org/img/icons/android-icon-192x192.png, https://allcontributors.org/img/icons/android-icon-192x192.png 1.5x, https://allcontributors.org/img/icons/android-icon-192x192.png 2x" data-sizes=auto alt=https://allcontributors.org/img/icons/android-icon-192x192.png title=Allcontributors></p>
+<p>同时，如果你将项目的贡献者添加到项目中醒目的位置，让所有人看到他为这个项目贡献了内容，这将激励更多的贡献者为项目做贡献。这里推荐使用<a href=https://allcontributors.org/ target=_blank rel="noopener noreffer">Allcontributors</a>, 通过为你的开源项目集成这个工具，在项目的README 中可以显示共享者的头像及贡献类型，让贡献者感觉到参与开源项目的荣耀感。</p>
+<h4 id=代码请求pr>代码请求(PR)</h4>
+<p>在开源项目中，大家通常使用 PR (Pull Request) 来贡献代码, 所以项目的维护者(Maintainer)要将一部分精力放在 Reveiw 别的贡献者的PR 上，同时给予鼓励性的言语评语(Comment), 或者给予适当的建议意见。要相信正向的鼓励总是会带来不一样的额外收获。</p>
+<p>当然，我们也要推荐大家使用一些约定俗成的简写，如：</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:left>简写</th>
+<th style=text-align:left>英语全拼</th>
+<th style=text-align:left>中文释义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>PR</td>
+<td style=text-align:left>Pull Request</td>
+<td style=text-align:left>请求合并代码</td>
+</tr>
+<tr>
+<td style=text-align:left>WIP</td>
+<td style=text-align:left>Work in progress</td>
+<td style=text-align:left>贡献者做了很大的改动，但部分完成了，这里就是WIP,这样就方便别人知道你的提交的进展，审核已经完成的部分</td>
+</tr>
+<tr>
+<td style=text-align:left>PTAL</td>
+<td style=text-align:left>Please take a look</td>
+<td style=text-align:left>请求别人进行 Code Review</td>
+</tr>
+<tr>
+<td style=text-align:left>TBR</td>
+<td style=text-align:left>To be reviewed</td>
+<td style=text-align:left>提示别人这些代码要被Review</td>
+</tr>
+<tr>
+<td style=text-align:left>TL/DR</td>
+<td style=text-align:left>Too lang, Don&rsquo;t read</td>
+<td style=text-align:left>太长了，懒得看</td>
+</tr>
+<tr>
+<td style=text-align:left>LGTM</td>
+<td style=text-align:left>Look good to me</td>
+<td style=text-align:left>通常是指Review 通过</td>
+</tr>
+<tr>
+<td style=text-align:left>SGTM</td>
+<td style=text-align:left>Sound good to me</td>
+<td style=text-align:left>和LGTM 同义</td>
+</tr>
+<tr>
+<td style=text-align:left>AFAIK</td>
+<td style=text-align:left>As far as I know</td>
+<td style=text-align:left>据我所知</td>
+</tr>
+<tr>
+<td style=text-align:left>CC</td>
+<td style=text-align:left>Carbon Copy</td>
+<td style=text-align:left>抄送</td>
+</tr>
+</tbody>
+</table>
 <h4 id=安全security>安全(Security)</h4>
 <h4 id=合规性compliance>合规性(Compliance)</h4>
 <h4 id=文档即代码doc-as-code>文档即代码(Doc as code)</h4>
@@ -195,6 +264,7 @@
 <li><a href=https://utteranc.es/ target=_blank rel="noopener noreffer">Utterance.es: https://utteranc.es/</a></li>
 <li><a href=https://github.com/imsun/gitment target=_blank rel="noopener noreffer">Gitment: https://github.com/imsun/gitment</a></li>
 <li><a href=https://github.com/gitalk/gitalk target=_blank rel="noopener noreffer">Gitalk: https://github.com/gitalk/gitalk</a></li>
+<li><a href=https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md target=_blank rel="noopener noreffer">Contributing: https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md</a></li>
 </ul>
 <h2 id=disclaimer>Disclaimer</h2>
 <p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>

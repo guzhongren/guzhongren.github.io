@@ -6,7 +6,7 @@
 计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度开源,在Apache 毕业的 EChart。开源不仅可以展示自己的技术能力，而且还可以为他人提供免费"物料"，减少重复造轮子的事的发生，"间接为全球碳中和做贡献"。
 
 
-因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了；同时也在这里做个总结。
+因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了, 同时也在这里做个总结。
 
 ## 一图胜千言
 
@@ -88,14 +88,47 @@ Roadmap 的形式有各种各样的，如下是Jenkins 和 Azure 的。
 
 ### 代码(Code)
 
-作为开源项目，毋庸置疑必须以代码为基础，但是在写代码之前一定要考虑一些事，比如项目组的行为规范(Code of conduct)、贡献策略(Contributing)、安全(Security)、合规性(Compliance)、及产品文档(Doc as code)......
+作为开源项目，毋庸置疑必须以代码为基础，但是在写代码之前一定要考虑一些事，比如项目组的行为规范(Code of conduct)、贡献策略(Contributing)、代码请求(PR)、安全(Security)、合规性(Compliance)、及产品文档(Doc as code)......
 
 
 #### 行为规范(Code of Conduct)
 
+"无规矩不成方言"。好的开源社区的特质总是相似的，平等、没有各种歧视、激励性发言和没有骚柔等等的，在社区内容是一些默认"规矩"，大家都默认遵守。Code of Conduct 包含各个方面，人文、政治、地理、宗教和性别等。这里可以参考 Microsoft 和 Thoughtworks 与 [Contributor Convenant](https://www.contributor-covenant.org/)的行为规范。
+- [Microsoft Open Source Code of Conduct: https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md](https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md)
+- [Thoughtworks Code of Conduct: https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf](https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf)
+- [Contributor Convenant](https://www.contributor-covenant.org/)
+
 #### 贡献策略(Contributing)
+
+开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好的协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的`[Contributing](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md)` 文档里阐述了如何为其项目贡献的贡献策略。
+
+![Allcontributors](https://allcontributors.org/img/icons/android-icon-192x192.png)
+
+同时，如果你将项目的贡献者添加到项目中醒目的位置，让所有人看到他为这个项目贡献了内容，这将激励更多的贡献者为项目做贡献。这里推荐使用[Allcontributors](https://allcontributors.org/), 通过为你的开源项目集成这个工具，在项目的README 中可以显示共享者的头像及贡献类型，让贡献者感觉到参与开源项目的荣耀感。 
+
+#### 代码请求(PR)
+
+在开源项目中，大家通常使用 PR (Pull Request) 来贡献代码, 所以项目的维护者(Maintainer)要将一部分精力放在 Reveiw 别的贡献者的PR 上，同时给予鼓励性的言语评语(Comment), 或者给予适当的建议意见。要相信正向的鼓励总是会带来不一样的额外收获。
+
+当然，我们也要推荐大家使用一些约定俗成的简写，如：
+
+|简写|英语全拼|中文释义|
+|:--|:--|:--|
+|PR|Pull Request|请求合并代码|
+|WIP|Work in progress|贡献者做了很大的改动，但部分完成了，这里就是WIP,这样就方便别人知道你的提交的进展，审核已经完成的部分|
+|PTAL|Please take a look|请求别人进行 Code Review|
+|TBR|To be reviewed|提示别人这些代码要被Review|
+|TL/DR|Too lang, Don't read|太长了，懒得看|
+|LGTM| Look good to me|通常是指Review 通过|
+|SGTM|Sound good to me|和LGTM 同义|
+|AFAIK|As far as I know|据我所知|
+|CC|Carbon Copy|抄送|
+
 #### 安全(Security)
+
+
 #### 合规性(Compliance)
+
 #### 文档即代码(Doc as code)
 
 ## 社区
@@ -113,6 +146,8 @@ Roadmap 的形式有各种各样的，如下是Jenkins 和 Azure 的。
 * [Utterance.es: https://utteranc.es/](https://utteranc.es/)
 * [Gitment: https://github.com/imsun/gitment](https://github.com/imsun/gitment)
 * [Gitalk: https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
+* [Contributing: https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md)
+
 ## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
