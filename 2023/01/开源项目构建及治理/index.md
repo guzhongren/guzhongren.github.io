@@ -236,16 +236,15 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 ## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Kubernates](https://kubernetes.io/)
-* [EChart](https://echarts.apache.org/)
-* [Istanbul](https://github.com/istanbuljs)
-* [Cypress](https://www.cypress.io/)
+* [Kubernates: https://kubernetes.io/](https://kubernetes.io/)
+* [EChart: https://echarts.apache.org/](https://echarts.apache.org/)
+* [Istanbul: https://github.com/istanbuljs](https://github.com/istanbuljs)
+* [Cypress: https://www.cypress.io/)](https://www.cypress.io/)
 * [Semver: https://semver.org/](https://semver.org/)
 * [Utterance.es: https://utteranc.es/](https://utteranc.es/)
 * [Gitment: https://github.com/imsun/gitment](https://github.com/imsun/gitment)
 * [Gitalk: https://github.com/gitalk/gitalk](https://github.com/gitalk/gitalk)
 * [Contributing: https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md)
-* 
 * [opensource.org: https://opensource.org/licenses](https://opensource.org/licenses)
 * [Docusaurus: (https://docusaurus.io/](https://docusaurus.io/)
 * [Astro: https://astro.build/](https://astro.build/)
