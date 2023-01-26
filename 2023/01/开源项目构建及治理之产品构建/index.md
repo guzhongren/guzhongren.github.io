@@ -99,7 +99,7 @@ Roadmap 的形式有各种各样的，如下是Jenkins 和 Azure 的 Roadmap。
 
 #### 贡献策略(Contributing)
 
-开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好地协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需要满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的`[Contributing](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md)` 文档里阐述了如何为其项目贡献的贡献策略。
+开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好地协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需要满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的 [Contributing](https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md) 文档里阐述了如何为其项目贡献的贡献策略。
 
 ![Allcontributors](https://allcontributors.org/img/icons/android-icon-192x192.png)
 
