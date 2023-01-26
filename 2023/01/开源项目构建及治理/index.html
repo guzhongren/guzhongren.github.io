@@ -3,7 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
-<title>开源项目构建及治理 - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:title" content="开源项目构建及治理">
+<title>开源项目构建及治理之产品构建 - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:title" content="开源项目构建及治理之产品构建">
 <meta property="og:description" content="前言 计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度开源,在Apache 毕业的 E">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
@@ -11,14 +11,14 @@
 <meta property="article:modified_time" content="2023-01-23T17:22:10+08:00"><meta property="og:site_name" content="My cool site">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://guzhongren.github.io">
-<meta name=twitter:title content="开源项目构建及治理">
+<meta name=twitter:title content="开源项目构建及治理之产品构建">
 <meta name=twitter:description content="前言 计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度开源,在Apache 毕业的 E">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/><link rel=prev href=https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"开源项目构建及治理","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/"},"genre":"posts","keywords":"open source, build","wordcount":3725,"url":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/","datePublished":"2023-01-23T17:22:10+08:00","dateModified":"2023-01-23T17:22:10+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"开源项目构建及治理之产品构建","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/"},"genre":"posts","keywords":"open source, build","wordcount":5270,"url":"https:\/\/guzhongren.github.io\/2023\/01\/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86\/","datePublished":"2023-01-23T17:22:10+08:00","dateModified":"2023-01-23T17:22:10+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -86,10 +86,10 @@
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>目录</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">开源项目构建及治理</h1><div class=post-meta>
+</div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">开源项目构建及治理之产品构建</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/open-source/><i class="far fa-folder fa-fw" aria-hidden=true></i>Open Source</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-01-23>2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 3725 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 8 分钟&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-01-23>2023-01-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 5270 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 11 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" data-srcset="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80, https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 1.5x, https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" title="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -116,7 +116,28 @@
 <li><a href=#行为规范code-of-conduct>行为规范(Code of Conduct)</a></li>
 <li><a href=#贡献策略contributing>贡献策略(Contributing)</a></li>
 <li><a href=#代码请求pr>代码请求(PR)</a></li>
-<li><a href=#安全security>安全(Security)</a></li>
+<li><a href=#安全security>安全(Security)</a>
+<ul>
+<li><a href=#静态应用安全测试>静态应用安全测试</a>
+<ul>
+<li><a href=#开源免费>开源免费</a></li>
+<li><a href=#商业授权>商业授权</a></li>
+</ul>
+</li>
+<li><a href=#动态应用安全测试>动态应用安全测试</a>
+<ul>
+<li><a href=#开源免费-1>开源免费</a></li>
+</ul>
+</li>
+<li><a href=#商业授权-1>商业授权</a></li>
+<li><a href=#依赖安全检查>依赖安全检查</a>
+<ul>
+<li><a href=#开源免费-2>开源免费</a></li>
+<li><a href=#商业授权-2>商业授权</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href=#合规性compliance>合规性(Compliance)</a></li>
 <li><a href=#文档即代码doc-as-code>文档即代码(Doc as code)</a></li>
 </ul>
@@ -204,7 +225,7 @@
 <tbody>
 <tr>
 <td style=text-align:left>PR</td>
-<td style=text-align:left>Pull Request</td>
+<td style=text-align:left>Pull request</td>
 <td style=text-align:left>请求合并代码</td>
 </tr>
 <tr>
@@ -250,9 +271,99 @@
 </tbody>
 </table>
 <h4 id=安全security>安全(Security)</h4>
+<p>安全问题不管是在开源项目还是商业项目中都非常重要，我们可以将其分为<code>静态应用安全测试</code>、<code>动态应用安全测试</code>和<code>依赖安全检查</code>几大类。</p>
+<h5 id=静态应用安全测试>静态应用安全测试</h5>
+<p>静态应用安全测试(Static Application Security Testing),简称 <code>SAST</code>，也称之为源码安全扫描。</p>
+<p>SAST 主要是通过使用工具来对源代码进行分析，找出源代码中存在的安全问题，比如密钥, 或者存在安全问的对象的方法等。</p>
+<p>使用SATS, 我们能够:</p>
+<ul>
+<li>让安全问题提早报漏出来，从而降低修复成本</li>
+<li>降低开发团队对于安全专业技能的要求</li>
+<li>用事半功倍的方式获取源码对安全质量的反馈</li>
+</ul>
+<p>做静态应用安全测试的工具有很多，主要分为开源免费和商业授权使用两类；并且可以将其集成到 IDE 或者 Pipeline 中。</p>
+<h6 id=开源免费>开源免费</h6>
+<ul>
+<li><a href=https://www.sonarsource.com/ target=_blank rel="noopener noreffer">SonarQube</a></li>
+<li><a href=https://spotbugs.github.io/ target=_blank rel="noopener noreffer">Spot Bugs</a></li>
+<li><a href=https://find-sec-bugs.github.io/ target=_blank rel="noopener noreffer">Find-Sec-Bugs</a></li>
+<li><a href=https://github.com/PyCQA/bandit target=_blank rel="noopener noreffer">Bandit</a></li>
+<li><a href=https://github.com/presidentbeef/brakeman target=_blank rel="noopener noreffer">Brakeman</a></li>
+<li><a href=https://github.com/trufflesecurity/trufflehog target=_blank rel="noopener noreffer">trufflehog</a></li>
+<li><a href=https://github.com/thoughtworks/talisman target=_blank rel="noopener noreffer">Talisman</a></li>
+</ul>
+<h6 id=商业授权>商业授权</h6>
+<ul>
+<li><a href=https://www.microfocus.com/en-us/cyberres/application-security target=_blank rel="noopener noreffer">Fortify</a></li>
+<li><a href=https://checkmarx.com/ target=_blank rel="noopener noreffer">CheckMarx</a></li>
+</ul>
+<h5 id=动态应用安全测试>动态应用安全测试</h5>
+<p>动态应用安全测试，Dynamic Application Security Testing,简称 <code>DAST</code>。</p>
+<p>DAST 主要是使用第三方漏洞工具对正在运行的应用程序及其环境进行扫描，并将扫描到的安全问题可视化出来的过程。</p>
+<p>DAST 通常在项目运行起来之后进行，是对应用程序的<em>行为</em>进行测试。</p>
+<p>可使用的工具有：</p>
+<h6 id=开源免费-1>开源免费</h6>
+<ul>
+<li><a href=https://www.zaproxy.org/ target=_blank rel="noopener noreffer">OWASP® Zed Attack Proxy (ZAP)</a></li>
+<li><a href=https://www.arachni-scanner.com/ target=_blank rel="noopener noreffer">Arachni</a></li>
+</ul>
+<h5 id=商业授权-1>商业授权</h5>
+<ul>
+<li><a href=https://www.acunetix.com/ target=_blank rel="noopener noreffer">Acunetix</a></li>
+<li><a href=https://www.rapid7.com/ target=_blank rel="noopener noreffer">Rapid7</a></li>
+</ul>
+<h5 id=依赖安全检查>依赖安全检查</h5>
+<p>现代应用程序大都是基于已有的第三方框架(Framework) 和包(package)来构建的。在开发过程中，我们更关注我们的功能的实现，容易忽略第三方依赖的安全问题，比如 2021 年的 <a href=https://en.wikipedia.org/wiki/Log4j#Log4Shell_vulnerability target=_blank rel="noopener noreffer">Log4Shell 漏洞问题</a>, 由于这个<a href=https://logging.apache.org/log4j/2.x/ target=_blank rel="noopener noreffer">Log4j</a> 常用包被集成到全球很多项目中，而其某些版本是有安全漏洞的，如果不能及时修复，那么可能会出现很多问题，包括政治，经济，安全等等。</p>
+<p>对于依赖安全来说，也有很多工具可以使用:</p>
+<h6 id=开源免费-2>开源免费</h6>
+<ul>
+<li><a href=https://www.mend.io/free-developer-tools/renovate/ target=_blank rel="noopener noreffer">Mend renovate</a>, 注：商业收费，但对开源项目免费</li>
+<li><a href=https://docs.npmjs.com/cli/v6/commands/npm-audit target=_blank rel="noopener noreffer">npm-autit</a></li>
+<li><a href=https://owasp.org/www-project-dependency-check/ target=_blank rel="noopener noreffer">OWASP DependencyCheck</a></li>
+<li><a href=https://github.com/dependabot target=_blank rel="noopener noreffer">GitHub Dependabot</a></li>
+<li><a href=https://realpython.com/pipenv-guide/ target=_blank rel="noopener noreffer">Pipen</a> - python</li>
+<li><a href=https://github.com/rubysec/bundler-audit target=_blank rel="noopener noreffer">bundle-audit</a> - Ruby</li>
+<li><a href=https://github.com/hawkeyesec/scanner-cli target=_blank rel="noopener noreffer">Hawkeye</a>, 注：作者正在转手这个项目</li>
+<li><a href=https://github.com/aquasecurity/trivy target=_blank rel="noopener noreffer">Trivy</a></li>
+<li><a href=https://snyk.io/ target=_blank rel="noopener noreffer">Snyk</a></li>
+</ul>
+<h6 id=商业授权-2>商业授权</h6>
+<ul>
+<li><a href=https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html target=_blank rel="noopener noreffer">BlackDuck</a></li>
+<li><a href=https://snyk.io/ target=_blank rel="noopener noreffer">Snyk</a></li>
+</ul>
 <h4 id=合规性compliance>合规性(Compliance)</h4>
+<p>开源项目的合规性不仅是自身产品代码的合规性，还有一部分是第三方依赖的合规性。</p>
+<p>如果你的开源项目使用了受版权保护的依赖，那么，你很可能会收到有版权依赖公司的律师函或者邮件，轻则什么事都没有，重则倾家荡产，牢底坐穿。比如，2018年 Facebook 将 React 的许可证由 MIT 许可证变更为 Fecebook 公司的许可证，这个变更带来了一些问题，其中一些是：</p>
+<ul>
+<li>
+<p>遵循新许可证的限制: 新许可证要求在使用React的代码的同时，必须在应用程序中明确标识"Powered by React"。这可能会对一些公司或组织带来麻烦，因为他们可能不想在应用程序中显示这个标识。</p>
+</li>
+<li>
+<p>对第三方库的影响: 由于React是一个流行的JavaScript库，很多第三方库都依赖于它。因此，这次许可证变更可能会影响到这些第三方库的使用。</p>
+</li>
+<li>
+<p>法律纠纷风险: 因为新许可证包含了一些限制条款，所以如果某些公司或组织没有遵循这些限制条款，他们可能会面临法律纠纷。</p>
+</li>
+<li>
+<p>对开源社区的影响: 这次许可证变更可能会对开源社区产生影响，因为一些开发人员可能不愿意遵循新许可证的限制条款，而放弃使用React。</p>
+</li>
+</ul>
+<p>所以，在开始你的开源项目前，你需要想清楚你的开源项目的定位及开源协议，这里可以参考 <a href=https://opensource.org/licenses target=_blank rel="noopener noreffer">opensource.org</a> 来找到适合你的开源协议，也可以使用这款工具<a href=https://ufal.github.io/public-license-selector/ target=_blank rel="noopener noreffer">License Selector</a>来根据提问来选择合适的开源协议。</p>
+<p>当然你需要一定的工具来保证你的依赖的合规性。比如：对于基于 NodeJS 的项目，可以使用 <a href=https://www.npmjs.com/package/license-compliance target=_blank rel="noopener noreffer">license-compliance</a> 来检查依赖及其依赖的依赖的合规性。对于 Gradle 项目，可以使用 <a href=https://github.com/jk1/Gradle-License-Report target=_blank rel="noopener noreffer">Gradle-License-Report</a> 来检查 Gradle 项目的合规性。</p>
 <h4 id=文档即代码doc-as-code>文档即代码(Doc as code)</h4>
+<p>对于产品而言，一定要有文档; 产品文档一般被当作使用说明或者遇到问题时的解决方案；对于开源项目来说，最好的文档就是代码化的文档，并且托管在网站上，像 <a href=https://pages.github.com/ target=_blank rel="noopener noreffer">GitHub pages</a> 和 <a href=https://www.netlify.com/ target=_blank rel="noopener noreffer">Netlify</a>等。</p>
+<p>现在也有很多可以快速构建文档的工具库，如：</p>
+<ul>
+<li><a href=https://docusaurus.io/ target=_blank rel="noopener noreffer">Docusaurus</a></li>
+<li><a href=https://astro.build/ target=_blank rel="noopener noreffer">Astro</a></li>
+<li><a href=https://gohugo.io/ target=_blank rel="noopener noreffer">Hugo</a></li>
+<li><a href=https://vuepress.vuejs.org/ target=_blank rel="noopener noreffer">VuePress</a></li>
+</ul>
+<p>大多数文档框架都支持自定义，这样开发者可以将产品的介绍页也可以加进去，这样产品介绍和产品文档就在同一个项目和同一个网站中，提升用户体验和开发体验了。</p>
 <h2 id=社区>社区</h2>
+<p>社区是另一个比较大的话题，在下篇中聊。这里放上《如何组织社区》的思维导图。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp title=如何组织社区></p>
 <h2 id=refs>Refs</h2>
 <ul>
 <li><a href=https://guzhongren.github.io/ target=_blank rel="noopener noreffer">博客:https://guzhongren.github.io/</a></li>
@@ -292,7 +403,7 @@
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理 data-hashtags="open source,build"><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-hashtag="open source"><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理 data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理 data-image="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理 data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a></span>
+<span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建 data-hashtags="open source,build"><i class="fab fa-twitter fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-hashtag="open source"><i class="fab fa-facebook-square fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建 data-web><i class="fab fa-whatsapp fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建><i data-svg-src=https://cdn.jsdelivr.net/npm/simple-icons@7.0.0/icons/line.svg aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建 data-image="https://images.unsplash.com/photo-1612201598945-f66a763965bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"><i class="fab fa-weibo fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建 data-description><i class="fab fa-blogger fa-fw" aria-hidden=true></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://guzhongren.github.io/2023/01/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA%E5%8F%8A%E6%B2%BB%E7%90%86/ data-title=开源项目构建及治理之产品构建><i class="fab fa-evernote fa-fw" aria-hidden=true></i></a></span>
 </div>
 </div>
 </div>

@@ -1,4 +1,4 @@
-# 开源项目构建及治理
+# 开源项目构建及治理之产品构建
 
 
 ## 前言
@@ -114,7 +114,7 @@ Roadmap 的形式有各种各样的，如下是Jenkins 和 Azure 的。
 
 |简写|英语全拼|中文释义|
 |:--|:--|:--|
-|PR|Pull Request|请求合并代码|
+|PR|Pull request|请求合并代码|
 |WIP|Work in progress|贡献者做了很大的改动，但部分完成了，这里就是WIP,这样就方便别人知道你的提交的进展，审核已经完成的部分|
 |PTAL|Please take a look|请求别人进行 Code Review|
 |TBR|To be reviewed|提示别人这些代码要被Review|
@@ -126,13 +126,113 @@ Roadmap 的形式有各种各样的，如下是Jenkins 和 Azure 的。
 
 #### 安全(Security)
 
+安全问题不管是在开源项目还是商业项目中都非常重要，我们可以将其分为`静态应用安全测试`、`动态应用安全测试`和`依赖安全检查`几大类。
+
+##### 静态应用安全测试
+
+静态应用安全测试(Static Application Security Testing),简称 `SAST`，也称之为源码安全扫描。
+
+SAST 主要是通过使用工具来对源代码进行分析，找出源代码中存在的安全问题，比如密钥, 或者存在安全问的对象的方法等。
+
+使用SATS, 我们能够:
+- 让安全问题提早报漏出来，从而降低修复成本
+- 降低开发团队对于安全专业技能的要求
+- 用事半功倍的方式获取源码对安全质量的反馈
+
+做静态应用安全测试的工具有很多，主要分为开源免费和商业授权使用两类；并且可以将其集成到 IDE 或者 Pipeline 中。
+
+###### 开源免费
+
+- [SonarQube](https://www.sonarsource.com/)
+- [Spot Bugs](https://spotbugs.github.io/) 
+- [Find-Sec-Bugs](https://find-sec-bugs.github.io/)
+- [Bandit](https://github.com/PyCQA/bandit) 
+- [Brakeman](https://github.com/presidentbeef/brakeman) 
+- [trufflehog](https://github.com/trufflesecurity/trufflehog)
+- [Talisman](https://github.com/thoughtworks/talisman) 
+
+###### 商业授权
+
+- [Fortify](https://www.microfocus.com/en-us/cyberres/application-security) 
+- [CheckMarx](https://checkmarx.com/) 
+
+##### 动态应用安全测试
+
+动态应用安全测试，Dynamic Application Security Testing,简称 `DAST`。
+
+DAST 主要是使用第三方漏洞工具对正在运行的应用程序及其环境进行扫描，并将扫描到的安全问题可视化出来的过程。
+
+DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进行测试。
+
+可使用的工具有：
+
+###### 开源免费
+
+- [OWASP® Zed Attack Proxy (ZAP)](https://www.zaproxy.org/) 
+- [Arachni](https://www.arachni-scanner.com/) 
+
+##### 商业授权
+
+- [Acunetix](https://www.acunetix.com/) 
+- [Rapid7](https://www.rapid7.com/) 
+
+##### 依赖安全检查
+
+现代应用程序大都是基于已有的第三方框架(Framework) 和包(package)来构建的。在开发过程中，我们更关注我们的功能的实现，容易忽略第三方依赖的安全问题，比如 2021 年的 [Log4Shell 漏洞问题](https://en.wikipedia.org/wiki/Log4j#Log4Shell_vulnerability), 由于这个[Log4j](https://logging.apache.org/log4j/2.x/) 常用包被集成到全球很多项目中，而其某些版本是有安全漏洞的，如果不能及时修复，那么可能会出现很多问题，包括政治，经济，安全等等。
+
+对于依赖安全来说，也有很多工具可以使用:
+
+###### 开源免费
+
+- [Mend renovate](https://www.mend.io/free-developer-tools/renovate/), 注：商业收费，但对开源项目免费
+- [npm-autit](https://docs.npmjs.com/cli/v6/commands/npm-audit)
+- [OWASP DependencyCheck](https://owasp.org/www-project-dependency-check/)
+- [GitHub Dependabot](https://github.com/dependabot)
+- [Pipen](https://realpython.com/pipenv-guide/) - python
+- [bundle-audit](https://github.com/rubysec/bundler-audit) - Ruby
+- [Hawkeye](https://github.com/hawkeyesec/scanner-cli), 注：作者正在转手这个项目
+- [Trivy](https://github.com/aquasecurity/trivy)
+- [Snyk](https://snyk.io/)
+###### 商业授权
+
+- [BlackDuck](https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html)
+- [Snyk](https://snyk.io/)
 
 #### 合规性(Compliance)
 
+开源项目的合规性不仅是自身产品代码的合规性，还有一部分是第三方依赖的合规性。
+
+如果你的开源项目使用了受版权保护的依赖，那么，你很可能会收到有版权依赖公司的律师函或者邮件，轻则什么事都没有，重则倾家荡产，牢底坐穿。比如，2018年 Facebook 将 React 的许可证由 MIT 许可证变更为 Fecebook 公司的许可证，这个变更带来了一些问题，其中一些是：
+
+- 遵循新许可证的限制: 新许可证要求在使用React的代码的同时，必须在应用程序中明确标识"Powered by React"。这可能会对一些公司或组织带来麻烦，因为他们可能不想在应用程序中显示这个标识。
+
+- 对第三方库的影响: 由于React是一个流行的JavaScript库，很多第三方库都依赖于它。因此，这次许可证变更可能会影响到这些第三方库的使用。
+
+- 法律纠纷风险: 因为新许可证包含了一些限制条款，所以如果某些公司或组织没有遵循这些限制条款，他们可能会面临法律纠纷。
+
+- 对开源社区的影响: 这次许可证变更可能会对开源社区产生影响，因为一些开发人员可能不愿意遵循新许可证的限制条款，而放弃使用React。
+
+所以，在开始你的开源项目前，你需要想清楚你的开源项目的定位及开源协议，这里可以参考 [opensource.org](https://opensource.org/licenses) 来找到适合你的开源协议，也可以使用这款工具[License Selector](https://ufal.github.io/public-license-selector/)来根据提问来选择合适的开源协议。
+
+当然你需要一定的工具来保证你的依赖的合规性。比如：对于基于 NodeJS 的项目，可以使用 [license-compliance](https://www.npmjs.com/package/license-compliance) 来检查依赖及其依赖的依赖的合规性。对于 Gradle 项目，可以使用 [Gradle-License-Report](https://github.com/jk1/Gradle-License-Report) 来检查 Gradle 项目的合规性。 
+
 #### 文档即代码(Doc as code)
+
+对于产品而言，一定要有文档; 产品文档一般被当作使用说明或者遇到问题时的解决方案；对于开源项目来说，最好的文档就是代码化的文档，并且托管在网站上，像 [GitHub pages](https://pages.github.com/) 和 [Netlify](https://www.netlify.com/)等。
+
+现在也有很多可以快速构建文档的工具库，如：
+- [Docusaurus](https://docusaurus.io/)
+- [Astro](https://astro.build/)
+- [Hugo](https://gohugo.io/)
+- [VuePress](https://vuepress.vuejs.org/)
+
+大多数文档框架都支持自定义，这样开发者可以将产品的介绍页也可以加进去，这样产品介绍和产品文档就在同一个项目和同一个网站中，提升用户体验和开发体验了。
 
 ## 社区
 
+社区是另一个比较大的话题，在下篇中聊。这里放上《如何组织社区》的思维导图。
+
+![如何组织社区](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp)
 
 
 ## Refs
