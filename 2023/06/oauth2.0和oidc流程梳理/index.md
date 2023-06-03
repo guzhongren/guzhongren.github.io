@@ -100,7 +100,7 @@ OIDC 种有一个非常重要，从认证服务器下发的一个字段，就�
 
 ### OIDC 的流程图
 
-![OIDC Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OIDC-flow.5y5jucry3000.svg)
+![OIDC Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OIDC-flow.6le76zwbokc0.svg)
 
 ## Refs
 
