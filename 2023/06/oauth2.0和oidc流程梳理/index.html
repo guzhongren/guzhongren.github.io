@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <title>OAuth2.0和OIDC流程梳理 - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:title" content="OAuth2.0和OIDC流程梳理">
-<meta property="og:description" content="场景 日常生活中，我们有很多使用OAuth 或者OIDC 的案例。比如在某串串分店消费完了，使用第三方软件开发票这事。 小明为团队同事在京东上买了很">
+<meta property="og:description" content="场景 在日常生活中，有许多使用OAuth 2.0或OIDC的案例。例如，小明使用团建费用在京东商城购买了许多零食，他希望使用第三方软件开发票来报">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2023-06-03T10:31:28+08:00">
@@ -12,13 +12,13 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://guzhongren.github.io">
 <meta name=twitter:title content="OAuth2.0和OIDC流程梳理">
-<meta name=twitter:description content="场景 日常生活中，我们有很多使用OAuth 或者OIDC 的案例。比如在某串串分店消费完了，使用第三方软件开发票这事。 小明为团队同事在京东上买了很">
+<meta name=twitter:description content="场景 在日常生活中，有许多使用OAuth 2.0或OIDC的案例。例如，小明使用团建费用在京东商城购买了许多零食，他希望使用第三方软件开发票来报">
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/><link rel=prev href=https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"OAuth2.0和OIDC流程梳理","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/06\/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86\/"},"genre":"posts","keywords":"OAuth2.0, OIDC, UML, SSO, CAS","wordcount":1623,"url":"https:\/\/guzhongren.github.io\/2023\/06\/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86\/","datePublished":"2023-06-03T10:31:28+08:00","dateModified":"2023-06-03T10:31:28+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"OAuth2.0和OIDC流程梳理","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/06\/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86\/"},"genre":"posts","keywords":"OAuth2.0, OIDC, UML, SSO, CAS","wordcount":2030,"url":"https:\/\/guzhongren.github.io\/2023\/06\/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86\/","datePublished":"2023-06-03T10:31:28+08:00","dateModified":"2023-06-03T10:31:28+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,8 +88,8 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">OAuth2.0和OIDC流程梳理</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/summary/><i class="far fa-folder fa-fw" aria-hidden=true></i>Summary</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-06-03>2023-06-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1623 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-06-03>2023-06-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 2030 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" data-srcset="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 1.5x, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" title="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -105,7 +105,7 @@
 <li><a href=#授权码许可authorization-code>授权码许可(Authorization Code)</a></li>
 <li><a href=#资源拥有者凭据许可resource-owner-password-credential>资源拥有者凭据许可(Resource Owner Password Credential)</a></li>
 <li><a href=#客户端凭据许可client-credential>客户端凭据许可(Client Credential)</a></li>
-<li><a href=#隐式许可implicit>隐式许可（Implicit）</a></li>
+<li><a href=#隐式许可implicit>隐式许可（Implicit)</a></li>
 </ul>
 </li>
 <li><a href=#authorization-code-的实现分类>Authorization Code 的实现分类</a></li>
@@ -125,23 +125,30 @@
 </ul>
 </nav></div>
 </div><div class=content id=content><h2 id=场景>场景</h2>
-<p>日常生活中，我们有很多使用OAuth 或者OIDC 的案例。比如在某串串分店消费完了，使用第三方软件开发票这事。</p>
-<p>小明为团队同事在京东上买了很多零食，因为这部分算团建的费用，是可以报销的，然后小明找到了小票软件来打印他在京东商城里的发票。</p>
-<p>小明：“你好，小票软件。我正在 Google 浏览器上面，需要访问你来帮我处理我在京东商城店铺的订单信息来生成发票。”
-小票软件：“好的，小明，我需要你给我授权。现在我把你引导到京东商家开放平台上，你在那里给我授权吧。”
-京东商家开放平台：“你好，小明。我收到了小票软件跳转过来的请求，现在已经准备好了一个授权页面。你登录并确认后，点击授权页面上面的授权按钮即可。”
-小明：“好的，京东商家开放平台。我看到了这个授权页面，已经点授权按钮啦”
-京东商家开放平台：“你好，小票软件。我收到了小明的授权，现在要给你生成一个授权码 code 值，我通过浏览器重定向到你的回调 URL 地址上面了。”
-小票软件：“好的，京东商家开放平台。我现在从浏览器上拿到了授权码，现在就用这个授权码来请求你，请给我一个访问令牌 access_token 吧。”
-京东商家开放平台：“好的，小票软件，访问令牌已经发送给你了。”
-小票软件：“太好了，我现在就可以使用访问令牌来获取小明店铺的订单信息生成发票了。”
-小明：“我已经能够看到我的订单了，现在就开始打印发票了。”</p>
+<p>在日常生活中，有许多使用OAuth 2.0或OIDC的案例。例如，小明使用团建费用在京东商城购买了许多零食，他希望使用第三方软件开发票来报销这部分费用。以下是小明、小票软件和京东商家开放平台之间的对话流程：</p>
+<p>小明：“你好，小票软件。我在Google浏览器上需要访问你来处理我在京东商城店铺的订单信息，以生成发票。”</p>
+<p>小票软件：“好的，小明，我需要你授权。现在我将引导你前往京东商家开放平台，在那里你可以给我授权。”</p>
+<p>京东商家开放平台：“你好，小明。我收到了小票软件的跳转请求，已准备好一个授权页面。请登录并确认后，点击授权按钮即可。”</p>
+<p>小明：“好的，京东商家开放平台。我已看到授权页面，并点击了授权按钮。”</p>
+<p>京东商家开放平台：“你好，小票软件。我已收到小明的授权请求，现在将为你生成授权码（code）。我会通过浏览器重定向到你的回调URL地址。”</p>
+<p>小票软件：“好的，京东商家开放平台。我已从浏览器中获取到授权码，现在将使用该授权码向你请求访问令牌（access_token）。请提供访问令牌给我。”</p>
+<p>京东商家开放平台：“好的，小票软件，访问令牌已发送给你。”</p>
+<p>小票软件：“太好了，现在我可以使用访问令牌来获取小明店铺的订单信息，并生成发票。”</p>
+<p>小明：“我已能够看到我的订单，现在可以开始打印发票了。</p>
 <p>在以下的流程中，大家可以使用如<strong>极客时间</strong>使用<strong>微信</strong>登录的流程，或者某业务系统使用<strong>Keycloak</strong>登录的方式来理解整个技术流转过程。</p>
 <h2 id=oauth20>OAuth2.0</h2>
 <h3 id=4-种授权许可类型>4 种授权许可类型</h3>
 <p>OAuth2.0 有4种授权许可类型，分别是<strong>授权码许可(Authorization Code)</strong>， <strong>资源拥有者凭据许可(Resource Owner Password Credential)</strong>, <strong>客户端凭据许可(Client Credential)<strong>和</strong>隐式许可（Implicit）</strong>。</p>
 <p>以下是一些进行对应类型的发送请求的伪代码</p>
 <h4 id=授权码许可authorization-code>授权码许可(Authorization Code)</h4>
+<p>授权码许可是OAuth 2.0中最常用的许可类型。它的流程如下：</p>
+<p>小票软件将用户重定向到京东商家开放平台的授权页面。
+用户在授权页面登录并点击授权按钮。
+京东商家开放平台生成一个授权码，并通过重定向将用户带回小票软件指定的回调URL。
+小票软件从回调URL中获取授权码。
+小票软件使用授权码向京东商家开放平台请求访问令牌。
+京东商家开放平台验证授权码并颁发访问令牌给小票软件。
+小票软件使用访问令牌来获取小明店铺的订单信息，并生成发票。</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -155,6 +162,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=资源拥有者凭据许可resource-owner-password-credential>资源拥有者凭据许可(Resource Owner Password Credential)</h4>
+<p>资源拥有者凭据许可是一种直接使用用户名和密码进行认证的许可类型。该许可类型要求客户端直接获取用户的凭据，并使用这些凭据向授权服务器进行身份验证。</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -166,6 +174,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h4 id=客户端凭据许可client-credential>客户端凭据许可(Client Credential)</h4>
+<p>客户端凭据许可适用于没有资源拥有者参与的情况下，客户端直接与授权服务器进行身份验证并获取访问令牌。</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -182,7 +191,8 @@
 <span class=n>String</span> <span class=n>accessToken</span> <span class=o>=</span> <span class=n>HttpURLClient</span><span class=o>.</span><span class=na>doPost</span><span class=o>(</span><span class=n>oauthURl</span><span class=o>,</span><span class=n>HttpURLClient</span><span class=o>.</span><span class=na>mapToStr</span><span class=o>(</span><span class=n>params</span><span class=o>));</span><span class=err>”</span>
 </code></pre></td></tr></table>
 </div>
-</div><h4 id=隐式许可implicit>隐式许可（Implicit）</h4>
+</div><h4 id=隐式许可implicit>隐式许可（Implicit)</h4>
+<p>隐式许可是一种在浏览器中直接向授权服务器请求访问令牌的许可类型。这种许可类型通常用于单页应用程序或移动应用程序，因为它们无法安全地保持客户端凭据。</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -198,7 +208,9 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id=authorization-code-的实现分类>Authorization Code 的实现分类</h3>
-<p>Authorization Code 的实现主要分为2类，一类是无服务器的，使用**PKCE(Proof Key for Code Exchange by OAuth Public Clients)**来实现，使用不广泛；另一类是有服务器的实现，使用广泛且安全。</p>
+<p>Authorization Code的实现主要分为两类：无服务器实现（使用PKCE）和有服务器实现。</p>
+<p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
+<p>有服务器实现广泛使用且更安全。</p>
 <h3 id=authorization-code-实现的流程图>Authorization Code 实现的流程图</h3>
 <p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg title="OAuth 2.0 Flow"></p>
 <h2 id=oidc>OIDC</h2>
