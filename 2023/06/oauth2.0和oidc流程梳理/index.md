@@ -69,7 +69,7 @@ Authorization Code 的实现主要分为2类，一类是无服务器的，使用
 
 ### Authorization Code 实现的流程图
 
-![OAuth 2.0 Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.4asvrgzo0ni0.svg)
+![OAuth 2.0 Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg)
 
 ## OIDC
 
@@ -105,6 +105,7 @@ OIDC 种有一个非常重要，从认证服务器下发的一个字段，就�
 ## Refs
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA](https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA)
 
 ## Disclaimer
 
