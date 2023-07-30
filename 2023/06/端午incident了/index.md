@@ -47,7 +47,7 @@ select * from "table" where columnName='value'
 * 没有充分的业务测试，甚至没有测试
 * Senior dev 可能粗心没发现
 
-这个过程中，因为负责这个code fix 的是个Jounior Dev, 而在那段时间，我们有新的Senior Dev 要上项目，所以两人Pair 一起修bug。
+这个过程中，因为负责这个code fix 的是个Junior Dev, 而在那段时间，我们有新的Senior Dev 要上项目，所以两人Pair 一起修bug。
 
 ## Standby
 
@@ -80,7 +80,7 @@ select * from "table" where columnName='value'
 
 ### 在出现Incident 时，全员应该随时支持，所谓Standby 
 
-在这次的Incidnt中，团队并没有及时的Standby，需要提升这方面的实践和认知。所以后续需要在团队内进行Incident 培训，让大家知道如何处理Incident。同时Standby 是一种负责人的态度。
+在这次的Incident中，团队并没有及时的Standby，需要提升这方面的实践和认知。所以后续需要在团队内进行Incident 培训，让大家知道如何处理Incident。同时Standby 是一种负责人的态度。
 
 ### 没有所谓的简单的工作
 
@@ -92,7 +92,7 @@ select * from "table" where columnName='value'
 
 ## 总结
 
-在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告这些才是最重要的。
+在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告(Incident Report)这些才是最重要的。
 
 ## Refs
 

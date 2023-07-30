@@ -1,7 +1,7 @@
 # About
 
 
-## 个人介绍
+## Introduction
 
 嗨，我是谷中仁，一位地理信息系统专业（2015 年毕业）的程序员、 高级咨询师、 开源爱好者、[freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名高级咨询师;
 
@@ -10,7 +10,7 @@
 - 2017.10 ~ 2019.01 西安山脉科技股份有限公司  高级 GIS 开发工程师，前端架构师
 - 2019.01 ～ Thoughtworks 思特沃克软件技术（西安）有限公司  高级咨询师
 
-## 作品
+## Work/Productions
 
 ### Coding
 
@@ -26,11 +26,12 @@
 - [Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)
 - [如何记录日志-Thoughtworks洞见](https://insights.thoughtworks.cn/how-to-logging/)
 
-## 开源项目贡献
-
-- [Heartbeat](https://github.com/au-heartbeat/HeartBeat/): Dora metrics 数据收集、可视化及导出工具
-- [maptalks](https://maptalks.org/): 开源 23 D GIS 框架
-- [hlj](https://github.com/codingstyle-cn/hlj): 开源 JS 测试框架，自举测试
+## Contribution on Open-Source Projects
+|Project Name| Description|Role|
+|:--|:--|:--|
+| [Heartbeat](https://github.com/au-heartbeat/HeartBeat/)|Dora metrics 数据收集、可视化及导出工具|Tech Leader|
+| [maptalks](https://maptalks.org/)| 开源 23 D GIS 框架|Contributor|
+| [hlj](https://github.com/codingstyle-cn/hlj):|开源 JS 测试框架，自举测试|Contributor|
 
 ## 技术栈
 
