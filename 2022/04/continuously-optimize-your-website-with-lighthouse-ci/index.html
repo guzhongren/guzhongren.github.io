@@ -8,7 +8,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/"><meta property="og:image" content="https://guzhongren.github.io"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2022-04-16T14:11:32+08:00">
-<meta property="article:modified_time" content="2023-08-24T22:36:57+08:00"><meta property="og:site_name" content="My cool site">
+<meta property="article:modified_time" content="2023-10-09T21:49:47+08:00"><meta property="og:site_name" content="My cool site">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://guzhongren.github.io">
 <meta name=twitter:title content="Continuously Optimize Your Website With Lighthouse CI">
@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/><link rel=prev href=https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/><link rel=next href=https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Continuously Optimize Your Website With Lighthouse CI","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/04\/continuously-optimize-your-website-with-lighthouse-ci\/"},"genre":"posts","keywords":"lhci, Lighthouse, CI, CD, Performance, Webpref","wordcount":1446,"url":"https:\/\/guzhongren.github.io\/2022\/04\/continuously-optimize-your-website-with-lighthouse-ci\/","datePublished":"2022-04-16T14:11:32+08:00","dateModified":"2023-08-24T22:36:57+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Continuously Optimize Your Website With Lighthouse CI","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2022\/04\/continuously-optimize-your-website-with-lighthouse-ci\/"},"genre":"posts","keywords":"lhci, Lighthouse, CI, CD, Performance, Webpref","wordcount":1446,"url":"https:\/\/guzhongren.github.io\/2022\/04\/continuously-optimize-your-website-with-lighthouse-ci\/","datePublished":"2022-04-16T14:11:32+08:00","dateModified":"2023-10-09T21:49:47+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -423,7 +423,7 @@ lhci autorun
 <h2 id=disclaimer>Disclaimer</h2>
 <p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
 <blockquote>
 <p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
@@ -439,8 +439,8 @@ lhci autorun
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>更新于 2023-08-24&nbsp;<a class=git-hash href=https://github.com/guzhongren/guzhongren.github.io/commit/659fde87176ca640919d6702ccebf341facd86a4 target=_blank title="commit by guzhongren(guzhongren@live.cn) 659fde87176ca640919d6702ccebf341facd86a4: docs(post): update">
-<i class="fas fa-hashtag fa-fw" aria-hidden=true></i>659fde8</a></span>
+<span>更新于 2023-10-09&nbsp;<a class=git-hash href=https://github.com/guzhongren/guzhongren.github.io/commit/a4ba52f983164be69dab0dd1db5f7d1a88cb716e target=_blank title="commit by guzhongren(guzhongren@live.cn) a4ba52f983164be69dab0dd1db5f7d1a88cb716e: docs(post): update wechat image">
+<i class="fas fa-hashtag fa-fw" aria-hidden=true></i>a4ba52f</a></span>
 </div><div class=post-info-license>
 <span><a rel=license href=http://creativecommons.org/licenses/by-nc/4.0/><img alt="Creative Commons License" style=border-width:0 src=https://i.creativecommons.org/l/by-nc/4.0/80x15.png></a></span>
 </div></div>

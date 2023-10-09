@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/><link rel=prev href=https://guzhongren.github.io/2023/07/%E5%9B%A2%E9%98%9F%E8%83%BD%E5%8A%9B%E5%BA%A6%E9%87%8F%E5%8F%8A%E8%BF%BD%E8%B8%AA/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"使用Google Sheet Apps Script提升工作效率","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/09\/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87\/"},"genre":"posts","keywords":"Google, Automation, Apps Script, Google Sheet","wordcount":1544,"url":"https:\/\/guzhongren.github.io\/2023\/09\/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87\/","datePublished":"2023-09-13T22:44:56+08:00","dateModified":"2023-09-13T22:44:56+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"Google Sheet 自动化实践"}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"使用Google Sheet Apps Script提升工作效率","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2023\/09\/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87\/"},"genre":"posts","keywords":"Google, Automation, Apps Script, Google Sheet","wordcount":1541,"url":"https:\/\/guzhongren.github.io\/2023\/09\/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87\/","datePublished":"2023-09-13T22:44:56+08:00","dateModified":"2023-09-13T22:44:56+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":"Google Sheet 自动化实践"}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">使用Google Sheet Apps Script提升工作效率</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/summary/><i class="far fa-folder fa-fw" aria-hidden=true></i>Summary</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-09-13>2023-09-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1544 字&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2023-09-13>2023-09-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1541 字&nbsp;
 <i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" data-srcset="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 1.5x, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" title="Google Sheet 自动化实践"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
@@ -165,7 +165,7 @@
 <h2 id=实践>实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
 <h3 id=创建google-chat-webhooks>创建Google Chat Webhooks</h3>
-<p><a href=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp target=_blank rel="noopener noreffer">Google chat webhooks</a></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp title="Google chat webhooks"></p>
 <p>点击创建好的Webhooks, 拷贝URL即可。</p>
 <h3 id=创建google-sheet-轮转数据>创建Google Sheet 轮转数据</h3>
 <p>新建Google Sheet，直接写入如下数据</p>
@@ -241,7 +241,7 @@ xiaoming10
   <span class=kr>const</span> <span class=nx>activeSheet</span> <span class=o>=</span> <span class=nx>SpreadsheetApp</span><span class=p>.</span><span class=nx>getActiveSheet</span><span class=p>();</span>
   <span class=kr>const</span> <span class=nx>dataRange</span> <span class=o>=</span> <span class=nx>activeSheet</span><span class=p>.</span><span class=nx>getDataRange</span><span class=p>()</span>
   <span class=kr>const</span> <span class=nx>standupList</span> <span class=o>=</span> <span class=nx>dataRange</span><span class=p>.</span><span class=nx>getValues</span><span class=p>()</span>
-  
+
   <span class=kr>const</span> <span class=nx>currentStandupPersonIndex</span> <span class=o>=</span> <span class=nx>standupList</span><span class=p>.</span><span class=nx>findIndex</span><span class=p>(</span><span class=nx>person</span> <span class=p>=&gt;</span> <span class=nx>person</span><span class=p>[</span><span class=mi>1</span><span class=p>].</span><span class=nx>toUpperCase</span><span class=p>()</span> <span class=o>===</span> <span class=nx>CURRENT</span><span class=p>.</span><span class=nx>toUpperCase</span><span class=p>())</span>
 
   <span class=kr>const</span> <span class=nx>tempStandupPersonIndex</span> <span class=o>=</span> <span class=nx>currentStandupPersonIndex</span> <span class=o>+</span> <span class=mi>1</span>
@@ -258,7 +258,7 @@ xiaoming10
 
 <span class=kd>function</span> <span class=nx>updateRecord</span><span class=p>(</span><span class=nx>currentStandupPersonIndex</span><span class=p>,</span> <span class=nx>nextStandupPersonIndex</span><span class=p>,</span> <span class=nx>nextperson</span> <span class=p>)</span> <span class=p>{</span>
   <span class=nx>Logger</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`Start to update the latest standup person to </span><span class=si>${</span><span class=nx>nextperson</span><span class=si>}</span><span class=sb>`</span><span class=p>)</span>
-  <span class=kd>let</span> <span class=nx>currentRow</span> <span class=o>=</span> <span class=nx>currentStandupPersonIndex</span> <span class=o>+</span><span class=mi>1</span> 
+  <span class=kd>let</span> <span class=nx>currentRow</span> <span class=o>=</span> <span class=nx>currentStandupPersonIndex</span> <span class=o>+</span><span class=mi>1</span>
   <span class=kd>let</span> <span class=nx>nextRow</span> <span class=o>=</span> <span class=nx>nextStandupPersonIndex</span> <span class=o>+</span> <span class=mi>1</span>
 
   <span class=kr>const</span> <span class=nx>activeSheet</span> <span class=o>=</span> <span class=nx>SpreadsheetApp</span><span class=p>.</span><span class=nx>getActiveSheet</span><span class=p>()</span>
@@ -315,7 +315,7 @@ xiaoming10
   <span class=kr>const</span> <span class=p>{</span><span class=nx>currentStandupPersonIndex</span><span class=p>,</span>
     <span class=nx>nextStandupPersonIndex</span><span class=p>,</span>
     <span class=nx>nextStandupPerson</span> <span class=p>}</span> <span class=o>=</span> <span class=nx>getTheNextStandupPerson</span><span class=p>()</span>
-  
+
   <span class=nx>updateRecord</span><span class=p>(</span><span class=nx>currentStandupPersonIndex</span><span class=p>,</span> <span class=nx>nextStandupPersonIndex</span><span class=p>,</span> <span class=nx>nextStandupPerson</span><span class=p>)</span>
 
   <span class=kr>const</span> <span class=nx>options</span> <span class=o>=</span> <span class=p>{</span>
@@ -333,7 +333,7 @@ xiaoming10
 
 <span class=kd>function</span> <span class=nx>isMonday</span><span class=p>()</span> <span class=p>{</span>
   <span class=kr>const</span> <span class=nx>date</span> <span class=o>=</span> <span class=k>new</span> <span class=nb>Date</span><span class=p>();</span>
-  <span class=kr>const</span> <span class=nx>day</span> <span class=o>=</span> <span class=nx>date</span><span class=p>.</span><span class=nx>getDay</span><span class=p>();</span> 
+  <span class=kr>const</span> <span class=nx>day</span> <span class=o>=</span> <span class=nx>date</span><span class=p>.</span><span class=nx>getDay</span><span class=p>();</span>
   <span class=k>return</span> <span class=o>!</span><span class=p>[</span><span class=mi>0</span><span class=p>,</span><span class=mi>2</span><span class=p>,</span><span class=mi>3</span><span class=p>,</span><span class=mi>4</span><span class=p>,</span><span class=mi>5</span><span class=p>,</span><span class=mi>6</span><span class=p>].</span><span class=nx>includes</span><span class=p>(</span><span class=nx>day</span><span class=p>)</span>
 <span class=p>}</span>
 
@@ -360,7 +360,7 @@ xiaoming10
 <h2 id=disclaimer>Disclaimer</h2>
 <p>本文仅代表个人观点，与 <a href=https://www.Thoughtworks.com/ target=_blank rel="noopener noreffer">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png 2x" data-sizes=auto alt=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png title=谷哥说-微信公众号></p>
 <blockquote>
 <p><a href=https://emn178.github.io/online-tools/sha256_checksum.html target=_blank rel="noopener noreffer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>

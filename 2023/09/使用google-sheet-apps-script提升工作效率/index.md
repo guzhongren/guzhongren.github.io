@@ -47,7 +47,7 @@ Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google 
 
 ### 创建Google Chat Webhooks
 
-[Google chat webhooks](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp)
+![Google chat webhooks](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp)
 
 点击创建好的Webhooks, 拷贝URL即可。
 
@@ -80,7 +80,7 @@ function getTheNextStandupPerson() {
   const activeSheet = SpreadsheetApp.getActiveSheet();
   const dataRange = activeSheet.getDataRange()
   const standupList = dataRange.getValues()
-  
+
   const currentStandupPersonIndex = standupList.findIndex(person => person[1].toUpperCase() === CURRENT.toUpperCase())
 
   const tempStandupPersonIndex = currentStandupPersonIndex + 1
@@ -97,7 +97,7 @@ function getTheNextStandupPerson() {
 
 function updateRecord(currentStandupPersonIndex, nextStandupPersonIndex, nextperson ) {
   Logger.log(`Start to update the latest standup person to ${nextperson}`)
-  let currentRow = currentStandupPersonIndex +1 
+  let currentRow = currentStandupPersonIndex +1
   let nextRow = nextStandupPersonIndex + 1
 
   const activeSheet = SpreadsheetApp.getActiveSheet()
@@ -121,7 +121,7 @@ function sendMessageToChat() {
   const {currentStandupPersonIndex,
     nextStandupPersonIndex,
     nextStandupPerson } = getTheNextStandupPerson()
-  
+
   updateRecord(currentStandupPersonIndex, nextStandupPersonIndex, nextStandupPerson)
 
   const options = {
@@ -139,7 +139,7 @@ function sendMessageToChat() {
 
 function isMonday() {
   const date = new Date();
-  const day = date.getDay(); 
+  const day = date.getDay();
   return ![0,2,3,4,5,6].includes(day)
 }
 
@@ -172,7 +172,7 @@ Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更�
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助
