@@ -13,15 +13,9 @@
 
 ## 工具介绍
 
-按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 `build` 和 `whell`;
+按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 `build` 和 `whell`, 依赖管理会在 setuptools 的 `install_requires` 中体现，如下;
 
 > pip 最好是 pip3, Python 最好是最新版的 Python3。
-
-```sh
-pip install --upgrade setuptools
-pip install --upgrade build
-pip install wheel
-```
 
 ## 代码实践
 
@@ -75,7 +69,7 @@ tree -L 3
 ### setup.py
 
 ```python
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='zhongren',
@@ -86,9 +80,17 @@ setup(
             'module = module1:say_hello',
         ]
     },
+    install_requires=[
+        'build',
+        'wheel'
+    ]
 )
+
 ```
-这个文件主要描述了工程的名字和版本，最重要的是 `entry_points`, 数组中的每一条记录都会被打包成一个可执行程序，在这里将会产生 `hell-world`和 `module` 两个可执行程序。
+这个文件主要描述了工程的名字和版本，最重要的是 `entry_points` 和 `install_requires`。
+
+- `entry_points` 数组中的每一条记录都会被打包成一个可执行程序，在这里将会产生 `hell-world`和 `module` 两个可执行程序。
+- `install_requires` 指定依赖的第三方库，这里不指定版本，使用最新版。
 
 ##### commons
 
@@ -105,12 +107,6 @@ def say(something):
 
 ```python
 # __init__.py
-import os
-import sys
-
-p = os.path.abspath(".")
-sys.path.insert(1, p)
-
 from commons import say
 
 def say_hello():
