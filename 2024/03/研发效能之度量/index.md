@@ -51,7 +51,7 @@
 - 作为技术领导(Tech Lead)，我想知道团队冲刺速度(Velocity)和周期时间(Cycle time)，从而分析出每个超出预定目标卡的原因并找到对应的提升办法，并在下个迭代改进
 - ......
 
-### 指标收集粗略且不准确
+### 指标收集粗略且范围单一
 
 当然，市场上存在多种收集，统计工具，比如 
 * [Tech Dash](https://web.techdash.thoughtworks.net/) Thoughtworks 内部工具
@@ -62,7 +62,6 @@
 * [Polaris](https://sites.google.com/thoughtworks.com/polaris/home), automated tracking of engineering excellence fitness metrics.
 * [Metrik](https://github.com/thoughtworks/metrik), calculates the [four key metrics](https://www.thoughtworks.com/radar/techniques/four-key-metrics) based on CI/CD build data.
 * [Four Keys](https://github.com/GoogleCloudPlatform/fourkeys), measures the four key metrics.
-* [HeartBeat](https://github.com/thoughtworks/HeartBeat), calculates delivery metrics from CI/CD build data, revision control and project planning tools.
 * [Kuona project for IT Analytics](https://github.com/kuona/kuona-project), provides a dashboard on data from various sources.
 * [Test Trend Analyzer](https://github.com/anandbagmar/tta), consumes test results for test trends.
 * [TRT](https://github.com/thetestpeople/trt), consumes test results for test trends.
@@ -71,9 +70,28 @@
 * [Jellyfish](https://jellyfish.co), translate and maximize the business impact of engineering.
 * [BuildPulse](https://github.com/marketplace/buildpulse), automatically detects flaky tests.
 
-## 解决方案
+## 解决方案对比
+
+||Heartbeat|Sleuth|Metrik|DevLake|
+|:--|:--|:--|:--|:--|
+|Open-Source|✅|❌|||
+|Free|✅|❌|||
+|Support Source-Control(e.g. GitHub)|✅|❌|||
+|Support Pipeline(e.g. GitHub Actions, Buildkite)|✅|❌|||
+|Support Board(e.g. Jira)|✅|❌|||
+|Support statistics of rework|✅|❌|||
+|Support statistics by specified source-control's branch|✅|❌|||
+|Support statistics by specified board assignee|✅|❌|||
+|Support statistics by specified specified repo|✅|❌|||
+|Support statistics of each card's sprint spend time|✅|❌|||
+|Export DORA metrics report|✅|❌|||
+|Export board metrics report|✅|❌|||
+|Export |✅|❌|||
+
 
 ### Heartbeat 的解决方案
+
+### 
 ## 总结
 
 ## Refs

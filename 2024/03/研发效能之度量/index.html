@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2024/03/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F/><link rel=prev href=https://guzhongren.github.io/2024/02/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"研发效能之度量","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/"},"genre":"posts","keywords":"研发效能, 度量","wordcount":1491,"url":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/","datePublished":"2024-03-31T22:06:49+08:00","dateModified":"2024-03-31T22:06:49+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"研发效能之度量","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/"},"genre":"posts","keywords":"研发效能, 度量","wordcount":1562,"url":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/","datePublished":"2024-03-31T22:06:49+08:00","dateModified":"2024-03-31T22:06:49+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,8 +88,8 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">研发效能之度量</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/><i class="far fa-folder fa-fw" aria-hidden=true></i>研发效能</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-03-31>2024-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1491 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-03-31>2024-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1562 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" data-srcset="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 1.5x, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" title="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -104,12 +104,13 @@
 <li><a href=#工具不统一>工具不统一</a></li>
 <li><a href=#数据关系复杂>数据关系复杂</a></li>
 <li><a href=#统计维度多样>统计维度多样</a></li>
-<li><a href=#指标收集粗略且不准确>指标收集粗略且不准确</a></li>
+<li><a href=#指标收集粗略且范围单一>指标收集粗略且范围单一</a></li>
 </ul>
 </li>
-<li><a href=#解决方案>解决方案</a>
+<li><a href=#解决方案对比>解决方案对比</a>
 <ul>
 <li><a href=#heartbeat-的解决方案>Heartbeat 的解决方案</a></li>
+<li><a href=#heading></a></li>
 </ul>
 </li>
 <li><a href=#总结>总结</a></li>
@@ -161,7 +162,7 @@
 <li>作为技术领导(Tech Lead)，我想知道团队冲刺速度(Velocity)和周期时间(Cycle time)，从而分析出每个超出预定目标卡的原因并找到对应的提升办法，并在下个迭代改进</li>
 <li>&mldr;&mldr;</li>
 </ul>
-<h3 id=指标收集粗略且不准确>指标收集粗略且不准确</h3>
+<h3 id=指标收集粗略且范围单一>指标收集粗略且范围单一</h3>
 <p>当然，市场上存在多种收集，统计工具，比如</p>
 <ul>
 <li><a href=https://web.techdash.thoughtworks.net/ target=_blank rel="noopener noreffer">Tech Dash</a> Thoughtworks 内部工具</li>
@@ -172,7 +173,6 @@
 <li><a href=https://sites.google.com/thoughtworks.com/polaris/home target=_blank rel="noopener noreffer">Polaris</a>, automated tracking of engineering excellence fitness metrics.</li>
 <li><a href=https://github.com/thoughtworks/metrik target=_blank rel="noopener noreffer">Metrik</a>, calculates the <a href=https://www.thoughtworks.com/radar/techniques/four-key-metrics target=_blank rel="noopener noreffer">four key metrics</a> based on CI/CD build data.</li>
 <li><a href=https://github.com/GoogleCloudPlatform/fourkeys target=_blank rel="noopener noreffer">Four Keys</a>, measures the four key metrics.</li>
-<li><a href=https://github.com/thoughtworks/HeartBeat target=_blank rel="noopener noreffer">HeartBeat</a>, calculates delivery metrics from CI/CD build data, revision control and project planning tools.</li>
 <li><a href=https://github.com/kuona/kuona-project target=_blank rel="noopener noreffer">Kuona project for IT Analytics</a>, provides a dashboard on data from various sources.</li>
 <li><a href=https://github.com/anandbagmar/tta target=_blank rel="noopener noreffer">Test Trend Analyzer</a>, consumes test results for test trends.</li>
 <li><a href=https://github.com/thetestpeople/trt target=_blank rel="noopener noreffer">TRT</a>, consumes test results for test trends.</li>
@@ -181,8 +181,113 @@
 <li><a href=https://jellyfish.co target=_blank rel="noopener noreffer">Jellyfish</a>, translate and maximize the business impact of engineering.</li>
 <li><a href=https://github.com/marketplace/buildpulse target=_blank rel="noopener noreffer">BuildPulse</a>, automatically detects flaky tests.</li>
 </ul>
-<h2 id=解决方案>解决方案</h2>
+<h2 id=解决方案对比>解决方案对比</h2>
+<table>
+<thead>
+<tr>
+<th style=text-align:left></th>
+<th style=text-align:left>Heartbeat</th>
+<th style=text-align:left>Sleuth</th>
+<th style=text-align:left>Metrik</th>
+<th style=text-align:left>DevLake</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>Open-Source</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Free</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support Source-Control(e.g. GitHub)</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support Pipeline(e.g. GitHub Actions, Buildkite)</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support Board(e.g. Jira)</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support statistics of rework</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support statistics by specified source-control&rsquo;s branch</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support statistics by specified board assignee</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support statistics by specified specified repo</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Support statistics of each card&rsquo;s sprint spend time</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Export DORA metrics report</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Export board metrics report</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+<tr>
+<td style=text-align:left>Export</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>❌</td>
+<td style=text-align:left></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id=heartbeat-的解决方案>Heartbeat 的解决方案</h3>
+<h3 id=heading></h3>
 <h2 id=总结>总结</h2>
 <h2 id=refs>Refs</h2>
 <ul>
