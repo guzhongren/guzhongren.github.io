@@ -54,11 +54,11 @@
 ### 指标收集粗略且范围单一
 
 当然，市场上存在多种收集，统计工具，比如 
-* [Tech Dash](https://web.techdash.thoughtworks.net/) Thoughtworks 内部工具
-* [Sleuth](https://www.sleuth.io/) 
-* [polaris](https://polaris.thoughtworks.net/)
-* [Metrik](https://github.com/thoughtworks/metrik)
-* [DevLake](https://devlake.apache.org/), 收集，分析和可视化DevOps工具的零散数据，以提取卓越工程的洞见。
+* [Tech Dash](https://web.techdash.thoughtworks.net/) Thoughtworks 内部统计 DORA Metrics 的统计工具
+* [Sleuth](https://www.sleuth.io/) 统计 DORA Metrics 的工具
+* [polaris](https://polaris.thoughtworks.net/) Thoughtworks 内部统计 DORA Metrics 的统计工具
+* [Metrik](https://github.com/thoughtworks/metrik) Thoughtworks 开源的 DORA Metrics 统计工具
+* [DevLake](https://devlake.apache.org/), 收集，分析和可视化 DevOps 工具的零散数据，以提取卓越工程的洞见。
 * [Polaris](https://sites.google.com/thoughtworks.com/polaris/home), automated tracking of engineering excellence fitness metrics.
 * [Metrik](https://github.com/thoughtworks/metrik), calculates the [four key metrics](https://www.thoughtworks.com/radar/techniques/four-key-metrics) based on CI/CD build data.
 * [Four Keys](https://github.com/GoogleCloudPlatform/fourkeys), measures the four key metrics.
@@ -70,28 +70,47 @@
 * [Jellyfish](https://jellyfish.co), translate and maximize the business impact of engineering.
 * [BuildPulse](https://github.com/marketplace/buildpulse), automatically detects flaky tests.
 
+在此，我们选择如下部分工具进行对比并说明。
+
 ## 解决方案对比
 
 ||Heartbeat|Sleuth|Metrik|DevLake|
 |:--|:--|:--|:--|:--|
-|Open-Source|✅|❌|||
-|Free|✅|❌|||
-|Support Source-Control(e.g. GitHub)|✅|❌|||
-|Support Pipeline(e.g. GitHub Actions, Buildkite)|✅|❌|||
-|Support Board(e.g. Jira)|✅|❌|||
-|Support statistics of rework|✅|❌|||
-|Support statistics by specified source-control's branch|✅|❌|||
-|Support statistics by specified board assignee|✅|❌|||
-|Support statistics by specified specified repo|✅|❌|||
-|Support statistics of each card's sprint spend time|✅|❌|||
-|Export DORA metrics report|✅|❌|||
-|Export board metrics report|✅|❌|||
-|Export |✅|❌|||
+|开源|✅|❌|✅|✅|
+|免费|✅|❌|✅|✅|
+|自动统计|✅|✅|✅|✅|
+|人工表单收集|❌|❌|❌|❌|
+|社区活跃程度|🔋|🪫|➖|🔋|
+|支持 GitHub 作为版本控制工具|✅|✅|❌|✅|
+|支持 GitLab 作为版本控制工具|❌|✅|❌|✅|
+|支持 GitHub Actions 作为 Pipeline 工具|❌|❌|❌|✅|
+|支持 BuildKite 作为 Pipeline 工具|❌|✅|❌|✅|
+|支持 GitLab 套件作为 Pipeline 工具|❌|✅|❌|✅|
+|支持 Jenkins 作为 Pipeline 工具|❌|✅|✅|✅|
+|支持统计 PR/MR 的前置时间|✅|❌|❌|✅|
+|支持统计基于版本控制工具的特定分支的 DORA Metrics|✅|❌|❌|✅|
+|支持自定义仓库统计|✅|✅|✅|✅|
+|支持 Jira 作为项目管理工具|✅|❌|❌|✅|
+|支持统计迭代完成点数|✅|❌|❌|✅|
+|支持统计迭代完成卡数|✅|❌|❌|✅|
+|支持按人统计迭代卡的时间分配|✅|❌|❌|❌|
+|支持统计每张卡在每个状态中的时间消耗|✅|❌|❌|❌|
+|支持统计返工（Rework）|✅|❌|❌|❌|
+|导出 DORA Metrics 报告|✅|❌|✅||
+|导出迭代内项目管理工具每张卡的时间消耗报告|✅|❌|❌|✅|
 
+对比分析可以发现，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Board-Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强。
 
 ### Heartbeat 的解决方案
 
-### 
+#### Heartbeat 是什么
+
+电梯演讲
+
+#### 为什么会有 Heartbeat
+
+SDP 与 Heartbeat
+
 ## 总结
 
 ## Refs
