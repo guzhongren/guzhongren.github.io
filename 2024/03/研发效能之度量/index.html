@@ -18,7 +18,7 @@
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
 <link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://guzhongren.github.io/2024/03/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F/><link rel=prev href=https://guzhongren.github.io/2024/02/2023%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/><link rel=stylesheet href=/css/style.min.css><link rel=preload href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
 <noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css></noscript><link rel=preload href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css as=style onload="this.onload=null,this.rel='stylesheet'">
-<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"研发效能之度量","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/"},"genre":"posts","keywords":"研发效能, 度量","wordcount":1948,"url":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/","datePublished":"2024-03-31T22:06:49+08:00","dateModified":"2024-03-31T22:06:49+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
+<noscript><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css></noscript><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"研发效能之度量","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/"},"genre":"posts","keywords":"研发效能, 度量","wordcount":2249,"url":"https:\/\/guzhongren.github.io\/2024\/03\/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F\/","datePublished":"2024-03-31T22:06:49+08:00","dateModified":"2024-03-31T22:06:49+08:00","license":"Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"guzhongren"},"author":{"@type":"Person","name":"谷中仁"},"description":""}</script></head>
 <body data-header-desktop=fixed data-header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,8 +88,8 @@
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">研发效能之度量</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://guzhongren.github.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw" aria-hidden=true></i>谷中仁</a></span>&nbsp;<span class=post-category>收录于 <a href=/categories/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD/><i class="far fa-folder fa-fw" aria-hidden=true></i>研发效能</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-03-31>2024-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 1948 字&nbsp;
-<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 4 分钟&nbsp;</div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw" aria-hidden=true></i>&nbsp;<time datetime=2024-03-31>2024-03-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden=true></i>&nbsp;约 2249 字&nbsp;
+<i class="far fa-clock fa-fw" aria-hidden=true></i>&nbsp;预计阅读 5 分钟&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" data-srcset="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 1.5x, https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80 2x" data-sizes=auto alt="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80" title="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"></div><div class="details toc" id=toc-static data-kept>
 <div class="details-summary toc-title">
 <span>目录</span>
@@ -127,7 +127,7 @@
 <p>利用研发效能度量数据，组织可以更合理地管理和分配研发资源，进而提高研发效率和品质。这种优化不仅为企业在激烈的市场竞争中脱颖而出提供了有力支持，还为其展现更强的核心竞争力创造了更有利的条件。</p>
 <h2 id=当前研发效能的问题>当前研发效能的问题</h2>
 <p>人人都在说效能，可没有人拿出数据来展示自己的效能。</p>
-<p>人人都在说效能，可没有人说，除了DORA Metrics 可以衡量部署，恢复等工作效率之外，还有哪些指标可以衡量团队所有人的效能。</p>
+<p>人人都在说效能，可没有人说，除了 DORA Metrics 可以衡量部署，恢复等工作效率之外，还有哪些指标可以衡量团队所有人的效能。</p>
 <p>人人都在说提效，但没人能说清楚使用了某个方法论之后，到底提效了多少。</p>
 <h2 id=研发效能的范围>研发效能的范围</h2>
 <p>研发效能的范围涵盖了研发活动的各个方面，主要包括以下几个方面：</p>
@@ -174,8 +174,6 @@
 <li><a href=https://polaris.thoughtworks.net/ target=_blank rel="noopener noreffer">polaris</a> Thoughtworks 内部统计 DORA Metrics 的统计工具</li>
 <li><a href=https://github.com/thoughtworks/metrik target=_blank rel="noopener noreffer">Metrik</a> Thoughtworks 开源的 DORA Metrics 统计工具</li>
 <li><a href=https://devlake.apache.org/ target=_blank rel="noopener noreffer">DevLake</a>, 收集，分析和可视化 DevOps 工具的零散数据，以提取卓越工程的洞见。</li>
-<li><a href=https://sites.google.com/thoughtworks.com/polaris/home target=_blank rel="noopener noreffer">Polaris</a>, automated tracking of engineering excellence fitness metrics.</li>
-<li><a href=https://github.com/thoughtworks/metrik target=_blank rel="noopener noreffer">Metrik</a>, calculates the <a href=https://www.thoughtworks.com/radar/techniques/four-key-metrics target=_blank rel="noopener noreffer">four key metrics</a> based on CI/CD build data.</li>
 <li><a href=https://github.com/GoogleCloudPlatform/fourkeys target=_blank rel="noopener noreffer">Four Keys</a>, measures the four key metrics.</li>
 <li><a href=https://github.com/kuona/kuona-project target=_blank rel="noopener noreffer">Kuona project for IT Analytics</a>, provides a dashboard on data from various sources.</li>
 <li><a href=https://github.com/anandbagmar/tta target=_blank rel="noopener noreffer">Test Trend Analyzer</a>, consumes test results for test trends.</li>
@@ -276,14 +274,14 @@
 <td style=text-align:left>✅</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计 PR/MR 的前置时间</td>
+<td style=text-align:left>支持度量 PR/MR 的前置时间</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>✅</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计基于版本控制工具的特定分支的 DORA Metrics</td>
+<td style=text-align:left>支持度量基于版本控制工具的特定分支的 DORA Metrics</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
@@ -304,14 +302,14 @@
 <td style=text-align:left>✅</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计迭代完成点数</td>
+<td style=text-align:left>支持度量迭代完成点数</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>✅</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计迭代完成卡数</td>
+<td style=text-align:left>支持度量迭代完成卡数</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
@@ -325,14 +323,14 @@
 <td style=text-align:left>❌</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计每张卡在每个状态中的时间消耗</td>
+<td style=text-align:left>支持度量每张卡在每个状态中的时间消耗</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
 </tr>
 <tr>
-<td style=text-align:left>支持统计返工（Rework）</td>
+<td style=text-align:left>支持度量返工（Rework）</td>
 <td style=text-align:left>✅</td>
 <td style=text-align:left>❌</td>
 <td style=text-align:left>❌</td>
@@ -352,14 +350,59 @@
 <td style=text-align:left>❌</td>
 <td style=text-align:left>✅</td>
 </tr>
+<tr>
+<td style=text-align:left>多个迭代的图表展示</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>✅</td>
+<td style=text-align:left>✅</td>
+</tr>
 </tbody>
 </table>
-<p>对比分析可以发现，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Board-Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强。</p>
+<p>从组织精准度量研发效能角度看，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强, 更能体现出交付质量和价值。</p>
 <h3 id=heartbeat-的解决方案>Heartbeat 的解决方案</h3>
 <h4 id=heartbeat-是什么>Heartbeat 是什么</h4>
-<p>电梯演讲</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:left></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:left>对于</br> 目标用户/客户</td>
+<td style=text-align:left>TL, BA, PM, PO</td>
+</tr>
+<tr>
+<td style=text-align:left>谁</br> 需求/机会</td>
+<td style=text-align:left>1. 更好的了解交付效能</br> 2. 提高团队生产力和效率</td>
+</tr>
+<tr>
+<td style=text-align:left>产品</td>
+<td style=text-align:left>Heartbeat</td>
+</tr>
+<tr>
+<td style=text-align:left>是一个</br></td>
+<td style=text-align:left>可视化项目交付效能的开源工具</td>
+</tr>
+<tr>
+<td style=text-align:left>它可以</br>关键好处，使用的竞争理由</td>
+<td style=text-align:left>1. 整合3个开发与进度管理产品</br> 2. 自动计算8个交付性能指标</br> 3. 可以导出相关数据报告</td>
+</tr>
+<tr>
+<td style=text-align:left>相比于</br>主要竞争替代方案</td>
+<td style=text-align:left>Sleuth, Metrics 和 DevLake</td>
+</tr>
+<tr>
+<td style=text-align:left>优势</br>差异点</td>
+<td style=text-align:left>1. 自动从第三方获取数据并计算交付效能指标</br> 2. 从数据源获取的最真实的交付效能指标，而不是通过手动收集所得</td>
+</tr>
+</tbody>
+</table>
 <h4 id=为什么会有-heartbeat>为什么会有 Heartbeat</h4>
-<p>SDP 与 Heartbeat</p>
+<p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些最佳实践是团队所需要提升的，从而针对性的采取行动来促进研发效能。</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src data-srcset=",  1.5x,  2x" data-sizes=auto alt title=研发效能反馈图></p>
 <h2 id=总结>总结</h2>
 <h2 id=refs>Refs</h2>
 <ul>

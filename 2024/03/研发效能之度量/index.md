@@ -9,7 +9,7 @@
 
 人人都在说效能，可没有人拿出数据来展示自己的效能。
 
-人人都在说效能，可没有人说，除了DORA Metrics 可以衡量部署，恢复等工作效率之外，还有哪些指标可以衡量团队所有人的效能。
+人人都在说效能，可没有人说，除了 DORA Metrics 可以衡量部署，恢复等工作效率之外，还有哪些指标可以衡量团队所有人的效能。
 
 人人都在说提效，但没人能说清楚使用了某个方法论之后，到底提效了多少。
 
@@ -59,8 +59,6 @@
 * [polaris](https://polaris.thoughtworks.net/) Thoughtworks 内部统计 DORA Metrics 的统计工具
 * [Metrik](https://github.com/thoughtworks/metrik) Thoughtworks 开源的 DORA Metrics 统计工具
 * [DevLake](https://devlake.apache.org/), 收集，分析和可视化 DevOps 工具的零散数据，以提取卓越工程的洞见。
-* [Polaris](https://sites.google.com/thoughtworks.com/polaris/home), automated tracking of engineering excellence fitness metrics.
-* [Metrik](https://github.com/thoughtworks/metrik), calculates the [four key metrics](https://www.thoughtworks.com/radar/techniques/four-key-metrics) based on CI/CD build data.
 * [Four Keys](https://github.com/GoogleCloudPlatform/fourkeys), measures the four key metrics.
 * [Kuona project for IT Analytics](https://github.com/kuona/kuona-project), provides a dashboard on data from various sources.
 * [Test Trend Analyzer](https://github.com/anandbagmar/tta), consumes test results for test trends.
@@ -87,29 +85,40 @@
 |支持 BuildKite 作为 Pipeline 工具|❌|✅|❌|✅|
 |支持 GitLab 套件作为 Pipeline 工具|❌|✅|❌|✅|
 |支持 Jenkins 作为 Pipeline 工具|❌|✅|✅|✅|
-|支持统计 PR/MR 的前置时间|✅|❌|❌|✅|
-|支持统计基于版本控制工具的特定分支的 DORA Metrics|✅|❌|❌|✅|
+|支持度量 PR/MR 的前置时间|✅|❌|❌|✅|
+|支持度量基于版本控制工具的特定分支的 DORA Metrics|✅|❌|❌|✅|
 |支持自定义仓库统计|✅|✅|✅|✅|
 |支持 Jira 作为项目管理工具|✅|❌|❌|✅|
-|支持统计迭代完成点数|✅|❌|❌|✅|
-|支持统计迭代完成卡数|✅|❌|❌|✅|
+|支持度量迭代完成点数|✅|❌|❌|✅|
+|支持度量迭代完成卡数|✅|❌|❌|✅|
 |支持按人统计迭代卡的时间分配|✅|❌|❌|❌|
-|支持统计每张卡在每个状态中的时间消耗|✅|❌|❌|❌|
-|支持统计返工（Rework）|✅|❌|❌|❌|
+|支持度量每张卡在每个状态中的时间消耗|✅|❌|❌|❌|
+|支持度量返工（Rework）|✅|❌|❌|❌|
 |导出 DORA Metrics 报告|✅|❌|✅||
 |导出迭代内项目管理工具每张卡的时间消耗报告|✅|❌|❌|✅|
+|多个迭代的图表展示|✅|✅|✅|✅|
 
-对比分析可以发现，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Board-Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强。
+从组织精准度量研发效能角度看，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强, 更能体现出交付质量和价值。
 
 ### Heartbeat 的解决方案
 
 #### Heartbeat 是什么
 
-电梯演讲
+|||
+|:--|:--|
+|对于</br> 目标用户/客户|TL, BA, PM, PO|
+|谁</br> 需求/机会|1. 更好的了解交付效能</br> 2. 提高团队生产力和效率|
+|产品|Heartbeat|
+|是一个</br>|可视化项目交付效能的开源工具|
+|它可以</br>关键好处，使用的竞争理由|1. 整合3个开发与进度管理产品</br> 2. 自动计算8个交付性能指标</br> 3. 可以导出相关数据报告|
+|相比于</br>主要竞争替代方案|Sleuth, Metrics 和 DevLake|
+|优势</br>差异点|1. 自动从第三方获取数据并计算交付效能指标</br> 2. 从数据源获取的最真实的交付效能指标，而不是通过手动收集所得|
 
 #### 为什么会有 Heartbeat
 
-SDP 与 Heartbeat
+在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些最佳实践是团队所需要提升的，从而针对性的采取行动来促进研发效能。
+
+![研发效能反馈图]()
 
 ## 总结
 
