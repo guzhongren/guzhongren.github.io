@@ -62,7 +62,7 @@ mkdir -p ~/.gitconfigs1 && touch ~/.gitconfigs1/.gitconfig-personal
 
 #### 步骤
 
-在~/.gitconfig中追加如下配置，并按需更改即可
+- 在~/.gitconfig中追加如下配置，并按需更改即可
 
 ```git
 
@@ -70,7 +70,7 @@ mkdir -p ~/.gitconfigs1 && touch ~/.gitconfigs1/.gitconfig-personal
   personal = "!f() { git config user.name 'personalUserName' && git config user.email 'personal@email.com' && git config --global user.signingkey KEY; }; f"
   company = "!f() { git config user.name 'company' && git config user.email 'company@email.com' && git config --global user.signingkey KEY; }; f"
 ```
-使用时只需要执行一个git alias命令，如下
+- 使用时只需要执行一个git alias命令，如下
 
 ```sh
 git company
@@ -80,6 +80,7 @@ git company
 
 99%的事物皆可自动化！
 
+第一种方案自动化程度更高，更可取。
 
 
 ## Refs
