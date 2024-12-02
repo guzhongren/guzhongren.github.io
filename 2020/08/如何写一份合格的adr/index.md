@@ -58,7 +58,7 @@ ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以
 |上下文 (Context)| 这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里 |
 |目标 (Objective)| 列出所有要达到的目标|
 |备选方案 (Options)| 以列表 (`Option`) 形式列出所有的备选方案|
-|相关决策 (Title)| 关于此次决策相关的一些其他辅助链接|
+|相关决策 (Related decisions)| 关于此次决策相关的一些其他辅助链接|
 |状态 (Status)| 本 ADR 的状态，`INPROGRESS`, `PROPOSED`, `PENDING`, `DECIDED`和`REJECTED` 中的一个|
 |决定 (Decision)| 接受 (`Accepted`) 或者拒绝 (`Rejected`)|
 |决策 (Consequences)| 选择了哪个方案，有什么后果或者代价|
