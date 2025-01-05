@@ -13,10 +13,10 @@ To understand why logging plays an important role in products or systems, we mus
 ### Alerting
 
 Logging can be used as an important data source for our business system monitoring; mature product systems have alarm systems. If there is a problem exceeding a certain defined indicator in the system, the log system will automatically send the alarm information to the notification platform. The On-call people can locate and solve the problem according to the alarm information.
- 
+
 ### Troubleshooting
 Imagine that the system you are responsible for developing and maintaining is found to be faulty. What is the first thing you should do? Check the system information to verify that it’s true. The log printed on the server  is the best auxiliary information. As programmers, logs are the most familiar tool for solving problems.
- 
+
 ### Business Data Visualization
 Many companies can use the logs of the production environment stored in their own databases to visualize business data in combination with the corresponding tools such as **Grafana** and **SumoLogic**.
 
@@ -31,7 +31,7 @@ It’s necessary to sort out our log format and write logs according to certain 
 
 - Advanced Template
 	Add thread name, hostname, method name, class name, and the number of lines corresponding to the method;
-  - Thread Name: Most applications don’t have a single user. For a single-instance service, many users accessing the same interface will execute the application in different threads. So using the thread name is best to differentiate the business process of corresponding users. 
+  - Thread Name: Most applications don’t have a single user. For a single-instance service, many users accessing the same interface will execute the application in different threads. So using the thread name is best to differentiate the business process of corresponding users.
   - Hostname: Most current applications are deployed in the cloud with multiple instances, so on the basis of a single node, the logging needs to be distinguished at the instance level on multiple instances, and the hostname is the best way to differentiate.
   - Method Name: A convenient way to differentiate the source within the same log.
   - Class Name:  A convenient way to quickly locate the business process.

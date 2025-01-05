@@ -988,8 +988,8 @@ Emit "dist/platform.js" (856.11 KB)
 如有需要将打包好的`.js`拷贝到目标目录，只要有`Deno`环境，我们就可以直接启动应用；
 
 ```shell
-❯ make start 
-APP_PORT=1234 deno run --allow-net --allow-env ./dist/platform.js 
+❯ make start
+APP_PORT=1234 deno run --allow-net --allow-env ./dist/platform.js
 数据库链接成功！
 Application started, and listen to 127.0.0.1:1234
 ```

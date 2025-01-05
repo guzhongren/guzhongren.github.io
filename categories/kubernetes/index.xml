@@ -1,0 +1,80 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Kubernetes - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/kubernetes/</link><description>Kubernetes - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 30 Jun 2019 19:46:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/kubernetes/" rel="self" type="application/rss+xml"/><item><title>K8s 1.15.0 安装记录</title><link>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Sun, 30 Jun 2019 19:46:11 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.pexels.com/photos/3872067/pexels-photo-3872067.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
+            </div><h2 id="环境" class="headerLink">
+    <a href="#%e7%8e%af%e5%a2%83" class="header-mark"></a>环境</h2>
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: ">hostname</th>
+            <th style="text-align: left">ip</th>
+            <th style="text-align: left">system</th>
+            <th style="text-align: "></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: ">master</td>
+            <td style="text-align: left">192.168.33.10</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: ">node1</td>
+            <td style="text-align: left">192.168.33.11</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: ">node2</td>
+            <td style="text-align: left">192.168.33.12</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: ">node3</td>
+            <td style="text-align: left">192.168.33.13</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: ">node4</td>
+            <td style="text-align: left">192.168.33.14</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: ">node5</td>
+            <td style="text-align: left">192.168.33.15</td>
+            <td style="text-align: left">CentOS7</td>
+            <td style="text-align: "></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="所有节点上操作" class="headerLink">
+    <a href="#%e6%89%80%e6%9c%89%e8%8a%82%e7%82%b9%e4%b8%8a%e6%93%8d%e4%bd%9c" class="header-mark"></a>所有节点上操作</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item></channel></rss>

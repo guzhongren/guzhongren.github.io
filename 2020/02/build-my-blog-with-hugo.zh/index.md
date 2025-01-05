@@ -196,7 +196,7 @@ $ git push
 在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 `Makefile` 优化一下，上面有些命令就是在此定义的。
 
 ```Makefile
-  
+
 post = default.zh.md
 message = git commit
 Year_month = $(shell date +"%Y/%m")

@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Mvc - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/mvc/</link><description>Mvc - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Jul 2020 22:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/mvc/" rel="self" type="application/rss+xml"/><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
+            </div><h2 id="talking-is-cheap-show-me-code" class="headerLink">
+    <a href="#talking-is-cheap-show-me-code" class="header-mark"></a><code>Talking is cheap! Show me code!</code></h2><blockquote>
+  <p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreferrer">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a></p>
+
+</blockquote><h2 id="简介" class="headerLink">
+    <a href="#%e7%ae%80%e4%bb%8b" class="header-mark"></a>简介</h2><p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>]]></description></item></channel></rss>

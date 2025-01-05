@@ -1,7 +1,7 @@
 # Harbor 安装小记
 
 ## 场景
- 
+
 在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。
 
 ## 分析
@@ -206,7 +206,7 @@ $ vim /etc/docker/daemon.json
 }
 ```
 
-#### 重启 docker 
+#### 重启 docker
 
 ```shell
 $ systemctl restart docker

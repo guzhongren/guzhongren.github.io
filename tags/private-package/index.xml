@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Private Package - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/private-package/</link><description>Private Package - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Mar 2020 22:45:03 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/private-package/" rel="self" type="application/rss+xml"/><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p><img class="tw-inline" loading="lazy" src=https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260   alt="Photo by Jeffrey Czum from Pexels"  ></p>
+<h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>在公网上我们获取 npm 包的时候直接就用下面的命令就可以了</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item></channel></rss>

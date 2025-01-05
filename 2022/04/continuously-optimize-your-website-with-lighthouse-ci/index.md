@@ -22,7 +22,7 @@ It can be seen how important the performance of web pages is in today's Internet
 ### Not runnable natively to catch performance issues as early as possible
 
 Many tools cannot be run locally; if the web performance testing tools can be run locally, developers can find problems earlier and solve them locally as soon as possible, avoiding running on CI for a while before finding problems , which can save a lot of time and improve production efficiency in the agile development process of `CI/CD`. `Shift-left of the web performance test` is bound to bring more benefits to the performance of web products, and even more profits for the company.
- 
+
 ### Inability to continuously measure performance metrics
 
 At present, most of the web performance measurement products on the market are `Sass` products. Using its products, we can only get a visual result page after running the performance test, but it cannot continuously record the improvement records of web page performance, and cannot be well quantified the life cycle of a web product performance. Of course there are also web performance testing tools that implement history, such as [treo](https://treo.sh/).
@@ -69,15 +69,15 @@ After the operation is completed, LHCI will store the results in the `.lighthous
 ### Lighthouse Server
 
   > The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
-  
+
   | ![lhci-server](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp) | ![lhci-server-compare](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp) |
   |---|---|
-  
+
 #### Installation and use of LHCI Server
 
 There are many ways to install LHCI Server, please refer to [here](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server), the recommended way is to use Docker. Note that the first run needs to create a Lighthouse App, you need to run the `lhci wizard` in the container and fill in the corresponding information, **finally record the generated `Build token` and `Admin token`**.
 
-### Integration with Lighthouse CI and Lighthouse Server 
+### Integration with Lighthouse CI and Lighthouse Server
 
 ![Lighthouse CI Recommended Setup Progression](https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png)
 

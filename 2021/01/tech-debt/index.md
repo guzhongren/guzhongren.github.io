@@ -48,20 +48,20 @@
 
 ```shell
    ^
-  I|      View result immediately       |     Split & Plan                   
-  m|                                    |                                       
-  p|                                    |                                       
-  o|                                    |                                       
-  r|                                    |                                       
-  t|                                    |                                       
-  a|                                    |                                       
-  n|                                    |                                       
-  c|                                    |                                       
-  e|                                    |                                       
-   |                                    |                                       
+  I|      View result immediately       |     Split & Plan
+  m|                                    |
+  p|                                    |
+  o|                                    |
+  r|                                    |
+  t|                                    |
+  a|                                    |
+  n|                                    |
+  c|                                    |
+  e|                                    |
+   |                                    |
    ------------------------------------------------------------------------------>
-   |                                    |                                       
-   |      Fix it if have spare time     |     Let it go                         
+   |                                    |
+   |      Fix it if have spare time     |     Let it go
    ------------------------------------------------------------------------------>
                                                                       Difficulty
 ```

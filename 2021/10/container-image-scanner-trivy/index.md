@@ -55,7 +55,7 @@ For the above solution, we surveyed several scanner tools, like [Trivy](https://
 
 Firstly we can separate those scanners into 2 parts suitable for solution, the Trivy, Clair, Anchore Engine, and Quay are suitable for solution, the others are suitable for solution 1.
 
-For the first dimension: OS package, those scanners can do it, but for the second dimension: Application dependence, just only Trivy and Anchore engine can do it, and for the fifth dimension is it suitable for ci; only the first three left. 
+For the first dimension: OS package, those scanners can do it, but for the second dimension: Application dependence, just only Trivy and Anchore engine can do it, and for the fifth dimension is it suitable for ci; only the first three left.
 
 For the Trivy, Clair, and Anchore Engine, the communities of these three are very active, so we could not care about anyone to solve your issues; And as a tool, it must be easy to use and there is good documentation to reference. The documentation of Trivy is very detailed and very friendly. But for the vulnerability database, Clair ingests vulnerability metadata at regular intervals from a configured set of sources and stores the data in its database. Trivy and Anchore Engine will download the latest vulnerability metadata and cache it in a local file,
 it will check the update to keep the metadata latest when the tool runs again. At the same time, the usage of Trivy is more friendly, because we can filter the different severity which you can specify, but it is not allowed for Anchore Engine.

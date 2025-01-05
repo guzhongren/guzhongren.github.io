@@ -1,0 +1,48 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Test - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/test/</link><description>Test - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 11 Jun 2022 20:03:35 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/test/" rel="self" type="application/rss+xml"/><item><title>真的需要在测试中打log么？</title><link>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</link><pubDate>Sat, 11 Jun 2022 20:03:35 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="引言" class="headerLink">
+    <a href="#%e5%bc%95%e8%a8%80" class="header-mark"></a>引言</h2><blockquote>
+  <p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
+
+</blockquote><h2 id="写了-log-并且出错的程序" class="headerLink">
+    <a href="#%e5%86%99%e4%ba%86-log-%e5%b9%b6%e4%b8%94%e5%87%ba%e9%94%99%e7%9a%84%e7%a8%8b%e5%ba%8f" class="header-mark"></a>写了 log 并且出错的程序</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">js</p>]]></description></item><item><title>Test With 3rd Party Library</title><link>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</link><pubDate>Sun, 18 Apr 2021 21:57:08 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>一般的前端开发情况下，我们都会用到其他的第三方库，比如 UI 库 <code>Ant Desgin</code>， 请求库 <code>axios</code> 等，通常对于 UI 库，我们可以通过快照等操作对其进行测试，但是对于像 axios 这类第三方库，我们必须通过 mock 的方式来实现。</p>
+<h2 id="问题" class="headerLink">
+    <a href="#%e9%97%ae%e9%a2%98" class="header-mark"></a>问题</h2><p>上周四晚上突然收到同事的微信求助，怎么 mock 一个 <code>jwt-decode</code> 这个库。然而理想很丰满，现实很骨干。妹子找了 jest 官网的各种测试方式，没有成功，我岂能随随便便成功。</p>]]></description></item><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
+            </div><h1 id="dependency-injection-" class="headerLink">
+    <a href="#dependency-injection-" class="header-mark"></a>Dependency Injection 🧪</h1><p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
+Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreferrer">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
+            </div><h1 id="benchmark-" class="headerLink">
+    <a href="#benchmark-" class="header-mark"></a>Benchmark 🧪</h1><blockquote>
+  <p>基准测试是对计算机系统的性能的测试。</p>
+
+</blockquote><p>在程序中，基准测试，是一种测试代码性能的方法；比如有一个问题你有多种不同的方案，你想选择一种性能最好的方案，那么你就需要基准测试。</p>]]></description></item></channel></rss>

@@ -22,7 +22,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 ### 不可本地运行，以尽可能早地发现性能问题
 
 很多工具都不可以在本地运行； 如果 Web 性能测试工具可以在本地运行，开发人员可以更早地发现问题，并尽可能早的在本地解决，避免了在 CI 上跑了一会了才发现问题，在 `CI/CD` 的敏捷开发过程中这样可以节省很多时间，提高生产效率。`Web 性能测试左移` 必定为 Web 产品性能带来更多好处，甚至为公司带来更多盈利。
- 
+
 ### 不能持续度量性能指标
 
 目前市场上 Web 性能度量的产品大多都是 `Sass` 产品，使用其产品我们只能得到一个运行完性能测试的可视化结果页面，但是不能持续的记录 Web 网页性能的改进记录，不能很好的量化一个 Web 产品性能的生命周期。当然也有实现历史记录的 Web 性能测试工具，例如 [treo](https://treo.sh/)。
@@ -65,10 +65,10 @@ lhci autorun
 
   > The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
   > LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。
-  
+
   | ![lhci-server](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp) | ![lhci-server-compare](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp) |
   |---|---|
-  
+
 #### LHCI Server 的安装和使用
 
 LHCI Server 的安装有多种方式，具体可参考[这里](https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server)，推荐使用 Docker 的方式运行。需要注意的是，第一次运行需要创建 Lighthouse App, 需要在容器中运行 `lhci wizard` 并填入相应的信息，**最后记录下生成的 `Build token` 和 `Admin token`**。

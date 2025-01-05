@@ -45,7 +45,7 @@
 
 ## Refs
 
-* [Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/)    
+* [Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/)
 ## Disclaimer
 
 本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。

@@ -54,7 +54,7 @@
 
 ### 指标收集粗略且范围单一
 
-当然，市场上存在多种收集，统计工具，比如 
+当然，市场上存在多种收集，统计工具，比如
 * [Tech Dash](https://web.techdash.thoughtworks.net/) Thoughtworks 内部统计 DORA Metrics 的统计工具
 * [Sleuth](https://www.sleuth.io/) 统计 DORA Metrics 的工具
 * [polaris](https://polaris.thoughtworks.net/) Thoughtworks 内部统计 DORA Metrics 的统计工具

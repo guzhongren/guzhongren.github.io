@@ -264,7 +264,7 @@ func (u UserModel) query() ([]UserModel, error) {
   log.Info("查：", list)
   // delete
   affect := queryUser.delete(1)
-  log.Info("删：", affect)  
+  log.Info("删：", affect)
   // query
   list, _ = queryUser.query()
   log.Info("查：", list)

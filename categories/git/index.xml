@@ -1,0 +1,58 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Git - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/git/</link><description>Git - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 17 Aug 2024 07:53:16 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/git/" rel="self" type="application/rss+xml"/><item><title>Git多 user 管理</title><link>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</link><pubDate>Sat, 17 Aug 2024 07:53:16 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="痛点" class="headerLink">
+    <a href="#%e7%97%9b%e7%82%b9" class="header-mark"></a>痛点</h2><p>平时在一个电脑上会有不同的项目开发，尤其是个人项目和公司项目；</p>
+<ul>
+<li>通常，我们不希望工作在公司项目上的时候用自己个人的git 信息提交commit, 相反也是一样</li>
+<li>在不同目录下，在命令行中切换git config 也是个重复劳动的工作，比较费精力</li>
+</ul>
+<h2 id="方案" class="headerLink">
+    <a href="#%e6%96%b9%e6%a1%88" class="header-mark"></a>方案</h2><h3 id="方案1不同的gitconfig配置" class="headerLink">
+    <a href="#%e6%96%b9%e6%a1%881%e4%b8%8d%e5%90%8c%e7%9a%84gitconfig%e9%85%8d%e7%bd%ae" class="header-mark"></a>方案1：不同的gitconfig配置</h3><p>此方案的实现思路是，git 检测当前目录是否是已经配置的目录，如果是配置的目录，那么就加载对应的gitconfig</p>]]></description></item><item><title>How to Encrypt Git Files</title><link>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</link><pubDate>Sun, 12 Jul 2020 11:00:42 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://s1.ax1x.com/2020/07/12/U32INn.png" referrerpolicy="no-referrer">
+            </div><h2 id="为什么需要-crypt" class="headerLink">
+    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-crypt" class="header-mark"></a>为什么需要 crypt</h2><p>在开发过程中经常会遇到一个问题：</p>
+<blockquote>
+  <p>怎么将敏感数据让特定的人获取到？</p>
+
+</blockquote><p>常用的解决方法如下：</p>
+<ul>
+<li>使用如 AWS 的 KMS, ParameterStore 等服务，给不同的用户以访问该数据的角色；</li>
+<li>有专人托管，在需要的时候联系他，由特定方式转发给你，如加密邮件等</li>
+</ul>
+<h3 id="分析" class="headerLink">
+    <a href="#%e5%88%86%e6%9e%90" class="header-mark"></a>分析</h3><ul>
+<li>对于第二种方式，相对简单粗暴，但是不利于管理。</li>
+<li>第一种方案，你需要依托第三方服务，你得绝对信任他，相信他是不会出问题的；再者，你的数据管理也需要有特定的规范，不然你都不知道你存储了什么数据，更不知道有哪些数据。</li>
+</ul>
+<p>针对第一种情况，当我们的数据越来多的时候，我们需要将其状态可控起来，其实就是 <code>date as code</code>, 每次对数据的增删改查，我们都可以有追踪和数据保存。</p>]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img class="tw-inline" loading="lazy" src=https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg   alt="Photo by Matheus Natan from Pexels"  ></p>
+<p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
+            </div><p>我需要撤销最后的四个提交</p>
+<p><img class="tw-inline" loading="lazy" src=https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png   alt="image"  ></p>
+<p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>]]></description></item></channel></rss>

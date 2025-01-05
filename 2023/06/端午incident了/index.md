@@ -55,7 +55,7 @@ select * from "table" where columnName='value'
 
 ### 增强信心
 
-如果你是第一次遇到Incident，是不是会害怕? 
+如果你是第一次遇到Incident，是不是会害怕?
 
 * 这个问题到底是怎么发生的？
 * 这么多人问我这么多问题，我忙不过来，会不会被客户投诉？
@@ -78,7 +78,7 @@ select * from "table" where columnName='value'
 
 凡事查询，在没有加索引，且数据量上去之后，查询一定会变慢，这种情况下需要根据biz/tech 的策略加索引。
 
-### 在出现Incident 时，全员应该随时支持，所谓Standby 
+### 在出现Incident 时，全员应该随时支持，所谓Standby
 
 在这次的Incident中，团队并没有及时的Standby，需要提升这方面的实践和认知。所以后续需要在团队内进行Incident 培训，让大家知道如何处理Incident。同时Standby 是一种负责人的态度。
 

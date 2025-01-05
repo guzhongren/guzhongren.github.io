@@ -113,16 +113,16 @@ AttributeError: 'list' object has no attribute 'items'
   ```shell
   #!/bin/sh
   set -eu
-  
+
   npm install -g @algolia/cli
-  
-  algolia import -s $FILE_PATH -a $APPLICATION_ID -k $ADMIN_API_KEY -n $INDEX_NAME 
-  
+
+  algolia import -s $FILE_PATH -a $APPLICATION_ID -k $ADMIN_API_KEY -n $INDEX_NAME
+
   if [ "$?" != "0" ] ; then
     echo "😢 Failed to upload your data to Algolia, PLZ report an issue, thx!"
     exit 1
   fi
-  
+
   echo "🚀 Successfully uploaded!"
   ```
 
@@ -140,7 +140,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 ## 验证结果
 
-在完成 Action 并将其集成到 Pipeline 上之后，成功运行，数据可成功上传到 Algolia 平台上，并且博客的右上角的搜索功能可以成功搜索到最新的文章，说明我们的 Action 是可以完成我们的需求的。 
+在完成 Action 并将其集成到 Pipeline 上之后，成功运行，数据可成功上传到 Algolia 平台上，并且博客的右上角的搜索功能可以成功搜索到最新的文章，说明我们的 Action 是可以完成我们的需求的。
 
 ### 运行效率比较
 
@@ -169,7 +169,7 @@ ENTRYPOINT ["/entrypoint.sh"]
   },
   "xAxis": {
     "type": "category",
-    "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"] 
+    "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"]
   },
   "yAxis": {
     "name": "耗时 (s)",
@@ -222,7 +222,7 @@ ENTRYPOINT ["/entrypoint.sh"]
   },
   "xAxis": {
     "type": "category",
-    "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"] 
+    "data": ["algolia-docsearch-upload-action", "algolia-docsearch-action"]
   },
   "yAxis": {
     "name": "镜像大小 (M)",

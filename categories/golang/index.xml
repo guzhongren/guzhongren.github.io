@@ -1,0 +1,255 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Golang - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/golang/</link><description>Golang - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Sep 2019 10:52:24 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/golang/" rel="self" type="application/rss+xml"/><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
+            </div><h1 id="dependency-injection-" class="headerLink">
+    <a href="#dependency-injection-" class="header-mark"></a>Dependency Injection 🧪</h1><p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
+Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreferrer">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
+            </div><h1 id="benchmark-" class="headerLink">
+    <a href="#benchmark-" class="header-mark"></a>Benchmark 🧪</h1><blockquote>
+  <p>基准测试是对计算机系统的性能的测试。</p>
+
+</blockquote><p>在程序中，基准测试，是一种测试代码性能的方法；比如有一个问题你有多种不同的方案，你想选择一种性能最好的方案，那么你就需要基准测试。</p>]]></description></item><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://i.loli.net/2020/03/29/JEtYLcPTCDIU2bs.png" referrerpolicy="no-referrer">
+            </div><!-- TOC -->
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B" rel="">简介</a></li>
+<li><a href="#%E7%9B%AE%E6%A0%87" rel="">目标</a></li>
+<li><a href="#%E7%9B%AE%E7%9A%84" rel="">目的</a></li>
+<li><a href="#coding" rel="">Coding</a>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" rel="">目录结构</a></li>
+<li><a href="#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0" rel="">封装 error 函数</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93" rel="">安装 SQLLite 库及其他库</a></li>
+<li><a href="#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" rel="">申明 DB 全局变量</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93" rel="">初始化数据库</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C" rel="">用户模型构建及原子操作</a>
+<ul>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B" rel="">用户模型</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E" rel="">新增</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4" rel="">删除</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9" rel="">修改</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2" rel="">查询</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95" rel="">在应用中启动并调用用户模型的方法</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA" rel="">运行结果展示</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93" rel="">总结</a></li>
+<li><a href="#reference" rel="">Reference</a></li>
+<li><a href="#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E" rel="">Disclaimer</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="简介" class="headerLink">
+    <a href="#%e7%ae%80%e4%bb%8b" class="header-mark"></a>简介</h2><p><a href="about:blank" rel="">SQLite</a> 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用 SQLLite 也相当简单，只需要安装 SQLLite 的 Golang  包即可使用；
+Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.google.cn/" target="_blank" rel="noopener noreferrer">Golang</a> 有一定的了解。</p>]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://i.loli.net/2020/03/29/moaTGH6EWiqyhRt.png" referrerpolicy="no-referrer">
+            </div><h2 id="场景" class="headerLink">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。</p>]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
+            </div><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
+</span></span><span class="line"><span class="cl">period of time, or established connection failed because connected host has failed to respond.<span class="o">)</span>
+</span></span><span class="line"><span class="cl">go: error loading module requirements</span></span></code></pre>
+</div>
+<h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可" class="headerLink">
+    <a href="#%e5%a6%82%e4%b8%8a%e4%b8%8d%e8%83%bd%e5%ae%89%e8%a3%85-sys-%e5%92%8c-crypto-%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%ba%93%e7%94%a8%e5%a6%82%e4%b8%8b%e6%96%b9%e5%bc%8f%e5%8d%b3%e5%8f%af" class="header-mark"></a>如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2><p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
+            </div><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">shell</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
+</span></span><span class="line"><span class="cl">...
+</span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
+</span></span><span class="line"><span class="cl">period of time, or established connection failed because connected host has failed to respond.<span class="o">)</span>
+</span></span><span class="line"><span class="cl">go: error loading module requirements</span></span></code></pre>
+</div>
+<h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可" class="headerLink">
+    <a href="#%e5%a6%82%e4%b8%8a%e4%b8%8d%e8%83%bd%e5%ae%89%e8%a3%85-sys-%e5%92%8c-crypto-%e8%bf%99%e4%b8%a4%e4%b8%aa%e5%ba%93%e7%94%a8%e5%a6%82%e4%b8%8b%e6%96%b9%e5%bc%8f%e5%8d%b3%e5%8f%af" class="header-mark"></a>如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2><p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>]]></description></item></channel></rss>

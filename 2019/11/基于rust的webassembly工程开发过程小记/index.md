@@ -95,7 +95,7 @@ warning package.json: No license field
 $ rimraf dist pkg && webpack-dev-server --open -d
 🧐  Checking for wasm-pack...
 
-  wasm-pack is installed. 
+  wasm-pack is installed.
 
 ℹ️  Compiling your crate in development mode...
 
@@ -132,8 +132,8 @@ Version: webpack 4.41.2
 Time: 411ms
 Built at: 2019-11-23 20:16:55
                            Asset     Size  Chunks                         Chunk Names
-                            0.js   17 KiB       0  [emitted]              
-beee557fb69dcfa0df60.module.wasm  161 KiB       0  [emitted] [immutable]  
+                            0.js   17 KiB       0  [emitted]
+beee557fb69dcfa0df60.module.wasm  161 KiB       0  [emitted] [immutable]
                         index.js  897 KiB   index  [emitted]              index
 Entrypoint index = index.js
 [./pkg/index.js] 4.93 KiB {0} [built]

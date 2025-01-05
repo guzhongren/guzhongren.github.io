@@ -17,7 +17,7 @@
 
 ## 解决方案
 
-之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如 
+之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如
 - `https://hub.fastgit.org`
 - `https://github.com.cnpmjs.org`
 - 本地配置代理等

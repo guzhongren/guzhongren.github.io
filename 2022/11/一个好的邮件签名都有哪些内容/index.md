@@ -43,7 +43,7 @@
 
 ## 邮件签名生成器
 
-网上有很多个性化的邮件签名生成器可以使用，也可以自己开发一个前端网页，然后将其部署在公开免费的云平台上，如[Netlify](https://www.netlify.com/), [Heroku](https://www.heroku.com/), [Stackblitz](https://stackblitz.com/), [Codesadbox](https://codesandbox.io/)上。 
+网上有很多个性化的邮件签名生成器可以使用，也可以自己开发一个前端网页，然后将其部署在公开免费的云平台上，如[Netlify](https://www.netlify.com/), [Heroku](https://www.heroku.com/), [Stackblitz](https://stackblitz.com/), [Codesadbox](https://codesandbox.io/)上。
 
 
 ## 总结

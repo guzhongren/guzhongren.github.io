@@ -1,0 +1,11 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Decision - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/decision/</link><description>Decision - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Aug 2020 22:06:29 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/decision/" rel="self" type="application/rss+xml"/><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1596199737455-0b2e92661915?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1491&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="什么是-adr" class="headerLink">
+    <a href="#%e4%bb%80%e4%b9%88%e6%98%af-adr" class="header-mark"></a>什么是 ADR</h2><blockquote>
+  <p><em>ADR</em> 即* Architectural Decision Records*，架构决策记录。</p>
+<ul>
+<li>
+<p>架构决策（AD）是一种软件设计选择，针对功能性或非功能性的需求进行的选择设计。</p>
+</li>
+<li>
+<p>架构上重要的要求（ASR, Architecturally Significant Requirement）是对一个软件系统的体系结构和质量衡量效果的要求。</p>]]></description></item></channel></rss>

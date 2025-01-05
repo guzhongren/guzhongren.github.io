@@ -1,0 +1,34 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>VS - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/vs/</link><description>VS - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 17 Oct 2019 20:50:05 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/vs/" rel="self" type="application/rss+xml"/><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img class="tw-inline" loading="lazy" src=https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260   alt="Photo by Jan Kopřiva from Pexels"  ></p>
+<h2 id="插件" class="headerLink">
+    <a href="#%e6%8f%92%e4%bb%b6" class="header-mark"></a>插件</h2><p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>
+<ul>
+<li>RLS(vscode 搜索插件 rls)</li>
+<li>lldb(vscode 搜索插件 codelldb)</li>
+</ul>
+<p>安装很简单，不用说</p>
+<h2 id="配置" class="headerLink">
+    <a href="#%e9%85%8d%e7%bd%ae" class="header-mark"></a>配置</h2><div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">json</p>]]></description></item></channel></rss>
