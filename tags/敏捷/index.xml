@@ -100,4 +100,67 @@
   </table>
 </div>
 <h2 id="提升会议" class="headerLink">
-    <a href="#%e6%8f%90%e5%8d%87%e4%bc%9a%e8%ae%ae" class="header-mark"></a>提升会议</h2><p>上面这些都是些正常的日常会议，但是在日常的工作中还有其他不那么频繁的会议，并且这些会议大多数只是需要参与进去，而不是主持者；这些会议通常是扩大团队或者个人影响力的会议，所以建议你抓住机会。</p>]]></description></item></channel></rss>
+    <a href="#%e6%8f%90%e5%8d%87%e4%bc%9a%e8%ae%ae" class="header-mark"></a>提升会议</h2><p>上面这些都是些正常的日常会议，但是在日常的工作中还有其他不那么频繁的会议，并且这些会议大多数只是需要参与进去，而不是主持者；这些会议通常是扩大团队或者个人影响力的会议，所以建议你抓住机会。</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">Meeting name</th>
+            <th style="text-align: left">Frequency</th>
+            <th style="text-align: left">Duration</th>
+            <th style="text-align: left">Host</th>
+            <th style="text-align: left">Participators</th>
+            <th style="text-align: left">Main content &amp; Target</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left">Vertical or All Hands</td>
+            <td style="text-align: left">Monthly</td>
+            <td style="text-align: left">1h</td>
+            <td style="text-align: left">Volunteer or someone who has impact</td>
+            <td style="text-align: left">All team member and customer</td>
+            <td style="text-align: left">understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">Developer Cop(community of Practice)</td>
+            <td style="text-align: left">Monthly</td>
+            <td style="text-align: left">1h</td>
+            <td style="text-align: left">TL/ Volunteer/TP</td>
+            <td style="text-align: left">All dev and customer</td>
+            <td style="text-align: left">Show some useful and practice tech, make everyone know and use your tech according to your suggestion</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">Gamba work</td>
+            <td style="text-align: left">Once a year or  half-yearly</td>
+            <td style="text-align: left">1h</td>
+            <td style="text-align: left">TL/ Volunteer/TP</td>
+            <td style="text-align: left">All team member</td>
+            <td style="text-align: left">Show what your team members are doing and daily work to customer</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="按需裁减" class="headerLink">
+    <a href="#%e6%8c%89%e9%9c%80%e8%a3%81%e5%87%8f" class="header-mark"></a>按需裁减</h2><p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item></channel></rss>

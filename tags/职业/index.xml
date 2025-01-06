@@ -1,4 +1,61 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>职业 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E8%81%8C%E4%B8%9A/</link><description>职业 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Apr 2023 22:21:35 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E8%81%8C%E4%B8%9A/" rel="self" type="application/rss+xml"/><item><title>成为一个职业的职业人</title><link>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</link><pubDate>Thu, 20 Apr 2023 22:21:35 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>工作多年后，慢慢的人就成熟了，做事慢慢也有了章法，有了自己的方法论；对团队的理解也更深刻了。</p>
-<p>近几年随着疫情，大家默默形成了远程办公的习惯，而很多人还是没有从思想上形成远程办公的习惯。</p>]]></description></item></channel></rss>
+<p>近几年随着疫情，大家默默形成了远程办公的习惯，而很多人还是没有从思想上形成远程办公的习惯。</p>
+<p>以下是最近工作的一些总结和想法。</p>
+<h2 id="事事有响应" class="headerLink">
+    <a href="#%e4%ba%8b%e4%ba%8b%e6%9c%89%e5%93%8d%e5%ba%94" class="header-mark"></a>事事有响应</h2><p>TL 说&quot;@All, 客服团队有人已经按照我们的模板开始提issue了，大家以后收到Ticket第一时间去检查Ticket 的内容是不是符合我们的模板。&quot;</p>
+<p>1分钟过去了。</p>
+<p>5 分钟过去了。</p>
+<p>10 分钟过去了。</p>
+<p>&hellip;&hellip;</p>
+<p>一天过去了&hellip;&hellip;</p>
+<p>就这样，没有人对你的消息做任何回应，即使是消息下面的表情信息也没有任何更新。那么，这是一次无效的沟通。而作为团队的成员，我们应该及时的给予&quot;任何事物&quot;反馈，形成有效沟通。另一方面，我们需要换位思考，为什么有人会在大群里说话，肯定是有重要的事情通知，而对方希望得到对应的响应，无论响应是正向的还是负面的。</p>
+<h2 id="事事有始有终" class="headerLink">
+    <a href="#%e4%ba%8b%e4%ba%8b%e6%9c%89%e5%a7%8b%e6%9c%89%e7%bb%88" class="header-mark"></a>事事有始有终</h2><p>现在在公司打两份工，一份是正经的工作，一份是一个公司内部的开源项目，都是作为TL，带领着若干个毕业生，而且一般都是所谓的&quot;非计&quot;，在我司也被称之为&quot;SuperX&quot;。</p>
+<p>和我刚开始工作一样，大家都是对一件事不是那么上心，或者是不知道怎么才能把一件事做的漂漂亮亮，导致在后面追问的时候，大家都很茫然。在这里很重要的一点就是，做事要有始有终，以终为始。</p>
+<h2 id="全局视角让你更游刃有余" class="headerLink">
+    <a href="#%e5%85%a8%e5%b1%80%e8%a7%86%e8%a7%92%e8%ae%a9%e4%bd%a0%e6%9b%b4%e6%b8%b8%e5%88%83%e6%9c%89%e4%bd%99" class="header-mark"></a>全局视角，让你更游刃有余</h2><p>工作的价值就是不要浪费时间且持续输出有价值的内容。比如做一个功能卡，要完成前端的一个展示组件，但是在这个组件背后有个隐形知识，就是需要设计一个全局的存储，将用户选择的内容存储下来，方便后面将其下载为配置文件。</p>
+<p>这样的隐形知识只有有全局的功能视角或者路线图的认知下才能想到。如果你有了这样的全局视角，你就会设计更合理的架构，编写更合理的数据结构，从而提升系统的可扩展，易维护的能力。</p>
+<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model" target="_blank" rel="noopener noreferrer">C4 Modeling</a>, <a href="https://plantuml.com/sequence-diagram" target="_blank" rel="noopener noreferrer">数据流图</a>等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
+<h2 id="挖掘工作背后的真正目的从而向上管理" class="headerLink">
+    <a href="#%e6%8c%96%e6%8e%98%e5%b7%a5%e4%bd%9c%e8%83%8c%e5%90%8e%e7%9a%84%e7%9c%9f%e6%ad%a3%e7%9b%ae%e7%9a%84%e4%bb%8e%e8%80%8c%e5%90%91%e4%b8%8a%e7%ae%a1%e7%90%86" class="header-mark"></a>挖掘工作背后的真正目的，从而&quot;向上管理&quot;</h2><p>比如，给你分配了一个统计团队能力结构的一个工作，表格模板也给你了，那么你要怎么做呢？</p>
+<p>首先，我们应该将模板调整为我们项目的技术栈、项目信息、人员情况，然后将表分享给组内小伙伴去在规定的时间内完成。等在最终截止日期时，把所有的信息分享给TL。大多时候，我们认为我们的工作就此结束了。</p>
+<p>作为领导者，你可能要考虑&quot;向上管理&quot;，将收集到的结果统计并形成最直观、简洁的图表等来展示，且提供你的建议意见，让你的领导节省时间。这才是这份工作的重要性。</p>
+<p>去挖掘工作的最终目的吧，那样的工作才有意义。</p>
+<h2 id="做事前多想想task" class="headerLink">
+    <a href="#%e5%81%9a%e4%ba%8b%e5%89%8d%e5%a4%9a%e6%83%b3%e6%83%b3task" class="header-mark"></a>做事前多想想Task</h2><p>最近在和team 更新团队情况的时候发现，团队成员总是没有在预估的点数内完成工作，而且情况比较普遍，经过多次反问，得出结论是，对系统和产品没有一个全局的认识，并且对自己的卡在全局中的位置，作用都不是很清楚，更有甚者，对自己开发的接口的上游是什么都不清楚。</p>
+<p>这种情况从团队负责人的角度来看是有严重问题的，那么作为团队的负责人，就得想办法解决。上层的问题，可以&quot;胡萝卜大棒&quot;的形式加以&quot;授权和分配&quot;来解决。但是落到具体的个人身上，该如何解决呢？</p>
+<p>通常个人一般通过接受外部资源信息和主动获取信息来提升个人能力。在获取到信息后，个人需要对自己所做的工作进行分析，拆分。使用&quot;分而治之&quot;的思想将工作拆分为一个个可衡量，有产出的task, 再开始干活。这样工作将会变得比之前轻松很多。</p>
+<h2 id="慢慢来比较快" class="headerLink">
+    <a href="#%e6%85%a2%e6%85%a2%e6%9d%a5%e6%af%94%e8%be%83%e5%bf%ab" class="header-mark"></a>慢慢来，比较快</h2><p>现在，我在负责新加坡的一个运维项目，组里的成员都是新人，而且还有不少毕业生；因为这是一个非常大的项目，我们每个人对整个项目都是只知道一点，虽然有各种各样的KT(Knowledge Transfer), 但是能吸收的少之又少。</p>
+<p>在这种情况下，我们每天都要面对来自用户，公民的各种问题，还要接受内部同事的Feedback，这样的运维工作既没有效率，也没有成就感。</p>
+<p>&ldquo;慢慢来，比较快&rdquo;。 应对这样的问题我们最好的方式，就是将业务流程梳理清晰，微服务之间的调用关系整理成易于理解的关系图或者数据流图。这样在了解了真正的业务之后，再做决定，将会事半功倍，且在应对任何问题的时候都会信心满满，从而加速工作的推进。</p>
+<h2 id="好脑子不如烂笔头" class="headerLink">
+    <a href="#%e5%a5%bd%e8%84%91%e5%ad%90%e4%b8%8d%e5%a6%82%e7%83%82%e7%ac%94%e5%a4%b4" class="header-mark"></a>好脑子不如烂笔头</h2><p>把你想到的内容尽快写下来, 不然，当你错过那个念头之后，那个想法就会立马变味。</p>
+<p>刚刚，我已经忘了一个这个文章的一个&quot;好点子&quot;。</p>
+<h2 id="归档" class="headerLink">
+    <a href="#%e5%bd%92%e6%a1%a3" class="header-mark"></a>归档</h2><p>将日常用到的或者可重复的内容文字化、脚本化，并且保持&quot;Source of Truth&quot;，永远只有一份，且是最新的。</p>
+<p>当有人要问你相关的问题，你只需要甩给他一个图，一个链接，或者给他一个图片。</p>
+<p>一个人的厚重感，可能就是他脑子里归档好的所有有效的知识和链接吧。</p>
+<p>&hellip;&hellip;</p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item></channel></rss>

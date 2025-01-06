@@ -2,18 +2,1167 @@
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>一切总是在往熵增大的方向发展。</p>
 <h2 id="遇到的问题" class="headerLink">
-    <a href="#%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98" class="header-mark"></a>遇到的问题</h2><p>团队周内每天需要都有个Code Diff 的会议来进行代码review, 但是不是每个人都有代码要被Review, 如果有个工具每天在Code Diff 前进行统计，大家有需要代码Review 的就在消息下面标记一下，或者回复一哈；如果大家有标记，那么再进行代码Review，是不是就可以省下一部分时间了？</p>]]></description></item><item><title>端午Incident了</title><link>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</link><pubDate>Fri, 30 Jun 2023 23:23:05 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+    <a href="#%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98" class="header-mark"></a>遇到的问题</h2><p>团队周内每天需要都有个Code Diff 的会议来进行代码review, 但是不是每个人都有代码要被Review, 如果有个工具每天在Code Diff 前进行统计，大家有需要代码Review 的就在消息下面标记一下，或者回复一哈；如果大家有标记，那么再进行代码Review，是不是就可以省下一部分时间了？</p>
+<p>团队内每周站会的主持人要轮流，要是大家轮流记，估计很快就乱了，如果有个工具，每周一早上在群里自动更新一哈是不是就更好了？对于Oncall 等活动也是一样，是不是就完美了？</p>
+<p>这么多问题怎么解决呢？</p>
+<p>肯定就是各种机器人啦。我们团队用的都是Google 的那套办公软件，而Google Sheet 是我们经常用来流程化记录内容的工具；同时Google Chat 是我们团队的沟通协作工具。</p>
+<p>而Google 全家桶的好处就是其各个应用之间调用协作非常方便。那么我们就用Google Sheet 和Google Chat 来实现一个简单的机器人应用来干上面各种麻烦的事吧。</p>
+<h2 id="google-chat-webhooks" class="headerLink">
+    <a href="#google-chat-webhooks" class="header-mark"></a>Google Chat Webhooks</h2><p>Google Chat 的Webhooks 允许其他应用程序调用，并可以对消息进行<code>创建</code>、<code>读取</code> 、<code>更新</code> 和<code>删除</code>。如同对数据库的增删改差一般。</p>
+<p><img class="tw-inline" loading="lazy" src=https://developers.google.com/static/chat/images/arch-pat-notifier.svg   alt="Google Chat Webhooks"  ></p>
+<p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook" target="_blank" rel="noopener noreferrer">这里</a>; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
+<h2 id="google-sheet-apps-script" class="headerLink">
+    <a href="#google-sheet-apps-script" class="header-mark"></a>Google Sheet Apps Script</h2><p>Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google Sheet 最强大的地方在于他支持自定义脚本，虽然其名为<code>Apps Script</code>, 文件格式为<code>.gs</code>， 但是其就是一些简单的<code>JavaScript</code> API, 其请求也是同步的API, 而且没有跨域问题，这就让其作为一个机器人有了初步条件。</p>
+<p>当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。</p>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp   alt="Google Sheet API Structure"  ></p>
+<p>从上图中可以看到</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">序号</th>
+            <th style="text-align: left">说明</th>
+            <th style="text-align: left">Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left">1</td>
+            <td style="text-align: left">SpreadsheetApp</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: left">2</td>
+            <td style="text-align: left">ActiveSheet</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: left">3</td>
+            <td style="text-align: left">DataRange</td>
+            <td style="text-align: "></td>
+        </tr>
+        <tr>
+            <td style="text-align: left">4</td>
+            <td style="text-align: left">Value</td>
+            <td style="text-align: "></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h2 id="实践" class="headerLink">
+    <a href="#%e5%ae%9e%e8%b7%b5" class="header-mark"></a>实践</h2><p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
+<h3 id="创建google-chat-webhooks" class="headerLink">
+    <a href="#%e5%88%9b%e5%bb%bagoogle-chat-webhooks" class="header-mark"></a>创建Google Chat Webhooks</h3><p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp   alt="Google chat webhooks"  ></p>
+<p>点击创建好的Webhooks, 拷贝URL即可。</p>
+<h3 id="创建google-sheet-轮转数据" class="headerLink">
+    <a href="#%e5%88%9b%e5%bb%bagoogle-sheet-%e8%bd%ae%e8%bd%ac%e6%95%b0%e6%8d%ae" class="header-mark"></a>创建Google Sheet 轮转数据</h3><p>新建Google Sheet，直接写入如下数据</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">text</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl">xiaoming1
+</span></span><span class="line"><span class="cl">xiaoming2
+</span></span><span class="line"><span class="cl">xiaoming3
+</span></span><span class="line"><span class="cl">xiaoming4
+</span></span><span class="line"><span class="cl">xiaoming5
+</span></span><span class="line"><span class="cl">xiaoming6	current
+</span></span><span class="line"><span class="cl">xiaoming7
+</span></span><span class="line"><span class="cl">xiaoming8
+</span></span><span class="line"><span class="cl">xiaoming9
+</span></span><span class="line"><span class="cl">xiaoming10</span></span></code></pre>
+</div>
+<h3 id="创建google-sheet-处理脚本" class="headerLink">
+    <a href="#%e5%88%9b%e5%bb%bagoogle-sheet-%e5%a4%84%e7%90%86%e8%84%9a%e6%9c%ac" class="header-mark"></a>创建Google Sheet 处理脚本</h3><p>接下来在Google Sheet 中创建Apps Script; 位置：Menu-&gt;Extention-&gt; Apps Script;</p>
+<p>在编辑器里可以编写处理Google Sheet 的代码，比如有个sheet.gs 里面处理Sheet 相关的操作，如下</p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">js</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-2" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">CURRENT</span> <span class="o">=</span> <span class="s1">&#39;current&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getTheNextStandupPerson</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">activeSheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActiveSheet</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">dataRange</span> <span class="o">=</span> <span class="nx">activeSheet</span><span class="p">.</span><span class="nx">getDataRange</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">standupList</span> <span class="o">=</span> <span class="nx">dataRange</span><span class="p">.</span><span class="nx">getValues</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">currentStandupPersonIndex</span> <span class="o">=</span> <span class="nx">standupList</span><span class="p">.</span><span class="nx">findIndex</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="nx">person</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">toUpperCase</span><span class="p">()</span> <span class="o">===</span> <span class="nx">CURRENT</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">tempStandupPersonIndex</span> <span class="o">=</span> <span class="nx">currentStandupPersonIndex</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">nextStandupPersonIndex</span> <span class="o">=</span>  <span class="nx">tempStandupPersonIndex</span> <span class="o">&gt;=</span> <span class="nx">standupList</span><span class="p">.</span><span class="nx">length</span> <span class="o">?</span> <span class="mi">0</span><span class="o">:</span> <span class="nx">tempStandupPersonIndex</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">nextStandupPerson</span> <span class="o">=</span> <span class="nx">standupList</span><span class="p">.</span><span class="nx">find</span><span class="p">((</span><span class="nx">_</span><span class="p">,</span> <span class="nx">index</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">index</span> <span class="o">===</span> <span class="nx">nextStandupPersonIndex</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">currentStandupPersonIndex</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nextStandupPersonIndex</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nextStandupPerson</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">updateRecord</span><span class="p">(</span><span class="nx">currentStandupPersonIndex</span><span class="p">,</span> <span class="nx">nextStandupPersonIndex</span><span class="p">,</span> <span class="nx">nextperson</span> <span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Start to update the latest standup person to </span><span class="si">${</span><span class="nx">nextperson</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">currentRow</span> <span class="o">=</span> <span class="nx">currentStandupPersonIndex</span> <span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">nextRow</span> <span class="o">=</span> <span class="nx">nextStandupPersonIndex</span> <span class="o">+</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">activeSheet</span> <span class="o">=</span> <span class="nx">SpreadsheetApp</span><span class="p">.</span><span class="nx">getActiveSheet</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">activeSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="nx">currentRow</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">setValue</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">activeSheet</span><span class="p">.</span><span class="nx">getRange</span><span class="p">(</span><span class="nx">nextRow</span><span class="p">,</span> <span class="mi">2</span><span class="p">).</span><span class="nx">setValue</span><span class="p">(</span><span class="nx">CURRENT</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">   <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Successfully update the latest standup person to </span><span class="si">${</span><span class="nx">nextperson</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
+</div>
+<p>main.gs 处理整个流程，并且在里面发送消息到刚才的Space中，</p>
+<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">js</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-3" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">WEBHOOK_URL</span> <span class="o">=</span> <span class="s2">&#34;https://chat.googleapis.com/v1/spaces/AAAAPhOvPUg/messages?key=AIzaSxxxxxxxxxxxxxxxxxxxxxxxx&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// main function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">sendMessageToChat</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isMonday</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span><span class="nx">currentStandupPersonIndex</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nextStandupPersonIndex</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nextStandupPerson</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">getTheNextStandupPerson</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">updateRecord</span><span class="p">(</span><span class="nx">currentStandupPersonIndex</span><span class="p">,</span> <span class="nx">nextStandupPersonIndex</span><span class="p">,</span> <span class="nx">nextStandupPerson</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;method&#34;</span><span class="o">:</span> <span class="s2">&#34;post&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;headers&#34;</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/json; charset=UTF-8&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;payload&#34;</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;text&#34;</span><span class="o">:</span> <span class="sb">`Hey &lt;users/all&gt;,This week&#39;s standup host is </span><span class="si">${</span><span class="nx">nextStandupPerson</span><span class="si">}</span><span class="sb"> </span><span class="si">${</span><span class="s1">&#39;\n&#39;</span><span class="p">.</span><span class="nx">repeat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="si">}</span><span class="sb"> The sheet: https://docs.google.com/spreadsheets/d/123434234343/edit#gid=0`</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="nx">UrlFetchApp</span><span class="p">.</span><span class="nx">fetch</span><span class="p">(</span><span class="nx">WEBHOOK_URL</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">isMonday</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">day</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDay</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="o">!</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">].</span><span class="nx">includes</span><span class="p">(</span><span class="nx">day</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre>
+</div>
+<h3 id="定时执行脚本处理" class="headerLink">
+    <a href="#%e5%ae%9a%e6%97%b6%e6%89%a7%e8%a1%8c%e8%84%9a%e6%9c%ac%e5%a4%84%e7%90%86" class="header-mark"></a>定时执行脚本处理</h3><p>有多种执行方式；</p>
+<ol>
+<li>直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。</li>
+<li>定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。</li>
+</ol>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp   alt="Trigger of Apps Script"  ></p>
+<h3 id="效果" class="headerLink">
+    <a href="#%e6%95%88%e6%9e%9c" class="header-mark"></a>效果</h3><p>可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
+<img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp   alt="Chatbot message result"  ></p>
+<h2 id="总结" class="headerLink">
+    <a href="#%e6%80%bb%e7%bb%93" class="header-mark"></a>总结</h2><p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://developers.google.com/chat/api/guides/message-formats/text" target="_blank" rel="noopener noreferrer">Google Chat Message Format: https://developers.google.com/chat/api/guides/message-formats/text</a></li>
+<li><a href="https://developers.google.com/chat/how-tos/webhooks" target="_blank" rel="noopener noreferrer">Google Chat Webhooks: https://developers.google.com/chat/how-tos/webhooks</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>端午Incident了</title><link>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</link><pubDate>Fri, 30 Jun 2023 23:23:05 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言" class="headerLink">
     <a href="#%e5%89%8d%e8%a8%80" class="header-mark"></a>前言</h2><p>现在，我们作为Ops 维护这一个新加坡的项目，项目还是比较复杂的。端午前一天00：00 上线了很多hotfix, 而这里面就隐藏了2个bug。</p>
 <h2 id="回顾" class="headerLink">
-    <a href="#%e5%9b%9e%e9%a1%be" class="header-mark"></a>回顾</h2><p>技术层面，有两个bug，一个Job运行时，数据库CPU 拉满，一个少了Redis 初始化，导致从Event Hub 发送过来的数据无法处理。</p>]]></description></item><item><title>OAuth2.0和OIDC流程梳理</title><link>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</link><pubDate>Sat, 03 Jun 2023 10:31:28 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
+    <a href="#%e5%9b%9e%e9%a1%be" class="header-mark"></a>回顾</h2><p>技术层面，有两个bug，一个Job运行时，数据库CPU 拉满，一个少了Redis 初始化，导致从Event Hub 发送过来的数据无法处理。</p>
+<p>业务层面, 数据库CPU 拉满，导致业务数据无法处理；另一个Redis 初始化失败，影响到所有用户数据同步及奖励转换的问题。</p>
+<h3 id="数据库cpu-拉满" class="headerLink">
+    <a href="#%e6%95%b0%e6%8d%ae%e5%ba%93cpu-%e6%8b%89%e6%bb%a1" class="header-mark"></a>数据库CPU 拉满</h3><div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">sql</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s2">&#34;table&#34;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">columnName</span><span class="o">=</span><span class="s1">&#39;value&#39;</span></span></span></code></pre>
+</div>
+<p>新的代码修改是根据数据库某一列去查找对应的数据，然而Dev 对于这一列并没有添加索引，导致在Job 运行，Job 运行时间过长，通过数据库指标的dashboard 查看，数据库CPU 爆满,进而对该Job 的代码重新review， 发现时数据库查询没有加索引的问题。</p>
+<p>发现有问题后，我们开始分析是否可以回滚该服务；但是发现该服务还涉及到其他hotfix, 如果这个service rollback，那么还有其他2个service 也需要回滚，影响面比较大。最终，我们的解决方案是，hotfix 依旧上线，但是涉及的Daily Job 从任务中删除，通知客户该incident 的影响面，并且在第二天晚上定时任务执行的时候再次确认是否又执行了; 对于在新的fix 上线之前的报告，我们使用手动生成的方式,以使业务持续。</p>
+<p>是不是感觉不应该出现这样的问题？</p>
+<p>是的, 但为什么还是出现了这样的事故呢？个人认为原因很简单:</p>
+<ul>
+<li>在low env 没有足够的数据对新的代码更改做充分的压力测试，只是完成的对应的功能</li>
+<li>Review 时没有发现该问题，不可否认，这完全是Reveiwer 的经验问题</li>
+</ul>
+<h3 id="redis-没有初始化" class="headerLink">
+    <a href="#redis-%e6%b2%a1%e6%9c%89%e5%88%9d%e5%a7%8b%e5%8c%96" class="header-mark"></a>Redis 没有初始化</h3><p>关于这个问题，我们的应用程序在代码层面有两方面的设计，1，启动server, 向外部提供RESTful 服务；2，启动Agendash, 运行一些业务方面的定时任务。</p>
+<p>而我们的更新就是去优化这个服务，在应用层面分为2个服务，并且保持运行Agendash 的pod 数量与Event Hub partition 的数量一致，以解决一个消息被重复消费的问题（虽然很tricky）。</p>
+<p>团队使用的方式是，参考之前某一个服务的拆分策略，业务代码，Ops 部署代码都进行双份设计，在启动服务时，启动不同的脚本即可。方式很简单，只是<code>抄代码，抄逻辑</code>。</p>
+<p>然而，团队在做code fix 时，没有将代码<code>抄</code>全，导致少了 <code>initRedis()</code> 这样的代码；又因为团队对对应的业务了解的不多，没有进行充分的上线前的测试，只是凭<code>Senior dev</code> 的感觉就上线了。</p>
+<p>为什么呢？</p>
+<ul>
+<li>Dev 对<code>抄</code>过来的代码在思想上很有信心，但是没有经过验证</li>
+<li>没有在本地测试</li>
+<li>没有充分的业务测试，甚至没有测试</li>
+<li>Senior dev 可能粗心没发现</li>
+</ul>
+<p>这个过程中，因为负责这个code fix 的是个Junior Dev, 而在那段时间，我们有新的Senior Dev 要上项目，所以两人Pair 一起修bug。</p>
+<h2 id="standby" class="headerLink">
+    <a href="#standby" class="header-mark"></a>Standby</h2><p>为什么需要Standby 呢？</p>
+<h3 id="增强信心" class="headerLink">
+    <a href="#%e5%a2%9e%e5%bc%ba%e4%bf%a1%e5%bf%83" class="header-mark"></a>增强信心</h3><p>如果你是第一次遇到Incident，是不是会害怕?</p>
+<ul>
+<li>这个问题到底是怎么发生的？</li>
+<li>这么多人问我这么多问题，我忙不过来，会不会被客户投诉？</li>
+<li>标准的处理流程是什么？</li>
+<li>这个业务我不了解，我该不该叫其他小伙伴一起看？</li>
+<li>出了线上事故了，项目组或者公司会不会处理我？</li>
+<li>&hellip;&hellip;</li>
+</ul>
+<p>想到这些，你是不是已经很恐慌了？相反，如果有人和你一起追踪这个问题，你又是什么样的心态呢？</p>
+<h3 id="及时响应" class="headerLink">
+    <a href="#%e5%8f%8a%e6%97%b6%e5%93%8d%e5%ba%94" class="header-mark"></a>及时响应</h3><p>正如上面所说，在出现Incident 的时候会有很多事要做，比如查询根因、处理各种leader 发过来的问题，是不是感觉一个人根本忙不过来？</p>
+<p>所以，如果有其他小伙伴和你一起standby, 那么是不是可以将工作分配一下，对客户、leader 的问题及时做出响应；起码给别人你很<code>靠谱</code>的印象, 提升自己、团队甚至公司在这方面的声誉。</p>
+<h2 id="收获" class="headerLink">
+    <a href="#%e6%94%b6%e8%8e%b7" class="header-mark"></a>收获</h2><h3 id="在数据库中查询基本都需要考虑加索引" class="headerLink">
+    <a href="#%e5%9c%a8%e6%95%b0%e6%8d%ae%e5%ba%93%e4%b8%ad%e6%9f%a5%e8%af%a2%e5%9f%ba%e6%9c%ac%e9%83%bd%e9%9c%80%e8%a6%81%e8%80%83%e8%99%91%e5%8a%a0%e7%b4%a2%e5%bc%95" class="header-mark"></a>在数据库中查询，基本都需要考虑加索引</h3><p>凡事查询，在没有加索引，且数据量上去之后，查询一定会变慢，这种情况下需要根据biz/tech 的策略加索引。</p>
+<h3 id="在出现incident-时全员应该随时支持所谓standby" class="headerLink">
+    <a href="#%e5%9c%a8%e5%87%ba%e7%8e%b0incident-%e6%97%b6%e5%85%a8%e5%91%98%e5%ba%94%e8%af%a5%e9%9a%8f%e6%97%b6%e6%94%af%e6%8c%81%e6%89%80%e8%b0%93standby" class="header-mark"></a>在出现Incident 时，全员应该随时支持，所谓Standby</h3><p>在这次的Incident中，团队并没有及时的Standby，需要提升这方面的实践和认知。所以后续需要在团队内进行Incident 培训，让大家知道如何处理Incident。同时Standby 是一种负责人的态度。</p>
+<h3 id="没有所谓的简单的工作" class="headerLink">
+    <a href="#%e6%b2%a1%e6%9c%89%e6%89%80%e8%b0%93%e7%9a%84%e7%ae%80%e5%8d%95%e7%9a%84%e5%b7%a5%e4%bd%9c" class="header-mark"></a>没有所谓的简单的工作</h3><p>不要在不了解事情的情况下，随便说&quot;这不是很简单么&quot;这样的话；说的越轻松，打脸往往来的越快。</p>
+<h3 id="不要责备" class="headerLink">
+    <a href="#%e4%b8%8d%e8%a6%81%e8%b4%a3%e5%a4%87" class="header-mark"></a>不要责备</h3><p>就像Thoughtworks 所倡导的，出了问题, 不要针对个人，不要问&quot;9：00～10：00, 你在干嘛&quot; 这样&quot;地震级&quot;的问题；而应该去分析为什么会出现这个Incident, 以后怎么避免。</p>
+<h2 id="总结" class="headerLink">
+    <a href="#%e6%80%bb%e7%bb%93" class="header-mark"></a>总结</h2><p>在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告(Incident Report)这些才是最重要的。</p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>OAuth2.0和OIDC流程梳理</title><link>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</link><pubDate>Sat, 03 Jun 2023 10:31:28 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景" class="headerLink">
-    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>在日常生活中，有许多使用OAuth 2.0或OIDC的案例。例如，小明使用团建费用在京东商城购买了许多零食，他希望使用第三方软件开发票来报销这部分费用。以下是小明、小票软件和京东商家开放平台之间的对话流程：</p>]]></description></item><item><title>成为一个职业的职业人</title><link>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</link><pubDate>Thu, 20 Apr 2023 22:21:35 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</guid><description><![CDATA[<div class="featured-image">
+    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>在日常生活中，有许多使用OAuth 2.0或OIDC的案例。例如，小明使用团建费用在京东商城购买了许多零食，他希望使用第三方软件开发票来报销这部分费用。以下是小明、小票软件和京东商家开放平台之间的对话流程：</p>
+<p>小明：“你好，小票软件。我在Google浏览器上需要访问你来处理我在京东商城店铺的订单信息，以生成发票。”</p>
+<p>小票软件：“好的，小明，我需要你授权。现在我将引导你前往京东商家开放平台，在那里你可以给我授权。”</p>
+<p>京东商家开放平台：“你好，小明。我收到了小票软件的跳转请求，已准备好一个授权页面。请登录并确认后，点击授权按钮即可。”</p>
+<p>小明：“好的，京东商家开放平台。我已看到授权页面，并点击了授权按钮。”</p>
+<p>京东商家开放平台：“你好，小票软件。我已收到小明的授权请求，现在将为你生成授权码（code）。我会通过浏览器重定向到你的回调URL地址。”</p>
+<p>小票软件：“好的，京东商家开放平台。我已从浏览器中获取到授权码，现在将使用该授权码向你请求访问令牌（access_token）。请提供访问令牌给我。”</p>
+<p>京东商家开放平台：“好的，小票软件，访问令牌已发送给你。”</p>
+<p>小票软件：“太好了，现在我可以使用访问令牌来获取小明店铺的订单信息，并生成发票。”</p>
+<p>小明：“我已能够看到我的订单，现在可以开始打印发票了。</p>
+<p>在以下的流程中，大家可以使用如<strong>极客时间</strong>使用<strong>微信</strong>登录的流程，或者某业务系统使用<strong>Keycloak</strong>登录的方式来理解整个技术流转过程。</p>
+<h2 id="oauth20" class="headerLink">
+    <a href="#oauth20" class="header-mark"></a>OAuth2.0</h2><h3 id="4-种授权许可类型" class="headerLink">
+    <a href="#4-%e7%a7%8d%e6%8e%88%e6%9d%83%e8%ae%b8%e5%8f%af%e7%b1%bb%e5%9e%8b" class="header-mark"></a>4 种授权许可类型</h3><p>OAuth2.0 有4种授权许可类型，分别是<strong>授权码许可(Authorization Code)</strong>， <strong>资源拥有者凭据许可(Resource Owner Password Credential)</strong>, <strong>客户端凭据许可(Client Credential)<strong>和</strong>隐式许可（Implicit）</strong>。</p>
+<p>以下是一些进行对应类型的发送请求的伪代码</p>
+<h4 id="授权码许可authorization-code" class="headerLink">
+    <a href="#%e6%8e%88%e6%9d%83%e7%a0%81%e8%ae%b8%e5%8f%afauthorization-code" class="header-mark"></a>授权码许可(Authorization Code)</h4><p>授权码许可是OAuth 2.0中最常用的许可类型。它的流程如下：</p>
+<p>小票软件将用户重定向到京东商家开放平台的授权页面。
+用户在授权页面登录并点击授权按钮。
+京东商家开放平台生成一个授权码，并通过重定向将用户带回小票软件指定的回调URL。
+小票软件从回调URL中获取授权码。
+小票软件使用授权码向京东商家开放平台请求访问令牌。
+京东商家开放平台验证授权码并颁发访问令牌给小票软件。
+小票软件使用访问令牌来获取小明店铺的订单信息，并生成发票。</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">java</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-1" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">grantType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="p">(</span><span class="s">&#34;authorization_code&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">grantType</span><span class="p">)){</span><span class="w">  </span><span class="p">}</span></span></span></code></pre>
+</div>
+<h4 id="资源拥有者凭据许可resource-owner-password-credential" class="headerLink">
+    <a href="#%e8%b5%84%e6%ba%90%e6%8b%a5%e6%9c%89%e8%80%85%e5%87%ad%e6%8d%ae%e8%ae%b8%e5%8f%afresource-owner-password-credential" class="header-mark"></a>资源拥有者凭据许可(Resource Owner Password Credential)</h4><p>资源拥有者凭据许可是一种直接使用用户名和密码进行认证的许可类型。该许可类型要求客户端直接获取用户的凭据，并使用这些凭据向授权服务器进行身份验证。</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">java</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-2" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;password&#34;</span><span class="p">);</span></span></span></code></pre>
+</div>
+<h4 id="客户端凭据许可client-credential" class="headerLink">
+    <a href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e5%87%ad%e6%8d%ae%e8%ae%b8%e5%8f%afclient-credential" class="header-mark"></a>客户端凭据许可(Client Credential)</h4><p>客户端凭据许可适用于没有资源拥有者参与的情况下，客户端直接与授权服务器进行身份验证并获取访问令牌。</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">java</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-3" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;client_credentials&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_secret&#34;</span><span class="p">,</span><span class="s">&#34;APPSECRETTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">doPost</span><span class="p">(</span><span class="n">oauthURl</span><span class="p">,</span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">mapToStr</span><span class="p">(</span><span class="n">params</span><span class="p">));</span><span class="err">”</span></span></span></code></pre>
+</div>
+<h4 id="隐式许可implicit" class="headerLink">
+    <a href="#%e9%9a%90%e5%bc%8f%e8%ae%b8%e5%8f%afimplicit" class="header-mark"></a>隐式许可（Implicit)</h4><p>隐式许可是一种在浏览器中直接向授权服务器请求访问令牌的许可类型。这种许可类型通常用于单页应用程序或移动应用程序，因为它们无法安全地保持客户端凭据。</p>
+<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
+  <div class="
+    code-block-title 
+    
+    tw-flex 
+    tw-flex-row 
+    tw-justify-between 
+    tw-w-full tw-bg-bgColor-secondary
+    ">      
+    <button 
+      class="
+        tw-select-none 
+        tw-mx-2 
+        tw-block
+        group-[.is-open]:tw-rotate-90
+        tw-transition-[transform] 
+        tw-duration-500 
+        tw-ease-in-out
+        print:!tw-hidden"
+      disabled
+      aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
+
+    <div class="code-block-title-bar tw-w-full">
+      <p class="tw-select-none !tw-my-1">java</p>
+    </div>
+    <div class="tw-flex">
+      <button 
+        class="
+          line-number-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.show-line-numbers]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle line numbers"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
+
+      <button 
+        class="
+          wrap-code-button
+          tw-select-none 
+          tw-mx-2 
+          tw-hidden 
+          group-[.is-open]:tw-block 
+          group-[.is-wrap]:tw-text-fgColor-link 
+          print:!tw-hidden" 
+        title="Toggle code wrap"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
+      
+      <button 
+        class="
+          copy-code-button
+          tw-select-none
+          tw-mx-2 
+          tw-hidden
+          group-[.is-open]:tw-block
+          hover:tw-text-fgColor-link 
+          print:!tw-hidden"
+        title="Copy code">
+          <span class="copy-icon tw-block"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
+          <span class="check-icon tw-hidden"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
+      </button>
+        
+      <button 
+        class="
+          tw-select-none 
+          tw-mx-2 
+          tw-block 
+          group-[.is-open]:tw-hidden 
+          print:!tw-hidden" 
+        disabled
+        aria-hidden="true"><svg class="icon"
+    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
+    </div>
+  </div>
+  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
+    id="codeblock-id-4" 
+    class="
+      chroma 
+      !tw-block 
+      tw-p-0
+      tw-m-0
+      tw-transition-[max-height] 
+      tw-duration-500 
+      tw-ease-in-out 
+      group-[.is-closed]:!tw-max-h-0 
+      group-[.is-wrap]:tw-text-wrap
+      tw-overflow-y-hidden
+      tw-overflow-x-auto
+      tw-scrollbar-thin
+      "><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;response_type&#34;</span><span class="p">,</span><span class="s">&#34;token&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">toOauthUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URLParamsUtil</span><span class="p">.</span><span class="na">appendParams</span><span class="p">(</span><span class="n">oauthUrl</span><span class="p">,</span><span class="n">params</span><span class="p">);</span></span></span></code></pre>
+</div>
+<h3 id="authorization-code-的实现分类" class="headerLink">
+    <a href="#authorization-code-%e7%9a%84%e5%ae%9e%e7%8e%b0%e5%88%86%e7%b1%bb" class="header-mark"></a>Authorization Code 的实现分类</h3><p>Authorization Code的实现主要分为两类：无服务器实现（使用PKCE）和有服务器实现。</p>
+<p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
+<p>有服务器实现广泛使用且更安全。</p>
+<h3 id="authorization-code-实现的流程图" class="headerLink">
+    <a href="#authorization-code-%e5%ae%9e%e7%8e%b0%e7%9a%84%e6%b5%81%e7%a8%8b%e5%9b%be" class="header-mark"></a>Authorization Code 实现的流程图</h3><p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg   alt="OAuth 2.0 Flow"  ></p>
+<h2 id="oidc" class="headerLink">
+    <a href="#oidc" class="header-mark"></a>OIDC</h2><p>OAuth2.0 是一种授权协议，而不是身份认证协议。OIDC 才是身份认证协议，而且是基于 OAuth 2.0 来执行用户身份认证的互通协议。更概括地说，OIDC 就是直接基于 OAuth 2.0 构建的身份认证框架协议。</p>
+<h3 id="其3个角色与oauth20的4个角色的对应关系" class="headerLink">
+    <a href="#%e5%85%b63%e4%b8%aa%e8%a7%92%e8%89%b2%e4%b8%8eoauth20%e7%9a%844%e4%b8%aa%e8%a7%92%e8%89%b2%e7%9a%84%e5%af%b9%e5%ba%94%e5%85%b3%e7%b3%bb" class="header-mark"></a>其3个角色与OAuth2.0的4个角色的对应关系</h3><p>以下是OIDC 种的三个角色：</p>
+<ul>
+<li>EU（End User），代表最终用户</li>
+<li>RP（Relying Party），代表认证服务的依赖方，就是上面我提到的第三方软件</li>
+<li>OP（OpenID Provider），代表提供身份认证服务方</li>
+</ul>
+<p>OAuth 2.0 的 4 个角色和 OIDC 的 3 个角色之间的对应关系</p>
+<ul>
+<li>资源拥有者 -&gt; EU</li>
+<li>第三方软件-&gt; RP</li>
+<li>授权服务 + 受保护资源-&gt; OP</li>
+</ul>
+<h3 id="oidc-种的id_token" class="headerLink">
+    <a href="#oidc-%e7%a7%8d%e7%9a%84id_token" class="header-mark"></a>OIDC 种的ID_TOKEN</h3><p>OIDC 种有一个非常重要，从认证服务器下发的一个字段，就是OIDC, 其存储了一些非常有用的信息</p>
+<ul>
+<li>iss，令牌的颁发者，其值就是身份认证服务（OP）的 URL</li>
+<li>sub，令牌的主题，其值是一个能够代表最终用户（EU）的全局唯一标识符</li>
+<li>aud，令牌的目标受众，其值是三方软件（RP）的 app_id</li>
+<li>exp，令牌的到期时间戳，所有的 ID 令牌都会有一个过期时间</li>
+<li>iat，颁发令牌的时间戳</li>
+</ul>
+<h3 id="oidc-的流程图" class="headerLink">
+    <a href="#oidc-%e7%9a%84%e6%b5%81%e7%a8%8b%e5%9b%be" class="header-mark"></a>OIDC 的流程图</h3><p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OIDC-flow.6le76zwbokc0.svg   alt="OIDC Flow"  ></p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow" target="_blank" rel="noopener noreferrer">Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow</a></li>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA" target="_blank" rel="noopener noreferrer">SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>成为一个职业的职业人</title><link>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</link><pubDate>Thu, 20 Apr 2023 22:21:35 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>工作多年后，慢慢的人就成熟了，做事慢慢也有了章法，有了自己的方法论；对团队的理解也更深刻了。</p>
-<p>近几年随着疫情，大家默默形成了远程办公的习惯，而很多人还是没有从思想上形成远程办公的习惯。</p>]]></description></item><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
+<p>近几年随着疫情，大家默默形成了远程办公的习惯，而很多人还是没有从思想上形成远程办公的习惯。</p>
+<p>以下是最近工作的一些总结和想法。</p>
+<h2 id="事事有响应" class="headerLink">
+    <a href="#%e4%ba%8b%e4%ba%8b%e6%9c%89%e5%93%8d%e5%ba%94" class="header-mark"></a>事事有响应</h2><p>TL 说&quot;@All, 客服团队有人已经按照我们的模板开始提issue了，大家以后收到Ticket第一时间去检查Ticket 的内容是不是符合我们的模板。&quot;</p>
+<p>1分钟过去了。</p>
+<p>5 分钟过去了。</p>
+<p>10 分钟过去了。</p>
+<p>&hellip;&hellip;</p>
+<p>一天过去了&hellip;&hellip;</p>
+<p>就这样，没有人对你的消息做任何回应，即使是消息下面的表情信息也没有任何更新。那么，这是一次无效的沟通。而作为团队的成员，我们应该及时的给予&quot;任何事物&quot;反馈，形成有效沟通。另一方面，我们需要换位思考，为什么有人会在大群里说话，肯定是有重要的事情通知，而对方希望得到对应的响应，无论响应是正向的还是负面的。</p>
+<h2 id="事事有始有终" class="headerLink">
+    <a href="#%e4%ba%8b%e4%ba%8b%e6%9c%89%e5%a7%8b%e6%9c%89%e7%bb%88" class="header-mark"></a>事事有始有终</h2><p>现在在公司打两份工，一份是正经的工作，一份是一个公司内部的开源项目，都是作为TL，带领着若干个毕业生，而且一般都是所谓的&quot;非计&quot;，在我司也被称之为&quot;SuperX&quot;。</p>
+<p>和我刚开始工作一样，大家都是对一件事不是那么上心，或者是不知道怎么才能把一件事做的漂漂亮亮，导致在后面追问的时候，大家都很茫然。在这里很重要的一点就是，做事要有始有终，以终为始。</p>
+<h2 id="全局视角让你更游刃有余" class="headerLink">
+    <a href="#%e5%85%a8%e5%b1%80%e8%a7%86%e8%a7%92%e8%ae%a9%e4%bd%a0%e6%9b%b4%e6%b8%b8%e5%88%83%e6%9c%89%e4%bd%99" class="header-mark"></a>全局视角，让你更游刃有余</h2><p>工作的价值就是不要浪费时间且持续输出有价值的内容。比如做一个功能卡，要完成前端的一个展示组件，但是在这个组件背后有个隐形知识，就是需要设计一个全局的存储，将用户选择的内容存储下来，方便后面将其下载为配置文件。</p>
+<p>这样的隐形知识只有有全局的功能视角或者路线图的认知下才能想到。如果你有了这样的全局视角，你就会设计更合理的架构，编写更合理的数据结构，从而提升系统的可扩展，易维护的能力。</p>
+<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model" target="_blank" rel="noopener noreferrer">C4 Modeling</a>, <a href="https://plantuml.com/sequence-diagram" target="_blank" rel="noopener noreferrer">数据流图</a>等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
+<h2 id="挖掘工作背后的真正目的从而向上管理" class="headerLink">
+    <a href="#%e6%8c%96%e6%8e%98%e5%b7%a5%e4%bd%9c%e8%83%8c%e5%90%8e%e7%9a%84%e7%9c%9f%e6%ad%a3%e7%9b%ae%e7%9a%84%e4%bb%8e%e8%80%8c%e5%90%91%e4%b8%8a%e7%ae%a1%e7%90%86" class="header-mark"></a>挖掘工作背后的真正目的，从而&quot;向上管理&quot;</h2><p>比如，给你分配了一个统计团队能力结构的一个工作，表格模板也给你了，那么你要怎么做呢？</p>
+<p>首先，我们应该将模板调整为我们项目的技术栈、项目信息、人员情况，然后将表分享给组内小伙伴去在规定的时间内完成。等在最终截止日期时，把所有的信息分享给TL。大多时候，我们认为我们的工作就此结束了。</p>
+<p>作为领导者，你可能要考虑&quot;向上管理&quot;，将收集到的结果统计并形成最直观、简洁的图表等来展示，且提供你的建议意见，让你的领导节省时间。这才是这份工作的重要性。</p>
+<p>去挖掘工作的最终目的吧，那样的工作才有意义。</p>
+<h2 id="做事前多想想task" class="headerLink">
+    <a href="#%e5%81%9a%e4%ba%8b%e5%89%8d%e5%a4%9a%e6%83%b3%e6%83%b3task" class="header-mark"></a>做事前多想想Task</h2><p>最近在和team 更新团队情况的时候发现，团队成员总是没有在预估的点数内完成工作，而且情况比较普遍，经过多次反问，得出结论是，对系统和产品没有一个全局的认识，并且对自己的卡在全局中的位置，作用都不是很清楚，更有甚者，对自己开发的接口的上游是什么都不清楚。</p>
+<p>这种情况从团队负责人的角度来看是有严重问题的，那么作为团队的负责人，就得想办法解决。上层的问题，可以&quot;胡萝卜大棒&quot;的形式加以&quot;授权和分配&quot;来解决。但是落到具体的个人身上，该如何解决呢？</p>
+<p>通常个人一般通过接受外部资源信息和主动获取信息来提升个人能力。在获取到信息后，个人需要对自己所做的工作进行分析，拆分。使用&quot;分而治之&quot;的思想将工作拆分为一个个可衡量，有产出的task, 再开始干活。这样工作将会变得比之前轻松很多。</p>
+<h2 id="慢慢来比较快" class="headerLink">
+    <a href="#%e6%85%a2%e6%85%a2%e6%9d%a5%e6%af%94%e8%be%83%e5%bf%ab" class="header-mark"></a>慢慢来，比较快</h2><p>现在，我在负责新加坡的一个运维项目，组里的成员都是新人，而且还有不少毕业生；因为这是一个非常大的项目，我们每个人对整个项目都是只知道一点，虽然有各种各样的KT(Knowledge Transfer), 但是能吸收的少之又少。</p>
+<p>在这种情况下，我们每天都要面对来自用户，公民的各种问题，还要接受内部同事的Feedback，这样的运维工作既没有效率，也没有成就感。</p>
+<p>&ldquo;慢慢来，比较快&rdquo;。 应对这样的问题我们最好的方式，就是将业务流程梳理清晰，微服务之间的调用关系整理成易于理解的关系图或者数据流图。这样在了解了真正的业务之后，再做决定，将会事半功倍，且在应对任何问题的时候都会信心满满，从而加速工作的推进。</p>
+<h2 id="好脑子不如烂笔头" class="headerLink">
+    <a href="#%e5%a5%bd%e8%84%91%e5%ad%90%e4%b8%8d%e5%a6%82%e7%83%82%e7%ac%94%e5%a4%b4" class="header-mark"></a>好脑子不如烂笔头</h2><p>把你想到的内容尽快写下来, 不然，当你错过那个念头之后，那个想法就会立马变味。</p>
+<p>刚刚，我已经忘了一个这个文章的一个&quot;好点子&quot;。</p>
+<h2 id="归档" class="headerLink">
+    <a href="#%e5%bd%92%e6%a1%a3" class="header-mark"></a>归档</h2><p>将日常用到的或者可重复的内容文字化、脚本化，并且保持&quot;Source of Truth&quot;，永远只有一份，且是最新的。</p>
+<p>当有人要问你相关的问题，你只需要甩给他一个图，一个链接，或者给他一个图片。</p>
+<p>一个人的厚重感，可能就是他脑子里归档好的所有有效的知识和链接吧。</p>
+<p>&hellip;&hellip;</p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="数字证书定义" class="headerLink">
     <a href="#%e6%95%b0%e5%ad%97%e8%af%81%e4%b9%a6%e5%ae%9a%e4%b9%89" class="header-mark"></a>数字证书定义</h2><p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，数字证书由经国家工信部认证的权威机构——CA 机构发行，是身份认证机构盖在数字身份证上的一个章或印(或者说加在数字身份证上的一个签名)，人们可以在网上用它来识别对方的身份。</p>
@@ -26,14 +1175,378 @@
 </ul>
 <h2 id="常见标准" class="headerLink">
     <a href="#%e5%b8%b8%e8%a7%81%e6%a0%87%e5%87%86" class="header-mark"></a>常见标准</h2><h3 id="符合-pki-itu-t-x509-标准传统标准der-pem-cer-crt" class="headerLink">
-    <a href="#%e7%ac%a6%e5%90%88-pki-itu-t-x509-%e6%a0%87%e5%87%86%e4%bc%a0%e7%bb%9f%e6%a0%87%e5%87%86der-pem-cer-crt" class="header-mark"></a>符合 PKI ITU-T X509 标准，传统标准（.DER .PEM .CER .CRT）</h3><p>X509 是数字证书的基本规范，而 P7 和 P12 则是两个实现规范，P7 用于数字信封，P12 则是带有私钥的证书实现规范。</p>]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
+    <a href="#%e7%ac%a6%e5%90%88-pki-itu-t-x509-%e6%a0%87%e5%87%86%e4%bc%a0%e7%bb%9f%e6%a0%87%e5%87%86der-pem-cer-crt" class="header-mark"></a>符合 PKI ITU-T X509 标准，传统标准（.DER .PEM .CER .CRT）</h3><p>X509 是数字证书的基本规范，而 P7 和 P12 则是两个实现规范，P7 用于数字信封，P12 则是带有私钥的证书实现规范。</p>
+<p>基本的证书格式，只包含公钥。
+x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
+<ul>
+<li>版本号</li>
+<li>证书序列号</li>
+<li>CA 标识符</li>
+<li>签名算法标识</li>
+<li>签发者名称</li>
+<li>证书有效期等信息。</li>
+</ul>
+<h3 id="符合-pkcs7-加密消息语法标准p7b-p7c-spc-p7r" class="headerLink">
+    <a href="#%e7%ac%a6%e5%90%88-pkcs7-%e5%8a%a0%e5%af%86%e6%b6%88%e6%81%af%e8%af%ad%e6%b3%95%e6%a0%87%e5%87%86p7b-p7c-spc-p7r" class="header-mark"></a>符合 PKCS#7 加密消息语法标准(.P7B .P7C .SPC .P7R)</h3><p>Public Key Cryptography Standards #7</p>
+<p>一般主要用来做数字信封。
+一般把证书分成两个文件，一个公钥、一个私钥，有 PEM 和 DER 两种编码方式</p>
+<ul>
+<li>PEM 比较多见，是纯文本的，一般用于分发公钥，看到的是一串可见的字符串，通常以.crt，.cer，.key 为文件后缀</li>
+<li>DER 是二进制编码</li>
+</ul>
+<h3 id="符合-pkcs10-证书请求标准p10" class="headerLink">
+    <a href="#%e7%ac%a6%e5%90%88-pkcs10-%e8%af%81%e4%b9%a6%e8%af%b7%e6%b1%82%e6%a0%87%e5%87%86p10" class="header-mark"></a>符合 PKCS#10 证书请求标准(.p10)</h3><p>证书请求语法</p>
+<h3 id="符合-pkcs12-个人信息交换标准pfx-p12" class="headerLink">
+    <a href="#%e7%ac%a6%e5%90%88-pkcs12-%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af%e4%ba%a4%e6%8d%a2%e6%a0%87%e5%87%86pfx-p12" class="header-mark"></a>符合 PKCS#12 个人信息交换标准（.pfx *.p12）</h3><p>Public Key Cryptography Standards #12</p>
+<p>一种文件<strong>打包格式</strong>，为存储和发布用户和服务器私钥、公钥和证书指定了一个可移植的格式，是一种<strong>二进制</strong>格式，通常以**.pfx<strong>或</strong>.p12**为文件后缀名。
+使用 OpenSSL 的 pkcs12 命令可以创建、解析和读取这些文件。
+P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
+<h2 id="covert" class="headerLink">
+    <a href="#covert" class="header-mark"></a>Covert</h2><p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/Degital-Cert.3y4w8ewfimc0.webp   alt="Digital-Cert"  ></p>
+<h2 id="ssl-证书分类" class="headerLink">
+    <a href="#ssl-%e8%af%81%e4%b9%a6%e5%88%86%e7%b1%bb" class="header-mark"></a>SSL 证书分类</h2><h3 id="dv-ssl-证书域名型" class="headerLink">
+    <a href="#dv-ssl-%e8%af%81%e4%b9%a6%e5%9f%9f%e5%90%8d%e5%9e%8b" class="header-mark"></a>DV SSL 证书（域名型）</h3><p>只验证域名所有权，在浏览器中显示锁形标志；</p>
+<h4 id="适用" class="headerLink">
+    <a href="#%e9%80%82%e7%94%a8" class="header-mark"></a>适用</h4><ul>
+<li>个人网站或者小微企业使用</li>
+</ul>
+<h4 id="优点" class="headerLink">
+    <a href="#%e4%bc%98%e7%82%b9" class="header-mark"></a>优点</h4><ul>
+<li>申请容易 - 颁发快 - 价格较低</li>
+</ul>
+<h4 id="缺点" class="headerLink">
+    <a href="#%e7%bc%ba%e7%82%b9" class="header-mark"></a>缺点</h4><ul>
+<li>证书中无法显示企业信息 - 安全性较差</li>
+</ul>
+<h3 id="ov-ssl-证书企业型" class="headerLink">
+    <a href="#ov-ssl-%e8%af%81%e4%b9%a6%e4%bc%81%e4%b8%9a%e5%9e%8b" class="header-mark"></a>OV SSL 证书（企业型）</h3><p>验证域名所有权以及申请的主体身份的合法性</p>
+<h4 id="适用-1" class="headerLink">
+    <a href="#%e9%80%82%e7%94%a8-1" class="header-mark"></a>适用</h4><p>中小型企业、企事业单位官网使用</p>
+<h4 id="优点-1" class="headerLink">
+    <a href="#%e4%bc%98%e7%82%b9-1" class="header-mark"></a>优点</h4><ul>
+<li>安全性较高，可点击浏览器小锁标志查看证书信息</li>
+</ul>
+<h3 id="ev-ssl-证书增强型" class="headerLink">
+    <a href="#ev-ssl-%e8%af%81%e4%b9%a6%e5%a2%9e%e5%bc%ba%e5%9e%8b" class="header-mark"></a>EV SSL 证书（增强型）</h3><p>Extended Validation（EV）证书是目前高信任级别的 SSL 证书</p>
+<h4 id="适用-2" class="headerLink">
+    <a href="#%e9%80%82%e7%94%a8-2" class="header-mark"></a>适用</h4><ul>
+<li>大型商业网站或者是对网站安全有较高要求的公司。可在绿色地址栏显示公司名称</li>
+</ul>
+<h3 id="优点-2" class="headerLink">
+    <a href="#%e4%bc%98%e7%82%b9-2" class="header-mark"></a>优点</h3><ul>
+<li>证书颁发机构对此的审核比较严格</li>
+</ul>
+<h2 id="根据域名分类" class="headerLink">
+    <a href="#%e6%a0%b9%e6%8d%ae%e5%9f%9f%e5%90%8d%e5%88%86%e7%b1%bb" class="header-mark"></a>根据域名分类</h2><p><img class="tw-inline" loading="lazy" src=https://www.wosign.com/column/images/ssl_20211231_1.png   alt="Domain"  ></p>
+<h3 id="单域名证书" class="headerLink">
+    <a href="#%e5%8d%95%e5%9f%9f%e5%90%8d%e8%af%81%e4%b9%a6" class="header-mark"></a>单域名证书</h3><p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
+<h3 id="多域名证书" class="headerLink">
+    <a href="#%e5%a4%9a%e5%9f%9f%e5%90%8d%e8%af%81%e4%b9%a6" class="header-mark"></a>多域名证书</h3><p>这种类型的证书可以同时保护多个域名，例如：同时保护www.abc.com、bcd.com；a.store.cn等; 不同品牌的多域名证书默认保护的域名数量不一样。</p>
+<h3 id="通配符证书" class="headerLink">
+    <a href="#%e9%80%9a%e9%85%8d%e7%ac%a6%e8%af%81%e4%b9%a6" class="header-mark"></a>通配符证书</h3><p>通配符证书可以保护一个域名下的同级子域名，并且不限制子域名的数量。例如：这类证书可以保护 free.abc.com，也可以保护 bbs.abc.com，也就是说他可以保护 abc.com 这个域名下的所有同级子域名</p>
+<h3 id="代码签名证书code-signing-certificates" class="headerLink">
+    <a href="#%e4%bb%a3%e7%a0%81%e7%ad%be%e5%90%8d%e8%af%81%e4%b9%a6code-signing-certificates" class="header-mark"></a>代码签名证书（Code Signing Certificates）</h3><p>为软件开发者提供代码软件数字签名的认证服务。通过对代码的数字签名可以减少软件下载时弹出的安全警告、保证代码不被恶意篡改、使厂商信息对下载用户公开可见等效果，从而建立良好的软件品牌信誉度。
+查看<a href="https://cloud.tencent.com/product/csc" target="_blank" rel="noopener noreferrer">腾讯 CSC</a> 一看便知。</p>
+<h2 id="ca" class="headerLink">
+    <a href="#ca" class="header-mark"></a>CA</h2><p>要被别人信任，那么就得有个可靠的证书颁发机构。以下是一些比较著名的证书颁发机构。</p>
+<ul>
+<li><a href="https://www.digicert.com/" target="_blank" rel="noopener noreferrer">Digicert (收购 #Symantec )</a></li>
+<li><a href="https://www.cfca.com.cn/" target="_blank" rel="noopener noreferrer">中国金融认证中心(CFCA)</a></li>
+<li><a href="https://www.geotrust.com/" target="_blank" rel="noopener noreferrer">GeoTrust</a></li>
+<li>&hellip;</li>
+</ul>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+<li><a href="http://www.youdzone.com/signature.html" target="_blank" rel="noopener noreferrer">http://www.youdzone.com/signature.html</a></li>
+<li><a href="https://www.chinassl.net/ssltools/convert-ssl.html" target="_blank" rel="noopener noreferrer">https://www.chinassl.net/ssltools/convert-ssl.html</a></li>
+<li><a href="https://www.wosign.com/column/ssl_20211231.htm" target="_blank" rel="noopener noreferrer">https://www.wosign.com/column/ssl_20211231.htm</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
             </div><p>本文是近期为学弟学妹们演讲时用 Logseq 整理的大纲,在此记录一下，以备复用。</p>
 <h2 id="intro" class="headerLink">
     <a href="#intro" class="header-mark"></a>Intro</h2><p><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreferrer">https://guzhongren.github.io/about/</a></p>
 <h2 id="know-yourself" class="headerLink">
     <a href="#know-yourself" class="header-mark"></a>Know yourself</h2><p>Do you really like computer science???
-灵魂三问，你真的喜欢计算机科学吗？如果不喜欢早点放弃，不然你以后的每一刻都会感到无比的痛苦。</p>]]></description></item><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
+灵魂三问，你真的喜欢计算机科学吗？如果不喜欢早点放弃，不然你以后的每一刻都会感到无比的痛苦。</p>
+<h2 id="trend" class="headerLink">
+    <a href="#trend" class="header-mark"></a>Trend</h2><p><strong>Trend is the future</strong>
+<a href="https://www.devjobsscanner.com/blog/" target="_blank" rel="noopener noreferrer">https://www.devjobsscanner.com/blog/</a></p>
+<blockquote>
+  <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
+《旧唐书·魏徵传》李世民
+只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p>
+
+</blockquote><h2 id="roadmap--best-pratice" class="headerLink">
+    <a href="#roadmap--best-pratice" class="header-mark"></a>Roadmap &amp; Best Pratice</h2><h3 id="roadmap" class="headerLink">
+    <a href="#roadmap" class="header-mark"></a>Roadmap</h3><ul>
+<li><a href="https://roadmap.sh" target="_blank" rel="noopener noreferrer">https://roadmap.sh</a></li>
+</ul>
+<h3 id="best-practice" class="headerLink">
+    <a href="#best-practice" class="header-mark"></a>Best Practice</h3><ul>
+<li>Article</li>
+</ul>
+<h4 id="道术法器" class="headerLink">
+    <a href="#%e9%81%93%e6%9c%af%e6%b3%95%e5%99%a8" class="header-mark"></a>道术法器</h4><ul>
+<li>道：<strong>核心思想、理念、本质规律</strong></li>
+<li>术：<strong>行为与技巧</strong></li>
+<li>法：<strong>法律、规章、制度、方法</strong></li>
+<li>器：<strong>工具</strong></li>
+</ul>
+<h2 id="frontend" class="headerLink">
+    <a href="#frontend" class="header-mark"></a>Frontend</h2><h3 id="basic" class="headerLink">
+    <a href="#basic" class="header-mark"></a>Basic</h3><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">Node</a>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">https://nodejs.org/en/</a></li>
+</ul>
+</li>
+<li>Package management
+<ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">npm</a>
+<ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreferrer">https://www.npmjs.com/</a></li>
+</ul>
+</li>
+<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreferrer">yarn</a>
+<ul>
+<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreferrer">https://yarnpkg.com/</a></li>
+</ul>
+</li>
+<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">pnpm</a>
+<ul>
+<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">https://pnpm.io/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IDE
+<ul>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">VSCode</a>
+<ul>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">https://code.visualstudio.com/</a></li>
+</ul>
+</li>
+<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreferrer">JetBrains</a>
+<ul>
+<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreferrer">https://www.jetbrains.com/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Tools
+<ul>
+<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">Vite</a>
+<ul>
+<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreferrer">https://vitejs.dev/</a></li>
+</ul>
+</li>
+<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreferrer">Webpack</a>
+<ul>
+<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreferrer">https://www.webpackjs.com/</a></li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h3 id="language" class="headerLink">
+    <a href="#language" class="header-mark"></a>Language</h3><ul>
+<li>JavaScript/TypeScript</li>
+<li>CSS/Less/Sass</li>
+<li>HTML</li>
+</ul>
+<h3 id="framework" class="headerLink">
+    <a href="#framework" class="header-mark"></a>Framework</h3><ul>
+<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">React</a>
+<ul>
+<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">https://reactjs.org/</a></li>
+</ul>
+</li>
+<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">Vue</a>
+<ul>
+<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreferrer">https://vuejs.org/</a></li>
+</ul>
+</li>
+<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreferrer">Angular</a>
+<ul>
+<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreferrer">https://angularjs.org/</a></li>
+</ul>
+</li>
+<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">Svelte</a>
+<ul>
+<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreferrer">https://svelte.dev/</a></li>
+</ul>
+</li>
+<li>&hellip;</li>
+</ul>
+<h3 id="resources" class="headerLink">
+    <a href="#resources" class="header-mark"></a>Resources</h3><ul>
+<li><a href="https://www.imooc.com/" target="_blank" rel="noopener noreferrer">幕课网</a></li>
+<li><a href="https://www.w3school.com.cn/" target="_blank" rel="noopener noreferrer">w3school</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener noreferrer">MDN</a></li>
+</ul>
+<h2 id="backend" class="headerLink">
+    <a href="#backend" class="header-mark"></a>Backend</h2><h3 id="nodejs" class="headerLink">
+    <a href="#nodejs" class="header-mark"></a>Nodejs</h3><ul>
+<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">Express</a>
+<ul>
+<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">https://expressjs.com/</a></li>
+</ul>
+</li>
+<li><a href="https://koajs.com/" target="_blank" rel="noopener noreferrer">Koa</a>
+<ul>
+<li><a href="https://koajs.com/" target="_blank" rel="noopener noreferrer">https://koajs.com/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="javakotin" class="headerLink">
+    <a href="#javakotin" class="header-mark"></a>Java/Kotin</h3><ul>
+<li><a href="https://spring.io/" target="_blank" rel="noopener noreferrer">Spring</a></li>
+</ul>
+<h2 id="gis" class="headerLink">
+    <a href="#gis" class="header-mark"></a>GIS</h2><h3 id="arcgisesri" class="headerLink">
+    <a href="#arcgisesri" class="header-mark"></a>ArcGIS[ESRI]</h3><ul>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreferrer">Dev docs</a>
+<ul>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreferrer">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li>
+</ul>
+</li>
+<li>ArcGIS Desktop</li>
+<li>ArcGIS Server</li>
+</ul>
+<h3 id="supermap" class="headerLink">
+    <a href="#supermap" class="header-mark"></a>Supermap</h3><h3 id="openlayershttpsopenlayersorg" class="headerLink">
+    <a href="#openlayershttpsopenlayersorg" class="header-mark"></a><a href="https://openlayers.org/" target="_blank" rel="noopener noreferrer">OpenLayers</a></h3><h3 id="httpsopenlayersorg" class="headerLink">
+    <a href="#httpsopenlayersorg" class="header-mark"></a><a href="https://openlayers.org/" target="_blank" rel="noopener noreferrer">https://openlayers.org/</a></h3><h3 id="qgis" class="headerLink">
+    <a href="#qgis" class="header-mark"></a>QGIS</h3><h3 id="geoserver" class="headerLink">
+    <a href="#geoserver" class="header-mark"></a>GeoServer</h3><h3 id="leaflethttpsleafletjscomhttpsleafletjscom" class="headerLink">
+    <a href="#leaflethttpsleafletjscomhttpsleafletjscom" class="header-mark"></a><a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">Leaflet</a><a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">https://leafletjs.com/</a></h3><h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs" class="headerLink">
+    <a href="#cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs" class="header-mark"></a><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreferrer">Cesiumjs</a><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreferrer">https://cesium.com/platform/cesiumjs/</a></h3><h2 id="suggestions" class="headerLink">
+    <a href="#suggestions" class="header-mark"></a>Suggestions</h2><p>Build common capabilities</p>
+<ul>
+<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">Docker</a>
+<ul>
+<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">https://www.docker.com/</a></li>
+</ul>
+</li>
+<li>Command line
+<ul>
+<li><a href="https://github.com/microsoft/terminal" target="_blank" rel="noopener noreferrer">https://github.com/microsoft/terminal</a></li>
+<li>Linux cmd</li>
+<li>Mac iterm2 / Warp</li>
+</ul>
+</li>
+<li>Tech stacks
+<ul>
+<li>CI/CD
+<ul>
+<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">GitHub Actions</a>
+<ul>
+<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreferrer">https://docs.github.com/en/actions</a></li>
+</ul>
+</li>
+<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreferrer">Jenkins</a>
+<ul>
+<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreferrer">https://www.jenkins.io/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Soft skills
+<ul>
+<li>Communication</li>
+<li>Management</li>
+<li>Plan</li>
+<li>Show</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h3 id="build-your-tech-radar" class="headerLink">
+    <a href="#build-your-tech-radar" class="header-mark"></a>Build your <strong>Tech Radar</strong></h3><ul>
+<li><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreferrer">https://guzhongren.github.io/about/</a></li>
+</ul>
+<h3 id="always-summary" class="headerLink">
+    <a href="#always-summary" class="header-mark"></a>Always summary</h3><ul>
+<li>Build your own blog website</li>
+<li>Wechat articles</li>
+<li>&hellip;</li>
+</ul>
+<h3 id="agile" class="headerLink">
+    <a href="#agile" class="header-mark"></a>[[Agile]]</h3><ul>
+<li>[[🌰 Template-Way-of-working]]</li>
+<li>Tools
+<ul>
+<li>Calendar</li>
+<li>Trello</li>
+<li>&hellip;</li>
+</ul>
+</li>
+</ul>
+<h3 id="measure--track-anything-with-data" class="headerLink">
+    <a href="#measure--track-anything-with-data" class="header-mark"></a>Measure &amp; track anything with data</h3><ul>
+<li>[[💯 Capability Uplift]]</li>
+</ul>
+<h3 id="english" class="headerLink">
+    <a href="#english" class="header-mark"></a>English</h3><ul>
+<li>四级/六级/PTE</li>
+</ul>
+<h3 id="keep-smile" class="headerLink">
+    <a href="#keep-smile" class="header-mark"></a>Keep smile</h3><ul>
+<li>Stop complaining;</li>
+<li>Don&rsquo;t complain;</li>
+<li>No complaints.</li>
+</ul>
+<h2 id="key-points" class="headerLink">
+    <a href="#key-points" class="header-mark"></a>Key Points</h2><ul>
+<li>Quality vs Output
+<ul>
+<li>GitHub&hellip;</li>
+</ul>
+</li>
+<li>[[成事思维]]</li>
+</ul>
+<h2 id="qa" class="headerLink">
+    <a href="#qa" class="header-mark"></a>Q&amp;A</h2><h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+
+</blockquote><h2 id="赞助" class="headerLink">
+    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<blockquote>
+  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+
+</blockquote><blockquote>
+  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+
+</blockquote>]]></description></item><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1596199737455-0b2e92661915?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1491&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="什么是-adr" class="headerLink">
     <a href="#%e4%bb%80%e4%b9%88%e6%98%af-adr" class="header-mark"></a>什么是 ADR</h2><blockquote>
@@ -43,10 +1556,233 @@
 <p>架构决策（AD）是一种软件设计选择，针对功能性或非功能性的需求进行的选择设计。</p>
 </li>
 <li>
-<p>架构上重要的要求（ASR, Architecturally Significant Requirement）是对一个软件系统的体系结构和质量衡量效果的要求。</p>]]></description></item><item><title>我的知识图谱</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</link><pubDate>Wed, 08 Apr 2020 22:23:46 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</guid><description><![CDATA[<div class="featured-image">
+<p>架构上重要的要求（ASR, Architecturally Significant Requirement）是对一个软件系统的体系结构和质量衡量效果的要求。</p>
+</li>
+<li>
+<p>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</p>
+</li>
+</ul>
+
+</blockquote><p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
+<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80   alt="Photo by Josep Martins"  ></p>
+<h2 id="adr-能干什么" class="headerLink">
+    <a href="#adr-%e8%83%bd%e5%b9%b2%e4%bb%80%e4%b9%88" class="header-mark"></a>ADR 能干什么</h2><ul>
+<li>它可以记录某些决定背后的动机。</li>
+</ul>
+<p>其实这一条就够了，在敏捷项目或者大型项目开发中，我们不难避免作出架构变更的操作。如果一次次的变更都没有记录，对于后来的开发者或者维护者都会是灾难。
+在没有文档或者前人的指导下，如果使用新的架构变更可能会导致意想不到的 bug 出现。</p>
+<p>为了能使后来者了解项目架构变化或者更好的维护项目，将重要的架构变更记录下来是非常重要的。</p>
+<ul>
+<li>为客户更好的呈现现象及解决方案</li>
+</ul>
+<p>当你作为乙方，为你的甲方开发系统，突然有一个功能要更改之前的架构设计，那么你的这次的架构变更应该需要让甲方知道并同意，最好的方案就是给他 show 一个 ADR.</p>
+<ul>
+<li>梳理业务</li>
+</ul>
+<p>ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以文字和图表等的形式记录下来，可以更好地辅助我们理解业务，共享知识。</p>
+<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80   alt="Photo by Brandi Redd"  ></p>
+<h2 id="什么情况下要使用-adr" class="headerLink">
+    <a href="#%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5%e4%b8%8b%e8%a6%81%e4%bd%bf%e7%94%a8-adr" class="header-mark"></a>什么情况下要使用 ADR</h2><p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
+<h2 id="怎么写呢" class="headerLink">
+    <a href="#%e6%80%8e%e4%b9%88%e5%86%99%e5%91%a2" class="header-mark"></a>怎么写呢</h2><h3 id="标题" class="headerLink">
+    <a href="#%e6%a0%87%e9%a2%98" class="header-mark"></a>标题</h3><p>标题 (Title) 建议以 <code>ADR-[序号]-[项目/团队名称]-[ADR 主题]</code> 这样的形式，直观且有序。</p>
+<h3 id="总结-summary" class="headerLink">
+    <a href="#%e6%80%bb%e7%bb%93-summary" class="header-mark"></a>总结 (Summary)</h3><p>这部分的主要任务是让别人快速知道你的这次 ADR 的上下文 (Context) 是什么，有哪些目标 (Objective), 有哪些备选方案 (Options)，谁在主导 (Owner), 有谁审阅了 (Reviews), 有哪些相关的决策 (Related Decisions), 当前 ADR 的状态 (Status) 是什么等。</p>
+<p>一般情况下，在 ADR 开始的时候用一个表格来总体概括当前 ADR 的一些状态。比如：</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: ">Item</th>
+            <th style="text-align: ">Content</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: ">名称 (Title)</td>
+            <td style="text-align: ">ADR 的标题</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">序号 (ID)</td>
+            <td style="text-align: ">ADR 序列号</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">主导人 (Owner)</td>
+            <td style="text-align: ">负责人</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">审阅人 (Reviewers)</td>
+            <td style="text-align: ">参与的审阅者</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">上下文 (Context)</td>
+            <td style="text-align: ">这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">目标 (Objective)</td>
+            <td style="text-align: ">列出所有要达到的目标</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">备选方案 (Options)</td>
+            <td style="text-align: ">以列表 (<code>Option</code>) 形式列出所有的备选方案</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">相关决策 (Related decisions)</td>
+            <td style="text-align: ">关于此次决策相关的一些其他辅助链接</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">状态 (Status)</td>
+            <td style="text-align: ">本 ADR 的状态，<code>INPROGRESS</code>, <code>PROPOSED</code>, <code>PENDING</code>, <code>DECIDED</code>和<code>REJECTED</code> 中的一个</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">决定 (Decision)</td>
+            <td style="text-align: ">接受 (<code>Accepted</code>) 或者拒绝 (<code>Rejected</code>)</td>
+        </tr>
+        <tr>
+            <td style="text-align: ">决策 (Consequences)</td>
+            <td style="text-align: ">选择了哪个方案，有什么后果或者代价</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h3 id="详细背景-background" class="headerLink">
+    <a href="#%e8%af%a6%e7%bb%86%e8%83%8c%e6%99%af-background" class="header-mark"></a>详细背景 (Background)</h3><p>如果以上的表格并没有清楚的说明问题，那么在这块就可以详细说明了。</p>
+<p>建议：</p>
+<ul>
+<li>在阐述问题的时候尽量用图（截图，示意图，设计图，流程图）或者表来说明，因为图表比文字更直观，更容易理解；</li>
+</ul>
+<h3 id="方案对比-option-comparison" class="headerLink">
+    <a href="#%e6%96%b9%e6%a1%88%e5%af%b9%e6%af%94-option-comparison" class="header-mark"></a>方案对比 (Option Comparison)</h3><p>以上内容已经让你的甲方了解到了你们遇到了什么问题，接下来的内容就是在各个方案之间对比了，当然作为陈述 ADR 的人，你必须有一个你推荐 (prefer) 的方案。</p>
+<p>方案对比一般也是一个表格，比如：</p>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+        <tr>
+            <th style="text-align: left">方案 (Options)</th>
+            <th style="text-align: left">方案详细信息 (Solution Details)</th>
+            <th style="text-align: left">优势 (pros)</th>
+            <th style="text-align: left">劣势 (Cons)</th>
+            <th style="text-align: left">决策后果或代价 (Consideration)</th>
+            <th style="text-align: left">开发或测试成本 (Dev&amp;test Effort)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="text-align: left">方案 1-option1 title</td>
+            <td style="text-align: left">详细信息</td>
+            <td style="text-align: left">有哪些优势</td>
+            <td style="text-align: left">有哪些劣势</td>
+            <td style="text-align: left">有什么要被顾虑</td>
+            <td style="text-align: left">较小 (Small), 中等 (Medium)， 较难 (High) 中的一个</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">方案 2-option1 title</td>
+            <td style="text-align: left">详细信息</td>
+            <td style="text-align: left">有哪些优势</td>
+            <td style="text-align: left">有哪些劣势</td>
+            <td style="text-align: left">有什么要被顾虑</td>
+            <td style="text-align: left">较小 (Small)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">方案 3-option1 title</td>
+            <td style="text-align: left">详细信息</td>
+            <td style="text-align: left">有哪些优势</td>
+            <td style="text-align: left">有哪些劣势</td>
+            <td style="text-align: left">有什么要被顾虑</td>
+            <td style="text-align: left">中等 (Medium)</td>
+        </tr>
+        <tr>
+            <td style="text-align: left">方案 4-option1 title</td>
+            <td style="text-align: left">详细信息</td>
+            <td style="text-align: left">有哪些优势</td>
+            <td style="text-align: left">有哪些劣势</td>
+            <td style="text-align: left">有什么要被顾虑</td>
+            <td style="text-align: left">较难 (High)</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+<h3 id="讨论拉通-discuss" class="headerLink">
+    <a href="#%e8%ae%a8%e8%ae%ba%e6%8b%89%e9%80%9a-discuss" class="header-mark"></a>讨论拉通 (Discuss)</h3><p>上面所有做的工作都是为这一次讨论服务的，在拉通的会议上，需要拉上所有与本次变更有关系的人，当然最主要的是将甲方爸爸拉上；在会议上，你需要先陈述上上面的内容，最后把选择权交到甲方爸爸手里，千万不要把甲方爸爸的唯一的权利剥夺了。至于为什么，我也不知道。😄</p>
+<p>在所有讨论完毕，要将 ADR 更新，并更新 ADR 的总结部分 (Summary)， 方便后面的人快速得到决策信息。</p>
+<h2 id="参考项目" class="headerLink">
+    <a href="#%e5%8f%82%e8%80%83%e9%a1%b9%e7%9b%ae" class="header-mark"></a>参考项目</h2><ul>
+<li><a href="https://adr.github.io/madr/" target="_blank" rel="noopener noreferrer">MADR</a> - Markdown 架构决策记录（MADR）。精益 ADR 可快速记录代码中的架构决策。</li>
+<li><a href="https://adr.github.io/adr-log/" target="_blank" rel="noopener noreferrer">adr-log: https://adr.github.io/adr-log/</a> - 从 MADR 生成体系结构决策日志。</li>
+<li><a href="https://adr.github.io/e-adr/" target="_blank" rel="noopener noreferrer">嵌入式架构决策记录：https://adr.github.io/e-adr/</a> 显示如何通过 ADR 注释将分布式 AD 日志嵌入 Java 代码中。</li>
+<li><a href="https://adr.github.io/eadlsync/" target="_blank" rel="noopener noreferrer">eadlsync:https://adr.github.io/eadlsync/</a> - 将嵌入式架构决策记录与架构决策存储库同步。</li>
+<li><a href="https://github.com/adr/serepo" target="_blank" rel="noopener noreferrer">SE Repo: https://github.com/adr/serepo</a> - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
+</ul>
+<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80   alt="Photo by Sheldon Liu"  ></p>
+<h2 id="总结" class="headerLink">
+    <a href="#%e6%80%bb%e7%bb%93" class="header-mark"></a>总结</h2><p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
+<p>建议：</p>
+<ul>
+<li>使用版本控制工具来管理 ADR, 比如 <a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noopener noreferrer">Confluence</a>, 国内的话有 <a href="https://www.yuque.com/" target="_blank" rel="noopener noreferrer">语雀</a>, <a href="https://shimo.im/" target="_blank" rel="noopener noreferrer">石墨</a>, 还有些代码管理平台也有<code>Wiki</code>, 如阿里云的 <a href="https://www.aliyun.com/product/yunxiao" target="_blank" rel="noopener noreferrer">云效</a>, 腾讯的 <a href="https://coding.net/" target="_blank" rel="noopener noreferrer">Coding</a> 等； 当然如果是小项目也可以存在代码仓库中。</li>
+</ul>
+<blockquote>
+  <p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
+
+</blockquote><h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></p>
+</li>
+<li>
+<p><a href="https://github.blog/2020-08-13-why-write-adrs/" target="_blank" rel="noopener noreferrer">Why write adrs:https://github.blog/2020-08-13-why-write-adrs/</a></p>
+</li>
+<li>
+<p><a href="https://adr.github.io/" target="_blank" rel="noopener noreferrer">ADR: https://adr.github.io/</a></p>
+</li>
+<li>
+<p><a href="https://zhuanlan.zhihu.com/p/141385447" target="_blank" rel="noopener noreferrer">架构设计实践之架构决策记录：https://zhuanlan.zhihu.com/p/141385447</a></p>
+</li>
+<li>
+<p><a href="https://www.phodal.com/blog/documenting-architecture-decisions/" target="_blank" rel="noopener noreferrer">【译文】架构决策记录（Architecture Decision Records）</a></p>
+</li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+]]></description></item><item><title>我的知识图谱</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</link><pubDate>Wed, 08 Apr 2020 22:23:46 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" referrerpolicy="no-referrer">
             </div><h2 id="插曲" class="headerLink">
-    <a href="#%e6%8f%92%e6%9b%b2" class="header-mark"></a>插曲</h2><p>去年与前 ThoughtWorks 咨询师 <code>李小波</code>的一次线下交流中，学习到了总结知识的一点技巧，非常受用，并且在交流后得到了小波老西自己整理的<code>知识图谱</code>，在自己不断积累下，有文字，也又图片。最近在整理知识，同时也在乱搞知识分享平台。自己虽然有这个博客，但是感觉有些东西不是博客所能呈现的，比如思维导图，我收集的各种模型图等。</p>]]></description></item><item><title>设计评审文档指南</title><link>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</link><pubDate>Sat, 04 Apr 2020 18:04:42 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</guid><description><![CDATA[<div class="featured-image">
+    <a href="#%e6%8f%92%e6%9b%b2" class="header-mark"></a>插曲</h2><p>去年与前 ThoughtWorks 咨询师 <code>李小波</code>的一次线下交流中，学习到了总结知识的一点技巧，非常受用，并且在交流后得到了小波老西自己整理的<code>知识图谱</code>，在自己不断积累下，有文字，也又图片。最近在整理知识，同时也在乱搞知识分享平台。自己虽然有这个博客，但是感觉有些东西不是博客所能呈现的，比如思维导图，我收集的各种模型图等。</p>
+<p>之前为了给社区做宣传海报等内容，学会了 Adobe XD, 去年年中前，中国区是可以访问 Adobo XD 的云文档的，后半年就不行了，必须要重新注册或者更换绑定到国外的初始注册站点才可以使用云文档，这也导致了我有一部分资源永远的留在了遥不可及的 Adobe 服务器上。</p>
+<p><img class="tw-inline" loading="lazy" src=https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg   alt="Adobe 云文档。png"  ></p>
+<p>对我这种穷人很不友好， 😂😂😂😂😂😂😂, 那么我就得需要找个地方薅羊毛了。</p>
+<h2 id="figma" class="headerLink">
+    <a href="#figma" class="header-mark"></a>Figma</h2><p>某天记起听过的一篇<code>anyway</code>的 podcast 里提到过 <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma</a>, 据说有免费的资源可以使用，上去一看，果然<code>for up to 2 editors and 3 projects</code></p>
+<p><img class="tw-inline" loading="lazy" src=https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg   alt="figma-pricing.jpg"  ></p>
+<p>这样的免费套餐对于我这样的小菜鸟完全足够用了，而且我还邀请了另一个小伙伴，人数刚刚好，😄 当然我也不怕资源丢失，我把我的设计文档同步到了 icloud 上，再也不用担心 Adobe XD 的悲剧了。</p>
+<h2 id="附加值" class="headerLink">
+    <a href="#%e9%99%84%e5%8a%a0%e5%80%bc" class="header-mark"></a>附加值</h2><p>选了 Figma，其实还有其他原因；</p>
+<ul>
+<li>它完全支持桌面，网页和移动端，可以在各个端进行<code>创作</code></li>
+<li>将成果保存在云端，或者直接发布到<code>avocode</code>, <code>zeplin</code>和<code>Dribble</code></li>
+<li>支持插件，完美集成各种小工具</li>
+<li>支持导出图片到原型网站如<code>zeplin</code>, 当然这点是相对与 Adobe XD 的，我还没发现 Adobe XD 的这个功能</li>
+<li>很多大厂的选择</li>
+</ul>
+<h2 id="成果" class="headerLink">
+    <a href="#%e6%88%90%e6%9e%9c" class="header-mark"></a>成果</h2><p>经过整理，我将我的知识模型总结放在了 Figma 上，地址如下，并将其分享到了<code>zeplin</code>上，可以在<code>zeplin</code>上在线查看，学习或者别人查看的时候也是很方便。</p>
+<p><a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d" target="_blank" rel="noopener noreferrer">知识图谱</a></p>
+<p><img class="tw-inline" loading="lazy" src=https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg   alt="知识图谱。jpg"  ></p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreferrer">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">3.Figma: https://www.figma.com/</a></li>
+<li><a href="https://app.zeplin.io/" target="_blank" rel="noopener noreferrer">4.Zeplin: https://app.zeplin.io/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+]]></description></item><item><title>设计评审文档指南</title><link>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</link><pubDate>Sat, 04 Apr 2020 18:04:42 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/04/BeMC7jm6faWlF1P.png" referrerpolicy="no-referrer">
             </div><blockquote>
   <p>一句话的分量是否重，是要看能不能击中听者的痛点。</p>
@@ -61,4 +1797,15 @@
 <li>交互动效演示文档：用来解释一些比较复杂的交互过程</li>
 <li>配色情绪版：用来解释如何选择当前配色的思路</li>
 </ul>
-<p>制作的思维导图存放于石墨文档，地址如下</p>]]></description></item></channel></rss>
+<p>制作的思维导图存放于石墨文档，地址如下</p>
+<p><a href="https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b" target="_blank" rel="noopener noreferrer">https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b</a></p>
+<h2 id="refs" class="headerLink">
+    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreferrer">2. 图床：https://sm.ms/</a></li>
+</ul>
+<h2 id="disclaimer" class="headerLink">
+    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<hr>
+<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+]]></description></item></channel></rss>
