@@ -14,9 +14,8 @@
 
 ### Coding
 
-- [Powerboard](https://github.com/guzhongren/Powerboard) 一款可拖拽、可配置的 Buildkite Dashboard 应用。
+- [Powerboard](https://github.com/guzhongren/Powerboard) 一款可拖拽、可配置的 BuildKite Dashboard 应用。
 - [ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap) 基于 ArcGIS API 的地图上展示图标的库。
-- [Markdown 编辑器](https://guzhongren.github.io/geekmd/) 一款定制的 Markdown 编辑器，可用于发微信、邮件等。
 - [Logseq-Echarts](https://github.com/guzhongren/logseq-echarts) 一个基于ECharts的Logseq 插件。
 - [algolia-docsearch-upload-action](https://github.com/guzhongren/algolia-docsearch-upload-action) 一个小的&快&简单的Algolia研究索引上传工具
 
@@ -29,9 +28,8 @@
 ## Contribution on Open-Source Projects
 |Project Name| Description|Role|
 |:--|:--|:--|
-| [Heartbeat](https://github.com/au-heartbeat/HeartBeat/)|Dora metrics 数据收集、可视化及导出工具|Tech Leader|
-| [maptalks](https://maptalks.org/)| 开源 23 D GIS 框架|Contributor|
-| [hlj](https://github.com/codingstyle-cn/hlj):|开源 JS 测试框架，自举测试|Contributor|
+| [Heartbeat](https://github.com/au-heartbeat/HeartBeat/)|DORA Metrics 数据收集、可视化及导出工具|Tech Leader|
+| [maptalks](https://maptalks.org/)| 开源 23D GIS 框架|Contributor|
 
 ## 技术栈
 
