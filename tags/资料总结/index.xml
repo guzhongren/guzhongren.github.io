@@ -1,9 +1,9 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>资料总结 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/</link><description>资料总结 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 04 Apr 2020 18:04:42 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml"/><item><title>设计评审文档指南</title><link>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</link><pubDate>Sat, 04 Apr 2020 18:04:42 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>资料总结 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/</link><description>资料总结 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 04 Apr 2020 18:04:42 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E8%B5%84%E6%96%99%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml"/><item><title>设计评审文档指南</title><link>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</link><pubDate>Sat, 04 Apr 2020 18:04:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/04/BeMC7jm6faWlF1P.png" referrerpolicy="no-referrer">
             </div><blockquote>
-  <p>一句话的分量是否重，是要看能不能击中听者的痛点。</p>
-
-</blockquote><p>设计评审过程中，需要各种文档或者其他资料来辅助，在此总结一番，以供后续查阅。</p>
+<p>一句话的分量是否重，是要看能不能击中听者的痛点。</p>
+</blockquote>
+<p>设计评审过程中，需要各种文档或者其他资料来辅助，在此总结一番，以供后续查阅。</p>
 <ul>
 <li>产品 PRD：当有疑问时可以拿出来给评审者查看</li>
 <li>设计分析文档：用来沟通关于行业内对于同类型功能的设计优缺点的分析</li>
@@ -14,14 +14,14 @@
 <li>配色情绪版：用来解释如何选择当前配色的思路</li>
 </ul>
 <p>制作的思维导图存放于石墨文档，地址如下</p>
-<p><a href="https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b" target="_blank" rel="noopener noreferrer">https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b</a></p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreferrer">2. 图床：https://sm.ms/</a></li>
+<p><a href="https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b" target="_blank" rel="noopener noreffer ">https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b</a></p>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

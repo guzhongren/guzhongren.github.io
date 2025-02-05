@@ -1,8 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Decision - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/decision/</link><description>Decision - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Aug 2020 22:06:29 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/decision/" rel="self" type="application/rss+xml"/><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Decision - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/decision/</link><description>Decision - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 04 Aug 2020 22:06:29 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/decision/" rel="self" type="application/rss+xml"/><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1596199737455-0b2e92661915?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1491&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="什么是-adr" class="headerLink">
-    <a href="#%e4%bb%80%e4%b9%88%e6%98%af-adr" class="header-mark"></a>什么是 ADR</h2><blockquote>
-  <p><em>ADR</em> 即* Architectural Decision Records*，架构决策记录。</p>
+            </div><h2 id="什么是-adr">什么是 ADR</h2>
+<blockquote>
+<p><em>ADR</em> 即* Architectural Decision Records*，架构决策记录。</p>
 <ul>
 <li>
 <p>架构决策（AD）是一种软件设计选择，针对功能性或非功能性的需求进行的选择设计。</p>
@@ -14,11 +14,11 @@
 <p>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</p>
 </li>
 </ul>
-
-</blockquote><p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
-<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80   alt="Photo by Josep Martins"  ></p>
-<h2 id="adr-能干什么" class="headerLink">
-    <a href="#adr-%e8%83%bd%e5%b9%b2%e4%bb%80%e4%b9%88" class="header-mark"></a>ADR 能干什么</h2><ul>
+</blockquote>
+<p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
+<p></p>
+<h2 id="adr-能干什么">ADR 能干什么</h2>
+<ul>
 <li>它可以记录某些决定背后的动机。</li>
 </ul>
 <p>其实这一条就够了，在敏捷项目或者大型项目开发中，我们不难避免作出架构变更的操作。如果一次次的变更都没有记录，对于后来的开发者或者维护者都会是灾难。
@@ -32,171 +32,165 @@
 <li>梳理业务</li>
 </ul>
 <p>ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以文字和图表等的形式记录下来，可以更好地辅助我们理解业务，共享知识。</p>
-<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80   alt="Photo by Brandi Redd"  ></p>
-<h2 id="什么情况下要使用-adr" class="headerLink">
-    <a href="#%e4%bb%80%e4%b9%88%e6%83%85%e5%86%b5%e4%b8%8b%e8%a6%81%e4%bd%bf%e7%94%a8-adr" class="header-mark"></a>什么情况下要使用 ADR</h2><p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
-<h2 id="怎么写呢" class="headerLink">
-    <a href="#%e6%80%8e%e4%b9%88%e5%86%99%e5%91%a2" class="header-mark"></a>怎么写呢</h2><h3 id="标题" class="headerLink">
-    <a href="#%e6%a0%87%e9%a2%98" class="header-mark"></a>标题</h3><p>标题 (Title) 建议以 <code>ADR-[序号]-[项目/团队名称]-[ADR 主题]</code> 这样的形式，直观且有序。</p>
-<h3 id="总结-summary" class="headerLink">
-    <a href="#%e6%80%bb%e7%bb%93-summary" class="header-mark"></a>总结 (Summary)</h3><p>这部分的主要任务是让别人快速知道你的这次 ADR 的上下文 (Context) 是什么，有哪些目标 (Objective), 有哪些备选方案 (Options)，谁在主导 (Owner), 有谁审阅了 (Reviews), 有哪些相关的决策 (Related Decisions), 当前 ADR 的状态 (Status) 是什么等。</p>
+<p></p>
+<h2 id="什么情况下要使用-adr">什么情况下要使用 ADR</h2>
+<p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
+<h2 id="怎么写呢">怎么写呢</h2>
+<h3 id="标题">标题</h3>
+<p>标题 (Title) 建议以 <code>ADR-[序号]-[项目/团队名称]-[ADR 主题]</code> 这样的形式，直观且有序。</p>
+<h3 id="总结-summary">总结 (Summary)</h3>
+<p>这部分的主要任务是让别人快速知道你的这次 ADR 的上下文 (Context) 是什么，有哪些目标 (Objective), 有哪些备选方案 (Options)，谁在主导 (Owner), 有谁审阅了 (Reviews), 有哪些相关的决策 (Related Decisions), 当前 ADR 的状态 (Status) 是什么等。</p>
 <p>一般情况下，在 ADR 开始的时候用一个表格来总体概括当前 ADR 的一些状态。比如：</p>
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: ">Item</th>
-            <th style="text-align: ">Content</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: ">名称 (Title)</td>
-            <td style="text-align: ">ADR 的标题</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">序号 (ID)</td>
-            <td style="text-align: ">ADR 序列号</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">主导人 (Owner)</td>
-            <td style="text-align: ">负责人</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">审阅人 (Reviewers)</td>
-            <td style="text-align: ">参与的审阅者</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">上下文 (Context)</td>
-            <td style="text-align: ">这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">目标 (Objective)</td>
-            <td style="text-align: ">列出所有要达到的目标</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">备选方案 (Options)</td>
-            <td style="text-align: ">以列表 (<code>Option</code>) 形式列出所有的备选方案</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">相关决策 (Related decisions)</td>
-            <td style="text-align: ">关于此次决策相关的一些其他辅助链接</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">状态 (Status)</td>
-            <td style="text-align: ">本 ADR 的状态，<code>INPROGRESS</code>, <code>PROPOSED</code>, <code>PENDING</code>, <code>DECIDED</code>和<code>REJECTED</code> 中的一个</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">决定 (Decision)</td>
-            <td style="text-align: ">接受 (<code>Accepted</code>) 或者拒绝 (<code>Rejected</code>)</td>
-        </tr>
-        <tr>
-            <td style="text-align: ">决策 (Consequences)</td>
-            <td style="text-align: ">选择了哪个方案，有什么后果或者代价</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<h3 id="详细背景-background" class="headerLink">
-    <a href="#%e8%af%a6%e7%bb%86%e8%83%8c%e6%99%af-background" class="header-mark"></a>详细背景 (Background)</h3><p>如果以上的表格并没有清楚的说明问题，那么在这块就可以详细说明了。</p>
+<table>
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Content</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>名称 (Title)</td>
+          <td>ADR 的标题</td>
+      </tr>
+      <tr>
+          <td>序号 (ID)</td>
+          <td>ADR 序列号</td>
+      </tr>
+      <tr>
+          <td>主导人 (Owner)</td>
+          <td>负责人</td>
+      </tr>
+      <tr>
+          <td>审阅人 (Reviewers)</td>
+          <td>参与的审阅者</td>
+      </tr>
+      <tr>
+          <td>上下文 (Context)</td>
+          <td>这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里</td>
+      </tr>
+      <tr>
+          <td>目标 (Objective)</td>
+          <td>列出所有要达到的目标</td>
+      </tr>
+      <tr>
+          <td>备选方案 (Options)</td>
+          <td>以列表 (<code>Option</code>) 形式列出所有的备选方案</td>
+      </tr>
+      <tr>
+          <td>相关决策 (Related decisions)</td>
+          <td>关于此次决策相关的一些其他辅助链接</td>
+      </tr>
+      <tr>
+          <td>状态 (Status)</td>
+          <td>本 ADR 的状态，<code>INPROGRESS</code>, <code>PROPOSED</code>, <code>PENDING</code>, <code>DECIDED</code>和<code>REJECTED</code> 中的一个</td>
+      </tr>
+      <tr>
+          <td>决定 (Decision)</td>
+          <td>接受 (<code>Accepted</code>) 或者拒绝 (<code>Rejected</code>)</td>
+      </tr>
+      <tr>
+          <td>决策 (Consequences)</td>
+          <td>选择了哪个方案，有什么后果或者代价</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="详细背景-background">详细背景 (Background)</h3>
+<p>如果以上的表格并没有清楚的说明问题，那么在这块就可以详细说明了。</p>
 <p>建议：</p>
 <ul>
 <li>在阐述问题的时候尽量用图（截图，示意图，设计图，流程图）或者表来说明，因为图表比文字更直观，更容易理解；</li>
 </ul>
-<h3 id="方案对比-option-comparison" class="headerLink">
-    <a href="#%e6%96%b9%e6%a1%88%e5%af%b9%e6%af%94-option-comparison" class="header-mark"></a>方案对比 (Option Comparison)</h3><p>以上内容已经让你的甲方了解到了你们遇到了什么问题，接下来的内容就是在各个方案之间对比了，当然作为陈述 ADR 的人，你必须有一个你推荐 (prefer) 的方案。</p>
+<h3 id="方案对比-option-comparison">方案对比 (Option Comparison)</h3>
+<p>以上内容已经让你的甲方了解到了你们遇到了什么问题，接下来的内容就是在各个方案之间对比了，当然作为陈述 ADR 的人，你必须有一个你推荐 (prefer) 的方案。</p>
 <p>方案对比一般也是一个表格，比如：</p>
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: left">方案 (Options)</th>
-            <th style="text-align: left">方案详细信息 (Solution Details)</th>
-            <th style="text-align: left">优势 (pros)</th>
-            <th style="text-align: left">劣势 (Cons)</th>
-            <th style="text-align: left">决策后果或代价 (Consideration)</th>
-            <th style="text-align: left">开发或测试成本 (Dev&amp;test Effort)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: left">方案 1-option1 title</td>
-            <td style="text-align: left">详细信息</td>
-            <td style="text-align: left">有哪些优势</td>
-            <td style="text-align: left">有哪些劣势</td>
-            <td style="text-align: left">有什么要被顾虑</td>
-            <td style="text-align: left">较小 (Small), 中等 (Medium)， 较难 (High) 中的一个</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">方案 2-option1 title</td>
-            <td style="text-align: left">详细信息</td>
-            <td style="text-align: left">有哪些优势</td>
-            <td style="text-align: left">有哪些劣势</td>
-            <td style="text-align: left">有什么要被顾虑</td>
-            <td style="text-align: left">较小 (Small)</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">方案 3-option1 title</td>
-            <td style="text-align: left">详细信息</td>
-            <td style="text-align: left">有哪些优势</td>
-            <td style="text-align: left">有哪些劣势</td>
-            <td style="text-align: left">有什么要被顾虑</td>
-            <td style="text-align: left">中等 (Medium)</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">方案 4-option1 title</td>
-            <td style="text-align: left">详细信息</td>
-            <td style="text-align: left">有哪些优势</td>
-            <td style="text-align: left">有哪些劣势</td>
-            <td style="text-align: left">有什么要被顾虑</td>
-            <td style="text-align: left">较难 (High)</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<h3 id="讨论拉通-discuss" class="headerLink">
-    <a href="#%e8%ae%a8%e8%ae%ba%e6%8b%89%e9%80%9a-discuss" class="header-mark"></a>讨论拉通 (Discuss)</h3><p>上面所有做的工作都是为这一次讨论服务的，在拉通的会议上，需要拉上所有与本次变更有关系的人，当然最主要的是将甲方爸爸拉上；在会议上，你需要先陈述上上面的内容，最后把选择权交到甲方爸爸手里，千万不要把甲方爸爸的唯一的权利剥夺了。至于为什么，我也不知道。😄</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">方案 (Options)</th>
+          <th style="text-align: left">方案详细信息 (Solution Details)</th>
+          <th style="text-align: left">优势 (pros)</th>
+          <th style="text-align: left">劣势 (Cons)</th>
+          <th style="text-align: left">决策后果或代价 (Consideration)</th>
+          <th style="text-align: left">开发或测试成本 (Dev&amp;test Effort)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">方案 1-option1 title</td>
+          <td style="text-align: left">详细信息</td>
+          <td style="text-align: left">有哪些优势</td>
+          <td style="text-align: left">有哪些劣势</td>
+          <td style="text-align: left">有什么要被顾虑</td>
+          <td style="text-align: left">较小 (Small), 中等 (Medium)， 较难 (High) 中的一个</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">方案 2-option1 title</td>
+          <td style="text-align: left">详细信息</td>
+          <td style="text-align: left">有哪些优势</td>
+          <td style="text-align: left">有哪些劣势</td>
+          <td style="text-align: left">有什么要被顾虑</td>
+          <td style="text-align: left">较小 (Small)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">方案 3-option1 title</td>
+          <td style="text-align: left">详细信息</td>
+          <td style="text-align: left">有哪些优势</td>
+          <td style="text-align: left">有哪些劣势</td>
+          <td style="text-align: left">有什么要被顾虑</td>
+          <td style="text-align: left">中等 (Medium)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">方案 4-option1 title</td>
+          <td style="text-align: left">详细信息</td>
+          <td style="text-align: left">有哪些优势</td>
+          <td style="text-align: left">有哪些劣势</td>
+          <td style="text-align: left">有什么要被顾虑</td>
+          <td style="text-align: left">较难 (High)</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="讨论拉通-discuss">讨论拉通 (Discuss)</h3>
+<p>上面所有做的工作都是为这一次讨论服务的，在拉通的会议上，需要拉上所有与本次变更有关系的人，当然最主要的是将甲方爸爸拉上；在会议上，你需要先陈述上上面的内容，最后把选择权交到甲方爸爸手里，千万不要把甲方爸爸的唯一的权利剥夺了。至于为什么，我也不知道。😄</p>
 <p>在所有讨论完毕，要将 ADR 更新，并更新 ADR 的总结部分 (Summary)， 方便后面的人快速得到决策信息。</p>
-<h2 id="参考项目" class="headerLink">
-    <a href="#%e5%8f%82%e8%80%83%e9%a1%b9%e7%9b%ae" class="header-mark"></a>参考项目</h2><ul>
-<li><a href="https://adr.github.io/madr/" target="_blank" rel="noopener noreferrer">MADR</a> - Markdown 架构决策记录（MADR）。精益 ADR 可快速记录代码中的架构决策。</li>
-<li><a href="https://adr.github.io/adr-log/" target="_blank" rel="noopener noreferrer">adr-log: https://adr.github.io/adr-log/</a> - 从 MADR 生成体系结构决策日志。</li>
-<li><a href="https://adr.github.io/e-adr/" target="_blank" rel="noopener noreferrer">嵌入式架构决策记录：https://adr.github.io/e-adr/</a> 显示如何通过 ADR 注释将分布式 AD 日志嵌入 Java 代码中。</li>
-<li><a href="https://adr.github.io/eadlsync/" target="_blank" rel="noopener noreferrer">eadlsync:https://adr.github.io/eadlsync/</a> - 将嵌入式架构决策记录与架构决策存储库同步。</li>
-<li><a href="https://github.com/adr/serepo" target="_blank" rel="noopener noreferrer">SE Repo: https://github.com/adr/serepo</a> - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
+<h2 id="参考项目">参考项目</h2>
+<ul>
+<li><a href="https://adr.github.io/madr/" target="_blank" rel="noopener noreffer ">MADR</a> - Markdown 架构决策记录（MADR）。精益 ADR 可快速记录代码中的架构决策。</li>
+<li><a href="https://adr.github.io/adr-log/" target="_blank" rel="noopener noreffer ">adr-log: https://adr.github.io/adr-log/</a> - 从 MADR 生成体系结构决策日志。</li>
+<li><a href="https://adr.github.io/e-adr/" target="_blank" rel="noopener noreffer ">嵌入式架构决策记录：https://adr.github.io/e-adr/</a> 显示如何通过 ADR 注释将分布式 AD 日志嵌入 Java 代码中。</li>
+<li><a href="https://adr.github.io/eadlsync/" target="_blank" rel="noopener noreffer ">eadlsync:https://adr.github.io/eadlsync/</a> - 将嵌入式架构决策记录与架构决策存储库同步。</li>
+<li><a href="https://github.com/adr/serepo" target="_blank" rel="noopener noreffer ">SE Repo: https://github.com/adr/serepo</a> - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
 </ul>
-<p><img class="tw-inline" loading="lazy" src=https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80   alt="Photo by Sheldon Liu"  ></p>
-<h2 id="总结" class="headerLink">
-    <a href="#%e6%80%bb%e7%bb%93" class="header-mark"></a>总结</h2><p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
+<p></p>
+<h2 id="总结">总结</h2>
+<p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
 <p>建议：</p>
 <ul>
-<li>使用版本控制工具来管理 ADR, 比如 <a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noopener noreferrer">Confluence</a>, 国内的话有 <a href="https://www.yuque.com/" target="_blank" rel="noopener noreferrer">语雀</a>, <a href="https://shimo.im/" target="_blank" rel="noopener noreferrer">石墨</a>, 还有些代码管理平台也有<code>Wiki</code>, 如阿里云的 <a href="https://www.aliyun.com/product/yunxiao" target="_blank" rel="noopener noreferrer">云效</a>, 腾讯的 <a href="https://coding.net/" target="_blank" rel="noopener noreferrer">Coding</a> 等； 当然如果是小项目也可以存在代码仓库中。</li>
+<li>使用版本控制工具来管理 ADR, 比如 <a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noopener noreffer ">Confluence</a>, 国内的话有 <a href="https://www.yuque.com/" target="_blank" rel="noopener noreffer ">语雀</a>, <a href="https://shimo.im/" target="_blank" rel="noopener noreffer ">石墨</a>, 还有些代码管理平台也有<code>Wiki</code>, 如阿里云的 <a href="https://www.aliyun.com/product/yunxiao" target="_blank" rel="noopener noreffer ">云效</a>, 腾讯的 <a href="https://coding.net/" target="_blank" rel="noopener noreffer ">Coding</a> 等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
-  <p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
-
-</blockquote><h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
+</blockquote>
+<h2 id="refs">Refs</h2>
+<ul>
 <li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></p>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
 </li>
 <li>
-<p><a href="https://github.blog/2020-08-13-why-write-adrs/" target="_blank" rel="noopener noreferrer">Why write adrs:https://github.blog/2020-08-13-why-write-adrs/</a></p>
+<p><a href="https://github.blog/2020-08-13-why-write-adrs/" target="_blank" rel="noopener noreffer ">Why write adrs:https://github.blog/2020-08-13-why-write-adrs/</a></p>
 </li>
 <li>
-<p><a href="https://adr.github.io/" target="_blank" rel="noopener noreferrer">ADR: https://adr.github.io/</a></p>
+<p><a href="https://adr.github.io/" target="_blank" rel="noopener noreffer ">ADR: https://adr.github.io/</a></p>
 </li>
 <li>
-<p><a href="https://zhuanlan.zhihu.com/p/141385447" target="_blank" rel="noopener noreferrer">架构设计实践之架构决策记录：https://zhuanlan.zhihu.com/p/141385447</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/141385447" target="_blank" rel="noopener noreffer ">架构设计实践之架构决策记录：https://zhuanlan.zhihu.com/p/141385447</a></p>
 </li>
 <li>
-<p><a href="https://www.phodal.com/blog/documenting-architecture-decisions/" target="_blank" rel="noopener noreferrer">【译文】架构决策记录（Architecture Decision Records）</a></p>
+<p><a href="https://www.phodal.com/blog/documenting-architecture-decisions/" target="_blank" rel="noopener noreffer ">【译文】架构决策记录（Architecture Decision Records）</a></p>
 </li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

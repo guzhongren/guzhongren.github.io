@@ -1,25 +1,25 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>生产事故 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E7%94%9F%E4%BA%A7%E4%BA%8B%E6%95%85/</link><description>生产事故 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Jan 2021 20:23:49 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E7%94%9F%E4%BA%A7%E4%BA%8B%E6%95%85/" rel="self" type="application/rss+xml"/><item><title>写代码的终极奥秘 人是不可信的</title><link>https://guzhongren.github.io/2021/01/%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BB%88%E6%9E%81%E5%A5%A5%E7%A7%98-%E4%BA%BA%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84/</link><pubDate>Thu, 07 Jan 2021 20:23:49 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/01/%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BB%88%E6%9E%81%E5%A5%A5%E7%A7%98-%E4%BA%BA%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>生产事故 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E7%94%9F%E4%BA%A7%E4%BA%8B%E6%95%85/</link><description>生产事故 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 07 Jan 2021 20:23:49 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E7%94%9F%E4%BA%A7%E4%BA%8B%E6%95%85/" rel="self" type="application/rss+xml"/><item><title>写代码的终极奥秘 人是不可信的</title><link>https://guzhongren.github.io/2021/01/%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BB%88%E6%9E%81%E5%A5%A5%E7%A7%98-%E4%BA%BA%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84/</link><pubDate>Thu, 07 Jan 2021 20:23:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/01/%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%E7%BB%88%E6%9E%81%E5%A5%A5%E7%A7%98-%E4%BA%BA%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BF%A1%E7%9A%84/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="缘起" class="headerLink">
-    <a href="#%e7%bc%98%e8%b5%b7" class="header-mark"></a>缘起</h2><p>在 2020 年公司的最后一天 (12 月 29 号），客户也放了圣诞节和新年的假，我们还在公司吭哧吭哧写着代码，因为我们做的是支付相关的业务，这块比较敏感，所以在客户放假期间，禁止一切代码部署到生产环境。而我就在这一天给自己加戏了。</p>
+            </div><h2 id="缘起">缘起</h2>
+<p>在 2020 年公司的最后一天 (12 月 29 号），客户也放了圣诞节和新年的假，我们还在公司吭哧吭哧写着代码，因为我们做的是支付相关的业务，这块比较敏感，所以在客户放假期间，禁止一切代码部署到生产环境。而我就在这一天给自己加戏了。</p>
 <p>在做关于使用 Sumo Logic 做 Dashboard 的卡，正值下午，感觉没睡醒，因为要在 UAT 环境做测试，不经意间点开了一个 pipeline, 然后点了部署按钮，也没注意，以为是部署到 UAT， 没想到，pipeline 挂了！pipeline 挂了！ 再次跑了一次测试，还是挂了，仔细一看，<code>env: prod</code>? 啊？ 明明跑的 UAT 为撒是 PROD, 内心的那个马啊，此处省去一万字。</p>
 <p>然后报告了组里的 TL 兼安全员，按照流程，看了日志，商讨了解决方案，心惊胆战的终于在下班前成功的让 pipeline 绿了。将生产环境的程序部署正确。</p>
-<h2 id="事发生了下次怎么避免呢" class="headerLink">
-    <a href="#%e4%ba%8b%e5%8f%91%e7%94%9f%e4%ba%86%e4%b8%8b%e6%ac%a1%e6%80%8e%e4%b9%88%e9%81%bf%e5%85%8d%e5%91%a2" class="header-mark"></a>事发生了，下次怎么避免呢</h2><h3 id="不要相信自己" class="headerLink">
-    <a href="#%e4%b8%8d%e8%a6%81%e7%9b%b8%e4%bf%a1%e8%87%aa%e5%b7%b1" class="header-mark"></a>不要相信自己</h3><p>再拿上面这件事说，客户都 code freeze 了，但我们作为人并不能通过管理自己来达到不能部署代码到生产环境这种事，但是工具可以，只要设定了，工具就回毫无疑问，毫无感情的执行。</p>
-<h3 id="不要相信别人" class="headerLink">
-    <a href="#%e4%b8%8d%e8%a6%81%e7%9b%b8%e4%bf%a1%e5%88%ab%e4%ba%ba" class="header-mark"></a>不要相信别人</h3><p>你可以相信自己，知道自己工作的每一个步骤，每一个文件的权限，但是别人呢，别人不一定和你对项目的认知在一个水平线上，这就决定了你们的项目存在不确定性。</p>
-<h2 id="结论" class="headerLink">
-    <a href="#%e7%bb%93%e8%ae%ba" class="header-mark"></a>结论</h2><blockquote>
-  <p><em>人是不可信的</em></p>
-
-</blockquote><p>不管是你，还是别人，对于写代码这事都别相信。 你写的代码，做的配置都是最优的。</p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></li>
+<h2 id="事发生了下次怎么避免呢">事发生了，下次怎么避免呢</h2>
+<h3 id="不要相信自己">不要相信自己</h3>
+<p>再拿上面这件事说，客户都 code freeze 了，但我们作为人并不能通过管理自己来达到不能部署代码到生产环境这种事，但是工具可以，只要设定了，工具就回毫无疑问，毫无感情的执行。</p>
+<h3 id="不要相信别人">不要相信别人</h3>
+<p>你可以相信自己，知道自己工作的每一个步骤，每一个文件的权限，但是别人呢，别人不一定和你对项目的认知在一个水平线上，这就决定了你们的项目存在不确定性。</p>
+<h2 id="结论">结论</h2>
+<blockquote>
+<p><em>人是不可信的</em></p>
+</blockquote>
+<p>不管是你，还是别人，对于写代码这事都别相信。 你写的代码，做的配置都是最优的。</p>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

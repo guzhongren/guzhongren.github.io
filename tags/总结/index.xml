@@ -1,21 +1,21 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>总结 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E6%80%BB%E7%BB%93/</link><description>总结 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Apr 2020 21:56:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml"/><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>总结 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E6%80%BB%E7%BB%93/</link><description>总结 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Apr 2020 21:56:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E6%80%BB%E7%BB%93/" rel="self" type="application/rss+xml"/><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
-            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreferrer">@haihaio</a> 完成。</p>
+            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
-  <p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
-
-</blockquote><h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreferrer">2.http://agiledata.org/essays/tdd.html</a></li>
-<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreferrer">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
-<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreferrer">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
-<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreferrer">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
+<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
+</blockquote>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreffer ">2.http://agiledata.org/essays/tdd.html</a></li>
+<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreffer ">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
+<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreffer ">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
+<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreffer ">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

@@ -1,12 +1,12 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Host Meeting - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/host-meeting/</link><description>Host Meeting - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Mar 2020 10:28:25 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/host-meeting/" rel="self" type="application/rss+xml"/><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Host Meeting - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/host-meeting/</link><description>Host Meeting - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 15 Mar 2020 10:28:25 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/host-meeting/" rel="self" type="application/rss+xml"/><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://pic4.zhimg.com/80/v2-f8af3dcb49b2e0bdbfd7060fb36bdd5f.jpg" referrerpolicy="no-referrer">
-            </div><h2 id="场景" class="headerLink">
-    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
+            </div><h2 id="场景">场景</h2>
+<p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
 上周正好轮值到我了，按照我司的习惯，哪能有搞不定的事啊，如果有，那就是多花点时间的问题了，当然这话是我说的。那么对于英语菜鸟的我是怎么 host standup meeting 的呢？接下来让我一一道来。</p>
-<h2 id="方法论" class="headerLink">
-    <a href="#%e6%96%b9%e6%b3%95%e8%ae%ba" class="header-mark"></a>方法论</h2><p>做事最重要的是你要一个什么样的结果，只要知道你要的结果，那么将实现结果的步骤一步步拆解成一个个的 Task，这个过程产生的结果也被称为<code>Tasking</code>。</p>
-<h3 id="tasking" class="headerLink">
-    <a href="#tasking" class="header-mark"></a>Tasking</h3><ul>
+<h2 id="方法论">方法论</h2>
+<p>做事最重要的是你要一个什么样的结果，只要知道你要的结果，那么将实现结果的步骤一步步拆解成一个个的 Task，这个过程产生的结果也被称为<code>Tasking</code>。</p>
+<h3 id="tasking">Tasking</h3>
+<ul>
 <li>
 <ol>
 <li>每天练英语听力和口语 (<code>提升自己</code>)</li>
@@ -42,8 +42,8 @@
 </ul>
 <p>在每个<code>task</code>的后面我都备注了每个 task 的作用，都很好理解。</p>
 <p>对于第 1 条，我推荐<code>6 分钟英语</code>和<code>China Daily</code>;<code>6 分钟英语</code>里面有热点新闻的简短介绍和常用场景的对话，虽说是<code>6 分钟英语</code>，但真实情况是至少需要 15 分钟，但还是很值得推荐；<code>China Daily</code> 就不用说了。</p>
-<h2 id="英文场景对话" class="headerLink">
-    <a href="#%e8%8b%b1%e6%96%87%e5%9c%ba%e6%99%af%e5%af%b9%e8%af%9d" class="header-mark"></a>英文场景对话</h2><p>有了方法论，那么是不是应该将这些内容应用到实战才能检验成果呢？下面我来模拟一场 Standup Meeting。</p>
+<h2 id="英文场景对话">英文场景对话</h2>
+<p>有了方法论，那么是不是应该将这些内容应用到实战才能检验成果呢？下面我来模拟一场 Standup Meeting。</p>
 <p>主持站会我们会提前 1～2 分钟进入会议，调试语音，看板和等待客户等；</p>
 <ol>
 <li>客户上线了，问候客户</li>
@@ -93,8 +93,8 @@
 <li>If there is no update and question, we will end today&rsquo;s meeting?</li>
 <li>Ok, Thanks for joining standup meeting.</li>
 </ul>
-<h2 id="结语" class="headerLink">
-    <a href="#%e7%bb%93%e8%af%ad" class="header-mark"></a>结语</h2><ul>
+<h2 id="结语">结语</h2>
+<ul>
 <li>
 <p>作为主持人，我们可以做如下两点：</p>
 <ul>
@@ -106,13 +106,13 @@
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreferrer">2. 翻译：https://translate.google.cn/</a></li>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreffer ">2. 翻译：https://translate.google.cn/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

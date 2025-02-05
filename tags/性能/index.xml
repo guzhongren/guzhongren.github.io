@@ -1,7 +1,7 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>性能 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E6%80%A7%E8%83%BD/</link><description>性能 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 03 Apr 2021 21:12:37 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E6%80%A7%E8%83%BD/" rel="self" type="application/rss+xml"/><item><title>[翻译] 初探性能测试</title><link>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link><pubDate>Sat, 03 Apr 2021 21:12:37 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>性能 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E6%80%A7%E8%83%BD/</link><description>性能 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 03 Apr 2021 21:12:37 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E6%80%A7%E8%83%BD/" rel="self" type="application/rss+xml"/><item><title>[翻译] 初探性能测试</title><link>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link><pubDate>Sat, 03 Apr 2021 21:12:37 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="什么是性能测试" class="headerLink">
-    <a href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" class="header-mark"></a>什么是性能测试</h2><p><img class="tw-inline" loading="lazy" src=https://www.guru99.com/images/why_performance_testing.jpg   alt="为什么要做性能测试"  ></p>
+            </div><h2 id="什么是性能测试">什么是性能测试</h2>
+<p></p>
 <p>性能测试是一种软件测试过程，用于测试特定工作负载下软件应用程序的速度、响应时间、稳定性、可靠性、可伸缩性和资源使用情况。性能测试的主要目的是识别和消除软件应用程序中的性能瓶颈。它是性能工程的一个子集，也被称为&quot;Perf Testing&quot;。</p>
 <p>性能测试的重点是检查软件程序的以下几个性能：</p>
 <ul>
@@ -9,8 +9,8 @@
 <li><strong>可伸缩性</strong>——确定软件应用程序能够处理的最大用户负载</li>
 <li><strong>稳定性</strong>  &ndash;确定应用程序在变化的负载下是否稳定</li>
 </ul>
-<h2 id="为什么要做性能测试" class="headerLink">
-    <a href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e5%81%9a%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" class="header-mark"></a>为什么要做性能测试</h2><p>软件系统支持的特性和功能并不是唯一的关注点。软件应用程序的性能，如响应时间、可靠性、资源使用和可伸缩性都很重要。性能测试的目标不是发现 bug，而是消除性能瓶颈。</p>
+<h2 id="为什么要做性能测试">为什么要做性能测试</h2>
+<p>软件系统支持的特性和功能并不是唯一的关注点。软件应用程序的性能，如响应时间、可靠性、资源使用和可伸缩性都很重要。性能测试的目标不是发现 bug，而是消除性能瓶颈。</p>
 <p>进行性能测试是为了向涉众提供有关其应用程序的速度、稳定性和可伸缩性方面的信息。更重要的是，性能测试揭示了在产品进入市场之前需要改进的地方。如果没有性能测试，软件很可能会遇到这样的问题：几个用户同时使用时运行缓慢，不同操作系统之间的不一致性以及易用性差。</p>
 <p>性能测试将确定他们的软件在预期的工作负载下是否满足速度、可伸缩性和稳定性要求。由于不存在或糟糕的性能测试而将性能指标较差的应用程序发送到市场上，可能会获得坏名声，无法达到预期的销售目标等。</p>
 <p>此外，诸如太空发射计划或救生医疗设备等关键任务应用程序应进行性能测试，以确保它们能够长期运行而无偏差。</p>
@@ -18,15 +18,15 @@
 <p>据估计，Google.com(8 月 19 日至 13 日）仅 5 分钟的停机时间就会给这家搜索巨头带来 54.5 万美元的损失。</p>
 <p>另外，由于最近一次亚马逊网络服务中断，公司每秒损失了价值 1100 美元的销售额。</p>
 <p>鉴于此，性能测试在保障服务可用性等方面真的很重要。</p>
-<h2 id="性能测试的类型" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e7%9a%84%e7%b1%bb%e5%9e%8b" class="header-mark"></a>性能测试的类型</h2><p><strong>负载测试</strong>    ——检查应用程序在预期用户负载下的执行能力。目标是在软件应用程序运行之前识别性能瓶颈。</p>
+<h2 id="性能测试的类型">性能测试的类型</h2>
+<p><strong>负载测试</strong>    ——检查应用程序在预期用户负载下的执行能力。目标是在软件应用程序运行之前识别性能瓶颈。</p>
 <p><strong>压力测试</strong>    ——包括在极端工作负载下测试应用程序，以了解它如何处理高流量或数据处理。目标是识别应用程序的极限。</p>
 <p><strong>耐久性测</strong>  ——是为了确保软件能够在很长一段时间内处理预期的负载。</p>
 <p><strong>峰值测试</strong>    ——测试软件对用户产生的突然的负载峰值的反应。</p>
 <p><strong>体积测试</strong>    ——在大量测试数据被填充到数据库下，监测整个软件系统的行为。目标是检查软件应用程序在不同数据库容量下的性能。</p>
 <p><strong>可伸缩性测试</strong>——可伸缩性测试的目标是确定软件应用程序在“扩展”以支持用户负载增加方面的有效性。它有助于规划软件系统的容量。</p>
-<h2 id="常见的性能问题" class="headerLink">
-    <a href="#%e5%b8%b8%e8%a7%81%e7%9a%84%e6%80%a7%e8%83%bd%e9%97%ae%e9%a2%98" class="header-mark"></a>常见的性能问题</h2><p>大多数性能问题都与速度、响应时间、加载时间和较差的可伸缩性有关。速度通常是应用程序最重要的属性之一。运行缓慢的应用程序将失去潜在的用户。性能测试是为了确保应用运行速度足以吸引用户的注意和兴趣。看看下面的常见性能问题列表，并注意到速度是其中的一个常见因素：</p>
+<h2 id="常见的性能问题">常见的性能问题</h2>
+<p>大多数性能问题都与速度、响应时间、加载时间和较差的可伸缩性有关。速度通常是应用程序最重要的属性之一。运行缓慢的应用程序将失去潜在的用户。性能测试是为了确保应用运行速度足以吸引用户的注意和兴趣。看看下面的常见性能问题列表，并注意到速度是其中的一个常见因素：</p>
 <ul>
 <li>
 <p><strong>加载时间长</strong>——加载时间通常是应用程序启动的初始时间。这通常应该保持在最低限度。虽然有些应用程序不可能在一分钟内完成加载，但加载时间应该尽可能保持在几秒钟以内。</p>
@@ -48,10 +48,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="性能测试过程" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e8%bf%87%e7%a8%8b" class="header-mark"></a>性能测试过程</h2><p>为性能测试所采用的方法可能有很大的不同，但是性能测试的目标是相同的。它可以帮助证明您的软件系统满足某些预先定义的性能标准。或者它可以帮助比较两个软件系统的性能。它还可以帮助识别降低软件系统性能的部分。</p>
+<h2 id="性能测试过程">性能测试过程</h2>
+<p>为性能测试所采用的方法可能有很大的不同，但是性能测试的目标是相同的。它可以帮助证明您的软件系统满足某些预先定义的性能标准。或者它可以帮助比较两个软件系统的性能。它还可以帮助识别降低软件系统性能的部分。</p>
 <p>下面是关于如何执行性能测试的一般流程：</p>
-<p><img class="tw-inline" loading="lazy" src=https://www.guru99.com/images/performance_testing_process.png   alt="性能测试过程"  ></p>
+<p></p>
 <ol>
 <li>
 <p><strong>确定您的测试环境</strong> —— 了解您的物理测试环境、生产环境以及可用的测试工具。在开始测试过程之前，请了解测试过程中使用的硬件、软件和网络配置的详细信息。它将帮助测试人员创建更有效的测试。它还将帮助识别测试人员在性能测试过程中可能遇到的挑战。</p>
@@ -75,8 +75,8 @@
 <p>分析，调整和重新测试-合并，分析和共享测试结果。然后进行微调并再次测试，看看性能是否有改善或下降。由于每次重新测试的改进通常都会变小，所以当瓶颈是由 CPU 引起时就停止。然后，您可以考虑增加 CPU 功率。</p>
 </li>
 </ol>
-<h2 id="性能测试指标参数监测" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%8c%87%e6%a0%87%e5%8f%82%e6%95%b0%e7%9b%91%e6%b5%8b" class="header-mark"></a>性能测试指标：参数监测</h2><p><img class="tw-inline" loading="lazy" src=https://www.guru99.com/images/performancetestingparameters.png   alt="性能测试参数"  ></p>
+<h2 id="性能测试指标参数监测">性能测试指标：参数监测</h2>
+<p></p>
 <p>在性能测试期间监视的基本参数包括：</p>
 <ul>
 <li><strong>处理器使用 (Processor Usage)</strong>——处理器执行非空闲线程所花费的时间。</li>
@@ -103,8 +103,8 @@
 <li><strong>线程计数 (Thread counts)</strong>——应用程序运行状况可以通过编号进行度量。正在运行且当前处于活动状态的线程。</li>
 <li><strong>垃圾回收 (Garbage collectio)</strong>——它与将未使用的内存返回给系统有关。需要监控垃圾收集的效率。</li>
 </ul>
-<h2 id="性能测试案例" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e6%a1%88%e4%be%8b" class="header-mark"></a>性能测试案例</h2><ul>
+<h2 id="性能测试案例">性能测试案例</h2>
+<ul>
 <li>当 1000 个用户同时访问网站时，验证响应时间不超过 4 秒。</li>
 <li>当网络连接较慢时，验证负载下应用程序的响应时间在可接受的范围内</li>
 <li>检查应用程序在崩溃前可以处理的最大用户数。</li>
@@ -113,38 +113,38 @@
 <li>验证应用程序在低、正常、中等和高负载条件下的响应时间。</li>
 </ul>
 <p>在实际的性能测试执行过程中，模糊的术语如可接受范围、重载等被具体的数字所取代。性能工程师根据业务需求和应用程序的技术前景来设置这些数字。</p>
-<h2 id="性能测试工具" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e5%b7%a5%e5%85%b7" class="header-mark"></a>性能测试工具</h2><p>市场上有各种各样的性能测试工具。您选择的测试工具将取决于许多因素，如支持的协议类型、许可证成本、硬件要求、平台支持等。下面是一些常用的测试工具。</p>
+<h2 id="性能测试工具">性能测试工具</h2>
+<p>市场上有各种各样的性能测试工具。您选择的测试工具将取决于许多因素，如支持的协议类型、许可证成本、硬件要求、平台支持等。下面是一些常用的测试工具。</p>
 <ul>
-<li><em><a href="https://bit.ly/2W4Ytu5" target="_blank" rel="noopener noreferrer">LoadNinja</a></em> 是一个革命性的加载测试的方式的工具。这个基于云的负载测试工具使团队能够记录和即时回放全面的负载测试，无需复杂的动态关联，并在真实的浏览器中大规模运行这些负载测试。团队能够增加测试覆盖率。将负载测试时间减少 60%以上。</li>
-<li><em><a href="https://www.guru99.com/loadrunner-v12-tutorials.html" target="_blank" rel="noopener noreferrer">HP LoadRunner</a></em> -是当今市场上最流行的性能测试工具。该工具能够模拟成千上万的用户，将应用程序置于真实的负载下，以确定它们在预期负载下的行为。Loadrunner 有一个虚拟用户生成器，可以模拟真人用户的动作。</li>
-<li><em><a href="https://www.guru99.com/jmeter-tutorials.html" target="_blank" rel="noopener noreferrer">Jmeter</a></em> ——用于 web 和应用服务器负载测试的主要工具之一。</li>
+<li><em><a href="https://bit.ly/2W4Ytu5" target="_blank" rel="noopener noreffer ">LoadNinja</a></em> 是一个革命性的加载测试的方式的工具。这个基于云的负载测试工具使团队能够记录和即时回放全面的负载测试，无需复杂的动态关联，并在真实的浏览器中大规模运行这些负载测试。团队能够增加测试覆盖率。将负载测试时间减少 60%以上。</li>
+<li><em><a href="https://www.guru99.com/loadrunner-v12-tutorials.html" target="_blank" rel="noopener noreffer ">HP LoadRunner</a></em> -是当今市场上最流行的性能测试工具。该工具能够模拟成千上万的用户，将应用程序置于真实的负载下，以确定它们在预期负载下的行为。Loadrunner 有一个虚拟用户生成器，可以模拟真人用户的动作。</li>
+<li><em><a href="https://www.guru99.com/jmeter-tutorials.html" target="_blank" rel="noopener noreffer ">Jmeter</a></em> ——用于 web 和应用服务器负载测试的主要工具之一。</li>
 </ul>
-<h2 id="faq" class="headerLink">
-    <a href="#faq" class="header-mark"></a>FAQ</h2><h3 id="我们应该对哪些应用程序进行性能测试" class="headerLink">
-    <a href="#%e6%88%91%e4%bb%ac%e5%ba%94%e8%af%a5%e5%af%b9%e5%93%aa%e4%ba%9b%e5%ba%94%e7%94%a8%e7%a8%8b%e5%ba%8f%e8%bf%9b%e8%a1%8c%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95" class="header-mark"></a>我们应该对哪些应用程序进行性能测试？</h3><p>性能测试总是只针对基于客户机-服务器的系统。这意味着，任何不是基于客户机-服务器架构的应用程序都不需要性能测试。
+<h2 id="faq">FAQ</h2>
+<h3 id="我们应该对哪些应用程序进行性能测试">我们应该对哪些应用程序进行性能测试？</h3>
+<p>性能测试总是只针对基于客户机-服务器的系统。这意味着，任何不是基于客户机-服务器架构的应用程序都不需要性能测试。
 例如，微软计算器既不是基于客户机-服务器，也不是运行多个用户；因此，它不是性能测试的候选对象。
-<img class="tw-inline" loading="lazy" src=https://www.guru99.com/images/blog/Loadrunner_architecture_8.png     ></p>
-<h3 id="性能测试和性能工程的区别是什么" class="headerLink">
-    <a href="#%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95%e5%92%8c%e6%80%a7%e8%83%bd%e5%b7%a5%e7%a8%8b%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>性能测试和性能工程的区别是什么</h3><p>理解性能测试与性能工程的区别具有重要意义。达成以下共识：</p>
+</p>
+<h3 id="性能测试和性能工程的区别是什么">性能测试和性能工程的区别是什么</h3>
+<p>理解性能测试与性能工程的区别具有重要意义。达成以下共识：</p>
 <ul>
 <li>性能测试是一门与测试和报告软件应用程序在各种参数下的当前性能有关的学科。</li>
 <li>性能工程是为了实现所需的性能而对软件进行测试和调优的过程。这个过程旨在优化最重要的应用性能特征，即用户体验。</li>
 <li>从历史上看，测试和调优一直是截然分开的、经常相互竞争的领域。然而，在过去的几年里，一些测试人员和开发人员已经独立合作创建了调优团队。由于这些团队已经取得了巨大的成功，将性能测试与性能调优相结合的概念已经流行起来，现在我们称之为性能工程。</li>
 </ul>
-<h2 id="结论" class="headerLink">
-    <a href="#%e7%bb%93%e8%ae%ba" class="header-mark"></a>结论</h2><p>在软件工程中，在任何软件产品上市之前，性能测试都是必要的。它确保了客户的满意度，保护投资者的投资不受产品失败的影响。性能测试的成本通常可以通过提高客户满意度、忠诚度和保留度来弥补。</p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<h2 id="结论">结论</h2>
+<p>在软件工程中，在任何软件产品上市之前，性能测试都是必要的。它确保了客户的满意度，保护投资者的投资不受产品失败的影响。性能测试的成本通常可以通过提高客户满意度、忠诚度和保留度来弥补。</p>
+<h2 id="refs">Refs</h2>
+<ul>
 <li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></p>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
 </li>
 <li>
-<p><a href="https://www.guru99.com/performance-testing.html" target="_blank" rel="noopener noreferrer">Performance Testing Tutorial: What is, Types, Metrics &amp; Example: https://www.guru99.com/performance-testing.html</a></p>
+<p><a href="https://www.guru99.com/performance-testing.html" target="_blank" rel="noopener noreffer ">Performance Testing Tutorial: What is, Types, Metrics &amp; Example: https://www.guru99.com/performance-testing.html</a></p>
 </li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

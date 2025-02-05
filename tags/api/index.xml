@@ -1,15 +1,15 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Api - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/api/</link><description>Api - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jul 2020 10:23:18 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/api/" rel="self" type="application/rss+xml"/><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Api - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/api/</link><description>Api - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jul 2020 10:23:18 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/api/" rel="self" type="application/rss+xml"/><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
 <iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreferrer">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreferrer">3.Bilibili</a></li>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

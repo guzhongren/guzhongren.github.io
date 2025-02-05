@@ -1,16 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Agile - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/agile/</link><description>Agile - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/agile/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Agile - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/agile/</link><description>Agile - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/agile/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-  <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-
-</blockquote><h2 id="起因" class="headerLink">
-    <a href="#%e8%b5%b7%e5%9b%a0" class="header-mark"></a>起因</h2><p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
+<h2 id="起因">起因</h2>
+<p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
 <p>不能生成测试报告这个问题简单，只是因为运行测试的容器的用户对特定的目录没有权限，这个很好解决。</p>
 <p>但是对于SonarQube 不能 break Pipeline 这点组内有不同的意见。有些人交付更重要，有些人认为代码质量在这里更为重要。</p>
-<h2 id="分析" class="headerLink">
-    <a href="#%e5%88%86%e6%9e%90" class="header-mark"></a>分析</h2><p>所有的问题都是解决“人”的问题。</p>
+<h2 id="分析">分析</h2>
+<p>所有的问题都是解决“人”的问题。</p>
 <p>代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。</p>
-<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreferrer">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
+<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
 <ul>
 <li>部署频率（Deployment frequency）</li>
 <li>前置时间（Lead time for change）</li>
@@ -18,391 +18,296 @@
 <li>故障回复时间（Time to restore services）</li>
 </ul>
 <p>在我们这个场景下，大家关心的是<code>变更失败率</code> 和 <code>代码质量</code> 哪个更重要。</p>
-<h3 id="如果更关心变更失败率" class="headerLink">
-    <a href="#%e5%a6%82%e6%9e%9c%e6%9b%b4%e5%85%b3%e5%bf%83%e5%8f%98%e6%9b%b4%e5%a4%b1%e8%b4%a5%e7%8e%87" class="header-mark"></a>如果更关心变更失败率</h3><p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题; 如大家提交了低质量的代码，因为没有质量门禁来拦截，开发者大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累会越来越多，项目将难以维护，CI/CD 的失败变更率必然会随之提高。</p>
-<h3 id="如果更关心代码质量" class="headerLink">
-    <a href="#%e5%a6%82%e6%9e%9c%e6%9b%b4%e5%85%b3%e5%bf%83%e4%bb%a3%e7%a0%81%e8%b4%a8%e9%87%8f" class="header-mark"></a>如果更关心代码质量</h3><p>如果更关心代码质量，那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将 Pipeline 阻断，造成<code>变更失败率</code>指标的升高。</p>
-<h2 id="哪个更重要呢" class="headerLink">
-    <a href="#%e5%93%aa%e4%b8%aa%e6%9b%b4%e9%87%8d%e8%a6%81%e5%91%a2" class="header-mark"></a>哪个更重要呢？</h2><p>很多时候大家都会拿出那句名言 &ldquo;视场景而定&rdquo;。
+<h3 id="如果更关心变更失败率">如果更关心变更失败率</h3>
+<p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题; 如大家提交了低质量的代码，因为没有质量门禁来拦截，开发者大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累会越来越多，项目将难以维护，CI/CD 的失败变更率必然会随之提高。</p>
+<h3 id="如果更关心代码质量">如果更关心代码质量</h3>
+<p>如果更关心代码质量，那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将 Pipeline 阻断，造成<code>变更失败率</code>指标的升高。</p>
+<h2 id="哪个更重要呢">哪个更重要呢？</h2>
+<p>很多时候大家都会拿出那句名言 &ldquo;视场景而定&rdquo;。
 但对于软件工程，我们追求的应该是稳定，要对自己的产品要有信心。对开发者而言，信心来自经过测试、符合规范的代码。
 上线固然重要，但不能降低质量。就像在 Simple Design 中的&quot;通过测试&quot;，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
 <p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
 <blockquote>
-  <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-
-</blockquote><h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreferrer">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-
-</blockquote><h2 id="赞助" class="headerLink">
-    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-
-</blockquote><blockquote>
-  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-
-</blockquote>]]></description></item><item><title>工作的常态是被打断</title><link>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</link><pubDate>Sat, 25 Dec 2021 09:21:11 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</guid><description><![CDATA[<div class="featured-image">
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>工作的常态是被打断</title><link>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</link><pubDate>Sat, 25 Dec 2021 09:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="场景" class="headerLink">
-    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>最近西安疫情比较严重，不到一个月已经近 200 例了，而我也被确诊病例轨迹重重包围了；疫情刚开始我司就决定让大家居家办公，一直到现在；居家办公已经不是第一次了，但是在居家办公这个过程中，每个人都会遇到这样或者那样的事，今天就来说说，工作的常态就是被打断，以及如何有效的解决被打断这个问题。</p>
+            </div><h2 id="场景">场景</h2>
+<p>最近西安疫情比较严重，不到一个月已经近 200 例了，而我也被确诊病例轨迹重重包围了；疫情刚开始我司就决定让大家居家办公，一直到现在；居家办公已经不是第一次了，但是在居家办公这个过程中，每个人都会遇到这样或者那样的事，今天就来说说，工作的常态就是被打断，以及如何有效的解决被打断这个问题。</p>
 <p>早上，打开电脑，兴致勃勃的输入电脑密码，开始工作，文档和代码写的正酣，突然来了一个电话，电话那头劈头盖脸的来说你做一下这个那个，没有任何上下文，一个字就是“跟着我说的干“, 然而电话挂了，你也懵逼了，隐隐约约只记下了几个关键点。然而，看到自己的工作，始终想不起自己接下来要搞什么了。“丢了夫人又折兵”的真实写照啊。😇</p>
 <p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
-<h2 id="解决方案" class="headerLink">
-    <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88" class="header-mark"></a>解决方案</h2><blockquote>
-  <p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
-
-</blockquote><p>对于这类问题，可以有如下解决方案：</p>
-<h3 id="task" class="headerLink">
-    <a href="#task" class="header-mark"></a>Task</h3><p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
-<div class="code-block highlight is-open show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
-
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">todo</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl">- [x] subTask1
+<h2 id="解决方案">解决方案</h2>
+<blockquote>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
+</blockquote>
+<p>对于这类问题，可以有如下解决方案：</p>
+<h3 id="task">Task</h3>
+<p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">- [x] subTask1
 </span></span><span class="line"><span class="cl">- [ ] subTask2
-</span></span><span class="line"><span class="cl">- [ ] subTask3</span></span></code></pre>
+</span></span><span class="line"><span class="cl">- [ ] subTask3
+</span></span></code></pre></td></tr></table>
 </div>
-<h3 id="todo" class="headerLink">
-    <a href="#todo" class="header-mark"></a>ToDo</h3><p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png   alt="microsoft-todo"  ></p>
-<h2 id="实践" class="headerLink">
-    <a href="#%e5%ae%9e%e8%b7%b5" class="header-mark"></a>实践</h2><p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
+</div><h3 id="todo">ToDo</h3>
+<p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
+<p></p>
+<h2 id="实践">实践</h2>
+<p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
 当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。</p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></li>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-
-</blockquote><h2 id="赞助" class="headerLink">
-    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-
-</blockquote><blockquote>
-  <p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-
-</blockquote>]]></description></item><item><title>敏捷开发中有哪些会议？</title><link>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</link><pubDate>Sat, 14 Aug 2021 11:35:52 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</guid><description><![CDATA[<div class="featured-image">
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>敏捷开发中有哪些会议？</title><link>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</link><pubDate>Sat, 14 Aug 2021 11:35:52 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="常用会议" class="headerLink">
-    <a href="#%e5%b8%b8%e7%94%a8%e4%bc%9a%e8%ae%ae" class="header-mark"></a>常用会议</h2><p>以下是一些我们在敏捷开发中常用的会议目录，我们可以使用这张表格对相关会议进行适当裁剪，应用到自身团队来提升团队的敏捷实践，提高效率。</p>
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: left">Meeting name</th>
-            <th style="text-align: left">Frequency</th>
-            <th style="text-align: left">Duration</th>
-            <th style="text-align: left">Host</th>
-            <th style="text-align: left">Participators</th>
-            <th style="text-align: left">Main content &amp; Target</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: left">Standup meeting</td>
-            <td style="text-align: left">Everyday</td>
-            <td style="text-align: left">10’~15’</td>
-            <td style="text-align: left">Team member take turns</td>
-            <td style="text-align: left">All team member and your PO PM and so on</td>
-            <td style="text-align: left">Describe your job yesterday and today, call out the block, and give a deadline</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Showcase</td>
-            <td style="text-align: left">Fortnightly</td>
-            <td style="text-align: left">30’</td>
-            <td style="text-align: left">Team member take turns</td>
-            <td style="text-align: left">All team member and your PO PM and so on</td>
-            <td style="text-align: left">Show delivery value</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Code Review</td>
-            <td style="text-align: left">Everyday</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">Every dev</td>
-            <td style="text-align: left">All dev</td>
-            <td style="text-align: left">Go thought your code which is written today, feedback to others from tech and biz perspective</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Backlog grooming</td>
-            <td style="text-align: left">Fortnightly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">BA</td>
-            <td style="text-align: left">All team member</td>
-            <td style="text-align: left">BA and others will explain what /why we will do</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Tech Huddle</td>
-            <td style="text-align: left">Twice a week(1 short , 1 long)</td>
-            <td style="text-align: left">30’ or 1h</td>
-            <td style="text-align: left">Every dev take turns</td>
-            <td style="text-align: left">All dev</td>
-            <td style="text-align: left">Show some new tech, or deep work in some domain, Expand your influence</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Retro</td>
-            <td style="text-align: left">Fortnightly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">Every dev take turns</td>
-            <td style="text-align: left">All team member, PO, PM</td>
-            <td style="text-align: left">Collection some tips which can improve team member work efficiency and make work env more safe and happy</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Delivery Health Check</td>
-            <td style="text-align: left">Fortnightly</td>
-            <td style="text-align: left">30’</td>
-            <td style="text-align: left">BA / TL/ Volunteer</td>
-            <td style="text-align: left">All team member</td>
-            <td style="text-align: left">Check spring’s all cards and hight light the abnormal card， explain it and collection some tips to improve the  accuracy of estimating</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Poker Planning</td>
-            <td style="text-align: left">Fortnightly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">BA</td>
-            <td style="text-align: left">All team member</td>
-            <td style="text-align: left">Estimate cost which you do the specific card, and BA will pull some cards into next spring which all points match some number</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Bug bash</td>
-            <td style="text-align: left">Every release Before go-live</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">QA</td>
-            <td style="text-align: left">All team member</td>
-            <td style="text-align: left">Find bugs from different perspective with different role</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">1 on 1</td>
-            <td style="text-align: left">Monthly</td>
-            <td style="text-align: left">20’</td>
-            <td style="text-align: left">You or your PM/DM</td>
-            <td style="text-align: left">You and your PM/DM</td>
-            <td style="text-align: left">Talk about daily work and life, best to give feedbacks or suggestions</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<h2 id="提升会议" class="headerLink">
-    <a href="#%e6%8f%90%e5%8d%87%e4%bc%9a%e8%ae%ae" class="header-mark"></a>提升会议</h2><p>上面这些都是些正常的日常会议，但是在日常的工作中还有其他不那么频繁的会议，并且这些会议大多数只是需要参与进去，而不是主持者；这些会议通常是扩大团队或者个人影响力的会议，所以建议你抓住机会。</p>
-
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: left">Meeting name</th>
-            <th style="text-align: left">Frequency</th>
-            <th style="text-align: left">Duration</th>
-            <th style="text-align: left">Host</th>
-            <th style="text-align: left">Participators</th>
-            <th style="text-align: left">Main content &amp; Target</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: left">Vertical or All Hands</td>
-            <td style="text-align: left">Monthly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">Volunteer or someone who has impact</td>
-            <td style="text-align: left">All team member and customer</td>
-            <td style="text-align: left">understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Developer Cop(community of Practice)</td>
-            <td style="text-align: left">Monthly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">TL/ Volunteer/TP</td>
-            <td style="text-align: left">All dev and customer</td>
-            <td style="text-align: left">Show some useful and practice tech, make everyone know and use your tech according to your suggestion</td>
-        </tr>
-        <tr>
-            <td style="text-align: left">Gamba work</td>
-            <td style="text-align: left">Once a year or  half-yearly</td>
-            <td style="text-align: left">1h</td>
-            <td style="text-align: left">TL/ Volunteer/TP</td>
-            <td style="text-align: left">All team member</td>
-            <td style="text-align: left">Show what your team members are doing and daily work to customer</td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<h2 id="按需裁减" class="headerLink">
-    <a href="#%e6%8c%89%e9%9c%80%e8%a3%81%e5%87%8f" class="header-mark"></a>按需裁减</h2><p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></li>
+            </div><h2 id="常用会议">常用会议</h2>
+<p>以下是一些我们在敏捷开发中常用的会议目录，我们可以使用这张表格对相关会议进行适当裁剪，应用到自身团队来提升团队的敏捷实践，提高效率。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Meeting name</th>
+          <th style="text-align: left">Frequency</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Host</th>
+          <th style="text-align: left">Participators</th>
+          <th style="text-align: left">Main content &amp; Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Standup meeting</td>
+          <td style="text-align: left">Everyday</td>
+          <td style="text-align: left">10’~15’</td>
+          <td style="text-align: left">Team member take turns</td>
+          <td style="text-align: left">All team member and your PO PM and so on</td>
+          <td style="text-align: left">Describe your job yesterday and today, call out the block, and give a deadline</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Showcase</td>
+          <td style="text-align: left">Fortnightly</td>
+          <td style="text-align: left">30’</td>
+          <td style="text-align: left">Team member take turns</td>
+          <td style="text-align: left">All team member and your PO PM and so on</td>
+          <td style="text-align: left">Show delivery value</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Code Review</td>
+          <td style="text-align: left">Everyday</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">Every dev</td>
+          <td style="text-align: left">All dev</td>
+          <td style="text-align: left">Go thought your code which is written today, feedback to others from tech and biz perspective</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Backlog grooming</td>
+          <td style="text-align: left">Fortnightly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">BA</td>
+          <td style="text-align: left">All team member</td>
+          <td style="text-align: left">BA and others will explain what /why we will do</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Tech Huddle</td>
+          <td style="text-align: left">Twice a week(1 short , 1 long)</td>
+          <td style="text-align: left">30’ or 1h</td>
+          <td style="text-align: left">Every dev take turns</td>
+          <td style="text-align: left">All dev</td>
+          <td style="text-align: left">Show some new tech, or deep work in some domain, Expand your influence</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Retro</td>
+          <td style="text-align: left">Fortnightly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">Every dev take turns</td>
+          <td style="text-align: left">All team member, PO, PM</td>
+          <td style="text-align: left">Collection some tips which can improve team member work efficiency and make work env more safe and happy</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Delivery Health Check</td>
+          <td style="text-align: left">Fortnightly</td>
+          <td style="text-align: left">30’</td>
+          <td style="text-align: left">BA / TL/ Volunteer</td>
+          <td style="text-align: left">All team member</td>
+          <td style="text-align: left">Check spring’s all cards and hight light the abnormal card， explain it and collection some tips to improve the  accuracy of estimating</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Poker Planning</td>
+          <td style="text-align: left">Fortnightly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">BA</td>
+          <td style="text-align: left">All team member</td>
+          <td style="text-align: left">Estimate cost which you do the specific card, and BA will pull some cards into next spring which all points match some number</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bug bash</td>
+          <td style="text-align: left">Every release Before go-live</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">QA</td>
+          <td style="text-align: left">All team member</td>
+          <td style="text-align: left">Find bugs from different perspective with different role</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">1 on 1</td>
+          <td style="text-align: left">Monthly</td>
+          <td style="text-align: left">20’</td>
+          <td style="text-align: left">You or your PM/DM</td>
+          <td style="text-align: left">You and your PM/DM</td>
+          <td style="text-align: left">Talk about daily work and life, best to give feedbacks or suggestions</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="提升会议">提升会议</h2>
+<p>上面这些都是些正常的日常会议，但是在日常的工作中还有其他不那么频繁的会议，并且这些会议大多数只是需要参与进去，而不是主持者；这些会议通常是扩大团队或者个人影响力的会议，所以建议你抓住机会。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Meeting name</th>
+          <th style="text-align: left">Frequency</th>
+          <th style="text-align: left">Duration</th>
+          <th style="text-align: left">Host</th>
+          <th style="text-align: left">Participators</th>
+          <th style="text-align: left">Main content &amp; Target</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Vertical or All Hands</td>
+          <td style="text-align: left">Monthly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">Volunteer or someone who has impact</td>
+          <td style="text-align: left">All team member and customer</td>
+          <td style="text-align: left">understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Developer Cop(community of Practice)</td>
+          <td style="text-align: left">Monthly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">TL/ Volunteer/TP</td>
+          <td style="text-align: left">All dev and customer</td>
+          <td style="text-align: left">Show some useful and practice tech, make everyone know and use your tech according to your suggestion</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Gamba work</td>
+          <td style="text-align: left">Once a year or  half-yearly</td>
+          <td style="text-align: left">1h</td>
+          <td style="text-align: left">TL/ Volunteer/TP</td>
+          <td style="text-align: left">All team member</td>
+          <td style="text-align: left">Show what your team members are doing and daily work to customer</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="按需裁减">按需裁减</h2>
+<p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-
-</blockquote><h2 id="赞助" class="headerLink">
-    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-
-</blockquote><blockquote>
-  <p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-
-</blockquote>]]></description></item><item><title>Tech Debt</title><link>https://guzhongren.github.io/2021/01/tech-debt/</link><pubDate>Sun, 10 Jan 2021 12:57:09 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2021/01/tech-debt/</guid><description><![CDATA[<div class="featured-image">
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>Tech Debt</title><link>https://guzhongren.github.io/2021/01/tech-debt/</link><pubDate>Sun, 10 Jan 2021 12:57:09 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/01/tech-debt/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2021/01/10/ToABlS78eDgYUZi.png" referrerpolicy="no-referrer">
-            </div><h2 id="缘由" class="headerLink">
-    <a href="#%e7%bc%98%e7%94%b1" class="header-mark"></a>缘由</h2><p>做软件开发，不可避免的事就是用户需求的变化或者细化，和业务的不断迭代，那么对于开发者而言，最重要的事什么呢？我想有一条非常重要：及时将系统中存在的各种 bug，或者遗留问题快速解决。</p>
+            </div><h2 id="缘由">缘由</h2>
+<p>做软件开发，不可避免的事就是用户需求的变化或者细化，和业务的不断迭代，那么对于开发者而言，最重要的事什么呢？我想有一条非常重要：及时将系统中存在的各种 bug，或者遗留问题快速解决。</p>
 <p>比如前后端中的软件依赖升级，避免远端大版本升级导致项目需要进行大更改的问题；将系统中原有由 JDBC 实现的 Repository 层由 JPA 实现，提升开发效率，避免手写 SQL 的问题，且可以加快开发效率；再或者项目刚开始，将所有的功能都集中在一个项目中，随着项目的不断扩张，需要将系统的部分功能拆分出来作为一个单独的服务，实现服务的独立发布，部署；并且可以被其他服务消费，减轻原有服务的职责。</p>
-<h2 id="tech-debt-是什么" class="headerLink">
-    <a href="#tech-debt-%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>Tech debt 是什么</h2><p>如上描述，在开发中我们会有各种各样的问题存在，在一个迭代里，一方面要实现客户价值，另一方面不能放入太多的技术债卡，所以哪些遗留问题不会被立即解决掉，那么随着时间的流失，遗留问题就会原来越多。</p>
+<h2 id="tech-debt-是什么">Tech debt 是什么</h2>
+<p>如上描述，在开发中我们会有各种各样的问题存在，在一个迭代里，一方面要实现客户价值，另一方面不能放入太多的技术债卡，所以哪些遗留问题不会被立即解决掉，那么随着时间的流失，遗留问题就会原来越多。</p>
 <p>这是优先考虑快速交付而不是完美代码的结果。</p>
 <p><code>Tech debt</code>: 团队为了加快交付速度而降低了代码或者架构层面的良好设计，或者对已有系统缺少更好的设计或测试。</p>
-<h2 id="常用方案及设计" class="headerLink">
-    <a href="#%e5%b8%b8%e7%94%a8%e6%96%b9%e6%a1%88%e5%8f%8a%e8%ae%be%e8%ae%a1" class="header-mark"></a>常用方案及设计</h2><p>明白了什么是 Tech Debt，那么肯定有一些业界的 Best Practice 可以参考，下面列出我设计的方案。</p>
+<h2 id="常用方案及设计">常用方案及设计</h2>
+<p>明白了什么是 Tech Debt，那么肯定有一些业界的 Best Practice 可以参考，下面列出我设计的方案。</p>
 <p>步骤：</p>
 <ul>
 <li>收集</li>
 <li>分析</li>
 <li>形成功能卡</li>
 </ul>
-<h3 id="tech-debt-收集" class="headerLink">
-    <a href="#tech-debt-%e6%94%b6%e9%9b%86" class="header-mark"></a>Tech debt 收集</h3>
-<div class="table-wrapper">
-  <table>
-    <thead>
-        <tr>
-            <th style="text-align: ">Id</th>
-            <th style="text-align: ">Problem description</th>
-            <th style="text-align: ">Difficulty[easy, hard]</th>
-            <th style="text-align: ">Importance[low, high]</th>
-            <th style="text-align: ">Service involved</th>
-            <th style="text-align: ">Related resource</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td style="text-align: ">1</td>
-            <td style="text-align: ">Upgrade dependences</td>
-            <td style="text-align: ">easy</td>
-            <td style="text-align: ">high</td>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-        </tr>
-        <tr>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-            <td style="text-align: "></td>
-        </tr>
-    </tbody>
-  </table>
-</div>
-<h4 id="说明" class="headerLink">
-    <a href="#%e8%af%b4%e6%98%8e" class="header-mark"></a>说明</h4><ul>
+<h3 id="tech-debt-收集">Tech debt 收集</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Problem description</th>
+          <th>Difficulty[easy, hard]</th>
+          <th>Importance[low, high]</th>
+          <th>Service involved</th>
+          <th>Related resource</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Upgrade dependences</td>
+          <td>easy</td>
+          <td>high</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="说明">说明</h4>
+<ul>
 <li>Problem description: 阐明问题原因，及导致的结果</li>
 <li>Difficulty: 解决该问题的困难程度</li>
 <li>Importance: 解决该问题后带来的价值</li>
@@ -410,103 +315,30 @@
 <li>Related resource: 解决该问题可用的资源</li>
 </ul>
 <p>根据上面的表格，组织会议，让大家填写自己所能想到的所有的技术债，然后对每一条技术债进行说明，对齐认识。然后对每一条从 Difficulty 和 Importance 角度进行投票。</p>
-<h4 id="分析" class="headerLink">
-    <a href="#%e5%88%86%e6%9e%90" class="header-mark"></a>分析</h4><p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
-<div class="code-block highlight is-closed show-line-numbers  tw-group tw-my-2">
-  <div class="
-    code-block-title 
-    
-    tw-flex 
-    tw-flex-row 
-    tw-justify-between 
-    tw-w-full tw-bg-bgColor-secondary
-    ">      
-    <button 
-      class="
-        tw-select-none 
-        tw-mx-2 
-        tw-block
-        group-[.is-open]:tw-rotate-90
-        tw-transition-[transform] 
-        tw-duration-500 
-        tw-ease-in-out
-        print:!tw-hidden"
-      disabled
-      aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></button>
-
-    <div class="code-block-title-bar tw-w-full">
-      <p class="tw-select-none !tw-my-1">shell</p>
-    </div>
-    <div class="tw-flex">
-      <button 
-        class="
-          line-number-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.show-line-numbers]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle line numbers"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/></svg></button>
-
-      <button 
-        class="
-          wrap-code-button
-          tw-select-none 
-          tw-mx-2 
-          tw-hidden 
-          group-[.is-open]:tw-block 
-          group-[.is-wrap]:tw-text-fgColor-link 
-          print:!tw-hidden" 
-        title="Toggle code wrap"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg></button>
-      
-      <button 
-        class="
-          copy-code-button
-          tw-select-none
-          tw-mx-2 
-          tw-hidden
-          group-[.is-open]:tw-block
-          hover:tw-text-fgColor-link 
-          print:!tw-hidden"
-        title="Copy code">
-          <span class="copy-icon tw-block"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941zM266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6zm128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6zm6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243V112z"/></svg></span>
-          <span class="check-icon tw-hidden"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg></span>
-      </button>
-        
-      <button 
-        class="
-          tw-select-none 
-          tw-mx-2 
-          tw-block 
-          group-[.is-open]:tw-hidden 
-          print:!tw-hidden" 
-        disabled
-        aria-hidden="true"><svg class="icon"
-    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"/></svg></button>
-    </div>
-  </div>
-  <pre style="counter-reset: codeblock;" class="tw-block tw-m-0 tw-p-0"><code 
-    id="codeblock-id-1" 
-    class="
-      chroma 
-      !tw-block 
-      tw-p-0
-      tw-m-0
-      tw-transition-[max-height] 
-      tw-duration-500 
-      tw-ease-in-out 
-      group-[.is-closed]:!tw-max-h-0 
-      group-[.is-wrap]:tw-text-wrap
-      tw-overflow-y-hidden
-      tw-overflow-x-auto
-      tw-scrollbar-thin
-      "><span class="line"><span class="cl">   ^
+<h4 id="分析">分析</h4>
+<p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
 </span></span><span class="line"><span class="cl">  I<span class="p">|</span>      View result immediately       <span class="p">|</span>     Split <span class="p">&amp;</span> Plan
 </span></span><span class="line"><span class="cl">  m<span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">  p<span class="p">|</span>                                    <span class="p">|</span>
@@ -522,9 +354,10 @@
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>      Fix it <span class="k">if</span> have spare <span class="nb">time</span>     <span class="p">|</span>     Let it go
 </span></span><span class="line"><span class="cl">   ------------------------------------------------------------------------------&gt;
-</span></span><span class="line"><span class="cl">                                                                      Difficulty</span></span></code></pre>
+</span></span><span class="line"><span class="cl">                                                                      Difficulty
+</span></span></code></pre></td></tr></table>
 </div>
-<p>说明：</p>
+</div><p>说明：</p>
 <ul>
 <li>横轴：从左到右 Difficulty 由简到难；</li>
 <li>纵轴：从下到上 Importance 由低到高；</li>
@@ -533,56 +366,56 @@
 <li><code>Split &amp; Plan</code>: 问题困难并且比较重要，需要拆分并安排进迭代；</li>
 <li><code>Let it go</code>： 问题简单但是实现比较困难，有记录就行，如果有时间再实现即可。</li>
 </ul>
-<h2 id="产出是什么" class="headerLink">
-    <a href="#%e4%ba%a7%e5%87%ba%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>产出是什么</h2><p>对于分析后的问题，按照其所在的不同区域的重要程度，一般需要将<code>Fix it if have spare time</code>, <code>View result immediately</code>和<code>Split &amp; Plan</code>这三个区域的问题梳理为卡（业务卡，技术卡或者 Bug 卡），分在不同的迭代去做。</p>
-<h2 id="模板" class="headerLink">
-    <a href="#%e6%a8%a1%e6%9d%bf" class="header-mark"></a>模板</h2><p>介于此制作了一个可以复用的模板。
-<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreferrer">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
+<h2 id="产出是什么">产出是什么</h2>
+<p>对于分析后的问题，按照其所在的不同区域的重要程度，一般需要将<code>Fix it if have spare time</code>, <code>View result immediately</code>和<code>Split &amp; Plan</code>这三个区域的问题梳理为卡（业务卡，技术卡或者 Bug 卡），分在不同的迭代去做。</p>
+<h2 id="模板">模板</h2>
+<p>介于此制作了一个可以复用的模板。
+<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
+<h2 id="refs">Refs</h2>
+<ul>
 <li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客：https://guzhongren.github.io/</a></p>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
 </li>
 <li>
-<p><a href="https://www.productplan.com/glossary/technical-debt/" target="_blank" rel="noopener noreferrer">Technical Debt:https://www.productplan.com/glossary/technical-debt/</a></p>
+<p><a href="https://www.productplan.com/glossary/technical-debt/" target="_blank" rel="noopener noreffer ">Technical Debt:https://www.productplan.com/glossary/technical-debt/</a></p>
 </li>
 <li>
-<p><a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreferrer">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
+<p><a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
 </li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
-]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
+<p></p>
+]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
-            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreferrer">@haihaio</a> 完成。</p>
+            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
-  <p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
-
-</blockquote><h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreferrer">2.http://agiledata.org/essays/tdd.html</a></li>
-<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreferrer">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
-<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreferrer">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
-<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreferrer">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
+<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
+</blockquote>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreffer ">2.http://agiledata.org/essays/tdd.html</a></li>
+<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreffer ">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
+<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreffer ">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
+<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreffer ">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
-]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
+<p></p>
+]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://pic4.zhimg.com/80/v2-f8af3dcb49b2e0bdbfd7060fb36bdd5f.jpg" referrerpolicy="no-referrer">
-            </div><h2 id="场景" class="headerLink">
-    <a href="#%e5%9c%ba%e6%99%af" class="header-mark"></a>场景</h2><p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
+            </div><h2 id="场景">场景</h2>
+<p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
 上周正好轮值到我了，按照我司的习惯，哪能有搞不定的事啊，如果有，那就是多花点时间的问题了，当然这话是我说的。那么对于英语菜鸟的我是怎么 host standup meeting 的呢？接下来让我一一道来。</p>
-<h2 id="方法论" class="headerLink">
-    <a href="#%e6%96%b9%e6%b3%95%e8%ae%ba" class="header-mark"></a>方法论</h2><p>做事最重要的是你要一个什么样的结果，只要知道你要的结果，那么将实现结果的步骤一步步拆解成一个个的 Task，这个过程产生的结果也被称为<code>Tasking</code>。</p>
-<h3 id="tasking" class="headerLink">
-    <a href="#tasking" class="header-mark"></a>Tasking</h3><ul>
+<h2 id="方法论">方法论</h2>
+<p>做事最重要的是你要一个什么样的结果，只要知道你要的结果，那么将实现结果的步骤一步步拆解成一个个的 Task，这个过程产生的结果也被称为<code>Tasking</code>。</p>
+<h3 id="tasking">Tasking</h3>
+<ul>
 <li>
 <ol>
 <li>每天练英语听力和口语 (<code>提升自己</code>)</li>
@@ -618,8 +451,8 @@
 </ul>
 <p>在每个<code>task</code>的后面我都备注了每个 task 的作用，都很好理解。</p>
 <p>对于第 1 条，我推荐<code>6 分钟英语</code>和<code>China Daily</code>;<code>6 分钟英语</code>里面有热点新闻的简短介绍和常用场景的对话，虽说是<code>6 分钟英语</code>，但真实情况是至少需要 15 分钟，但还是很值得推荐；<code>China Daily</code> 就不用说了。</p>
-<h2 id="英文场景对话" class="headerLink">
-    <a href="#%e8%8b%b1%e6%96%87%e5%9c%ba%e6%99%af%e5%af%b9%e8%af%9d" class="header-mark"></a>英文场景对话</h2><p>有了方法论，那么是不是应该将这些内容应用到实战才能检验成果呢？下面我来模拟一场 Standup Meeting。</p>
+<h2 id="英文场景对话">英文场景对话</h2>
+<p>有了方法论，那么是不是应该将这些内容应用到实战才能检验成果呢？下面我来模拟一场 Standup Meeting。</p>
 <p>主持站会我们会提前 1～2 分钟进入会议，调试语音，看板和等待客户等；</p>
 <ol>
 <li>客户上线了，问候客户</li>
@@ -669,8 +502,8 @@
 <li>If there is no update and question, we will end today&rsquo;s meeting?</li>
 <li>Ok, Thanks for joining standup meeting.</li>
 </ul>
-<h2 id="结语" class="headerLink">
-    <a href="#%e7%bb%93%e8%af%ad" class="header-mark"></a>结语</h2><ul>
+<h2 id="结语">结语</h2>
+<ul>
 <li>
 <p>作为主持人，我们可以做如下两点：</p>
 <ul>
@@ -682,13 +515,13 @@
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreferrer">2. 翻译：https://translate.google.cn/</a></li>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreffer ">2. 翻译：https://translate.google.cn/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 ]]></description></item></channel></rss>

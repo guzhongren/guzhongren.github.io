@@ -1,16 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>代码质量 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</link><description>代码质量 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>代码质量 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/</link><description>代码质量 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-  <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-
-</blockquote><h2 id="起因" class="headerLink">
-    <a href="#%e8%b5%b7%e5%9b%a0" class="header-mark"></a>起因</h2><p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
+<h2 id="起因">起因</h2>
+<p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
 <p>不能生成测试报告这个问题简单，只是因为运行测试的容器的用户对特定的目录没有权限，这个很好解决。</p>
 <p>但是对于SonarQube 不能 break Pipeline 这点组内有不同的意见。有些人交付更重要，有些人认为代码质量在这里更为重要。</p>
-<h2 id="分析" class="headerLink">
-    <a href="#%e5%88%86%e6%9e%90" class="header-mark"></a>分析</h2><p>所有的问题都是解决“人”的问题。</p>
+<h2 id="分析">分析</h2>
+<p>所有的问题都是解决“人”的问题。</p>
 <p>代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。</p>
-<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreferrer">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
+<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
 <ul>
 <li>部署频率（Deployment frequency）</li>
 <li>前置时间（Lead time for change）</li>
@@ -18,35 +18,35 @@
 <li>故障回复时间（Time to restore services）</li>
 </ul>
 <p>在我们这个场景下，大家关心的是<code>变更失败率</code> 和 <code>代码质量</code> 哪个更重要。</p>
-<h3 id="如果更关心变更失败率" class="headerLink">
-    <a href="#%e5%a6%82%e6%9e%9c%e6%9b%b4%e5%85%b3%e5%bf%83%e5%8f%98%e6%9b%b4%e5%a4%b1%e8%b4%a5%e7%8e%87" class="header-mark"></a>如果更关心变更失败率</h3><p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题; 如大家提交了低质量的代码，因为没有质量门禁来拦截，开发者大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累会越来越多，项目将难以维护，CI/CD 的失败变更率必然会随之提高。</p>
-<h3 id="如果更关心代码质量" class="headerLink">
-    <a href="#%e5%a6%82%e6%9e%9c%e6%9b%b4%e5%85%b3%e5%bf%83%e4%bb%a3%e7%a0%81%e8%b4%a8%e9%87%8f" class="header-mark"></a>如果更关心代码质量</h3><p>如果更关心代码质量，那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将 Pipeline 阻断，造成<code>变更失败率</code>指标的升高。</p>
-<h2 id="哪个更重要呢" class="headerLink">
-    <a href="#%e5%93%aa%e4%b8%aa%e6%9b%b4%e9%87%8d%e8%a6%81%e5%91%a2" class="header-mark"></a>哪个更重要呢？</h2><p>很多时候大家都会拿出那句名言 &ldquo;视场景而定&rdquo;。
+<h3 id="如果更关心变更失败率">如果更关心变更失败率</h3>
+<p>如果更关心变更失败率，而放弃了代码质量，那么面临的问题将会是由“人”导致的各种问题; 如大家提交了低质量的代码，因为没有质量门禁来拦截，开发者大多情况下因为自己的懒惰或者逃避责任而选择忽略已存在的各种不符合高质量的代码。长此以往，代码质量问题积累会越来越多，项目将难以维护，CI/CD 的失败变更率必然会随之提高。</p>
+<h3 id="如果更关心代码质量">如果更关心代码质量</h3>
+<p>如果更关心代码质量，那么面临的问题会变成，提交了代码之后可能会被 SonarQube 检测出来一些不符合某些门禁指标的issues，然后由于不满足预定的指标而将 Pipeline 阻断，造成<code>变更失败率</code>指标的升高。</p>
+<h2 id="哪个更重要呢">哪个更重要呢？</h2>
+<p>很多时候大家都会拿出那句名言 &ldquo;视场景而定&rdquo;。
 但对于软件工程，我们追求的应该是稳定，要对自己的产品要有信心。对开发者而言，信心来自经过测试、符合规范的代码。
 上线固然重要，但不能降低质量。就像在 Simple Design 中的&quot;通过测试&quot;，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
 <p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
 <blockquote>
-  <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-
-</blockquote><h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreferrer">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-
-</blockquote><h2 id="赞助" class="headerLink">
-    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-
-</blockquote><blockquote>
-  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-
-</blockquote>]]></description></item></channel></rss>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

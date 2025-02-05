@@ -1,41 +1,41 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/summary/</link><description>Summary - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 30 Sep 2022 21:03:02 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/summary/" rel="self" type="application/rss+xml"/><item><title>一些做运维工作的小总结</title><link>https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 30 Sep 2022 21:03:02 +0800</pubDate><author><name>谷中仁</name></author><guid>https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/summary/</link><description>Summary - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 30 Sep 2022 21:03:02 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/summary/" rel="self" type="application/rss+xml"/><item><title>一些做运维工作的小总结</title><link>https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 30 Sep 2022 21:03:02 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/09/%E4%B8%80%E4%BA%9B%E5%81%9A%E8%BF%90%E7%BB%B4%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B0%8F%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="简介" class="headerLink">
-    <a href="#%e7%ae%80%e4%bb%8b" class="header-mark"></a>简介</h2><p>最近上了一个Ops 的项目，此Ops 非彼Ops。
+            </div><h2 id="简介">简介</h2>
+<p>最近上了一个Ops 的项目，此Ops 非彼Ops。
 一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色。需要在开发上线之后解决所有生产环境的问题，并且为客户方解决他们日常管理中的各种问题，还有为客户产品的使用者解决线上生产问题或着寻找他们提出的各种问题的原因。</p>
 <p>由于项目非常大，有多达20+的微服务，还有各种用户设备；而我们团队在这方面没有什么经验，而且Onboarding 基本都没有，大多时候都需要猜。</p>
-<h2 id="onboarding" class="headerLink">
-    <a href="#onboarding" class="header-mark"></a>Onboarding</h2><p>没有Onboarding，那我们就创造 Onboarding。</p>
+<h2 id="onboarding">Onboarding</h2>
+<p>没有Onboarding，那我们就创造 Onboarding。</p>
 <p>项目很大，同事给的Onboarding 很短，只是一些链接。在已有知识的基础上，利用Logseq 整理了Onboarding 文档，为未来加入项目的同事提供更好的Onboardign流程。</p>
 <p>利用在之前项目上的总结，形成了这个项目上的Oboarding 流程。包含项目背景，期望，词汇目录，组织架构，工具集，Leave Plan, Ops Flow, 工作模板等。</p>
-<h2 id="流程化" class="headerLink">
-    <a href="#%e6%b5%81%e7%a8%8b%e5%8c%96" class="header-mark"></a>流程化</h2><p>有时候Ops 的工作其实很流程化，比如每周或者每天都要给特定的人发送Report, 那我们就可以将经常用的SQL，邮件模板等存起来，到时候一运行直接发送即可。</p>
+<h2 id="流程化">流程化</h2>
+<p>有时候Ops 的工作其实很流程化，比如每周或者每天都要给特定的人发送Report, 那我们就可以将经常用的SQL，邮件模板等存起来，到时候一运行直接发送即可。</p>
 <p>还有，比如收到了线上的 Issue, 可以利用 Logseq 的模板功能，直接生成处理流程目录，这样就省了很多时间去思考应该考虑哪些方面或者需要有什么样的输出。</p>
-<h2 id="记录" class="headerLink">
-    <a href="#%e8%ae%b0%e5%bd%95" class="header-mark"></a>记录</h2><p>凡事都要记着。好记性不如烂笔头。</p>
+<h2 id="记录">记录</h2>
+<p>凡事都要记着。好记性不如烂笔头。</p>
 <p>俗话说的真好，在Ops 工作流程中，也是一样。因为很多东西不是一天两天就能搞定，对于时间长的工作来说，如果有个记录那么就能很快想起以前干过什么，之后要干什么了。有时候需要一些截图，可以直接放在笔记工具中，这样也可以很快找到所谓的证据。证据在Ops工作中可是非常重要的东西。</p>
 <p>在自己的笔记工具中记录是一方面，另一方面，我们需要让客户知道我们每天的进度，那么我们也需要将我们的进度通过不同的方式共享给他们，作为文字，当然是首选方式。</p>
-<h2 id="总结" class="headerLink">
-    <a href="#%e6%80%bb%e7%bb%93" class="header-mark"></a>总结</h2><p>多经历一些项目吧，你认为的只是你认为的。
+<h2 id="总结">总结</h2>
+<p>多经历一些项目吧，你认为的只是你认为的。
 新加坡人挺卷的，是的，挺卷的。
 项目也挺卷的，今天还有人找我想让我去做新加坡某项目的前端&hellip;&hellip;</p>
-<h2 id="refs" class="headerLink">
-    <a href="#refs" class="header-mark"></a>Refs</h2><ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreferrer">博客:https://guzhongren.github.io/</a></li>
+<h2 id="refs">Refs</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer" class="headerLink">
-    <a href="#disclaimer" class="header-mark"></a>Disclaimer</h2><p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreferrer">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
 <hr>
-<p><img class="tw-inline" loading="lazy" src=https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png   alt="谷哥说-微信公众号"  ></p>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-
-</blockquote><h2 id="赞助" class="headerLink">
-    <a href="#%e8%b5%9e%e5%8a%a9" class="header-mark"></a>赞助</h2><p><img class="tw-inline" loading="lazy" src=https://guzhongren.github.io/images/pay/PayForGuzhongren.svg   alt="PayForGuzhongren"  ></p>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
 <blockquote>
-  <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreferrer">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-
-</blockquote><blockquote>
-  <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreferrer">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-
-</blockquote>]]></description></item></channel></rss>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>
