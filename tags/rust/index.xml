@@ -54,14 +54,14 @@
 </div>
 </div><h2 id="解决方案">解决方案</h2>
 <p>删除该行记录，运行程序，成功输出<code>hello world</code>。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://github.com/mozilla/grcov/issues/433" target="_blank" rel="noopener noreffer ">3. grcov</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Rust Doc 小记</title><link>https://guzhongren.github.io/2020/04/rust-doc%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Thu, 16 Apr 2020 22:56:55 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/rust-doc%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -154,13 +154,13 @@
 </li>
 </ul>
 <p>Rust 的编译器相当严谨，结合 TDD 写代码应该会很爽。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Rust 中闭包的写法</title><link>https://guzhongren.github.io/2020/04/rust%E4%B8%AD%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%99%E6%B3%95.zh/</link><pubDate>Tue, 07 Apr 2020 22:26:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/rust%E4%B8%AD%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%99%E6%B3%95.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -259,15 +259,15 @@
 </div><p>如果将数字 5 转换为字符串 5，那么程序就运行正常。</p>
 <h2 id="总结">总结</h2>
 <p>Rust 的闭包感觉和 js 的函数的写法很像，感觉到了 Rust 又借鉴了部分 js 的语法。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://zhidao.baidu.com/question/1448503662321920660.html" target="_blank" rel="noopener noreffer ">3. 茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html</a></li>
 <li><a href="https://doc.rust-lang.org/rust-by-example/fn/closures.html" target="_blank" rel="noopener noreffer ">4.Rust 闭包：https://doc.rust-lang.org/rust-by-example/fn/closures.html</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
@@ -359,7 +359,7 @@
 <li>console_error_panic_hook ，用于将奔溃消息记录到开发人员控制台的功能。</li>
 <li>wee_alloc，一个使代码量更小而优化的分配器。</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>
@@ -966,13 +966,13 @@
 <h2 id="后续">后续</h2>
 <p>后面会在这个基础上继续开发，并将 WASM 中的一些概念配置也写成文档共享在博客中。</p>
 <h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/web_assembly/tree/based_rust</a></h2>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p></p>
@@ -1043,7 +1043,7 @@
 </div><p></p>
 <h2 id="调试">调试</h2>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>

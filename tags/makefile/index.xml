@@ -103,10 +103,10 @@
 </span></span><span class="line"><span class="cl"><span class="nx">comment</span><span class="err">:</span> <span class="kc">true</span>
 </span></span><span class="line"><span class="cl"><span class="nx">---</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">## Refs</span>
+</span></span><span class="line"><span class="cl"><span class="c">## 引用</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">----</span>
-</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">staticaly</span><span class="p">.</span><span class="nx">com</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">jsdelivr</span><span class="p">.</span><span class="nx">net</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成文章后，直接更新需要更新的字段，如标签（tags）和分类（categories）等，然后在中间直接写文章就可以。</p>
@@ -330,7 +330,7 @@
 <blockquote>
 <p>尽情享用吧。..🎉🎉🎉🎉🎉</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>1.<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">https://gohugo.io/</a></li>
 <li>2.<a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">https://golang.google.cn/</a></li>

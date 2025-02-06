@@ -17,14 +17,14 @@ GIS 是个好东西，可惜在现在的传统行业中体现不出它的价值�
 
 慢慢的传统 GIS 行业就会内卷，那些技术创新都是互联网巨头的事了。传统行业就只能吃别人剩下的了，至于剩下的是什么，自个体会吧。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

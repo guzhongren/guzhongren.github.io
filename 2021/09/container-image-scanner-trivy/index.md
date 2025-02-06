@@ -133,7 +133,7 @@ https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566
 
 最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。
 
-## Refs
+## 引用
 
 * [https://www.sonarqube.org/](https://www.sonarqube.org/)
 * [https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities](https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities)
@@ -150,9 +150,9 @@ https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566
 * [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
 * [https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)

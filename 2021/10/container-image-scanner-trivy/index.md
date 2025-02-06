@@ -131,7 +131,7 @@ Now, we must fix this issue to continue delivery. There are 2 steps to do, first
 
 Security is a very important issue no matter where you are. We can __Shift Left Security__, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.
 
-## Refs
+## 引用
 
 * [https://www.sonarqube.org/](https://www.sonarqube.org/)
 * [https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities](https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities)
@@ -148,9 +148,9 @@ Security is a very important issue no matter where you are. We can __Shift Left 
 * [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
 * [https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)

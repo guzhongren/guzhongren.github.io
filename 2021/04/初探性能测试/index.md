@@ -151,16 +151,16 @@
 
 在软件工程中，在任何软件产品上市之前，性能测试都是必要的。它确保了客户的满意度，保护投资者的投资不受产品失败的影响。性能测试的成本通常可以通过提高客户满意度、忠诚度和保留度来弥补。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 * [Performance Testing Tutorial: What is, Types, Metrics & Example: https://www.guru99.com/performance-testing.html](https://www.guru99.com/performance-testing.html)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

@@ -27,12 +27,12 @@
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -159,12 +159,12 @@
 </div>
 </div><h2 id="-注意">⚠️ 注意</h2>
 <p>你的私钥差不多就是计算机世界里的另一个你，所以，把你自己保护好。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -501,7 +501,7 @@
 <ul>
 <li>只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://github.com/beef-noodles/git-crypt-test" target="_blank" rel="noopener noreffer ">Demo: git-crypt-test</a></p>
@@ -537,8 +537,8 @@
 <p><a href="https://www.lnmpy.com/blog/transcrypt-intro/" target="_blank" rel="noopener noreffer ">transcrypt 使用案例</a></p>
 </li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

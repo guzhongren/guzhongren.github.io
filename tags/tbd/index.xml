@@ -105,7 +105,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <blockquote>
 <p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://rc.sydney.edu.au/git-user-guide/history.html" target="_blank" rel="noopener noreffer ">1.https://rc.sydney.edu.au/git-user-guide/history.html</a></li>
 <li><a href="https://nvie.com/files/Git-branching-model.pdf" target="_blank" rel="noopener noreffer ">2.https://nvie.com/files/Git-branching-model.pdf</a></li>

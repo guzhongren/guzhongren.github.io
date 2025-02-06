@@ -479,13 +479,13 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 <p>为什么没有用到 Golang 的 Web 框架？</p>
 <p>因为我们的侧重点在 Golang 与 SQLLite，不在 API 实现上，最小化的实现目标，才是我们学习知识最快速的途径。</p>
 <p>原文链接：<a href="https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/" target="_blank" rel="noopener noreffer ">https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/</a></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
 <li><a href="https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3" target="_blank" rel="noopener noreffer ">2. 原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

@@ -62,7 +62,7 @@
 </div>
 </div><h2 id="结果">结果</h2>
 <p>再次执行 <code>yarn add xxx</code> 之后就会正常安装了，以后就可以愉快的安装私服或者公网上的 package 了。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">1.https://yarnpkg.com/</a></p>
 <hr>
 <p></p>

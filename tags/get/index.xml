@@ -97,7 +97,7 @@
 </div><p>这种方案是将资源请求到服务器，然后将资源再返回给前端。</p>
 <h2 id="总结">总结</h2>
 <p>对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>

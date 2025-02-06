@@ -119,12 +119,12 @@
 </div><h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1793,7 +1793,7 @@
 <li>&hellip;</li>
 </ul>
 <p>最后感谢 <a href="https://yihaimen.github.io/" target="_blank" rel="noopener noreffer ">海门</a> 和 <a href="https://github.com/hylerrix" target="_blank" rel="noopener noreffer ">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></p>
@@ -1820,8 +1820,8 @@
 <p><a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer ">mock: https://github.com/udibo/mock</a></p>
 </li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p></p>
@@ -1929,10 +1929,10 @@
 </span></span><span class="line"><span class="cl"><span class="nx">comment</span><span class="err">:</span> <span class="kc">true</span>
 </span></span><span class="line"><span class="cl"><span class="nx">---</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c">## Refs</span>
+</span></span><span class="line"><span class="cl"><span class="c">## 引用</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">----</span>
-</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">staticaly</span><span class="p">.</span><span class="nx">com</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">jsdelivr</span><span class="p">.</span><span class="nx">net</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成文章后，直接更新需要更新的字段，如标签（tags）和分类（categories）等，然后在中间直接写文章就可以。</p>
@@ -2156,7 +2156,7 @@
 <blockquote>
 <p>尽情享用吧。..🎉🎉🎉🎉🎉</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>1.<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">https://gohugo.io/</a></li>
 <li>2.<a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">https://golang.google.cn/</a></li>
@@ -2274,7 +2274,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <blockquote>
 <p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://rc.sydney.edu.au/git-user-guide/history.html" target="_blank" rel="noopener noreffer ">1.https://rc.sydney.edu.au/git-user-guide/history.html</a></li>
 <li><a href="https://nvie.com/files/Git-branching-model.pdf" target="_blank" rel="noopener noreffer ">2.https://nvie.com/files/Git-branching-model.pdf</a></li>
@@ -2308,7 +2308,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </div><p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>
@@ -2361,13 +2361,13 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </div>
 </div><h2 id="晒个图">晒个图</h2>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY" target="_blank" rel="noopener noreffer ">2. 原文：https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Npm 安装 git 资源</title><link>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</link><pubDate>Fri, 19 Oct 2018 19:27:23 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -2438,14 +2438,14 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="恩没什么可说的了我真是来测试打赏功能的">恩，没什么可说的了我真是来测试打赏功能的。</h2>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

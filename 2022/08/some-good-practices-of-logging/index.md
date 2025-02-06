@@ -91,13 +91,13 @@ Avoid printing or recording any sensitive information, including but not limited
 A good log can not only facilitate program development and provide the most important auxiliary information for troubleshooting, it also gives optimization suggestions or data statistics for business or infrastructure.
 
 
-## Refs
+## 引用
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)

@@ -244,13 +244,13 @@
 <p>或者使用第三方成熟的 npm 包， 像 <a href="https://www.npmjs.com/package/jest-mock-console" target="_blank" rel="noopener noreffer ">jest-mock-console</a>, 这个包功能更强大一点。</p>
 </li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客: https://guzhongren.github.io/</a></li>
 <li><a href="http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger" target="_blank" rel="noopener noreffer ">Mock logger in jest: http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -372,7 +372,7 @@
 </div>
 </div><h2 id="总结">总结</h2>
 <p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://www.cypress.io/" target="_blank" rel="noopener noreffer ">Cypress: https://www.cypress.io/</a></li>
@@ -380,8 +380,8 @@
 <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Actions: https://docs.github.com/en/actions</a></li>
 <li><a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard: https://github.com/guzhongren/Powerboard</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -498,15 +498,15 @@
 </div>
 </div><p>然后运行 test，通过。</p>
 <p>Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
 </li>
 <li></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -656,7 +656,7 @@
 </ul>
 <h2 id="结论">结论</h2>
 <p>在软件工程中，在任何软件产品上市之前，性能测试都是必要的。它确保了客户的满意度，保护投资者的投资不受产品失败的影响。性能测试的成本通常可以通过提高客户满意度、忠诚度和保留度来弥补。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
@@ -665,8 +665,8 @@
 <p><a href="https://www.guru99.com/performance-testing.html" target="_blank" rel="noopener noreffer ">Performance Testing Tutorial: What is, Types, Metrics &amp; Example: https://www.guru99.com/performance-testing.html</a></p>
 </li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

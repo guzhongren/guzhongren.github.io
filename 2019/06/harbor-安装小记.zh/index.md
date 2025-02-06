@@ -241,14 +241,14 @@ alpine: digest: sha256:5ec3232b32e6876c0941d66d8392f667c77ca1ef14cafb85991deea43
 
 Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。
 
-## Refs
+## 引用
 
 * [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

@@ -44,10 +44,10 @@ always-auth=true
 
 再次执行 `yarn add xxx` 之后就会正常安装了，以后就可以愉快的安装私服或者公网上的 package 了。
 
-## Refs
+## 引用
 
 [1.https://yarnpkg.com/](https://yarnpkg.com/)
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

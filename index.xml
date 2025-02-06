@@ -74,7 +74,7 @@
 <h2 id="总结">总结</h2>
 <p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
 <p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a></li>
@@ -82,8 +82,8 @@
 <li><a href="https://github.com/hacs/get" target="_blank" rel="noopener noreffer ">HACS</a></li>
 <li><a href="https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options" target="_blank" rel="noopener noreffer ">Configuration options</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -218,12 +218,12 @@
 </div><h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -270,12 +270,12 @@
 </ul>
 <h2 id="总结">总结</h2>
 <p>配置即生产力。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -572,12 +572,12 @@
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>
 <p></p>
 <h2 id="总结">总结</h2>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -602,12 +602,12 @@
 <p>2023年，项目一塌糊涂。</p>
 <h2 id="2024">2024</h2>
 <p>&ldquo;家人最重要&rdquo; - 《燃爆点》， 正在看的一部电影。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -989,14 +989,14 @@
 </div><h2 id="总结">总结</h2>
 <p>学习最佳实践，可以节约时间，同时，也是真爱生命。</p>
 <p>项目工程地址: <a href="https://github.com/beef-noodles/py-project" target="_blank" rel="noopener noreffer ">https://github.com/beef-noodles/py-project</a></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html</a></li>
 <li><a href="https://www.delftstack.com/howto/python/python-import-from-parent-directory/" target="_blank" rel="noopener noreffer ">Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1246,14 +1246,14 @@
 </p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://developers.google.com/chat/api/guides/message-formats/text" target="_blank" rel="noopener noreffer ">Google Chat Message Format: https://developers.google.com/chat/api/guides/message-formats/text</a></li>
 <li><a href="https://developers.google.com/chat/how-tos/webhooks" target="_blank" rel="noopener noreffer ">Google Chat Webhooks: https://developers.google.com/chat/how-tos/webhooks</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1269,12 +1269,12 @@
 </blockquote>
 ]]></description></item><item><title>团队能力度量及追踪</title><link>https://guzhongren.github.io/2023/07/%E5%9B%A2%E9%98%9F%E8%83%BD%E5%8A%9B%E5%BA%A6%E9%87%8F%E5%8F%8A%E8%BF%BD%E8%B8%AA/</link><pubDate>Mon, 31 Jul 2023 22:12:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/07/%E5%9B%A2%E9%98%9F%E8%83%BD%E5%8A%9B%E5%BA%A6%E9%87%8F%E5%8F%8A%E8%BF%BD%E8%B8%AA/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="refs">Refs</h2>
+            </div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1352,12 +1352,12 @@
 <p>就像Thoughtworks 所倡导的，出了问题, 不要针对个人，不要问&quot;9：00～10：00, 你在干嘛&quot; 这样&quot;地震级&quot;的问题；而应该去分析为什么会出现这个Incident, 以后怎么避免。</p>
 <h2 id="总结">总结</h2>
 <p>在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告(Incident Report)这些才是最重要的。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1486,14 +1486,14 @@
 </ul>
 <h3 id="oidc-的流程图">OIDC 的流程图</h3>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow" target="_blank" rel="noopener noreffer ">Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA" target="_blank" rel="noopener noreffer ">SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

@@ -295,15 +295,15 @@ SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速�
 
 原文链接：<https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/>
 
-## Refs
+## 引用
 
 * [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)*
 * [2. 原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3](https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

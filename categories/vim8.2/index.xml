@@ -177,12 +177,12 @@ Vim8.2 下载：https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2</p>
 </span></span><span class="line"><span class="cl">链接方式：gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf  -ldl
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

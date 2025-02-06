@@ -101,7 +101,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </div>
 </div><h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
 <hr>
 <p></p>
@@ -246,7 +246,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>因为默认情况下 go test 会运行单元测试，为了防止单元测试的输出影响我们查看基准测试的结果，可以使用-run=匹配一个从来没有的单元测试方法，过滤掉单元测试的输出，我们这里使用 none，因为我们基本上不会创建这个名字的单元测试方法。</p>
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <h2 id="2golang-依赖注入-dependency-injectionhttpsguzhongrengithubio201909golang-e4be9de8b596e6b3a8e585a5dependency-injection"><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
 <a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></h2>
 <p></p>
@@ -731,13 +731,13 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 <p>为什么没有用到 Golang 的 Web 框架？</p>
 <p>因为我们的侧重点在 Golang 与 SQLLite，不在 API 实现上，最小化的实现目标，才是我们学习知识最快速的途径。</p>
 <p>原文链接：<a href="https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/" target="_blank" rel="noopener noreffer ">https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/</a></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
 <li><a href="https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3" target="_blank" rel="noopener noreffer ">2. 原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -1170,12 +1170,12 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </div>
 </div><h2 id="小结">小结</h2>
 <p>Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -1219,14 +1219,14 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -1270,14 +1270,14 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

@@ -73,10 +73,10 @@ wee_alloc = { version = "0.4.2", optional = true }
  * console_error_panic_hook ，用于将奔溃消息记录到开发人员控制台的功能。
  * wee_alloc，一个使代码量更小而优化的分配器。
 
-## Refs
+## 引用
 
 [1.https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

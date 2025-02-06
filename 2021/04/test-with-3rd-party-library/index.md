@@ -71,18 +71,18 @@ it("jwt", () => {
 
 Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 * [mocking-modules: https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options]:(https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

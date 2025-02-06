@@ -43,12 +43,12 @@
 
 > 勿以恶小而为之，勿以善小而不为 --《三国志·蜀志传》
 
-## Refs
+## 引用
 
 * [Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/](https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/)
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)

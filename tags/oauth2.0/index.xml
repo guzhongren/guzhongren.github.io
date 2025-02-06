@@ -113,14 +113,14 @@
 </ul>
 <h3 id="oidc-的流程图">OIDC 的流程图</h3>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow" target="_blank" rel="noopener noreffer ">Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA" target="_blank" rel="noopener noreffer ">SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

@@ -119,12 +119,12 @@
 </div><h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -461,7 +461,7 @@
 <ul>
 <li>只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://github.com/beef-noodles/git-crypt-test" target="_blank" rel="noopener noreffer ">Demo: git-crypt-test</a></p>
@@ -497,8 +497,8 @@
 <p><a href="https://www.lnmpy.com/blog/transcrypt-intro/" target="_blank" rel="noopener noreffer ">transcrypt 使用案例</a></p>
 </li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p></p>
@@ -608,7 +608,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <blockquote>
 <p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://rc.sydney.edu.au/git-user-guide/history.html" target="_blank" rel="noopener noreffer ">1.https://rc.sydney.edu.au/git-user-guide/history.html</a></li>
 <li><a href="https://nvie.com/files/Git-branching-model.pdf" target="_blank" rel="noopener noreffer ">2.https://nvie.com/files/Git-branching-model.pdf</a></li>
@@ -642,7 +642,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </div><p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>

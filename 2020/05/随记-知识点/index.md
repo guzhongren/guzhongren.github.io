@@ -23,15 +23,15 @@
 
 > 200 多年前，英国经济学家马尔萨斯提出，人口按几何级数增长，而粮食只能按算术级数增长。这样，人口增加到一定程度便出现粮食紧缺、人地矛盾，不可避免地反复出现饥馑、战争和疾病。（《人口原理》，马尔萨斯）， 举例：黑死病、西班牙大流感的传染病，伯罗奔尼撒战争、百年战争、一战二战的大规模战争，孟加拉大饥荒、印度大饥荒的大灾难
 
-## Refs
+## 引用
 
 * [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2. 图床：https://sm.ms/](https://sm.ms/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

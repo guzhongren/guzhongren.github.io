@@ -59,19 +59,19 @@ https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json
 
 CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [jsdelvr:https://www.jsdelivr.com/](https://www.jsdelivr.com/)
 * [prospectone: https://prospectone.io/](https://prospectone.io/)
 * [CDN: https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF](https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

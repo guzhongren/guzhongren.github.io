@@ -128,16 +128,16 @@ Extended Validation（EV）证书是目前高信任级别的 SSL 证书
 - [GeoTrust](https://www.geotrust.com/)
 - ...
 
-## Refs
+## 引用
 
 - [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 - [http://www.youdzone.com/signature.html](http://www.youdzone.com/signature.html)
 - [https://www.chinassl.net/ssltools/convert-ssl.html](https://www.chinassl.net/ssltools/convert-ssl.html)
 - [https://www.wosign.com/column/ssl_20211231.htm](https://www.wosign.com/column/ssl_20211231.htm)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ---
 

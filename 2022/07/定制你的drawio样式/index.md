@@ -142,15 +142,15 @@
 
 ![font](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/DrawIO/font.69qxu1ldebg0.webp)
 
-## Refs
+## 引用
 
 * [博客: https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [diagrams.net: https://www.diagrams.net/doc/faq/configure-diagram-editor](https://www.diagrams.net/doc/faq/configure-diagram-editor)
 * [vscode-drawio: https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio](https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)

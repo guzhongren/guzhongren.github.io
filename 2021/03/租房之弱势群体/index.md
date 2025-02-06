@@ -29,14 +29,14 @@
 * 干房地产的这帮人，就是一群唯利是图的家伙，绝对不能把 ta 当朋友。你想买房，你就是大爷，你不买房了，你就是孙子，甚至连孙子都不如
 * 多学点法律知识，干什么事都要有合同，要有验收标准，自己的钱只能到最后才能给别人。不然你就会成为下一个孙子。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

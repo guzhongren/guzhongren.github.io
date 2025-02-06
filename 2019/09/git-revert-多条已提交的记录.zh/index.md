@@ -23,10 +23,10 @@ $ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b8040123
 
 ![image](https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png)
 
-## Refs
+## 引用
 
 [1.https://guzhongren.github.io/](https://guzhongren.github.io/)
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

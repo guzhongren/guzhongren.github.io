@@ -106,7 +106,7 @@
 </div>
 </div><h2 id="总结">总结</h2>
 <p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://www.cypress.io/" target="_blank" rel="noopener noreffer ">Cypress: https://www.cypress.io/</a></li>
@@ -114,8 +114,8 @@
 <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Actions: https://docs.github.com/en/actions</a></li>
 <li><a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard: https://github.com/guzhongren/Powerboard</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

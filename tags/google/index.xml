@@ -234,14 +234,14 @@
 </p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://developers.google.com/chat/api/guides/message-formats/text" target="_blank" rel="noopener noreffer ">Google Chat Message Format: https://developers.google.com/chat/api/guides/message-formats/text</a></li>
 <li><a href="https://developers.google.com/chat/how-tos/webhooks" target="_blank" rel="noopener noreffer ">Google Chat Webhooks: https://developers.google.com/chat/how-tos/webhooks</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

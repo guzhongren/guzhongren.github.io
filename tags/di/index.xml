@@ -101,7 +101,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </div>
 </div><h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
 <hr>
 <p></p>

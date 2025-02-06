@@ -1005,7 +1005,7 @@ Application started, and listen to 127.0.0.1:1234
 
 最后感谢 [海门](https://yihaimen.github.io/) 和 [亦乐](https://github.com/hylerrix) 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。
 
-## Refs
+## 引用
 
 * [源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd](https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd)
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
@@ -1017,10 +1017,10 @@ Application started, and listen to 127.0.0.1:1234
 * [Node: https://nodejs.org/](https://nodejs.org/)
 * [mock: https://github.com/udibo/mock](https://github.com/udibo/mock)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

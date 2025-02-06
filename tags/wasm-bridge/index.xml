@@ -601,13 +601,13 @@
 <h2 id="后续">后续</h2>
 <p>后面会在这个基础上继续开发，并将 WASM 中的一些概念配置也写成文档共享在博客中。</p>
 <h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/web_assembly/tree/based_rust</a></h2>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

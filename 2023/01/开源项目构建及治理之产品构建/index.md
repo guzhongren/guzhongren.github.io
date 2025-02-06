@@ -233,7 +233,7 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 
 ![如何组织社区](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp)
 
-## Refs
+## 引用
 
 * [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Kubernates: https://kubernetes.io/](https://kubernetes.io/)
@@ -251,9 +251,9 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 * [Hugo: https://gohugo.io/](https://gohugo.io/)
 * [VuePress: https://vuepress.vuejs.org/](https://vuepress.vuejs.org/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
 ![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)

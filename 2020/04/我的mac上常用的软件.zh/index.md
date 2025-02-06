@@ -163,7 +163,7 @@ brew cask install itsycal
 brew cask install tencent-lemon
 ```
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Todo: https://todo.microsoft.com/tasks/](https://todo.microsoft.com/tasks/)
@@ -177,10 +177,10 @@ brew cask install tencent-lemon
 * [Adobe XD: https://www.adobe.com/cn/products/xd.html](https://www.adobe.com/cn/products/xd.html)
 * [Itsycal:https://www.mowglii.com/itsycal/](https://www.mowglii.com/itsycal/itsycalbanner2@2x.png)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

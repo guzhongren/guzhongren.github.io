@@ -86,7 +86,7 @@ services:
 
 `Docker-compopse` 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 `Cypress` 可以提高开发效率并可在 `Pipeline` 上保证程序的正确性。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [Cypress: https://www.cypress.io/](https://www.cypress.io/)
@@ -94,12 +94,12 @@ services:
 * [GitHub Actions: https://docs.github.com/en/actions](https://docs.github.com/en/actions)
 * [Powerboard: https://github.com/guzhongren/Powerboard](https://github.com/guzhongren/Powerboard)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

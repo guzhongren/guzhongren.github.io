@@ -35,16 +35,16 @@
 万事都有章法。分析系统有 C4 Model 等，做事可以 `分而治之`。
 当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。
 
-## Refs
+## 引用
 
 * [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

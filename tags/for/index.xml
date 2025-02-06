@@ -248,7 +248,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <li><strong>零信任</strong> 要有质疑精神，只要不是自己写的，就有可能有 bug， 不然那么多漏洞是怎么发现的</li>
 <li>Keep simple, Keep run</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
@@ -257,8 +257,8 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener noreffer ">Array.prototype.forEach()</a></p>
 </li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

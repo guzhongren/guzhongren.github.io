@@ -67,15 +67,15 @@
 <blockquote>
 <p>好习惯都是踩坑踩出来的</p>
 </blockquote>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q" target="_blank" rel="noopener noreffer ">3. 编写可靠 bash 脚本的一些技巧：https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q</a></li>
 <li></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p></p>
@@ -146,7 +146,7 @@
 </div><p></p>
 <h2 id="调试">调试</h2>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>

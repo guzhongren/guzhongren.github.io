@@ -97,10 +97,10 @@ ok      benchmark       1.297s
 下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。
 
-## Refs
+## 引用
 
 [1.https://golang.google.cn/](https://golang.google.cn/)
 [2.Golang 依赖注入 (Dependency Injection)](https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/)
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

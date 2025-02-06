@@ -74,7 +74,7 @@
 <h2 id="总结">总结</h2>
 <p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
 <p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a></li>
@@ -82,8 +82,8 @@
 <li><a href="https://github.com/hacs/get" target="_blank" rel="noopener noreffer ">HACS</a></li>
 <li><a href="https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options" target="_blank" rel="noopener noreffer ">Configuration options</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

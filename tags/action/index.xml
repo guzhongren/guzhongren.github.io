@@ -282,14 +282,14 @@
 <div class="echarts" id="id-1" style="width: 100%; height: 30rem;"></div>
 <h3 id="镜像大小比较">镜像大小比较</h3>
 <div class="echarts" id="id-2" style="width: 100%; height: 30rem;"></div>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer</a></li>
 <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Action: https://docs.github.com/en/actions</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

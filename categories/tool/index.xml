@@ -74,7 +74,7 @@
 <h2 id="总结">总结</h2>
 <p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
 <p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a></li>
@@ -82,8 +82,8 @@
 <li><a href="https://github.com/hacs/get" target="_blank" rel="noopener noreffer ">HACS</a></li>
 <li><a href="https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options" target="_blank" rel="noopener noreffer ">Configuration options</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -132,13 +132,13 @@
 </div>
 </div><h2 id="add-one">Add one</h2>
 <p>如此这样，以后在需要挂载特定目录时，只需要和 docker 的操作一样，只须挂载特定目录即可。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 <li><a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -388,14 +388,14 @@
 </div><h4 id="效果-1">效果</h4>
 <p></p>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客: https://guzhongren.github.io/</a></li>
 <li><a href="https://www.diagrams.net/doc/faq/configure-diagram-editor" target="_blank" rel="noopener noreffer ">diagrams.net: https://www.diagrams.net/doc/faq/configure-diagram-editor</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio" target="_blank" rel="noopener noreffer ">vscode-drawio: https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -693,7 +693,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <li>Unlike: <a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a> or some other web performance testing tool</li>
 <li>Its advantages are: <code>Open-Source</code>, <code>Free</code>, <code>Self-hosted</code> data and Server, <code>Easy to integrate</code>.</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://web.dev/i18n/zh/why-speed-matters/" target="_blank" rel="noopener noreffer ">Get Down to Business: Why the web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/</a></li>
 <li><a href="https://web.dev/i18n/zh/why-speed-matters" target="_blank" rel="noopener noreffer ">why Speed Matters？: https://web.dev/i18n/zh/why-speed-matters</a></li>
@@ -701,8 +701,8 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <li><a href="https://www.webpagetest.org/" target="_blank" rel="noopener noreffer ">WebPageTest: https://www.webpagetest.org/</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -998,15 +998,15 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <li>不同于：<a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a> 或者其他一些 Web 性能测试工具</li>
 <li>它的优势是: <code>Open-Source</code>, <code>Free</code>, <code>Self-hosted</code> data and Server, <code>Easy to integrate</code>。</li>
 </ul>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://web.dev/i18n/zh/why-speed-matters/" target="_blank" rel="noopener noreffer ">Get Down to Business: Why the Web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/</a></li>
 <li><a href="https://web.dev/i18n/zh/why-speed-matters" target="_blank" rel="noopener noreffer ">为什么速度很重要？: https://web.dev/i18n/zh/why-speed-matters</a></li>
 <li><a href="https://developers.google.cn/web/tools/lighthouse" target="_blank" rel="noopener noreffer ">Lighthouse: https://developers.google.cn/web/tools/lighthouse</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1304,14 +1304,14 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <div class="echarts" id="id-1" style="width: 100%; height: 30rem;"></div>
 <h3 id="镜像大小比较">镜像大小比较</h3>
 <div class="echarts" id="id-2" style="width: 100%; height: 30rem;"></div>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer</a></li>
 <li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Action: https://docs.github.com/en/actions</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1377,12 +1377,12 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </div>
 </div><h3 id="验证未升级">验证未升级</h3>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1425,12 +1425,12 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -1453,12 +1453,12 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <p>使用<code>CMD+,</code>快捷键打开<code>Preferences &gt; Profile &gt; Keys</code>， 点击<code>Presets...</code>选择<code> Natural Text Editing</code>
 从此，你的 itemr2 如你的 IDE 一样高效。</p>
 <p>再也不用为删除单个单词，整行代码，左右快速跳转烦恼了。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>我的 Mac 上常用的软件</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</link><pubDate>Wed, 01 Apr 2020 21:04:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</guid><description><![CDATA[<div class="featured-image">
@@ -1601,7 +1601,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h2 id="refs">Refs</h2>
+</div><h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://todo.microsoft.com/tasks/" target="_blank" rel="noopener noreffer ">Todo: https://todo.microsoft.com/tasks/</a></li>
@@ -1615,8 +1615,8 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <li><a href="https://www.adobe.com/cn/products/xd.html" target="_blank" rel="noopener noreffer ">Adobe XD: https://www.adobe.com/cn/products/xd.html</a></li>
 <li><a href="https://www.mowglii.com/itsycal/itsycalbanner2@2x.png" target="_blank" rel="noopener noreffer ">Itsycal:https://www.mowglii.com/itsycal/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item></channel></rss>

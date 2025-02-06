@@ -166,7 +166,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p></p>
 <h2 id="summary">Summary</h2>
 <p>Security is a very important issue no matter where you are. We can <strong>Shift Left Security</strong>, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">https://www.sonarqube.org/</a></li>
 <li><a href="https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities" target="_blank" rel="noopener noreffer ">https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities</a></li>
@@ -183,8 +183,8 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <li><a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -367,7 +367,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h2 id="总结">总结</h2>
 <p>无论你在哪里，安全都是一个非常重要的问题。我们可以将 “<strong>安全左移（Shift Left Security）</strong>”，这样就可以减少生产环境中的安全风险；对于扫描工具 Trivy 来说，它对于保证镜像的安全性非常有用，它不仅可以扫描镜像，还可以扫描 Git 仓库，文件系统等。</p>
 <p>最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">https://www.sonarqube.org/</a></li>
 <li><a href="https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities" target="_blank" rel="noopener noreffer ">https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities</a></li>
@@ -384,8 +384,8 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <li><a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family</a></li>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>

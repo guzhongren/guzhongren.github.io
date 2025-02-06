@@ -67,15 +67,15 @@
 
 * 做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。
 
-## Refs
+## 引用
 
 * [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
 * [2. 翻译：https://translate.google.cn/](https://translate.google.cn/)
 
-## Disclaimer
+## 免责声明
 
-本文仅代表个人观点，与 [Thoughtworks](https://www.Thoughtworks.com/) 公司无任何关系。
+本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

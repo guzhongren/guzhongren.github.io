@@ -88,6 +88,7 @@
     height: 40rem;
     width: 100%;
 "></iframe>
+
 ## 关于社区
 
 2018 年 8 月份与韩亦乐一起组织 FCC 西安社区的第一次前端大会，并在 12 月由我和另外几位小伙伴一起负责西安社区建设和运营。
@@ -103,5 +104,5 @@
 GPG KeyID: [D18AEC180356622D](https://github.com/guzhongren.gpg)
 
 ----
-![谷哥说-微信公众号](https://cdn.staticaly.com/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 

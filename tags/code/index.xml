@@ -2,14 +2,14 @@
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
 <iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
 <li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 ]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p></p>
@@ -80,7 +80,7 @@
 </div><p></p>
 <h2 id="调试">调试</h2>
 <p></p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>
@@ -190,7 +190,7 @@
 </div>
 </div><h2 id="总结">总结</h2>
 <p>代码总是可以解决很多问题，在 Coding 时，应该及时重构，将代码中的坏味道及时剔除，为以后业务功能开发解决技术债。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
 <p></p>

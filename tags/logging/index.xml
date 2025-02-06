@@ -97,12 +97,12 @@ Specific formatting is also possible for log information:</li>
 ……</p>
 <h2 id="summary">Summary</h2>
 <p>A good log can not only facilitate program development and provide the most important auxiliary information for troubleshooting, it also gives optimization suggestions or data statistics for business or infrastructure.</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
@@ -226,15 +226,15 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <h2 id="总结">总结</h2>
 <p>好的日志不仅可以为程序开发提供便利，为故障排除提供最重要的辅助信息，更可以为业务或基础设施提供优化建议或数据统计。</p>
-<h2 id="refs">Refs</h2>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://logit.io/blog/post/the-top-21-grafana-dashboards-and-visualisations" target="_blank" rel="noopener noreffer ">THE TOP 25 GRAFANA DASHBOARD EXAMPLES</a></li>
 <li><a href="https://grafana.com/" target="_blank" rel="noopener noreffer ">Grafana lab</a></li>
 <li><a href="https://www.sumologic.com/" target="_blank" rel="noopener noreffer ">SumoLogic</a></li>
 <li><a href="https://logging.apache.org/log4j" target="_blank" rel="noopener noreffer ">Log4j</a></li>
 </ul>
-<h2 id="disclaimer">Disclaimer</h2>
-<p>本文仅代表个人观点，与 <a href="https://www.Thoughtworks.com/" target="_blank" rel="noopener noreffer ">Thoughtworks</a> 公司无任何关系。</p>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
 <p></p>
 <blockquote>
