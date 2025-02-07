@@ -1,6 +1,519 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Shell - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/shell/</link><description>Shell - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 06 Apr 2020 23:09:54 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/shell/" rel="self" type="application/rss+xml"/><item><title>调试 bash</title><link>https://guzhongren.github.io/2020/04/%E8%B0%83%E8%AF%95bash.zh/</link><pubDate>Mon, 06 Apr 2020 23:09:54 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E8%B0%83%E8%AF%95bash.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><p>最近在做 DevOps 的工作，主要是做一个蓝绿部署的方案，在这部分中涉及到了写 shell， Shell 作为一种程序语言，那么对于开发人员肯定是要在部署到正式或者生产环境前进行调试的，在 coding 过程中，发现 shell 的调试其实和平时写的 JS, Java, Rust 等的调试不同，Shell 只能看你每一步执行的语句，至于具体执行是否正确，得由 coding 的人来写正确；好吧，有点难理解，那么我来举个🌰；</p>]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
+            </div><p>最近在做 DevOps 的工作，主要是做一个蓝绿部署的方案，在这部分中涉及到了写 shell， Shell 作为一种程序语言，那么对于开发人员肯定是要在部署到正式或者生产环境前进行调试的，在 coding 过程中，发现 shell 的调试其实和平时写的 JS, Java, Rust 等的调试不同，Shell 只能看你每一步执行的语句，至于具体执行是否正确，得由 coding 的人来写正确；好吧，有点难理解，那么我来举个🌰；</p>
+<h2 id="举例">举例</h2>
+<p>有如下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">readonly</span> <span class="nv">FIRST_VALUE</span><span class="o">=</span><span class="s2">&#34;first value&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;你会得到替换后的值：</span><span class="si">${</span><span class="nv">FIRST_VALUE</span><span class="si">}</span><span class="s2">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>脚本很简单，简单一句话，定义了一个变量<code>FIRST_VALUE</code>， 然后用<code>echo</code>输出，在输出的时候应用了刚才定义的变量<code>FIRST_VALUE</code>，赋予执行权限后，如果执行<code>./run.sh</code>之后，只会在终端输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">你会得到替换后的值：first value
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>但是在简单的脚本中还可以直接运行，如果运行一个复杂的脚本，那么出问题了的几率击溃比较高了，那么调试脚本积极非常重要了。</p>
+<h2 id="debug">debug</h2>
+<p>shell 的调试说来也非常简单，直接运行<code>sh -x ...</code>就可以了，对于本脚本我们执行如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh -x run.sh
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>会得到输出，如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">+ <span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">+ <span class="nb">readonly</span> <span class="s1">&#39;FIRST_VALUE=first value&#39;</span>
+</span></span><span class="line"><span class="cl">+ <span class="nv">FIRST_VALUE</span><span class="o">=</span><span class="s1">&#39;first value&#39;</span>
+</span></span><span class="line"><span class="cl">+ <span class="nb">echo</span> <span class="s1">&#39;你会得到替换后的值：first value&#39;</span>
+</span></span><span class="line"><span class="cl">你会得到替换后的值：first value
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这里面，你会看到每条 shell 脚本运行的具体命令，以及参数等内容，这条命令也是一种执行，会对命令涉及的内容产生实际效果，不要以为知识<code>dry run</code>。</p>
+<h2 id="总结">总结</h2>
+<blockquote>
+<p>好习惯都是踩坑踩出来的</p>
+</blockquote>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q" target="_blank" rel="noopener noreffer ">3. 编写可靠 bash 脚本的一些技巧：https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q</a></li>
+<li></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/moaTGH6EWiqyhRt.png" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
-<p>在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。</p>]]></description></item></channel></rss>
+<p>在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。</p>
+<h2 id="分析">分析</h2>
+<p>因为 Harbor 是用 docker 跑起来的，所以我们的机器上必须有 docker 环境，还有比较中要的一点，Harbor 需要使用 docker-compose, 所以需要 docker-compose。</p>
+<h2 id="安装">安装</h2>
+<h3 id="docker-安装">docker 安装</h3>
+<p>略。..（相信你肯定不会怪我）</p>
+<h3 id="docker-compose-安装">docker-compose 安装</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ sudo curl -L <span class="s2">&#34;https://github.com/docker/compose/releases/download/1.24.0/docker-compose-</span><span class="k">$(</span>uname -s<span class="k">)</span><span class="s2">-</span><span class="k">$(</span>uname -m<span class="k">)</span><span class="s2">&#34;</span> -o /usr/local/bin/docker-compose
+</span></span><span class="line"><span class="cl">$ sudo chmod +x /usr/local/bin/docker-compose
+</span></span><span class="line"><span class="cl">$ docker-compose --version
+</span></span><span class="line"><span class="cl">docker-compose version 1.24.0, build 1110ad01
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="安装-harbor">安装 Harbor</h3>
+<blockquote>
+<p>离线安装版</p>
+</blockquote>
+<h4 id="获取并解压">获取并解压</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ wget https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.0.tgz
+</span></span><span class="line"><span class="cl">$ tar xvf harbor-offline-installer-v1.8.0.tgz
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>解压会生成 Harbor 文件夹</p>
+<h4 id="修改配置文件">修改配置文件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> Harbor
+</span></span><span class="line"><span class="cl">$ vim /Harbor.yaml
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>需要配置的地方有几处，但最重要的是 hostname, hostname 必须指定为域名，不能使 localhost,127.0.0.1 这样的地址，别的密码、端口可可定义。如下是我的配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># Configuration file of Harbor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># The IP address or hostname to access admin UI and registry service.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># DO NOT use localhost or 127.0.0.1, because Harbor needs to be accessed by external clients.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l">hub.k8s.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># http related config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">http</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># port for http, default is 80. If https enabled, this port will redirect to https port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="m">80</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># https related config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># https:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # https port for harbor, default is 443</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   port: 443</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # The path of cert and key files for nginx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   certificate: /your/certificate/path</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   private_key: /your/private/key/path</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Uncomment external_url if you want to enable external proxy</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># And when it enabled the hostname will no longer used</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># external_url: https://reg.mydomain.com:8433</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># The initial password of Harbor admin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># It only works in first time to install harbor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Remember Change the admin password from UI after launching Harbor.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">harbor_admin_password</span><span class="p">:</span><span class="w"> </span><span class="l">Harbor12345</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Harbor DB configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">database</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># The password for the root user of Harbor DB. Change this before any production use.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l">root123</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># The default data volume</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">data_volume</span><span class="p">:</span><span class="w"> </span><span class="l">/data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Harbor Storage settings by default is using /data dir on local filesystem</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Uncomment storage_service setting If you want to using external storage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># storage_service:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # ca_bundle is the path to the custom root ca certificate, which will be injected into the truststore</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # of registry&#39;s and chart repository&#39;s containers.  This is usually needed when the user hosts a internal storage with self signed certificate.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   ca_bundle:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # storage backend, default is filesystem, options include filesystem, azure, gcs, s3, swift and oss</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # for more info about this configuration please refer https://docs.docker.com/registry/configuration/</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   filesystem:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     maxthreads: 100</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # set disable to true when you want to disable registry redirect</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   redirect:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     disabled: false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Clair configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">clair</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># The interval of clair updaters, the unit is hour, set to 0 to disable the updaters.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">updaters_interval</span><span class="p">:</span><span class="w"> </span><span class="m">12</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Config http proxy for Clair, e.g. http://my.proxy.com:3128</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Clair doesn&#39;t need to connect to harbor internal components via http proxy.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">http_proxy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">https_proxy</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">no_proxy</span><span class="p">:</span><span class="w"> </span><span class="m">127.0.0.1</span><span class="p">,</span><span class="l">localhost,core,registry</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobservice</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Maximum number of job workers in job service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">max_job_workers</span><span class="p">:</span><span class="w"> </span><span class="m">10</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">chart</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Change the value of absolute_url to enabled can enable absolute url in chart</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">absolute_url</span><span class="p">:</span><span class="w"> </span><span class="l">disabled</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Log configurations</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">log</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># options are debug, info, warning, error, fatal</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">level</span><span class="p">:</span><span class="w"> </span><span class="l">info</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Log files are rotated log_rotate_count times before being removed. If count is 0, old versions are removed rather than rotated.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rotate_count</span><span class="p">:</span><span class="w"> </span><span class="m">50</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># Log files are rotated only if they grow bigger than log_rotate_size bytes. If size is followed by k, the size is assumed to be in kilobytes.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># If the M is used, the size is in megabytes, and if G is used, the size is in gigabytes. So size 100, size 100k, size 100M and size 100G</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># are all valid.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">rotate_size</span><span class="p">:</span><span class="w"> </span><span class="l">200M</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c"># The directory on your host that store log</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l">/var/log/harbor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#This attribute is for migrator to detect the version of the .cfg file, DO NOT MODIFY!</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">_version</span><span class="p">:</span><span class="w"> </span><span class="m">1.8.0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Uncomment external_database if using external database. Currently only support POSTGRES.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Four databases are needed to be create first by users for Harbor core, Clair, Notary server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># and Notary signer. And the tables will be generated automatically when Harbor starting up.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># NOTE: external_database is unable to custom attributes individually, you must do them in block.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># external_database:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   harbor:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     host: harbor_db_host</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     port: harbor_db_port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     db_name: harbor_db_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     username: harbor_db_username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     password: harbor_db_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     ssl_mode: disable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   clair:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     host: clair_db_host</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     port: clair_db_port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     db_name: clair_db_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     username: clair_db_username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     password: clair_db_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     ssl_mode: disable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   notary_signer:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     host: notary_signer_db_host</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     port: notary_signer_db_port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     db_name: notary_signer_db_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     username: notary_signer_db_username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     password: notary_signer_db_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     ssl_mode: disable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   notary_server:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     host: notary_server_db_host</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     port: notary_server_db_port</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     db_name: notary_server_db_name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     username: notary_server_db_username</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     password: notary_server_db_password</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#     ssl_mode: disable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Uncomment external_redis if using external Redis server</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># external_redis:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   host: redis</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   port: 6379</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   password:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   # db_index 0 is for core, it&#39;s unchangeable</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   registry_db_index: 1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   jobservice_db_index: 2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   chartmuseum_db_index: 3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Uncomment uaa for trusting the certificate of uaa instance that is hosted via self-signed cert.</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># uaa:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c">#   ca_file: /path/to/ca</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="执行安装">执行安装</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ./install.sh
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">Creating harbor-portal     ... <span class="k">done</span>
+</span></span><span class="line"><span class="cl">Creating nginx             ... <span class="k">done</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> ----Harbor has been installed and started successfully.----
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
+</span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
+<p></p>
+<h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
+<blockquote>
+<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ vim /etc/docker/daemon.json
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;registry-mirrors&#34;</span>: <span class="o">[</span><span class="s2">&#34;https://gmjjwogo.mirror.aliyuncs.com&#34;</span><span class="o">]</span>,
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;insecure-registries&#34;</span>: <span class="o">[</span><span class="s2">&#34;hub.k8s.com&#34;</span><span class="o">]</span> <span class="c1"># 追加内容，必须符合 json 规范</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="重启-docker">重启 docker</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ systemctl restart docker
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="将本地-golang-镜像推送到私有仓库">将本地 golang 镜像推送到私有仓库</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ docker login hub.k8s.com
+</span></span><span class="line"><span class="cl">Username: admin
+</span></span><span class="line"><span class="cl">Password:
+</span></span><span class="line"><span class="cl">WARNING! Your password will be stored unencrypted in /root/.docker/config.json.
+</span></span><span class="line"><span class="cl">Configure a credential helper to remove this warning. See
+</span></span><span class="line"><span class="cl">https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Login Succeeded
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="为-golang-打标签并推送镜像">为 golang 打标签并推送镜像</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ docker tag golang:alpine hub.k8s.com/cms/golang:alpine
+</span></span><span class="line"><span class="cl">$  docker push hub.k8s.com/cms/golang:alpine
+</span></span><span class="line"><span class="cl">The push refers to repository <span class="o">[</span>hub.k8s.com/cms/golang<span class="o">]</span>
+</span></span><span class="line"><span class="cl">23419e186866: Pushed
+</span></span><span class="line"><span class="cl">1f6ba46a9c52: Pushed
+</span></span><span class="line"><span class="cl">968d46c1d20e: Pushed
+</span></span><span class="line"><span class="cl">b87598efb2f0: Pushed
+</span></span><span class="line"><span class="cl">f1b5933fe4b5: Pushed
+</span></span><span class="line"><span class="cl">alpine: digest: sha256:5ec3232b32e6876c0941d66d8392f667c77ca1ef14cafb85991deea4339b92da size: <span class="m">1365</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="小结">小结</h2>
+<p>Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

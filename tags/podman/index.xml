@@ -22,4 +22,35 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="测试">测试</h2>
-<p>运行如下命令，可以在命令行里看到本机的目录和文件。</p>]]></description></item></channel></rss>
+<p>运行如下命令，可以在命令行里看到本机的目录和文件。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman run -ti --rm -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span> busybox
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="add-one">Add one</h2>
+<p>如此这样，以后在需要挂载特定目录时，只需要和 docker 的操作一样，只须挂载特定目录即可。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

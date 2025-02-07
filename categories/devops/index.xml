@@ -2,14 +2,528 @@
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>最近上了一个Ops 的项目，此Ops 非彼Ops。
-一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色。需要在开发上线之后解决所有生产环境的问题，并且为客户方解决他们日常管理中的各种问题，还有为客户产品的使用者解决线上生产问题或着寻找他们提出的各种问题的原因。</p>]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</link><pubDate>Mon, 11 Oct 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
+一般的Ops 都是直接在生产环境进行做一些维护升级等，而我们的Ops工作是一个类似客服的角色。需要在开发上线之后解决所有生产环境的问题，并且为客户方解决他们日常管理中的各种问题，还有为客户产品的使用者解决线上生产问题或着寻找他们提出的各种问题的原因。</p>
+<p>由于项目非常大，有多达20+的微服务，还有各种用户设备；而我们团队在这方面没有什么经验，而且Onboarding 基本都没有，大多时候都需要猜。</p>
+<h2 id="onboarding">Onboarding</h2>
+<p>没有Onboarding，那我们就创造 Onboarding。</p>
+<p>项目很大，同事给的Onboarding 很短，只是一些链接。在已有知识的基础上，利用Logseq 整理了Onboarding 文档，为未来加入项目的同事提供更好的Onboardign流程。</p>
+<p>利用在之前项目上的总结，形成了这个项目上的Oboarding 流程。包含项目背景，期望，词汇目录，组织架构，工具集，Leave Plan, Ops Flow, 工作模板等。</p>
+<h2 id="流程化">流程化</h2>
+<p>有时候Ops 的工作其实很流程化，比如每周或者每天都要给特定的人发送Report, 那我们就可以将经常用的SQL，邮件模板等存起来，到时候一运行直接发送即可。</p>
+<p>还有，比如收到了线上的 Issue, 可以利用 Logseq 的模板功能，直接生成处理流程目录，这样就省了很多时间去思考应该考虑哪些方面或者需要有什么样的输出。</p>
+<h2 id="记录">记录</h2>
+<p>凡事都要记着。好记性不如烂笔头。</p>
+<p>俗话说的真好，在Ops 工作流程中，也是一样。因为很多东西不是一天两天就能搞定，对于时间长的工作来说，如果有个记录那么就能很快想起以前干过什么，之后要干什么了。有时候需要一些截图，可以直接放在笔记工具中，这样也可以很快找到所谓的证据。证据在Ops工作中可是非常重要的东西。</p>
+<p>在自己的笔记工具中记录是一方面，另一方面，我们需要让客户知道我们每天的进度，那么我们也需要将我们的进度通过不同的方式共享给他们，作为文字，当然是首选方式。</p>
+<h2 id="总结">总结</h2>
+<p>多经历一些项目吧，你认为的只是你认为的。
+新加坡人挺卷的，是的，挺卷的。
+项目也挺卷的，今天还有人找我想让我去做新加坡某项目的前端&hellip;&hellip;</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</link><pubDate>Mon, 11 Oct 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
             </div><h2 id="abstract">Abstract</h2>
 <p>In modern software development, we leverage public images as base images to build up applications images quickly and deploy them into the production environment.</p>
-<p>With more and more applications containerized, container security is also becoming more important. To use vulnerability scanners, we can bring forward the security feedback cycle which is traditionally done towards the end. This aligns closely with our belief that by adopting agile, we will be able to get faster feedback. This is what we are doing in order to achieve it.</p>]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</link><pubDate>Sun, 26 Sep 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
+<p>With more and more applications containerized, container security is also becoming more important. To use vulnerability scanners, we can bring forward the security feedback cycle which is traditionally done towards the end. This aligns closely with our belief that by adopting agile, we will be able to get faster feedback. This is what we are doing in order to achieve it.</p>
+<h2 id="pain-points-on-application-environment-security">Pain points on application environment security</h2>
+<p></p>
+<p>Now, we use advanced technology to build up our application, like NodeJS, Java and so on,  then store the code repository on git platforms like GitHub, Gitlab and so on. Code repository consists of our code and dependencies; For dependencies, we can use tools to ensure security like npm audit of NodeJS, and Dependabot of GitHub; And for our business code, there is another security tool to scan, like <a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">SoneQube</a>.</p>
+<p>So, for the dependencies and our business code, those things are under our control, we can ensure the application’s security and get fast feedback and build confidence by using all kinds of tools before we deploy our application into the production environment. As you know, the basic system environment which our application runs is out of our control. Let’s consider from the opposite side, if we can’t ensure the security of our application and its system environment, it will lead to unexpected problems, like hackers attack, leakage of user information, property loss, what&rsquo;s more, cause damage to the reputation of the company. So, it is important to ensure the security of our product.</p>
+<h2 id="the-value-of-keeping-container-image-secure">The value of keeping container image secure</h2>
+<h3 id="protect-the-clients-property-and-reputation">Protect the client&rsquo;s property and reputation</h3>
+<p>We supply professional services for our client, so we must ensure every line of code is reliable and secure. Because code is property and reputation. For ourselves, just ensure the security of code, and the environment of application, the client can achieve the maximum benefit.</p>
+<h3 id="build-our-respected-brand">Build our respected brand</h3>
+<p>The work we do is to make our clients succeed. Only if our customers succeed, we can succeed. So, we did not only archive business value, but also protect the security of the product.</p>
+<h2 id="best-2-solutions-to-keep-container-images-secure">Best 2 solutions to keep container images secure</h2>
+<p></p>
+<h3 id="solution-1-scan-the-image-at-a-regular-time-in-the-image-registry">Solution 1: Scan the image at a regular time in the image registry</h3>
+<p>In this way, we need to add a security scanner for the images&rsquo; registry. The scanner might be a cron job or an operable step that can be triggered by the operator.</p>
+<p>It will be automatically triggered by a cron job when a special time. For example, docker hub scans their official registry at a special time, it will send an alert to the organizer when there are any vulnerabilities.</p>
+<h3 id="solution-2-integrate-the-scanner-within-your-cicd-pipeline">Solution 2: Integrate the scanner within your CI/CD pipeline</h3>
+<p>In another way, we can scan the image product in the pipeline, it is more simple and efficient. The pipeline will automatically execute the command that scans the image when we push code to the code repository.  Because the pipeline scans the product mechanically for every time, so we can find any security problem and fix it in time.</p>
+<p>Now, more and more teams or groups use agile to develop their projects. If we can find any vulnerabilities as early as possible, we can reduce the risk of the product before the product is published. The pipeline is a good tool to ensure the security of your product every line of code because it can automatically execute when you commit your code.</p>
+<h2 id="container-image-scanner-comparison">Container image scanner comparison</h2>
+<p>For the above solution, we surveyed several scanner tools, like <a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">Trivy</a>,<a href="https://github.com/quay/clair" target="_blank" rel="noopener noreffer ">Claire</a>, <a href="https://github.com/anchore/anchore-engine" target="_blank" rel="noopener noreffer ">Anchore Engine</a>, <a href="https://github.com/quay/quay" target="_blank" rel="noopener noreffer ">Quay</a>,<a href="https://hub.docker.com/" target="_blank" rel="noopener noreffer ">Docker Hub</a> and <a href="https://cloud.google.com/container-registry" target="_blank" rel="noopener noreffer ">GCR</a>. We made a comparison from different dimensions.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Scanner</th>
+          <th style="text-align: left">OS packages</th>
+          <th style="text-align: left">Application dependencies</th>
+          <th style="text-align: left">Easy to use</th>
+          <th style="text-align: left">Accuracy</th>
+          <th style="text-align: left">Suitable for CI</th>
+          <th style="text-align: left">Suitable for Solution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Trivy</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Clair</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Anchore Engine</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quay</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Docker Hub</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐⭐⭐</td>
+          <td style="text-align: left">⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">GCR</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+  </tbody>
+</table>
+<p>Firstly we can separate those scanners into 2 parts suitable for solution, the Trivy, Clair, Anchore Engine, and Quay are suitable for solution, the others are suitable for solution 1.</p>
+<p>For the first dimension: OS package, those scanners can do it, but for the second dimension: Application dependence, just only Trivy and Anchore engine can do it, and for the fifth dimension is it suitable for ci; only the first three left.</p>
+<p>For the Trivy, Clair, and Anchore Engine, the communities of these three are very active, so we could not care about anyone to solve your issues; And as a tool, it must be easy to use and there is good documentation to reference. The documentation of Trivy is very detailed and very friendly. But for the vulnerability database, Clair ingests vulnerability metadata at regular intervals from a configured set of sources and stores the data in its database. Trivy and Anchore Engine will download the latest vulnerability metadata and cache it in a local file,
+it will check the update to keep the metadata latest when the tool runs again. At the same time, the usage of Trivy is more friendly, because we can filter the different severity which you can specify, but it is not allowed for Anchore Engine.</p>
+<p>March 16, 2020, Aqua Security, the leading platform provider for securing cloud-native applications and infrastructure, announced today that its open-source Trivy vulnerability scanner is being added as an integrated option in widely used cloud-native platforms, CNCF’s Harbor registry and Mirantis Docker Enterprise.  You can find this post <a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">here</a>.</p>
+<h2 id="trivy-in-thoughtworks-technology-radar-volume-23">Trivy in Thoughtworks Technology radar volume 23</h2>
+<p></p>
+<p>Thoughtworks Technology Radar is famous for accurately responding to technological trends; In the latest technology radar, Thoughtworks put the Trivy into the <strong>adopt</strong> area, which means Trivy is useful, valuable and practicable.</p>
+<h2 id="inner-working-of-trivy">Inner working of Trivy</h2>
+<p></p>
+<p>Before we use Trivy, we need to know how Trivy works inside. As you see, there are 2 steps; first, we run the Trivy command, Trivy will download the vulnerability DB from the <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">NVD</a> website into the local machine. And then Trivy uses the vulnerability data to scan every layer of your image.</p>
+<h2 id="how-to-use-trivy">How To Use Trivy</h2>
+<p></p>
+<h3 id="pipeline">Pipeline</h3>
+<p>Now we have to know how Trivy works inside, we can integrate it into our pipeline; you can see this pipeline, first, we build code into docker image, next, Trivy will check the vulnerabilities in the docker image that build from the last step; if there is no vulnerability, the image will be pushed to the image registry and deploy it to the production environment. If there are some vulnerabilities, the pipeline will be broken by the Trivy command line, you need to fix the vulnerability to make the pipeline green.</p>
+<h3 id="usage-of-trivy">Usage of Trivy</h3>
+<p>Before we write code to integrate, we have to know how to use Trivy. As we know, Trivy is a binary application, so we can use it in the command line. At the same time, Trivy provides its docker image, so we can easily setup it and use it, the command is as follows. For this command, we need to highlight some parameters.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ docker run --rm <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  aquasec/trivy <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  image <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --exit-code <span class="m">1</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --ignore-unfixed <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>-v /var/run/docker.sock:/var/run/docker.sock  If you would like to scan the image on your local host machine, you need to mount docker.sock</li>
+<li>&ndash;ignore-unfixed Ignore the unfixed issue of vulnerability; If there are some unfixed vulnerabilities, trivy will ignore those vulnerabilities</li>
+<li>&ndash;severity Set the vulnerability level which you want to scan</li>
+<li>&ndash;exit-code Status of trivy when vulnerabilities were found (default: 0). In the pipeline if you set the value to 1, the pipeline will exit and not run continually if you set it to 0, the pipeline will continually run but report the result. So, if you wanna break the pipeline, you can set it to 1.</li>
+</ul>
+<p>For more information about the arguments and other usages with different ways, please visit the website of Trivy organization by this link: <a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">https://github.com/aquasecurity/trivy</a>.</p>
+<h3 id="demo">Demo</h3>
+<p>Below is a demo to show how the trivy breaks the pipeline and what happens when we fix the issues; This project is about to build a Buildkite dashboard, it will filter the built information of your organization which you specify. We use Github actions to build application and setup the Trivy in the pipeline;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Trivy scanner</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      docker run --rm \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      -v /var/run/docker.sock:/var/run/docker.sock \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      aquasec/trivy image \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      --severity HIGH,CRITICAL \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>In this build job, we use <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nignx:1.18</a> as a base image to build application images. This build failed because there are some vulnerabilities.</p>
+<p></p>
+<p>Now, we must fix this issue to continue delivery. There are 2 steps to do, firstly, we should use the latest Nginx image as a base image; secondly, we could ignore unfixed vulnerabilities, because maybe we are unable to fix vulnerabilities at the system level. You can review the change of code by clicking this link:
+<a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a></p>
+<p></p>
+<h2 id="summary">Summary</h2>
+<p>Security is a very important issue no matter where you are. We can <strong>Shift Left Security</strong>, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">https://www.sonarqube.org/</a></li>
+<li><a href="https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities" target="_blank" rel="noopener noreffer ">https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities</a></li>
+<li><a href="https://github.com/marketplace/actions/aqua-security-trivy" target="_blank" rel="noopener noreffer ">https://github.com/marketplace/actions/aqua-security-trivy</a></li>
+<li><a href="https://github.com/quay/clair" target="_blank" rel="noopener noreffer ">https://github.com/quay/clair</a></li>
+<li><a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">https://github.com/aquasecurity/trivy</a></li>
+<li><a href="https://github.com/anchore/anchore-engine" target="_blank" rel="noopener noreffer ">https://github.com/anchore/anchore-engine</a></li>
+<li><a href="https://github.com/quay/quay" target="_blank" rel="noopener noreffer ">https://github.com/quay/quay</a></li>
+<li><a href="https://cloud.google.com/container-registry" target="_blank" rel="noopener noreffer ">https://cloud.google.com/container-registry</a></li>
+<li><a href="https://goharbor.io/blog/harbor-1.10-release/" target="_blank" rel="noopener noreffer ">https://goharbor.io/blog/harbor-1.10-release/</a></li>
+<li><a href="https://www.thoughtworks.com/radar/tools?blipid=201911077" target="_blank" rel="noopener noreffer ">https://www.thoughtworks.com/radar/tools?blipid=201911077</a></li>
+<li><a href="https://cve.mitre.org/index.html" target="_blank" rel="noopener noreffer ">https://cve.mitre.org/index.html</a>
+<a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">https://nvd.nist.gov</a></li>
+<li><a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family</a></li>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</link><pubDate>Sun, 26 Sep 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
             </div><h2 id="摘要">摘要</h2>
 <p>在现代软件开发中， 我们会使用一些公共镜像作为基础镜像来快速构建我们的应用镜像，并将其部署到生产环境中。</p>
-<p>随着越来越多的应用程序被容器化，容器安全也随之变得越来越重要。在项目的 Pipeline 中， 我们可以使用漏洞扫描器（Vulnerability Scanners）进行扫描并提前获得反馈，实现 “<strong>安全左移</strong>” ，也可以更好的实践敏捷。</p>]]></description></item><item><title>最近我是 DevOps</title><link>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</link><pubDate>Tue, 22 Sep 2020 19:46:57 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</guid><description><![CDATA[<div class="featured-image">
+<p>随着越来越多的应用程序被容器化，容器安全也随之变得越来越重要。在项目的 Pipeline 中， 我们可以使用漏洞扫描器（Vulnerability Scanners）进行扫描并提前获得反馈，实现 “<strong>安全左移</strong>” ，也可以更好的实践敏捷。</p>
+<h2 id="基于容器的应用程序的安全痛点">基于容器的应用程序的安全痛点</h2>
+<p></p>
+<p>现在，我们使用先进的技术来构建我们的应用程序，如 NodeJS、 Java 和 Kotlin 等，然后将代码库存储在托管的 Git 平台上，如 GitHub、Gitlab 等。代码库由我们的业务代码和依赖关系组成；对于依赖项，我们可以使用专业的扫描工具来确保安全，比如 NodeJS 的 npm audit , GitHub 的 Dependabot；至于我们的业务代码，可以使用其他的一些安全工具可以扫描，比如 <a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">SoneQube</a> 等。</p>
+<p>因此，对于依赖（ Dependencies）和我们的业务代码，这些都在我们的控制之下，我们可以确保应用程序的安全性，并且在 Pipeline 上获得快速反馈；同时在我们将应用程序部署到生产环境之前可以通过使用各种工具建立信心。但是，通常情况下我们的应用程序运行的系统环境是不受我们控制的，可能存在潜在的安全漏洞。在这我们可以换位思考一下，如果我们不能保证我们的应用程序运行的系统的环境安全，就会导致各种各样意想不到的问题，如黑客攻击、用户信息泄露、财产损失，更会对公司的声誉造成损害。所以，确保我们产出物（Artifact）的安全是很重要的。</p>
+<h2 id="保持容器镜像安全的价值">保持容器镜像安全的价值</h2>
+<h3 id="保护客户的财产property和声誉reputation">保护客户的财产（Property）和声誉（Reputation）</h3>
+<p>我们为公司或客户提供专业的服务，所以我们必须确保每一行代码都是可靠和安全的。因为代码就是公司或者客户的财产和名誉。作为开发者，只要保证代码及应用程序的环境的安全性，公司或者客户就能获得最大的效益。声誉即价值。</p>
+<h3 id="打造受人尊敬的品牌branding">打造受人尊敬的品牌（Branding）</h3>
+<p>我们的工作就是让我们的公司或客户成功。只有公司或客户成功，我们才能成功。因此，我们不仅要实现业务价值，还需要保护了产品的安全。用户使用安全的产品或者服务得到更大的价值，公司或者客户的品牌效应就会扩大，从而带来更大的价值。品牌及价值。</p>
+<h2 id="保持容器镜像安全的-2-个最佳方案">保持容器镜像安全的 2 个最佳方案</h2>
+<p></p>
+<h3 id="方案-1-在镜像注册表中定期扫描">方案 1： 在镜像注册表中定期扫描</h3>
+<p>通过这种方式，我们需要为镜像注册表添加一个安全扫描程序，扫描程序可以是一个定时任务（Cron Job） 作业，也可以是由特定的人触发的可执行操作。</p>
+<p>如果是一个定时任务，它将在特定时刻由定时任务自动触发。例如，Docker Hub 会在特定的时间扫描他们的官方注册表，当有任何漏洞被扫描出来时，它会向镜像维护者发送报警信息。</p>
+<h3 id="方案-2将扫描工具集成到-pipeline-中">方案 2：将扫描工具集成到 Pipeline 中</h3>
+<p>另一种方法是在 Pipeline 上对镜像产物进行扫描，这样更加简单高效。当我们将代码推送到代码存储库时， Pipeline 将自动执行扫描镜像的命令。因为 Pipeline 每次都是无差别地执行，所以我们可以发现任何安全问题并及时报警修复。</p>
+<p>现在，越来越多的团队或公司使用敏捷来开发他们的项目。如果我们能够尽早地发现任何安全问题或者漏洞，我们就可以在产品发布之前降低产品的安全风险。 Pipeline 是确保每一行代码和基础运行环境的安全性是的最好方法之一，因为它可以在提交代码时自动执行。</p>
+<h2 id="容器安全扫描工具对比">容器安全扫描工具对比</h2>
+<p>针对上述解决方案，我们调查了 <a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">Trivy</a>、<a href="https://github.com/quay/clair" target="_blank" rel="noopener noreffer ">claire</a>、<a href="https://github.com/anchore/anchore-engine" target="_blank" rel="noopener noreffer ">Anchore Engine</a>、<a href="https://github.com/quay/quay" target="_blank" rel="noopener noreffer ">Quay</a>、<a href="https://hub.docker.com/" target="_blank" rel="noopener noreffer ">Docker hub</a> 和 <a href="https://cloud.google.com/container-registry" target="_blank" rel="noopener noreffer ">GCR</a> 等几种扫描工具，从不同维度进行对比。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Scanner</th>
+          <th style="text-align: left">OS packages</th>
+          <th style="text-align: left">Application dependencies</th>
+          <th style="text-align: left">Easy to use</th>
+          <th style="text-align: left">Accuracy</th>
+          <th style="text-align: left">Suitable for CI</th>
+          <th style="text-align: left">Suitable for Solution</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Trivy</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Clair</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Anchore Engine</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Quay</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Docker Hub</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐⭐⭐</td>
+          <td style="text-align: left">⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">GCR</td>
+          <td style="text-align: left">✅</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">⭐ ⭐ ⭐</td>
+          <td style="text-align: left">⭐ ⭐</td>
+          <td style="text-align: left">❌</td>
+          <td style="text-align: left">1</td>
+      </tr>
+  </tbody>
+</table>
+<p>首先，我们可以将这些扫描工具按照其执行的环境简单分类； 因为 Docker Hub、GCR 和 Quay 是需要在服务端也就是容器注册中心运行的， 所以适合方案 1； Trivy、Clair 和 Anchor Engine 可以在 Pipeline 上工作，所以适合解决方案 2。</p>
+<p>对于第一个维度：OS Package，这些所有的扫描工具都可以做到，但是对于第二个维度：Application dependencies，只有 Trivy 和 Anchore Engine 可以做到，对于第五个维度：Suitable for CI, 只有前三个符合条件。</p>
+<p>对于漏洞数据库的更新，Clair 会定期从一组配置的源中获取漏洞元数据库（Vulnerability Database），并将数据存储在其数据库中，只要不获取最新的漏洞元数据，每次执行都用之前的漏洞数据库，漏洞数据库的时效性有点差。 Trivy 和 Anchore Engine 则是每次运行都将下载最新的漏洞数据库并将其缓存在本地文件中，当扫描工具再次运行时，它将检查并更新数据库以保持数据库为最新状态。</p>
+<p>同时，对于 Trivy、Clair 和 Anchore Engine，这三者的社区非常活跃，所以我们不能用没有人来帮你解决你的问题来评判； 而且作为一种工具，它必须易于使用并且有良好的文档可供参考。经过调研，发现 Trivy 的文档非常详细，非常友好， 而且 Trivy 的使用方式更加友好，比如我们可以过滤掉（.trivyignore）你指定的漏洞，对于最新发现的漏洞，官方没有给出修复版本，这时候我们就可以忽略这个漏洞继续构建，但 Anchore Engine 做不到。</p>
+<p>2020 年 3 月 16 日，领先的云原生应用和基础设施安全平台供应商 Aqua Security 宣布，其开源的 Trivy 漏洞扫描器将作为一个集成选项添加到其使用的云原生平台、CNCF 的 Harbor 注册表和 Mirantis Docker Enterprise 中。你可以在这里找到这篇文章。</p>
+<h2 id="trivy-在-thoughtworks-雷达-23-期中">Trivy 在 Thoughtworks 雷达 23 期中</h2>
+<p></p>
+<p>Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 <strong>Adopt</strong>，说明 Trivy 是有用的、有价值的和可行的。</p>
+<h2 id="trivy-的工作原理">Trivy 的工作原理</h2>
+<p></p>
+<p>在我们使用 Trivy 之前，我们需要知道 Trivy 内部是如何运作的。如上图所示，有两个步骤；首先，我们运行 Trivy 命令，Trivy 将从 <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">NVD</a> 网站下载漏洞数据库到本地机器。然后， Trivy 利用漏洞数据扫描你的镜像的每一层（Layer）。</p>
+<h2 id="实践-trivy">实践 Trivy</h2>
+<p></p>
+<h3 id="pipeline">Pipeline</h3>
+<p>现在我们已经知道 Trivy 是如何工作的，我们可以将它集成到我们的 Pipeline 中；首先，将代码构建到 Docker 镜像中，接下来，Trivy 会扫描上一步构建的 Docker 镜像； 如果没有漏洞，镜像会被推送到镜像注册中心并部署到 Test 或者 UAT 环境； 如果存在漏洞，Pipeline 会被 Trivy 的命令行打断退出，这时候你就需要修复漏洞以使 Pipeline 变绿通过。</p>
+<h3 id="trivy-的使用方法">Trivy 的使用方法</h3>
+<p>在编写代码进行集成之前，我们必须知道如何使用 Trivy，Trivy 是一个二进制应用程序，所以我们可以在命令行中使用它。同时，Trivy 提供了它的 Docker 镜像，所以我们可以很容易地在 Pipeline 上设置和使用。命令如下，对于这个命令，我们需要重点说明一些参数。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ docker run --rm <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  aquasec/trivy <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  image <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --exit-code <span class="m">1</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --ignore-unfixed <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>-v /var/run/docker.sock:/var/run/docker.sock 如果想扫描本地主机上的镜像，需要挂载 docker.sock</li>
+<li>&ndash;ignore-unfixed 忽略未修复的漏洞问题；如果存在未修复的漏洞，Trivy 将忽略这些漏洞</li>
+<li>&ndash;severity 设置要扫描的漏洞级别</li>
+<li>&ndash;exit-code 发现漏洞时 Trivy 的退出状态（默认值：0)； 在 Pipeline 中，如果将该值设置为 1，且有漏洞被发现，则 Pipeline 将退出，而不会继续运行。如果将其设置为 0，则 Pipeline 将继续运行，但会报告结果。所以，如果你想在发现漏洞后阻止 Pipeline 继续执行，可以设置它为 1。</li>
+</ul>
+<p>想了解更多关于参数和使用方法的信息，请访问 Trivy 的官方网站：<a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">https://github.com/aquasecurity/trivy</a>。</p>
+<h3 id="demo">Demo</h3>
+<p>下面是一个 Demo，展示了 Trivy 如何打断 Pipeline 的执行 ，以及当我们修复问题后又发生什么。该项目将构建一个 Buildkite Dashboard（Buildkite 是一个 CI/CD 平台），它将过滤出你指定的组织下的项目的构建信息。这里我们使用 GitHub Actions 来构建这个应用程序，并在 Pipeline 中集成 Trivy，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Trivy scanner</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      docker run --rm \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      -v /var/run/docker.sock:/var/run/docker.sock \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      aquasec/trivy image \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      --severity HIGH,CRITICAL \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
+</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这个 Job 中，我们使用 <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nignx:1.18</a> 作为基础镜像来构建应用程序镜像。可以看到由于存在一些漏洞，本次构建失败了。</p>
+<p></p>
+<p>现在，我们必须解决这个问题来达到持续交付目的。这里有两个步骤要做，首先，我们应该使用最新的 Nginx 镜像作为基础镜像；其次，我们可以忽略未修复的漏洞，因为我们可能无法在系统级别修复某些最新的漏洞。你可以通过如下链接查看修复该问题的代码更改；
+<a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a></p>
+<p></p>
+<h2 id="总结">总结</h2>
+<p>无论你在哪里，安全都是一个非常重要的问题。我们可以将 “<strong>安全左移（Shift Left Security）</strong>”，这样就可以减少生产环境中的安全风险；对于扫描工具 Trivy 来说，它对于保证镜像的安全性非常有用，它不仅可以扫描镜像，还可以扫描 Git 仓库，文件系统等。</p>
+<p>最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">https://www.sonarqube.org/</a></li>
+<li><a href="https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities" target="_blank" rel="noopener noreffer ">https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities</a></li>
+<li><a href="https://github.com/marketplace/actions/aqua-security-trivy" target="_blank" rel="noopener noreffer ">https://github.com/marketplace/actions/aqua-security-trivy</a></li>
+<li><a href="https://github.com/quay/clair" target="_blank" rel="noopener noreffer ">https://github.com/quay/clair</a></li>
+<li><a href="https://github.com/aquasecurity/trivy" target="_blank" rel="noopener noreffer ">https://github.com/aquasecurity/trivy</a></li>
+<li><a href="https://github.com/anchore/anchore-engine" target="_blank" rel="noopener noreffer ">https://github.com/anchore/anchore-engine</a></li>
+<li><a href="https://github.com/quay/quay" target="_blank" rel="noopener noreffer ">https://github.com/quay/quay</a></li>
+<li><a href="https://cloud.google.com/container-registry" target="_blank" rel="noopener noreffer ">https://cloud.google.com/container-registry</a></li>
+<li><a href="https://goharbor.io/blog/harbor-1.10-release/" target="_blank" rel="noopener noreffer ">https://goharbor.io/blog/harbor-1.10-release/</a></li>
+<li><a href="https://www.thoughtworks.com/radar/tools?blipid=201911077" target="_blank" rel="noopener noreffer ">https://www.thoughtworks.com/radar/tools?blipid=201911077</a></li>
+<li><a href="https://cve.mitre.org/index.html" target="_blank" rel="noopener noreffer ">https://cve.mitre.org/index.html</a>
+<a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">https://nvd.nist.gov</a></li>
+<li><a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family</a></li>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>最近我是 DevOps</title><link>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</link><pubDate>Tue, 22 Sep 2020 19:46:57 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><p>最近，在做项目中的 DevOps，主要工作是备份，恢复并且更新 <code>Parameter Store</code>， 即<code>Config as Code</code>; 由于使用<code>AWS 的服务</code>，可靠性还是由很多个 9 来保证的，但是在后期就会由很多问题；</p>]]></description></item></channel></rss>
+            </div><p>最近，在做项目中的 DevOps，主要工作是备份，恢复并且更新 <code>Parameter Store</code>， 即<code>Config as Code</code>; 由于使用<code>AWS 的服务</code>，可靠性还是由很多个 9 来保证的，但是在后期就会由很多问题；</p>
+<ul>
+<li>Team 创建了多少资源</li>
+<li>都有哪些资源</li>
+<li>怎么确定某一资源是 Team 项目中要用的</li>
+<li>如果 AWS 服务不稳定直接挂了，或者创建的资源被 team 成员不小心删除了，怎么办</li>
+<li>如果要更新，我不想登录 AWS Console 或者使用 CLI 来一个个的更新，那怎么办</li>
+<li>&hellip;&hellip;</li>
+</ul>
+<p>对于以上问题，除了<code>as code</code> 还有什么好的方法么？如果有请告诉我。</p>
+<p>接下来，我来简单说说我们项目的实践。在这个过程中遇到各种坑，但还是很有收获的。</p>
+<p>在这先列个目录，主要罗列涉及到的服务，语言或者功能</p>
+<ul>
+<li><code>AWS Parameter Store</code>, <code>KMS</code>, <code>cfn(Cloudformation)</code></li>
+<li><code>Shell</code></li>
+<li><code>Python</code></li>
+<li>加解密</li>
+<li>MD5</li>
+</ul>
+<p>由于项目敏感性，在这就简单说说功能；项目中使用到 <code>AWS Parameter Store</code> 作为存储敏感数据的服务，而且所有的数据都是<code>SecurityString</code>（这种类型很重要，后面有坑），在每次项目部署或某些功能运行的时候需要使用其中的值，由于是经过 <code>KMS</code>加密的，要做备份和更新那么就需要调用<code>AWS</code>的服务或者<code>CLI</code>。</p>
+<h2 id="第一步-备份">第一步 备份</h2>
+<p>第一步，在恢复数据之前，先要获取原有的数据，并将其存储为原始数据。 获取数据倒是不难，写个 shell 直接调用 <code>AWS CLI</code>，将获取到的数据存在文本文件里即可。可以参考官网 <a href="" rel="">AWS CLI Get-Parameter by Path</a></p>
+<h2 id="第二步-恢复">第二步 恢复</h2>
+<p>恢复，简单想一下就是将备份的数据执行命令，一条一条的插入就可以，然而，你这么想你就是小孩子了。原因自己体会。在这说说我做的过程。</p>
+<p>首先将所有的数据分类，分为<code>敏感数据</code>和<code>非敏感数据</code>，对于非敏感的数据我们直接将其存储为明文，对于非敏感的数据，我们需要在本地就行加密为密文，保存起来。然后通过读取敏感数据和非敏感数据，将其恢复即可。</p>
+<p>在这就遇到了第一个坑。</p>
+<p>如果使用 <code>cfn</code>, 创建两个 <code>cfn</code>, 一个用来存储敏感数据，一个用来存储非敏感数据，然后通过 <code>cfn</code> 来对所有的数据进行统一管控。想象是美好的。当我将所有的数据都分好类，建好 cfn 模版，将一个一个的数据填上去，准备修改数据类型为 <code>SecurityString</code>的时候发现，文档上大大的写着，<code>SecurityString</code> 不支持 cfn ！<code>SecurityString</code> 不支持 cfn ！<code>SecurityString</code> 不支持 cfn ！</p>
+<p>想象是美好的，现实是骨感的。</p>
+<p>既然不支持 cfn，那么只能想其他办法了；要么用支持的语言包，要么用 CLI, 貌似已经没有其他办法 as code 了。</p>
+<h3 id="语言包">语言包</h3>
+<p>因为做数据备份的项目是一个 DevOps 项目，所有的基础设施都是在这个项目中声明的，所以要使用 AWS 的 Java, Python 扩展包有点重，不合适。那么就剩下 CLI 这条路了。</p>
+<h3 id="cli">CLI</h3>
+<p>在写代码之前，我先将数据重新整理成了 <code>yaml</code> 格式，毕竟比 <code>JSON</code> 好用（可以写注释）。格式大致如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">parameter</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">appName</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">customKey</span><span class="p">:</span><span class="w"> </span><span class="l">customKey</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">value</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>作为恢复更新脚本，肯定是在 pipeline 运行的时候执行的，所以第一想法就是使用 <code>shell</code>; 想到就直撸起袖子直接干呗。写啊写，虽然网上也有写好的 <code>shell</code> 来处理 <code>yaml</code>, 将读取结果 <code>export</code> 到环境变量中，比如 <code>parameter_appName__customKey</code>，但是问题是，那么多 <code>parameter store</code>, 我怎么一个一个的找到对应的数据的键和值呢？</p>
+<p>此路不通，那么立马换方案，使用 <code>grep</code>, <code>awk</code>,<code>Regex</code>进行匹配转换，终于所有的数据 (key， value) 对应上了，大致数据结构如下 <code>parameter_appName__customKey=123</code>; 然后就是对数据（key, value）进行循环处理了呗。</p>
+<p>请注意，处理后的数据里有这么一种数据结构： <code>parameter_app__key=test 1231</code>; 当循环 value 到 <code>test 1231</code> 的时候，<code>shell</code> <code>list</code> 是以空格为分隔符的； 那么，就会造成 key 和 value 的长度不一致的问题，那么你的数据最终也会是错的。这个问题基本无解。所以此路又不通了。</p>
+<p>考虑再三， <code>Python</code> 解析 <code>YAML</code> 需要安装第三方库，很不方便，但解析 <code>JSON</code> 很方便。在同事的帮助下，测试了 <code>pipeline</code> 是支持 <code>python</code> 的，又因为如果使用 <code>AWS</code> 的 Python 扩展包，需要额外安装依赖，所以直接考虑 <code>Python</code> 调用 <code>Shell</code>;</p>
+<h4 id="py-玩-shell">Py 玩 Shell</h4>
+<p>综合以上因素，将 <code>YAML</code>格式的数据转换为 <code>JSON</code>, 由 <code>Python</code> 解析 <code>JSON</code>, 然后循环数据，循环过程中使用 <code>subprocess</code> 调用 <code>shell</code>, 在 <code>shell</code>中调用 AWS CLI 命令即可将数据更新上去或者执行解密操作等。 调用示例代码如下；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在这需要重点说明一下的是，如果 <code>subprocess</code>调用的 <code>shell</code>是执行 <code>docker</code>命令，那么一定要在你要执行 <code>subprocess.run(['docker-compose', 'run', '-T', '-rm', 'shush', value])</code>这类命令前确保你已经拉取了 <code>shush</code> 涉及的镜像， 否则你第一次运行的输出结果里会有拉取镜像的日志。解决办法是在脚本真正运行之前获取镜像，可以使用如下密令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker-compose pull shush
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<ul>
+<li>对于外部调用的 <code>Shell</code> 一定要写 <code>Usage</code>，也就是用户调用你的脚本的时候，如果出错，因该显示 <code>help</code> 信息</li>
+<li>不要给可执行的脚本加 <code>.sh</code> ，<code>.py </code> 等后缀，只需要给其可执行权限即可</li>
+<li><code>cfn</code> 不支持 <code>SecurityString</code></li>
+<li><code>shush</code> 是个好工具，有 <code>Docker</code> 镜像，只要你的机器上有 <code>Docker</code>, 你就可以不用通过命令行安装它， 执行 <code>docker</code> 命令即可拿到结果；但需要注意的是：执行某个命令之前，需要先将镜像拉下来，不然第一次计算的结果中会有拉取镜像的日志。</li>
+</ul>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

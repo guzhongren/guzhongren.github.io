@@ -1,4 +1,458 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Window - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/window/</link><description>Window - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 07 Jun 2020 11:21:14 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/window/" rel="self" type="application/rss+xml"/><item><title>Window 对象的各种测试方法总结</title><link>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 07 Jun 2020 11:21:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1591510459618-ffd147f35f23?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2089&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
-<p>在平时前端项目开发中有很多需要对<code>window</code>对象进行进行操作，比如改变<code>window.location.href</code>的值，在前端页面中，这会使浏览器发生页面跳转，还有如<code>window.location.replace()</code>, 那么在测试中，虽然 jest 会有部分初始值，但有时候我们需要明确给定值，让测试更明确。</p>]]></description></item></channel></rss>
+<p>在平时前端项目开发中有很多需要对<code>window</code>对象进行进行操作，比如改变<code>window.location.href</code>的值，在前端页面中，这会使浏览器发生页面跳转，还有如<code>window.location.replace()</code>, 那么在测试中，虽然 jest 会有部分初始值，但有时候我们需要明确给定值，让测试更明确。</p>
+<h2 id="window-对象测试分析">Window 对象测试分析</h2>
+<p>window 对象有属性 (<code>property</code>) 和方法 (<code>method</code>), 在此我们以<code>href</code>, <code>window.location.href</code> + hash 和 <code>postMessage</code>几个特性来测试， 对每个类型 (property/method) 将使用至少三种方法来展示，测试方法可以分为如下四类：</p>
+<ul>
+<li>delete - 在原对象 window 上进行测试</li>
+<li>Object.defineProperty - 重新定义属性</li>
+<li>mockfile - mock 整个被测文件</li>
+<li>spyOn - 对特定方法进行 mock</li>
+</ul>
+<h2 id="被测文件">被测文件</h2>
+<p>在这可以不用遵循<code>TDD</code>的流程，直接给出被测文件内容，也可在 github</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">changeHref</span> <span class="o">=</span> <span class="p">(</span><span class="nx">value</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">value</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">addHash</span> <span class="o">=</span> <span class="p">(</span><span class="nx">hash</span>: <span class="kt">string</span><span class="p">)</span><span class="o">:</span> <span class="kt">string</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">+</span> <span class="sb">`#</span><span class="si">${</span><span class="nx">hash</span><span class="si">}</span><span class="sb">`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">sendMessage</span> <span class="o">=</span> <span class="p">(</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">window</span><span class="p">.</span><span class="nx">top</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">type</span><span class="o">:</span> <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">data</span>: <span class="kt">message</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="s1">&#39;*&#39;</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="测试">测试</h2>
+<h3 id="property---changehref">property - changeHref</h3>
+<h4 id="delete">delete</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">changeHref</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">location</span> <span class="p">}</span> <span class="o">=</span> <span class="nb">window</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="nx">location</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should change href to http://test.com when newURL is http://test.com&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">newURL</span> <span class="o">=</span> <span class="s2">&#34;http://test.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">location</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">changeHref</span><span class="p">(</span><span class="nx">newURL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">newURL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="objectdefineproperty">Object.defineProperty</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">changeHref</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">windowSpy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockRestore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;jest.spyOn&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">newURL</span> <span class="o">=</span> <span class="s2">&#34;http://test.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">changeHref</span><span class="p">(</span><span class="nx">newURL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">windowSpy</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="spyon">spyOn</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">changeHref</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;attribute&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">windowSpy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockRestore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;jest.spyOn&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">newURL</span> <span class="o">=</span> <span class="s2">&#34;http://test.com&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">changeHref</span><span class="p">(</span><span class="nx">newURL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">windowSpy</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="method---addhash">method - addHash</h3>
+<h4 id="delete-1">delete</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">addHash</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">location</span> <span class="p">}</span> <span class="o">=</span> <span class="nb">window</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="p">...</span><span class="nx">location</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;http://href.com&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="nx">location</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s2">&#34;should return http://href.com#123 when give 123&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">addHash</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;http://href.com#123&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="objectdefineproperty-1">Object.defineProperty</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">addHash</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span> <span class="nx">location</span> <span class="p">}</span> <span class="o">=</span> <span class="nb">window</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">value</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">...</span><span class="nx">location</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;http://href.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="nx">location</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s2">&#34;should return http://href.com#123 when give 123&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">expect</span><span class="p">(</span><span class="nx">addHash</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;http://href.com#123&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="mockfile">mockFile</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="o">*</span> <span class="kr">as</span> <span class="nx">attribute</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../src/attribute&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">__esModule</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">addHash</span>: <span class="kt">jest.fn</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">beforeEach</span><span class="p">(</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">jest</span><span class="p">.</span><span class="nx">resetModules</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;mocks `addHash`&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">jest</span><span class="p">.</span><span class="nx">isMockFunction</span><span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;verify method has been invoked&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// will failed
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// expect(attribute.addHash(&#39;test&#39;)).toEqual(&#39;http://localhost/#test&#39;)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">(</span><span class="s1">&#39;234&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">).</span><span class="nx">toBeCalledTimes</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">attribute</span><span class="p">.</span><span class="nx">addHash</span><span class="p">).</span><span class="nx">toBeCalledWith</span><span class="p">(</span><span class="s1">&#39;234&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="spyon-1">spyOn</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">addHash</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;method&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">let</span> <span class="nx">windowSpy</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">beforeEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span> <span class="o">=</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;location&#39;</span><span class="p">,</span> <span class="s1">&#39;get&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">afterEach</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockRestore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;mocks `addHash`&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">jest</span><span class="p">.</span><span class="nx">isMockFunction</span><span class="p">(</span><span class="nx">windowSpy</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;spyOn for addHash&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">windowSpy</span><span class="p">.</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">href</span><span class="o">:</span> <span class="s1">&#39;http://test.com&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}))</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">windowSpy</span><span class="p">).</span><span class="nx">not</span><span class="p">.</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">addHash</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)).</span><span class="nx">toEqual</span><span class="p">(</span><span class="s1">&#39;http://test.com#123&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nx">windowSpy</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="method---postmessage">method - postMessage</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span><span class="nx">sendMessage</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;../src/attribute&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;sendMessage test with multiple test method&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">value</span>: <span class="kt">window</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">writable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">enumerable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">configurable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;postMessage&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">writable</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">value</span>: <span class="kt">jest.fn</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sendMessage</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">).</span><span class="nx">toHaveBeenCalled</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">expect</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">parent</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">).</span><span class="nx">toBeCalledTimes</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<blockquote>
+<p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p>
+</blockquote>
+<p>源代码：<a href="https://github.com/AndorLab/test-window-object" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/test-window-object</a></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://remarkablemark.org/blog/2018/11/17/mock-window-location/" target="_blank" rel="noopener noreffer ">3.mock-window-location</a></li>
+<li><a href="https://wildwolf.name/jest-how-to-mock-window-location-href/" target="_blank" rel="noopener noreffer ">4.jest-how-to-mock-window-location-href</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener noreffer ">5.Global Object defineProperty</a></li>
+<li><a href="https://www.jyt0532.com/2018/01/24/jinyong-test-double/" target="_blank" rel="noopener noreffer ">6.test double</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

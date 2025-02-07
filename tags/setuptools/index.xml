@@ -2,4 +2,389 @@
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>最近运维项目上要使用Pyspark进行报告生成，嗯，是的，运维项目的技术栈永远是你想象不到的。</p>
 <p>有活就干，这形势只能“狗着”。</p>
-<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools</a>, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>]]></description></item></channel></rss>
+<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools</a>, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
+<h2 id="期望">期望</h2>
+<p>基于 setuptools 产出一个模块化的工程，高级模块要依赖通用模块(commons)。</p>
+<h2 id="工具介绍">工具介绍</h2>
+<p>按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 <code>build</code> 和 <code>whell</code>, 依赖管理会在 setuptools 的 <code>install_requires</code> 中体现，如下;</p>
+<blockquote>
+<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p>
+</blockquote>
+<h2 id="代码实践">代码实践</h2>
+<h3 id="虚拟环境">虚拟环境</h3>
+<p>在 Python 工程中，虚拟环境是一个非常重要的概念。 你可以随时创建纯净的虚拟环境开始你的（已有/新的）工程。 最简单的好处就是不会在系统级别相互影响。</p>
+<p>在我们这个示例中，最简单的好处就是生成的包不会影响系统中已有的包。退出虚拟环境后，在虚拟环境中安装的包不会在系统中出现。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 在你合适的位置创建目录管理 Python 虚拟环境</span>
+</span></span><span class="line"><span class="cl">mkdir myenv
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> myenv
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用 Python 自带的 venv 来创建全新的虚拟环境</span>
+</span></span><span class="line"><span class="cl">python3 -m venv myenv
+</span></span><span class="line"><span class="cl"><span class="c1"># 激活当前环境，然后就可以切换目录到工程目录进行编码了</span>
+</span></span><span class="line"><span class="cl"><span class="nb">source</span> bin/activate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 退出当前虚拟环境</span>
+</span></span><span class="line"><span class="cl">deactivate
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="setuptools">setuptools</h3>
+<p>setuptools 是 Python 官方的工程构建工具。 其可以打包项目、打包 lib等。有三种配置格式， 分别为<code>pyproject.toml</code>、 <code>setup.cfg</code> 和 <code>setup.py</code>, 竟然不支持 yaml 语法。 官方不推荐 <code>setup.py</code> 这种形式，但其可读性真的好啊，因为我不是很喜欢 <code>toml</code>。</p>
+<h3 id="目标工程">目标工程</h3>
+<h4 id="文件结构">文件结构</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tree -L <span class="m">3</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── LICENSE
+</span></span><span class="line"><span class="cl">├── setup.py
+</span></span><span class="line"><span class="cl">├── src
+</span></span><span class="line"><span class="cl">│   ├── commons
+</span></span><span class="line"><span class="cl">│   │   └── __init__.py
+</span></span><span class="line"><span class="cl">│   ├── module1
+</span></span><span class="line"><span class="cl">│   │   ├── __init__.py
+</span></span><span class="line"><span class="cl">│   │   └── __main__.py
+</span></span><span class="line"><span class="cl">│   └── timmins
+</span></span><span class="line"><span class="cl">│       ├── __init__.py
+</span></span><span class="line"><span class="cl">│       └── __main__.py
+</span></span><span class="line"><span class="cl">└── tests
+</span></span><span class="line"><span class="cl">    └── test.py
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="m">6</span> directories, <span class="m">8</span> files
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="setuppy">setup.py</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">setup</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zhongren&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1.1&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;hello-world = timmins:hello_world&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;module = module1:say_hello&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;build&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;wheel&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个文件主要描述了工程的名字和版本，最重要的是 <code>entry_points</code> 和 <code>install_requires</code>。</p>
+<ul>
+<li><code>entry_points</code> 数组中的每一条记录都会被打包成一个可执行程序，在这里将会产生 <code>hell-world</code>和 <code>module</code> 两个可执行程序。</li>
+<li><code>install_requires</code> 指定依赖的第三方库，这里不指定版本，使用最新版。</li>
+</ul>
+<h5 id="commons">commons</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">something</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;commons say: &#34;</span> <span class="o">+</span> <span class="n">something</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>commons</code> 是项目公共方法，供高层模块调用。</p>
+<h5 id="module1">module1</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init__.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">commons</span> <span class="kn">import</span> <span class="n">say</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">say</span><span class="p">(</span><span class="s1">&#39;zhongren world&#39;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 <code>__init__.py</code> 中，我们通过加载指定的绝对路径的方法，调用了 commons 模块中的 say 方法，实现了 <code>低耦合</code>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __main__.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">say_hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">say_hello</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在同样的工程下面，为什么还要有 <code>__main__.py</code>呢？</p>
+<p>因为我们要将工程打包，并生成多个模块，在这里是模块 <code>module1</code>
+和 <code>timmins</code>；并在模块中调用了底层模块的 <code>say</code> 方法。并且这部分会是可运行程序的<code>入口</code>。</p>
+<h5 id="timmins">timmins</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init__.py</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello world&#34;</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此模块只是暴露方法出去，相当于 lib。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __main__.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">hello_world</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">hello_world</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此模块和 module1 的功能相同，只是调用了自己目录下 <code>Lib</code> 的方法。</p>
+<h4 id="构建">构建</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python setup.py install
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">Processing zhongren-0.1.1-py3.11.egg
+</span></span><span class="line"><span class="cl">Removing /usr/local/lib/python3.11/site-packages/zhongren-0.1.1-py3.11.egg
+</span></span><span class="line"><span class="cl">Copying zhongren-0.1.1-py3.11.egg to /usr/local/lib/python3.11/site-packages
+</span></span><span class="line"><span class="cl">Adding zhongren 0.1.1 to easy-install.pth file
+</span></span><span class="line"><span class="cl">Installing hello-world script to /usr/local/bin
+</span></span><span class="line"><span class="cl">Installing module script to /usr/local/bin
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Installed /usr/local/lib/python3.11/site-packages/zhongren-0.1.1-py3.11.egg
+</span></span><span class="line"><span class="cl">Processing dependencies <span class="k">for</span> <span class="nv">zhongren</span><span class="o">==</span>0.1.1
+</span></span><span class="line"><span class="cl">Finished processing dependencies <span class="k">for</span> <span class="nv">zhongren</span><span class="o">==</span>0.1.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>按照提示，打包后的模块已经被安装在了 <code>/usr/local/bin</code> 中了。我们可以使用两种方式进行验证。</p>
+<ol>
+<li>CMD</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">module
+</span></span><span class="line"><span class="cl">&gt; commons say: zhongren world
+</span></span><span class="line"><span class="cl">hello-world
+</span></span><span class="line"><span class="cl">&gt; Hello world
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到两个 <code>entry_points</code> 模块运行后的输出和我们在程序中定义的一致。</p>
+<ol start="2">
+<li>测试</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># test.py</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">timmins</span> <span class="kn">import</span> <span class="n">hello_world</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">module1</span> <span class="kn">import</span> <span class="n">say_hello</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">hello_world</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">say_hello</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过执行<code>python3 test</code>, 输出如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 tests/test.py
+</span></span><span class="line"><span class="cl">&gt; Hello world
+</span></span><span class="line"><span class="cl">&gt; commons say: zhongren world
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="wheel-构建">wheel 构建</h4>
+<p>我们最终想要的肯定是一个可以部署的包（package）,在 Python 里，通常使用 <code>.whl</code> wheel 包来分享或者部署。</p>
+<h5 id="打包-whl-包">打包 whl 包</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 setup.py bdist_wheel
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">running bdist_wheel
+</span></span><span class="line"><span class="cl">running build
+</span></span><span class="line"><span class="cl">running build_py
+</span></span><span class="line"><span class="cl">......
+</span></span><span class="line"><span class="cl">running install_scripts
+</span></span><span class="line"><span class="cl">creating build/bdist.macosx-13-x86_64/wheel/zhongren-0.1.1.dist-info/WHEEL
+</span></span><span class="line"><span class="cl">creating <span class="s1">&#39;dist/zhongren-0.1.1-py3-none-any.whl&#39;</span> and adding <span class="s1">&#39;build/bdist.macosx-13-x86_64/wheel&#39;</span> to it
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;commons/__init__.py&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;module1/__init__.py&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;module1/__main__.py&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;timmins/__init__.py&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;timmins/__main__.py&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/LICENSE&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/METADATA&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/WHEEL&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/entry_points.txt&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/top_level.txt&#39;</span>
+</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/RECORD&#39;</span>
+</span></span><span class="line"><span class="cl">removing build/bdist.macosx-13-x86_64/wheel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看到 <code>zhongren-0.1.1-py3-none-any.whl</code> 在 <code>dist</code> 目录下被成功构建。</p>
+<p>同样，可以使用安装命令来测试安装, 并用上面的<code>python3 tests/test.py</code> 来验证。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip3 install dist/zhongren-0.1.1-py3-none-any.whl
+</span></span><span class="line"><span class="cl">Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+</span></span><span class="line"><span class="cl">Processing ./dist/zhongren-0.1.1-py3-none-any.whl
+</span></span><span class="line"><span class="cl">Installing collected packages: zhongren
+</span></span><span class="line"><span class="cl">Successfully installed zhongren-0.1.1
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="总结">总结</h2>
+<p>学习最佳实践，可以节约时间，同时，也是真爱生命。</p>
+<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project" target="_blank" rel="noopener noreffer ">https://github.com/beef-noodles/py-project</a></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html</a></li>
+<li><a href="https://www.delftstack.com/howto/python/python-import-from-parent-directory/" target="_blank" rel="noopener noreffer ">Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>
