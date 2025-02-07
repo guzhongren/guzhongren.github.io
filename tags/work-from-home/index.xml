@@ -1,4 +1,51 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Work From Home - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/work-from-home/</link><description>Work From Home - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 25 Dec 2021 09:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/work-from-home/" rel="self" type="application/rss+xml"/><item><title>工作的常态是被打断</title><link>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</link><pubDate>Sat, 25 Dec 2021 09:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
-<p>最近西安疫情比较严重，不到一个月已经近 200 例了，而我也被确诊病例轨迹重重包围了；疫情刚开始我司就决定让大家居家办公，一直到现在；居家办公已经不是第一次了，但是在居家办公这个过程中，每个人都会遇到这样或者那样的事，今天就来说说，工作的常态就是被打断，以及如何有效的解决被打断这个问题。</p>]]></description></item></channel></rss>
+<p>最近西安疫情比较严重，不到一个月已经近 200 例了，而我也被确诊病例轨迹重重包围了；疫情刚开始我司就决定让大家居家办公，一直到现在；居家办公已经不是第一次了，但是在居家办公这个过程中，每个人都会遇到这样或者那样的事，今天就来说说，工作的常态就是被打断，以及如何有效的解决被打断这个问题。</p>
+<p>早上，打开电脑，兴致勃勃的输入电脑密码，开始工作，文档和代码写的正酣，突然来了一个电话，电话那头劈头盖脸的来说你做一下这个那个，没有任何上下文，一个字就是“跟着我说的干“, 然而电话挂了，你也懵逼了，隐隐约约只记下了几个关键点。然而，看到自己的工作，始终想不起自己接下来要搞什么了。“丢了夫人又折兵”的真实写照啊。😇</p>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
+<h2 id="解决方案">解决方案</h2>
+<blockquote>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
+</blockquote>
+<p>对于这类问题，可以有如下解决方案：</p>
+<h3 id="task">Task</h3>
+<p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">- [x] subTask1
+</span></span><span class="line"><span class="cl">- [ ] subTask2
+</span></span><span class="line"><span class="cl">- [ ] subTask3
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="todo">ToDo</h3>
+<p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
+<p></p>
+<h2 id="实践">实践</h2>
+<p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
+当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

@@ -21,4 +21,47 @@
 </span></span><span class="line"><span class="cl">error: the option <span class="sb">`</span>Z<span class="sb">`</span> is only accepted on the nightly compiler<span class="sb">`</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>最近更新了<code>rust</code>, 然后运行<code>cargo run</code>, 莫名其妙的出现了上面的问题。</p>]]></description></item></channel></rss>
+</div><p>最近更新了<code>rust</code>, 然后运行<code>cargo run</code>, 莫名其妙的出现了上面的问题。</p>
+<h2 id="原因">原因</h2>
+<p>在 rust 官网的 issue 里找解决方案，都是 open 状态的，没有实际意义。那么就得回到原始方式。
+按照提示，说<code>Z</code> 这个参数仅适用于<code>nightly</code>版本的 rust 编译器，但是我用的是<code>stable</code>版本的 rust;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ rustup show
+</span></span><span class="line"><span class="cl">Default host: x86_64-apple-darwin
+</span></span><span class="line"><span class="cl">rustup home:  /Users/c4/.rustup
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">stable-x86_64-apple-darwin <span class="o">(</span>default<span class="o">)</span>
+</span></span><span class="line"><span class="cl">rustc 1.44.0 <span class="o">(</span>49cae5576 2020-06-01<span class="o">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>版本确定，那么只能将语音归结到命令行某个地方有注入参数。第一个想到的就是环境变量，打开我的<code>~/.zshrc</code>, 果然在最下面找到了这么一条记录，看到<code>-Z</code>, 应该就是他了。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">RUSTFLAGS</span><span class="o">=</span><span class="s2">&#34;-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="解决方案">解决方案</h2>
+<p>删除该行记录，运行程序，成功输出<code>hello world</code>。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://github.com/mozilla/grcov/issues/433" target="_blank" rel="noopener noreffer ">3. grcov</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>
