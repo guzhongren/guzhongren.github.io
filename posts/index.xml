@@ -2,7 +2,7 @@
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="背景">背景</h2>
 <p>最近，Deepseek 因其卓越的性能和高效的推理速度在技术圈内引起了广泛关注。</p>
-<p>Deepseek 采用了先进的算法和训练方法，不仅显著提升了推理速度，还降低了对硬件配置的要求，使其能够在更多设备上运行。</p>
+<p>Deepseek 采用了先进的算法(使用汇编和 CUDA 混编的方式调用 GPU)和训练方法(蒸馏)，不仅显著提升了推理速度，还降低了对硬件配置的要求，使其能够在更多设备上运行。</p>
 <p>然而，使用在线 Deepseek 服务时，用户可能会遇到“服务器繁忙，请稍后再试”的问题。</p>
 <p>作为程序员，我们自然不能忍受这种情况，因此本文将指导你如何在本地搭建 Deepseek 模型。</p>
 <h2 id="搭建步骤">搭建步骤</h2>
