@@ -13,58 +13,34 @@
 <ul>
 <li>更新<code>~/.gitconfig</code>, 按需追加并修复如下内容</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[includeIf &#34;gitdir:~/01.Project/&#34;]
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-git">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[includeIf &#34;gitdir:~/01.Project/&#34;]
 </span></span><span class="line"><span class="cl">  path = ~/.gitconfigs/.gitconfig-personal
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">[includeIf &#34;gitdir:~/04.company/&#34;]
-</span></span><span class="line"><span class="cl">  path = ~/.gitconfigs/.gitconfig-company
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl">  path = ~/.gitconfigs/.gitconfig-company</span></span></code></pre></div></div>
+<ul>
 <li>建立相应的目录和文件，如~/.gitconfigs/.gitconfig-personal</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p ~/.gitconfigs1 <span class="o">&amp;&amp;</span> touch ~/.gitconfigs1/.gitconfig-personal
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">mkdir -p ~/.gitconfigs1 <span class="o">&amp;&amp;</span> touch ~/.gitconfigs1/.gitconfig-personal</span></span></code></pre></div></div>
+<ul>
 <li>配置个人信息</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[user]
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-git">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[user]
 </span></span><span class="line"><span class="cl">	email = personal@email.com
 </span></span><span class="line"><span class="cl">	name = personalName
 </span></span><span class="line"><span class="cl">	signingkey = signingkey
@@ -80,10 +56,8 @@
 </span></span><span class="line"><span class="cl">	program = gpg
 </span></span><span class="line"><span class="cl">[core]
 </span></span><span class="line"><span class="cl">	sshCommand = ssh -i ~/.ssh/id_github
-</span></span><span class="line"><span class="cl">	ignorecase = false
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如上内容根据自己的需求更改即可。</p>
+</span></span><span class="line"><span class="cl">	ignorecase = false</span></span></code></pre></div></div>
+<p>如上内容根据自己的需求更改即可。</p>
 <h3 id="方案2简化git-config-命令">方案2：简化git config 命令</h3>
 <h4 id="思路">思路</h4>
 <p>使用git alias 执行命令加载不同的配置</p>
@@ -91,32 +65,25 @@
 <ul>
 <li>在~/.gitconfig中追加如下配置，并按需更改即可</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-git">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">[alias]
 </span></span><span class="line"><span class="cl">  personal = &#34;!f() { git config user.name &#39;personalUserName&#39; &amp;&amp; git config user.email &#39;personal@email.com&#39; &amp;&amp; git config --global user.signingkey KEY; }; f&#34;
-</span></span><span class="line"><span class="cl">  company = &#34;!f() { git config user.name &#39;company&#39; &amp;&amp; git config user.email &#39;company@email.com&#39; &amp;&amp; git config --global user.signingkey KEY; }; f&#34;
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl">  company = &#34;!f() { git config user.name &#39;company&#39; &amp;&amp; git config user.email &#39;company@email.com&#39; &amp;&amp; git config --global user.signingkey KEY; }; f&#34;</span></span></code></pre></div></div>
+<ul>
 <li>使用时只需要执行一个git alias命令，如下</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git company
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="总结">总结</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">git company</span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
 <h2 id="引用">引用</h2>
@@ -177,37 +144,20 @@
 <p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html" target="_blank" rel="noopener noreffer ">《GPG 入门教程》</a></p>
 <h2 id="git-crypt-操作">git-crypt 操作</h2>
 <h3 id="安装-gpg-和-git-crypt">安装 gpg 和 git-crypt</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install git-crypt
-</span></span><span class="line"><span class="cl">brew install gpg
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="gpg-version">gpg version</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --version
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install git-crypt
+</span></span><span class="line"><span class="cl">brew install gpg</span></span></code></pre></div></div>
+<h3 id="gpg-version">gpg version</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --version
 </span></span><span class="line"><span class="cl">gpg <span class="o">(</span>GnuPG<span class="o">)</span> 2.2.19
 </span></span><span class="line"><span class="cl">libgcrypt 1.8.5
 </span></span><span class="line"><span class="cl">Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2019</span> Free Software Foundation, Inc.
@@ -221,63 +171,14 @@
 </span></span><span class="line"><span class="cl">密文： IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
 </span></span><span class="line"><span class="cl">    CAMELLIA128, CAMELLIA192, CAMELLIA256
 </span></span><span class="line"><span class="cl">散列： SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
-</span></span><span class="line"><span class="cl">压缩：  不压缩，ZIP, ZLIB, BZIP2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="生成-gpg-userid">生成 gpg userId</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --full-generate-key
+</span></span><span class="line"><span class="cl">压缩：  不压缩，ZIP, ZLIB, BZIP2</span></span></code></pre></div></div>
+<h3 id="生成-gpg-userid">生成 gpg userId</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --full-generate-key
 </span></span><span class="line"><span class="cl">gpg <span class="o">(</span>GnuPG<span class="o">)</span> 2.2.19<span class="p">;</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2019</span> Free Software Foundation, Inc.
 </span></span><span class="line"><span class="cl">This is free software: you are free to change and redistribute it.
 </span></span><span class="line"><span class="cl">There is NO WARRANTY, to the extent permitted by law.
@@ -324,27 +225,14 @@
 </span></span><span class="line"><span class="cl">pub   rsa4096 2020-07-11 <span class="o">[</span>SC<span class="o">]</span>
 </span></span><span class="line"><span class="cl">      4FA612D2DB4244E7D64A1C1025DD25A47AEF036A
 </span></span><span class="line"><span class="cl">uid                      guzhongren <span class="o">(</span>guzhongren<span class="o">)</span> &lt;guzhongren@live.cn&gt;
-</span></span><span class="line"><span class="cl">sub   rsa4096 2020-07-11 <span class="o">[</span>E<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="获取-userid">获取 UserID</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --list-secret-keys --keyid-format LONG
+</span></span><span class="line"><span class="cl">sub   rsa4096 2020-07-11 <span class="o">[</span>E<span class="o">]</span></span></span></code></pre></div></div>
+<h3 id="获取-userid">获取 UserID</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gpg --list-secret-keys --keyid-format LONG
 </span></span><span class="line"><span class="cl">gpg: 正在检查信任度数据库
 </span></span><span class="line"><span class="cl">gpg: 绝对信任密钥 8823E362E95562B8 的公钥未找到
 </span></span><span class="line"><span class="cl">gpg: marginals needed: <span class="m">3</span>  completes needed: <span class="m">1</span>  trust model: pgp
@@ -355,93 +243,72 @@
 </span></span><span class="line"><span class="cl">sec   rsa4096/25DD25A47AEF036A 2020-07-11 <span class="o">[</span>SC<span class="o">]</span>
 </span></span><span class="line"><span class="cl">      4FA612D2DB4244E7D64A1C1025DD25A47AEF036A
 </span></span><span class="line"><span class="cl">uid                 <span class="o">[</span> 绝对 <span class="o">]</span> guzhongren <span class="o">(</span>guzhongren<span class="o">)</span> &lt;guzhongren@live.cn&gt;
-</span></span><span class="line"><span class="cl">ssb   rsa4096/DCC72940818AB355 2020-07-11 <span class="o">[</span>E<span class="o">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>sec   rsa4096/25DD25A47AEF036A 2020-07-11 [SC]</code> 中 <code>25DD25A47AEF036A</code>就是 gpg userId</p>
+</span></span><span class="line"><span class="cl">ssb   rsa4096/DCC72940818AB355 2020-07-11 <span class="o">[</span>E<span class="o">]</span></span></span></code></pre></div></div>
+<p><code>sec   rsa4096/25DD25A47AEF036A 2020-07-11 [SC]</code> 中 <code>25DD25A47AEF036A</code>就是 gpg userId</p>
 <h2 id="git-crypt-操作-1">git-crypt 操作</h2>
 <h3 id="初始化">初始化</h3>
 <p>进入需要做加密的 git repo 做 git-crypt 初始化操作，并将上面获取到的 gpg userId 添加进去</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt init
-</span></span><span class="line"><span class="cl">git-crypt add-gpg-user 25DD25A47AEF036A
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="加密文件过滤器gitattributes">加密文件过滤器<code>.gitattributes</code></h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt init
+</span></span><span class="line"><span class="cl">git-crypt add-gpg-user 25DD25A47AEF036A</span></span></code></pre></div></div>
+<h3 id="加密文件过滤器gitattributes">加密文件过滤器<code>.gitattributes</code></h3>
 <p>格式为： * filter=git-crypt diff=git-crypt ；如下，我需要加密<code>secretfile</code>, <code>*.key</code>和<code>secretdir/**</code>, 那么内容如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">secretfile filter=git-crypt diff=git-crypt
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">secretfile filter=git-crypt diff=git-crypt
 </span></span><span class="line"><span class="cl">*.key filter=git-crypt diff=git-crypt
-</span></span><span class="line"><span class="cl">secretdir/** filter=git-crypt diff=git-crypt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="清理-config-的-git-缓存">清理 config 的 git 缓存</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git rm -r –cached config
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="添加需要加密的文件和数据">添加需要加密的文件和数据</h3>
+</span></span><span class="line"><span class="cl">secretdir/** filter=git-crypt diff=git-crypt</span></span></code></pre></div></div>
+<h3 id="清理-config-的-git-缓存">清理 config 的 git 缓存</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git rm -r –cached config</span></span></code></pre></div></div>
+<h3 id="添加需要加密的文件和数据">添加需要加密的文件和数据</h3>
 <p>在<code>secretdir</code>文件夹下添加 <code>secret.yaml</code>, 并添加如下内容：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">username:password</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="上传到-git-仓库">上传到 git 仓库</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">username:password</span></span></span></code></pre></div></div>
+<h3 id="上传到-git-仓库">上传到 git 仓库</h3>
 <p>此步不用担心你的<code>secret.yaml</code>文件以明文的形式上传，git-crypt 会在 commit 之前将过滤后的数据加密成二进制，所以不用担心在仓库中存储敏感信息。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git add .
 </span></span><span class="line"><span class="cl">git commit -m ‘git-crypt’
-</span></span><span class="line"><span class="cl">git push
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
+</span></span><span class="line"><span class="cl">git push</span></span></code></pre></div></div>
+<p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
 <p></p>
 <h2 id="协作">协作</h2>
 <p>与他人协作，别人需要知道对应解密的 key</p>
 <h3 id="导出密钥">导出密钥</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt export-key ~/Desktop/git-crypt.key
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>得到 git-crypt.key 后，将该密钥分发给可信的团队成员，团队成员将仓库 clone 下来后，使用如下命令解密即可</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt unlock /path/to/git-crypt.key
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>此时，在本地就可以看到加密后的文件内容了。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt export-key ~/Desktop/git-crypt.key</span></span></code></pre></div></div>
+<p>得到 git-crypt.key 后，将该密钥分发给可信的团队成员，团队成员将仓库 clone 下来后，使用如下命令解密即可</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt unlock /path/to/git-crypt.key</span></span></code></pre></div></div>
+<p>此时，在本地就可以看到加密后的文件内容了。</p>
 <h3 id="更新密钥">更新密钥</h3>
 <p>因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;" target="_blank" rel="noopener noreffer ">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a> 步骤如下：</p>
 <ul>
@@ -622,24 +489,20 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
             </div><p>我需要撤销最后的四个提交</p>
 <p></p>
 <p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样会在 log 上多留下四条 revert 相关的记录，我不想生成 revert 相关的记录呢？可以的</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
+<p>这样会在 log 上多留下四条 revert 相关的记录，我不想生成 revert 相关的记录呢？可以的</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
+<p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
 <p></p>
 <h2 id="引用">引用</h2>

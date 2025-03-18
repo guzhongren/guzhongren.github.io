@@ -57,28 +57,12 @@
 <p>根据上面的表格，组织会议，让大家填写自己所能想到的所有的技术债，然后对每一条技术债进行说明，对齐认识。然后对每一条从 Difficulty 和 Importance 角度进行投票。</p>
 <h4 id="分析">分析</h4>
 <p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
 </span></span><span class="line"><span class="cl">  I<span class="p">|</span>      View result immediately       <span class="p">|</span>     Split <span class="p">&amp;</span> Plan
 </span></span><span class="line"><span class="cl">  m<span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">  p<span class="p">|</span>                                    <span class="p">|</span>
@@ -94,10 +78,8 @@
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>      Fix it <span class="k">if</span> have spare <span class="nb">time</span>     <span class="p">|</span>     Let it go
 </span></span><span class="line"><span class="cl">   ------------------------------------------------------------------------------&gt;
-</span></span><span class="line"><span class="cl">                                                                      Difficulty
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明：</p>
+</span></span><span class="line"><span class="cl">                                                                      Difficulty</span></span></code></pre></div></div>
+<p>说明：</p>
 <ul>
 <li>横轴：从左到右 Difficulty 由简到难；</li>
 <li>纵轴：从下到上 Importance 由低到高；</li>

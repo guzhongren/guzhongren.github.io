@@ -4,41 +4,12 @@
 <p>2024年底，小米突然在 GitHub 上开源了<a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a>，顿时引起热议，正好我家里也是小米的设备，并且也是个Home Assistant 小白，所以正好可以探索一波。</p>
 <p>因为网上有很多关于Home Assistant的说明及安装教程, 在这推荐<a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a>，我就不赘述了。</p>
 <h2 id="基于-docker-的home-assistant-安装并集成小米集成">基于 Docker 的Home Assistant 安装并集成小米集成</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 创建本地路径用于挂在其道 Docker container 中</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 创建本地路径用于挂在其道 Docker container 中</span>
 </span></span><span class="line"><span class="cl">mkdir -p home-assistant/custom_components/hacs
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># 启动 Home assistant 最新的镜像</span>
@@ -67,10 +38,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Auth via OAuth2 of xiaomi</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Chose phone or email</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Change url of `homeassistant.local` to localhost</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在正确操作如上步骤，重启Home Assistant 容器之后，访问 http://localhost:8123/ 就可以体验连接了自己家的小米账号的 Home Assistant 了。</p>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change url of `homeassistant.local` to localhost</span></span></span></code></pre></div></div>
+<p>在正确操作如上步骤，重启Home Assistant 容器之后，访问 http://localhost:8123/ 就可以体验连接了自己家的小米账号的 Home Assistant 了。</p>
 <h2 id="总结">总结</h2>
 <p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
 <p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
@@ -106,31 +75,24 @@
 </blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>为 Podman 虚拟机挂载 $HOME 目录并且重启 podman machine 即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman machine stop podman-machine-default
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman machine stop podman-machine-default
 </span></span><span class="line"><span class="cl">podman machine rm podman-machine-default
 </span></span><span class="line"><span class="cl">podman machine init -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span>
-</span></span><span class="line"><span class="cl">podman machine start
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="测试">测试</h2>
+</span></span><span class="line"><span class="cl">podman machine start</span></span></code></pre></div></div>
+<h2 id="测试">测试</h2>
 <p>运行如下命令，可以在命令行里看到本机的目录和文件。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman run -ti --rm -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span> busybox
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="add-one">Add one</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman run -ti --rm -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span> busybox</span></span></code></pre></div></div>
+<h2 id="add-one">Add one</h2>
 <p>如此这样，以后在需要挂载特定目录时，只需要和 docker 的操作一样，只须挂载特定目录即可。</p>
 <h2 id="引用">引用</h2>
 <ul>
@@ -168,68 +130,12 @@
 <li>应用-其他-配置</li>
 </ul>
 <h4 id="配置信息">配置信息</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;customFonts&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Noto Serif SC&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Bitter&#34;</span><span class="p">,</span>
@@ -285,62 +191,18 @@
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">]</span>
 </span></span><span class="line"><span class="cl">  <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="效果">效果</h4>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="效果">效果</h4>
 <p></p>
 <h3 id="vs-code--插件版vscode-drawio">VS Code  插件版（vscode-drawio）</h3>
 <h4 id="配置信息-1">配置信息</h4>
 <p>对于插件版本，我们可以将配置信息存储在全局（VS Code菜单-Code-Performances-Setting, 搜索 drawio, 点击任意<code>Edit in settings.json</code>）或者当前工程（.vscode/settings.json）,然后将如下配置粘贴进去。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;hediet.vscode-drawio.presetColors&#34;</span><span class="err">:</span> <span class="p">[</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;hediet.vscode-drawio.presetColors&#34;</span><span class="err">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;none&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;000000&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;ffffff&#34;</span><span class="p">,</span>
@@ -382,10 +244,8 @@
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Bitter&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Arial&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Inter&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="效果-1">效果</h4>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span></span></span></code></pre></div></div>
+<h4 id="效果-1">效果</h4>
 <p></p>
 <p></p>
 <h2 id="引用">引用</h2>
@@ -454,17 +314,14 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p><code>Lighthouse CI</code> is a suite of tools that make continuously running, saving, retrieving, and asserting against Lighthouse results as easy as possible.</p>
 <h4 id="how-to-use">How to use</h4>
 <p><code>LHCI</code> provides the <code>npm</code> installation package, which can be well integrated on the Pipeline, just run the <code>autorun</code> command in the corresponding directory, the command is as follows</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
-</span></span><span class="line"><span class="cl">lhci autorun
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>After the operation is completed, LHCI will store the results in the <code>.lighthouseci</code> directory, and you can open the corresponding report with a browser.</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
+</span></span><span class="line"><span class="cl">lhci autorun</span></span></code></pre></div></div>
+<p>After the operation is completed, LHCI will store the results in the <code>.lighthouseci</code> directory, and you can open the corresponding report with a browser.</p>
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
 <p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p>
@@ -488,42 +345,12 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <li>Build <code>GitHub workflow</code>. For specific practices, please refer to the implementation details of <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a></li>
 <li>.github/workflows/Lighthouse.yml</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
@@ -553,43 +380,16 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+<ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
@@ -614,43 +414,16 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
 <li>.github/config/lighthouserc.json</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
@@ -675,10 +448,8 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
 <li>Need to store the <code>Build token</code> generated by <code>lhci Server</code> and the address of <code>lhci Server</code> in the Secrets of the GitHub project</li>
 <li>Here the <code>lhci</code> command is executed twice. Because <code>lhci autorun</code> runs the default <code>assertion</code>, the first time you use the command without assertion, the purpose is to upload the current web page performance to the server side; the second time you configure various indicators Threshold, if it does not meet the requirements, Pipeline will block, to achieve <code>Shift-left of the web performance test</code>.</li>
 <li></li>
@@ -758,17 +529,14 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <p><code>Lighthouse CI</code> 是 <code>Google Chrome</code> 团队开发的一套可以让持续运行、保存、检索和对 Lighthouse 结果进行<code>断言</code>变得尽可能简单的工具,可以很方便的集成在 CI 上。</p>
 <h4 id="使用">使用</h4>
 <p><code>LHCI</code> 提供 <code>npm</code> 安装包，可以很好的在 Pipeline 上集成，只需要在对应目录下运行 <code>autorun</code> 命令即可，命令如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
-</span></span><span class="line"><span class="cl">lhci autorun
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>运行完成后，LHCI 会将结果存放在 <code>.lighthouseci</code> 目录下，用浏览器打开对应的报告即可。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
+</span></span><span class="line"><span class="cl">lhci autorun</span></span></code></pre></div></div>
+<p>运行完成后，LHCI 会将结果存放在 <code>.lighthouseci</code> 目录下，用浏览器打开对应的报告即可。</p>
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
 <p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
@@ -793,42 +561,12 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <li>构建 <code>GitHub workflow</code>， 具体实践可参考 <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a> 的实现细节</li>
 <li>.github/workflows/Lighthouse.yml</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
@@ -858,43 +596,16 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+<ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
@@ -919,43 +630,16 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
 <li>.github/config/lighthouserc.json</li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
@@ -980,10 +664,8 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span><span class="line"><span class="cl">      <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
 <li>需要将 <code>lhci Server</code> 生成的 <code>Build token</code> 和 <code>lhci Server</code> 的地址存放在 GitHub 项目的 Secrets 中</li>
 <li>这里执行了两次 <code>lhci</code> 命令。因为 <code>lhci autorun</code> 运行完成后会运行默认的断言(<code>Assertion</code>), 第一次用没有断言的命令，目的是将当前的网页性能可以上到 Server 端; 第二次配置了各项指标的阈值，如果不满足要求，Pipeline 将会阻断，实现 <code>Web 性能测试左移</code>。</li>
 <li></li>
@@ -1027,78 +709,23 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <p>对于存储在 algolia 上的数据，我是通过 GitHub Action：<a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer</a> 来上传的，之前使用是没有问题的。</p>
 <h2 id="问题">问题</h2>
 <p>突然有一天我要使用搜索功能，但是怎么也搜索不到我想搜索的内容，看了 GitHub 项目的构建状态，一切正常，然后登陆到 algolia 后台一看， 最后一次的数据更新是在 21 年 8 月； 然后打开最近的博客构建记录，看了执行如下 GitHub workflow 的 yaml 日志，大吃一惊：程序执行错误，但还是在最后给我们送了一个🚀，同样是写代码，你能忍？</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_application_id</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_APPLICATION_ID}}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_api_key</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_API_KEY}}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>运行日志</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">darrenjennings</span><span class="o">/</span><span class="n">algolia</span><span class="o">-</span><span class="n">docsearch</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">master</span>
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span></span></span></code></pre></div></div>
+<p>运行日志</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-log">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">darrenjennings</span><span class="o">/</span><span class="n">algolia</span><span class="o">-</span><span class="n">docsearch</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">master</span>
 </span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">name</span> <span class="n">a682564a13d76444749d3b720346ba2365371_9474ad</span> <span class="o">--</span><span class="n">label</span> <span class="mi">6</span><span class="n">a6825</span> <span class="o">--</span><span class="n">workdir</span> <span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">workspace</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_ALGOLIA_APPLICATION_ID</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_ALGOLIA_API_KEY</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_FILE</span> <span class="o">-</span><span class="n">e</span> <span class="n">HOME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_JOB</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_SHA</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REPOSITORY</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REPOSITORY_OWNER</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_ID</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_NUMBER</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RETENTION_DAYS</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_ATTEMPT</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTOR</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_WORKFLOW</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_HEAD_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_BASE_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_EVENT_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_SERVER_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_API_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_GRAPHQL_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_PROTECTED</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_TYPE</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_WORKSPACE</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_EVENT_PATH</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION_REPOSITORY</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_PATH</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ENV</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_OS</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_ARCH</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_TOOL_CACHE</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_TEMP</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_WORKSPACE</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_RUNTIME_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_RUNTIME_TOKEN</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_CACHE_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTIONS</span><span class="o">=</span><span class="bp">true</span> <span class="o">-</span><span class="n">e</span> <span class="n">CI</span><span class="o">=</span><span class="bp">true</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/var/run/docker.sock&#34;</span><span class="p">:</span><span class="s2">&#34;/var/run/docker.sock&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_github_home&#34;</span><span class="p">:</span><span class="s2">&#34;/github/home&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_github_workflow&#34;</span><span class="p">:</span><span class="s2">&#34;/github/workflow&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_runner_file_commands&#34;</span><span class="p">:</span><span class="s2">&#34;/github/file_commands&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/blog/blog&#34;</span><span class="p">:</span><span class="s2">&#34;/github/workspace&#34;</span> <span class="mi">6</span><span class="n">a6825</span><span class="p">:</span><span class="mi">64</span><span class="n">a13d76444749d3b720346ba2365371</span>  <span class="s2">&#34;***&#34;</span> <span class="s2">&#34;***&#34;</span> <span class="s2">&#34;./public/index.json&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;docsearch-scraper&#39;</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="n">Collecting</span> <span class="n">pipenv</span>
@@ -1147,10 +774,8 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span><span class="line"><span class="cl">  <span class="ne">File</span> <span class="s2">&#34;/github/workspace/docsearch-scraper/cli/../scraper/src/config/config_loader.py&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">72</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__init__</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
 </span></span><span class="line"><span class="cl"><span class="n">AttributeError</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span> <span class="n">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;items&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="err">🚀</span> <span class="n">Successfully</span> <span class="n">indexed</span> <span class="ow">and</span> <span class="n">uploaded</span> <span class="n">the</span> <span class="n">results</span> <span class="n">to</span> <span class="n">Algolia</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
+</span></span><span class="line"><span class="cl"><span class="err">🚀</span> <span class="n">Successfully</span> <span class="n">indexed</span> <span class="ow">and</span> <span class="n">uploaded</span> <span class="n">the</span> <span class="n">results</span> <span class="n">to</span> <span class="n">Algolia</span></span></span></code></pre></div></div>
+<p>面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
 打开 GitHub 上这个 Action 的 <a href="https://github.com/darrenjennings/algolia-docsearch-action" target="_blank" rel="noopener noreffer ">源码</a>, 根据对 Action 构建的了解和现有代码，作者使用的是 Python 和 algolia 自己在 GitHub 上开源的 <a href="https://github.com/algolia/docsearch-scraper.git" target="_blank" rel="noopener noreffer ">工具</a>, 然后执行一个  Python 脚本上传文件到 algolia 的；根据以往经验，由 Python 构建的项目镜像一般都比较大，在本地测试了一下，果不其然的大。</p>
 <h3 id="面临的问题">面临的问题</h3>
 <ul>
@@ -1246,24 +871,12 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
       </tr>
   </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">npm install -g @algolia/cli
@@ -1275,25 +888,19 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Successfully uploaded!&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Successfully uploaded!&#34;</span></span></span></code></pre></div></div>
+<ul>
 <li>新建 Dockerfile 并写入如下代码，在此我们使用最小化的 Node 镜像 <code>node:lts-alpine</code></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:lts-alpine
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-dcokerfile">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:lts-alpine
 </span></span><span class="line"><span class="cl">COPY entrypoint.sh /entrypoint.sh
-</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;/entrypoint.sh&#34;]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;/entrypoint.sh&#34;]</span></span></code></pre></div></div>
+<ul>
 <li>更新 README, 完善使用文档。</li>
 </ul>
 <p>详细代码请参考 <a href="https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile" target="_blank" rel="noopener noreffer ">algolia-docsearch-upload-action</a>。</p>
@@ -1349,33 +956,26 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </blockquote>
 <p>如果觉得慢，恰好我也有空，我可以将我本地的副本直接隔空给你。</p>
 <h3 id="验证安装的-docker-副本的修改时间">验证安装的 Docker 副本的修改时间</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    ~/Downloads                                                                               19:54:48 
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    ~/Downloads                                                                               19:54:48 
 </span></span><span class="line"><span class="cl">❯ ls -al /Applications/Docker.app/Contents/Resources/LICENSE.rtf /Applications/Docker.app/Contents/MacOS/Docker
 </span></span><span class="line"><span class="cl">.rwxr-xr-x zhongren.gu admin <span class="m">16</span> MB Thu Jul  <span class="m">8</span> 01:58:59 <span class="m">2021</span>  /Applications/Docker.app/Contents/MacOS/Docker
-</span></span><span class="line"><span class="cl">.rw-r--r-- zhongren.gu admin <span class="m">19</span> KB Thu Jul  <span class="m">8</span> 01:59:00 <span class="m">2021</span>  /Applications/Docker.app/Contents/Resources/LICENSE.rtf
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看到，两个文件最后的修改时间是 2021 年 6 月 8 日，在 2021 年 8 月 30 日之前，所以是符合我们的要求的。</p>
+</span></span><span class="line"><span class="cl">.rw-r--r-- zhongren.gu admin <span class="m">19</span> KB Thu Jul  <span class="m">8</span> 01:59:00 <span class="m">2021</span>  /Applications/Docker.app/Contents/Resources/LICENSE.rtf</span></span></code></pre></div></div>
+<p>可以看到，两个文件最后的修改时间是 2021 年 6 月 8 日，在 2021 年 8 月 30 日之前，所以是符合我们的要求的。</p>
 <h3 id="禁止-docker-升级">禁止 Docker 升级</h3>
 <p>安装完旧版的 Docker 之后，要禁止 Docker 升级，这样，Docker 的使用条款就永远是旧的，Docker 的律师也拿你没办法喽。</p>
 <p>在这通过命令行修改 host 文件，使 <code>desktop.docker.com</code> 指向 <code>127.0.0.1</code>, 不然 Docker 升级服务访问真正的 Docker 服务器。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="验证未升级">验证未升级</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts</span></span></code></pre></div></div>
+<h3 id="验证未升级">验证未升级</h3>
 <p></p>
 <h2 id="引用">引用</h2>
 <ul>
@@ -1406,26 +1006,21 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <p>同时，在我本记会出现另一个问题，就是签名失败。</p>
 </li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">error: gpg failed to sign the data
-</span></span><span class="line"><span class="cl">fatal: failed to write commit object
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>解决方法其实很简单，将 <code>export GPG_TTY=$(tty)</code> 这个加入你的 shell 启动文件里就可以了， 我这是 <code>.zshrc</code>, 然后使之生效。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">error: gpg failed to sign the data
+</span></span><span class="line"><span class="cl">fatal: failed to write commit object</span></span></code></pre></div></div>
+<p>解决方法其实很简单，将 <code>export GPG_TTY=$(tty)</code> 这个加入你的 shell 启动文件里就可以了， 我这是 <code>.zshrc</code>, 然后使之生效。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 </ul>
@@ -1528,15 +1123,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="jsonpphttpsgithubcomjmhodgesjsonpp"><a href="https://github.com/jmhodges/jsonpp" target="_blank" rel="noopener noreffer ">jsonpp</a></h2>
 <p>json_pp 我主要是用来格式化 curl 命令行的结果，例如测试某个 restful 接口，返回的 json，在命令行就会自动给你格式化好输出，</p>
 <h3 id="安装">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="效率">效率</h1>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp</span></span></code></pre></div></div>
+<h1 id="效率">效率</h1>
 <h2 id="bitwardenhttpsbitwardencom"><a href="https://bitwarden.com/" target="_blank" rel="noopener noreffer ">Bitwarden</a></h2>
 <p></p>
 <p>用来存储和生成密码的工具</p>
@@ -1564,15 +1157,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <p><a href="https://www.mowglii.com/itsycal/itsycalbanner2@2x.png" target="_blank" rel="noopener noreffer ">Itsycal</a></p>
 <p>Mac 自带的顶部的日历其实有点不好用，如果你要看你的日程，那么你需要点开日历，而且他的时间格式其实也不是很友好（对于定制党）；Itsycal 很好的解决了这个问题。</p>
 <h3 id="安装-1">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="沟通">沟通</h1>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal</span></span></code></pre></div></div>
+<h1 id="沟通">沟通</h1>
 <h2 id="微信">微信</h2>
 <p>
 不管是亲朋还是同事沟通，微信都是非常高效的工具，而且微信里面的小程序现在可以运行在桌面端了，使用场景也越来越多了；还有一个非常好用的功能：截屏！ 以前电脑上会安装 QQ， 现在 QQ 也不用了，快速分享内容并标注微信是不二之选。</p>
@@ -1593,15 +1184,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="清理工具">清理工具</h2>
 <p><a href="lemon.qq.com/" rel="">tencent-lemon</a></p>
 <h3 id="安装-2">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://todo.microsoft.com/tasks/" target="_blank" rel="noopener noreffer ">Todo: https://todo.microsoft.com/tasks/</a></li>

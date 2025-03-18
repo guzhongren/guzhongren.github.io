@@ -8,59 +8,37 @@
 <li><code>[features]</code> 和 <code>wee_alloc</code>、<code>console_error_panic_hook</code> 依赖</li>
 </ul>
 <h3 id="1crate-type">1.<code>crate-type</code></h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">lib</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">crate-type</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;cdylib&#34;</span><span class="p">,</span> <span class="s2">&#34;rlib&#34;</span><span class="p">]</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>Rust-wasm</code> 包与通常的 <code>crate</code> 有一点不同，作为 WebAssembly 项目， 我们需要在 <code>cargo.toml</code> 中加入该说明。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-toml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">lib</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">crate-type</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;cdylib&#34;</span><span class="p">,</span> <span class="s2">&#34;rlib&#34;</span><span class="p">]</span></span></span></code></pre></div></div>
+<p><code>Rust-wasm</code> 包与通常的 <code>crate</code> 有一点不同，作为 WebAssembly 项目， 我们需要在 <code>cargo.toml</code> 中加入该说明。</p>
 <p>如果你熟悉其他的 Rust crate，那么你肯定知道，大多的 crate 的类型是 <code>rlib</code>（默认）， 或者是二进制形式的 <code>bin</code>（这种形式不需要 <code>crate-type</code> 注解）, 并且 <code>[lib]</code> 注解在普通的 <code>Cargo</code> 项目中并不需要指定。</p>
 <p>crate-type = [&ldquo;cdylib&rdquo;] 指示你的工程将会被编译为动态系统库 [dynamic system library], 但是对于 WebAssembly，他将会编译为一个没有启动函数的 .wasm 文件，在 Linux 平台上，他将会创建*.so 文件，在 macOS 上将会创建*.dylib 文件，在 windows 平台上将会创建 *.dylib 文件。</p>
 <p>我们通常指定 <code>crate-type = [&quot;rlib&quot;]</code> 来确保我们的库可以用 wasm-pack 来做单元测试（稍后会看到）。如果没有这个配置，我们将不能测试我们的库，因为 cdylib 包类型和 wasm-pack 的单元测试类型相冲突。</p>
 <p>你可以使用此 <a href="https://doc.rust-lang.org/reference/linkage.html" target="_blank" rel="noopener noreffer ">链接</a> 获取更多关于包类型的知识。</p>
 <h3 id="2-wasm-bindgen-依赖">2. wasm-bindgen 依赖</h3>
 <p>wasm-bindgen 在 WebAssembly 中是一个重要的依赖。 这个包允许我们使用 <code>[wasm-bindgen]</code> 为在 JavaScript 和 Rust 生成的 wasm 之间的代码打标签。以使我们使用它的属性可以导入 JS 并且导出 Rust。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">wasm-bindgen</span> <span class="p">=</span> <span class="s2">&#34;0.2&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>当我们讨论 lib.rs 生成什么内容的时候，将会看到更多关于怎么使用这个库。
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-toml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">wasm-bindgen</span> <span class="p">=</span> <span class="s2">&#34;0.2&#34;</span></span></span></code></pre></div></div>
+<p>当我们讨论 lib.rs 生成什么内容的时候，将会看到更多关于怎么使用这个库。
 如果你从 JavaScript 技术栈过来，你可能注意到了当我们添加依赖的时候并没有加 <code>^</code> 或者 <code>~</code> , 看起来像是我们只要 <code>0.2</code> 这个版本。然而，事实并非如此！在 Rust 里， <code>^</code> 是默认的，你可使用这个 <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html" target="_blank" rel="noopener noreffer ">链接</a> 查看更多信息</p>
 <h3 id="3-features-和-wee_alloc-console_error_panic_hook-dependencies">3. [features] 和 wee_alloc, console_error_panic_hook dependencies</h3>
 <p>作为我们设计模板的工作的一部分，该模板可帮助人们发现针对特定用例的有用包，该模板包括两个依赖项，这对于开发 Rust-wasm 包的人们可能非常有用：console_error_panic_hook 和 wee_alloc。</p>
 <p>因为这些依赖关系主要在 Rust-wasm 包开发工作流程的特定部分中有用，所以我们还设置了一些粘合代码，使我们既可以将它们都包含为依赖关系，又可以选择将它们包含在内。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">features</span><span class="p">]</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-toml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">features</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nx">default</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;console_error_panic_hook&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dependencies</span><span class="p">]</span>
@@ -77,10 +55,8 @@
 </span></span><span class="line"><span class="cl"><span class="c"># allocator, however.</span>
 </span></span><span class="line"><span class="cl"><span class="c">#</span>
 </span></span><span class="line"><span class="cl"><span class="c"># Unfortunately, `wee_alloc` requires nightly Rust when targeting wasm for now.</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wee_alloc</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.4.2&#34;</span><span class="p">,</span> <span class="nx">optional</span> <span class="p">=</span> <span class="kc">true</span> <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在我们的代码中，只有在启用某些 [features] 的情况下，我们才会将代码的某些部分标记为正在运行，特别是 console_error_panic_hook 和 wee_alloc。默认情况下，仅启用 console_error_panic_hook。要禁用或启用任一功能，默认情况下，我们可以在 [features] 下编辑 default 数组。</p>
+</span></span><span class="line"><span class="cl"><span class="nx">wee_alloc</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.4.2&#34;</span><span class="p">,</span> <span class="nx">optional</span> <span class="p">=</span> <span class="kc">true</span> <span class="p">}</span></span></span></code></pre></div></div>
+<p>在我们的代码中，只有在启用某些 [features] 的情况下，我们才会将代码的某些部分标记为正在运行，特别是 console_error_panic_hook 和 wee_alloc。默认情况下，仅启用 console_error_panic_hook。要禁用或启用任一功能，默认情况下，我们可以在 [features] 下编辑 default 数组。</p>
 <p>要了解有关这些功能的更多信息，我们将在 src/lib.rs 和 src/utils.rs 部分中深入讨论它们。
 简要地，它们包括：</p>
 <ul>
@@ -94,39 +70,22 @@
 ]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" referrerpolicy="no-referrer">
             </div><h2 id="初始化工程">初始化工程</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm init rust-webpack web_assembly_demo
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm init rust-webpack web_assembly_demo
 </span></span><span class="line"><span class="cl">npx: 18 安装成功，用时 3.989 秒
 </span></span><span class="line"><span class="cl"> Rust +  WebAssembly + Webpack = ️
-</span></span><span class="line"><span class="cl">Installed dependencies
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">yarn</span>
+</span></span><span class="line"><span class="cl">Installed dependencies</span></span></code></pre></div></div>
+<h2 id="安装-web-依赖">安装 Web 依赖</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">yarn</span>
 </span></span><span class="line"><span class="cl"><span class="n">yarn</span> <span class="n">install</span> <span class="n">v1</span><span class="o">.</span><span class="mf">19.1</span>
 </span></span><span class="line"><span class="cl"><span class="n">warning</span> <span class="n">package</span><span class="o">.</span><span class="n">json</span><span class="p">:</span> <span class="n">No</span> <span class="n">license</span> <span class="n">field</span>
 </span></span><span class="line"><span class="cl"><span class="n">info</span> <span class="n">No</span> <span class="n">lockfile</span> <span class="n">found</span><span class="o">.</span>
@@ -138,66 +97,14 @@
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Linking</span> <span class="n">dependencies</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Building</span> <span class="n">fresh</span> <span class="n">packages</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="n">success</span> <span class="n">Saved</span> <span class="n">lockfile</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Done</span> <span class="ow">in</span> <span class="mf">17.87</span><span class="n">s</span><span class="o">.</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="修改-cargotoml-为">修改 Cargo.toml 为</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># You must change these to your own details.</span>
+</span></span><span class="line"><span class="cl">  <span class="n">Done</span> <span class="ow">in</span> <span class="mf">17.87</span><span class="n">s</span><span class="o">.</span></span></span></code></pre></div></div>
+<h2 id="修改-cargotoml-为">修改 Cargo.toml 为</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-toml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># You must change these to your own details.</span>
 </span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">package</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;web_assembly_demo&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;My super awesome Rust, WebAssembly, and Webpack project!&#34;</span>
@@ -247,75 +154,15 @@
 </span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen-test</span> <span class="p">=</span> <span class="s2">&#34;0.2.45&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">futures</span> <span class="p">=</span> <span class="s2">&#34;0.1.27&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">js-sys</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen-futures</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Rust 的依赖会在启动 Web 程序的时候自动安装。</p>
+</span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen-futures</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span></span></span></code></pre></div></div>
+<p>Rust 的依赖会在启动 Web 程序的时候自动安装。</p>
 <h2 id="启动程序">启动程序</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ yarn start
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ yarn start
 </span></span><span class="line"><span class="cl">yarn run v1.19.1
 </span></span><span class="line"><span class="cl">warning package.json: No license field
 </span></span><span class="line"><span class="cl">$ rimraf dist pkg &amp;&amp; webpack-dev-server --open -d
@@ -373,116 +220,14 @@
 </span></span><span class="line"><span class="cl">Built at: 2019-11-23 20:17:14
 </span></span><span class="line"><span class="cl">   Asset     Size  Chunks             Chunk Names
 </span></span><span class="line"><span class="cl">index.js  897 KiB   index  [emitted]  index
-</span></span><span class="line"><span class="cl"> + 2 hidden assets
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="在-src-中新建-parsers-并编写处理-markdown-的-rust-代码">在 src 中新建 parse.rs 并编写处理 markdown 的 rust 代码</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Parser</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span><span class="line"><span class="cl"> + 2 hidden assets</span></span></code></pre></div></div>
+<h2 id="在-src-中新建-parsers-并编写处理-markdown-的-rust-代码">在 src 中新建 parse.rs 并编写处理 markdown 的 rust 代码</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-rust">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Parser</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">pos</span>: <span class="kt">usize</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">input</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
@@ -582,26 +327,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">is_new_line</span><span class="p">(</span><span class="n">c</span>: <span class="kt">char</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="在-srclibrs-中引入-parse-mod-并编写向外暴露的函数">在 src/lib.rs 中引入 parse mod， 并编写向外暴露的函数</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Rust" data-lang="Rust"><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">parser</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="在-srclibrs-中引入-parse-mod-并编写向外暴露的函数">在 src/lib.rs 中引入 parse mod， 并编写向外暴露的函数</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-Rust">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Rust" data-lang="Rust"><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">parser</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">wasm_bindgen</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
@@ -611,48 +344,14 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">parse</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span>::<span class="n">parse</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">result</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="在-jsindexjs-中使用-web-assembly-修改结果如下">在 js/index.js 中使用 Web Assembly ，修改结果如下</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addElement</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="在-jsindexjs-中使用-web-assembly-修改结果如下">在 js/index.js 中使用 Web Assembly ，修改结果如下</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-rust">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addElement</span><span class="p">;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">function</span><span class="w"> </span><span class="n">addElement</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">markdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="na">&#39;textarea&#39;</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">markdown</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="na">&#39;markdown&#39;</span><span class="w">
@@ -685,9 +384,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1">//   const input = &#39;1233&#39;
 </span></span></span><span class="line"><span class="cl"><span class="c1">//     previewArea.innerHTML = module.parse(input)
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="效果图">效果图</h2>
+</span></span></span></code></pre></div></div>
+<h2 id="效果图">效果图</h2>
 <p></p>
 <h2 id="在线体验">在线体验</h2>
 <p><a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">Markdown editor</a>: <a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">https://andorlab.github.io/WebAssembly/</a></p>

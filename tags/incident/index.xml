@@ -6,15 +6,13 @@
 <p>技术层面，有两个bug，一个Job运行时，数据库CPU 拉满，一个少了Redis 初始化，导致从Event Hub 发送过来的数据无法处理。</p>
 <p>业务层面, 数据库CPU 拉满，导致业务数据无法处理；另一个Redis 初始化失败，影响到所有用户数据同步及奖励转换的问题。</p>
 <h3 id="数据库cpu-拉满">数据库CPU 拉满</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s2">&#34;table&#34;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">columnName</span><span class="o">=</span><span class="s1">&#39;value&#39;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>新的代码修改是根据数据库某一列去查找对应的数据，然而Dev 对于这一列并没有添加索引，导致在Job 运行，Job 运行时间过长，通过数据库指标的dashboard 查看，数据库CPU 爆满,进而对该Job 的代码重新review， 发现时数据库查询没有加索引的问题。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sql">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s2">&#34;table&#34;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">columnName</span><span class="o">=</span><span class="s1">&#39;value&#39;</span></span></span></code></pre></div></div>
+<p>新的代码修改是根据数据库某一列去查找对应的数据，然而Dev 对于这一列并没有添加索引，导致在Job 运行，Job 运行时间过长，通过数据库指标的dashboard 查看，数据库CPU 爆满,进而对该Job 的代码重新review， 发现时数据库查询没有加索引的问题。</p>
 <p>发现有问题后，我们开始分析是否可以回滚该服务；但是发现该服务还涉及到其他hotfix, 如果这个service rollback，那么还有其他2个service 也需要回滚，影响面比较大。最终，我们的解决方案是，hotfix 依旧上线，但是涉及的Daily Job 从任务中删除，通知客户该incident 的影响面，并且在第二天晚上定时任务执行的时候再次确认是否又执行了; 对于在新的fix 上线之前的报告，我们使用手动生成的方式,以使业务持续。</p>
 <p>是不是感觉不应该出现这样的问题？</p>
 <p>是的, 但为什么还是出现了这样的事故呢？个人认为原因很简单:</p>

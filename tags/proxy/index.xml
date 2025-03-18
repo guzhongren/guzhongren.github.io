@@ -22,15 +22,13 @@
 <p>从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。</p>
 <p></p>
 <h4 id="模式">模式</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</span></span></code></pre></div></div>
+<ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
 <li>repoName: 存储文件的仓库名</li>
 <li>@version: Release 版本号；如果不填写使用最新版</li>
@@ -39,15 +37,13 @@
 <h4 id="实现">实现</h4>
 <p>创建组织的团队配置仓库，并写入要配置的内容，commit 并 push。</p>
 <p>按照上面 jsdelivr 的模式配置路径，效果如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</span></span></code></pre></div></div>
+<p></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>
 <h2 id="引用">引用</h2>

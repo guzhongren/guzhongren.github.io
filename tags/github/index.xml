@@ -5,78 +5,23 @@
 <p>对于存储在 algolia 上的数据，我是通过 GitHub Action：<a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer</a> 来上传的，之前使用是没有问题的。</p>
 <h2 id="问题">问题</h2>
 <p>突然有一天我要使用搜索功能，但是怎么也搜索不到我想搜索的内容，看了 GitHub 项目的构建状态，一切正常，然后登陆到 algolia 后台一看， 最后一次的数据更新是在 21 年 8 月； 然后打开最近的博客构建记录，看了执行如下 GitHub workflow 的 yaml 日志，大吃一惊：程序执行错误，但还是在最后给我们送了一个🚀，同样是写代码，你能忍？</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_application_id</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_APPLICATION_ID}}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_api_key</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_API_KEY}}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>运行日志</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">darrenjennings</span><span class="o">/</span><span class="n">algolia</span><span class="o">-</span><span class="n">docsearch</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">master</span>
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span></span></span></code></pre></div></div>
+<p>运行日志</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-log">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">darrenjennings</span><span class="o">/</span><span class="n">algolia</span><span class="o">-</span><span class="n">docsearch</span><span class="o">-</span><span class="n">action</span><span class="err">@</span><span class="n">master</span>
 </span></span><span class="line"><span class="cl"><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">name</span> <span class="n">a682564a13d76444749d3b720346ba2365371_9474ad</span> <span class="o">--</span><span class="n">label</span> <span class="mi">6</span><span class="n">a6825</span> <span class="o">--</span><span class="n">workdir</span> <span class="o">/</span><span class="n">github</span><span class="o">/</span><span class="n">workspace</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_ALGOLIA_APPLICATION_ID</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_ALGOLIA_API_KEY</span> <span class="o">-</span><span class="n">e</span> <span class="n">INPUT_FILE</span> <span class="o">-</span><span class="n">e</span> <span class="n">HOME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_JOB</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_SHA</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REPOSITORY</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REPOSITORY_OWNER</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_ID</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_NUMBER</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RETENTION_DAYS</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_RUN_ATTEMPT</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTOR</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_WORKFLOW</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_HEAD_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_BASE_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_EVENT_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_SERVER_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_API_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_GRAPHQL_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_PROTECTED</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_REF_TYPE</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_WORKSPACE</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_EVENT_PATH</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION_REPOSITORY</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTION_REF</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_PATH</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ENV</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_OS</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_ARCH</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_NAME</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_TOOL_CACHE</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_TEMP</span> <span class="o">-</span><span class="n">e</span> <span class="n">RUNNER_WORKSPACE</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_RUNTIME_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_RUNTIME_TOKEN</span> <span class="o">-</span><span class="n">e</span> <span class="n">ACTIONS_CACHE_URL</span> <span class="o">-</span><span class="n">e</span> <span class="n">GITHUB_ACTIONS</span><span class="o">=</span><span class="bp">true</span> <span class="o">-</span><span class="n">e</span> <span class="n">CI</span><span class="o">=</span><span class="bp">true</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/var/run/docker.sock&#34;</span><span class="p">:</span><span class="s2">&#34;/var/run/docker.sock&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_github_home&#34;</span><span class="p">:</span><span class="s2">&#34;/github/home&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_github_workflow&#34;</span><span class="p">:</span><span class="s2">&#34;/github/workflow&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/_temp/_runner_file_commands&#34;</span><span class="p">:</span><span class="s2">&#34;/github/file_commands&#34;</span> <span class="o">-</span><span class="n">v</span> <span class="s2">&#34;/home/runner/work/blog/blog&#34;</span><span class="p">:</span><span class="s2">&#34;/github/workspace&#34;</span> <span class="mi">6</span><span class="n">a6825</span><span class="p">:</span><span class="mi">64</span><span class="n">a13d76444749d3b720346ba2365371</span>  <span class="s2">&#34;***&#34;</span> <span class="s2">&#34;***&#34;</span> <span class="s2">&#34;./public/index.json&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="n">Cloning</span> <span class="n">into</span> <span class="s1">&#39;docsearch-scraper&#39;</span><span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="n">Collecting</span> <span class="n">pipenv</span>
@@ -125,10 +70,8 @@
 </span></span><span class="line"><span class="cl">  <span class="ne">File</span> <span class="s2">&#34;/github/workspace/docsearch-scraper/cli/../scraper/src/config/config_loader.py&#34;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">72</span><span class="p">,</span> <span class="ow">in</span> <span class="n">__init__</span>
 </span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">list</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
 </span></span><span class="line"><span class="cl"><span class="n">AttributeError</span><span class="p">:</span> <span class="s1">&#39;list&#39;</span> <span class="n">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;items&#39;</span>
-</span></span><span class="line"><span class="cl"><span class="err">🚀</span> <span class="n">Successfully</span> <span class="n">indexed</span> <span class="ow">and</span> <span class="n">uploaded</span> <span class="n">the</span> <span class="n">results</span> <span class="n">to</span> <span class="n">Algolia</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
+</span></span><span class="line"><span class="cl"><span class="err">🚀</span> <span class="n">Successfully</span> <span class="n">indexed</span> <span class="ow">and</span> <span class="n">uploaded</span> <span class="n">the</span> <span class="n">results</span> <span class="n">to</span> <span class="n">Algolia</span></span></span></code></pre></div></div>
+<p>面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
 打开 GitHub 上这个 Action 的 <a href="https://github.com/darrenjennings/algolia-docsearch-action" target="_blank" rel="noopener noreffer ">源码</a>, 根据对 Action 构建的了解和现有代码，作者使用的是 Python 和 algolia 自己在 GitHub 上开源的 <a href="https://github.com/algolia/docsearch-scraper.git" target="_blank" rel="noopener noreffer ">工具</a>, 然后执行一个  Python 脚本上传文件到 algolia 的；根据以往经验，由 Python 构建的项目镜像一般都比较大，在本地测试了一下，果不其然的大。</p>
 <h3 id="面临的问题">面临的问题</h3>
 <ul>
@@ -224,24 +167,12 @@
       </tr>
   </tbody>
 </table>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
 </span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">npm install -g @algolia/cli
@@ -253,25 +184,19 @@
 </span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
 </span></span><span class="line"><span class="cl"><span class="k">fi</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Successfully uploaded!&#34;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Successfully uploaded!&#34;</span></span></span></code></pre></div></div>
+<ul>
 <li>新建 Dockerfile 并写入如下代码，在此我们使用最小化的 Node 镜像 <code>node:lts-alpine</code></li>
 </ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:lts-alpine
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-dcokerfile">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">FROM node:lts-alpine
 </span></span><span class="line"><span class="cl">COPY entrypoint.sh /entrypoint.sh
-</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;/entrypoint.sh&#34;]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span><span class="line"><span class="cl">ENTRYPOINT [&#34;/entrypoint.sh&#34;]</span></span></code></pre></div></div>
+<ul>
 <li>更新 README, 完善使用文档。</li>
 </ul>
 <p>详细代码请参考 <a href="https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile" target="_blank" rel="noopener noreffer ">algolia-docsearch-upload-action</a>。</p>
@@ -327,15 +252,13 @@
 <p>从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。</p>
 <p></p>
 <h4 id="模式">模式</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</span></span></code></pre></div></div>
+<ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
 <li>repoName: 存储文件的仓库名</li>
 <li>@version: Release 版本号；如果不填写使用最新版</li>
@@ -344,15 +267,13 @@
 <h4 id="实现">实现</h4>
 <p>创建组织的团队配置仓库，并写入要配置的内容，commit 并 push。</p>
 <p>按照上面 jsdelivr 的模式配置路径，效果如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</span></span></code></pre></div></div>
+<p></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>
 <h2 id="引用">引用</h2>
@@ -379,46 +300,34 @@
 </blockquote>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
-            </div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
+            </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
 </span></span><span class="line"><span class="cl">period of time, or established connection failed because connected host has failed to respond.<span class="o">)</span>
-</span></span><span class="line"><span class="cl">go: error loading module requirements
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可">如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2>
+</span></span><span class="line"><span class="cl">go: error loading module requirements</span></span></code></pre></div></div>
+<h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可">如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2>
 <p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>2 用 github 上的镜像地址替换</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0</span></span></code></pre></div></div>
+<p>2 用 github 上的镜像地址替换</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+</span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
@@ -430,46 +339,34 @@
 <p></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
-            </div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
+            </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
 </span></span><span class="line"><span class="cl">period of time, or established connection failed because connected host has failed to respond.<span class="o">)</span>
-</span></span><span class="line"><span class="cl">go: error loading module requirements
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可">如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2>
+</span></span><span class="line"><span class="cl">go: error loading module requirements</span></span></code></pre></div></div>
+<h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可">如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2>
 <p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>2 用 github 上的镜像地址替换</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0</span></span></code></pre></div></div>
+<p>2 用 github 上的镜像地址替换</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+</span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>

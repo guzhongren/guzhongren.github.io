@@ -7,36 +7,12 @@
 </ul>
 <p>安装很简单，不用说</p>
 <h2 id="配置">配置</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 使用 IntelliSense 了解相关属性。
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 悬停以查看现有属性的描述。
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 欲了解更多信息，请访问：https://go.microsoft.com/fwlink/?linkid=830387
@@ -60,10 +36,8 @@
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1">// 传递给程序的参数，没有参数留空即可
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="err">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p></p>
+</span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div></div>
+<p></p>
 <h2 id="调试">调试</h2>
 <p></p>
 <h2 id="引用">引用</h2>

@@ -62,19 +62,15 @@
 <p>对于这类问题，可以有如下解决方案：</p>
 <h3 id="task">Task</h3>
 <p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">- [x] subTask1
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-todo">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">- [x] subTask1
 </span></span><span class="line"><span class="cl">- [ ] subTask2
-</span></span><span class="line"><span class="cl">- [ ] subTask3
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="todo">ToDo</h3>
+</span></span><span class="line"><span class="cl">- [ ] subTask3</span></span></code></pre></div></div>
+<h3 id="todo">ToDo</h3>
 <p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
 <p></p>
 <h2 id="实践">实践</h2>
@@ -317,28 +313,12 @@
 <p>根据上面的表格，组织会议，让大家填写自己所能想到的所有的技术债，然后对每一条技术债进行说明，对齐认识。然后对每一条从 Difficulty 和 Importance 角度进行投票。</p>
 <h4 id="分析">分析</h4>
 <p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
 </span></span><span class="line"><span class="cl">  I<span class="p">|</span>      View result immediately       <span class="p">|</span>     Split <span class="p">&amp;</span> Plan
 </span></span><span class="line"><span class="cl">  m<span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">  p<span class="p">|</span>                                    <span class="p">|</span>
@@ -354,10 +334,8 @@
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>                                    <span class="p">|</span>
 </span></span><span class="line"><span class="cl">   <span class="p">|</span>      Fix it <span class="k">if</span> have spare <span class="nb">time</span>     <span class="p">|</span>     Let it go
 </span></span><span class="line"><span class="cl">   ------------------------------------------------------------------------------&gt;
-</span></span><span class="line"><span class="cl">                                                                      Difficulty
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>说明：</p>
+</span></span><span class="line"><span class="cl">                                                                      Difficulty</span></span></code></pre></div></div>
+<p>说明：</p>
 <ul>
 <li>横轴：从左到右 Difficulty 由简到难；</li>
 <li>纵轴：从下到上 Importance 由低到高；</li>

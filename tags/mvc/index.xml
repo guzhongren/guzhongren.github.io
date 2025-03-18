@@ -41,21 +41,12 @@
 </blockquote>
 <h2 id="基础环境信息">基础环境信息</h2>
 <p>我的环境信息如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ node -v
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ node -v
 </span></span><span class="line"><span class="cl">v12.13.0
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">❯ deno --version
@@ -64,10 +55,8 @@
 </span></span><span class="line"><span class="cl">typescript 3.9.2
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">❯ docker --version
-</span></span><span class="line"><span class="cl">Docker version 19.03.8, build afacb8b
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其他信息</p>
+</span></span><span class="line"><span class="cl">Docker version 19.03.8, build afacb8b</span></span></code></pre></div></div>
+<p>其他信息</p>
 <table>
   <thead>
       <tr>
@@ -90,28 +79,12 @@
   </tbody>
 </table>
 <h3 id="项目结构">项目结构</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ tree -L <span class="m">1</span> deno-restful-api-with-postgresql-tdd
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ tree -L <span class="m">1</span> deno-restful-api-with-postgresql-tdd
 </span></span><span class="line"><span class="cl">deno-restful-api-with-postgresql-tdd
 </span></span><span class="line"><span class="cl">├── .github         // github action
 </span></span><span class="line"><span class="cl">├── .vscode         // debug 及 vscode 配置文件
@@ -127,86 +100,43 @@
 </span></span><span class="line"><span class="cl">├── src             // 源代码目录
 </span></span><span class="line"><span class="cl">└── tests           // 测试目录
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="实现过程">实现过程</h2>
+</span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files</span></span></code></pre></div></div>
+<h2 id="实现过程">实现过程</h2>
 <blockquote>
 <p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">代码实现</a>。</p>
 </blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make db
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make db
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> ./_resources/Iaas <span class="o">&amp;&amp;</span> docker-compose up -d
 </span></span><span class="line"><span class="cl">Starting iaas_db_1 ... <span class="k">done</span>
-</span></span><span class="line"><span class="cl">Starting iaas_pgadmin_1 ... <span class="k">done</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="登录pgadmin-在默认的数据库postgres中新建query并执行如下操作完成初始化数据库">登录<code>pgadmin</code>, 在默认的数据库<code>postgres</code>中新建<code>Query</code>并执行如下操作，完成初始化数据库</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="s2">&#34;user&#34;</span><span class="w">
+</span></span><span class="line"><span class="cl">Starting iaas_pgadmin_1 ... <span class="k">done</span></span></span></code></pre></div></div>
+<h4 id="登录pgadmin-在默认的数据库postgres中新建query并执行如下操作完成初始化数据库">登录<code>pgadmin</code>, 在默认的数据库<code>postgres</code>中新建<code>Query</code>并执行如下操作，完成初始化数据库</h4>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sql">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">public</span><span class="p">.</span><span class="s2">&#34;user&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">(</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="n">uuid</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w">  </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">registration_date</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">without</span><span class="w"> </span><span class="n">time</span><span class="w"> </span><span class="k">zone</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">character</span><span class="w"> </span><span class="nb">varying</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w">  </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">deleted</span><span class="w"> </span><span class="nb">boolean</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="src-最终目录">src 最终目录</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ tree -a -L <span class="m">4</span> src
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="src-最终目录">src 最终目录</h3>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ tree -a -L <span class="m">4</span> src
 </span></span><span class="line"><span class="cl">src
 </span></span><span class="line"><span class="cl">├── Utils
 </span></span><span class="line"><span class="cl">│   └── client.ts
@@ -233,42 +163,25 @@
 </span></span><span class="line"><span class="cl">    ├── UserService.ts
 </span></span><span class="line"><span class="cl">    └── fetchResource.ts
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="m">8</span> directories, <span class="m">16</span> files
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在开始之前，我们先定义一些常用的结构体和对象，如：response，exception 等</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/controllers/model/IResponse.ts
+</span></span><span class="line"><span class="cl"><span class="m">8</span> directories, <span class="m">16</span> files</span></span></code></pre></div></div>
+<p>在开始之前，我们先定义一些常用的结构体和对象，如：response，exception 等</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/controllers/model/IResponse.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">interface</span> <span class="nx">IResponse</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">success</span>: <span class="kt">boolean</span><span class="p">;</span> <span class="c1">// 表示此次请求是否成功
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">msg?</span>: <span class="kt">String</span><span class="p">;</span>     <span class="c1">// 发生错误时的一些日志信息
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">data?</span>: <span class="kt">any</span><span class="p">;</span>       <span class="c1">// 请求成功时返回给前端的数据
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/entity/User.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/entity/User.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">interface</span> <span class="nx">IUser</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">id?</span>: <span class="kt">string</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">username?</span>: <span class="kt">string</span><span class="p">;</span>
@@ -276,169 +189,92 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">registrationDate?</span>: <span class="kt">string</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">deleted?</span>: <span class="kt">boolean</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">User</span> <span class="kr">implements</span> <span class="nx">IUser</span> <span class="p">{}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>异常用来处理错误情况，在最终返回给用户结果的时候，我们不能将异常返回给用户，而是以一种更友好的方式返回，具体流程可以参考<code>src/middlewares/error.ts</code>这个中间件的处理方式。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/exception/InvalidedParamsException.ts
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">class</span> <span class="nx">User</span> <span class="kr">implements</span> <span class="nx">IUser</span> <span class="p">{}</span></span></span></code></pre></div></div>
+<p>异常用来处理错误情况，在最终返回给用户结果的时候，我们不能将异常返回给用户，而是以一种更友好的方式返回，具体流程可以参考<code>src/middlewares/error.ts</code>这个中间件的处理方式。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/exception/InvalidedParamsException.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">InvalidedParamsException</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="sb">`Invalided parameters, please check, </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/exception/NotFoundException.ts
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/exception/NotFoundException.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">class</span> <span class="nx">NotFoundException</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">constructor</span><span class="p">(</span><span class="nx">message</span>: <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="kr">super</span><span class="p">(</span><span class="sb">`Not found resource, </span><span class="si">${</span><span class="nx">message</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="依赖管理">依赖管理</h3>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h3 id="依赖管理">依赖管理</h3>
 <p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
 <p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" target="_blank" rel="noopener noreffer "><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
 <p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">assert</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">equal</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/std/testing/asserts.ts&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="测试先行">测试先行</h3>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/std/testing/asserts.ts&#34;</span><span class="p">;</span></span></span></code></pre></div></div>
+<h3 id="测试先行">测试先行</h3>
 <p>现在<code>tests</code>目录下新建一个测试命名为<code>index.test.ts</code>, 写基本测试，证明测试和程序是可以<code>work</code>的。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">assert</span><span class="p">,</span> <span class="nx">equal</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../deps.ts&#34;</span><span class="p">;</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">assert</span><span class="p">,</span> <span class="nx">equal</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../deps.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">test</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">Deno</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">test</span><span class="p">(</span><span class="s2">&#34;should work&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">universal</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">equal</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="nx">universal</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">assert</span><span class="p">(</span><span class="mi">42</span> <span class="o">===</span> <span class="nx">universal</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="第一次运行测试">第一次运行测试</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
+<h3 id="第一次运行测试">第一次运行测试</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">deno <span class="nb">test</span> --allow-env --allow-net -L info
 </span></span><span class="line"><span class="cl">Check file:///xxxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts
 </span></span><span class="line"><span class="cl">running <span class="m">1</span> tests
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> should work ... ok <span class="o">(</span>6ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">1</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>6ms<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="建立测试固件">建立测试固件</h3>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">1</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>6ms<span class="o">)</span></span></span></code></pre></div></div>
+<h3 id="建立测试固件">建立测试固件</h3>
 <p>将测试中用到的通用的测试信息存放在测试固件（<code>testFixtures</code>）中，可以在测试中复用，且可以简化代码。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/testFixtures.ts
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">TEST_PORT</span> <span class="o">=</span> <span class="mi">9000</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="health-接口">health 接口</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/testFixtures.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">TEST_PORT</span> <span class="o">=</span> <span class="mi">9000</span></span></span></code></pre></div></div>
+<h3 id="health-接口">health 接口</h3>
 <p><code>health</code> 接口可以作为系统的健康检查的一个出口，在运维平台中非常实用。对于此接口，我们只需要返回一个状态<code>OK</code>即可。其他情况可忽略。那么对应的<code>Todo</code>应该如下：</p>
 <blockquote>
 <p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p>
 </blockquote>
 <p>所以，测试代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">assertEquals</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Application</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Router</span><span class="p">,</span>
@@ -474,10 +310,8 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="nx">assertEquals</span><span class="p">(</span><span class="nx">responseJSON</span><span class="p">,</span> <span class="nx">expectResponse</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">abortController</span><span class="p">.</span><span class="nx">abort</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="given">given</h4>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
+<h4 id="given">given</h4>
 <blockquote>
 <ul>
 <li>上面的代码中，首先声明了我们期望的数据结构，即<code>expectResponse</code>；</li>
@@ -503,23 +337,12 @@
 </blockquote>
 <h4 id="实现-gethealthinfo-handler">实现 <code>getHealthInfo</code> handler</h4>
 <p>在 src/controller 下新建<code>health.ts</code>，并以最简单的方案实现上面期望的结果，如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/controllers/health.ts
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/controllers/health.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Response</span><span class="p">,</span> <span class="nx">Status</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../../deps.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">IResponse</span> <span class="kr">from</span> <span class="s2">&#34;./model/IResponse.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -530,72 +353,43 @@
 </span></span><span class="line"><span class="cl">    <span class="nx">data</span><span class="o">:</span> <span class="s2">&#34;Ok&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">};</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">response</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="nx">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">};</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="运行测试">运行测试</h4>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<h4 id="运行测试">运行测试</h4>
 <p>运行测试命令，测试通过；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">deno <span class="nb">test</span> --allow-env --allow-net -L info
 </span></span><span class="line"><span class="cl">Check file://xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts
 </span></span><span class="line"><span class="cl">running <span class="m">2</span> tests
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> should work ... ok <span class="o">(</span>6ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> health check ... ok <span class="o">(</span>3ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">2</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>9ms<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>至此，使用<code>TDD</code>完成第一个简单的<code>health</code>接口；但对外没有暴露接口，所以需要在<code>src</code>目录中实现一个对外暴露该接口的应用。</p>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">2</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>9ms<span class="o">)</span></span></span></code></pre></div></div>
+<p>至此，使用<code>TDD</code>完成第一个简单的<code>health</code>接口；但对外没有暴露接口，所以需要在<code>src</code>目录中实现一个对外暴露该接口的应用。</p>
 <h5 id="新建configts-做应用程序的配置管理文件">新建<code>config.ts</code>， 做应用程序的配置管理文件</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/config.ts
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/config.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">env</span> <span class="o">=</span> <span class="nx">Deno</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">toObject</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">APP_HOST</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">APP_HOST</span> <span class="o">||</span> <span class="s2">&#34;127.0.0.1&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">APP_PORT</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">env</span><span class="p">.</span><span class="nx">APP_PORT</span><span class="p">)</span> <span class="o">||</span> <span class="mi">8000</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">API_VERSION</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">API_VERSION</span> <span class="o">||</span> <span class="s2">&#34;/api/v1&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>配置文件中，记录了应用程序启动的默认 host, 端口，及数据库相关的信息，最后记录了应用程序 api 的前缀。</p>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">API_VERSION</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">API_VERSION</span> <span class="o">||</span> <span class="s2">&#34;/api/v1&#34;</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>配置文件中，记录了应用程序启动的默认 host, 端口，及数据库相关的信息，最后记录了应用程序 api 的前缀。</p>
 <p>在开始之前，需要在<code>deps.ts</code>中引入所需要的库；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Application</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Router</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Response</span><span class="p">,</span>
@@ -606,26 +400,14 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">RouterContext</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">helpers</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">send</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/x/oak/mod.ts&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="新建路由-routerts-引入heathts并绑定路由">新建路由 <code>router.ts</code>, 引入<code>Heath.ts</code>并绑定路由</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/router.ts
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/x/oak/mod.ts&#34;</span><span class="p">;</span></span></span></code></pre></div></div>
+<h5 id="新建路由-routerts-引入heathts并绑定路由">新建路由 <code>router.ts</code>, 引入<code>Heath.ts</code>并绑定路由</h5>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/router.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Router</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../deps.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">API_VERSION</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./config.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">getHealthInfo</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./controllers/health.ts&#34;</span><span class="p">;</span>
@@ -635,39 +417,14 @@
 </span></span><span class="line"><span class="cl"><span class="nx">router</span><span class="p">.</span><span class="nx">prefix</span><span class="p">(</span><span class="nx">API_VERSION</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">router</span>
 </span></span><span class="line"><span class="cl">  <span class="p">.</span><span class="kr">get</span><span class="p">(</span><span class="s2">&#34;/health&#34;</span><span class="p">,</span> <span class="nx">getHealthInfo</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="新建indexts-建立应用程序">新建<code>index.ts</code>, 建立应用程序</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/index.ts
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">router</span><span class="p">;</span></span></span></code></pre></div></div>
+<h5 id="新建indexts-建立应用程序">新建<code>index.ts</code>, 建立应用程序</h5>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/index.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Application</span><span class="p">,</span> <span class="nx">send</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../deps.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">APP_HOST</span><span class="p">,</span> <span class="nx">APP_PORT</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;./config.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">router</span> <span class="kr">from</span> <span class="s2">&#34;./router.ts&#34;</span><span class="p">;</span>
@@ -690,53 +447,35 @@
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kr">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">main</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createApplication</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">listenToServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="启动应用">启动应用</h5>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h5 id="启动应用">启动应用</h5>
 <p>如果是<code>VSCode</code>， 可以使用<code>F5</code>功能键，快速启动应用，在低版本的 <code>VS Code(1.47.2 以下）</code> 中可以启动调试。也可以以下命令启动；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make dev
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make dev
 </span></span><span class="line"><span class="cl">deno run --allow-net --allow-env ./src/index.ts
 </span></span><span class="line"><span class="cl">数据库链接成功！
-</span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="调用接口测试结果">调用接口测试结果</h5>
+</span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000</span></span></code></pre></div></div>
+<h5 id="调用接口测试结果">调用接口测试结果</h5>
 <p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" rel="noopener noreffer "><code>Rest Client</code></a> 插件进行辅助测试。</p>
 <h6 id="请求体">请求体</h6>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/healthCheck.http
-</span></span><span class="line"><span class="cl">GET http://localhost:8000/api/v1/health HTTP/1.1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h6 id="请求结果">请求结果</h6>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 200 OK
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/healthCheck.http
+</span></span><span class="line"><span class="cl">GET http://localhost:8000/api/v1/health HTTP/1.1</span></span></code></pre></div></div>
+<h6 id="请求结果">请求结果</h6>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 200 OK
 </span></span><span class="line"><span class="cl">content-length: 28
 </span></span><span class="line"><span class="cl">x-response-time: 0ms
 </span></span><span class="line"><span class="cl">content-type: application/json; charset=utf-8
@@ -744,10 +483,8 @@
 </span></span><span class="line"><span class="cl">{
 </span></span><span class="line"><span class="cl">  &#34;success&#34;: true,
 </span></span><span class="line"><span class="cl">  &#34;data&#34;: &#34;Ok&#34;
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>至此，完成第一个接口，有 <code>Oak</code> 提供应用服务，经过了<code>Unit test</code>和 <code>RestClient</code>的测试。完成了开始的<code>Todo</code>。</p>
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
+<p>至此，完成第一个接口，有 <code>Oak</code> 提供应用服务，经过了<code>Unit test</code>和 <code>RestClient</code>的测试。完成了开始的<code>Todo</code>。</p>
 <h3 id="添加用户接口-adduser">添加用户接口 (<code>addUser</code>)</h3>
 <p>添加用户涉及到<code>Controller</code>, <code>Service</code> 和 <code>Repository</code>, 所以我们分三步来实现该接口。</p>
 <h4 id="controller">Controller</h4>
@@ -761,156 +498,12 @@
 </blockquote>
 <p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer "><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
-</span><span class="lnt">111
-</span><span class="lnt">112
-</span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
-</span><span class="lnt">118
-</span><span class="lnt">119
-</span><span class="lnt">120
-</span><span class="lnt">121
-</span><span class="lnt">122
-</span><span class="lnt">123
-</span><span class="lnt">124
-</span><span class="lnt">125
-</span><span class="lnt">126
-</span><span class="lnt">127
-</span><span class="lnt">128
-</span><span class="lnt">129
-</span><span class="lnt">130
-</span><span class="lnt">131
-</span><span class="lnt">132
-</span><span class="lnt">133
-</span><span class="lnt">134
-</span><span class="lnt">135
-</span><span class="lnt">136
-</span><span class="lnt">137
-</span><span class="lnt">138
-</span><span class="lnt">139
-</span><span class="lnt">140
-</span><span class="lnt">141
-</span><span class="lnt">142
-</span><span class="lnt">143
-</span><span class="lnt">144
-</span><span class="lnt">145
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/controllers/UserController.test.ts
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/controllers/UserController.test.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">stub</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Stub</span><span class="p">,</span>
@@ -1054,24 +647,14 @@
 </span></span><span class="line"><span class="cl">      <span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;application/x-www-form-urlencoded&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">    <span class="p">},</span>
 </span></span><span class="line"><span class="cl">  <span class="p">});</span>
-</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="o">!</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p><code>controller</code> 这一层需要调用<code>service</code>的服；作为<code>service</code>，对于<code>controller</code>是一个第三方服务，因此需要将<code>service</code>的方法<code>mock</code>，并以参数的形式传入<code>Controller</code>; 下面这段代码就是<code>mock</code>的应用；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userService</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserService</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">await</span> <span class="nx">response</span><span class="p">.</span><span class="nx">body</span><span class="o">!</span><span class="p">.</span><span class="nx">cancel</span><span class="p">();</span></span></span></code></pre></div></div>
+<p><code>controller</code> 这一层需要调用<code>service</code>的服；作为<code>service</code>，对于<code>controller</code>是一个第三方服务，因此需要将<code>service</code>的方法<code>mock</code>，并以参数的形式传入<code>Controller</code>; 下面这段代码就是<code>mock</code>的应用；</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userService</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserService</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">queryAllStub</span>: <span class="kt">Stub</span><span class="p">&lt;</span><span class="nt">UserService</span><span class="p">&gt;</span> <span class="o">=</span> <span class="nx">stub</span><span class="p">(</span><span class="nx">userService</span><span class="p">,</span> <span class="s2">&#34;addUser&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">expectResponse</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">success</span>: <span class="kt">true</span><span class="p">,</span>
@@ -1079,10 +662,8 @@
 </span></span><span class="line"><span class="cl">  <span class="p">};</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">queryAllStub</span><span class="p">.</span><span class="nx">returns</span> <span class="o">=</span> <span class="p">[</span><span class="nx">mockedUser</span><span class="p">];</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">userController</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserController</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">userController</span><span class="p">.</span><span class="nx">userService</span> <span class="o">=</span> <span class="nx">userService</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在此解释两个测试，第一个测试即<code>#addUser should return added user when add user</code>;</p>
+</span></span><span class="line"><span class="cl">  <span class="nx">userController</span><span class="p">.</span><span class="nx">userService</span> <span class="o">=</span> <span class="nx">userService</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>在此解释两个测试，第一个测试即<code>#addUser should return added user when add user</code>;</p>
 <h5 id="given-1">given</h5>
 <blockquote>
 <ul>
@@ -1123,22 +704,12 @@
 </ul>
 </blockquote>
 <h5 id="运行测试-1">运行测试</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">deno <span class="nb">test</span> --allow-env --allow-net -L info
 </span></span><span class="line"><span class="cl">Check file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts
 </span></span><span class="line"><span class="cl">running <span class="m">5</span> tests
@@ -1148,55 +719,19 @@
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> UserController <span class="c1">#addUser should throw exception about no correct params given wrong params when add user ... ok (3ms)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> health check ... ok <span class="o">(</span>4ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">5</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>37ms<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="service">Service</h4>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">5</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>37ms<span class="o">)</span></span></span></code></pre></div></div>
+<h4 id="service">Service</h4>
 <p><code>Service</code>是服务层，通过组合其他服务和调用底层数据接口层提供服务；对于用户添加，对于添加用户的<code>Service</code>, 我们只需要将用户对象传递过来，然后由<code>Repository</code>来处理；所以，我们的<code>Todo</code>对应如下：</p>
 <blockquote>
 <p>当传入期望的用户信息，可返回特定数据结构的用户信息</p>
 </blockquote>
 <p>新建<code>UserService.test.ts</code>， 并导入相关依赖；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/services/UserService.test.ts
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/services/UserService.test.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">stub</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Stub</span><span class="p">,</span>
@@ -1230,27 +765,14 @@
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="nx">assertEquals</span><span class="p">(</span><span class="k">await</span> <span class="nx">userService</span><span class="p">.</span><span class="nx">addUser</span><span class="p">(</span><span class="nx">parameter</span><span class="p">),</span> <span class="nx">mockedUser</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">createUserStub</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>代码逻辑很简单，基本不需要解释。运行测试肯定会失败，为了让代码通过测试，编写<code>UserService.ts</code>, 在<code>UserService.ts</code>中调用<code>Repository</code>的<code>create</code>方法。所以，也需要简单实现<code>UserRepo</code>，只需要添加<code>create</code>方法即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/services/UserService.ts
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
+<p>代码逻辑很简单，基本不需要解释。运行测试肯定会失败，为了让代码通过测试，编写<code>UserService.ts</code>, 在<code>UserService.ts</code>中调用<code>Repository</code>的<code>create</code>方法。所以，也需要简单实现<code>UserRepo</code>，只需要添加<code>create</code>方法即可。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/services/UserService.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="nx">UserRepo</span> <span class="kr">from</span> <span class="s2">&#34;../repositories/userRepo.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">IUser</span> <span class="kr">from</span> <span class="s2">&#34;../entity/User.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
@@ -1261,27 +783,14 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">userRepo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">UserRepo</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">  <span class="kr">async</span> <span class="nx">addUser</span><span class="p">(</span><span class="nx">user</span>: <span class="kt">IUser</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">userRepo</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="运行测试-2">运行测试</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div></div>
+<h5 id="运行测试-2">运行测试</h5>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">deno <span class="nb">test</span> --allow-env --allow-net -L info
 </span></span><span class="line"><span class="cl">Check file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts
 </span></span><span class="line"><span class="cl">running <span class="m">6</span> tests
@@ -1292,10 +801,8 @@
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> health check ... ok <span class="o">(</span>4ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> UserService <span class="c1">#addUser should return added user ... ok (1ms)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">6</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>38ms<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="repository">Repository</h4>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">6</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>38ms<span class="o">)</span></span></span></code></pre></div></div>
+<h4 id="repository">Repository</h4>
 <p><code>Repository</code>通常和数据库交互，将传入的数据持久化到数据库中；对于添加用户这个接口，我们的需求因该是将传入的信息以数据库要求的格式存储起来，并将结果返回给<code>Service</code>; 因此，<code>Todo</code>大致如下：</p>
 <blockquote>
 <ul>
@@ -1304,67 +811,12 @@
 </ul>
 </blockquote>
 <p>测试如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/repositories/UserRepo.test.ts
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// tests/repositories/UserRepo.test.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">stub</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">Stub</span><span class="p">,</span>
@@ -1419,65 +871,36 @@
 </span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="nx">userRepo</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">parameter</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="p">},</span> <span class="nx">InvalidedParamsException</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;should supply valid username and password!&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>因为<code>Repository</code>层要和数据库打交道，所以需要一个和数据库操作相应的处理工具库；在此我们期望通过使用<code>PostgreSql</code>自己的的<code>Client</code>来执行数据库操作。</p>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
+<p>因为<code>Repository</code>层要和数据库打交道，所以需要一个和数据库操作相应的处理工具库；在此我们期望通过使用<code>PostgreSql</code>自己的的<code>Client</code>来执行数据库操作。</p>
 <p>在上面第一个测试代码中， 我们<code>mock</code>了<code>Client</code>的<code>query</code>方法，并且返回了预定的数据。接着调用<code>UserRepo</code>的<code>create</code>方法，判断返回数据的数据字段值与期望值是否一致。</p>
 <p>运行测试依旧会失败，接下来以最简单的方式实现让测试通过。</p>
 <p>导入<code>PostgreSql</code>相关的依赖；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="nx">Client</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/x/postgres/mod.ts&#34;</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>及定义数据库连接信息</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/config.ts
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">export</span> <span class="p">{</span> <span class="nx">Client</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;https://deno.land/x/postgres/mod.ts&#34;</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>及定义数据库连接信息</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/config.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_HOST</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_HOST</span> <span class="o">||</span> <span class="s2">&#34;localhost&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_USER</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_USER</span> <span class="o">||</span> <span class="s2">&#34;postgres&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_PASSWORD</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_PASSWORD</span> <span class="o">||</span> <span class="s2">&#34;0&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_DATABASE</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_DATABASE</span> <span class="o">||</span> <span class="s2">&#34;postgres&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_PORT</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_PORT</span> <span class="o">?</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_PORT</span><span class="p">)</span> <span class="o">:</span> <span class="mi">5432</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>获取数据库连接的<code>Client</code>实例</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/Utils/client.ts
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">DB_PORT</span> <span class="o">=</span> <span class="nx">env</span><span class="p">.</span><span class="nx">DB_PORT</span> <span class="o">?</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">env</span><span class="p">.</span><span class="nx">DB_PORT</span><span class="p">)</span> <span class="o">:</span> <span class="mi">5432</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>获取数据库连接的<code>Client</code>实例</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="c1">// src/Utils/client.ts
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Client</span> <span class="p">}</span> <span class="kr">from</span> <span class="s2">&#34;../../deps.ts&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">DB_HOST</span><span class="p">,</span>
@@ -1495,50 +918,27 @@
 </span></span><span class="line"><span class="cl">  <span class="nx">port</span>: <span class="kt">DB_PORT</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">client</span><span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>数据库应该在应用启动时连接，所以在<code>index.ts</code>引入<code>client</code>并建立连接和管理连接。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kr">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">main</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">client</span><span class="p">;</span></span></span></code></pre></div></div>
+<p>数据库应该在应用启动时连接，所以在<code>index.ts</code>引入<code>client</code>并建立连接和管理连接。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="kr">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">main</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="o">+</span>  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="o">+</span>  <span class="nx">console</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s2">&#34;数据库链接成功！&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">   <span class="kr">const</span> <span class="nx">app</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">createApplication</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">   <span class="k">await</span> <span class="nx">listenToServer</span><span class="p">(</span><span class="nx">app</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="o">+</span>  <span class="k">await</span> <span class="nx">client</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="重新启动测试">重新启动测试</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h5 id="重新启动测试">重新启动测试</h5>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">deno <span class="nb">test</span> --allow-env --allow-net -L info
 </span></span><span class="line"><span class="cl">Check file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts
 </span></span><span class="line"><span class="cl">running <span class="m">8</span> tests
@@ -1551,47 +951,26 @@
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> health check ... ok <span class="o">(</span>3ms<span class="o">)</span>
 </span></span><span class="line"><span class="cl"><span class="nb">test</span> UserService <span class="c1">#addUser should return added user ... ok (1ms)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">8</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>28ms<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="请求体-1">请求体</h5>
+</span></span><span class="line"><span class="cl"><span class="nb">test</span> result: ok. <span class="m">8</span> passed<span class="p">;</span> <span class="m">0</span> failed<span class="p">;</span> <span class="m">0</span> ignored<span class="p">;</span> <span class="m">0</span> measured<span class="p">;</span> <span class="m">0</span> filtered out <span class="o">(</span>28ms<span class="o">)</span></span></span></code></pre></div></div>
+<h5 id="请求体-1">请求体</h5>
 <p>由<code>RestClient</code>验证请求； 现在启动应用，发送如下请求；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/addUser.http
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/addUser.http
 </span></span><span class="line"><span class="cl">POST http://localhost:8000/api/v1/users HTTP/1.1
 </span></span><span class="line"><span class="cl">Content-Type: application/x-www-form-urlencoded
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">name=foo&amp;password=123
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h5 id="请求结果-1">请求结果</h5>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 201 Created
+</span></span><span class="line"><span class="cl">name=foo&amp;password=123</span></span></code></pre></div></div>
+<h5 id="请求结果-1">请求结果</h5>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 201 Created
 </span></span><span class="line"><span class="cl">content-length: 149
 </span></span><span class="line"><span class="cl">x-response-time: 34ms
 </span></span><span class="line"><span class="cl">content-type: application/json; charset=utf-8
@@ -1604,47 +983,34 @@
 </span></span><span class="line"><span class="cl">    &#34;id&#34;: &#34;7aea0bb7-e0bc-4f1f-a516-3a43f4e30fb6&#34;,
 </span></span><span class="line"><span class="cl">    &#34;registrationDate&#34;: &#34;2020-07-27T14:11:24.140Z&#34;
 </span></span><span class="line"><span class="cl">  }
-</span></span><span class="line"><span class="cl">}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>异常情况可以自己制造，在此就不演示了，至此完成用户添加的接口。</p>
+</span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
+<p>异常情况可以自己制造，在此就不演示了，至此完成用户添加的接口。</p>
 <h2 id="打包">打包</h2>
 <p>按照上面的步骤，我们可以完成查询单个用户 (<code>GET</code>:<code>/users/:id</code>), 查询所有用户 (<code>GET</code>:<code>/users</code>) 和删除 (<code>DELETE</code>:<code>/users/:id</code>) 等接口，快速且高效。当我们完成测试和接口后，使用<code>deno</code>的命令行工具，我们可以将整个工程打包为一个<code>.js</code>文件；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make bundle
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make bundle
 </span></span><span class="line"><span class="cl">mkdir dist
 </span></span><span class="line"><span class="cl">deno bundle src/index.ts dist/platform.js
 </span></span><span class="line"><span class="cl">Bundle file:///xxx/deno-restful-api-with-postgresql-tdd/src/index.ts
-</span></span><span class="line"><span class="cl">Emit <span class="s2">&#34;dist/platform.js&#34;</span> <span class="o">(</span>856.11 KB<span class="o">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>对于<code>NodeJs</code>开发的后端应用，可怕的<code>node_modules</code>依赖在打包时会是个问题，一般的<code>Node</code>后端应用都是直接将环境变量更新一下，然后将其部署在生产环境；
+</span></span><span class="line"><span class="cl">Emit <span class="s2">&#34;dist/platform.js&#34;</span> <span class="o">(</span>856.11 KB<span class="o">)</span></span></span></code></pre></div></div>
+<p>对于<code>NodeJs</code>开发的后端应用，可怕的<code>node_modules</code>依赖在打包时会是个问题，一般的<code>Node</code>后端应用都是直接将环境变量更新一下，然后将其部署在生产环境；
 开发者写的工程文件并没有多大，而应用依赖的<code>node_modules</code>大多时候时工程文件的几十倍甚至几百倍。然后<code>Deno</code>很好的解决了这个问题。</p>
 <h2 id="启动应用-1">启动应用</h2>
 <p>如有需要将打包好的<code>.js</code>拷贝到目标目录，只要有<code>Deno</code>环境，我们就可以直接启动应用；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make start
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ make start
 </span></span><span class="line"><span class="cl"><span class="nv">APP_PORT</span><span class="o">=</span><span class="m">1234</span> deno run --allow-net --allow-env ./dist/platform.js
 </span></span><span class="line"><span class="cl">数据库链接成功！
-</span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:1234
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="乱中取整">乱中取整</h2>
+</span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:1234</span></span></code></pre></div></div>
+<h2 id="乱中取整">乱中取整</h2>
 <p>通过学习<code>Deno</code>, 有了一些心得体会；</p>
 <ul>
 <li>兼容浏览器<code>API</code>,<code>Deno</code>工程可以使用<code>Javascript</code>和<code>Typescript</code>进行编程，大大降低了认知复杂度和学习难度；</li>

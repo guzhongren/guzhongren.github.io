@@ -97,15 +97,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="jsonpphttpsgithubcomjmhodgesjsonpp"><a href="https://github.com/jmhodges/jsonpp" target="_blank" rel="noopener noreffer ">jsonpp</a></h2>
 <p>json_pp 我主要是用来格式化 curl 命令行的结果，例如测试某个 restful 接口，返回的 json，在命令行就会自动给你格式化好输出，</p>
 <h3 id="安装">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="效率">效率</h1>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp</span></span></code></pre></div></div>
+<h1 id="效率">效率</h1>
 <h2 id="bitwardenhttpsbitwardencom"><a href="https://bitwarden.com/" target="_blank" rel="noopener noreffer ">Bitwarden</a></h2>
 <p></p>
 <p>用来存储和生成密码的工具</p>
@@ -133,15 +131,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <p><a href="https://www.mowglii.com/itsycal/itsycalbanner2@2x.png" target="_blank" rel="noopener noreffer ">Itsycal</a></p>
 <p>Mac 自带的顶部的日历其实有点不好用，如果你要看你的日程，那么你需要点开日历，而且他的时间格式其实也不是很友好（对于定制党）；Itsycal 很好的解决了这个问题。</p>
 <h3 id="安装-1">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="沟通">沟通</h1>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal</span></span></code></pre></div></div>
+<h1 id="沟通">沟通</h1>
 <h2 id="微信">微信</h2>
 <p>
 不管是亲朋还是同事沟通，微信都是非常高效的工具，而且微信里面的小程序现在可以运行在桌面端了，使用场景也越来越多了；还有一个非常好用的功能：截屏！ 以前电脑上会安装 QQ， 现在 QQ 也不用了，快速分享内容并标注微信是不二之选。</p>
@@ -162,15 +158,13 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="清理工具">清理工具</h2>
 <p><a href="lemon.qq.com/" rel="">tencent-lemon</a></p>
 <h3 id="安装-2">安装</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://todo.microsoft.com/tasks/" target="_blank" rel="noopener noreffer ">Todo: https://todo.microsoft.com/tasks/</a></li>

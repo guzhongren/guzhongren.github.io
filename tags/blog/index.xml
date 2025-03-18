@@ -5,83 +5,48 @@
 <h2 id="安装">安装</h2>
 <h3 id="golang">Golang</h3>
 <p>Hugo 是基于 Go 语言的，所以需要安装 go, 我的机器是 Mac, 所以直接用 homebrew 就搞定。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ brew install go
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="hugo">Hugo</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ brew install hugo
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="生成博客站点">生成博客站点</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ hugo new site blog
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="安装-loveithttpsgithubcomdillonzqloveit-主题">安装 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer ">LoveIt</a> 主题</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="nb">cd</span> blog
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ brew install go</span></span></code></pre></div></div>
+<h3 id="hugo">Hugo</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ brew install hugo</span></span></code></pre></div></div>
+<h3 id="生成博客站点">生成博客站点</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ hugo new site blog</span></span></code></pre></div></div>
+<h3 id="安装-loveithttpsgithubcomdillonzqloveit-主题">安装 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer ">LoveIt</a> 主题</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="nb">cd</span> blog
 </span></span><span class="line"><span class="cl">$ git init
-</span></span><span class="line"><span class="cl">$ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="配置-configtoml">配置 config.toml</h3>
+</span></span><span class="line"><span class="cl">$ git submodule add https://github.com/dillonzq/LoveIt.git themes/LoveIt</span></span></code></pre></div></div>
+<h3 id="配置-configtoml">配置 config.toml</h3>
 <p>将<code>themes/LoveIt/exampleSite/config.toml</code> copy 到 blog 根目录，并根据需要修改里面的配置。</p>
 <blockquote>
 <p>注： 需要将 copy 过来的 config.toml 里的 themeDir 由<code>../..</code> 改为 <code>./themes</code></p>
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">---</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-toml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">---</span>
 </span></span><span class="line"><span class="cl"><span class="nx">title</span><span class="err">:</span> <span class="s2">&#34;{{ replace .Name &#34;</span><span class="nx">-</span><span class="s2">&#34; &#34;</span> <span class="s2">&#34; | title }}&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nx">date</span><span class="err">:</span> <span class="p">{{</span> <span class="p">.</span><span class="nx">Date</span> <span class="p">}}</span>
 </span></span><span class="line"><span class="cl"><span class="nx">draft</span><span class="err">:</span> <span class="kc">true</span>
@@ -106,26 +71,19 @@
 </span></span><span class="line"><span class="cl"><span class="c">## 引用</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">----</span>
-</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">jsdelivr</span><span class="p">.</span><span class="nx">net</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>生成文章后，直接更新需要更新的字段，如标签（tags）和分类（categories）等，然后在中间直接写文章就可以。</p>
+</span></span><span class="line"><span class="cl"><span class="err">!</span><span class="p">[</span><span class="err">谷哥说</span><span class="nx">-</span><span class="err">微信公众号</span><span class="p">]</span><span class="err">(</span><span class="nx">https</span><span class="err">://</span><span class="nx">cdn</span><span class="p">.</span><span class="nx">jsdelivr</span><span class="p">.</span><span class="nx">net</span><span class="err">/</span><span class="nx">gh</span><span class="err">/</span><span class="nx">guzhongren</span><span class="err">/</span><span class="nx">data-hosting</span><span class="err">@</span><span class="nx">master</span><span class="err">/</span><span class="mi">20210819</span><span class="err">/</span><span class="nx">wechat</span><span class="p">.</span><span class="nx">ae9zxgscqcg</span><span class="p">.</span><span class="nx">png</span><span class="err">)</span></span></span></code></pre></div></div>
+<p>生成文章后，直接更新需要更新的字段，如标签（tags）和分类（categories）等，然后在中间直接写文章就可以。</p>
 <h3 id="上传到-github">上传到 Github</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git remote add origin git@github.com:guzhongren/guzhongren.github.io.git
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git remote add origin git@github.com:guzhongren/guzhongren.github.io.git
 </span></span><span class="line"><span class="cl">$ git add .
 </span></span><span class="line"><span class="cl">$ git commit -m <span class="s2">&#34;init&#34;</span>
-</span></span><span class="line"><span class="cl">$ git push -u origin master
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="创建-blog分支">创建 <code>blog</code>分支</h4>
+</span></span><span class="line"><span class="cl">$ git push -u origin master</span></span></code></pre></div></div>
+<h4 id="创建-blog分支">创建 <code>blog</code>分支</h4>
 <p>在 Github 上个创建 blog 分支。我们的博客都会在 blog 分支</p>
 <h4 id="创建personal_token-或者-deploy-token">创建<code>PERSONAL_TOKEN</code>, 或者 Deploy Token</h4>
 <p>我们在 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Developer settings</a> 以 PERSONAL_TOKEN 为例。
@@ -134,46 +92,12 @@
 </p>
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions" target="_blank" rel="noopener noreffer ">Github Actions</a>, 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">github pages</span><span class="w">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">github pages</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
@@ -207,102 +131,67 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l">./public</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">publish_branch</span><span class="p">:</span><span class="w"> </span><span class="l">master</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">user_name</span><span class="p">:</span><span class="w"> </span><span class="l">guzhongren</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">user_email</span><span class="p">:</span><span class="w"> </span><span class="l">guzhongren@live.cn</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="写文章">写文章</h2>
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">user_email</span><span class="p">:</span><span class="w"> </span><span class="l">guzhongren@live.cn</span></span></span></code></pre></div></div>
+<h2 id="写文章">写文章</h2>
 <p>为了更好的管理发布的文章，建议用 <code>/year/mouth/article_name.zh.md</code> 这种格式。也可用我写的 Makefile 命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="c1"># hugo new posts/2020/02/first.zh.md</span>
-</span></span><span class="line"><span class="cl">$ make <span class="nv">post</span><span class="o">=</span>first.zh.md
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>然后打开<code>content/posts/2020/02/first.zh.md</code> 进行文章编辑。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="c1"># hugo new posts/2020/02/first.zh.md</span>
+</span></span><span class="line"><span class="cl">$ make <span class="nv">post</span><span class="o">=</span>first.zh.md</span></span></code></pre></div></div>
+<p>然后打开<code>content/posts/2020/02/first.zh.md</code> 进行文章编辑。</p>
 <h2 id="预览">预览</h2>
 <p>在 blog 项目根目录运行如下命令进行预览</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="c1"># hugo server -D</span>
-</span></span><span class="line"><span class="cl">$ make pre
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="提交">提交</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ <span class="c1"># hugo server -D</span>
+</span></span><span class="line"><span class="cl">$ make pre</span></span></code></pre></div></div>
+<h2 id="提交">提交</h2>
 <p>提交到 git 中，暂存起来</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ make commit <span class="nv">message</span><span class="o">=</span>feat<span class="o">(</span>post<span class="o">)</span>: 发布新文章
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>或者用如下命令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git add -A
-</span></span><span class="line"><span class="cl">$	git commit -m feat<span class="o">(</span>post<span class="o">)</span>: 发布新文章
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="发布">发布</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ make commit <span class="nv">message</span><span class="o">=</span>feat<span class="o">(</span>post<span class="o">)</span>: 发布新文章</span></span></code></pre></div></div>
+<p>或者用如下命令</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git add -A
+</span></span><span class="line"><span class="cl">$	git commit -m feat<span class="o">(</span>post<span class="o">)</span>: 发布新文章</span></span></code></pre></div></div>
+<h2 id="发布">发布</h2>
 <p>将本地更新提交到 github 上， 会自动触发 actions 然后进行构建，构建完成后自动将代码部署到</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ make pub
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>或者用</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git commit -m <span class="s2">&#34;first article&#34;</span>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ make pub</span></span></code></pre></div></div>
+<p>或者用</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-zsh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ git commit -m <span class="s2">&#34;first article&#34;</span>
 </span></span><span class="line"><span class="cl">$ git pull
-</span></span><span class="line"><span class="cl">$ git push
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="优化">优化</h2>
+</span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
+<h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Makefile" data-lang="Makefile"><span class="line"><span class="cl">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-Makefile">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Makefile" data-lang="Makefile"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nv">post</span> <span class="o">=</span> default.zh.md
 </span></span><span class="line"><span class="cl"><span class="nv">message</span> <span class="o">=</span> git commit
 </span></span><span class="line"><span class="cl"><span class="nv">Year_month</span> <span class="o">=</span> <span class="k">$(</span>shell date +<span class="s2">&#34;%Y/%m&#34;</span><span class="k">)</span>
@@ -319,9 +208,8 @@
 </span></span><span class="line"><span class="cl"><span class="nf">pub</span><span class="o">:</span>
 </span></span><span class="line"><span class="cl">	git pull
 </span></span><span class="line"><span class="cl">	git push
-</span></span></code></pre></td></tr></table>
-</div>
-</div><ul>
+</span></span></code></pre></div></div>
+<ul>
 <li>new: 创建文章</li>
 <li>pre: 写文章时预览</li>
 <li>commit: 提交到本地暂存区</li>

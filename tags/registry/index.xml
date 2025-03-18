@@ -7,65 +7,48 @@
 <blockquote>
 <p>前事不忘，后事之师。先来复习一下怎么从 npmjs.com 获取包。[这句是我说的]</p>
 </blockquote>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install XXX
-</span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="git-仓库">git 仓库</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install XXX
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
+<h2 id="git-仓库">git 仓库</h2>
 <p>假如你已经做了一个特别牛逼的库，但是因为只是公司内部使用，比如一些工具库，放出去比如放到 npmjs.com 上没任何意义的，你可以把这个库整理成一个 git 的 repo, 当然打个标签，发个各版本什么的那就更好了。当你把你牛逼的库放在你司的 git 上后，比如地址是 <em><strong>ssh:git.niubi.com/yourName/niubility.git</strong></em>　或者　<em><strong><a href="https://git.niubi.com/yourName/niubility.git" target="_blank" rel="noopener noreffer ">https://git.niubi.com/yourName/niubility.git</a></strong></em>, 接下来就是发大招。</p>
 <h2 id="大招">大招</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install git+ssh:git.niubi.com/yourName/niubility.git
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install git+ssh:git.niubi.com/yourName/niubility.git
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">**#或者**
 </span></span><span class="line"><span class="cl">$ npm install git+https://git.niubi.com/yourName/niubility.git
-</span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="隐藏技能-不推荐">隐藏技能 [不推荐]</h2>
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
+<h2 id="隐藏技能-不推荐">隐藏技能 [不推荐]</h2>
 <h3 id="用户名方式">用户名方式</h3>
 <p>如果你将 npm 注册到自己的 git 仓库，就可以直接省去域名等一切能定位到该 lib 的的通用信息。</p>
 <h4 id="注册及登录">注册及登录</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm adduser --registry http://you.domain.com
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm adduser --registry http://you.domain.com
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">$ npm login --registry http://you.domain.com
-</span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="安装">安装</h4>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install yourName/niubility
-</span></span><span class="line"><span class="cl">...
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="恩没什么可说的了我真是来测试打赏功能的">恩，没什么可说的了我真是来测试打赏功能的。</h2>
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
+<h4 id="安装">安装</h4>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install yourName/niubility
+</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
+<h2 id="恩没什么可说的了我真是来测试打赏功能的">恩，没什么可说的了我真是来测试打赏功能的。</h2>
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>

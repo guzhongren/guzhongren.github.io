@@ -102,20 +102,12 @@
 <h3 id="gzip-是如何压缩的">Gzip 是如何压缩的</h3>
 <p>简单来说， Gzip 压缩是在一个文本文件中找出类似的字符串， 并临时替换他们，使整个文件变小。这种形式的压缩对 Web 来说非常适合， 因为 HTML 和 CSS 文件通常包含大量的重复的字符串，例如空格，标签。</p>
 <h3 id="语法">语法</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">Accept-Encoding: gzip
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-http">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">Accept-Encoding: gzip
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: compress
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: deflate
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: br
@@ -123,10 +115,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: *
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">// Multiple algorithms, weighted with the quality value syntax:
-</span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><table>
+</span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: deflate, gzip;q=1.0, *;q=0.5</span></span></span></code></pre></div></div>
+<table>
   <thead>
       <tr>
           <th>Accept-Encoding type</th>
@@ -165,47 +155,27 @@
   </tbody>
 </table>
 <h3 id="示例">示例</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">Accept-Encoding: gzip
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-http">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-http" data-lang="http"><span class="line"><span class="cl"><span class="err">Accept-Encoding: gzip
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: gzip, compress, br
 </span></span></span><span class="line"><span class="cl"><span class="err">
-</span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="浏览器兼容性">浏览器兼容性</h3>
+</span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1</span></span></span></code></pre></div></div>
+<h3 id="浏览器兼容性">浏览器兼容性</h3>
 <p></p>
 <h2 id="最佳实践">最佳实践</h2>
 <p>对于 Accept-Encoding, 这个除了是后端请求，其他的只能由浏览器来自行设定，建议使用最新的浏览器即可。</p>
 <p>对于 content-encoding 这个 header 只能由服务器来指定。针对不同的环境如 Nginx, Apache Tomcat 和 IIS 等，都有不同的配置，这里以 Nginx 为例，在 Nginx 的 *.conf 文件中加入如下代码即可。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">[root@linux /]# vim /usr/local/nginx/conf.d/www.conf
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-diff">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-diff" data-lang="diff"><span class="line"><span class="cl">[root@linux /]# vim /usr/local/nginx/conf.d/www.conf
 </span></span><span class="line"><span class="cl">server {
 </span></span><span class="line"><span class="cl">  listen 80;
 </span></span><span class="line"><span class="cl">  server_name www.endvv.com endvv.com;
@@ -220,9 +190,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="gi">+ gzip_vary on;
 </span></span></span><span class="line"><span class="cl"><span class="gi">+ gzip_types text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
 </span></span></span><span class="line"><span class="cl"><span class="gi"></span>}
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="引用">引用</h2>
+</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
 <li><a href="https://en.wikipedia.org/wiki/HTTP_compression#cite_note-1" target="_blank" rel="noopener noreffer ">HTTP compression</a></li>

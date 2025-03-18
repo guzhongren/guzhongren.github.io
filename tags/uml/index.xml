@@ -25,63 +25,46 @@
 小票软件使用授权码向京东商家开放平台请求访问令牌。
 京东商家开放平台验证授权码并颁发访问令牌给小票软件。
 小票软件使用访问令牌来获取小明店铺的订单信息，并生成发票。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">grantType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="p">(</span><span class="s">&#34;authorization_code&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">grantType</span><span class="p">)){</span><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="资源拥有者凭据许可resource-owner-password-credential">资源拥有者凭据许可(Resource Owner Password Credential)</h4>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">grantType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="p">(</span><span class="s">&#34;authorization_code&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">grantType</span><span class="p">)){</span><span class="w">  </span><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="资源拥有者凭据许可resource-owner-password-credential">资源拥有者凭据许可(Resource Owner Password Credential)</h4>
 <p>资源拥有者凭据许可是一种直接使用用户名和密码进行认证的许可类型。该许可类型要求客户端直接获取用户的凭据，并使用这些凭据向授权服务器进行身份验证。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;password&#34;</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="客户端凭据许可client-credential">客户端凭据许可(Client Credential)</h4>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;password&#34;</span><span class="p">);</span></span></span></code></pre></div></div>
+<h4 id="客户端凭据许可client-credential">客户端凭据许可(Client Credential)</h4>
 <p>客户端凭据许可适用于没有资源拥有者参与的情况下，客户端直接与授权服务器进行身份验证并获取访问令牌。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;client_credentials&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_secret&#34;</span><span class="p">,</span><span class="s">&#34;APPSECRETTEST&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">doPost</span><span class="p">(</span><span class="n">oauthURl</span><span class="p">,</span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">mapToStr</span><span class="p">(</span><span class="n">params</span><span class="p">));</span><span class="err">”</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="隐式许可implicit">隐式许可（Implicit)</h4>
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">doPost</span><span class="p">(</span><span class="n">oauthURl</span><span class="p">,</span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">mapToStr</span><span class="p">(</span><span class="n">params</span><span class="p">));</span><span class="err">”</span></span></span></code></pre></div></div>
+<h4 id="隐式许可implicit">隐式许可（Implicit)</h4>
 <p>隐式许可是一种在浏览器中直接向授权服务器请求访问令牌的许可类型。这种许可类型通常用于单页应用程序或移动应用程序，因为它们无法安全地保持客户端凭据。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-java">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;response_type&#34;</span><span class="p">,</span><span class="s">&#34;token&#34;</span><span class="p">);</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">toOauthUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URLParamsUtil</span><span class="p">.</span><span class="na">appendParams</span><span class="p">(</span><span class="n">oauthUrl</span><span class="p">,</span><span class="n">params</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="authorization-code-的实现分类">Authorization Code 的实现分类</h3>
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">toOauthUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URLParamsUtil</span><span class="p">.</span><span class="na">appendParams</span><span class="p">(</span><span class="n">oauthUrl</span><span class="p">,</span><span class="n">params</span><span class="p">);</span></span></span></code></pre></div></div>
+<h3 id="authorization-code-的实现分类">Authorization Code 的实现分类</h3>
 <p>Authorization Code的实现主要分为两类：无服务器实现（使用PKCE）和有服务器实现。</p>
 <p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
 <p>有服务器实现广泛使用且更安全。</p>

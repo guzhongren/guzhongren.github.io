@@ -15,58 +15,27 @@
 <h2 id="执行方案">执行方案</h2>
 <h3 id="构建应用镜像">构建应用镜像</h3>
 <p>在测试之前需要将应用构建好并部署好，我们可以用 Node 镜像打包应用，并利用容器的多阶段构建 (<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener noreffer ">multi-stage builds</a>) 完成应用轻量化构建，并部署在 <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nginx</a> 中。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">FROM node:17-alpine as distPackage</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">FROM node:17-alpine as distPackage</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY ./ /app</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">WORKDIR /app</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">FROM nginx:latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="编排-service">编排 service</h3>
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
+<h3 id="编排-service">编排 service</h3>
 <p>因为我们的程序需要在测试的时候就要部署好，所以我们可以利用 Docker-compose 的 <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#build" target="_blank" rel="noopener noreffer ">build</a> 参数，在容器启动时构建应用并部署。并在 cypress/included 启动是执行测试命令 <code>npx cy:docker</code>, 具体就是<code>cross-env ENV=docker cypress run --spec 'cypress/integration/dashboard.spec.js</code>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
@@ -88,23 +57,17 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">npx cy:docker</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l">/e2e</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/e2e</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>这样我们就可以独立的运行起真实程序和正式的测试程序了，具体的 Pipeline 可以参考 Powerboard 的 <a href="https://github.com/guzhongren/Powerboard/blob/main/.github/workflows/main.yml" target="_blank" rel="noopener noreffer ">Workflow</a>。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/e2e</span></span></span></code></pre></div></div>
+<p>这样我们就可以独立的运行起真实程序和正式的测试程序了，具体的 Pipeline 可以参考 Powerboard 的 <a href="https://github.com/guzhongren/Powerboard/blob/main/.github/workflows/main.yml" target="_blank" rel="noopener noreffer ">Workflow</a>。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span><span class="w">          
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="总结">总结</h2>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span><span class="w">          </span></span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
 <p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
 <h2 id="引用">引用</h2>
 <ul>

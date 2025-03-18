@@ -33,44 +33,35 @@
 <p>因为做数据备份的项目是一个 DevOps 项目，所有的基础设施都是在这个项目中声明的，所以要使用 AWS 的 Java, Python 扩展包有点重，不合适。那么就剩下 CLI 这条路了。</p>
 <h3 id="cli">CLI</h3>
 <p>在写代码之前，我先将数据重新整理成了 <code>yaml</code> 格式，毕竟比 <code>JSON</code> 好用（可以写注释）。格式大致如下</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">parameter</span><span class="p">:</span><span class="w">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">parameter</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">appName</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">customKey</span><span class="p">:</span><span class="w"> </span><span class="l">customKey</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">value</span><span class="w">
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>作为恢复更新脚本，肯定是在 pipeline 运行的时候执行的，所以第一想法就是使用 <code>shell</code>; 想到就直撸起袖子直接干呗。写啊写，虽然网上也有写好的 <code>shell</code> 来处理 <code>yaml</code>, 将读取结果 <code>export</code> 到环境变量中，比如 <code>parameter_appName__customKey</code>，但是问题是，那么多 <code>parameter store</code>, 我怎么一个一个的找到对应的数据的键和值呢？</p>
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l">value</span></span></span></code></pre></div></div>
+<p>作为恢复更新脚本，肯定是在 pipeline 运行的时候执行的，所以第一想法就是使用 <code>shell</code>; 想到就直撸起袖子直接干呗。写啊写，虽然网上也有写好的 <code>shell</code> 来处理 <code>yaml</code>, 将读取结果 <code>export</code> 到环境变量中，比如 <code>parameter_appName__customKey</code>，但是问题是，那么多 <code>parameter store</code>, 我怎么一个一个的找到对应的数据的键和值呢？</p>
 <p>此路不通，那么立马换方案，使用 <code>grep</code>, <code>awk</code>,<code>Regex</code>进行匹配转换，终于所有的数据 (key， value) 对应上了，大致数据结构如下 <code>parameter_appName__customKey=123</code>; 然后就是对数据（key, value）进行循环处理了呗。</p>
 <p>请注意，处理后的数据里有这么一种数据结构： <code>parameter_app__key=test 1231</code>; 当循环 value 到 <code>test 1231</code> 的时候，<code>shell</code> <code>list</code> 是以空格为分隔符的； 那么，就会造成 key 和 value 的长度不一致的问题，那么你的数据最终也会是错的。这个问题基本无解。所以此路又不通了。</p>
 <p>考虑再三， <code>Python</code> 解析 <code>YAML</code> 需要安装第三方库，很不方便，但解析 <code>JSON</code> 很方便。在同事的帮助下，测试了 <code>pipeline</code> 是支持 <code>python</code> 的，又因为如果使用 <code>AWS</code> 的 Python 扩展包，需要额外安装依赖，所以直接考虑 <code>Python</code> 调用 <code>Shell</code>;</p>
 <h4 id="py-玩-shell">Py 玩 Shell</h4>
 <p>综合以上因素，将 <code>YAML</code>格式的数据转换为 <code>JSON</code>, 由 <code>Python</code> 解析 <code>JSON</code>, 然后循环数据，循环过程中使用 <code>subprocess</code> 调用 <code>shell</code>, 在 <code>shell</code>中调用 AWS CLI 命令即可将数据更新上去或者执行解密操作等。 调用示例代码如下；</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>在这需要重点说明一下的是，如果 <code>subprocess</code>调用的 <code>shell</code>是执行 <code>docker</code>命令，那么一定要在你要执行 <code>subprocess.run(['docker-compose', 'run', '-T', '-rm', 'shush', value])</code>这类命令前确保你已经拉取了 <code>shush</code> 涉及的镜像， 否则你第一次运行的输出结果里会有拉取镜像的日志。解决办法是在脚本真正运行之前获取镜像，可以使用如下密令</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker-compose pull shush
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="总结">总结</h2>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span></span></span></code></pre></div></div>
+<p>在这需要重点说明一下的是，如果 <code>subprocess</code>调用的 <code>shell</code>是执行 <code>docker</code>命令，那么一定要在你要执行 <code>subprocess.run(['docker-compose', 'run', '-T', '-rm', 'shush', value])</code>这类命令前确保你已经拉取了 <code>shush</code> 涉及的镜像， 否则你第一次运行的输出结果里会有拉取镜像的日志。解决办法是在脚本真正运行之前获取镜像，可以使用如下密令</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-Shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker-compose pull shush</span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
 <ul>
 <li>对于外部调用的 <code>Shell</code> 一定要写 <code>Usage</code>，也就是用户调用你的脚本的时候，如果出错，因该显示 <code>help</code> 信息</li>
 <li>不要给可执行的脚本加 <code>.sh</code> ，<code>.py </code> 等后缀，只需要给其可执行权限即可</li>
