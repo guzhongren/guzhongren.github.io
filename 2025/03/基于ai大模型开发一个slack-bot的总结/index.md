@@ -48,7 +48,7 @@ sequenceDiagram
 
 ### 创建Slack Bot
 
-在[Slack官网](https://api.slack.com/apps)上创建Bot有两种方式：
+在[Slack官网](https://api.slack.com/apps)上创建Bot有两种方式： 1, Manifest， 2，Scratch 方式
 
 {{< mermaid >}}
 graph LR;
@@ -113,22 +113,117 @@ settings:
 
 通过上述两种方式之一创建Bot后，需要获取以下Token，这些Token将在无服务器函数中使用：
 
-| 项目            | 位置                                     | 操作                                                                       |
-| :-------------- | :---------------------------------------- | :------------------------------------------------------------------------ |
-| SIGNING_SECRET  | `Basic Information` -> `Signing Secret`   | 复制                                                                       |
-| SLACK_APP_TOKEN | `Basic Information` -> `App-Level Tokens` | 点击`Generate Token and Scope`，命名并赋予`connections:write`权限          |
-| SLACK_BOT_TOKEN | `OAuth & Permissions` -> `OAuth Tokens`   | 复制                                                                       |
+| 项目            | 位置                                      | 操作                                                              |
+| :-------------- | :---------------------------------------- | :---------------------------------------------------------------- |
+| SIGNING_SECRET  | `Basic Information` -> `Signing Secret`   | 复制                                                              |
+| SLACK_APP_TOKEN | `Basic Information` -> `App-Level Tokens` | 点击`Generate Token and Scope`，命名并赋予`connections:write`权限 |
+| SLACK_BOT_TOKEN | `OAuth & Permissions` -> `OAuth Tokens`   | 复制                                                              |
 
 {{< admonition type=tip title="重要提示" open=true >}}
-  * 在本地开发代码并与Slack测试时，启用`Socket Mode`可以避免每次都部署代码，从而节省时间和资源。
-  * 启用`Socket Mode`时，如果多人开发同一个Bot，可能会收到彼此的请求返回结果。建议每人创建一个独立的Workspace以避免冲突。
+  * 在本地开发代码并与Slack测试时，启用`Socket Mode`可以避免每次都部署代码，从而节省时间和资源
+  * 启用`Socket Mode`时，如果多人开发同一个Bot，可能会收到彼此的请求返回结果。建议每人创建一个独立的Workspace以避免冲突
+  * 更改完配置之后，需要将 App 安装到你的 Workspace 中
 {{< /admonition >}}
 
 ### 创建无服务器函数处理用户请求
 
+这里选择使用 Python 来作为Serferless 处理工具，并将其部署在云服务器上，比如 AWS Lambda, Azure Function， 或者 Google Cloud Platform 的Cloud Run Functions中，这里不讲工程构建之类的，直接给出部分参考代码。
+
+```python
+...
+from slack_bolt import App
+from slack_bolt.adapter.flask imp
+import vertexai
+from vertexai.preview.generative_models import GenerativeModel, GenerationConfig
+...
+app = App(
+    token=getenv("SLACK_BOT_TOKEN"),
+    signing_secret=getenv("SIGNING_SECRET"),
+    raise_error_for_unhandled_request=True,
+)
+...
+@app.command("/summary")
+def handle_summary_command(ack, body, say):
+    ack("Thinking...")
+    channel_id = body["channel_id"]
+    check_channel_membership(app, channel_id, say)
+
+    slack_channel_histories = get_chat_history(app, channel_id)
+
+    input = format_events(incident_id, slack_channel_histories)
+
+    # Use AI to summarize
+
+    system_prompt = '''\
+    You are an operations analysis expert. You .....
+    ......
+    Output format:
+    ......
+    '''
+
+    vertexai.init(
+        project=os.getenv("GCP_PROJECT"),
+        location="us-central1",
+    )
+    model = GenerativeModel(
+        model_name="gemini-2.0-flash",
+        system_instruction=[system_prompt],
+    )
+    gen_config = GenerationConfig(temperature=0)
+    response = model.generate_content([prompt], generation_config=gen_config)
+    return response.text
+    say(
+        blocks=[
+            {
+                "type": "header",
+                "text": {
+                    "type": "plain_text",
+                    "text": "Here is the summary of the incident:",
+                },
+            },
+            {
+                "type": "section",
+                "text": {
+                    "type": "mrkdwn",
+                    "text": summary,
+                },
+            },
+        ]
+    )
+
+handler = SlackRequestHandler(app)
+
+
+# Main
+def slack_bot(request):
+    return handler.handle(request)
+
+```
+
+比如使用如下命令将这个程序部署在 GCP 中：
+```sh
+gcloud functions deploy x-bot \
+    --runtime python310 \
+    --trigger-http \
+    --allow-unauthenticated \
+    --entry-point slack_bot \
+    --timeout=120s \
+    --set-env-vars GCP_PROJECT='' \
+    --set-env-vars SLACK_BOT_TOKEN='' \
+    --set-env-vars SIGNING_SECRET=''
+```
+
 ## 注意事项
 
+部署好Serverless Function 之后，需要将Serverless Function 的访问的 URL 添加到 Slack App 的配置中；
+
+* 将 `Socket Mode` 关闭
+* 将 URL 填到 `Event Subscriptions`, 需要通过其校验
+* 将 URL 填到 `Slash Commands` 添加的那个Command（`/summary`） 中
+
 ## 总结
+
+Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某中特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。
 
 ## 引用
 
