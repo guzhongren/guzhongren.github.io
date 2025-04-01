@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Performance - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/performance/</link><description>Performance - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Jan 2022 21:13:15 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/performance/" rel="self" type="application/rss+xml"/><item><title>使用 jsdelivr 来加速 Github 资源访问</title><link>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</link><pubDate>Wed, 05 Jan 2022 21:13:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Performance - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/performance/</link><description>Performance - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Jan 2022 21:13:15 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/performance/" rel="self" type="application/rss+xml"/><item><title>使用 jsdelivr 来加速 Github 资源访问</title><link>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</link><pubDate>Wed, 05 Jan 2022 21:13:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/4781064/pexels-photo-4781064.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" referrerpolicy="no-referrer">
             </div><h2 id="遇到的问题">遇到的问题</h2>
 <p>22 年又开始了，西安 ZF 的防疫政策真的是在全国人民面前一遍又一遍的刷出了新的高度，过了魔幻的 2020，又过了艰难的 2021，2022，感觉你都找不到个合适的词来形容了。</p>
@@ -27,7 +27,7 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
 <ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
 <li>repoName: 存储文件的仓库名</li>
@@ -42,7 +42,7 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
 <p></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>

@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>DI - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/di/</link><description>DI - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Sep 2019 10:52:24 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/di/" rel="self" type="application/rss+xml"/><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>DI - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/di/</link><description>DI - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Sep 2019 10:52:24 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/di/" rel="self" type="application/rss+xml"/><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
 <p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
@@ -22,7 +22,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <ul>
 <li>测试先行</li>
 </ul>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

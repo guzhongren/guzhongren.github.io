@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Go - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/go/</link><description>Go - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Sep 2019 09:56:24 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/go/" rel="self" type="application/rss+xml"/><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Go - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/go/</link><description>Go - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 10 Sep 2019 09:56:24 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/go/" rel="self" type="application/rss+xml"/><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
@@ -191,7 +191,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 <h2 id="coding">Coding</h2>
 <h3 id="目录结构">目录结构</h3>
 <p>项目采用 Golang 传统的平铺式目录</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -267,7 +267,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">db</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>创建好 db 后，需要创建表结构，执行如下数据库操作命令即可完成用户表的创建。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-golang">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -350,7 +350,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">affect</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h4 id="查询">查询</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-golang">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -383,7 +383,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">  <span class="k">defer</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="nf">initDB</span><span class="p">()</span></span></span></code></pre></div></div>
 <p>调用用户操作的增删改查并打印结果，对于不同的操作，我们应该有不同的数据，所以在程序中会有 <em>user</em>、和 <em>updateUser</em> 两个对象</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-golang">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

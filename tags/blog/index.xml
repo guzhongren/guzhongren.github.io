@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/blog/</link><description>Blog - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 18:17:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/blog/" rel="self" type="application/rss+xml"/><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Blog - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/blog/</link><description>Blog - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 18:17:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/blog/" rel="self" type="application/rss+xml"/><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p></p>
 <h2 id="overview">Overview</h2>
 <p><code>Hugo</code>是一款基于 golang 实现的静态网站生成器。以其简单、易用、高效、易扩展、快速部署受到开发者的喜爱，比起 <a href="https://hexo.io/" target="_blank" rel="noopener noreffer ">Hexo</a> 感觉更轻便。下图是我初步实现的博客截图。</p>
 <p></p>
@@ -41,7 +41,7 @@
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -92,7 +92,7 @@
 </p>
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions" target="_blank" rel="noopener noreffer ">Github Actions</a>, 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -186,7 +186,7 @@
 </span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
 <h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-Makefile">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>GnuPG - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/gnupg/</link><description>GnuPG - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jul 2020 11:00:42 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/gnupg/" rel="self" type="application/rss+xml"/><item><title>How to Encrypt Git Files</title><link>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</link><pubDate>Sun, 12 Jul 2020 11:00:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>GnuPG - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/gnupg/</link><description>GnuPG - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 12 Jul 2020 11:00:42 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/gnupg/" rel="self" type="application/rss+xml"/><item><title>How to Encrypt Git Files</title><link>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</link><pubDate>Sun, 12 Jul 2020 11:00:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://s1.ax1x.com/2020/07/12/U32INn.png" referrerpolicy="no-referrer">
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
 <p>在开发过程中经常会遇到一个问题：</p>
@@ -155,9 +155,9 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">secretfile filter=git-crypt diff=git-crypt
-</span></span><span class="line"><span class="cl">*.key filter=git-crypt diff=git-crypt
-</span></span><span class="line"><span class="cl">secretdir/** filter=git-crypt diff=git-crypt</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>secretfile filter=git-crypt diff=git-crypt
+*.key filter=git-crypt diff=git-crypt
+secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 <h3 id="清理-config-的-git-缓存">清理 config 的 git 缓存</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">

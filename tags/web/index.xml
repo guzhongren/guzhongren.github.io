@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Web - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/web/</link><description>Web - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/web/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Web - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/web/</link><description>Web - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/web/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
 <h2 id="cargotoml">Cargo.toml</h2>
 <p><code>cargo.toml</code>是 Rust 包管理器 <code>cargo</code> 的清单文件。这个文件包 <code>name</code>、 <code>version</code> 和包的依赖，在 Rust 中，我们一般称之为 <code>crate</code>。</p>
 <p>在示例中给出了一系列信息，但是我们主要讨论如下三点：</p>
@@ -33,7 +33,7 @@
 <h3 id="3-features-和-wee_alloc-console_error_panic_hook-dependencies">3. [features] 和 wee_alloc, console_error_panic_hook dependencies</h3>
 <p>作为我们设计模板的工作的一部分，该模板可帮助人们发现针对特定用例的有用包，该模板包括两个依赖项，这对于开发 Rust-wasm 包的人们可能非常有用：console_error_panic_hook 和 wee_alloc。</p>
 <p>因为这些依赖关系主要在 Rust-wasm 包开发工作流程的特定部分中有用，所以我们还设置了一些粘合代码，使我们既可以将它们都包含为依赖关系，又可以选择将它们包含在内。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -75,29 +75,29 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ npm init rust-webpack web_assembly_demo
-</span></span><span class="line"><span class="cl">npx: 18 安装成功，用时 3.989 秒
-</span></span><span class="line"><span class="cl"> Rust +  WebAssembly + Webpack = ️
-</span></span><span class="line"><span class="cl">Installed dependencies</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>$ npm init rust-webpack web_assembly_demo
+npx: 18 安装成功，用时 3.989 秒
+ Rust +  WebAssembly + Webpack = ️
+Installed dependencies</code></pre></div>
 <h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">$</span> <span class="n">yarn</span>
-</span></span><span class="line"><span class="cl"><span class="n">yarn</span> <span class="n">install</span> <span class="n">v1</span><span class="o">.</span><span class="mf">19.1</span>
-</span></span><span class="line"><span class="cl"><span class="n">warning</span> <span class="n">package</span><span class="o">.</span><span class="n">json</span><span class="p">:</span> <span class="n">No</span> <span class="n">license</span> <span class="n">field</span>
-</span></span><span class="line"><span class="cl"><span class="n">info</span> <span class="n">No</span> <span class="n">lockfile</span> <span class="n">found</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl"><span class="n">warning</span> <span class="n">package</span><span class="o">-</span><span class="n">lock</span><span class="o">.</span><span class="n">json</span> <span class="n">found</span><span class="o">.</span> <span class="n">Your</span> <span class="n">project</span> <span class="n">contains</span> <span class="n">lock</span> <span class="n">files</span> <span class="n">generated</span> <span class="n">by</span> <span class="n">tools</span> <span class="n">other</span> <span class="n">than</span> <span class="n">Yarn</span><span class="o">.</span> <span class="n">It</span> <span class="n">is</span> <span class="n">advised</span> <span class="ow">not</span> <span class="n">to</span> <span class="n">mix</span> <span class="n">package</span> <span class="n">managers</span> <span class="ow">in</span> <span class="n">order</span> <span class="n">to</span> <span class="n">avoid</span> <span class="n">resolution</span> <span class="n">inconsistencies</span> <span class="n">caused</span> <span class="n">by</span> <span class="n">unsynchronized</span> <span class="n">lock</span> <span class="n">files</span><span class="o">.</span> <span class="n">To</span> <span class="n">clear</span> <span class="n">this</span> <span class="n">warning</span><span class="p">,</span> <span class="n">remove</span> <span class="n">package</span><span class="o">-</span><span class="n">lock</span><span class="o">.</span><span class="n">json</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl"><span class="n">warning</span> <span class="n">rust</span><span class="o">-</span><span class="n">webpack</span><span class="o">-</span><span class="n">template</span><span class="err">@</span><span class="mf">0.1</span><span class="o">.</span><span class="mi">0</span><span class="p">:</span> <span class="n">No</span> <span class="n">license</span> <span class="n">field</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Resolving</span> <span class="n">packages</span><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="n">warning</span> <span class="err">@</span><span class="n">wasm</span><span class="o">-</span><span class="k">tool</span><span class="o">/</span><span class="n">wasm</span><span class="o">-</span><span class="n">pack</span><span class="o">-</span><span class="n">plugin</span> <span class="o">&gt;</span> <span class="n">watchpack</span> <span class="o">&gt;</span> <span class="n">chokidar</span> <span class="o">&gt;</span> <span class="n">fsevents</span><span class="err">@</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">9</span><span class="p">:</span> <span class="n">One</span> <span class="n">of</span> <span class="n">your</span> <span class="n">dependencies</span> <span class="n">needs</span> <span class="n">to</span> <span class="n">upgrade</span> <span class="n">to</span> <span class="n">fsevents</span> <span class="n">v2</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span> <span class="n">Proper</span> <span class="n">nodejs</span> <span class="n">v10</span><span class="o">+</span> <span class="n">support</span> <span class="mi">2</span><span class="p">)</span> <span class="n">No</span> <span class="n">more</span> <span class="n">fetching</span> <span class="n">binaries</span> <span class="n">from</span> <span class="n">AWS</span><span class="p">,</span> <span class="n">smaller</span> <span class="n">package</span> <span class="n">size</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">2</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Fetching</span> <span class="n">packages</span><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Linking</span> <span class="n">dependencies</span><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">4</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>   <span class="n">Building</span> <span class="n">fresh</span> <span class="n">packages</span><span class="o">...</span>
-</span></span><span class="line"><span class="cl"><span class="n">success</span> <span class="n">Saved</span> <span class="n">lockfile</span><span class="o">.</span>
-</span></span><span class="line"><span class="cl">  <span class="n">Done</span> <span class="ow">in</span> <span class="mf">17.87</span><span class="n">s</span><span class="o">.</span></span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>$ yarn
+yarn install v1.19.1
+warning package.json: No license field
+info No lockfile found.
+warning package-lock.json found. Your project contains lock files generated by tools other than Yarn. It is advised not to mix package managers in order to avoid resolution inconsistencies caused by unsynchronized lock files. To clear this warning, remove package-lock.json.
+warning rust-webpack-template@0.1.0: No license field
+[1/4]   Resolving packages...
+warning @wasm-tool/wasm-pack-plugin &gt; watchpack &gt; chokidar &gt; fsevents@1.2.9: One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size
+[2/4]   Fetching packages...
+[3/4]   Linking dependencies...
+[4/4]   Building fresh packages...
+success Saved lockfile.
+  Done in 17.87s.</code></pre></div>
 <h2 id="修改-cargotoml-为">修改 Cargo.toml 为</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
@@ -162,65 +162,65 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ yarn start
-</span></span><span class="line"><span class="cl">yarn run v1.19.1
-</span></span><span class="line"><span class="cl">warning package.json: No license field
-</span></span><span class="line"><span class="cl">$ rimraf dist pkg &amp;&amp; webpack-dev-server --open -d
-</span></span><span class="line"><span class="cl">🧐  Checking for wasm-pack...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">  wasm-pack is installed.
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ℹ️  Compiling your crate in development mode...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ℹ ｢wds｣: Project is running at http://localhost:8080/
-</span></span><span class="line"><span class="cl">ℹ ｢wds｣: webpack output is served from /
-</span></span><span class="line"><span class="cl">ℹ ｢wds｣: Content not from webpack is served from /Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo/dist
-</span></span><span class="line"><span class="cl">[INFO]:   Checking for the Wasm target...
-</span></span><span class="line"><span class="cl">[INFO]:   Compiling to Wasm...
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: wait until bundle finished: /
-</span></span><span class="line"><span class="cl">   Compiling proc-macro2 v1.0.6
-</span></span><span class="line"><span class="cl">   Compiling unicode-xid v0.2.0
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl"> 3 assets
-</span></span><span class="line"><span class="cl">Entrypoint index = index.js
-</span></span><span class="line"><span class="cl">[./pkg/index.js] 4.41 KiB {0} [built]
-</span></span><span class="line"><span class="cl">[./pkg/index_bg.wasm] 145 KiB {0} [built]
-</span></span><span class="line"><span class="cl">    + 33 hidden modules
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Compiled successfully.
-</span></span><span class="line"><span class="cl">ℹ️  Compiling your crate in development mode...
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">[INFO]:   Checking for the Wasm target...
-</span></span><span class="line"><span class="cl">[INFO]:   Compiling to Wasm...
-</span></span><span class="line"><span class="cl">   Compiling rust-webpack-template v0.1.0 (/Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo)
-</span></span><span class="line"><span class="cl">    Finished dev [unoptimized + debuginfo] target(s) in 0.62s
-</span></span><span class="line"><span class="cl">[INFO]: ⬇️  Installing wasm-bindgen...
-</span></span><span class="line"><span class="cl">[INFO]: Optional fields missing from Cargo.toml: &#39;repository&#39;, &#39;license&#39;. These are not necessary, but recommended
-</span></span><span class="line"><span class="cl">[INFO]:    Done in 0.77s
-</span></span><span class="line"><span class="cl">[INFO]:    Your wasm pkg is ready to publish at ./pkg.
-</span></span><span class="line"><span class="cl">  Your crate has been correctly compiled
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Compiling...
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Hash: d4e8a3c57ad23f847707
-</span></span><span class="line"><span class="cl">Version: webpack 4.41.2
-</span></span><span class="line"><span class="cl">Time: 411ms
-</span></span><span class="line"><span class="cl">Built at: 2019-11-23 20:16:55
-</span></span><span class="line"><span class="cl">                           Asset     Size  Chunks                         Chunk Names
-</span></span><span class="line"><span class="cl">                            0.js   17 KiB       0  [emitted]
-</span></span><span class="line"><span class="cl">beee557fb69dcfa0df60.module.wasm  161 KiB       0  [emitted] [immutable]
-</span></span><span class="line"><span class="cl">                        index.js  897 KiB   index  [emitted]              index
-</span></span><span class="line"><span class="cl">Entrypoint index = index.js
-</span></span><span class="line"><span class="cl">[./pkg/index.js] 4.93 KiB {0} [built]
-</span></span><span class="line"><span class="cl">[./pkg/index_bg.wasm] 161 KiB {0} [built]
-</span></span><span class="line"><span class="cl">    + 33 hidden modules
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Compiled successfully.
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Compiling...
-</span></span><span class="line"><span class="cl">ℹ ｢wdm｣: Hash: 3e1681b9b4c4c940722e
-</span></span><span class="line"><span class="cl">Version: webpack 4.41.2
-</span></span><span class="line"><span class="cl">Time: 16ms
-</span></span><span class="line"><span class="cl">Built at: 2019-11-23 20:17:14
-</span></span><span class="line"><span class="cl">   Asset     Size  Chunks             Chunk Names
-</span></span><span class="line"><span class="cl">index.js  897 KiB   index  [emitted]  index
-</span></span><span class="line"><span class="cl"> + 2 hidden assets</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>$ yarn start
+yarn run v1.19.1
+warning package.json: No license field
+$ rimraf dist pkg &amp;&amp; webpack-dev-server --open -d
+🧐  Checking for wasm-pack...
+
+  wasm-pack is installed.
+
+ℹ️  Compiling your crate in development mode...
+
+ℹ ｢wds｣: Project is running at http://localhost:8080/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: Content not from webpack is served from /Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo/dist
+[INFO]:   Checking for the Wasm target...
+[INFO]:   Compiling to Wasm...
+ℹ ｢wdm｣: wait until bundle finished: /
+   Compiling proc-macro2 v1.0.6
+   Compiling unicode-xid v0.2.0
+...
+ 3 assets
+Entrypoint index = index.js
+[./pkg/index.js] 4.41 KiB {0} [built]
+[./pkg/index_bg.wasm] 145 KiB {0} [built]
+    + 33 hidden modules
+ℹ ｢wdm｣: Compiled successfully.
+ℹ️  Compiling your crate in development mode...
+
+[INFO]:   Checking for the Wasm target...
+[INFO]:   Compiling to Wasm...
+   Compiling rust-webpack-template v0.1.0 (/Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.62s
+[INFO]: ⬇️  Installing wasm-bindgen...
+[INFO]: Optional fields missing from Cargo.toml: &#39;repository&#39;, &#39;license&#39;. These are not necessary, but recommended
+[INFO]:    Done in 0.77s
+[INFO]:    Your wasm pkg is ready to publish at ./pkg.
+  Your crate has been correctly compiled
+
+ℹ ｢wdm｣: Compiling...
+ℹ ｢wdm｣: Hash: d4e8a3c57ad23f847707
+Version: webpack 4.41.2
+Time: 411ms
+Built at: 2019-11-23 20:16:55
+                           Asset     Size  Chunks                         Chunk Names
+                            0.js   17 KiB       0  [emitted]
+beee557fb69dcfa0df60.module.wasm  161 KiB       0  [emitted] [immutable]
+                        index.js  897 KiB   index  [emitted]              index
+Entrypoint index = index.js
+[./pkg/index.js] 4.93 KiB {0} [built]
+[./pkg/index_bg.wasm] 161 KiB {0} [built]
+    + 33 hidden modules
+ℹ ｢wdm｣: Compiled successfully.
+ℹ ｢wdm｣: Compiling...
+ℹ ｢wdm｣: Hash: 3e1681b9b4c4c940722e
+Version: webpack 4.41.2
+Time: 16ms
+Built at: 2019-11-23 20:17:14
+   Asset     Size  Chunks             Chunk Names
+index.js  897 KiB   index  [emitted]  index
+ + 2 hidden assets</code></pre></div>
 <h2 id="在-src-中新建-parsers-并编写处理-markdown-的-rust-代码">在 src 中新建 parse.rs 并编写处理 markdown 的 rust 代码</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-rust">
@@ -329,7 +329,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="在-srclibrs-中引入-parse-mod-并编写向外暴露的函数">在 src/lib.rs 中引入 parse mod， 并编写向外暴露的函数</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-Rust">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -346,7 +346,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">result</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="在-jsindexjs-中使用-web-assembly-修改结果如下">在 js/index.js 中使用 Web Assembly ，修改结果如下</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-rust">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

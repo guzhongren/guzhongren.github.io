@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Test - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/test/</link><description>Test - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 11 Jun 2022 20:03:35 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/test/" rel="self" type="application/rss+xml"/><item><title>真的需要在测试中打log么？</title><link>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</link><pubDate>Sat, 11 Jun 2022 20:03:35 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Test - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/test/</link><description>Test - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 11 Jun 2022 20:03:35 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/test/" rel="self" type="application/rss+xml"/><item><title>真的需要在测试中打log么？</title><link>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</link><pubDate>Sat, 11 Jun 2022 20:03:35 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E5%9C%A8%E6%B5%8B%E8%AF%95%E4%B8%AD%E6%89%93log%E4%B9%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
@@ -277,7 +277,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <ul>
 <li>测试先行</li>
 </ul>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

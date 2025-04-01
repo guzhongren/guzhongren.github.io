@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Code - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/code/</link><description>Code - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jul 2020 10:23:18 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/code/" rel="self" type="application/rss+xml"/><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Code - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/code/</link><description>Code - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jul 2020 10:23:18 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/code/" rel="self" type="application/rss+xml"/><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
 <iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
@@ -21,7 +21,7 @@
 </ul>
 <p>安装很简单，不用说</p>
 <h2 id="配置">配置</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-json">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -67,7 +67,7 @@
 <p>我们需要将底部两个按钮 <code>新建询价</code>和 <code>采购助手</code>展示出来，并且点击他们的操作后有不同的交互。</p>
 <h2 id="coding">coding</h2>
 <p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

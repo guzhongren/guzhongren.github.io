@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Vim8.2 - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/vim8.2/</link><description>Vim8.2 - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 16 Dec 2020 23:08:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/vim8.2/" rel="self" type="application/rss+xml"/><item><title>Centos 安装 vim8.2</title><link>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</link><pubDate>Wed, 16 Dec 2020 23:08:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Vim8.2 - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/vim8.2/</link><description>Vim8.2 - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 16 Dec 2020 23:08:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/vim8.2/" rel="self" type="application/rss+xml"/><item><title>Centos 安装 vim8.2</title><link>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</link><pubDate>Wed, 16 Dec 2020 23:08:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="删除已有的-vim">删除已有的 vim</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -31,17 +31,17 @@ Vim8.2 下载：https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2</p>
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./configure</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>./configure</code></pre></div>
 <p>如果遇到如下问题</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">no terminal library found
-</span></span><span class="line"><span class="cl">checking for tgetent()… configure: error: NOT FOUND!
-</span></span><span class="line"><span class="cl">You need to install a terminal library; for example ncurses.
-</span></span><span class="line"><span class="cl">Or specify the name of the library with –with-tlib.</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>no terminal library found
+checking for tgetent()… configure: error: NOT FOUND!
+You need to install a terminal library; for example ncurses.
+Or specify the name of the library with –with-tlib.</code></pre></div>
 <p>请执行如下命令安装依赖</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">

@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Nginx - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/nginx/</link><description>Nginx - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 30 Jun 2019 19:46:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/nginx/" rel="self" type="application/rss+xml"/><item><title>K8s 1.15.0 安装记录</title><link>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Sun, 30 Jun 2019 19:46:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Nginx - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/nginx/</link><description>Nginx - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 30 Jun 2019 19:46:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/nginx/" rel="self" type="application/rss+xml"/><item><title>K8s 1.15.0 安装记录</title><link>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Sun, 30 Jun 2019 19:46:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/k8s-1.15.0-%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3872067/pexels-photo-3872067.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="环境">环境</h2>
 <table>
@@ -403,7 +403,7 @@
 </span></span><span class="line"><span class="cl"><span class="o">[</span>root@master ~<span class="o">]</span><span class="c1"># kubectl taint nodes master node-role.kubernetes.io/master-</span>
 </span></span><span class="line"><span class="cl">node/master untainted</span></span></code></pre></div></div>
 <h2 id="打-label">打 label</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -487,7 +487,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">backend</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l">nginx-service</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="m">8080</span></span></span></code></pre></div></div>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>

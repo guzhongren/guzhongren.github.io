@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Mvc - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/mvc/</link><description>Mvc - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Jul 2020 22:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/mvc/" rel="self" type="application/rss+xml"/><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Mvc - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/mvc/</link><description>Mvc - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Jul 2020 22:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/mvc/" rel="self" type="application/rss+xml"/><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
@@ -467,23 +467,23 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/healthCheck.http
-</span></span><span class="line"><span class="cl">GET http://localhost:8000/api/v1/health HTTP/1.1</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>// _resources/httpClient/healthCheck.http
+GET http://localhost:8000/api/v1/health HTTP/1.1</code></pre></div>
 <h6 id="请求结果">请求结果</h6>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 200 OK
-</span></span><span class="line"><span class="cl">content-length: 28
-</span></span><span class="line"><span class="cl">x-response-time: 0ms
-</span></span><span class="line"><span class="cl">content-type: application/json; charset=utf-8
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;success&#34;: true,
-</span></span><span class="line"><span class="cl">  &#34;data&#34;: &#34;Ok&#34;
-</span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>HTTP/1.1 200 OK
+content-length: 28
+x-response-time: 0ms
+content-type: application/json; charset=utf-8
+
+{
+  &#34;success&#34;: true,
+  &#34;data&#34;: &#34;Ok&#34;
+}</code></pre></div>
 <p>至此，完成第一个接口，有 <code>Oak</code> 提供应用服务，经过了<code>Unit test</code>和 <code>RestClient</code>的测试。完成了开始的<code>Todo</code>。</p>
 <h3 id="添加用户接口-adduser">添加用户接口 (<code>addUser</code>)</h3>
 <p>添加用户涉及到<code>Controller</code>, <code>Service</code> 和 <code>Repository</code>, 所以我们分三步来实现该接口。</p>
@@ -959,31 +959,31 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">// _resources/httpClient/addUser.http
-</span></span><span class="line"><span class="cl">POST http://localhost:8000/api/v1/users HTTP/1.1
-</span></span><span class="line"><span class="cl">Content-Type: application/x-www-form-urlencoded
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">name=foo&amp;password=123</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>// _resources/httpClient/addUser.http
+POST http://localhost:8000/api/v1/users HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=foo&amp;password=123</code></pre></div>
 <h5 id="请求结果-1">请求结果</h5>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">HTTP/1.1 201 Created
-</span></span><span class="line"><span class="cl">content-length: 149
-</span></span><span class="line"><span class="cl">x-response-time: 34ms
-</span></span><span class="line"><span class="cl">content-type: application/json; charset=utf-8
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">{
-</span></span><span class="line"><span class="cl">  &#34;success&#34;: true,
-</span></span><span class="line"><span class="cl">  &#34;data&#34;: {
-</span></span><span class="line"><span class="cl">    &#34;username&#34;: &#34;foo&#34;,
-</span></span><span class="line"><span class="cl">    &#34;password&#34;: &#34;123&#34;,
-</span></span><span class="line"><span class="cl">    &#34;id&#34;: &#34;7aea0bb7-e0bc-4f1f-a516-3a43f4e30fb6&#34;,
-</span></span><span class="line"><span class="cl">    &#34;registrationDate&#34;: &#34;2020-07-27T14:11:24.140Z&#34;
-</span></span><span class="line"><span class="cl">  }
-</span></span><span class="line"><span class="cl">}</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>HTTP/1.1 201 Created
+content-length: 149
+x-response-time: 34ms
+content-type: application/json; charset=utf-8
+
+{
+  &#34;success&#34;: true,
+  &#34;data&#34;: {
+    &#34;username&#34;: &#34;foo&#34;,
+    &#34;password&#34;: &#34;123&#34;,
+    &#34;id&#34;: &#34;7aea0bb7-e0bc-4f1f-a516-3a43f4e30fb6&#34;,
+    &#34;registrationDate&#34;: &#34;2020-07-27T14:11:24.140Z&#34;
+  }
+}</code></pre></div>
 <p>异常情况可以自己制造，在此就不演示了，至此完成用户添加的接口。</p>
 <h2 id="打包">打包</h2>
 <p>按照上面的步骤，我们可以完成查询单个用户 (<code>GET</code>:<code>/users/:id</code>), 查询所有用户 (<code>GET</code>:<code>/users</code>) 和删除 (<code>DELETE</code>:<code>/users/:id</code>) 等接口，快速且高效。当我们完成测试和接口后，使用<code>deno</code>的命令行工具，我们可以将整个工程打包为一个<code>.js</code>文件；</p>

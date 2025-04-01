@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Google - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/google/</link><description>Google - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 13 Sep 2023 22:44:56 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/google/" rel="self" type="application/rss+xml"/><item><title>使用Google Sheet Apps Script提升工作效率</title><link>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</link><pubDate>Wed, 13 Sep 2023 22:44:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Google - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/google/</link><description>Google - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 13 Sep 2023 22:44:56 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/google/" rel="self" type="application/rss+xml"/><item><title>使用Google Sheet Apps Script提升工作效率</title><link>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</link><pubDate>Wed, 13 Sep 2023 22:44:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>一切总是在往熵增大的方向发展。</p>
 <h2 id="遇到的问题">遇到的问题</h2>
@@ -59,16 +59,16 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">xiaoming1
-</span></span><span class="line"><span class="cl">xiaoming2
-</span></span><span class="line"><span class="cl">xiaoming3
-</span></span><span class="line"><span class="cl">xiaoming4
-</span></span><span class="line"><span class="cl">xiaoming5
-</span></span><span class="line"><span class="cl">xiaoming6	current
-</span></span><span class="line"><span class="cl">xiaoming7
-</span></span><span class="line"><span class="cl">xiaoming8
-</span></span><span class="line"><span class="cl">xiaoming9
-</span></span><span class="line"><span class="cl">xiaoming10</span></span></code></pre></div></div>
+    </div><pre tabindex="0"><code>xiaoming1
+xiaoming2
+xiaoming3
+xiaoming4
+xiaoming5
+xiaoming6	current
+xiaoming7
+xiaoming8
+xiaoming9
+xiaoming10</code></pre></div>
 <h3 id="创建google-sheet-处理脚本">创建Google Sheet 处理脚本</h3>
 <p>接下来在Google Sheet 中创建Apps Script; 位置：Menu-&gt;Extention-&gt; Apps Script;</p>
 <p>在编辑器里可以编写处理Google Sheet 的代码，比如有个sheet.gs 里面处理Sheet 相关的操作，如下</p>
