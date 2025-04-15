@@ -11,19 +11,19 @@
 
 ---
 
-第一个项目是关于遗留系统维护质量评估的，涉及了许多新技术，例如CrewAI、Vertex AI、Streamlit、Hugging Face和Agent编排。在这个项目中，我首次使用Python Flask独立构建了一个后端服务，并结合Streamlit开发了服务端渲染的前端，为用户提供了优秀的交互体验。简单来说，这个功能类似于一个聊天记录的展示。
+第一个项目是关于遗留系统维护质量评估的，涉及了许多新技术，例如 CrewAI、Vertex AI、Streamlit、Hugging Face 和 Agent 编排。在这个项目中，我首次使用 Python Flask 独立构建了一个后端服务，并结合 Streamlit 开发了服务端渲染的前端，为用户提供了优秀的交互体验。简单来说，这个功能类似于一个聊天记录的展示。
 
 ---
 
-第二个项目与SRE相关，目标是将可观测链路上的Alert转换为Incident，并通过`ChatOps`形式处理这些Incident。为此，我们需要一个集成AI功能的Bot来提升Incident处理效率。例如，当一个Manager加入Incident Channel时，需要一个简要的总结（当前Incident的情况总结）。这也是本文的来源。
+第二个项目与SRE相关，目标是将可观测链路上的 Alert 转换为 Incident，并通过`ChatOps`形式处理这些 Incident。为此，我们需要一个集成AI功能的 Bot 来提升 Incident 处理效率。例如，当一个 Manager 加入 Incident Channel 时，需要一个简要的总结（当前 Incident 的情况总结）。这也是本文的来源。
 
 ## 需求
 
-在`ChatOps`中，当Manager加入Incident处理的聊天组时，需要及时获取当前Incident的处理情况，包括实时状态、关键行为以及可能的建议。
+在`ChatOps`中，当 Manager 加入 Incident 处理的聊天组时，需要及时获取当前 Incident 的处理情况，包括实时状态、关键行为以及可能的建议。
 
 ## 基本流程
 
-基于上述需求，我们需要为Chat设计一个Bot。这个Bot在接收到简单指令后，可以生成当前Incident的关键数据报告，类似于PIR（Post-Incident Report），但不需要那么详细。
+基于上述需求，我们需要为 Chat 设计一个 Bot。这个 Bot 在接收到简单指令后，可以生成当前 Incident 的关键数据报告，类似于 PIR（Post-Incident Report），但不需要那么详细。
 
 {{< mermaid >}}
 sequenceDiagram
@@ -43,12 +43,12 @@ sequenceDiagram
 
 在开发过程中，我们需要完成以下任务：
 
-1. 在Slack上创建一个Bot，作为用户与Slack之间的沟通桥梁。
-2. 使用无服务器函数处理Bot发送的请求，获取AI所需数据，并将其传递给AI模型，最终将AI返回的内容发送回Slack。
+1. 在 Slack 上创建一个 Bot，作为用户与 Slack 之间的沟通桥梁。
+2. 使用无服务器函数处理 Bot 发送的请求，获取 AI 所需数据，并将其传递给 AI 模型，最终将AI返回的内容发送回 Slack。
 
 ### 创建Slack Bot
 
-在[Slack官网](https://api.slack.com/apps)上创建Bot有两种方式： 1, Manifest， 2，Scratch 方式
+在[Slack官网](https://api.slack.com/apps)上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式
 
 {{< mermaid >}}
 graph LR;
@@ -62,7 +62,7 @@ graph LR;
 
 #### Manifest方式
 
-这种方式相对简单，支持JSON和YAML格式，所有配置都集中在Manifest文件中。以下是一个YAML格式的示例：
+这种方式相对简单，支持 JSON 和 YAML 格式，所有配置都集中在 Manifest文件中。以下是一个 YAML 格式的示例：
 
 ```yaml
 display_information:
@@ -80,14 +80,18 @@ features:
 oauth_config:
   scopes:
     bot:
+      - app_mentions:read
+      - channels:history
       - channels:join
       - channels:read
       - chat:write
       - chat:write.public
       - commands
-      - channels:history
-      - app_mentions:read
       - incoming-webhook
+      - groups:history
+      - im:history
+      - mpim:history
+      - users:read
 settings:
   event_subscriptions:
     request_url: <ServerLess HTTPS URL>
@@ -105,11 +109,11 @@ settings:
   ServerLess HTTPS URL: https://serverless.functions.url/x-bot
 {{< /admonition >}}
 
-这种方式适合已经创建过一个Bot，需要重新创建的情况，例如测试完成后需要创建正式的Bot。
+这种方式适合已经创建过一个 Bot，需要重新创建的情况，例如测试完成后需要创建正式的 Bot。
 
 #### Scratch方式
 
-按照提示逐步完成配置，涉及多个模块，例如`Basic Information`、`Socket Mode`、`Incoming Webhooks`、`Slash Command`、`OAuth & Permissions`和`Event Subscriptions`等。具体权限可参考Manifest的YAML配置。
+按照提示逐步完成配置，涉及多个模块，例如`Basic Information`、`Socket Mode`、`Incoming Webhooks`、`Slash Command`、`OAuth & Permissions`和`Event Subscriptions`等。具体权限可参考 Manifest 的 YAML 配置。
 
 通过上述两种方式之一创建Bot后，需要获取以下Token，这些Token将在无服务器函数中使用：
 
@@ -127,7 +131,7 @@ settings:
 
 ### 创建无服务器函数处理用户请求
 
-这里选择使用 Python 来作为Serferless 处理工具，并将其部署在云服务器上，比如 AWS Lambda, Azure Function， 或者 Google Cloud Platform 的Cloud Run Functions中，这里不讲工程构建之类的，直接给出部分参考代码。
+这里选择使用 Python 来作为 Serferless 处理工具，并将其部署在云服务器上，比如 AWS Lambda, Azure Function， 或者 Google Cloud Platform 的 Cloud Run Functions中，这里不讲工程构建之类的，直接给出部分参考代码。
 
 ```python
 ...
@@ -215,7 +219,7 @@ gcloud functions deploy x-bot \
 
 ## 注意事项
 
-部署好Serverless Function 之后，需要将Serverless Function 的访问的 URL 添加到 Slack App 的配置中；
+部署好 Serverless Function 之后，需要将Serverless Function 的访问的 URL 添加到 Slack App 的配置中；
 
 * 将 `Socket Mode` 关闭
 * 将 URL 填到 `Event Subscriptions`, 需要通过其校验
@@ -223,7 +227,7 @@ gcloud functions deploy x-bot \
 
 ## 总结
 
-Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某中特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。
+Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某种特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。
 
 ## 引用
 
