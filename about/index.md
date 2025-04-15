@@ -1,7 +1,7 @@
 # About
 
 
-## Introduction
+## 介绍
 
 嗨，我是谷中仁，一位地理信息系统专业（2015 年毕业）的程序员、 高级咨询师、 开源爱好者、[freeCodeCamp 西安社区](https://github.com/freeCodeCamp-XiAn) 组织者；目前是 [Thoughtworks](https://www.Thoughtworks.com/) 的一名高级咨询师;
 
@@ -10,16 +10,16 @@
 - 2017.10 ~ 2019.01 西安山脉科技股份有限公司  高级 GIS 开发工程师，前端架构师
 - 2019.01 ～ Thoughtworks 思特沃克软件技术（西安）有限公司  高级咨询师
 
-## Work/Productions
+## 工作/产品
 
-### Coding
+### 代码
 
 - [Powerboard](https://github.com/guzhongren/Powerboard) 一款可拖拽、可配置的 BuildKite Dashboard 应用。
 - [ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap) 基于 ArcGIS API 的地图上展示图标的库。
 - [Logseq-Echarts](https://github.com/guzhongren/logseq-echarts) 一个基于ECharts的Logseq 插件。
 - [algolia-docsearch-upload-action](https://github.com/guzhongren/algolia-docsearch-upload-action) 一个小的&快&简单的Algolia研究索引上传工具
 
-### Articles
+### 文章
 
 - [容器安全扫描工具推荐-Thoughtworks洞见](https://insights.thoughtworks.cn/container-scanning-tools-recommendation/)
 - [Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)
