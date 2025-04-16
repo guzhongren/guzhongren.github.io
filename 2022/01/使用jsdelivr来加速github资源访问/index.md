@@ -30,12 +30,12 @@
 
 从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。
 
-![cdn-around-the-world](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/cdn/cdn-around-the-world.12nesnyias8w.webp)
+![cdn-around-the-world](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-around-the-world.12nesnyias8w.webp)
 
 #### 模式
 
 ```
-https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
+https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
 ```
 
 - usernameOrOrgName: GitHub 用户名或者组织名
@@ -50,10 +50,10 @@ https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
 按照上面 jsdelivr 的模式配置路径，效果如下：
 
 ```
-https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json
+https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json
 ```
 
-![jsdelivr 效果](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/cdn/cdn-github-data.5f2n2k3it68.webp)
+![jsdelivr 效果](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-github-data.5f2n2k3it68.webp)
 
 ## 总结
 

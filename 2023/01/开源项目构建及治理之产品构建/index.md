@@ -9,7 +9,7 @@
 
 ## 一图胜千言
 
-![开源项目构建及治理](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/开源项目构建及治理.2witgnrnxzc0.webp)
+![开源项目构建及治理](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Open-Source/开源项目构建及治理.2witgnrnxzc0.webp)
 
 ## 产品（Product）
 
@@ -231,7 +231,7 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 
 社区是另一个比较大的话题，我们将在下篇中聊。这里放上《如何组织社区》的思维导图。
 
-![如何组织社区](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp)
+![如何组织社区](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp)
 
 ## 引用
 

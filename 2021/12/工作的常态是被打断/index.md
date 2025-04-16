@@ -28,7 +28,7 @@
 
 如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。
 
-![microsoft-todo](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png)
+![microsoft-todo](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png)
 
 ## 实践
 

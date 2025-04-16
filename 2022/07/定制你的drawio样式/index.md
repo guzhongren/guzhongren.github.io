@@ -83,7 +83,7 @@
 ```
 
 #### 效果
-![web-style](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/DrawIO/web-style.2z3v7akawpe0.webp)
+![web-style](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/web-style.2z3v7akawpe0.webp)
 
 ### VS Code  插件版（vscode-drawio）
 
@@ -138,9 +138,9 @@
 ```
 
 #### 效果
-![preset](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/DrawIO/preset.58se8wl6ltg0.webp)
+![preset](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/preset.58se8wl6ltg0.webp)
 
-![font](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Tools/DrawIO/font.69qxu1ldebg0.webp)
+![font](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/font.69qxu1ldebg0.webp)
 
 ## 引用
 

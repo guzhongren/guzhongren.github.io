@@ -1,5 +1,5 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>GitHub - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/github/</link><description>GitHub - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Jan 2022 23:02:34 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/github/" rel="self" type="application/rss+xml"/><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 <a href="https://lunrjs.com/" target="_blank" rel="noopener noreffer ">lunrjs</a> 或者 <a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer ">algolia</a> 等。我的 Blog 是基于 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 构建的，使用的主题是 <a href="https://hugoloveit.com/" target="_blank" rel="noopener noreffer ">LoveIt</a>, 集成的是 algolia 的搜索方式。</p>
 <p>对于存储在 algolia 上的数据，我是通过 GitHub Action：<a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer</a> 来上传的，之前使用是没有问题的。</p>
@@ -257,7 +257,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
 <ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
 <li>repoName: 存储文件的仓库名</li>
@@ -272,7 +272,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
 <p></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>

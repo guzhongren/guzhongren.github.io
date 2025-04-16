@@ -93,7 +93,7 @@ Authorization Code的实现主要分为两类：无服务器实现（使用PKCE�
 
 ### Authorization Code 实现的流程图
 
-![OAuth 2.0 Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg)
+![OAuth 2.0 Flow](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg)
 
 ## OIDC
 
@@ -124,7 +124,7 @@ OIDC 种有一个非常重要，从认证服务器下发的一个字段，就�
 
 ### OIDC 的流程图
 
-![OIDC Flow](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/OAuth/OIDC-flow.6le76zwbokc0.svg)
+![OIDC Flow](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Security/OAuth/OIDC-flow.6le76zwbokc0.svg)
 
 ## 引用
 

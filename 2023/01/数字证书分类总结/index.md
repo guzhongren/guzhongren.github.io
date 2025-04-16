@@ -54,7 +54,7 @@ P12 是把证书压成一个文件，**xxx.pfx** 。主要是考虑分发证书�
 
 数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。
 
-![Digital-Cert](https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/Security/Degital-Cert.3y4w8ewfimc0.webp)
+![Digital-Cert](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Security/Degital-Cert.3y4w8ewfimc0.webp)
 
 ## SSL 证书分类
 

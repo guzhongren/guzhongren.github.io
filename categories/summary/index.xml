@@ -556,7 +556,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.staticaly.com/gh/guzhongren/data-hosting@main/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
             </div><p>本文是近期为学弟学妹们演讲时用 Logseq 整理的大纲,在此记录一下，以备复用。</p>
 <h2 id="intro">Intro</h2>
 <p><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/about/</a></p>

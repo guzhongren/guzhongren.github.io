@@ -27,7 +27,7 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
 <ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
 <li>repoName: 存储文件的仓库名</li>
@@ -42,7 +42,7 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>https://cdn.staticaly.com/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
 <p></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>
