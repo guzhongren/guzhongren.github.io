@@ -53,7 +53,7 @@ echo '127.0.0.1 desktop.docker.com' | sudo tee -a /etc/hosts
 ```
 ### 验证未升级
 
-![docker.desktop.3.5.2.66501](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp)
+![docker.desktop.3.5.2.66501](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp)
 
 ## 引用
 

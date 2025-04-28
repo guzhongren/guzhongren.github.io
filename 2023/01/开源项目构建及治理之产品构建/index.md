@@ -9,7 +9,7 @@
 
 ## 一图胜千言
 
-![开源项目构建及治理](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Open-Source/开源项目构建及治理.2witgnrnxzc0.webp)
+![开源项目构建及治理](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/开源项目构建及治理.2witgnrnxzc0.webp)
 
 ## 产品（Product）
 
@@ -231,7 +231,7 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 
 社区是另一个比较大的话题，我们将在下篇中聊。这里放上《如何组织社区》的思维导图。
 
-![如何组织社区](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Open-Source/社区建设.6u6659b42mw0.webp)
+![如何组织社区](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/社区建设.6u6659b42mw0.webp)
 
 ## 引用
 
@@ -256,7 +256,7 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

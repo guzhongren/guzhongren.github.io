@@ -8,7 +8,7 @@
 
 ## 基于容器的应用程序的安全痛点
 
-![基于容器的应用程序的安全痛点](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png)
+![基于容器的应用程序的安全痛点](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png)
 
 现在，我们使用先进的技术来构建我们的应用程序，如 NodeJS、 Java 和 Kotlin 等，然后将代码库存储在托管的 Git 平台上，如 GitHub、Gitlab 等。代码库由我们的业务代码和依赖关系组成；对于依赖项，我们可以使用专业的扫描工具来确保安全，比如 NodeJS 的 npm audit , GitHub 的 Dependabot；至于我们的业务代码，可以使用其他的一些安全工具可以扫描，比如 [SoneQube](https://www.sonarqube.org/) 等。
 
@@ -26,7 +26,7 @@
 
 ## 保持容器镜像安全的 2 个最佳方案
 
-![保持容器镜像安全的 2 个最佳方案](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2050.1czb512thukg.png)
+![保持容器镜像安全的 2 个最佳方案](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png)
 
 ### 方案 1： 在镜像注册表中定期扫描
 
@@ -64,19 +64,19 @@
 
 ## Trivy 在 Thoughtworks 雷达 23 期中
 
-![Trivy in TW tech radar](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-tw-radar.2543ysqo6wf4.png)
+![Trivy in TW tech radar](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png)
 
 Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 __Adopt__，说明 Trivy 是有用的、有价值的和可行的。
 
 ## Trivy 的工作原理
 
-![Inner working of Trivy](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2051.4icjkydqu3s0.png)
+![Inner working of Trivy](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png)
 
 在我们使用 Trivy 之前，我们需要知道 Trivy 内部是如何运作的。如上图所示，有两个步骤；首先，我们运行 Trivy 命令，Trivy 将从 [NVD](https://nvd.nist.gov) 网站下载漏洞数据库到本地机器。然后， Trivy 利用漏洞数据扫描你的镜像的每一层（Layer）。
 
 ## 实践 Trivy
 
-![trivy in pipeline](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-in-pipeline.6ksfsma323c0.png)
+![trivy in pipeline](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png)
 
 ### Pipeline
 
@@ -120,12 +120,12 @@ Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术�
 
 在这个 Job 中，我们使用 [Nignx:1.18](https://hub.docker.com/_/nginx) 作为基础镜像来构建应用程序镜像。可以看到由于存在一些漏洞，本次构建失败了。
 
-![Trivy Dashboard Failed](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-failed.4bffhau2xvk0.png)
+![Trivy Dashboard Failed](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png)
 
 现在，我们必须解决这个问题来达到持续交付目的。这里有两个步骤要做，首先，我们应该使用最新的 Nginx 镜像作为基础镜像；其次，我们可以忽略未修复的漏洞，因为我们可能无法在系统级别修复某些最新的漏洞。你可以通过如下链接查看修复该问题的代码更改；
 https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303
 
-![Trivy Dashboard Successfully](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/trivy-dashboard-successfully.28w37b5otts0.png)
+![Trivy Dashboard Successfully](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png)
 
 ## 总结
 
@@ -155,7 +155,7 @@ https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

@@ -31,7 +31,7 @@ Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google 
 
 当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。
 
-![Google Sheet API Structure](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp)
+![Google Sheet API Structure](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp)
 
 从上图中可以看到
 |序号|说明|Note|
@@ -47,7 +47,7 @@ Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google 
 
 ### 创建Google Chat Webhooks
 
-![Google chat webhooks](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp)
+![Google chat webhooks](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp)
 
 点击创建好的Webhooks, 拷贝URL即可。
 
@@ -151,12 +151,12 @@ function isMonday() {
 1. 直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。
 2. 定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。
 
-![Trigger of Apps Script](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp)
+![Trigger of Apps Script](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp)
 
 
 ### 效果
 可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
-![Chatbot message result](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp)
+![Chatbot message result](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp)
 
 ## 总结
 
@@ -172,7 +172,7 @@ Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更�
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

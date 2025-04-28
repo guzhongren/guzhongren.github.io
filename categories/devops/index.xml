@@ -39,7 +39,7 @@
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</link><pubDate>Mon, 11 Oct 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/10/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
             </div><h2 id="abstract">Abstract</h2>
 <p>In modern software development, we leverage public images as base images to build up applications images quickly and deploy them into the production environment.</p>
 <p>With more and more applications containerized, container security is also becoming more important. To use vulnerability scanners, we can bring forward the security feedback cycle which is traditionally done towards the end. This aligns closely with our belief that by adopting agile, we will be able to get faster feedback. This is what we are doing in order to achieve it.</p>
@@ -222,7 +222,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>Container Image Scanner - Trivy</title><link>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</link><pubDate>Sun, 26 Sep 2021 21:09:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/09/container-image-scanner-trivy/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" referrerpolicy="no-referrer">
             </div><h2 id="摘要">摘要</h2>
 <p>在现代软件开发中， 我们会使用一些公共镜像作为基础镜像来快速构建我们的应用镜像，并将其部署到生产环境中。</p>
 <p>随着越来越多的应用程序被容器化，容器安全也随之变得越来越重要。在项目的 Pipeline 中， 我们可以使用漏洞扫描器（Vulnerability Scanners）进行扫描并提前获得反馈，实现 “<strong>安全左移</strong>” ，也可以更好的实践敏捷。</p>

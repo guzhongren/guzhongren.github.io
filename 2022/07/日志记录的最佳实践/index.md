@@ -5,7 +5,7 @@
 日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
 Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。
 
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
 
 ## 日志的重要性
 
@@ -21,12 +21,12 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 很多公司可以利用存储在自己数据库里的生产环境的日志，结合相应的工具可以对业务进行业务数据可视化。这里最典型的代表是 Grafana 和 SumoLogic。
 <img src='https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png' alt='Grafana - Fitbit Health MonitorDebug with logs' style="clear: both; display: block; margin: auto;"/>
 
-<img src='https://help.sumologic.com/@api/deki/files/7186/Slack_File_And_App_Audit.png?revision=1' alt='SumoLogic - Slack File And App Audit' style="clear: both; display: block; margin: auto;" />
+<img src='https://help.sumologic.com/img/integrations/saas-cloud/Slack_Audit_Overview.png' alt='SumoLogic - Slack File And App Audit' style="clear: both; display: block; margin: auto;" />
 
 ## 怎么做
 ### 模版化
 为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" />
 - 基础版本
 	- 对于日志，**时间**，**日志级别**，和**日志信息**最为重要，所以一个合格的日志应该至少包含这些信息。
 - 高级版本
@@ -56,7 +56,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 
 #### 日志级别
 
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 
 日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。
 
@@ -103,7 +103,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

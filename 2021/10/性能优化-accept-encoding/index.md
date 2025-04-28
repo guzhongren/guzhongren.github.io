@@ -114,11 +114,11 @@ http 压缩对纯文本可以压缩至原内容的 40%, 从而节省了 60%的�
 
 文件大小
 
-![gzip](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/gzip.5ibqmeja92c0.png)
+![gzip](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/gzip.5ibqmeja92c0.png)
 
 gzip 压缩
 
-![accept-encoding](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/accept-encoding.6zr4vfosvjk0.png)
+![accept-encoding](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/accept-encoding.6zr4vfosvjk0.png)
 
 ### Gzip 的缺点
 
@@ -164,7 +164,7 @@ Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1
 ```
 ### 浏览器兼容性
 
-![caniuse](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png)
+![caniuse](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png)
 
 ## 最佳实践
 

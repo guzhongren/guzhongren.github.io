@@ -83,7 +83,7 @@
 ```
 
 #### 效果
-![web-style](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/web-style.2z3v7akawpe0.webp)
+![web-style](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/web-style.2z3v7akawpe0.webp)
 
 ### VS Code  插件版（vscode-drawio）
 
@@ -138,9 +138,9 @@
 ```
 
 #### 效果
-![preset](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/preset.58se8wl6ltg0.webp)
+![preset](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/preset.58se8wl6ltg0.webp)
 
-![font](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/font.69qxu1ldebg0.webp)
+![font](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/font.69qxu1ldebg0.webp)
 
 ## 引用
 
@@ -153,7 +153,7 @@
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
 ----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 
 ## 赞助

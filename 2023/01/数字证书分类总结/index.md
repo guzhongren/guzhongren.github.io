@@ -54,7 +54,7 @@ P12 是把证书压成一个文件，**xxx.pfx** 。主要是考虑分发证书�
 
 数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。
 
-![Digital-Cert](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Security/Degital-Cert.3y4w8ewfimc0.webp)
+![Digital-Cert](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp)
 
 ## SSL 证书分类
 
@@ -141,7 +141,7 @@ Extended Validation（EV）证书是目前高信任级别的 SSL 证书
 
 ---
 
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/20210819/wechat.ae9zxgscqcg.png)
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
 
 > [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
 

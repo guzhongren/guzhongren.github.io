@@ -1,5 +1,5 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Lighthouse - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/lighthouse/</link><description>Lighthouse - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 16 Apr 2022 14:11:32 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/lighthouse/" rel="self" type="application/rss+xml"/><item><title>Continuously Optimize Your Website With Lighthouse CI</title><link>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</link><pubDate>Sat, 16 Apr 2022 14:11:32 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>Performance has directly impacted the company&rsquo;s bottom line.
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366" target="_blank" rel="noopener noreffer ">Pinterest</a></p>
@@ -217,7 +217,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>使用 Lighthouse 持续优化你的 Web 性能</title><link>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</link><pubDate>Sun, 27 Mar 2022 14:27:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>性能是留住用户的关键，
 性能直接影响公司的命运。

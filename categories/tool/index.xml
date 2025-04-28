@@ -115,7 +115,7 @@
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>定制你的DrawIO样式</title><link>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</link><pubDate>Wed, 27 Jul 2022 15:29:45 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/DrawIO/preset.58se8wl6ltg0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/preset.58se8wl6ltg0.webp" referrerpolicy="no-referrer">
             </div><h2 id="why">Why</h2>
 <p>有时候我们用 DrawIO <a href="https://app.diagrams.net/" target="_blank" rel="noopener noreffer ">在线版</a>或者 VSCode 插件画图的时候，需要使用自己公司的配色和字体要求来做图；如果一个一个图形的选择，然后输入对应的样式值，这样很浪费时间；作为高效能人士，肯定需要将其形成模板存起来，使用的时候自动读取即可。所谓“一劳永逸”。</p>
 <p>最近，写了一片博客，需要将博客里的图用公司的规范来做画，那么就得定制属于我们自己公司规范的样式。</p>
@@ -270,7 +270,7 @@
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>Continuously Optimize Your Website With Lighthouse CI</title><link>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</link><pubDate>Sat, 16 Apr 2022 14:11:32 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>Performance has directly impacted the company&rsquo;s bottom line.
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366" target="_blank" rel="noopener noreffer ">Pinterest</a></p>
@@ -488,7 +488,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>使用 Lighthouse 持续优化你的 Web 性能</title><link>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</link><pubDate>Sun, 27 Mar 2022 14:27:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>性能是留住用户的关键，
 性能直接影响公司的命运。
@@ -703,7 +703,7 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 <a href="https://lunrjs.com/" target="_blank" rel="noopener noreffer ">lunrjs</a> 或者 <a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer ">algolia</a> 等。我的 Blog 是基于 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 构建的，使用的主题是 <a href="https://hugoloveit.com/" target="_blank" rel="noopener noreffer ">LoveIt</a>, 集成的是 algolia 的搜索方式。</p>
 <p>对于存储在 algolia 上的数据，我是通过 GitHub Action：<a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer</a> 来上传的，之前使用是没有问题的。</p>
@@ -933,7 +933,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
 ]]></description></item><item><title>依旧免费使用 Docker Desktop 的方案</title><link>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 14 Jan 2022 19:03:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" referrerpolicy="no-referrer">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
 <p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a> 公司在 2021 年 8 月更新了 Docker Desktop 的 <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" target="_blank" rel="noopener noreffer ">使用条款</a>，决定对大企业（员工超过 250 人或者年收入超过 1 千万美元）用户（包含员工的个人性质使用）开始执行收费订阅的策略，于 2021 年 8 月 31 日生效，同时，给了使用者一个缓冲时间，延续到 2022 年 1 月 31 日，在此之前可以继续免费使用。</p>
 <p>很明显，开源公司在这个伸手的年代活不下去了，还有最近比较火的 <a href="https://github.com/Marak/Faker.js" target="_blank" rel="noopener noreffer ">Facker.js</a> 删库事件。对删库这事多说几句，因为自家火灾，作者房子被烧了，然后他想让使用自己辛辛苦苦免费维护的 Facker.js 的这些商业公司来为自己捐款改善自己的生活环境，并继续维护 Facker.js, 但很多公司不鸟他，他只能删库来抱怨。要说呀，用这些库的人的人都是开发者，安装完你开发的库，然后就开开心心的写代码去了，除非不会用的库，不然没人去看你的 README 的。更何况你仓库边上的捐款信息。</p>

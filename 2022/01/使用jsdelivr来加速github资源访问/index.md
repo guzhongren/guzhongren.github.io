@@ -30,7 +30,7 @@
 
 从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。
 
-![cdn-around-the-world](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-around-the-world.12nesnyias8w.webp)
+![cdn-around-the-world](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/cdn/cdn-around-the-world.12nesnyias8w.webp)
 
 #### 模式
 
@@ -53,7 +53,7 @@ https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}
 https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json
 ```
 
-![jsdelivr 效果](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@main/cdn/cdn-github-data.5f2n2k3it68.webp)
+![jsdelivr 效果](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/cdn/cdn-github-data.5f2n2k3it68.webp)
 
 ## 总结
 
