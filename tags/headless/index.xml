@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>API - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/api/</link><description>API - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 May 2025 10:15:31 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/api/" rel="self" type="application/rss+xml"/><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Headless - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/headless/</link><description>Headless - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 May 2025 10:15:31 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/headless/" rel="self" type="application/rss+xml"/><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
@@ -206,18 +206,4 @@
 <blockquote>
 <p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
 </blockquote>
-]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
-            </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
-<iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p></p>
 ]]></description></item></channel></rss>

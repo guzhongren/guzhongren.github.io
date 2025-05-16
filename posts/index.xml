@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有文章 - 谷中仁的博客</title><link>https://guzhongren.github.io/posts/</link><description>所有文章 | 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Apr 2025 08:40:12 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/posts/" rel="self" type="application/rss+xml"/><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"></a>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有文章 - 谷中仁的博客</title><link>https://guzhongren.github.io/posts/</link><description>所有文章 | 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 May 2025 10:15:31 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/posts/" rel="self" type="application/rss+xml"/><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"></a>
 <p><code>mermaid</code> shortcode 使用 <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener noreffer ">Mermaid</a> 库提供绘制图表和流程图的功能.</p>
 <p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener noreffer ">mermaid</a> 是一个可以帮助你在文章中绘制图表和流程图的库, 类似 Markdown 的语法.</p>
 <p>只需将你的 mermaid 代码插入 <code>mermaid</code> shortcode 中即可.</p>
@@ -207,7 +207,215 @@
 </span></span><span class="line"><span class="cl">test_entity - satisfies -&gt; test_req
 </span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">mermaid</span> <span class="p">&gt;</span>}}</span></span></code></pre></div></div>
 <p>呈现的输出效果如下:</p>
-<div class="mermaid" id="id-10"></div>]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
+<div class="mermaid" id="id-10"></div>]]></description></item><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="简介">简介</h2>
+<p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
+<h2 id="strapi简介">Strapi简介</h2>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://strapi.io/" target="_blank" rel="noopener noreffer ">Strapi</a> 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+        </div>
+    </div>
+<p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
+<p>主要特性包括：</p>
+<ul>
+<li><strong>开源</strong>，可自由使用和定制</li>
+<li><strong>灵活内容建模</strong>，支持多数据类型和关系</li>
+<li><strong>自动生成 RESTful/GraphQL API</strong></li>
+<li><strong>插件机制</strong>，可扩展功能和集成第三方服务</li>
+<li><strong>多数据库支持</strong>（MongoDB、PostgreSQL、MySQL 等）</li>
+<li><strong>权限管理</strong>，细粒度控制访问</li>
+<li><strong>多语言内容管理</strong></li>
+<li><strong>活跃社区与丰富文档</strong></li>
+</ul>
+<h2 id="主要流程">主要流程</h2>
+<p></p>
+<ol>
+<li>设计内容模型（Content Types/Components）
+<ul>
+<li>使用内容类型构建器（Content-Type Builder）将页面的内容抽象出来，形成如 Design Token 级别的组件，和可复用的中度复杂的组件。</li>
+</ul>
+</li>
+<li>创建网站结构及内容
+<ul>
+<li>构建网站结构，可通过组合之前创建的各种组件来形成结构。</li>
+<li>创建网站的具体内容，如文章、产品、用户等，并使他们关联起来，比如博客需要有作者、分类、标签等。</li>
+</ul>
+</li>
+<li>配置 API 权限与插件
+<ul>
+<li>配置 API 的权限，决定哪些用户可以访问、修改、删除内容，一般情况会将所有的内容以只读的方式暴露给前端。</li>
+</ul>
+</li>
+<li>通过 API 管理和获取内容
+<ul>
+<li>前端通过 Strapi 提供的 RESTful， StrapiClient 或 GraphQL API 获取内容。</li>
+</ul>
+</li>
+<li>前端动态渲染内容
+<ul>
+<li>前端根据内容类型和结构动态渲染页面。</li>
+</ul>
+</li>
+</ol>
+<h2 id="主要概念">主要概念</h2>
+<h3 id="content-types-builder">Content Types Builder</h3>
+<p>内容类型构建器是 Strapi 的核心，可视化创建和管理内容类型。支持灵活定义字段、数据类型、验证规则，便于内容建模和结构调整。</p>
+<h3 id="components">Components</h3>
+<p>组件实现内容结构复用。可将常用结构（如作者信息、SEO 配置等）封装为组件，在多个内容类型中引用，支持嵌套组合，提升建模灵活性。</p>
+<h3 id="single-types">Single Types</h3>
+<p>单一类型（Single Type）适合全站唯一内容，如“关于我们”、“站点设置”等。每种单一类型仅有一个条目，结构可自定义，便于集中管理全局内容。</p>
+<h3 id="collections">Collections</h3>
+<p>集合类型（Collection Type）用于管理多条同类内容，如文章、产品、用户等。每个集合类型可包含多个字段和组件，是内容批量管理和 API 构建的基础。</p>
+<h3 id="dynamic-zones">Dynamic Zones</h3>
+<p>动态区域（Dynamic Zone）允许在单字段中组合多种组件，实现内容结构高度自定义。适用于富文本、页面构建器等场景，支持多类型组件共存和嵌套。</p>
+<h3 id="api">API</h3>
+<p>Strapi 自动为每个内容类型生成 RESTful 或 GraphQL API，支持内容的增删改查，便于前后端分离和多端接入。</p>
+<h3 id="plugins">Plugins</h3>
+<p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
+<h2 id="进阶">进阶</h2>
+<p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
+<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a> 中</h3>
+<p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code>http://localhost:1337/api/global?populate[header][populate][0]=navItems&amp;populate[footer][populate][0]=socialLinks.Link</code></pre></div>
+<p>通常情况呢，这个 url 的请求参数一般不会改变，每次都要返回Global Page 的所有内容，那么我们就可以把这个请求参数放在中间件中，避免每次都要在 URL 中传递。我们在请求时直接使用url <code>http://localhost:1337/api/global</code> 即可，而不用带query参数。
+这样做的好处是：</p>
+<ol>
+<li>代码可读性更高</li>
+<li>减少了 URL 的复杂度</li>
+<li>方便后期维护和修改</li>
+</ol>
+<p>可通过中间件（Middleware）统一处理请求参数。基本步骤：</p>
+<ol>
+<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate" target="_blank" rel="noopener noreffer ">strapi generate:middleware</a> 命令生成中间件
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pnpm run strapi generate
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&gt; my-strapi-project@0.1.0 strapi ~/01.Personal/tmp/my-strapi-project
+</span></span><span class="line"><span class="cl">&gt; strapi <span class="s2">&#34;generate&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">? Strapi Generators middleware - Generate a middleware <span class="k">for</span> an API
+</span></span><span class="line"><span class="cl">? Middleware name global-page-populate
+</span></span><span class="line"><span class="cl">? Where <span class="k">do</span> you want to add this middleware? Add middleware to an existing API
+</span></span><span class="line"><span class="cl">? Which API is this <span class="k">for</span>? global
+</span></span><span class="line"><span class="cl">✔  ++ /api/global/middlewares/global-page-populate.ts</span></span></code></pre></div></div>
+</li>
+<li>定义中间件函数并处理 <code>ctx.query</code>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">Core</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">populate</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">populate</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;navItems&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">   <span class="p">},</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">banner</span>: <span class="kt">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">   <span class="nx">footer</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">populate</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;logo&#34;</span><span class="p">,</span> <span class="s2">&#34;navItems&#34;</span><span class="p">,</span> <span class="s2">&#34;socialLinks&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">strapi</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">strapi</span>: <span class="kt">Core.Strapi</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">populate</span> <span class="o">=</span> <span class="nx">populate</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">     <span class="nx">strapi</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;In global-page-populate middleware.&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">     <span class="k">await</span> <span class="nx">next</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">   <span class="p">};</span>
+</span></span><span class="line"><span class="cl"> <span class="p">};</span></span></span></code></pre></div></div>
+</li>
+<li>在 <code>src/api/global/routes/global.ts</code> 注册中间件
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-ts">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">factories</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="k">default</span> <span class="nx">factories</span><span class="p">.</span><span class="nx">createCoreRouter</span><span class="p">(</span><span class="s1">&#39;api::global.global&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">config</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">find</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">middlewares</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;api::global.global-page-populate&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span></span></span></code></pre></div></div>
+</li>
+<li>使用API 请求测试等工具测试
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl <span class="s1">&#39;http://localhost:1337/api/global&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 应该返回Global Page 的所有内容</span></span></span></code></pre></div></div>
+</li>
+</ol>
+<h3 id="前端动态渲染-dynamic-zone-组件">前端动态渲染 Dynamic Zone 组件</h3>
+<p>前端可根据后端返回的 Dynamic Zone 数据动态渲染组件，为代码如下：</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-tsx">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="err">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.hero&#34;</span><span class="o">:</span> <span class="nx">Hero</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.heading-section&#34;</span><span class="o">:</span> <span class="nx">HeadingSection</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.card-grid&#34;</span><span class="o">:</span> <span class="nx">CardGrid</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.content-with-image&#34;</span><span class="o">:</span> <span class="nx">ContentWithImage</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.faqs&#34;</span><span class="o">:</span> <span class="nx">Faqs</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.person-card&#34;</span><span class="o">:</span> <span class="nx">PersonCard</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.markdown&#34;</span><span class="o">:</span> <span class="nx">Markdown</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.featured-articles&#34;</span><span class="o">:</span> <span class="nx">FeaturedArticles</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.newsletter&#34;</span><span class="o">:</span> <span class="nx">Newsletter</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">...</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">blocksFromAPI</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">block</span>: <span class="kt">BlockData</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">componentMap</span><span class="p">[</span><span class="nx">block</span><span class="p">.</span><span class="nx">__component</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">Component</span> <span class="o">?</span> <span class="p">&lt;</span><span class="nt">Component</span> <span class="na">data</span><span class="o">=</span><span class="p">{</span><span class="nx">block</span><span class="p">}</span> <span class="p">/&gt;</span> <span class="o">:</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
+<p>Strapi 是一个强大的 Headless CMS，适合快速构建和管理内容驱动的应用。通过灵活的内容建模、API 生成和插件扩展，Strapi 能满足各种项目需求。本文介绍了 Strapi 的基本概念、主要流程和进阶用法，希望能帮助你快速上手。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html" target="_blank" rel="noopener noreffer ">Strapi 官方文档</a></li>
+<li><a href="https://docs.strapi.io/cms/api/rest/interactive-query-builder" target="_blank" rel="noopener noreffer ">Strapi interactive query builder</a></li>
+<li><a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <p>作为程序员的你，正在开发一款基于全球地图的某资源分布网站，你的产品会被各个国家的人使用，而每个国家都有不同的法律法规和文化习惯。你需要考虑到这些因素，以确保你的产品在全球范围内都能正常使用。比如有争议的边界不能让用户看到对自己国家不利的标记，那么你需要怎么做呢？这时候，你就需要考虑跨功能性需求了。</p>
@@ -1350,266 +1558,6 @@
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-</blockquote>
-<h2 id="赞助">赞助</h2>
-<p></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
-]]></description></item><item><title>使用 setuptools 工具搭建 Python 工程</title><link>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</link><pubDate>Fri, 13 Oct 2023 21:26:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><p>最近运维项目上要使用Pyspark进行报告生成，嗯，是的，运维项目的技术栈永远是你想象不到的。</p>
-<p>有活就干，这形势只能“狗着”。</p>
-<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools</a>, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
-<h2 id="期望">期望</h2>
-<p>基于 setuptools 产出一个模块化的工程，高级模块要依赖通用模块(commons)。</p>
-<h2 id="工具介绍">工具介绍</h2>
-<p>按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 <code>build</code> 和 <code>whell</code>, 依赖管理会在 setuptools 的 <code>install_requires</code> 中体现，如下;</p>
-<blockquote>
-<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p>
-</blockquote>
-<h2 id="代码实践">代码实践</h2>
-<h3 id="虚拟环境">虚拟环境</h3>
-<p>在 Python 工程中，虚拟环境是一个非常重要的概念。 你可以随时创建纯净的虚拟环境开始你的（已有/新的）工程。 最简单的好处就是不会在系统级别相互影响。</p>
-<p>在我们这个示例中，最简单的好处就是生成的包不会影响系统中已有的包。退出虚拟环境后，在虚拟环境中安装的包不会在系统中出现。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 在你合适的位置创建目录管理 Python 虚拟环境</span>
-</span></span><span class="line"><span class="cl">mkdir myenv
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> myenv
-</span></span><span class="line"><span class="cl"><span class="c1"># 使用 Python 自带的 venv 来创建全新的虚拟环境</span>
-</span></span><span class="line"><span class="cl">python3 -m venv myenv
-</span></span><span class="line"><span class="cl"><span class="c1"># 激活当前环境，然后就可以切换目录到工程目录进行编码了</span>
-</span></span><span class="line"><span class="cl"><span class="nb">source</span> bin/activate
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># 退出当前虚拟环境</span>
-</span></span><span class="line"><span class="cl">deactivate</span></span></code></pre></div></div>
-<h3 id="setuptools">setuptools</h3>
-<p>setuptools 是 Python 官方的工程构建工具。 其可以打包项目、打包 lib等。有三种配置格式， 分别为<code>pyproject.toml</code>、 <code>setup.cfg</code> 和 <code>setup.py</code>, 竟然不支持 yaml 语法。 官方不推荐 <code>setup.py</code> 这种形式，但其可读性真的好啊，因为我不是很喜欢 <code>toml</code>。</p>
-<h3 id="目标工程">目标工程</h3>
-<h4 id="文件结构">文件结构</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">tree -L <span class="m">3</span>
-</span></span><span class="line"><span class="cl">.
-</span></span><span class="line"><span class="cl">├── LICENSE
-</span></span><span class="line"><span class="cl">├── setup.py
-</span></span><span class="line"><span class="cl">├── src
-</span></span><span class="line"><span class="cl">│   ├── commons
-</span></span><span class="line"><span class="cl">│   │   └── __init__.py
-</span></span><span class="line"><span class="cl">│   ├── module1
-</span></span><span class="line"><span class="cl">│   │   ├── __init__.py
-</span></span><span class="line"><span class="cl">│   │   └── __main__.py
-</span></span><span class="line"><span class="cl">│   └── timmins
-</span></span><span class="line"><span class="cl">│       ├── __init__.py
-</span></span><span class="line"><span class="cl">│       └── __main__.py
-</span></span><span class="line"><span class="cl">└── tests
-</span></span><span class="line"><span class="cl">    └── test.py
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="m">6</span> directories, <span class="m">8</span> files</span></span></code></pre></div></div>
-<h3 id="setuppy">setup.py</h3>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">setup</span><span class="p">(</span>
-</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;zhongren&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">version</span><span class="o">=</span><span class="s1">&#39;0.1.1&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">    <span class="n">entry_points</span><span class="o">=</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;console_scripts&#39;</span><span class="p">:</span> <span class="p">[</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;hello-world = timmins:hello_world&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">            <span class="s1">&#39;module = module1:say_hello&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">]</span>
-</span></span><span class="line"><span class="cl">    <span class="p">},</span>
-</span></span><span class="line"><span class="cl">    <span class="n">install_requires</span><span class="o">=</span><span class="p">[</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;build&#39;</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="s1">&#39;wheel&#39;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="p">)</span></span></span></code></pre></div></div>
-<p>这个文件主要描述了工程的名字和版本，最重要的是 <code>entry_points</code> 和 <code>install_requires</code>。</p>
-<ul>
-<li><code>entry_points</code> 数组中的每一条记录都会被打包成一个可执行程序，在这里将会产生 <code>hell-world</code>和 <code>module</code> 两个可执行程序。</li>
-<li><code>install_requires</code> 指定依赖的第三方库，这里不指定版本，使用最新版。</li>
-</ul>
-<h5 id="commons">commons</h5>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init.py</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">say</span><span class="p">(</span><span class="n">something</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;commons say: &#34;</span> <span class="o">+</span> <span class="n">something</span><span class="p">)</span></span></span></code></pre></div></div>
-<p><code>commons</code> 是项目公共方法，供高层模块调用。</p>
-<h5 id="module1">module1</h5>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init__.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">commons</span> <span class="kn">import</span> <span class="n">say</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="n">say</span><span class="p">(</span><span class="s1">&#39;zhongren world&#39;</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>在 <code>__init__.py</code> 中，我们通过加载指定的绝对路径的方法，调用了 commons 模块中的 say 方法，实现了 <code>低耦合</code>。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __main__.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">say_hello</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">say_hello</span><span class="p">()</span></span></span></code></pre></div></div>
-<p>在同样的工程下面，为什么还要有 <code>__main__.py</code>呢？</p>
-<p>因为我们要将工程打包，并生成多个模块，在这里是模块 <code>module1</code>
-和 <code>timmins</code>；并在模块中调用了底层模块的 <code>say</code> 方法。并且这部分会是可运行程序的<code>入口</code>。</p>
-<h5 id="timmins">timmins</h5>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __init__.py</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Hello world&#34;</span><span class="p">)</span></span></span></code></pre></div></div>
-<p>此模块只是暴露方法出去，相当于 lib。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># __main__.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">hello_world</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">hello_world</span><span class="p">()</span></span></span></code></pre></div></div>
-<p>此模块和 module1 的功能相同，只是调用了自己目录下 <code>Lib</code> 的方法。</p>
-<h4 id="构建">构建</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python setup.py install
-</span></span><span class="line"><span class="cl">......
-</span></span><span class="line"><span class="cl">Processing zhongren-0.1.1-py3.11.egg
-</span></span><span class="line"><span class="cl">Removing /usr/local/lib/python3.11/site-packages/zhongren-0.1.1-py3.11.egg
-</span></span><span class="line"><span class="cl">Copying zhongren-0.1.1-py3.11.egg to /usr/local/lib/python3.11/site-packages
-</span></span><span class="line"><span class="cl">Adding zhongren 0.1.1 to easy-install.pth file
-</span></span><span class="line"><span class="cl">Installing hello-world script to /usr/local/bin
-</span></span><span class="line"><span class="cl">Installing module script to /usr/local/bin
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Installed /usr/local/lib/python3.11/site-packages/zhongren-0.1.1-py3.11.egg
-</span></span><span class="line"><span class="cl">Processing dependencies <span class="k">for</span> <span class="nv">zhongren</span><span class="o">==</span>0.1.1
-</span></span><span class="line"><span class="cl">Finished processing dependencies <span class="k">for</span> <span class="nv">zhongren</span><span class="o">==</span>0.1.1</span></span></code></pre></div></div>
-<p>按照提示，打包后的模块已经被安装在了 <code>/usr/local/bin</code> 中了。我们可以使用两种方式进行验证。</p>
-<ol>
-<li>CMD</li>
-</ol>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">module
-</span></span><span class="line"><span class="cl">&gt; commons say: zhongren world
-</span></span><span class="line"><span class="cl">hello-world
-</span></span><span class="line"><span class="cl">&gt; Hello world</span></span></code></pre></div></div>
-<p>可以看到两个 <code>entry_points</code> 模块运行后的输出和我们在程序中定义的一致。</p>
-<ol start="2">
-<li>测试</li>
-</ol>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># test.py</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">timmins</span> <span class="kn">import</span> <span class="n">hello_world</span>
-</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">module1</span> <span class="kn">import</span> <span class="n">say_hello</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">hello_world</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="n">say_hello</span><span class="p">()</span></span></span></code></pre></div></div>
-<p>通过执行<code>python3 test</code>, 输出如下</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 tests/test.py
-</span></span><span class="line"><span class="cl">&gt; Hello world
-</span></span><span class="line"><span class="cl">&gt; commons say: zhongren world</span></span></code></pre></div></div>
-<h4 id="wheel-构建">wheel 构建</h4>
-<p>我们最终想要的肯定是一个可以部署的包（package）,在 Python 里，通常使用 <code>.whl</code> wheel 包来分享或者部署。</p>
-<h5 id="打包-whl-包">打包 whl 包</h5>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">python3 setup.py bdist_wheel
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">running bdist_wheel
-</span></span><span class="line"><span class="cl">running build
-</span></span><span class="line"><span class="cl">running build_py
-</span></span><span class="line"><span class="cl">......
-</span></span><span class="line"><span class="cl">running install_scripts
-</span></span><span class="line"><span class="cl">creating build/bdist.macosx-13-x86_64/wheel/zhongren-0.1.1.dist-info/WHEEL
-</span></span><span class="line"><span class="cl">creating <span class="s1">&#39;dist/zhongren-0.1.1-py3-none-any.whl&#39;</span> and adding <span class="s1">&#39;build/bdist.macosx-13-x86_64/wheel&#39;</span> to it
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;commons/__init__.py&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;module1/__init__.py&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;module1/__main__.py&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;timmins/__init__.py&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;timmins/__main__.py&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/LICENSE&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/METADATA&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/WHEEL&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/entry_points.txt&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/top_level.txt&#39;</span>
-</span></span><span class="line"><span class="cl">adding <span class="s1">&#39;zhongren-0.1.1.dist-info/RECORD&#39;</span>
-</span></span><span class="line"><span class="cl">removing build/bdist.macosx-13-x86_64/wheel</span></span></code></pre></div></div>
-<p>可以看到 <code>zhongren-0.1.1-py3-none-any.whl</code> 在 <code>dist</code> 目录下被成功构建。</p>
-<p>同样，可以使用安装命令来测试安装, 并用上面的<code>python3 tests/test.py</code> 来验证。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip3 install dist/zhongren-0.1.1-py3-none-any.whl
-</span></span><span class="line"><span class="cl">Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
-</span></span><span class="line"><span class="cl">Processing ./dist/zhongren-0.1.1-py3-none-any.whl
-</span></span><span class="line"><span class="cl">Installing collected packages: zhongren
-</span></span><span class="line"><span class="cl">Successfully installed zhongren-0.1.1</span></span></code></pre></div></div>
-<h2 id="总结">总结</h2>
-<p>学习最佳实践，可以节约时间，同时，也是真爱生命。</p>
-<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project" target="_blank" rel="noopener noreffer ">https://github.com/beef-noodles/py-project</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html</a></li>
-<li><a href="https://www.delftstack.com/howto/python/python-import-from-parent-directory/" target="_blank" rel="noopener noreffer ">Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/</a></li>
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
