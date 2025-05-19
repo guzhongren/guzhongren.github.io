@@ -330,7 +330,25 @@
 </span></span><span class="line"><span class="cl">     <span class="nx">populate</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;logo&#34;</span><span class="p">,</span> <span class="s2">&#34;navItems&#34;</span><span class="p">,</span> <span class="s2">&#34;socialLinks&#34;</span><span class="p">]</span>
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> <span class="c1">// 获取 dynamic zone 的内容
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// const populate = {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   blocks: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     on: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.hero&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           links: true,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           image: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//             fields: [&#34;url&#34;, &#34;name&#34;]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         },
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       },
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.heading-section&#34;: {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: &#39;*&#39;,
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
 </span></span><span class="line"><span class="cl"> <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">strapi</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">strapi</span>: <span class="kt">Core.Strapi</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">     <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">populate</span> <span class="o">=</span> <span class="nx">populate</span><span class="p">;</span>

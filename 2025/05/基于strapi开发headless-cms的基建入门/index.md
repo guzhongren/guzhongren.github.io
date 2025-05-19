@@ -106,6 +106,24 @@ http://localhost:1337/api/global?populate[header][populate][0]=navItems&populate
         populate: ["logo", "navItems", "socialLinks"]
       }
     }
+    // 获取 dynamic zone 的内容
+    // const populate = {
+    //   blocks: {
+    //     on: {
+    //       "blocks.hero": {
+    //         populate: {
+    //           links: true,
+    //           image: {
+    //             fields: ["url", "name"]
+    //           }
+    //         },
+    //       },
+    //       "blocks.heading-section": {
+    //         populate: '*',
+    //       }
+    //     }
+    //   }
+    // }
 
     export default (config, { strapi }: { strapi: Core.Strapi }) => {
       return async (ctx, next) => {
