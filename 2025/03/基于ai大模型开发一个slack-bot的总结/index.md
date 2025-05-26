@@ -25,7 +25,7 @@
 
 基于上述需求，我们需要为 Chat 设计一个 Bot。这个 Bot 在接收到简单指令后，可以生成当前 Incident 的关键数据报告，类似于 PIR（Post-Incident Report），但不需要那么详细。
 
-{{< mermaid >}}
+```mermaid
 sequenceDiagram
   participant User as 用户
   participant Slack as Slack
@@ -37,7 +37,7 @@ sequenceDiagram
   AI-->>ServerLessFunction: 返回响应
   ServerLessFunction-->>Slack: 返回摘要/报告
   Slack-->>User: 返回摘要/报告
-{{< /mermaid >}}
+```
 
 ## 开发流程
 
@@ -50,11 +50,11 @@ sequenceDiagram
 
 在[Slack官网](https://api.slack.com/apps)上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式
 
-{{< mermaid >}}
+```mermaid
 graph LR;
     A{Slack App开发} --> B[Manifest方式]
     A --> C[Scratch方式]
-{{< /mermaid >}}
+```
 
 {{< admonition type=warning title="提示" open=true >}}
   创建Slack Bot需要Slack Workspace的管理员权限。

@@ -734,8 +734,7 @@
 <p>在<code>ChatOps</code>中，当 Manager 加入 Incident 处理的聊天组时，需要及时获取当前 Incident 的处理情况，包括实时状态、关键行为以及可能的建议。</p>
 <h2 id="基本流程">基本流程</h2>
 <p>基于上述需求，我们需要为 Chat 设计一个 Bot。这个 Bot 在接收到简单指令后，可以生成当前 Incident 的关键数据报告，类似于 PIR（Post-Incident Report），但不需要那么详细。</p>
-<div class="mermaid" id="id-1"></div>
-<h2 id="开发流程">开发流程</h2>
+<div class="mermaid" id="id-1"></div><h2 id="开发流程">开发流程</h2>
 <p>在开发过程中，我们需要完成以下任务：</p>
 <ol>
 <li>在 Slack 上创建一个 Bot，作为用户与 Slack 之间的沟通桥梁。</li>
@@ -743,8 +742,7 @@
 </ol>
 <h3 id="创建slack-bot">创建Slack Bot</h3>
 <p>在<a href="https://api.slack.com/apps" target="_blank" rel="noopener noreffer ">Slack官网</a>上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
-<div class="mermaid" id="id-2"></div>
-<div class="details admonition warning open">
+<div class="mermaid" id="id-2"></div><div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>提示<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
