@@ -1,0 +1,152 @@
+# 使用uv来更好的管理你的python依赖
+
+
+## 痛点
+
+在Python 项目开发过程中，我们肯定会用到`requirements.txt` 来管理项目中所用到的第三方库，这么多年都是这么过来的，那有什么痛点呢？
+
+- 你的`requirements.txt` 中是不是多了一些莫名其妙的依赖，你还不敢删除
+- 你不知道其中的某个依赖是因为哪个依赖引入进来的，或者被哪个依赖所引用
+- 每次运行命令生成这个文件，还得去瞅一下是不是正确，有时候，不同的人生成的顺序还不一样
+
+你是不是也是经常遇到？
+
+## 工具介绍
+
+### pyproject.toml
+
+[pyproject.toml](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) 文件是定义项目配置的 Python 标准。
+
+与 `NodeJS` 项目中的 `package.json` 一样，可以管理第三方依赖，可以存储可以运行的命令，所使用的 Runtime 的版本号限制和项目的基本信息等等的，功能强大可见一斑。
+
+
+### uv
+
+![uv](https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark)
+
+> An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) -- https://docs.astral.sh/uv/
+
+速度快是其特点，但是使用也是相当方便。而且文档相当详细。
+
+## 如何使用
+
+```sh
+mkdir py-uv
+cd py-uv/
+uv init
+# Initialized project `py-uv`
+uv venv
+# Using CPython 3.13.2
+# Creating virtual environment at: .venv
+# Activate with: source .venv/bin/activate
+source .venv/bin/activate
+gst
+# On branch main
+#
+# No commits yet
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+# 	.gitignore
+# 	.python-version
+# 	README.md
+# 	hello.py
+# 	pyproject.toml
+#
+#nothing added to commit but untracked files present (use "git add" to track)
+uv run hello.py
+# Using CPython 3.13.2
+# Creating virtual environment at: .venv
+# Hello from py-uv!
+uv add pyfiglet
+# Resolved 2 packages in 515ms
+# Prepared 1 package in 532ms
+# Installed 1 package in 7ms
+#  + pyfiglet==1.0.3
+```
+
+在源文件中添加一点 python 代码
+
+```diff
+diff --git a/hello.py b/hello.py
+index b18db96..204b9e3 100644
+--- a/hello.py
++++ b/hello.py
+@@ -1,6 +1,12 @@
++import pyfiglet
++
+ def main():
+     print("Hello from py-uv!")
++    ascii_art = pyfiglet.figlet_format("MyApp Started!")
++    print(ascii_art)
++
+ if __name__ == "__main__":
+     main()
+~
+```
+
+再次运行
+
+```sh
+uv run hello.py
+# Hello from py-uv!
+#  __  __          _                  ____  _             _           _ _
+# |  \/  |_   _   / \   _ __  _ __   / ___|| |_ __ _ _ __| |_ ___  __| | |
+# | |\/| | | | | / _ \ | '_ \| '_ \  \___ \| __/ _` | '__| __/ _ \/ _` | |
+# | |  | | |_| |/ ___ \| |_) | |_) |  ___) | || (_| | |  | ||  __/ (_| |_|
+# |_|  |_|\__, /_/   \_\ .__/| .__/  |____/ \__\__,_|_|   \__\___|\__,_(_)
+#         |___/        |_|   |_|
+```
+
+至此，我们的项目已经使用 `uv` 运行起来了，但是在真正部署的时候我们需要生成 `requirement.txt` 然后启动程序。
+
+### 生成 `requirement.txt`
+
+在正式的开发项目中，我们不可能每个人手动生成一次，然后再提交，这样很可能忘记这个操作，最好的就是将其放在在 git hooks 中，在每次 push 代码之前生成并检查其已经存在且是最新的，这样每个人都避免了手动生成和校验。如下是一段 shell 脚本来实现该功能
+```sh
+#!/bin/bash
+set -euo pipefail
+uv pip compile pyproject.toml --quiet --output-file requirements.txt
+# Check for uncommitted changes
+if [[ -n $(git status --porcelain) ]]; then
+  echo "Error: There are uncommitted changes. Please commit or stash them before running this script."
+  exit 1
+fi
+```
+
+然后将其集成到 `pre-commit` 中, 使其在 push 前执行这个操作
+
+```yaml
+- id: generate requirement.txt
+  name: Generate requirements.txt
+  entry: ./scripts/git-hooks/generate-requirements.sh
+  language: script
+  always_run: true
+  stages: [pre-push]
+```
+
+如此可以将该流程完全自动化。
+
+## 总结
+
+
+## 引用
+
+* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
+* [pyproject.toml: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)
+
+## 免责声明
+
+本文仅代表个人观点，与本人所供职的公司无任何关系。
+
+----
+![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png)
+> [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6
+
+## 赞助
+
+![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
+> [SHA256](https://emn178.github.io/online-tools/sha256_checksum.html) checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c
+
+> 使用此[文件](https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig)进行校验： `gpg --verify PayForGuzhongren.svg.sig`
+
