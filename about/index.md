@@ -25,11 +25,15 @@
 - [Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)
 - [如何记录日志-Thoughtworks洞见](https://insights.thoughtworks.cn/how-to-logging/)
 
-## Contribution on Open-Source Projects
+## 开源项目贡献
 |Project Name| Description|Role|
 |:--|:--|:--|
 | [Heartbeat](https://github.com/au-heartbeat/HeartBeat/)|DORA Metrics 数据收集、可视化及导出工具|Tech Leader|
 | [maptalks](https://maptalks.org/)| 开源 23D GIS 框架|Contributor|
+
+## 认证证书
+
+- [AWS-SimuLearn--Generative-AI-Practitioner](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Certificates/AWS/AWS-SimuLearn--Generative.3rbib8d4cp.webp)
 
 ## 技术栈
 
