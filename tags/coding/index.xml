@@ -1,3 +1,62 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Coding - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/coding/</link><description>Coding - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 06 Apr 2020 23:09:54 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/coding/" rel="self" type="application/rss+xml"/><item><title>调试 bash</title><link>https://guzhongren.github.io/2020/04/%E8%B0%83%E8%AF%95bash.zh/</link><pubDate>Mon, 06 Apr 2020 23:09:54 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E8%B0%83%E8%AF%95bash.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><p>最近在做 DevOps 的工作，主要是做一个蓝绿部署的方案，在这部分中涉及到了写 shell， Shell 作为一种程序语言，那么对于开发人员肯定是要在部署到正式或者生产环境前进行调试的，在 coding 过程中，发现 shell 的调试其实和平时写的 JS, Java, Rust 等的调试不同，Shell 只能看你每一步执行的语句，至于具体执行是否正确，得由 coding 的人来写正确；好吧，有点难理解，那么我来举个🌰；</p>]]></description></item></channel></rss>
+            </div><p>最近在做 DevOps 的工作，主要是做一个蓝绿部署的方案，在这部分中涉及到了写 shell， Shell 作为一种程序语言，那么对于开发人员肯定是要在部署到正式或者生产环境前进行调试的，在 coding 过程中，发现 shell 的调试其实和平时写的 JS, Java, Rust 等的调试不同，Shell 只能看你每一步执行的语句，至于具体执行是否正确，得由 coding 的人来写正确；好吧，有点难理解，那么我来举个🌰；</p>
+<h2 id="举例">举例</h2>
+<p>有如下代码</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">readonly</span> <span class="nv">FIRST_VALUE</span><span class="o">=</span><span class="s2">&#34;first value&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;你会得到替换后的值：</span><span class="si">${</span><span class="nv">FIRST_VALUE</span><span class="si">}</span></span></span></code></pre></div></div>
+<p>脚本很简单，简单一句话，定义了一个变量<code>FIRST_VALUE</code>， 然后用<code>echo</code>输出，在输出的时候应用了刚才定义的变量<code>FIRST_VALUE</code>，赋予执行权限后，如果执行<code>./run.sh</code>之后，只会在终端输出</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">你会得到替换后的值：first value</span></span></code></pre></div></div>
+<p>但是在简单的脚本中还可以直接运行，如果运行一个复杂的脚本，那么出问题了的几率击溃比较高了，那么调试脚本积极非常重要了。</p>
+<h2 id="debug">debug</h2>
+<p>shell 的调试说来也非常简单，直接运行<code>sh -x ...</code>就可以了，对于本脚本我们执行如下：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sh -x run.sh</span></span></code></pre></div></div>
+<p>会得到输出，如下：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">+ <span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">+ <span class="nb">readonly</span> <span class="s1">&#39;FIRST_VALUE=first value&#39;</span>
+</span></span><span class="line"><span class="cl">+ <span class="nv">FIRST_VALUE</span><span class="o">=</span><span class="s1">&#39;first value&#39;</span>
+</span></span><span class="line"><span class="cl">+ <span class="nb">echo</span> <span class="s1">&#39;你会得到替换后的值：first value&#39;</span>
+</span></span><span class="line"><span class="cl">你会得到替换后的值：first value</span></span></code></pre></div></div>
+<p>在这里面，你会看到每条 shell 脚本运行的具体命令，以及参数等内容，这条命令也是一种执行，会对命令涉及的内容产生实际效果，不要以为知识<code>dry run</code>。</p>
+<h2 id="总结">总结</h2>
+<blockquote>
+<p>好习惯都是踩坑踩出来的</p>
+</blockquote>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q" target="_blank" rel="noopener noreffer ">3. 编写可靠 bash 脚本的一些技巧：https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q</a></li>
+<li></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

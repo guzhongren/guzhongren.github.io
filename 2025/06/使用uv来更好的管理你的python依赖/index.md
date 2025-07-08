@@ -1,7 +1,6 @@
 # 使用uv来更好的管理你的python依赖
 
 
-This message is used to verify that this feed (feedId:74621993392456704) belongs to me (userId:74619979585483776). Join me in enjoying the next generation information browser https://folo.is.
 
 ## 痛点
 

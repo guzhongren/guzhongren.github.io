@@ -1,7 +1,72 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Tool - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/tool/</link><description>Tool - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jan 2025 21:55:05 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/tool/" rel="self" type="application/rss+xml"/><item><title>Home Assistant搭建和配置并配置米家集成极简教程</title><link>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</link><pubDate>Sun, 05 Jan 2025 21:55:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="小米发布home-assistant-集成">小米发布Home Assistant 集成</h2>
-<p>2024年底，小米突然在 GitHub 上开源了<a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a>，顿时引起热议，正好我家里也是小米的设备，并且也是个Home Assistant 小白，所以正好可以探索一波。</p>]]></description></item><item><title>解决Podman未挂载Volume的问题</title><link>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Wed, 03 May 2023 10:58:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description><![CDATA[<div class="featured-image">
+<p>2024年底，小米突然在 GitHub 上开源了<a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a>，顿时引起热议，正好我家里也是小米的设备，并且也是个Home Assistant 小白，所以正好可以探索一波。</p>
+<p>因为网上有很多关于Home Assistant的说明及安装教程, 在这推荐<a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a>，我就不赘述了。</p>
+<h2 id="基于-docker-的home-assistant-安装并集成小米集成">基于 Docker 的Home Assistant 安装并集成小米集成</h2>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># 创建本地路径用于挂在其道 Docker container 中</span>
+</span></span><span class="line"><span class="cl">mkdir -p home-assistant/custom_components/hacs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 启动 Home assistant 最新的镜像</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 设置时区</span>
+</span></span><span class="line"><span class="cl"><span class="c1">## 配置目录映射</span>
+</span></span><span class="line"><span class="cl">docker run -d <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --name homeassistant <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --privileged <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --restart<span class="o">=</span>unless-stopped <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -e <span class="nv">TZ</span><span class="o">=</span>Asia/Shanghai <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v ~/home-assistant:/config <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --network<span class="o">=</span>host <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>homeassistant/home-assistant
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 在容器中安装HACS</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it homeassistant sh -c <span class="s2">&#34;mkdir -p /config/custom_components &amp;&amp; cd /config/custom_components &amp;&amp; wget -O - https://get.hacs.xyz | bash -&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">##===NOT IMPORTANT===</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Restart HA</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># `Add Intergration` to use HACS</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Authrizate HACS with GitHub</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Add `Custom repositories`</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Download</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># `Add Intergration` to use Xiaomi Home</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Auth via OAuth2 of xiaomi</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Chose phone or email</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Change url of `homeassistant.local` to localhost</span></span></span></code></pre></div></div>
+<p>在正确操作如上步骤，重启Home Assistant 容器之后，访问 http://localhost:8123/ 就可以体验连接了自己家的小米账号的 Home Assistant 了。</p>
+<h2 id="总结">总结</h2>
+<p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
+<p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a></li>
+<li><a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a></li>
+<li><a href="https://github.com/hacs/get" target="_blank" rel="noopener noreffer ">HACS</a></li>
+<li><a href="https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options" target="_blank" rel="noopener noreffer ">Configuration options</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>解决Podman未挂载Volume的问题</title><link>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Wed, 03 May 2023 10:58:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="问题">问题</h2>
 <p>在初次使用<a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a> 挂载本地文件系统的时候通常会报如下的一个错误提示；</p>
@@ -20,10 +85,191 @@
 </span></span><span class="line"><span class="cl">podman machine init -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span>
 </span></span><span class="line"><span class="cl">podman machine start</span></span></code></pre></div></div>
 <h2 id="测试">测试</h2>
-<p>运行如下命令，可以在命令行里看到本机的目录和文件。</p>]]></description></item><item><title>定制你的DrawIO样式</title><link>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</link><pubDate>Wed, 27 Jul 2022 15:29:45 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</guid><description><![CDATA[<div class="featured-image">
+<p>运行如下命令，可以在命令行里看到本机的目录和文件。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-sh">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman run -ti --rm -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span> busybox</span></span></code></pre></div></div>
+<h2 id="add-one">Add one</h2>
+<p>如此这样，以后在需要挂载特定目录时，只需要和 docker 的操作一样，只须挂载特定目录即可。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>定制你的DrawIO样式</title><link>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</link><pubDate>Wed, 27 Jul 2022 15:29:45 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E5%AE%9A%E5%88%B6%E4%BD%A0%E7%9A%84drawio%E6%A0%B7%E5%BC%8F/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/preset.58se8wl6ltg0.webp" referrerpolicy="no-referrer">
             </div><h2 id="why">Why</h2>
-<p>有时候我们用 DrawIO <a href="https://app.diagrams.net/" target="_blank" rel="noopener noreffer ">在线版</a>或者 VSCode 插件画图的时候，需要使用自己公司的配色和字体要求来做图；如果一个一个图形的选择，然后输入对应的样式值，这样很浪费时间；作为高效能人士，肯定需要将其形成模板存起来，使用的时候自动读取即可。所谓“一劳永逸”。</p>]]></description></item><item><title>Continuously Optimize Your Website With Lighthouse CI</title><link>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</link><pubDate>Sat, 16 Apr 2022 14:11:32 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</guid><description><![CDATA[<div class="featured-image">
+<p>有时候我们用 DrawIO <a href="https://app.diagrams.net/" target="_blank" rel="noopener noreffer ">在线版</a>或者 VSCode 插件画图的时候，需要使用自己公司的配色和字体要求来做图；如果一个一个图形的选择，然后输入对应的样式值，这样很浪费时间；作为高效能人士，肯定需要将其形成模板存起来，使用的时候自动读取即可。所谓“一劳永逸”。</p>
+<p>最近，写了一片博客，需要将博客里的图用公司的规范来做画，那么就得定制属于我们自己公司规范的样式。</p>
+<h2 id="what">What</h2>
+<p>在研究了<a href="https://app.diagrams.net/" target="_blank" rel="noopener noreffer ">https://app.diagrams.net/</a> 的配置说明后，发现其实定制很容易。只需要在配置中覆盖原有的样式即可。</p>
+<p>而对于VS Code 的插件，拿<a href="https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio" target="_blank" rel="noopener noreffer ">vscode-drawio</a>来说，只要在配置中键入自己的配置即可。</p>
+<p>当然开始之前需要有自己的规范，如配色或字体等。</p>
+<h2 id="how">How</h2>
+<h3 id="web-版">Web 版</h3>
+<h4 id="配置位置">配置位置</h4>
+<ul>
+<li>应用-其他-配置</li>
+</ul>
+<h4 id="配置信息">配置信息</h4>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;customFonts&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Noto Serif SC&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Bitter&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Arial&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Inter&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;presetColors&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;none&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ffffff&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;666666&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;edf1f3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;003d4f&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;f2617a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cc850a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;6b9e78&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;47a1ad&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;634f7d&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;customColorSchemes&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#003d4f&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#003d4f&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#f2617a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#f2617a&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#cc850a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#cc850a&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#6b9e78&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#6b9e78&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#47a1ad&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#47a1ad&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#634f7d&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#634f7d&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#000000&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h4 id="效果">效果</h4>
+<p></p>
+<h3 id="vs-code--插件版vscode-drawio">VS Code  插件版（vscode-drawio）</h3>
+<h4 id="配置信息-1">配置信息</h4>
+<p>对于插件版本，我们可以将配置信息存储在全局（VS Code菜单-Code-Performances-Setting, 搜索 drawio, 点击任意<code>Edit in settings.json</code>）或者当前工程（.vscode/settings.json）,然后将如下配置粘贴进去。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;hediet.vscode-drawio.presetColors&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;none&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;000000&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;ffffff&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;666666&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;edf1f3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;003d4f&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;f2617a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;cc850a&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;6b9e78&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;47a1ad&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;634f7d&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;hediet.vscode-drawio.colorNames&#34;</span><span class="err">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;000000&#34;</span><span class="p">:</span> <span class="s2">&#34;Onyx black&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;ffffff&#34;</span><span class="p">:</span> <span class="s2">&#34;Talc white&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;666666&#34;</span><span class="p">:</span> <span class="s2">&#34;文字和背景3&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;edf1f3&#34;</span><span class="p">:</span> <span class="s2">&#34;Mist grey&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;003d4f&#34;</span><span class="p">:</span> <span class="s2">&#34;Wave blue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;f2617a&#34;</span><span class="p">:</span> <span class="s2">&#34;Flamingo pink&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;cc850a&#34;</span><span class="p">:</span> <span class="s2">&#34;Turmeric yellow&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;6b9e78&#34;</span><span class="p">:</span> <span class="s2">&#34;Jade green&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;47a1ad&#34;</span><span class="p">:</span> <span class="s2">&#34;Sapphire blue&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;634f7d&#34;</span><span class="p">:</span> <span class="s2">&#34;Amethyst purple&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;hediet.vscode-drawio.customColorSchemes&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#ffffff&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#003d4f&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#003d4f&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#f2617a&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#f2617a&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#cc850a&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#cc850a&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#6b9e78&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#6b9e78&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#47a1ad&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#47a1ad&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#634f7d&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#634f7d&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span> <span class="nt">&#34;fill&#34;</span><span class="p">:</span> <span class="s2">&#34;#000000&#34;</span><span class="p">,</span> <span class="nt">&#34;stroke&#34;</span><span class="p">:</span> <span class="s2">&#34;#000000&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;hediet.vscode-drawio.customFonts&#34;</span><span class="err">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Noto Serif SC&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Bitter&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Arial&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;Inter&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span></span></span></code></pre></div></div>
+<h4 id="效果-1">效果</h4>
+<p></p>
+<p></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客: https://guzhongren.github.io/</a></li>
+<li><a href="https://www.diagrams.net/doc/faq/configure-diagram-editor" target="_blank" rel="noopener noreffer ">diagrams.net: https://www.diagrams.net/doc/faq/configure-diagram-editor</a></li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio" target="_blank" rel="noopener noreffer ">vscode-drawio: https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>Continuously Optimize Your Website With Lighthouse CI</title><link>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</link><pubDate>Sat, 16 Apr 2022 14:11:32 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/04/continuously-optimize-your-website-with-lighthouse-ci/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>Performance has directly impacted the company&rsquo;s bottom line.
@@ -31,7 +277,217 @@
 </blockquote>
 <h2 id="intro">Intro</h2>
 <p>Since the development of the Internet, web page performance has always been an important issue. All major Internet companies are sparing no effort to optimize their web pages, in order to allow users to see the content that users want to see faster.</p>
-<p>During the development of the Internet in recent decades, various indicators and terms for measuring web performance have stabilized, and the measurement methods of various products have tended to be consistent.</p>]]></description></item><item><title>使用 Lighthouse 持续优化你的 Web 性能</title><link>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</link><pubDate>Sun, 27 Mar 2022 14:27:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</guid><description><![CDATA[<div class="featured-image">
+<p>During the development of the Internet in recent decades, various indicators and terms for measuring web performance have stabilized, and the measurement methods of various products have tended to be consistent.</p>
+<p>The BBC found that every 1 second increase in the load time of its website was associated with losing 10% more users.
+DoubleClick by Google found that 53% of mobile site visits are abandoned if a page takes longer than 3 seconds to load.
+DoubleClick by Google research shows that sites with loading times under 5 seconds experience 70% longer sessions, 35% lower bounce rates, and 25% higher ad viewability rates than sites that load about four times as long (19 seconds).
+Mobify saw a 1.11% increase in session-based conversions for every 100 milliseconds decrease in homepage load time and an average annual revenue increase of nearly $380,000.
+AutoAnything saw a 12-13% increase in sales after halving its page load time.
+It can be seen how important the performance of web pages is in today&rsquo;s Internet of Everything era.</p>
+<h2 id="problems-with-measuring-web-performance">Problems with measuring web performance</h2>
+<h3 id="not-runnable-natively-to-catch-performance-issues-as-early-as-possible">Not runnable natively to catch performance issues as early as possible</h3>
+<p>Many tools cannot be run locally; if the web performance testing tools can be run locally, developers can find problems earlier and solve them locally as soon as possible, avoiding running on CI for a while before finding problems , which can save a lot of time and improve production efficiency in the agile development process of <code>CI/CD</code>. <code>Shift-left of the web performance test</code> is bound to bring more benefits to the performance of web products, and even more profits for the company.</p>
+<h3 id="inability-to-continuously-measure-performance-metrics">Inability to continuously measure performance metrics</h3>
+<p>At present, most of the web performance measurement products on the market are <code>Sass</code> products. Using its products, we can only get a visual result page after running the performance test, but it cannot continuously record the improvement records of web page performance, and cannot be well quantified the life cycle of a web product performance. Of course there are also web performance testing tools that implement history, such as <a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a>.</p>
+<h3 id="cost">Cost</h3>
+<p>There are many open source free web performance testing tools, but they may not be so easy to use; if you need more features, such as continuous recording of web page performance, generally only commercial products will support it, and the fees are not low.</p>
+<h3 id="difficulty-with-ci-integration">Difficulty with CI integration</h3>
+<p>As mentioned earlier, many tools either cannot be run locally or are Sass products, which cannot be well integrated with Pipeline, resulting in long feedback cycles of web performance results and make the engineering efficiency too low.</p>
+<h2 id="lighthouse">Lighthouse</h2>
+<blockquote>
+<p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO and more.</p>
+</blockquote>
+<blockquote>
+<p>You can run Lighthouse in <code>Chrome DevTools</code>, from the command line, or as a <code>Node</code> module. You give <code>Lighthouse</code> a URL to audit, it runs a series of audits against the page, and then it generates a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important, as well as how to fix it.</p>
+</blockquote>
+<blockquote>
+<p>You can also use Lighthouse CI to prevent regressions on your sites.</p>
+</blockquote>
+<p>It&rsquo;s very easy to use, take a look at the results of my audit of my open source project <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a>.
+</p>
+<h2 id="ways-of-lighthouse-ci-and-lighthouse-server">Ways of Lighthouse CI and Lighthouse Server</h2>
+<h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
+<blockquote>
+<p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
+&ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci" target="_blank" rel="noopener noreffer ">GoogleChrome/lighthouse-ci</a></p>
+</blockquote>
+<p><code>Lighthouse CI</code> is a suite of tools that make continuously running, saving, retrieving, and asserting against Lighthouse results as easy as possible.</p>
+<h4 id="how-to-use">How to use</h4>
+<p><code>LHCI</code> provides the <code>npm</code> installation package, which can be well integrated on the Pipeline, just run the <code>autorun</code> command in the corresponding directory, the command is as follows</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
+</span></span><span class="line"><span class="cl">lhci autorun</span></span></code></pre></div></div>
+<p>After the operation is completed, LHCI will store the results in the <code>.lighthouseci</code> directory, and you can open the corresponding report with a browser.</p>
+<h3 id="lighthouse-server">Lighthouse Server</h3>
+<blockquote>
+<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<h4 id="installation-and-use-of-lhci-server">Installation and use of LHCI Server</h4>
+<p>There are many ways to install LHCI Server, please refer to <a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server" target="_blank" rel="noopener noreffer ">here</a>, the recommended way is to use Docker. Note that the first run needs to create a Lighthouse App, you need to run the <code>lhci wizard</code> in the container and fill in the corresponding information, <strong>finally record the generated <code>Build token</code> and <code>Admin token</code></strong>.</p>
+<h3 id="integration-with-lighthouse-ci-and-lighthouse-server">Integration with Lighthouse CI and Lighthouse Server</h3>
+<p></p>
+<ul>
+<li>We have already talked about how to install <code>lhci</code> and <code>lhci server</code>, the next step is to use the two together. Here we take <code>GitHub Actions</code> as an example to make a demo.</li>
+<li>Build <code>GitHub workflow</code>. For specific practices, please refer to the implementation details of <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a></li>
+<li>.github/workflows/Lighthouse.yml</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">lhci</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.pull_request.head.sha }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Use Node.js 10.x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/setup-node@v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">node-version</span><span class="p">:</span><span class="w"> </span><span class="m">16.14.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+<ul>
+<li>.github/config/lighthouserc-no-condition.json</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;formFactor&#34;</span><span class="p">:</span> <span class="s2">&#34;desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;screenEmulation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;mobile&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;height&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;deviceScaleFactor&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;assert&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;assertions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:performance&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:accessibility&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:best-practices&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:seo&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:pwa&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
+<li>.github/config/lighthouserc.json</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;formFactor&#34;</span><span class="p">:</span> <span class="s2">&#34;desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;screenEmulation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;mobile&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;height&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;deviceScaleFactor&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;assert&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;assertions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:performance&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.8</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:accessibility&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.95</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:best-practices&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:seo&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.9</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:pwa&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;warn&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.99</span> <span class="p">}]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
+<li>Need to store the <code>Build token</code> generated by <code>lhci Server</code> and the address of <code>lhci Server</code> in the Secrets of the GitHub project</li>
+<li>Here the <code>lhci</code> command is executed twice. Because <code>lhci autorun</code> runs the default <code>assertion</code>, the first time you use the command without assertion, the purpose is to upload the current web page performance to the server side; the second time you configure various indicators Threshold, if it does not meet the requirements, Pipeline will block, to achieve <code>Shift-left of the web performance test</code>.</li>
+<li></li>
+</ul>
+<h2 id="summary">Summary</h2>
+<ul>
+<li>For: Developers, technical leads or marketers</li>
+<li>They want to: <code>continuously quantify</code> and demonstrate the <code>performance</code> of web pages</li>
+<li>This: Lighthouse CI</li>
+<li>is one: a set of tools written by <code>Google</code> to make it as easy as possible to continuously run, save, retrieve, and assert on <code>Lighthouse</code> results. It can evaluate web applications and pages, as well as gather information such as performance metrics and insights from development best practices</li>
+<li>It can: test your web page, get web page&rsquo;s <code>Performance</code> , <code>Accessibility</code> , <code>Best Practices</code> , <code>SEO</code> and <code>PWA</code> scores on different <code>devices</code>, these scores can be used to analyze the product performance, helping to improve user conversion rates, etc.</li>
+<li>Unlike: <a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a> or some other web performance testing tool</li>
+<li>Its advantages are: <code>Open-Source</code>, <code>Free</code>, <code>Self-hosted</code> data and Server, <code>Easy to integrate</code>.</li>
+</ul>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://web.dev/i18n/zh/why-speed-matters/" target="_blank" rel="noopener noreffer ">Get Down to Business: Why the web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/</a></li>
+<li><a href="https://web.dev/i18n/zh/why-speed-matters" target="_blank" rel="noopener noreffer ">why Speed Matters？: https://web.dev/i18n/zh/why-speed-matters</a></li>
+<li><a href="https://developers.google.cn/web/tools/lighthouse" target="_blank" rel="noopener noreffer ">Lighthouse: https://developers.google.cn/web/tools/lighthouse</a></li>
+<li><a href="https://www.webpagetest.org/" target="_blank" rel="noopener noreffer ">WebPageTest: https://www.webpagetest.org/</a></li>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>使用 Lighthouse 持续优化你的 Web 性能</title><link>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</link><pubDate>Sun, 27 Mar 2022 14:27:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>性能是留住用户的关键，
@@ -39,22 +495,717 @@
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366" target="_blank" rel="noopener noreffer ">Pinterest</a></p>
 </blockquote>
 <h2 id="介绍">介绍</h2>
-<p>互联网发展至今，网页性能始终是一个重要的问题, 各大互联网公司都在不遗余力的优化自己的 Web 页面，为的就是更快的让用户更快的看到用户想看到的内容。</p>]]></description></item><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
+<p>互联网发展至今，网页性能始终是一个重要的问题, 各大互联网公司都在不遗余力的优化自己的 Web 页面，为的就是更快的让用户更快的看到用户想看到的内容。</p>
+<p>互联网在近几十年的发展过程中，度量 Web 性能各个指标、术语已经稳定了，各个产品的度量方式都趋于一致。</p>
+<p>BBC 发现其网站的加载时间每增加 1 秒，便会多失去 10% 的用户。
+DoubleClick by Google 发现，如果页面加载时间超过 3 秒，53% 的移动网站访问活动将遭到抛弃。
+DoubleClick by Google 研究表明，与加载时间约为四倍（19 秒）的网站相比，加载时间在 5 秒以内的网站会话加长 70%、跳出率下降 35%、广告可见率上升 25%。
+Mobify 的首页加载时间每减少 100 毫秒，基于会话的转化率增加 1.11%，年均收入增长近 380,000 美元。
+AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
+可见，Web 页面的性能在现今万物互联的时代有多重要。</p>
+<h2 id="web-性能在度量方面存在的问题">Web 性能在度量方面存在的问题</h2>
+<h3 id="不可本地运行以尽可能早地发现性能问题">不可本地运行，以尽可能早地发现性能问题</h3>
+<p>很多工具都不可以在本地运行； 如果 Web 性能测试工具可以在本地运行，开发人员可以更早地发现问题，并尽可能早的在本地解决，避免了在 CI 上跑了一会了才发现问题，在 <code>CI/CD</code> 的敏捷开发过程中这样可以节省很多时间，提高生产效率。<code>Web 性能测试左移</code> 必定为 Web 产品性能带来更多好处，甚至为公司带来更多盈利。</p>
+<h3 id="不能持续度量性能指标">不能持续度量性能指标</h3>
+<p>目前市场上 Web 性能度量的产品大多都是 <code>Sass</code> 产品，使用其产品我们只能得到一个运行完性能测试的可视化结果页面，但是不能持续的记录 Web 网页性能的改进记录，不能很好的量化一个 Web 产品性能的生命周期。当然也有实现历史记录的 Web 性能测试工具，例如 <a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a>。</p>
+<h3 id="费用">费用</h3>
+<p>开源免费的 Web 性能测试工具有不少，但是用起来可能没有那么爽；如果需要更多的特性，如持续记录 Web 网页性能，一般只有商业产品会支持，而且收费还不低。</p>
+<h3 id="ci-集成困难">CI 集成困难</h3>
+<p>如前面所说，很多工具要么是本地不能运行，要么就是 Sass 产品，不能很好的与 Pipeline 集成， 导致 Web 性能结果反馈周期长、工程效率低等问题。</p>
+<h2 id="lighthouse">Lighthouse</h2>
+<blockquote>
+<p>Lighthouse 是一个开源的、自动化的工具，用以提高网页质量。你可以在任何网页上运行它，公开的或需要认证的。它对性能、可访问性、渐进式web应用程序、SEO 等进行审计。
+你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p>
+</blockquote>
+<p>使用方法非常简单，可以看一下我对我的开源项目 <code>Powerboard</code> 审计的结果。
+</p>
+<h2 id="lighthouse-ci-及-lighthouse-server-的使用">Lighthouse CI 及 Lighthouse Server 的使用</h2>
+<h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
+<blockquote>
+<p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
+为每个提交自动化运行Lighthouse，查看更改，并防止回归
+&ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci" target="_blank" rel="noopener noreffer ">GoogleChrome/lighthouse-ci</a></p>
+</blockquote>
+<p><code>Lighthouse CI</code> 是 <code>Google Chrome</code> 团队开发的一套可以让持续运行、保存、检索和对 Lighthouse 结果进行<code>断言</code>变得尽可能简单的工具,可以很方便的集成在 CI 上。</p>
+<h4 id="使用">使用</h4>
+<p><code>LHCI</code> 提供 <code>npm</code> 安装包，可以很好的在 Pipeline 上集成，只需要在对应目录下运行 <code>autorun</code> 命令即可，命令如下</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">npm install -g @lhci/cli
+</span></span><span class="line"><span class="cl">lhci autorun</span></span></code></pre></div></div>
+<p>运行完成后，LHCI 会将结果存放在 <code>.lighthouseci</code> 目录下，用浏览器打开对应的报告即可。</p>
+<h3 id="lighthouse-server">Lighthouse Server</h3>
+<blockquote>
+<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
+LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。</p>
+</blockquote>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+<h4 id="lhci-server-的安装和使用">LHCI Server 的安装和使用</h4>
+<p>LHCI Server 的安装有多种方式，具体可参考<a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server" target="_blank" rel="noopener noreffer ">这里</a>，推荐使用 Docker 的方式运行。需要注意的是，第一次运行需要创建 Lighthouse App, 需要在容器中运行 <code>lhci wizard</code> 并填入相应的信息，<strong>最后记录下生成的 <code>Build token</code> 和 <code>Admin token</code></strong>。</p>
+<h3 id="lighthouse-ci-和-lighthouse-server-集成">Lighthouse CI 和 Lighthouse Server 集成</h3>
+<p></p>
+<ul>
+<li>前面已经讲了 <code>lhci</code> 和 <code>lhci server</code> 如何安装了，接下来就是需要将两者结合起来一起使用了。这里我们以 <code>GitHub Actions</code> 为例来搞一个 Demo。</li>
+<li>构建 <code>GitHub workflow</code>， 具体实践可参考 <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a> 的实现细节</li>
+<li>.github/workflows/Lighthouse.yml</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse CI</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">main</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">jobs</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">lhci</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Lighthouse</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l">ubuntu-latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/checkout@v2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">ref</span><span class="p">:</span><span class="w"> </span><span class="l">${{ github.event.pull_request.head.sha }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Use Node.js 10.x</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">actions/setup-node@v1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">node-version</span><span class="p">:</span><span class="w"> </span><span class="m">16.14.2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+<ul>
+<li>.github/config/lighthouserc-no-condition.json</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;formFactor&#34;</span><span class="p">:</span> <span class="s2">&#34;desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;screenEmulation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;mobile&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;height&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;deviceScaleFactor&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;assert&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;assertions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:performance&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:accessibility&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:best-practices&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:seo&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:pwa&#34;</span><span class="p">:</span> <span class="s2">&#34;off&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
+<li>.github/config/lighthouserc.json</li>
+</ul>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-json">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;ci&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;collect&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;staticDistDir&#34;</span><span class="p">:</span> <span class="s2">&#34;./dist&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;settings&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;formFactor&#34;</span><span class="p">:</span> <span class="s2">&#34;desktop&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;screenEmulation&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;mobile&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;width&#34;</span><span class="p">:</span> <span class="mi">1920</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;height&#34;</span><span class="p">:</span> <span class="mi">1080</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;deviceScaleFactor&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;disabled&#34;</span><span class="p">:</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;assert&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;assertions&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:performance&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.8</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:accessibility&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.95</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:best-practices&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:seo&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;error&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.9</span> <span class="p">}],</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;categories:pwa&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;warn&#34;</span><span class="p">,</span> <span class="p">{</span> <span class="nt">&#34;minScore&#34;</span><span class="p">:</span> <span class="mf">0.99</span> <span class="p">}]</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<ul>
+<li>需要将 <code>lhci Server</code> 生成的 <code>Build token</code> 和 <code>lhci Server</code> 的地址存放在 GitHub 项目的 Secrets 中</li>
+<li>这里执行了两次 <code>lhci</code> 命令。因为 <code>lhci autorun</code> 运行完成后会运行默认的断言(<code>Assertion</code>), 第一次用没有断言的命令，目的是将当前的网页性能可以上到 Server 端; 第二次配置了各项指标的阈值，如果不满足要求，Pipeline 将会阻断，实现 <code>Web 性能测试左移</code>。</li>
+<li></li>
+</ul>
+<h2 id="总结">总结</h2>
+<ul>
+<li>对于：开发人员、技术领导或者市场营销人员</li>
+<li>他们想：<code>持续量化</code>并展示 Web 页面的<code>性能</code></li>
+<li>这个：Lighthouse CI</li>
+<li>是一个：由 <code>Google</code> 编写的一套工具，可以持续运行、保存、检索并对 <code>Lighthouse</code> 结果进行断言变得尽可能简单。它可以评估 Web 应用和页面，以及从开发的最佳实践中收集性能指标和洞见等信息</li>
+<li>它可以：测试你的 Web 页面，得到 Web 页面的 <code>Performance</code> 、 <code>Accessibility</code> 、 <code>Best Practices</code> 、 <code>SEO</code> 和 <code>PWA</code> 在不同<code>设备</code>上的分数, 这些分数可以用于分析产品性能，帮助提升用户转化率等</li>
+<li>不同于：<a href="https://treo.sh/" target="_blank" rel="noopener noreffer ">treo</a> 或者其他一些 Web 性能测试工具</li>
+<li>它的优势是: <code>Open-Source</code>, <code>Free</code>, <code>Self-hosted</code> data and Server, <code>Easy to integrate</code>。</li>
+</ul>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://web.dev/i18n/zh/why-speed-matters/" target="_blank" rel="noopener noreffer ">Get Down to Business: Why the Web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/</a></li>
+<li><a href="https://web.dev/i18n/zh/why-speed-matters" target="_blank" rel="noopener noreffer ">为什么速度很重要？: https://web.dev/i18n/zh/why-speed-matters</a></li>
+<li><a href="https://developers.google.cn/web/tools/lighthouse" target="_blank" rel="noopener noreffer ">Lighthouse: https://developers.google.cn/web/tools/lighthouse</a></li>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
-<p>程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 <a href="https://lunrjs.com/" target="_blank" rel="noopener noreffer ">lunrjs</a> 或者 <a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer ">algolia</a> 等。我的 Blog 是基于 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 构建的，使用的主题是 <a href="https://hugoloveit.com/" target="_blank" rel="noopener noreffer ">LoveIt</a>, 集成的是 algolia 的搜索方式。</p>]]></description></item><item><title>依旧免费使用 Docker Desktop 的方案</title><link>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 14 Jan 2022 19:03:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</guid><description><![CDATA[<div class="featured-image">
+<p>程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 <a href="https://lunrjs.com/" target="_blank" rel="noopener noreffer ">lunrjs</a> 或者 <a href="https://www.algolia.com/" target="_blank" rel="noopener noreffer ">algolia</a> 等。我的 Blog 是基于 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 构建的，使用的主题是 <a href="https://hugoloveit.com/" target="_blank" rel="noopener noreffer ">LoveIt</a>, 集成的是 algolia 的搜索方式。</p>
+<p>对于存储在 algolia 上的数据，我是通过 GitHub Action：<a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer</a> 来上传的，之前使用是没有问题的。</p>
+<h2 id="问题">问题</h2>
+<p>突然有一天我要使用搜索功能，但是怎么也搜索不到我想搜索的内容，看了 GitHub 项目的构建状态，一切正常，然后登陆到 algolia 后台一看， 最后一次的数据更新是在 21 年 8 月； 然后打开最近的博客构建记录，看了执行如下 GitHub workflow 的 yaml 日志，大吃一惊：程序执行错误，但还是在最后给我们送了一个🚀，同样是写代码，你能忍？</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_application_id</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_APPLICATION_ID}}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_api_key</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_API_KEY}}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span></span></span></code></pre></div></div>
+<p>运行日志</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-log">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-log" data-lang="log">Run darrenjennings/algolia-docsearch-action@master
+/usr/bin/docker run --name a682564a13d76444749d3b720346ba2365371_9474ad --label 6a6825 --workdir /github/workspace --rm -e INPUT_ALGOLIA_APPLICATION_ID -e INPUT_ALGOLIA_API_KEY -e INPUT_FILE -e HOME -e GITHUB_JOB -e GITHUB_REF -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_REPOSITORY_OWNER -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RETENTION_DAYS -e GITHUB_RUN_ATTEMPT -e GITHUB_ACTOR -e GITHUB_WORKFLOW -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GITHUB_EVENT_NAME -e GITHUB_SERVER_URL -e GITHUB_API_URL -e GITHUB_GRAPHQL_URL -e GITHUB_REF_NAME -e GITHUB_REF_PROTECTED -e GITHUB_REF_TYPE -e GITHUB_WORKSPACE -e GITHUB_ACTION -e GITHUB_EVENT_PATH -e GITHUB_ACTION_REPOSITORY -e GITHUB_ACTION_REF -e GITHUB_PATH -e GITHUB_ENV -e RUNNER_OS -e RUNNER_ARCH -e RUNNER_NAME -e RUNNER_TOOL_CACHE -e RUNNER_TEMP -e RUNNER_WORKSPACE -e ACTIONS_RUNTIME_URL -e ACTIONS_RUNTIME_TOKEN -e ACTIONS_CACHE_URL -e GITHUB_ACTIONS=true -e CI=true -v &#34;/var/run/docker.sock&#34;:&#34;/var/run/docker.sock&#34; -v &#34;/home/runner/work/_temp/_github_home&#34;:&#34;/github/home&#34; -v &#34;/home/runner/work/_temp/_github_workflow&#34;:&#34;/github/workflow&#34; -v &#34;/home/runner/work/_temp/_runner_file_commands&#34;:&#34;/github/file_commands&#34; -v &#34;/home/runner/work/blog/blog&#34;:&#34;/github/workspace&#34; 6a6825:64a13d76444749d3b720346ba2365371  &#34;***&#34; &#34;***&#34; &#34;./public/index.json&#34;
+Cloning into &#39;docsearch-scraper&#39;...
+Collecting pipenv
+  Downloading pipenv-2021.11.23-py2.py3-none-any.whl (3.6 MB)
+Collecting virtualenv
+  Downloading virtualenv-20.10.0-py2.py3-none-any.whl (5.6 MB)
+Requirement already satisfied: pip&gt;=18.0 in /usr/local/lib/python3.6/site-packages (from pipenv) (21.2.4)
+Requirement already satisfied: setuptools&gt;=36.2.1 in /usr/local/lib/python3.6/site-packages (from pipenv) (57.5.0)
+Collecting virtualenv-clone&gt;=0.2.5
+  Downloading virtualenv_clone-0.5.7-py3-none-any.whl (6.6 kB)
+Collecting certifi
+  Downloading certifi-2021.10.8-py2.py3-none-any.whl (149 kB)
+Collecting importlib-resources&gt;=1.0
+  Downloading importlib_resources-5.4.0-py3-none-any.whl (28 kB)
+Collecting backports.entry-points-selectable&gt;=1.0.4
+  Downloading backports.entry_points_selectable-1.1.1-py2.py3-none-any.whl (6.2 kB)
+Collecting six&lt;2,&gt;=1.9.0
+  Downloading six-1.16.0-py2.py3-none-any.whl (11 kB)
+Collecting importlib-metadata&gt;=0.12
+  Downloading importlib_metadata-4.8.3-py3-none-any.whl (17 kB)
+Collecting filelock&lt;4,&gt;=3.2
+  Downloading filelock-3.4.1-py3-none-any.whl (9.9 kB)
+Collecting distlib&lt;1,&gt;=0.3.1
+  Downloading distlib-0.3.4-py2.py3-none-any.whl (461 kB)
+Collecting platformdirs&lt;3,&gt;=2
+  Downloading platformdirs-2.4.0-py3-none-any.whl (14 kB)
+Collecting zipp&gt;=0.5
+  Downloading zipp-3.6.0-py3-none-any.whl (5.3 kB)
+Collecting typing-extensions&gt;=3.6.4
+  Downloading typing_extensions-4.0.1-py3-none-any.whl (22 kB)
+Installing collected packages: zipp, typing-extensions, importlib-metadata, six, platformdirs, importlib-resources, filelock, distlib, backports.entry-points-selectable, virtualenv-clone, virtualenv, certifi, pipenv
+WARNING: Running pip as the &#39;root&#39; user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Successfully installed backports.entry-points-selectable-1.1.1 certifi-2021.10.8 distlib-0.3.4 filelock-3.4.1 importlib-metadata-4.8.3 importlib-resources-5.4.0 pipenv-2021.11.23 platformdirs-2.4.0 six-1.16.0 typing-extensions-4.0.1 virtualenv-20.10.0 virtualenv-clone-0.5.7 zipp-3.6.0
+WARNING: You are using pip version 21.2.4; however, version 21.3.1 is available.
+You should consider upgrading via the &#39;/usr/local/bin/python -m pip install --upgrade pip&#39; command.
+Installing dependencies from Pipfile.lock (aabb41)...
+Traceback (most recent call last):
+  File &#34;docsearch&#34;, line 5, in &lt;module&gt;
+    run()
+  File &#34;/github/workspace/docsearch-scraper/cli/src/index.py&#34;, line 161, in run
+    exit(command.run(sys.argv[2:]))
+  File &#34;/github/workspace/docsearch-scraper/cli/src/commands/run_config.py&#34;, line 21, in run
+    return run_config(args[0])
+  File &#34;/github/workspace/docsearch-scraper/cli/../scraper/src/index.py&#34;, line 33, in run_config
+    config = ConfigLoader(config)
+  File &#34;/github/workspace/docsearch-scraper/cli/../scraper/src/config/config_loader.py&#34;, line 72, in __init__
+    for key, value in list(data.items()):
+AttributeError: &#39;list&#39; object has no attribute &#39;items&#39;
+🚀 Successfully indexed and uploaded the results to Algolia</code></pre></div>
+<p>面对一个磨洋工的工具，作为程序员的我们肯定不能忍。
+打开 GitHub 上这个 Action 的 <a href="https://github.com/darrenjennings/algolia-docsearch-action" target="_blank" rel="noopener noreffer ">源码</a>, 根据对 Action 构建的了解和现有代码，作者使用的是 Python 和 algolia 自己在 GitHub 上开源的 <a href="https://github.com/algolia/docsearch-scraper.git" target="_blank" rel="noopener noreffer ">工具</a>, 然后执行一个  Python 脚本上传文件到 algolia 的；根据以往经验，由 Python 构建的项目镜像一般都比较大，在本地测试了一下，果不其然的大。</p>
+<h3 id="面临的问题">面临的问题</h3>
+<ul>
+<li>工具损坏</li>
+<li>镜像体积大</li>
+</ul>
+<h2 id="方案-spike">方案 Spike</h2>
+<table>
+  <thead>
+      <tr>
+          <th>Item</th>
+          <th>Option1 使用 algolia 自己的 Restful 接口</th>
+          <th>Option 2 algolia SDK</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>描述</td>
+          <td>使用 algolia 自己的 Restful 接口实现上传</td>
+          <td>使用其官方提供的 SDK 编写代码来集成</td>
+      </tr>
+      <tr>
+          <td>是否推荐</td>
+          <td>No</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>实现难度</td>
+          <td>Middle</td>
+          <td>Low</td>
+      </tr>
+      <tr>
+          <td>优点</td>
+          <td>流程可控</td>
+          <td>简单直接，无需担心错误情况的处理</td>
+      </tr>
+      <tr>
+          <td>缺点</td>
+          <td>需要写更多的代码来控制整个流程</td>
+          <td>整个上传过程不可控</td>
+      </tr>
+      <tr>
+          <td>安全问题</td>
+          <td>No</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td>相对难度</td>
+          <td>Middle</td>
+          <td>Low</td>
+      </tr>
+      <tr>
+          <td>相对成本</td>
+          <td>Middle</td>
+          <td>Low</td>
+      </tr>
+  </tbody>
+</table>
+<p>综上分析，使用 Option2 SDK 的方案更佳。</p>
+<h2 id="执行方案">执行方案</h2>
+<p>新建 GitHub Action 项目，我们使用 Dockerfile 的方式构建上传索引的方案；</p>
+<ul>
+<li>新建 entrypoint.sh 并写入如下代码，脚本执行需要传入如下几个变量：</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Required</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>FILE_PATH</td>
+          <td>要上传的文件路径</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>ALGOLIA_APPLICATION_ID</td>
+          <td>Algolia 平台的应用 Id</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>ADMIN_API_KEY</td>
+          <td>Algolia 上传所用的 API Key</td>
+          <td>Yes</td>
+      </tr>
+      <tr>
+          <td>INDEX_NAME</td>
+          <td>在 Algolia 上你所创建的索引名</td>
+          <td>Yes</td>
+      </tr>
+  </tbody>
+</table>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">npm install -g @algolia/cli
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">algolia import -s <span class="nv">$FILE_PATH</span> -a <span class="nv">$APPLICATION_ID</span> -k <span class="nv">$ADMIN_API_KEY</span> -n <span class="nv">$INDEX_NAME</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$?</span><span class="s2">&#34;</span> !<span class="o">=</span> <span class="s2">&#34;0&#34;</span> <span class="o">]</span> <span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">echo</span> <span class="s2">&#34;😢 Failed to upload your data to Algolia, PLZ report an issue, thx!&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="nb">exit</span> <span class="m">1</span>
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;🚀 Successfully uploaded!&#34;</span></span></span></code></pre></div></div>
+<ul>
+<li>新建 Dockerfile 并写入如下代码，在此我们使用最小化的 Node 镜像 <code>node:lts-alpine</code></li>
+</ul>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-dcokerfile">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code class="language-dcokerfile" data-lang="dcokerfile">FROM node:lts-alpine
+COPY entrypoint.sh /entrypoint.sh
+ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
+<ul>
+<li>更新 README, 完善使用文档。</li>
+</ul>
+<p>详细代码请参考 <a href="https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile" target="_blank" rel="noopener noreffer ">algolia-docsearch-upload-action</a>。</p>
+<h2 id="验证结果">验证结果</h2>
+<p>在完成 Action 并将其集成到 Pipeline 上之后，成功运行，数据可成功上传到 Algolia 平台上，并且博客的右上角的搜索功能可以成功搜索到最新的文章，说明我们的 Action 是可以完成我们的需求的。</p>
+<h3 id="运行效率比较">运行效率比较</h3>
+<p>没有对比就没有伤害。下面对我自己写的 Action 和之前集成过的 Action 在<code>镜像大小</code>和<code>执行效率</code>方面进行对比。</p>
+<div class="echarts" id="id-1" style="width: 100%; height: 30rem;"></div>
+<h3 id="镜像大小比较">镜像大小比较</h3>
+<div class="echarts" id="id-2" style="width: 100%; height: 30rem;"></div>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" target="_blank" rel="noopener noreffer ">Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer</a></li>
+<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Action: https://docs.github.com/en/actions</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>依旧免费使用 Docker Desktop 的方案</title><link>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 14 Jan 2022 19:03:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a> 公司在 2021 年 8 月更新了 Docker Desktop 的 <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" target="_blank" rel="noopener noreffer ">使用条款</a>，决定对大企业（员工超过 250 人或者年收入超过 1 千万美元）用户（包含员工的个人性质使用）开始执行收费订阅的策略，于 2021 年 8 月 31 日生效，同时，给了使用者一个缓冲时间，延续到 2022 年 1 月 31 日，在此之前可以继续免费使用。</p>]]></description></item><item><title>The Solution of Git Adding GPG Sign Failed</title><link>https://guzhongren.github.io/2021/08/the-soluction-of-git-adding-gpg-sign-failed/</link><pubDate>Sat, 07 Aug 2021 12:58:55 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/08/the-soluction-of-git-adding-gpg-sign-failed/</guid><description><![CDATA[<div class="featured-image">
+<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a> 公司在 2021 年 8 月更新了 Docker Desktop 的 <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" target="_blank" rel="noopener noreffer ">使用条款</a>，决定对大企业（员工超过 250 人或者年收入超过 1 千万美元）用户（包含员工的个人性质使用）开始执行收费订阅的策略，于 2021 年 8 月 31 日生效，同时，给了使用者一个缓冲时间，延续到 2022 年 1 月 31 日，在此之前可以继续免费使用。</p>
+<p>很明显，开源公司在这个伸手的年代活不下去了，还有最近比较火的 <a href="https://github.com/Marak/Faker.js" target="_blank" rel="noopener noreffer ">Facker.js</a> 删库事件。对删库这事多说几句，因为自家火灾，作者房子被烧了，然后他想让使用自己辛辛苦苦免费维护的 Facker.js 的这些商业公司来为自己捐款改善自己的生活环境，并继续维护 Facker.js, 但很多公司不鸟他，他只能删库来抱怨。要说呀，用这些库的人的人都是开发者，安装完你开发的库，然后就开开心心的写代码去了，除非不会用的库，不然没人去看你的 README 的。更何况你仓库边上的捐款信息。</p>
+<h2 id="问题">问题</h2>
+<p>如果你现在下载最新的或者旧版的 Docker 安装包，安装包的使用条款都已经被悄悄的动了手脚，里面的 Liscense 的条款已经有了上面说的内容了。所以说你还是会被要求收费的。除非你在一个小公司，人数和收入不在条款之内，那你就开心的用吧。</p>
+<p>但是还有一部分人就在这个条款的要求范围之内了。</p>
+<blockquote>
+<p>安全无小事。</p>
+</blockquote>
+<blockquote>
+<p>雪崩的时候，没有一片雪花是无辜的。</p>
+</blockquote>
+<p>市面上还是有不少 Docker 的替代方案，比如 <a href="https://github.com/containers/podman" target="_blank" rel="noopener noreffer ">podman</a>, <a href="https://github.com/lima-vm/lima" target="_blank" rel="noopener noreffer ">lima</a> 和 <a href="https://github.com/abiosoft/colima" target="_blank" rel="noopener noreffer ">colima</a>, 但用起来却没有 Docker 这么流畅，舒服。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>使用 2021 年 8 月 30 日之前的任何版本都是可以的，所以下载之前的旧版并且不升级就可以了。</p>
+<h3 id="安装旧版-docker-desktop">安装旧版 Docker Desktop</h3>
+<p>我在百度网盘有备份 Mac 版 3.5.2 版本的 Docker Desktop 副本，可以下载安装。</p>
+<blockquote>
+<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p>
+</blockquote>
+<p>如果觉得慢，恰好我也有空，我可以将我本地的副本直接隔空给你。</p>
+<h3 id="验证安装的-docker-副本的修改时间">验证安装的 Docker 副本的修改时间</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    ~/Downloads                                                                               19:54:48 
+</span></span><span class="line"><span class="cl">❯ ls -al /Applications/Docker.app/Contents/Resources/LICENSE.rtf /Applications/Docker.app/Contents/MacOS/Docker
+</span></span><span class="line"><span class="cl">.rwxr-xr-x zhongren.gu admin <span class="m">16</span> MB Thu Jul  <span class="m">8</span> 01:58:59 <span class="m">2021</span>  /Applications/Docker.app/Contents/MacOS/Docker
+</span></span><span class="line"><span class="cl">.rw-r--r-- zhongren.gu admin <span class="m">19</span> KB Thu Jul  <span class="m">8</span> 01:59:00 <span class="m">2021</span>  /Applications/Docker.app/Contents/Resources/LICENSE.rtf</span></span></code></pre></div></div>
+<p>可以看到，两个文件最后的修改时间是 2021 年 6 月 8 日，在 2021 年 8 月 30 日之前，所以是符合我们的要求的。</p>
+<h3 id="禁止-docker-升级">禁止 Docker 升级</h3>
+<p>安装完旧版的 Docker 之后，要禁止 Docker 升级，这样，Docker 的使用条款就永远是旧的，Docker 的律师也拿你没办法喽。</p>
+<p>在这通过命令行修改 host 文件，使 <code>desktop.docker.com</code> 指向 <code>127.0.0.1</code>, 不然 Docker 升级服务访问真正的 Docker 服务器。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts</span></span></code></pre></div></div>
+<h3 id="验证未升级">验证未升级</h3>
+<p></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>The Solution of Git Adding GPG Sign Failed</title><link>https://guzhongren.github.io/2021/08/the-soluction-of-git-adding-gpg-sign-failed/</link><pubDate>Sat, 07 Aug 2021 12:58:55 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/08/the-soluction-of-git-adding-gpg-sign-failed/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><ol>
 <li>
-<p>因为我对我的所有的 git commit 都开启了签名，而且每次 GPG 签名的最长缓存时间我设置成了 1 天， 所以过了今天明天就得重新输入密码了，这估计是个无解的问题，除非我生成没有密码的 GPG 密钥对。</p>]]></description></item><item><title>配置 iTerm2 使值更高效</title><link>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</link><pubDate>Fri, 09 Oct 2020 22:40:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</guid><description><![CDATA[<div class="featured-image">
+<p>因为我对我的所有的 git commit 都开启了签名，而且每次 GPG 签名的最长缓存时间我设置成了 1 天， 所以过了今天明天就得重新输入密码了，这估计是个无解的问题，除非我生成没有密码的 GPG 密钥对。</p>
+</li>
+<li>
+<p>同时，在我本记会出现另一个问题，就是签名失败。</p>
+</li>
+</ol>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">error: gpg failed to sign the data
+</span></span><span class="line"><span class="cl">fatal: failed to write commit object</span></span></code></pre></div></div>
+<p>解决方法其实很简单，将 <code>export GPG_TTY=$(tty)</code> 这个加入你的 shell 启动文件里就可以了， 我这是 <code>.zshrc</code>, 然后使之生效。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">source</span> ~/.zshrc</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item><item><title>配置 iTerm2 使值更高效</title><link>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</link><pubDate>Fri, 09 Oct 2020 22:40:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wW-uFN_---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://wp.gabsii.com/wp-content/uploads/2019/11/Screenshot-2019-11-03-at-22.15.09-1024x583.png" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
-<p>在平时开发中，尤其在 mac 上，我们经常要用到<code>iterm2</code>, 然而默认的配置使用起来对于开发者来说并不是那么高效，比如平时我们需要用<code>CMD+Delete</code>来删除整行命令， 使用<code>Opt+&lt;-</code>来向右跳过单词等等的，这些快捷键在默认情况下并没有，那么接下来就来解决这个问题，</p>]]></description></item><item><title>我的 Mac 上常用的软件</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</link><pubDate>Wed, 01 Apr 2020 21:04:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</guid><description><![CDATA[<div class="featured-image">
+<p>在平时开发中，尤其在 mac 上，我们经常要用到<code>iterm2</code>, 然而默认的配置使用起来对于开发者来说并不是那么高效，比如平时我们需要用<code>CMD+Delete</code>来删除整行命令， 使用<code>Opt+&lt;-</code>来向右跳过单词等等的，这些快捷键在默认情况下并没有，那么接下来就来解决这个问题，</p>
+<h2 id="解决方案">解决方案</h2>
+<p></p>
+<p>使用<code>CMD+,</code>快捷键打开<code>Preferences &gt; Profile &gt; Keys</code>， 点击<code>Presets...</code>选择<code> Natural Text Editing</code>
+从此，你的 itemr2 如你的 IDE 一样高效。</p>
+<p>再也不用为删除单个单词，整行代码，左右快速跳转烦恼了。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item><item><title>我的 Mac 上常用的软件</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</link><pubDate>Wed, 01 Apr 2020 21:04:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84mac%E4%B8%8A%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/01/bu57crzCFQvHOVd.png" referrerpolicy="no-referrer">
             </div><blockquote>
 <p>软件常用常新，软件大多的目的都是效率，办公，沟通，和娱乐等。虽说 Mac 也有自己的时间机器，可以随时将新机器回复到旧机器上，但是作为分享和传播，那么写一篇文章那是最有效率的了，也可为自己后期使用做备份。
 最近由同事的一个脚本启发，特制做了我自己 Mac 电脑上必备的一些软件的快速安装脚本；程序员的本质就是将一切事物简单化，代码化。.. 化； 地址如下，欢迎提 PR：
-<a href="https://github.com/guzhongren/awesome-setup" target="_blank" rel="noopener noreffer ">awesome-setup: https://github.com/guzhongren/awesome-setup</a></p>]]></description></item></channel></rss>
+<a href="https://github.com/guzhongren/awesome-setup" target="_blank" rel="noopener noreffer ">awesome-setup: https://github.com/guzhongren/awesome-setup</a></p>
+</blockquote>
+<p>接下来，我将按照生产力，效率，沟通和娱乐这几类将我 Mac 上的常用软件列个清单。</p>
+<h1 id="生产力">生产力</h1>
+<h2 id="visual-studio-codehttpscodevisualstudiocom"><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Code</a></h2>
+<p></p>
+<p>从严格意义上来说，VSCode 并不算 IDE，但是其设计与插件系统非常完美，作为前端起家的我，只要能写代码我就可以创造世界，估计以后还有一篇写插件的博客。</p>
+<ul>
+<li>轻量</li>
+<li>插件系统非常完善</li>
+<li>绝大多数编程语言都支持</li>
+</ul>
+<h2 id="vimhttpswwwvimorg"><a href="https://www.vim.org/" target="_blank" rel="noopener noreffer ">Vim</a></h2>
+<p></p>
+<p>作为程序员开发必备利器！</p>
+<ul>
+<li>装逼利器</li>
+<li>学习 Linux 的必备工具</li>
+<li>高效编码的工具</li>
+<li>任何 Linux 版本都有的编辑器</li>
+<li>定制化程度非常高</li>
+<li>&hellip;&hellip;
+
+在此推荐我的定制的 vimrc,<a href="https://github.com/guzhongren/.vim" target="_blank" rel="noopener noreffer ">地址在这</a>,</li>
+</ul>
+<h2 id="iterm2httpsiterm2com"><a href="https://iterm2.com/" target="_blank" rel="noopener noreffer ">iTerm2</a></h2>
+<p>
+Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种好用的快捷方式，比如简化的 git 命令，zsh 的自动补全等插件</p>
+<ul>
+<li>界面简洁</li>
+<li>自定义配置程度比较高</li>
+<li>可搭配不同的命令行主题，在此推荐 <a href="https://github.com/romkatv/powerlevel10k" target="_blank" rel="noopener noreffer ">powerlevel10k</a></li>
+<li>真的比 Mac 自带的终端好用啊 😄</li>
+</ul>
+<h2 id="ideahttpswwwjetbrainscomidea"><a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreffer ">IDEA</a></h2>
+<p></p>
+<p>Java 开发必备</p>
+<h2 id="备忘录">备忘录</h2>
+<p>备忘录可以随时打开做笔记，记录重要的内容，当然和 iPhone 配合使用会更高效。主要就是使用自己制作的快捷指令，我的主要有两个，一个是<code>Copy and Paste</code>, 顾名思义，将复制的内容粘贴到备忘录中；第二个<code>顺便记</code>，这个快捷指令会将语音内容转化为文字并将其追加到备忘录中。</p>
+<p>使用这两个快捷指令，将非常高效，比如平时记录零碎的知识点，重要的总结内容等。</p>
+<h2 id="xmindhttpswwwxmindnet"><a href="https://www.xmind.net/" target="_blank" rel="noopener noreffer ">XMind</a></h2>
+<p></p>
+<p>思维导图界的翘楚，当然需要付费。</p>
+<ul>
+<li>界面简洁赶紧</li>
+<li>功能简单但丰富</li>
+<li>主题多样，市面上 99%的导图类型都实现了</li>
+<li>主题真的很好看</li>
+<li>可跨平台使用</li>
+</ul>
+<h2 id="adobe-xdhttpswwwadobecomcnproductsxdhtml"><a href="https://www.adobe.com/cn/products/xd.html" target="_blank" rel="noopener noreffer ">Adobe XD</a></h2>
+<p></p>
+<p>传统图像大厂 Adobe 产品，结合 Adobe 全家桶使用应该很爽，需要注意的是在国内，XD 不可以使用在线存储服务，所以在注册时记得将地区选择为其他地区，推荐美国🇺🇸，</p>
+<ul>
+<li>使用简单，免费，相比与 Sketchup, 这点还是很诱人的</li>
+<li>中文文档做的也不错</li>
+<li>插件系统也不错，可与 Trello 等工具结合</li>
+<li>矢量图形编辑也非常不错</li>
+</ul>
+<h2 id="jsonpphttpsgithubcomjmhodgesjsonpp"><a href="https://github.com/jmhodges/jsonpp" target="_blank" rel="noopener noreffer ">jsonpp</a></h2>
+<p>json_pp 我主要是用来格式化 curl 命令行的结果，例如测试某个 restful 接口，返回的 json，在命令行就会自动给你格式化好输出，</p>
+<h3 id="安装">安装</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp</span></span></code></pre></div></div>
+<h1 id="效率">效率</h1>
+<h2 id="bitwardenhttpsbitwardencom"><a href="https://bitwarden.com/" target="_blank" rel="noopener noreffer ">Bitwarden</a></h2>
+<p></p>
+<p>用来存储和生成密码的工具</p>
+<ul>
+<li>开源</li>
+<li>免费 （有商业版）</li>
+<li>支持两步验证 (2FA)</li>
+<li>可按条件生成随机密码（我从来不记我的密码，而且我也记不住）</li>
+<li>多端支持</li>
+<li>可自定义数据存储方案</li>
+<li>可自动填充账号密码</li>
+</ul>
+<h2 id="microsoft-todohttpstodomicrosoftcomtasks"><a href="https://todo.microsoft.com/tasks/" target="_blank" rel="noopener noreffer ">Microsoft Todo</a></h2>
+<p></p>
+<p>微软收购了 Wunderlist, 然后推出了桌面版，Web 版，Mobile(Apple, Android), Pad 版的 Todo 应用，我比较看好的功能</p>
+<ul>
+<li>只需一个 Microsoft 账号就可以在各个终端进行数据同步</li>
+<li>界面清新简洁</li>
+<li>可自定义分组，分类</li>
+<li>可自定义背景图片</li>
+<li>可与其他人共享 Todo</li>
+<li>最重要的是可以在每一个 Todo 里定义子 Todo</li>
+</ul>
+<h2 id="itsycal">Itsycal</h2>
+<p><a href="https://www.mowglii.com/itsycal/itsycalbanner2@2x.png" target="_blank" rel="noopener noreffer ">Itsycal</a></p>
+<p>Mac 自带的顶部的日历其实有点不好用，如果你要看你的日程，那么你需要点开日历，而且他的时间格式其实也不是很友好（对于定制党）；Itsycal 很好的解决了这个问题。</p>
+<h3 id="安装-1">安装</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal</span></span></code></pre></div></div>
+<h1 id="沟通">沟通</h1>
+<h2 id="微信">微信</h2>
+<p>
+不管是亲朋还是同事沟通，微信都是非常高效的工具，而且微信里面的小程序现在可以运行在桌面端了，使用场景也越来越多了；还有一个非常好用的功能：截屏！ 以前电脑上会安装 QQ， 现在 QQ 也不用了，快速分享内容并标注微信是不二之选。</p>
+<h1 id="娱乐">娱乐</h1>
+<p>##<a href="https://iina.io/" target="_blank" rel="noopener noreffer ">IINA</a></p>
+<p></p>
+<blockquote>
+<p>The modern media player for macOS.</p>
+</blockquote>
+<ul>
+<li>开源，免费</li>
+<li>支持多种资源播放（在线，本地文件，Youtube 等）</li>
+<li>界面简洁清爽</li>
+<li>操作简单直观</li>
+<li>字幕，视频大小可随意调节</li>
+</ul>
+<h1 id="工具">工具</h1>
+<h2 id="清理工具">清理工具</h2>
+<p><a href="lemon.qq.com/" rel="">tencent-lemon</a></p>
+<h3 id="安装-2">安装</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon</span></span></code></pre></div></div>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://todo.microsoft.com/tasks/" target="_blank" rel="noopener noreffer ">Todo: https://todo.microsoft.com/tasks/</a></li>
+<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">Visual Studio Cod: https://code.visualstudio.com/</a></li>
+<li><a href="https://www.vim.org/" target="_blank" rel="noopener noreffer ">Vim: https://www.vim.org</a></li>
+<li><a href="https://github.com/guzhongren/.vim" target="_blank" rel="noopener noreffer ">Vimrc: https://github.com/guzhongren/.vim</a></li>
+<li><a href="https://bitwarden.com/" target="_blank" rel="noopener noreffer ">Bitwarden:https://bitwarden.com/</a></li>
+<li><a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreffer ">IDEA: https://www.jetbrains.com/idea/</a></li>
+<li><a href="https://res.wx.qq.com/a/wx_fed/weixin_portal/res/static/img/3sPNXyP.gif" target="_blank" rel="noopener noreffer ">微信：https://res.wx.qq.com/a/wx_fed/weixin_portal/res/static/img/3sPNXyP.gif</a></li>
+<li><a href="https://iina.io/" target="_blank" rel="noopener noreffer ">IINA:https://iina.io/</a></li>
+<li><a href="https://www.adobe.com/cn/products/xd.html" target="_blank" rel="noopener noreffer ">Adobe XD: https://www.adobe.com/cn/products/xd.html</a></li>
+<li><a href="https://www.mowglii.com/itsycal/itsycalbanner2@2x.png" target="_blank" rel="noopener noreffer ">Itsycal:https://www.mowglii.com/itsycal/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

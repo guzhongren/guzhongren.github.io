@@ -1,4 +1,95 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>测试 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E6%B5%8B%E8%AF%95/</link><description>测试 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 16 Jan 2022 14:47:53 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E6%B5%8B%E8%AF%95/" rel="self" type="application/rss+xml"/><item><title>使用 Cypress 创建测试镜像并完成 E2E 测试</title><link>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8cypress%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E9%95%9C%E5%83%8F%E5%B9%B6%E5%AE%8C%E6%88%90e2e%E6%B5%8B%E8%AF%95/</link><pubDate>Sun, 16 Jan 2022 14:47:53 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8cypress%E5%88%9B%E5%BB%BA%E6%B5%8B%E8%AF%95%E9%95%9C%E5%83%8F%E5%B9%B6%E5%AE%8C%E6%88%90e2e%E6%B5%8B%E8%AF%95/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/5667741/pexels-photo-5667741.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
-<p>最近在做一个 Buildkite 的 Dashboard 的项目 <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a>，项目是托管在 GitHub 的 Git Pages 上的；项目只是一个纯前端项目，且 E2E 测试是用 <a href="https://www.cypress.io/" target="_blank" rel="noopener noreffer ">Cypress</a> 构建的；如果要进行 E2E 测试一般情况都是对着部署在 Git Pages 上的网站直接测试，而且也是这么做的😄。</p>]]></description></item></channel></rss>
+<p>最近在做一个 Buildkite 的 Dashboard 的项目 <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a>，项目是托管在 GitHub 的 Git Pages 上的；项目只是一个纯前端项目，且 E2E 测试是用 <a href="https://www.cypress.io/" target="_blank" rel="noopener noreffer ">Cypress</a> 构建的；如果要进行 E2E 测试一般情况都是对着部署在 Git Pages 上的网站直接测试，而且也是这么做的😄。</p>
+<h2 id="痛点">痛点</h2>
+<h3 id="测试滞后">测试滞后</h3>
+<p>这么做肯定是有问题的，产品都上线了才做测试，肯定已经迟了；如果程序有问题，那么就会影响所有用户。这种情况应该算是 P1 级别的产品事故，对用户来说简直就是灾难。应该在部署之前就应该完成 E2E 测试，如果测试通过不了，就不应该部署代码。所以测试应该前移。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>由于我们的测试需要自动化，需要在 Pipeline 上执行，所以必须是一个可以独立运行的程序和 Cypress 程序同时运行，并最终返回测试结果，由 Pipeline 来决定是否终止 Pipeline 运行。</p>
+<p>在 GitHub Actions 的 Pipeline 上同时运行程序只能依靠 <code>docker-compose</code>, 在这我们可以使用 Cypress 官方出品的 <a href="https://hub.docker.com/r/cypress/included" target="_blank" rel="noopener noreffer ">cypress/included</a>, 通过编排程序来进行测试。</p>
+<h3 id="cypressincluded">cypress/included</h3>
+<p>cypress/included 可以让我们挂载 cypress 的测试脚本，然后自动执行，并在最终返回 Linux 命令状态值，如 0 ， 非 0 值。</p>
+<h3 id="docker-compose">Docker-compose</h3>
+<p><a href="https://docs.docker.com/compose/" target="_blank" rel="noopener noreffer ">Docker-compose</a> 是一套容器编排工具，可以很轻松的管理容器的启动顺序等。在本地项目搭建中非常有用，比如构建数据库，执行 shell/yaml lint 等。</p>
+<h2 id="执行方案">执行方案</h2>
+<h3 id="构建应用镜像">构建应用镜像</h3>
+<p>在测试之前需要将应用构建好并部署好，我们可以用 Node 镜像打包应用，并利用容器的多阶段构建 (<a href="https://docs.docker.com/develop/develop-images/multistage-build/" target="_blank" rel="noopener noreffer ">multi-stage builds</a>) 完成应用轻量化构建，并部署在 <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nginx</a> 中。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">FROM node:17-alpine as distPackage</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY ./ /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">WORKDIR /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">FROM nginx:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
+<h3 id="编排-service">编排 service</h3>
+<p>因为我们的程序需要在测试的时候就要部署好，所以我们可以利用 Docker-compose 的 <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#build" target="_blank" rel="noopener noreffer ">build</a> 参数，在容器启动时构建应用并部署。并在 cypress/included 启动是执行测试命令 <code>npx cy:docker</code>, 具体就是<code>cross-env ENV=docker cypress run --spec 'cypress/integration/dashboard.spec.js</code>。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-yaml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">./</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">dockerfile</span><span class="p">:</span><span class="w"> </span><span class="l">./Dockerfile</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l">always</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s1">&#39;80:80&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">e2e</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l">cypress/included:9.2.1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l">cypress</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">CYPRESS_baseUrl=http://web</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">ENV=docker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">npx cy:docker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l">/e2e</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">./:/e2e</span></span></span></code></pre></div></div>
+<p>这样我们就可以独立的运行起真实程序和正式的测试程序了，具体的 Pipeline 可以参考 Powerboard 的 <a href="https://github.com/guzhongren/Powerboard/blob/main/.github/workflows/main.yml" target="_blank" rel="noopener noreffer ">Workflow</a>。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-yml">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span><span class="w">          </span></span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
+<p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://www.cypress.io/" target="_blank" rel="noopener noreffer ">Cypress: https://www.cypress.io/</a></li>
+<li><a href="https://hub.docker.com/r/cypress/included" target="_blank" rel="noopener noreffer ">cypress/included: https://hub.docker.com/r/cypress/included</a></li>
+<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Actions: https://docs.github.com/en/actions</a></li>
+<li><a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard: https://github.com/guzhongren/Powerboard</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

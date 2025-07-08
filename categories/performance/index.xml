@@ -1,4 +1,71 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Performance - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/performance/</link><description>Performance - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 05 Jan 2022 21:13:15 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/performance/" rel="self" type="application/rss+xml"/><item><title>使用 jsdelivr 来加速 Github 资源访问</title><link>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</link><pubDate>Wed, 05 Jan 2022 21:13:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BD%BF%E7%94%A8jsdelivr%E6%9D%A5%E5%8A%A0%E9%80%9Fgithub%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/4781064/pexels-photo-4781064.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500" referrerpolicy="no-referrer">
             </div><h2 id="遇到的问题">遇到的问题</h2>
-<p>22 年又开始了，西安 ZF 的防疫政策真的是在全国人民面前一遍又一遍的刷出了新的高度，过了魔幻的 2020，又过了艰难的 2021，2022，感觉你都找不到个合适的词来形容了。</p>]]></description></item></channel></rss>
+<p>22 年又开始了，西安 ZF 的防疫政策真的是在全国人民面前一遍又一遍的刷出了新的高度，过了魔幻的 2020，又过了艰难的 2021，2022，感觉你都找不到个合适的词来形容了。</p>
+<p>最近西安大数据局搞得二维码已经连续崩溃两次了，更可笑的是自吹自擂的说把 1M 的图片优化到 500kB, 又艰难的优化到 100KB, 真的是艰难的不行，难道用 base64 算法搞成字符串会超过 10kB 么？还有把对外的图片放在了自己的服务器上，没有用到 CDN, 简直了，更何况是自己 host 的图片。一个字：简直了。</p>
+<p>最近在优化我们组自己构建的开源项目 <a href="https://github.com/Apollo-for-fun/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a> 的使用体验。经过一遍遍的优化，我们现在的策略是将 token 和 config 放在 URL 中，config 是存储配置的 URL。目前，我们将 config 存放在 GitHub 的 <a href="https://gist.github.com/" target="_blank" rel="noopener noreffer ">Gist</a> 上。</p>
+<p>但是这有个问题，就是 Gist 的访问在国内被墙了，被🧱了，被🧱了；而且 GitHub 的资源访问也比较慢。</p>
+<h2 id="前置知识">前置知识</h2>
+<blockquote>
+<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p>
+</blockquote>
+<h2 id="解决方案">解决方案</h2>
+<p>之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如</p>
+<ul>
+<li><code>https://hub.fastgit.org</code></li>
+<li><code>https://github.com.cnpmjs.org</code></li>
+<li>本地配置代理等</li>
+</ul>
+<p>对于<code>hub.fastgit.org</code>, 在将 raw 资源地址配置到 URL 中后并不能直接获取到配置信息，存在跨域的问题。对此还有一个开源的代理方案，那就是<code>jsdelivr</code>。</p>
+<h3 id="jsdelivr">jsdelivr</h3>
+<p><a href="https://github.com/jsdelivr/jsdelivr" target="_blank" rel="noopener noreffer ">jsdelivr</a> 是为 npm, GitHub, JavaScript 和 ESM 加速构建的免费，快速，可靠的开源 CDN。此开源项目是 <a href="https://prospectone.io/" target="_blank" rel="noopener noreffer ">prospectone</a> 公司开源的一个项目，而 prospectone 是在 CDN 方面也是很有经验的技术公司。</p>
+<p>从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。</p>
+<p></p>
+<h4 id="模式">模式</h4>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
+<ul>
+<li>usernameOrOrgName: GitHub 用户名或者组织名</li>
+<li>repoName: 存储文件的仓库名</li>
+<li>@version: Release 版本号；如果不填写使用最新版</li>
+<li>filePath: 存储在 GitHub 仓库上的相对路径</li>
+</ul>
+<h4 id="实现">实现</h4>
+<p>创建组织的团队配置仓库，并写入要配置的内容，commit 并 push。</p>
+<p>按照上面 jsdelivr 的模式配置路径，效果如下：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
+<p></p>
+<h2 id="总结">总结</h2>
+<p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreffer ">jsdelvr:https://www.jsdelivr.com/</a></li>
+<li><a href="https://prospectone.io/" target="_blank" rel="noopener noreffer ">prospectone: https://prospectone.io/</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF" target="_blank" rel="noopener noreffer ">CDN: https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

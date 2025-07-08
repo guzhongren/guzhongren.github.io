@@ -1,4 +1,89 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>3rd Party Test - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/3rd-party-test/</link><description>3rd Party Test - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 18 Apr 2021 21:57:08 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/3rd-party-test/" rel="self" type="application/rss+xml"/><item><title>Test With 3rd Party Library</title><link>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</link><pubDate>Sun, 18 Apr 2021 21:57:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
-<p>一般的前端开发情况下，我们都会用到其他的第三方库，比如 UI 库 <code>Ant Desgin</code>， 请求库 <code>axios</code> 等，通常对于 UI 库，我们可以通过快照等操作对其进行测试，但是对于像 axios 这类第三方库，我们必须通过 mock 的方式来实现。</p>]]></description></item></channel></rss>
+<p>一般的前端开发情况下，我们都会用到其他的第三方库，比如 UI 库 <code>Ant Desgin</code>， 请求库 <code>axios</code> 等，通常对于 UI 库，我们可以通过快照等操作对其进行测试，但是对于像 axios 这类第三方库，我们必须通过 mock 的方式来实现。</p>
+<h2 id="问题">问题</h2>
+<p>上周四晚上突然收到同事的微信求助，怎么 mock 一个 <code>jwt-decode</code> 这个库。然而理想很丰满，现实很骨干。妹子找了 jest 官网的各种测试方式，没有成功，我岂能随随便便成功。</p>
+<p>妹子的问题如下：</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s1">&#39;jwt-decode&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">cookieAccessToken</span> <span class="o">=</span> <span class="nx">cookie</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;cookie-key&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">userJwt</span> <span class="o">=</span> <span class="p">(</span><span class="nx">cookieAccessToken</span> <span class="o">&amp;&amp;</span> <span class="nx">jwt_decode</span><span class="p">(</span><span class="nx">cookieAccessToken</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">....</span></span></span></code></pre></div></div>
+<h2 id="解决方案">解决方案</h2>
+<p>在构建项目前期，通过各种尝试启动一个支持 <code>import</code> 语法的项目，始终未遂。 最终还是按照 Jest 官网的提示一步步走，构建起了一个项目。</p>
+<h3 id="参考官网示例">参考官网示例</h3>
+<p>官网示例如下，是一个 mock 有方法的类的，但是通过上面的代码可知，这个不是一个类，而是直接使用的一个方法。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">moduleName</span><span class="p">,</span> <span class="p">{</span><span class="nx">foo</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../moduleName&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../moduleName&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">__esModule</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="k">default</span><span class="o">:</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="mi">42</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">foo</span><span class="o">:</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="mi">43</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">moduleName</span><span class="p">();</span> <span class="c1">// Will return 42
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">foo</span><span class="p">();</span> <span class="c1">// Will return 43
+</span></span></span></code></pre></div></div>
+<p>很明显这是不符合我么场景的。通过观察可知，jest.mock 的第二参数是工参数，返回了一个对象，然后通过调用个这个对象的方法，返回特定的 mock 数据。 那么对于我们这种情况，我们只需要返回一个 mock 后的方法即可。</p>
+<p>so, 方案可整理如下</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s2">&#34;jwt-decode&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s2">&#34;jwt-decode&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">jest</span><span class="p">.</span><span class="nx">fn</span><span class="p">().</span><span class="nx">mockImplementation</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s2">&#34;test&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">it</span><span class="p">(</span><span class="s2">&#34;jwt&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">token</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIiLCJleHAiOjEzOTMyODY4OTMsImlhdCI6MTM5MzI2ODg5M30.4-iaDojEVl0pJQMjrbM1EzUIfAZgsbK_kgnVyVxFSVo&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kr">const</span> <span class="nx">decoded</span> <span class="o">=</span> <span class="nx">jwt_decode</span><span class="p">(</span><span class="nx">token</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">expect</span><span class="p">(</span><span class="nx">decoded</span><span class="p">).</span><span class="nx">toBe</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
+<p>然后运行 test，通过。</p>
+<p>Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
+</li>
+<li></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

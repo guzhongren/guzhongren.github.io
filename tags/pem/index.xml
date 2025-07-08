@@ -1,4 +1,117 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Pem - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/pem/</link><description>Pem - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 08 Jan 2023 20:35:00 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/pem/" rel="self" type="application/rss+xml"/><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="数字证书定义">数字证书定义</h2>
-<p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，数字证书由经国家工信部认证的权威机构——CA 机构发行，是身份认证机构盖在数字身份证上的一个章或印(或者说加在数字身份证上的一个签名)，人们可以在网上用它来识别对方的身份。</p>]]></description></item></channel></rss>
+<p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，数字证书由经国家工信部认证的权威机构——CA 机构发行，是身份认证机构盖在数字身份证上的一个章或印(或者说加在数字身份证上的一个签名)，人们可以在网上用它来识别对方的身份。</p>
+<h3 id="作用">作用</h3>
+<ul>
+<li>信息的保密性</li>
+<li>交易者身份的确定性</li>
+<li>不可否认性</li>
+<li>不可修改性</li>
+</ul>
+<h2 id="常见标准">常见标准</h2>
+<h3 id="符合-pki-itu-t-x509-标准传统标准der-pem-cer-crt">符合 PKI ITU-T X509 标准，传统标准（.DER .PEM .CER .CRT）</h3>
+<p>X509 是数字证书的基本规范，而 P7 和 P12 则是两个实现规范，P7 用于数字信封，P12 则是带有私钥的证书实现规范。</p>
+<p>基本的证书格式，只包含公钥。
+x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
+<ul>
+<li>版本号</li>
+<li>证书序列号</li>
+<li>CA 标识符</li>
+<li>签名算法标识</li>
+<li>签发者名称</li>
+<li>证书有效期等信息。</li>
+</ul>
+<h3 id="符合-pkcs7-加密消息语法标准p7b-p7c-spc-p7r">符合 PKCS#7 加密消息语法标准(.P7B .P7C .SPC .P7R)</h3>
+<p>Public Key Cryptography Standards #7</p>
+<p>一般主要用来做数字信封。
+一般把证书分成两个文件，一个公钥、一个私钥，有 PEM 和 DER 两种编码方式</p>
+<ul>
+<li>PEM 比较多见，是纯文本的，一般用于分发公钥，看到的是一串可见的字符串，通常以.crt，.cer，.key 为文件后缀</li>
+<li>DER 是二进制编码</li>
+</ul>
+<h3 id="符合-pkcs10-证书请求标准p10">符合 PKCS#10 证书请求标准(.p10)</h3>
+<p>证书请求语法</p>
+<h3 id="符合-pkcs12-个人信息交换标准pfx-p12">符合 PKCS#12 个人信息交换标准（.pfx *.p12）</h3>
+<p>Public Key Cryptography Standards #12</p>
+<p>一种文件<strong>打包格式</strong>，为存储和发布用户和服务器私钥、公钥和证书指定了一个可移植的格式，是一种<strong>二进制</strong>格式，通常以**.pfx<strong>或</strong>.p12**为文件后缀名。
+使用 OpenSSL 的 pkcs12 命令可以创建、解析和读取这些文件。
+P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
+<h2 id="covert">Covert</h2>
+<p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
+<p></p>
+<h2 id="ssl-证书分类">SSL 证书分类</h2>
+<h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
+<p>只验证域名所有权，在浏览器中显示锁形标志；</p>
+<h4 id="适用">适用</h4>
+<ul>
+<li>个人网站或者小微企业使用</li>
+</ul>
+<h4 id="优点">优点</h4>
+<ul>
+<li>申请容易 - 颁发快 - 价格较低</li>
+</ul>
+<h4 id="缺点">缺点</h4>
+<ul>
+<li>证书中无法显示企业信息 - 安全性较差</li>
+</ul>
+<h3 id="ov-ssl-证书企业型">OV SSL 证书（企业型）</h3>
+<p>验证域名所有权以及申请的主体身份的合法性</p>
+<h4 id="适用-1">适用</h4>
+<p>中小型企业、企事业单位官网使用</p>
+<h4 id="优点-1">优点</h4>
+<ul>
+<li>安全性较高，可点击浏览器小锁标志查看证书信息</li>
+</ul>
+<h3 id="ev-ssl-证书增强型">EV SSL 证书（增强型）</h3>
+<p>Extended Validation（EV）证书是目前高信任级别的 SSL 证书</p>
+<h4 id="适用-2">适用</h4>
+<ul>
+<li>大型商业网站或者是对网站安全有较高要求的公司。可在绿色地址栏显示公司名称</li>
+</ul>
+<h3 id="优点-2">优点</h3>
+<ul>
+<li>证书颁发机构对此的审核比较严格</li>
+</ul>
+<h2 id="根据域名分类">根据域名分类</h2>
+<p></p>
+<h3 id="单域名证书">单域名证书</h3>
+<p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
+<h3 id="多域名证书">多域名证书</h3>
+<p>这种类型的证书可以同时保护多个域名，例如：同时保护www.abc.com、bcd.com；a.store.cn等; 不同品牌的多域名证书默认保护的域名数量不一样。</p>
+<h3 id="通配符证书">通配符证书</h3>
+<p>通配符证书可以保护一个域名下的同级子域名，并且不限制子域名的数量。例如：这类证书可以保护 free.abc.com，也可以保护 bbs.abc.com，也就是说他可以保护 abc.com 这个域名下的所有同级子域名</p>
+<h3 id="代码签名证书code-signing-certificates">代码签名证书（Code Signing Certificates）</h3>
+<p>为软件开发者提供代码软件数字签名的认证服务。通过对代码的数字签名可以减少软件下载时弹出的安全警告、保证代码不被恶意篡改、使厂商信息对下载用户公开可见等效果，从而建立良好的软件品牌信誉度。
+查看<a href="https://cloud.tencent.com/product/csc" target="_blank" rel="noopener noreffer ">腾讯 CSC</a> 一看便知。</p>
+<h2 id="ca">CA</h2>
+<p>要被别人信任，那么就得有个可靠的证书颁发机构。以下是一些比较著名的证书颁发机构。</p>
+<ul>
+<li><a href="https://www.digicert.com/" target="_blank" rel="noopener noreffer ">Digicert (收购 #Symantec )</a></li>
+<li><a href="https://www.cfca.com.cn/" target="_blank" rel="noopener noreffer ">中国金融认证中心(CFCA)</a></li>
+<li><a href="https://www.geotrust.com/" target="_blank" rel="noopener noreffer ">GeoTrust</a></li>
+<li>&hellip;</li>
+</ul>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+<li><a href="http://www.youdzone.com/signature.html" target="_blank" rel="noopener noreffer ">http://www.youdzone.com/signature.html</a></li>
+<li><a href="https://www.chinassl.net/ssltools/convert-ssl.html" target="_blank" rel="noopener noreffer ">https://www.chinassl.net/ssltools/convert-ssl.html</a></li>
+<li><a href="https://www.wosign.com/column/ssl_20211231.htm" target="_blank" rel="noopener noreffer ">https://www.wosign.com/column/ssl_20211231.htm</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

@@ -2,4 +2,84 @@
                 <img src="https://i.loli.net/2020/05/10/67DtxyJqFRz2YZH.png" referrerpolicy="no-referrer">
             </div><h2 id="引子">引子</h2>
 <p>有些时候，软件开发过程中没有将系统功能，且分开从而将系统拆分为多个子系统，或者在自身系统开发过程中有必须要依赖的外部服务，那么对外提供服务的时候就得让所有的子服务都得随时候命，
-排列起来就像古代战场的对战状态一样了。</p>]]></description></item></channel></rss>
+排列起来就像古代战场的对战状态一样了。</p>
+<p></p>
+<h2 id="存在的问题">存在的问题</h2>
+<p>对于这种情况存在什么问题呢？ 想象一个场景，作为老板或者业务对接方，我要集成和之前一样的系统，我要对接这么多接口么？如果对接方看到这么多的系统接口要对接，他肯定就放弃治疗了。</p>
+<p>总结一下存在的问题。</p>
+<ul>
+<li>对接系统接口较多，还可能对接很多个域名</li>
+<li>作为对接方，系统接口出了问题，我得看是哪个系统出问题了，还得去找对应的对接方</li>
+<li>不同的接口，可能存在不同的甩锅行为</li>
+<li>乱，新人很难很快上手</li>
+<li>多则乱，乱则要花很多钱</li>
+</ul>
+<h2 id="解决方案">解决方案</h2>
+<p>对于上面提到的各种问题，我们有什么解决方案呢？</p>
+<p>最近，微服务的概念比较流行， 我们想想一下前端微服务是怎么组合的？是不是将很多个子页面服务都集成在一个一面中，最终这个页面为用户服务。让这个页面作为对接点。结合上面的图，我们可以设计如下图的方案， 抽离一个中间层，我们暂时可以称之为 <code>Platform</code>，
+让所有的资源都从<code>Platform</code>进和出，将要集成的各种服务屏蔽在<code>Platform</code>后面，对于对接方，他永远只知道一个<code>Platform</code>， 这样集成起来就好多了。</p>
+<p></p>
+<h2 id="coding">Coding</h2>
+<p>方案也有了，那么接下来就是撸起袖子加油干的时候了。</p>
+<p>因为 <code>Platform</code> 会是一个后端的工程，其对外提供各种接口和资源；最近<code>Deno</code>比较🔥，为了尝试<code>真香定律</code>， 我们就拿它来实践一下。</p>
+<h3 id="业务">业务</h3>
+<p>对于后端请求另一个后端接口，将请求的结果再返回给请求者，这个很容易实现， 我们就不实现了；那么我们来做一个不同的操作。</p>
+<h4 id="业务流程">业务流程</h4>
+<ul>
+<li>某个后端提供前端资源， 这个资源是由这个后端服务团队维护，且这个服务需要在前端使用</li>
+</ul>
+<p>在此， 我们将这个后端资源暂时抽象为<code>jquery.js</code>, 提供 jquery.js 服务的团队就是被我们 Platform 屏蔽起来的服务团队， 对我们本次实践来说就是某一个提供 Jquery 的 CDN 服务商。</p>
+<p>具体的 <a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">Code</a> 在此，如有需要可随时查看。在实现过程中也有两种方案，</p>
+<p>资源请求的前端页面代码如下，<strong>重点就是 <code>script</code>标签中<code>src</code>的获取是一个 <code>GET</code>请求！</strong></p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-html">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://localhost:8000/custom/domain/jquery.js&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+<h5 id="方案-1">方案 1</h5>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-Typescript">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Typescript" data-lang="Typescript"><span class="line"><span class="cl"><span class="c1">// handlers/fetchJquery.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">redirect</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">({</span> <span class="nx">response</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">response</span>: <span class="kt">Response</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">response</span><span class="p">.</span><span class="nx">redirect</span><span class="p">(</span><span class="nx">jqueryUrl</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<p>这种方案是将资源的请求转发到 jquery 的资源服务地址上，让浏览器自动 302 跳转到该地址，进行资源获取。</p>
+<h5 id="方案-2">方案 2</h5>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-Typescript">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Typescript" data-lang="Typescript"><span class="line"><span class="cl"><span class="c1">// handlers/fetchJquery.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">getContent</span> <span class="o">=</span> <span class="kr">async</span> <span class="p">({</span> <span class="nx">response</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">response</span>: <span class="kt">Response</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">response</span><span class="p">.</span><span class="nx">body</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">fetchResponse</span><span class="p">(</span><span class="nx">jqueryUrl</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// services/fetchResource.ts
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">export</span> <span class="k">default</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">url</span>: <span class="kt">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="nx">then</span><span class="p">((</span><span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">res</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span></span></span></code></pre></div></div>
+<p>这种方案是将资源请求到服务器，然后将资源再返回给前端。</p>
+<h2 id="总结">总结</h2>
+<p>对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。</p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
+<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
+<li><a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">3.ForwardJS</a></li>
+<li><a href="https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw" target="_blank" rel="noopener noreffer ">4. 了不起的 Deno 实战教程</a></li>
+</ul>
+<hr>
+<p></p>
+]]></description></item></channel></rss>

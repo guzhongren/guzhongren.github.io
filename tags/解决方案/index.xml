@@ -1,4 +1,65 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>解决方案 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link><description>解决方案 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 14 Jan 2022 19:03:28 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" rel="self" type="application/rss+xml"/><item><title>依旧免费使用 Docker Desktop 的方案</title><link>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</link><pubDate>Fri, 14 Jan 2022 19:03:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E4%BE%9D%E6%97%A7%E5%85%8D%E8%B4%B9%E4%BD%BF%E7%94%A8docker-desktop%E7%9A%84%E6%96%B9%E6%A1%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a> 公司在 2021 年 8 月更新了 Docker Desktop 的 <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" target="_blank" rel="noopener noreffer ">使用条款</a>，决定对大企业（员工超过 250 人或者年收入超过 1 千万美元）用户（包含员工的个人性质使用）开始执行收费订阅的策略，于 2021 年 8 月 31 日生效，同时，给了使用者一个缓冲时间，延续到 2022 年 1 月 31 日，在此之前可以继续免费使用。</p>]]></description></item></channel></rss>
+<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a> 公司在 2021 年 8 月更新了 Docker Desktop 的 <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" target="_blank" rel="noopener noreffer ">使用条款</a>，决定对大企业（员工超过 250 人或者年收入超过 1 千万美元）用户（包含员工的个人性质使用）开始执行收费订阅的策略，于 2021 年 8 月 31 日生效，同时，给了使用者一个缓冲时间，延续到 2022 年 1 月 31 日，在此之前可以继续免费使用。</p>
+<p>很明显，开源公司在这个伸手的年代活不下去了，还有最近比较火的 <a href="https://github.com/Marak/Faker.js" target="_blank" rel="noopener noreffer ">Facker.js</a> 删库事件。对删库这事多说几句，因为自家火灾，作者房子被烧了，然后他想让使用自己辛辛苦苦免费维护的 Facker.js 的这些商业公司来为自己捐款改善自己的生活环境，并继续维护 Facker.js, 但很多公司不鸟他，他只能删库来抱怨。要说呀，用这些库的人的人都是开发者，安装完你开发的库，然后就开开心心的写代码去了，除非不会用的库，不然没人去看你的 README 的。更何况你仓库边上的捐款信息。</p>
+<h2 id="问题">问题</h2>
+<p>如果你现在下载最新的或者旧版的 Docker 安装包，安装包的使用条款都已经被悄悄的动了手脚，里面的 Liscense 的条款已经有了上面说的内容了。所以说你还是会被要求收费的。除非你在一个小公司，人数和收入不在条款之内，那你就开心的用吧。</p>
+<p>但是还有一部分人就在这个条款的要求范围之内了。</p>
+<blockquote>
+<p>安全无小事。</p>
+</blockquote>
+<blockquote>
+<p>雪崩的时候，没有一片雪花是无辜的。</p>
+</blockquote>
+<p>市面上还是有不少 Docker 的替代方案，比如 <a href="https://github.com/containers/podman" target="_blank" rel="noopener noreffer ">podman</a>, <a href="https://github.com/lima-vm/lima" target="_blank" rel="noopener noreffer ">lima</a> 和 <a href="https://github.com/abiosoft/colima" target="_blank" rel="noopener noreffer ">colima</a>, 但用起来却没有 Docker 这么流畅，舒服。</p>
+<h2 id="解决方案">解决方案</h2>
+<p>使用 2021 年 8 月 30 日之前的任何版本都是可以的，所以下载之前的旧版并且不升级就可以了。</p>
+<h3 id="安装旧版-docker-desktop">安装旧版 Docker Desktop</h3>
+<p>我在百度网盘有备份 Mac 版 3.5.2 版本的 Docker Desktop 副本，可以下载安装。</p>
+<blockquote>
+<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p>
+</blockquote>
+<p>如果觉得慢，恰好我也有空，我可以将我本地的副本直接隔空给你。</p>
+<h3 id="验证安装的-docker-副本的修改时间">验证安装的 Docker 副本的修改时间</h3>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">    ~/Downloads                                                                               19:54:48 
+</span></span><span class="line"><span class="cl">❯ ls -al /Applications/Docker.app/Contents/Resources/LICENSE.rtf /Applications/Docker.app/Contents/MacOS/Docker
+</span></span><span class="line"><span class="cl">.rwxr-xr-x zhongren.gu admin <span class="m">16</span> MB Thu Jul  <span class="m">8</span> 01:58:59 <span class="m">2021</span>  /Applications/Docker.app/Contents/MacOS/Docker
+</span></span><span class="line"><span class="cl">.rw-r--r-- zhongren.gu admin <span class="m">19</span> KB Thu Jul  <span class="m">8</span> 01:59:00 <span class="m">2021</span>  /Applications/Docker.app/Contents/Resources/LICENSE.rtf</span></span></code></pre></div></div>
+<p>可以看到，两个文件最后的修改时间是 2021 年 6 月 8 日，在 2021 年 8 月 30 日之前，所以是符合我们的要求的。</p>
+<h3 id="禁止-docker-升级">禁止 Docker 升级</h3>
+<p>安装完旧版的 Docker 之后，要禁止 Docker 升级，这样，Docker 的使用条款就永远是旧的，Docker 的律师也拿你没办法喽。</p>
+<p>在这通过命令行修改 host 文件，使 <code>desktop.docker.com</code> 指向 <code>127.0.0.1</code>, 不然 Docker 升级服务访问真正的 Docker 服务器。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts</span></span></code></pre></div></div>
+<h3 id="验证未升级">验证未升级</h3>
+<p></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>

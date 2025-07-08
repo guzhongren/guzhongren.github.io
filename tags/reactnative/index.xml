@@ -1,4 +1,68 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>ReactNative - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/reactnative/</link><description>ReactNative - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 14 Oct 2019 21:36:26 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/reactnative/" rel="self" type="application/rss+xml"/><item><title>将函数放在对象的 Value 上，然后传给组件执行，实现组件抽象</title><link>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</link><pubDate>Mon, 14 Oct 2019 21:36:26 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3811731/pexels-photo-3811731.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="情景">情景</h2>
-<p>在我们开发中，我们通常需要对某一系列的组件 Coding, 但我们是程序员啊，我们怎么能容忍代码重复出现的坏味道呢。所以，对于一些列相同的操作我们就要用到循环处理了。</p>]]></description></item></channel></rss>
+<p>在我们开发中，我们通常需要对某一系列的组件 Coding, 但我们是程序员啊，我们怎么能容忍代码重复出现的坏味道呢。所以，对于一些列相同的操作我们就要用到循环处理了。</p>
+<h2 id="目标">目标</h2>
+<p></p>
+<p>我们需要将底部两个按钮 <code>新建询价</code>和 <code>采购助手</code>展示出来，并且点击他们的操作后有不同的交互。</p>
+<h2 id="coding">coding</h2>
+<p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">image</span><span class="o">:</span> <span class="nx">images</span><span class="p">.</span><span class="nx">tabs</span><span class="p">.</span><span class="nx">newEnquiryTool</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;新建询价&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">onPress</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">controlToolVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Actions</span><span class="p">.</span><span class="nx">newEnquiry</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">index</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">image</span><span class="o">:</span> <span class="nx">images</span><span class="p">.</span><span class="nx">tabs</span><span class="p">.</span><span class="nx">purchaseAsstant</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;采购助手&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">onPress</span><span class="o">:</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">Chatlogin</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">data</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">              <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">getAccountInfo</span><span class="p">(</span><span class="nx">_</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">global</span><span class="p">.</span><span class="nx">USER_INFO</span><span class="p">,</span> <span class="s1">&#39;imInfo.mpcAccId&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">chatInfo</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                  <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">controlToolVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                  <span class="nx">Actions</span><span class="p">.</span><span class="nx">chat</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">session</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                      <span class="nx">contactId</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;31231&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                      <span class="nx">sessionType</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span>
+</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">                <span class="p">})</span>
+</span></span><span class="line"><span class="cl">                <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">          <span class="p">})</span>
+</span></span><span class="line"><span class="cl">        <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span></span></span></code></pre></div></div>
+<p>在 render 函数里我们循环即可实现代码的抽象</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-js">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">tools</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tool</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">TouchableOpacity</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">toolWrapper</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">index</span><span class="p">}</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">onPress</span><span class="p">}</span> <span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">Image</span> <span class="nx">source</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">image</span><span class="p">}</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">         <span class="o">&lt;</span><span class="nx">Text</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/Text&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="err">/TouchableOpacity&gt;))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+<h2 id="总结">总结</h2>
+<p>代码总是可以解决很多问题，在 Coding 时，应该及时重构，将代码中的坏味道及时剔除，为以后业务功能开发解决技术债。</p>
+<h2 id="引用">引用</h2>
+<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
+<hr>
+<p></p>
+]]></description></item></channel></rss>
