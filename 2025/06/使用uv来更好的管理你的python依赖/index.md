@@ -1,6 +1,8 @@
 # 使用uv来更好的管理你的python依赖
 
 
+This message is used to verify that this feed (feedId:74621993392456704) belongs to me (userId:74619979585483776). Join me in enjoying the next generation information browser https://folo.is.
+
 ## 痛点
 
 在Python 项目开发过程中，我们肯定会用到`requirements.txt` 来管理项目中所用到的第三方库，这么多年都是这么过来的，那有什么痛点呢？
