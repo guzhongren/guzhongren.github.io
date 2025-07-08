@@ -1,1 +1,35 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>SQLLite - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/sqllite/</link><description>SQLLite - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 01 Sep 2019 10:56:39 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/sqllite/" rel="self" type="application/rss+xml"/><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description/></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>SQLLite - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/sqllite/</link><description>SQLLite - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 01 Sep 2019 10:56:39 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/sqllite/" rel="self" type="application/rss+xml"/><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://i.loli.net/2020/03/29/JEtYLcPTCDIU2bs.png" referrerpolicy="no-referrer">
+            </div><!-- TOC -->
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B" rel="">简介</a></li>
+<li><a href="#%E7%9B%AE%E6%A0%87" rel="">目标</a></li>
+<li><a href="#%E7%9B%AE%E7%9A%84" rel="">目的</a></li>
+<li><a href="#coding" rel="">Coding</a>
+<ul>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" rel="">目录结构</a></li>
+<li><a href="#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0" rel="">封装 error 函数</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93" rel="">安装 SQLLite 库及其他库</a></li>
+<li><a href="#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" rel="">申明 DB 全局变量</a></li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93" rel="">初始化数据库</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C" rel="">用户模型构建及原子操作</a>
+<ul>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B" rel="">用户模型</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E" rel="">新增</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4" rel="">删除</a></li>
+<li><a href="#%E4%BF%AE%E6%94%B9" rel="">修改</a></li>
+<li><a href="#%E6%9F%A5%E8%AF%A2" rel="">查询</a></li>
+</ul>
+</li>
+<li><a href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95" rel="">在应用中启动并调用用户模型的方法</a></li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA" rel="">运行结果展示</a></li>
+</ul>
+</li>
+<li><a href="#%E6%80%BB%E7%BB%93" rel="">总结</a></li>
+<li><a href="#reference" rel="">Reference</a></li>
+<li><a href="#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E" rel="">Disclaimer</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="简介">简介</h2>
+<p><a href="about:blank" rel="">SQLite</a> 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用 SQLLite 也相当简单，只需要安装 SQLLite 的 Golang  包即可使用；
+Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">Golang</a> 有一定的了解。</p>]]></description></item></channel></rss>
