@@ -1,4 +1,4 @@
-<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>解决Podman未挂载Volume的问题 - 谷中仁的博客</title><meta name=Description content="谷中仁的博客"><meta property="og:url" content="https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/">
+<!doctype html><html lang=zh-CN><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>解决Podman未挂载Volume的问题 - 谷中仁的博客</title><meta name=Description content="最近的总结或者思考..."><meta property="og:url" content="https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/">
 <meta property="og:site_name" content="谷中仁的博客"><meta property="og:title" content="解决Podman未挂载Volume的问题"><meta property="og:description" content="问题 在初次使用podman 挂载本地文件系统的时候通常会报如下的一个错误提示；
 Error: statfs /Users/userName/yyy/xxx: no such file or directory
 解决方案 为 Podman 虚拟机挂载 $HOME 目录并且重启 podman machine 即可。
