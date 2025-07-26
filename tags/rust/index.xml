@@ -46,14 +46,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Rust Doc 小记</title><link>https://guzhongren.github.io/2020/04/rust-doc%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Thu, 16 Apr 2020 22:56:55 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/rust-doc%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
@@ -106,22 +99,8 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cargo doc --open</span></span></code></pre></div></div>
 <p>执行如上命令，cargo 会根据注释生成 web 网页文档，并且自动打开，如下是上面文档生成的结果。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg"
-        data-srcset="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg, https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg 1.5x, https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg"
-        title="rust-doc.jpg" /></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg"
-        data-srcset="https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg, https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg 1.5x, https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg"
-        title="rust-doc-fn.jpg" /></p>
+<p><img src="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg" alt="rust-doc.jpg" /></p>
+<p><img src="https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg" alt="rust-doc-fn.jpg" /></p>
 <h2 id="总结">总结</h2>
 <ul>
 <li>Rust 中写的注释代码，可以用来做方法示例，或者当作测试，如果是测试，运行<code>cargo test</code>	, cargo	不仅会测试 tests 文件夹下的测试案例，还会寻找注释中的测试。</li>
@@ -141,14 +120,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Rust 中闭包的写法</title><link>https://guzhongren.github.io/2020/04/rust%E4%B8%AD%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%99%E6%B3%95.zh/</link><pubDate>Tue, 07 Apr 2020 22:26:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/rust%E4%B8%AD%E9%97%AD%E5%8C%85%E7%9A%84%E5%86%99%E6%B3%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3609267/pexels-photo-3609267.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500" referrerpolicy="no-referrer">
             </div><p>在鲁迅的文章《孔乙己》中说，茴香豆的茴字有好几种写法，记得没错的话应该是四种，具体哪四种请参考下文引用。</p>
@@ -225,22 +197,8 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
-]]></description></item><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        data-srcset="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260, https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 1.5x, https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 2x"
-        data-sizes="auto"
-        alt="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        title="Photo by La Miko from Pexels" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
+]]></description></item><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by La Miko from Pexels" /></p>
 <h2 id="cargotoml">Cargo.toml</h2>
 <p><code>cargo.toml</code>是 Rust 包管理器 <code>cargo</code> 的清单文件。这个文件包 <code>name</code>、 <code>version</code> 和包的依赖，在 Rust 中，我们一般称之为 <code>crate</code>。</p>
 <p>在示例中给出了一系列信息，但是我们主要讨论如下三点：</p>
@@ -308,14 +266,7 @@
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" referrerpolicy="no-referrer">
             </div><h2 id="初始化工程">初始化工程</h2>
@@ -635,14 +586,7 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png"
-        data-srcset="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png, https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png 1.5x, https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png"
-        title="markdown editor" /></p>
+<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
 <h2 id="在线体验">在线体验</h2>
 <p><a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">Markdown editor</a>: <a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">https://andorlab.github.io/WebAssembly/</a></p>
 <h2 id="后续">后续</h2>
@@ -656,22 +600,8 @@ index.js  897 KiB   index  [emitted]  index
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
-]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        data-srcset="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260, https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 1.5x, https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 2x"
-        data-sizes="auto"
-        alt="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        title="Photo by Jan Kopřiva from Pexels" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
+]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jan Kopřiva from Pexels" /></p>
 <h2 id="插件">插件</h2>
 <p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>
 <ul>
@@ -710,32 +640,11 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div></div>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png"
-        data-srcset="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png, https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png 1.5x, https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png"
-        title="launch.json" /></p>
+<p><img src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png" alt="launch.json" /></p>
 <h2 id="调试">调试</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png"
-        data-srcset="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png, https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png 1.5x, https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png"
-        title="Debug" /></p>
+<p><img src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png" alt="Debug" /></p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

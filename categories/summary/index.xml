@@ -24,14 +24,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp"
-        title="dev-with-strapi" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -219,26 +212,12 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -413,14 +392,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp"
-        title="CFR" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -527,26 +499,12 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -564,26 +522,12 @@
 <p>而Google 全家桶的好处就是其各个应用之间调用协作非常方便。那么我们就用Google Sheet 和Google Chat 来实现一个简单的机器人应用来干上面各种麻烦的事吧。</p>
 <h2 id="google-chat-webhooks">Google Chat Webhooks</h2>
 <p>Google Chat 的Webhooks 允许其他应用程序调用，并可以对消息进行<code>创建</code>、<code>读取</code> 、<code>更新</code> 和<code>删除</code>。如同对数据库的增删改差一般。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://developers.google.com/static/chat/images/arch-pat-notifier.svg"
-        data-srcset="https://developers.google.com/static/chat/images/arch-pat-notifier.svg, https://developers.google.com/static/chat/images/arch-pat-notifier.svg 1.5x, https://developers.google.com/static/chat/images/arch-pat-notifier.svg 2x"
-        data-sizes="auto"
-        alt="https://developers.google.com/static/chat/images/arch-pat-notifier.svg"
-        title="Google Chat Webhooks" /></p>
+<p><img src="https://developers.google.com/static/chat/images/arch-pat-notifier.svg" alt="Google Chat Webhooks" /></p>
 <p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook" target="_blank" rel="noopener noreffer ">这里</a>; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
 <h2 id="google-sheet-apps-script">Google Sheet Apps Script</h2>
 <p>Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google Sheet 最强大的地方在于他支持自定义脚本，虽然其名为<code>Apps Script</code>, 文件格式为<code>.gs</code>， 但是其就是一些简单的<code>JavaScript</code> API, 其请求也是同步的API, 而且没有跨域问题，这就让其作为一个机器人有了初步条件。</p>
 <p>当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp"
-        title="Google Sheet API Structure" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp" alt="Google Sheet API Structure" /></p>
 <p>从上图中可以看到</p>
 <table>
   <thead>
@@ -619,14 +563,7 @@
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
 <h3 id="创建google-chat-webhooks">创建Google Chat Webhooks</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp"
-        title="Google chat webhooks" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp" alt="Google chat webhooks" /></p>
 <p>点击创建好的Webhooks, 拷贝URL即可。</p>
 <h3 id="创建google-sheet-轮转数据">创建Google Sheet 轮转数据</h3>
 <p>新建Google Sheet，直接写入如下数据</p>
@@ -728,24 +665,10 @@ xiaoming10</code></pre></div>
 <li>直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。</li>
 <li>定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。</li>
 </ol>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp"
-        title="Trigger of Apps Script" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp" alt="Trigger of Apps Script" /></p>
 <h3 id="效果">效果</h3>
 <p>可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp"
-        title="Chatbot message result" /></p>
+<img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp" alt="Chatbot message result" /></p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
 <h2 id="引用">引用</h2>
@@ -757,26 +680,12 @@ xiaoming10</code></pre></div>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -852,26 +761,12 @@ xiaoming10</code></pre></div>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -949,14 +844,7 @@ xiaoming10</code></pre></div>
 <p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
 <p>有服务器实现广泛使用且更安全。</p>
 <h3 id="authorization-code-实现的流程图">Authorization Code 实现的流程图</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg"
-        title="OAuth 2.0 Flow" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg" alt="OAuth 2.0 Flow" /></p>
 <h2 id="oidc">OIDC</h2>
 <p>OAuth2.0 是一种授权协议，而不是身份认证协议。OIDC 才是身份认证协议，而且是基于 OAuth 2.0 来执行用户身份认证的互通协议。更概括地说，OIDC 就是直接基于 OAuth 2.0 构建的身份认证框架协议。</p>
 <h3 id="其3个角色与oauth20的4个角色的对应关系">其3个角色与OAuth2.0的4个角色的对应关系</h3>
@@ -982,14 +870,7 @@ xiaoming10</code></pre></div>
 <li>iat，颁发令牌的时间戳</li>
 </ul>
 <h3 id="oidc-的流程图">OIDC 的流程图</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg"
-        title="OIDC Flow" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg" alt="OIDC Flow" /></p>
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow" target="_blank" rel="noopener noreffer ">Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow</a></li>
@@ -999,26 +880,12 @@ xiaoming10</code></pre></div>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -1073,26 +940,12 @@ xiaoming10</code></pre></div>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -1140,14 +993,7 @@ x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
 P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
 <h2 id="covert">Covert</h2>
 <p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp"
-        title="Digital-Cert" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
 <h2 id="ssl-证书分类">SSL 证书分类</h2>
 <h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
 <p>只验证域名所有权，在浏览器中显示锁形标志；</p>
@@ -1182,14 +1028,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>证书颁发机构对此的审核比较严格</li>
 </ul>
 <h2 id="根据域名分类">根据域名分类</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://www.wosign.com/column/images/ssl_20211231_1.png"
-        data-srcset="https://www.wosign.com/column/images/ssl_20211231_1.png, https://www.wosign.com/column/images/ssl_20211231_1.png 1.5x, https://www.wosign.com/column/images/ssl_20211231_1.png 2x"
-        data-sizes="auto"
-        alt="https://www.wosign.com/column/images/ssl_20211231_1.png"
-        title="Domain" /></p>
+<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
 <h3 id="单域名证书">单域名证书</h3>
 <p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
 <h3 id="多域名证书">多域名证书</h3>
@@ -1217,26 +1056,12 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -1499,26 +1324,12 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -1543,14 +1354,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 </ul>
 </blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
-        data-srcset="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80, https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80 1.5x, https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
-        title="Photo by Josep Martins" /></p>
+<p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
 <ul>
 <li>它可以记录某些决定背后的动机。</li>
@@ -1566,14 +1370,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>梳理业务</li>
 </ul>
 <p>ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以文字和图表等的形式记录下来，可以更好地辅助我们理解业务，共享知识。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80"
-        data-srcset="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80, https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80 1.5x, https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80"
-        title="Photo by Brandi Redd" /></p>
+<p><img src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80" alt="Photo by Brandi Redd" /></p>
 <h2 id="什么情况下要使用-adr">什么情况下要使用 ADR</h2>
 <p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
 <h2 id="怎么写呢">怎么写呢</h2>
@@ -1702,14 +1499,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li><a href="https://adr.github.io/eadlsync/" target="_blank" rel="noopener noreffer ">eadlsync:https://adr.github.io/eadlsync/</a> - 将嵌入式架构决策记录与架构决策存储库同步。</li>
 <li><a href="https://github.com/adr/serepo" target="_blank" rel="noopener noreffer ">SE Repo: https://github.com/adr/serepo</a> - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
 </ul>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
-        data-srcset="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80, https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80 1.5x, https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80 2x"
-        data-sizes="auto"
-        alt="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80"
-        title="Photo by Sheldon Liu" /></p>
+<p><img src="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Sheldon Liu" /></p>
 <h2 id="总结">总结</h2>
 <p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
 <p>建议：</p>
@@ -1740,38 +1530,17 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>我的知识图谱</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</link><pubDate>Wed, 08 Apr 2020 22:23:46 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" referrerpolicy="no-referrer">
             </div><h2 id="插曲">插曲</h2>
 <p>去年与前 ThoughtWorks 咨询师 <code>李小波</code>的一次线下交流中，学习到了总结知识的一点技巧，非常受用，并且在交流后得到了小波老西自己整理的<code>知识图谱</code>，在自己不断积累下，有文字，也又图片。最近在整理知识，同时也在乱搞知识分享平台。自己虽然有这个博客，但是感觉有些东西不是博客所能呈现的，比如思维导图，我收集的各种模型图等。</p>
 <p>之前为了给社区做宣传海报等内容，学会了 Adobe XD, 去年年中前，中国区是可以访问 Adobo XD 的云文档的，后半年就不行了，必须要重新注册或者更换绑定到国外的初始注册站点才可以使用云文档，这也导致了我有一部分资源永远的留在了遥不可及的 Adobe 服务器上。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg"
-        data-srcset="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg, https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg 1.5x, https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg"
-        title="Adobe 云文档。png" /></p>
+<p><img src="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg" alt="Adobe 云文档。png" /></p>
 <p>对我这种穷人很不友好， 😂😂😂😂😂😂😂, 那么我就得需要找个地方薅羊毛了。</p>
 <h2 id="figma">Figma</h2>
 <p>某天记起听过的一篇<code>anyway</code>的 podcast 里提到过 <a href="https://www.figma.com/" target="_blank" rel="noopener noreffer ">Figma</a>, 据说有免费的资源可以使用，上去一看，果然<code>for up to 2 editors and 3 projects</code></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg"
-        data-srcset="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg, https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg 1.5x, https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg"
-        title="figma-pricing.jpg" /></p>
+<p><img src="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg" alt="figma-pricing.jpg" /></p>
 <p>这样的免费套餐对于我这样的小菜鸟完全足够用了，而且我还邀请了另一个小伙伴，人数刚刚好，😄 当然我也不怕资源丢失，我把我的设计文档同步到了 icloud 上，再也不用担心 Adobe XD 的悲剧了。</p>
 <h2 id="附加值">附加值</h2>
 <p>选了 Figma，其实还有其他原因；</p>
@@ -1785,14 +1554,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="成果">成果</h2>
 <p>经过整理，我将我的知识模型总结放在了 Figma 上，地址如下，并将其分享到了<code>zeplin</code>上，可以在<code>zeplin</code>上在线查看，学习或者别人查看的时候也是很方便。</p>
 <p><a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d" target="_blank" rel="noopener noreffer ">知识图谱</a></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg"
-        data-srcset="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg, https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg 1.5x, https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg"
-        title="知识图谱。jpg" /></p>
+<p><img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" alt="知识图谱。jpg" /></p>
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
@@ -1803,12 +1565,5 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

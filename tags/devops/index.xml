@@ -26,26 +26,12 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -58,14 +44,7 @@
 <p>In modern software development, we leverage public images as base images to build up applications images quickly and deploy them into the production environment.</p>
 <p>With more and more applications containerized, container security is also becoming more important. To use vulnerability scanners, we can bring forward the security feedback cycle which is traditionally done towards the end. This aligns closely with our belief that by adopting agile, we will be able to get faster feedback. This is what we are doing in order to achieve it.</p>
 <h2 id="pain-points-on-application-environment-security">Pain points on application environment security</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png"
-        title="Pain points on application environment security" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" alt="Pain points on application environment security" /></p>
 <p>Now, we use advanced technology to build up our application, like NodeJS, Java and so on,  then store the code repository on git platforms like GitHub, Gitlab and so on. Code repository consists of our code and dependencies; For dependencies, we can use tools to ensure security like npm audit of NodeJS, and Dependabot of GitHub; And for our business code, there is another security tool to scan, like <a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">SoneQube</a>.</p>
 <p>So, for the dependencies and our business code, those things are under our control, we can ensure the application’s security and get fast feedback and build confidence by using all kinds of tools before we deploy our application into the production environment. As you know, the basic system environment which our application runs is out of our control. Let’s consider from the opposite side, if we can’t ensure the security of our application and its system environment, it will lead to unexpected problems, like hackers attack, leakage of user information, property loss, what&rsquo;s more, cause damage to the reputation of the company. So, it is important to ensure the security of our product.</p>
 <h2 id="the-value-of-keeping-container-image-secure">The value of keeping container image secure</h2>
@@ -74,14 +53,7 @@
 <h3 id="build-our-respected-brand">Build our respected brand</h3>
 <p>The work we do is to make our clients succeed. Only if our customers succeed, we can succeed. So, we did not only archive business value, but also protect the security of the product.</p>
 <h2 id="best-2-solutions-to-keep-container-images-secure">Best 2 solutions to keep container images secure</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png"
-        title="Best 2 solutions to keep container images secure" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png" alt="Best 2 solutions to keep container images secure" /></p>
 <h3 id="solution-1-scan-the-image-at-a-regular-time-in-the-image-registry">Solution 1: Scan the image at a regular time in the image registry</h3>
 <p>In this way, we need to add a security scanner for the images&rsquo; registry. The scanner might be a cron job or an operable step that can be triggered by the operator.</p>
 <p>It will be automatically triggered by a cron job when a special time. For example, docker hub scans their official registry at a special time, it will send an alert to the organizer when there are any vulnerabilities.</p>
@@ -165,34 +137,13 @@
 it will check the update to keep the metadata latest when the tool runs again. At the same time, the usage of Trivy is more friendly, because we can filter the different severity which you can specify, but it is not allowed for Anchore Engine.</p>
 <p>March 16, 2020, Aqua Security, the leading platform provider for securing cloud-native applications and infrastructure, announced today that its open-source Trivy vulnerability scanner is being added as an integrated option in widely used cloud-native platforms, CNCF’s Harbor registry and Mirantis Docker Enterprise.  You can find this post <a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family" target="_blank" rel="noopener noreffer ">here</a>.</p>
 <h2 id="trivy-in-thoughtworks-technology-radar-volume-23">Trivy in Thoughtworks Technology radar volume 23</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png"
-        title="Trivy in TW tech radar" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png" alt="Trivy in TW tech radar" /></p>
 <p>Thoughtworks Technology Radar is famous for accurately responding to technological trends; In the latest technology radar, Thoughtworks put the Trivy into the <strong>adopt</strong> area, which means Trivy is useful, valuable and practicable.</p>
 <h2 id="inner-working-of-trivy">Inner working of Trivy</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png"
-        title="Inner working of Trivy" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png" alt="Inner working of Trivy" /></p>
 <p>Before we use Trivy, we need to know how Trivy works inside. As you see, there are 2 steps; first, we run the Trivy command, Trivy will download the vulnerability DB from the <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">NVD</a> website into the local machine. And then Trivy uses the vulnerability data to scan every layer of your image.</p>
 <h2 id="how-to-use-trivy">How To Use Trivy</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png"
-        title="trivy in pipeline" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png" alt="trivy in pipeline" /></p>
 <h3 id="pipeline">Pipeline</h3>
 <p>Now we have to know how Trivy works inside, we can integrate it into our pipeline; you can see this pipeline, first, we build code into docker image, next, Trivy will check the vulnerabilities in the docker image that build from the last step; if there is no vulnerability, the image will be pushed to the image registry and deploy it to the production environment. If there are some vulnerabilities, the pipeline will be broken by the Trivy command line, you need to fix the vulnerability to make the pipeline green.</p>
 <h3 id="usage-of-trivy">Usage of Trivy</h3>
@@ -232,24 +183,10 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
 <p>In this build job, we use <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nignx:1.18</a> as a base image to build application images. This build failed because there are some vulnerabilities.</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png"
-        title="Trivy Dashboard Failed" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
 <p>Now, we must fix this issue to continue delivery. There are 2 steps to do, firstly, we should use the latest Nginx image as a base image; secondly, we could ignore unfixed vulnerabilities, because maybe we are unable to fix vulnerabilities at the system level. You can review the change of code by clicking this link:
 <a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png"
-        title="Trivy Dashboard Successfully" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png" alt="Trivy Dashboard Successfully" /></p>
 <h2 id="summary">Summary</h2>
 <p>Security is a very important issue no matter where you are. We can <strong>Shift Left Security</strong>, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.</p>
 <h2 id="引用">引用</h2>
@@ -272,26 +209,12 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -304,14 +227,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>在现代软件开发中， 我们会使用一些公共镜像作为基础镜像来快速构建我们的应用镜像，并将其部署到生产环境中。</p>
 <p>随着越来越多的应用程序被容器化，容器安全也随之变得越来越重要。在项目的 Pipeline 中， 我们可以使用漏洞扫描器（Vulnerability Scanners）进行扫描并提前获得反馈，实现 “<strong>安全左移</strong>” ，也可以更好的实践敏捷。</p>
 <h2 id="基于容器的应用程序的安全痛点">基于容器的应用程序的安全痛点</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png"
-        title="基于容器的应用程序的安全痛点" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" alt="基于容器的应用程序的安全痛点" /></p>
 <p>现在，我们使用先进的技术来构建我们的应用程序，如 NodeJS、 Java 和 Kotlin 等，然后将代码库存储在托管的 Git 平台上，如 GitHub、Gitlab 等。代码库由我们的业务代码和依赖关系组成；对于依赖项，我们可以使用专业的扫描工具来确保安全，比如 NodeJS 的 npm audit , GitHub 的 Dependabot；至于我们的业务代码，可以使用其他的一些安全工具可以扫描，比如 <a href="https://www.sonarqube.org/" target="_blank" rel="noopener noreffer ">SoneQube</a> 等。</p>
 <p>因此，对于依赖（ Dependencies）和我们的业务代码，这些都在我们的控制之下，我们可以确保应用程序的安全性，并且在 Pipeline 上获得快速反馈；同时在我们将应用程序部署到生产环境之前可以通过使用各种工具建立信心。但是，通常情况下我们的应用程序运行的系统环境是不受我们控制的，可能存在潜在的安全漏洞。在这我们可以换位思考一下，如果我们不能保证我们的应用程序运行的系统的环境安全，就会导致各种各样意想不到的问题，如黑客攻击、用户信息泄露、财产损失，更会对公司的声誉造成损害。所以，确保我们产出物（Artifact）的安全是很重要的。</p>
 <h2 id="保持容器镜像安全的价值">保持容器镜像安全的价值</h2>
@@ -320,14 +236,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h3 id="打造受人尊敬的品牌branding">打造受人尊敬的品牌（Branding）</h3>
 <p>我们的工作就是让我们的公司或客户成功。只有公司或客户成功，我们才能成功。因此，我们不仅要实现业务价值，还需要保护了产品的安全。用户使用安全的产品或者服务得到更大的价值，公司或者客户的品牌效应就会扩大，从而带来更大的价值。品牌及价值。</p>
 <h2 id="保持容器镜像安全的-2-个最佳方案">保持容器镜像安全的 2 个最佳方案</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png"
-        title="保持容器镜像安全的 2 个最佳方案" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png" alt="保持容器镜像安全的 2 个最佳方案" /></p>
 <h3 id="方案-1-在镜像注册表中定期扫描">方案 1： 在镜像注册表中定期扫描</h3>
 <p>通过这种方式，我们需要为镜像注册表添加一个安全扫描程序，扫描程序可以是一个定时任务（Cron Job） 作业，也可以是由特定的人触发的可执行操作。</p>
 <p>如果是一个定时任务，它将在特定时刻由定时任务自动触发。例如，Docker Hub 会在特定的时间扫描他们的官方注册表，当有任何漏洞被扫描出来时，它会向镜像维护者发送报警信息。</p>
@@ -411,34 +320,13 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>同时，对于 Trivy、Clair 和 Anchore Engine，这三者的社区非常活跃，所以我们不能用没有人来帮你解决你的问题来评判； 而且作为一种工具，它必须易于使用并且有良好的文档可供参考。经过调研，发现 Trivy 的文档非常详细，非常友好， 而且 Trivy 的使用方式更加友好，比如我们可以过滤掉（.trivyignore）你指定的漏洞，对于最新发现的漏洞，官方没有给出修复版本，这时候我们就可以忽略这个漏洞继续构建，但 Anchore Engine 做不到。</p>
 <p>2020 年 3 月 16 日，领先的云原生应用和基础设施安全平台供应商 Aqua Security 宣布，其开源的 Trivy 漏洞扫描器将作为一个集成选项添加到其使用的云原生平台、CNCF 的 Harbor 注册表和 Mirantis Docker Enterprise 中。你可以在这里找到这篇文章。</p>
 <h2 id="trivy-在-thoughtworks-雷达-23-期中">Trivy 在 Thoughtworks 雷达 23 期中</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png"
-        title="Trivy in TW tech radar" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png" alt="Trivy in TW tech radar" /></p>
 <p>Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 <strong>Adopt</strong>，说明 Trivy 是有用的、有价值的和可行的。</p>
 <h2 id="trivy-的工作原理">Trivy 的工作原理</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png"
-        title="Inner working of Trivy" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png" alt="Inner working of Trivy" /></p>
 <p>在我们使用 Trivy 之前，我们需要知道 Trivy 内部是如何运作的。如上图所示，有两个步骤；首先，我们运行 Trivy 命令，Trivy 将从 <a href="https://nvd.nist.gov" target="_blank" rel="noopener noreffer ">NVD</a> 网站下载漏洞数据库到本地机器。然后， Trivy 利用漏洞数据扫描你的镜像的每一层（Layer）。</p>
 <h2 id="实践-trivy">实践 Trivy</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png"
-        title="trivy in pipeline" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png" alt="trivy in pipeline" /></p>
 <h3 id="pipeline">Pipeline</h3>
 <p>现在我们已经知道 Trivy 是如何工作的，我们可以将它集成到我们的 Pipeline 中；首先，将代码构建到 Docker 镜像中，接下来，Trivy 会扫描上一步构建的 Docker 镜像； 如果没有漏洞，镜像会被推送到镜像注册中心并部署到 Test 或者 UAT 环境； 如果存在漏洞，Pipeline 会被 Trivy 的命令行打断退出，这时候你就需要修复漏洞以使 Pipeline 变绿通过。</p>
 <h3 id="trivy-的使用方法">Trivy 的使用方法</h3>
@@ -478,24 +366,10 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
 <p>在这个 Job 中，我们使用 <a href="https://hub.docker.com/_/nginx" target="_blank" rel="noopener noreffer ">Nignx:1.18</a> 作为基础镜像来构建应用程序镜像。可以看到由于存在一些漏洞，本次构建失败了。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png"
-        title="Trivy Dashboard Failed" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
 <p>现在，我们必须解决这个问题来达到持续交付目的。这里有两个步骤要做，首先，我们应该使用最新的 Nginx 镜像作为基础镜像；其次，我们可以忽略未修复的漏洞，因为我们可能无法在系统级别修复某些最新的漏洞。你可以通过如下链接查看修复该问题的代码更改；
 <a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a></p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png"
-        title="Trivy Dashboard Successfully" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png" alt="Trivy Dashboard Successfully" /></p>
 <h2 id="总结">总结</h2>
 <p>无论你在哪里，安全都是一个非常重要的问题。我们可以将 “<strong>安全左移（Shift Left Security）</strong>”，这样就可以减少生产环境中的安全风险；对于扫描工具 Trivy 来说，它对于保证镜像的安全性非常有用，它不仅可以扫描镜像，还可以扫描 Git 仓库，文件系统等。</p>
 <p>最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。</p>
@@ -519,26 +393,12 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/扫码_搜索联合传播样式-白色版。ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/%e6%89%ab%e7%a0%81_%e6%90%9c%e7%b4%a2%e8%81%94%e5%90%88%e4%bc%a0%e6%92%ad%e6%a0%b7%e5%bc%8f-%e7%99%bd%e8%89%b2%e7%89%88%e3%80%82ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -622,12 +482,5 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

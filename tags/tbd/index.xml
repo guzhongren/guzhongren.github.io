@@ -1,11 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>TBD - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/tbd/</link><description>TBD - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 11:11:22 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/tbd/" rel="self" type="application/rss+xml"/><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg"
-        data-srcset="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg, https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg 1.5x, https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg"
-        title="Photo by Matheus Natan from Pexels" /></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>TBD - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/tbd/</link><description>TBD - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 11:11:22 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/tbd/" rel="self" type="application/rss+xml"/><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg" alt="Photo by Matheus Natan from Pexels" /></p>
 <p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>
 <p>此外，得益于这些工具，分布式团队可以畅通合作，使多个人可以同时处理项目的不同部分，然后将其结果合并为一个产品。 让我们仔细看看版本控制系统，git-flow 和 Trunk-based development（基于主干的开发）是如何形成的。</p>
 <h2 id="版本控制系统是怎样改变世界的">版本控制系统是怎样改变世界的</h2>
@@ -52,14 +45,7 @@
 另一个重大改进是引入了分布式系统。 Git 是采用这种理念的首批工具之一。 实际上，它使开源世界得以蓬勃发展。 Git 允许开发人员通过称为分叉的操作复制整个存储库，并引入所需的更改，而不必担心合并冲突。</p>
 <p>随后，开发者可以创建一个 PR(Pull request)，以将其更改合并到原始项目中。 如果最初的开发人员对合并其他存储库中的更改不感兴趣，那么他们可以自己将其转换 (Fork) 为单独的项目。 由于没有中央存储的概念，因此一切皆有可能。</p>
 <h2 id="git-flow">Git-flow</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png"
-        data-srcset="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png, https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png 1.5x, https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png"
-        title="Git-flow" /></p>
+<p><img src="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png" alt="Git-flow" /></p>
 <p>在 Git-flow 开发模型中，你有一个主分支 (master branch)，从主分支创建开发分支 (develop branch)，所有开发工作提交都基于开发分支。<code>主分支和开发分支在 git-flow 的整个生命周期中都是一直存在的。</code></p>
 <p>开发人员从该开发分支创建功能分支 (Feature branch) 并对其进行 Coding。完成后，它们将创建 PR。在审查 (Review) PR 过程中，其他开发人员会对更改发表评论，并可能进行讨论，讨论时间也许会很长。</p>
 <p>对 PR 评审完成后，PR 将被接受并 merge 到开发分支。 一旦确定开发分支已经成熟到可以发布，就会创建一个单独的分支 (release branch) 来准备最终版本。 该分支的应用程序已经过测试，并且在准备好将其发布给最终用户之前会应用错误修复 (bugfixs)。 完成此操作后，我们会将最终产品合并到主 (master branch) 分支，并打标签 (Tag)。 同时，可以在 develop 分支上继续开发新功能。
@@ -96,24 +82,10 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </ul>
 <p>如果你的团队主要由相互合作了较长时间的高级开发人员组成，那么你实际上就不需要上述的 PR 。你应该信任你的开发人员，并且知道他们是专业人士，让他们做好自己的工作，不要让所有 Git-Flow 的流程拖慢开发进度。</p>
 <h2 id="github-flow">Github-flow</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png"
-        data-srcset="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png, https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png 1.5x, https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png"
-        title="github-flow.png" /></p>
+<p><img src="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png" alt="github-flow.png" /></p>
 <p>Github-flow 是在 git-flow 的基础上衍生而来的。他简化了 git-flow 的复杂模型，并且与 Github 可以很好的结合，在此就不赘述了。</p>
 <h2 id="trunk-based-developmenttbd">Trunk-based Development(TBD)</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png"
-        data-srcset="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png, https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png 1.5x, https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png"
-        title="Trunk-based Development" /></p>
+<p><img src="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png" alt="Trunk-based Development" /></p>
 <p>在基于主干的开发模型中，所有开发人员都在一个具有开放访问权限的分支上工作。通常它只是 master 分支。他们将代码提交给它并运行它，非常简单。</p>
 <p>在某些情况下，它们会创建短暂的功能分支。 分支上的代码编译并通过所有测试后，便将其直接合并到 master。 它可确保开发真正连续进行，并防止开发人员创建难以解决的合并冲突。</p>
 <p>用这种方法检查代码的唯一方法是进行完整的源代码检查。 通常，冗长的讨论是有限的。 没有人能严格控制源代码库中正在修改的内容，这就是为什么拥有可强制执行的代码样式很重要的原因。 以这种风格工作的开发人员应具有丰富的经验，以便你知道他们不会降低源代码的质量。</p>
@@ -141,12 +113,5 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <li><a href="https://guides.github.com/introduction/flow/" target="_blank" rel="noopener noreffer ">4.https://guides.github.com/introduction/flow/</a></li>
 </ul>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

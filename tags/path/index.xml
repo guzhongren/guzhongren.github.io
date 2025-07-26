@@ -36,14 +36,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -82,12 +75,5 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>
