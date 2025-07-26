@@ -33,7 +33,14 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>You can also use Lighthouse CI to prevent regressions on your sites.</p>
 </blockquote>
 <p>It&rsquo;s very easy to use, take a look at the results of my audit of my open source project <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a>.
-</p>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp"
+        title="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="ways-of-lighthouse-ci-and-lighthouse-server">Ways of Lighthouse CI and Lighthouse Server</h2>
 <h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
 <blockquote>
@@ -58,8 +65,22 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp"
+        title="lhci-server" /></th>
+          <th><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp"
+        title="lhci-server-compare" /></th>
       </tr>
   </thead>
   <tbody>
@@ -68,7 +89,14 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <h4 id="installation-and-use-of-lhci-server">Installation and use of LHCI Server</h4>
 <p>There are many ways to install LHCI Server, please refer to <a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server" target="_blank" rel="noopener noreffer ">here</a>, the recommended way is to use Docker. Note that the first run needs to create a Lighthouse App, you need to run the <code>lhci wizard</code> in the container and fill in the corresponding information, <strong>finally record the generated <code>Build token</code> and <code>Admin token</code></strong>.</p>
 <h3 id="integration-with-lighthouse-ci-and-lighthouse-server">Integration with Lighthouse CI and Lighthouse Server</h3>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png"
+        data-srcset="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png, https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png 1.5x, https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png 2x"
+        data-sizes="auto"
+        alt="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png"
+        title="Lighthouse CI Recommended Setup Progression" /></p>
 <ul>
 <li>We have already talked about how to install <code>lhci</code> and <code>lhci server</code>, the next step is to use the two together. Here we take <code>GitHub Actions</code> as an example to make a demo.</li>
 <li>Build <code>GitHub workflow</code>. For specific practices, please refer to the implementation details of <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a></li>
@@ -181,7 +209,14 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <ul>
 <li>Need to store the <code>Build token</code> generated by <code>lhci Server</code> and the address of <code>lhci Server</code> in the Secrets of the GitHub project</li>
 <li>Here the <code>lhci</code> command is executed twice. Because <code>lhci autorun</code> runs the default <code>assertion</code>, the first time you use the command without assertion, the purpose is to upload the current web page performance to the server side; the second time you configure various indicators Threshold, if it does not meet the requirements, Pipeline will block, to achieve <code>Shift-left of the web performance test</code>.</li>
-<li></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp"
+        title="Powerboard Lighthouse Actions" /></li>
 </ul>
 <h2 id="summary">Summary</h2>
 <ul>
@@ -204,12 +239,26 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/pay/PayForGuzhongren.svg"
+        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+        data-sizes="auto"
+        alt="/images/pay/PayForGuzhongren.svg"
+        title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -247,7 +296,14 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p>
 </blockquote>
 <p>使用方法非常简单，可以看一下我对我的开源项目 <code>Powerboard</code> 审计的结果。
-</p>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp"
+        title="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="lighthouse-ci-及-lighthouse-server-的使用">Lighthouse CI 及 Lighthouse Server 的使用</h2>
 <h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
 <blockquote>
@@ -274,8 +330,22 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp"
+        title="lhci-server" /></th>
+          <th><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp"
+        title="lhci-server-compare" /></th>
       </tr>
   </thead>
   <tbody>
@@ -284,7 +354,14 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <h4 id="lhci-server-的安装和使用">LHCI Server 的安装和使用</h4>
 <p>LHCI Server 的安装有多种方式，具体可参考<a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server" target="_blank" rel="noopener noreffer ">这里</a>，推荐使用 Docker 的方式运行。需要注意的是，第一次运行需要创建 Lighthouse App, 需要在容器中运行 <code>lhci wizard</code> 并填入相应的信息，<strong>最后记录下生成的 <code>Build token</code> 和 <code>Admin token</code></strong>。</p>
 <h3 id="lighthouse-ci-和-lighthouse-server-集成">Lighthouse CI 和 Lighthouse Server 集成</h3>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png"
+        data-srcset="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png, https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png 1.5x, https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png 2x"
+        data-sizes="auto"
+        alt="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png"
+        title="Lighthouse CI Recommended Setup Progression" /></p>
 <ul>
 <li>前面已经讲了 <code>lhci</code> 和 <code>lhci server</code> 如何安装了，接下来就是需要将两者结合起来一起使用了。这里我们以 <code>GitHub Actions</code> 为例来搞一个 Demo。</li>
 <li>构建 <code>GitHub workflow</code>， 具体实践可参考 <a href="https://github.com/guzhongren/Powerboard" target="_blank" rel="noopener noreffer ">Powerboard</a> 的实现细节</li>
@@ -397,7 +474,14 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <ul>
 <li>需要将 <code>lhci Server</code> 生成的 <code>Build token</code> 和 <code>lhci Server</code> 的地址存放在 GitHub 项目的 Secrets 中</li>
 <li>这里执行了两次 <code>lhci</code> 命令。因为 <code>lhci autorun</code> 运行完成后会运行默认的断言(<code>Assertion</code>), 第一次用没有断言的命令，目的是将当前的网页性能可以上到 Server 端; 第二次配置了各项指标的阈值，如果不满足要求，Pipeline 将会阻断，实现 <code>Web 性能测试左移</code>。</li>
-<li></li>
+<li><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp"
+        title="Powerboard Lighthouse Actions" /></li>
 </ul>
 <h2 id="总结">总结</h2>
 <ul>
@@ -419,12 +503,26 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/pay/PayForGuzhongren.svg"
+        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+        data-sizes="auto"
+        alt="/images/pay/PayForGuzhongren.svg"
+        title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>

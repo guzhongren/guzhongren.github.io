@@ -1,4 +1,11 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>.Npmrc - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/.npmrc/</link><description>.Npmrc - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Mar 2020 22:45:03 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/.npmrc/" rel="self" type="application/rss+xml"/><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>.Npmrc - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/.npmrc/</link><description>.Npmrc - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 05 Mar 2020 22:45:03 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/.npmrc/" rel="self" type="application/rss+xml"/><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+        data-srcset="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260, https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 1.5x, https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 2x"
+        data-sizes="auto"
+        alt="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+        title="Photo by Jeffrey Czum from Pexels" /></p>
 <h2 id="场景">场景</h2>
 <p>在公网上我们获取 npm 包的时候直接就用下面的命令就可以了</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -46,5 +53,12 @@
 <h2 id="引用">引用</h2>
 <p><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">1.https://yarnpkg.com/</a></p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

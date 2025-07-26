@@ -1,7 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Revert - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/revert/</link><description>Revert - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 30 Sep 2019 15:52:49 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/revert/" rel="self" type="application/rss+xml"/><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
             </div><p>我需要撤销最后的四个提交</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png"
+        data-srcset="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png, https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png 1.5x, https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png 2x"
+        data-sizes="auto"
+        alt="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png"
+        title="image" /></p>
 <p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -18,9 +25,23 @@
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
 <p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png"
+        data-srcset="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png, https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png 1.5x, https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png 2x"
+        data-sizes="auto"
+        alt="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png"
+        title="image" /></p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

@@ -317,7 +317,14 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png"
+        data-srcset="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png, https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png 1.5x, https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png 2x"
+        data-sizes="auto"
+        alt="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png"
+        title="markdown editor" /></p>
 <h2 id="在线体验">在线体验</h2>
 <p><a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">Markdown editor</a>: <a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">https://andorlab.github.io/WebAssembly/</a></p>
 <h2 id="后续">后续</h2>
@@ -331,5 +338,12 @@ index.js  897 KiB   index  [emitted]  index
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

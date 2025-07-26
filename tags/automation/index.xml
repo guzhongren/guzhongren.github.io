@@ -9,12 +9,26 @@
 <p>而Google 全家桶的好处就是其各个应用之间调用协作非常方便。那么我们就用Google Sheet 和Google Chat 来实现一个简单的机器人应用来干上面各种麻烦的事吧。</p>
 <h2 id="google-chat-webhooks">Google Chat Webhooks</h2>
 <p>Google Chat 的Webhooks 允许其他应用程序调用，并可以对消息进行<code>创建</code>、<code>读取</code> 、<code>更新</code> 和<code>删除</code>。如同对数据库的增删改差一般。</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://developers.google.com/static/chat/images/arch-pat-notifier.svg"
+        data-srcset="https://developers.google.com/static/chat/images/arch-pat-notifier.svg, https://developers.google.com/static/chat/images/arch-pat-notifier.svg 1.5x, https://developers.google.com/static/chat/images/arch-pat-notifier.svg 2x"
+        data-sizes="auto"
+        alt="https://developers.google.com/static/chat/images/arch-pat-notifier.svg"
+        title="Google Chat Webhooks" /></p>
 <p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook" target="_blank" rel="noopener noreffer ">这里</a>; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
 <h2 id="google-sheet-apps-script">Google Sheet Apps Script</h2>
 <p>Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google Sheet 最强大的地方在于他支持自定义脚本，虽然其名为<code>Apps Script</code>, 文件格式为<code>.gs</code>， 但是其就是一些简单的<code>JavaScript</code> API, 其请求也是同步的API, 而且没有跨域问题，这就让其作为一个机器人有了初步条件。</p>
 <p>当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp"
+        title="Google Sheet API Structure" /></p>
 <p>从上图中可以看到</p>
 <table>
   <thead>
@@ -50,7 +64,14 @@
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
 <h3 id="创建google-chat-webhooks">创建Google Chat Webhooks</h3>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp"
+        title="Google chat webhooks" /></p>
 <p>点击创建好的Webhooks, 拷贝URL即可。</p>
 <h3 id="创建google-sheet-轮转数据">创建Google Sheet 轮转数据</h3>
 <p>新建Google Sheet，直接写入如下数据</p>
@@ -152,10 +173,24 @@ xiaoming10</code></pre></div>
 <li>直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。</li>
 <li>定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。</li>
 </ol>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp"
+        title="Trigger of Apps Script" /></p>
 <h3 id="效果">效果</h3>
 <p>可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
-</p>
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp"
+        title="Chatbot message result" /></p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
 <h2 id="引用">引用</h2>
@@ -167,12 +202,26 @@ xiaoming10</code></pre></div>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/pay/PayForGuzhongren.svg"
+        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+        data-sizes="auto"
+        alt="/images/pay/PayForGuzhongren.svg"
+        title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>

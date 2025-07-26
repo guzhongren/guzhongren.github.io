@@ -4,7 +4,14 @@
 <p>计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度在Apache 毕业的 EChart。开源不仅可以展示自己的技术能力，而且还可以为他人提供免费“物料”，减少重复造轮子的事的发生，“间接为全球碳中和做贡献”。</p>
 <p>因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了，同时也在这里做个总结。</p>
 <h2 id="一图胜千言">一图胜千言</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.2witgnrnxzc0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.2witgnrnxzc0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.2witgnrnxzc0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.2witgnrnxzc0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/开源项目构建及治理.2witgnrnxzc0.webp"
+        title="开源项目构建及治理" /></p>
 <h2 id="产品product">产品（Product）</h2>
 <p>开源的目的为了方便他人以最低的代价实现业务价值增长，或工作效率提升等；那么必须有一个产物（Artifact）,它可能是一个可下载, 可直接运行的软件包，也可能是一个有无服务器运行的在线应用程序，亦或是某一个领域，实践比较好或体验更好的第三方的依赖等。凡此种种，我们都可以称之为 “产品（Production）”。</p>
 <p>一个好的开源产品应该包含但不限于以下内容。</p>
@@ -16,7 +23,14 @@
 <h3 id="标志logo">标志(Logo)</h3>
 <p>作为产品，首先被记住的肯定是产品的的使用，然后是标志(Logo)。Logo 有文字型的，有图形型的，也有两者都有的。但是一个不复杂，认知度低的Logo 的辨识度是非常高的。</p>
 <h3 id="许可证license">许可证(License)</h3>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png"
+        data-srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png, https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png 2x"
+        data-sizes="auto"
+        alt="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png"
+        title="Open Source License" /></p>
 <p>在开源的世界里，许可证的选择非常重要；有的是不可商用的，许可证包括GNU通用公共许可证（GPL）、GNU通用公共许可证版本3（GPLv3）、类似GPL的许可证，以及非常严格的自由软件许可证，著名软件如：Linux操作系统内核, GNU工具套件,WordPress博客系统等。也有可商用，但不能被云厂商托管使用的许可证，如<a href="https://opensource.org/licenses/BSD-3-Clause" target="_blank" rel="noopener noreffer ">BSD 3-Clause</a>,软件如： <a href="https://github.com/redis/redis" target="_blank" rel="noopener noreffer ">Redis</a>; 如<a href="https://www.mongodb.com/licensing/server-side-public-license" target="_blank" rel="noopener noreffer ">Server Side Public License (SSPL)</a>，软件如： <a href="https://github.com/mongodb" target="_blank" rel="noopener noreffer ">MongoDB</a>。也有可商用也可免费使用的许可证，如：MIT, Apache License 2.0, 开源软件有ECharts等。</p>
 <p>许可证的选择可以参考 <a href="https://opensource.org/licenses/category" target="_blank" rel="noopener noreffer ">opensource.org</a>和开源工具<a href="https://ufal.github.io/public-license-selector/" target="_blank" rel="noopener noreffer ">License Selector</a>来选择合适的许可证。</p>
 <h3 id="开发文档readme">开发文档(README)</h3>
@@ -38,7 +52,14 @@
 <li>Azure: <a href="https://github.com/Azure/AKS/projects/1" target="_blank" rel="noopener noreffer ">https://github.com/Azure/AKS/projects/1</a></li>
 </ul>
 <h3 id="发布计划release-plan">发布计划(Release plan)</h3>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png"
+        data-srcset="https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png, https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png 1.5x, https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png 2x"
+        data-sizes="auto"
+        alt="https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png"
+        title="Linux Kernel Release" /></p>
 <p>发布计划在开源项目里也是一个非常重要项目，有计划地发布周期总是给人以稳定、靠谱的期望，有了期望之后，不管是贡献者还是使用者，大家都有了盼头。</p>
 <p>不同的项目有不同的发布方式。比如 <a href="https://www.kernel.org/" target="_blank" rel="noopener noreffer ">Linux Kernal</a> 的发布计划，完全取决于 <a href="https://en.wikipedia.org/wiki/Linus_Torvalds" target="_blank" rel="noopener noreffer ">Linus Torvalds</a> 和 Linux Kernel 社区。其发布计划可在<a href="https://en.wikipedia.org/wiki/Linux_kernel_version_history#:~:text=Property%20Value%20%20Version%20%20%20%20Original,Kroah-Hartman%20%20%20Named%20Blurry%20Fish%20Butt%20" target="_blank" rel="noopener noreffer ">这里</a>查看。</p>
 <p>当然还有规律性发布的产品，如<a href="https://github.com/golang/go" target="_blank" rel="noopener noreffer ">GoLang</a>, 其发布计划如下：总体目标是每6个月发布一次主要版本，然后细分为3个月的常规开发，然后是3个月的测试和优化，即所谓的版本冻结。</p>
@@ -59,7 +80,14 @@
 </ul>
 <h4 id="贡献策略contributing">贡献策略(Contributing)</h4>
 <p>开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好地协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需要满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的 <a href="https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreffer ">Contributing</a> 文档里阐述了如何为其项目贡献的贡献策略。</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://allcontributors.org/img/icons/android-icon-192x192.png"
+        data-srcset="https://allcontributors.org/img/icons/android-icon-192x192.png, https://allcontributors.org/img/icons/android-icon-192x192.png 1.5x, https://allcontributors.org/img/icons/android-icon-192x192.png 2x"
+        data-sizes="auto"
+        alt="https://allcontributors.org/img/icons/android-icon-192x192.png"
+        title="Allcontributors" /></p>
 <p>同时，如果你将项目的贡献者添加到项目中醒目的位置，让所有人看到他为这个项目贡献了内容，这将激励更多的贡献者为项目做贡献。这里推荐使用<a href="https://allcontributors.org/" target="_blank" rel="noopener noreffer ">Allcontributors</a>, 通过为你的开源项目集成这个工具，在项目的README 中可以显示共享者的头像及贡献类型，让贡献者感觉到参与开源项目的荣耀感。</p>
 <h4 id="代码请求pr">代码请求(PR)</h4>
 <p>在开源项目中，大家通常使用 PR (Pull Request) 来贡献代码, 所以项目的维护者(Maintainer)要将一部分精力放在 Reveiw 别的贡献者的PR 上，同时给予鼓励性的言语评语(Comment), 或者给予适当的建议意见。要相信正向的鼓励总是会带来不一样的额外收获。</p>
@@ -213,7 +241,14 @@
 <p>大多数文档框架都支持自定义，这样开发者可以将产品的介绍页也可以加进去，这样产品介绍和产品文档就在同一个项目和同一个网站中，提升用户体验和开发体验了。</p>
 <h2 id="社区">社区</h2>
 <p>社区是另一个比较大的话题，我们将在下篇中聊。这里放上《如何组织社区》的思维导图。</p>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/社区建设.6u6659b42mw0.webp"
+        title="如何组织社区" /></p>
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
@@ -235,12 +270,26 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
+        title="谷哥说-微信公众号" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
-<p></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/pay/PayForGuzhongren.svg"
+        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+        data-sizes="auto"
+        alt="/images/pay/PayForGuzhongren.svg"
+        title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
