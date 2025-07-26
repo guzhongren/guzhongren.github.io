@@ -216,7 +216,14 @@
 <p>呈现的输出效果如下:</p>
 <div class="mermaid" id="id-10"></div>]]></description></item><item><title>一个提升 Code Review Comments 的 VSCode插件</title><link>https://guzhongren.github.io/2025/07/%E4%B8%80%E4%B8%AA%E6%8F%90%E5%8D%87-code-review-comments-%E7%9A%84-vscode%E6%8F%92%E4%BB%B6/</link><pubDate>Sat, 26 Jul 2025 16:36:01 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/07/%E4%B8%80%E4%B8%AA%E6%8F%90%E5%8D%87-code-review-comments-%E7%9A%84-vscode%E6%8F%92%E4%BB%B6/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" title="Code Review Comments" style="max-width: 100%; height: auto;"></p>
+            </div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif"
+        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif 2x"
+        data-sizes="auto"
+        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif"
+        title="Code Review Comments" /></p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
