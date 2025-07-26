@@ -93,18 +93,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-</blockquote>
-<h2 id="赞助">赞助</h2>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>配置 iTerm2 使值更高效</title><link>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</link><pubDate>Fri, 09 Oct 2020 22:40:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/10/%E9%85%8D%E7%BD%AEiterm2%E4%BD%BF%E5%80%BC%E6%9B%B4%E9%AB%98%E6%95%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wW-uFN_---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://wp.gabsii.com/wp-content/uploads/2019/11/Screenshot-2019-11-03-at-22.15.09-1024x583.png" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>

@@ -204,18 +204,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-</blockquote>
-<h2 id="赞助">赞助</h2>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>使用 Lighthouse 持续优化你的 Web 性能</title><link>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</link><pubDate>Sun, 27 Mar 2022 14:27:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/03/%E4%BD%BF%E7%94%A8-lighthouse-%E6%8C%81%E7%BB%AD%E4%BC%98%E5%8C%96%E4%BD%A0%E7%9A%84-web-%E6%80%A7%E8%83%BD/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" referrerpolicy="no-referrer">
             </div><blockquote>
@@ -419,16 +408,5 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
-</blockquote>
-<h2 id="赞助">赞助</h2>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>
