@@ -58,14 +58,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/moaTGH6EWiqyhRt.png" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -261,14 +254,7 @@
 </span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
 </span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .</span></span></code></pre></div></div>
 <p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg"
-        data-srcset="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg, https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg 1.5x, https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg"
-        title="harbor" /></p>
+<p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" title="harbor" style="max-width: 100%; height: auto;"></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
 <p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
@@ -328,12 +314,5 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item></channel></rss>

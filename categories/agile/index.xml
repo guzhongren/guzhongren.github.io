@@ -37,26 +37,19 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
 <p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/pay/PayForGuzhongren.svg"
+            data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+            data-sizes="auto"
+            alt="/images/pay/PayForGuzhongren.svg"
+            title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -86,14 +79,7 @@
 - [ ] subTask3</code></pre></div>
 <h3 id="todo">ToDo</h3>
 <p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png"
-        title="microsoft-todo" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png" title="microsoft-todo" style="max-width: 100%; height: auto;"></p>
 <h2 id="实践">实践</h2>
 <p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
 当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。</p>
@@ -104,26 +90,19 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
 <p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/pay/PayForGuzhongren.svg"
+            data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+            data-sizes="auto"
+            alt="/images/pay/PayForGuzhongren.svg"
+            title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -277,26 +256,19 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
 <p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/pay/PayForGuzhongren.svg"
+            data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+            data-sizes="auto"
+            alt="/images/pay/PayForGuzhongren.svg"
+            title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
@@ -413,14 +385,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
             </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
@@ -440,14 +405,7 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://pic4.zhimg.com/80/v2-f8af3dcb49b2e0bdbfd7060fb36bdd5f.jpg" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -564,12 +522,5 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item></channel></rss>

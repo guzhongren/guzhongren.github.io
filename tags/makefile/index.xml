@@ -1,21 +1,7 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Makefile - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/makefile/</link><description>Makefile - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 18:17:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/makefile/" rel="self" type="application/rss+xml"/><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg"
-        data-srcset="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg, https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg 1.5x, https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg 2x"
-        data-sizes="auto"
-        alt="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg"
-        title="Photo by Daniel Ap from Pexels" /></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Makefile - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/makefile/</link><description>Makefile - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 23 Feb 2020 18:17:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/makefile/" rel="self" type="application/rss+xml"/><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg" alt="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg" title="Photo by Daniel Ap from Pexels" style="max-width: 100%; height: auto;"></p>
 <h2 id="overview">Overview</h2>
 <p><code>Hugo</code>是一款基于 golang 实现的静态网站生成器。以其简单、易用、高效、易扩展、快速部署受到开发者的喜爱，比起 <a href="https://hexo.io/" target="_blank" rel="noopener noreffer ">Hexo</a> 感觉更轻便。下图是我初步实现的博客截图。</p>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg"
-        data-srcset="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg, https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg 1.5x, https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg 2x"
-        data-sizes="auto"
-        alt="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg"
-        title="博客截图" /></p>
+<p><img src="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg" alt="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg" title="博客截图" style="max-width: 100%; height: auto;"></p>
 <h2 id="安装">安装</h2>
 <h3 id="golang">Golang</h3>
 <p>Hugo 是基于 Go 语言的，所以需要安装 go, 我的机器是 Mac, 所以直接用 homebrew 就搞定。</p>
@@ -101,23 +87,9 @@
 <p>在 Github 上个创建 blog 分支。我们的博客都会在 blog 分支</p>
 <h4 id="创建personal_token-或者-deploy-token">创建<code>PERSONAL_TOKEN</code>, 或者 Deploy Token</h4>
 <p>我们在 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Developer settings</a> 以 PERSONAL_TOKEN 为例。
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg"
-        data-srcset="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg, https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg 1.5x, https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg 2x"
-        data-sizes="auto"
-        alt="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg"
-        title="Image" /></p>
+<img src="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg" alt="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg" title="Image" style="max-width: 100%; height: auto;"></p>
 <p>然后在项目设置的 Secret 中用<code>PERSONAL_TOKEN</code>添加
-<img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg"
-        data-srcset="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg, https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg 1.5x, https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg 2x"
-        data-sizes="auto"
-        alt="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg"
-        title="Image" /></p>
+<img src="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg" alt="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg" title="Image" style="max-width: 100%; height: auto;"></p>
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions" target="_blank" rel="noopener noreffer ">Github Actions</a>, 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -256,12 +228,5 @@
 <li>6.<a href="https://realfavicongenerator.net/" target="_blank" rel="noopener noreffer ">生成 icon: https://realfavicongenerator.net/</a></li>
 </ul>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item></channel></rss>

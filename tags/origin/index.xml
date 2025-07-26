@@ -38,14 +38,7 @@
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> project
 </span></span><span class="line"><span class="cl">$ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git</span></span></code></pre></div></div>
 <h2 id="晒个图">晒个图</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png"
-        data-srcset="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png, https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png 1.5x, https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png 2x"
-        data-sizes="auto"
-        alt="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png"
-        title="git.mirror.png" /></p>
+<p><img src="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png" alt="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png" title="git.mirror.png" style="max-width: 100%; height: auto;"></p>
 <h2 id="引用">引用</h2>
 <ul>
 <li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
@@ -54,12 +47,5 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item></channel></rss>

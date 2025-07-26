@@ -11,22 +11,8 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
-]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        data-srcset="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260, https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 1.5x, https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260 2x"
-        data-sizes="auto"
-        alt="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-        title="Photo by Jan Kopřiva from Pexels" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
+]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" title="Photo by Jan Kopřiva from Pexels" style="max-width: 100%; height: auto;"></p>
 <h2 id="插件">插件</h2>
 <p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>
 <ul>
@@ -65,47 +51,19 @@
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div></div>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png"
-        data-srcset="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png, https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png 1.5x, https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png"
-        title="launch.json" /></p>
+<p><img src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png" alt="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png" title="launch.json" style="max-width: 100%; height: auto;"></p>
 <h2 id="调试">调试</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png"
-        data-srcset="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png, https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png 1.5x, https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png"
-        title="Debug" /></p>
+<p><img src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png" alt="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png" title="Debug" style="max-width: 100%; height: auto;"></p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item><item><title>将函数放在对象的 Value 上，然后传给组件执行，实现组件抽象</title><link>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</link><pubDate>Mon, 14 Oct 2019 21:36:26 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3811731/pexels-photo-3811731.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="情景">情景</h2>
 <p>在我们开发中，我们通常需要对某一系列的组件 Coding, 但我们是程序员啊，我们怎么能容忍代码重复出现的坏味道呢。所以，对于一些列相同的操作我们就要用到循环处理了。</p>
 <h2 id="目标">目标</h2>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png"
-        data-srcset="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png, https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png 1.5x, https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png 2x"
-        data-sizes="auto"
-        alt="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png"
-        title="image" /></p>
+<p><img src="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png" alt="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png" title="image" style="max-width: 100%; height: auto;"></p>
 <p>我们需要将底部两个按钮 <code>新建询价</code>和 <code>采购助手</code>展示出来，并且点击他们的操作后有不同的交互。</p>
 <h2 id="coding">coding</h2>
 <p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
@@ -166,12 +124,5 @@
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 ]]></description></item></channel></rss>

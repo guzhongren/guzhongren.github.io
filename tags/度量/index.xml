@@ -280,13 +280,13 @@
 <h4 id="为什么会有-heartbeat">为什么会有 Heartbeat</h4>
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>
 <p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="..."
-        data-srcset="..., ... 1.5x, ... 2x"
-        data-sizes="auto"
-        alt="..."
-        title="研发效能反馈图" /></p>
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="..."
+            data-srcset="..., ... 1.5x, ... 2x"
+            data-sizes="auto"
+            alt="..."
+            title="研发效能反馈图" /></p>
 <h2 id="总结">总结</h2>
 <h2 id="引用">引用</h2>
 <ul>
@@ -295,26 +295,19 @@
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 <hr>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        data-srcset="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 1.5x, https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png 2x"
-        data-sizes="auto"
-        alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png"
-        title="谷哥说-微信公众号" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" title="谷哥说-微信公众号" style="max-width: 100%; height: auto;"></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
 </blockquote>
 <h2 id="赞助">赞助</h2>
 <p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/images/pay/PayForGuzhongren.svg"
-        data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
-        data-sizes="auto"
-        alt="/images/pay/PayForGuzhongren.svg"
-        title="PayForGuzhongren" /></p>
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="/images/pay/PayForGuzhongren.svg"
+            data-srcset="/images/pay/PayForGuzhongren.svg, /images/pay/PayForGuzhongren.svg 1.5x, /images/pay/PayForGuzhongren.svg 2x"
+            data-sizes="auto"
+            alt="/images/pay/PayForGuzhongren.svg"
+            title="PayForGuzhongren" /></p>
 <blockquote>
 <p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
 </blockquote>
