@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Tools - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/tools/</link><description>Tools - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 26 Jul 2025 16:36:01 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/tools/" rel="self" type="application/rss+xml"/><item><title>一个提升 Code Review Comments 的 VSCode插件</title><link>https://guzhongren.github.io/2025/07/%E4%B8%80%E4%B8%AA%E6%8F%90%E5%8D%87-code-review-comments-%E7%9A%84-vscode%E6%8F%92%E4%BB%B6/</link><pubDate>Sat, 26 Jul 2025 16:36:01 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/07/%E4%B8%80%E4%B8%AA%E6%8F%90%E5%8D%87-code-review-comments-%E7%9A%84-vscode%E6%8F%92%E4%BB%B6/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="痛点">痛点</h2>
+<p>在平时的 Code Review 中，我们经常需要记录 Review 的 反馈(feedback), 我们一般有2种方式来记录，</p>
+<ol>
+<li>让别人帮你记录</li>
+<li>自己记录
+这两种方式都有可能因为时间或者其他能力造成信息丢失。最好的方式就是自己记录，回头来看的时候一看自己的记录就一目了然那了，那如何记录呢？</li>
+</ol>
+<h2 id="解决方案">解决方案</h2>
+<p>有了需求，就有了解决方案，就是写一个 VSCode 插件，这个插件的功能就是记录 Review 的反馈。最近的 Vibe Coding 很火&hellip;</p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="Code Review Comments" /></p>
+<h2 id="引用">引用</h2>
+<ul>
+<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
+</ul>
+<h2 id="免责声明">免责声明</h2>
+<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: f2fe1394e4ab9297ed69ff73ac32e9ac1375f01c2102183b509bf9379a5995d6</p>
+</blockquote>
+<h2 id="赞助">赞助</h2>
+<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
+<blockquote>
+<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
+</blockquote>
+<blockquote>
+<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
+</blockquote>
+]]></description></item></channel></rss>
