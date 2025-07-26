@@ -13,17 +13,23 @@
 ## 工作/产品
 
 ### 代码
+|项目名称|描述|
+|:--|:--|
+|[Powerboard](https://github.com/guzhongren/Powerboard)|一款可拖拽、可配置的 BuildKite Dashboard 应用。|
+|[ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap)|基于 ArcGIS API 的地图上展示图标的库。|
+|[Logseq-Echarts](https://github.com/guzhongren/logseq-echarts)|一个基于 ECharts 的 Logseq 插件。|
+|[algolia-docsearch-upload-action](https://github.com/guzhongren/algolia-docsearch-upload-action)|一个小的&快&简单的Algolia研究索引上传工具|
+|[Code Review Comments](https://marketplace.visualstudio.com/items?itemName=guzhongren.code-review-comments)|一个强大的VS代码的扩展，可以添加意见差异的风景，就像在想拉的请求。 跟踪你的代码审查的思想、错误报告和改进建议直接在你的发展环境。|
+|[Thoughtworks Styled Theme](https://marketplace.visualstudio.com/items?itemName=guzhongren.thoughtworks-styled-theme)|一个 Thougthworks 风格的 VSCode 主题|
 
-- [Powerboard](https://github.com/guzhongren/Powerboard) 一款可拖拽、可配置的 BuildKite Dashboard 应用。
-- [ChartOnMap based on ArcGIS API](https://github.com/guzhongren/ChartOnMap) 基于 ArcGIS API 的地图上展示图标的库。
-- [Logseq-Echarts](https://github.com/guzhongren/logseq-echarts) 一个基于ECharts的Logseq 插件。
-- [algolia-docsearch-upload-action](https://github.com/guzhongren/algolia-docsearch-upload-action) 一个小的&快&简单的Algolia研究索引上传工具
 
 ### 文章
 
-- [容器安全扫描工具推荐-Thoughtworks洞见](https://insights.thoughtworks.cn/container-scanning-tools-recommendation/)
-- [Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)
-- [如何记录日志-Thoughtworks洞见](https://insights.thoughtworks.cn/how-to-logging/)
+|文章|描述|
+|:--|:--|
+|[容器安全扫描工具推荐-Thoughtworks洞见](https://insights.thoughtworks.cn/container-scanning-tools-recommendation/)|关于容器安全研究及实践的研究和推荐|
+|[Continuously optimize your website with Lighthouse CI - Thoughtworks Insight Blog](https://www.thoughtworks.com/insights/blog/continuous-delivery/continuously-optimize-lighthouse)|探讨如何优化网站及 Lighthouse 及其 CI 工具的实践|
+|[如何记录日志-Thoughtworks洞见](https://insights.thoughtworks.cn/how-to-logging/)|在分布式系统中，如何优雅设置日志及日志格式的最佳实践|
 
 ## 开源项目贡献
 |Project Name| Description|Role|
@@ -33,7 +39,9 @@
 
 ## 认证证书
 
-- [AWS-SimuLearn--Generative-AI-Practitioner](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Certificates/AWS/AWS-SimuLearn--Generative.3rbib8d4cp.webp)
+|名称|用途|
+|:--|:--|
+|[AWS-SimuLearn--Generative-AI-Practitioner](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Certificates/AWS/AWS-SimuLearn--Generative.3rbib8d4cp.webp)|基于 AWS 进行 AI 实践的认证|
 
 ## 技术栈
 
