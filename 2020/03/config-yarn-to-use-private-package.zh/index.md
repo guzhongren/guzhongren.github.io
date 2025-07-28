@@ -48,6 +48,3 @@ always-auth=true
 
 [1.https://yarnpkg.com/](https://yarnpkg.com/)
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

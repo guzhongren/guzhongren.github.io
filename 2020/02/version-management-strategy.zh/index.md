@@ -121,6 +121,3 @@ TBD 的适用情况与 git-flow 的适用情况恰好相反，可自行脑补。
 * [3.https://trunkbaseddevelopment.com](https://trunkbaseddevelopment.com)
 * [4.https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

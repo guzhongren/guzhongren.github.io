@@ -249,6 +249,3 @@ Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-com
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

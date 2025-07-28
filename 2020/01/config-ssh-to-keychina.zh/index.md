@@ -27,6 +27,3 @@ $ ssh myvm
 
 <https://blog.infox.ren/2019/10/24/ssh-guide/>
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

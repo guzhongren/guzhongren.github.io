@@ -200,7 +200,7 @@ Build common capabilities
 
 
 
-## 赞助
+
 
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 

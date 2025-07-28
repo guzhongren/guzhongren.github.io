@@ -304,6 +304,3 @@ SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速�
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

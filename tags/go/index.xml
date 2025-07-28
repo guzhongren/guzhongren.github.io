@@ -103,9 +103,8 @@
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
 <h2 id="引用">引用</h2>
-<h2 id="2golang-依赖注入-dependency-injectionhttpsguzhongrengithubio201909golang-e4be9de8b596e6b3a8e585a5dependency-injection"><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
+<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
+<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
 ]]></description></item><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/JEtYLcPTCDIU2bs.png" referrerpolicy="no-referrer">
             </div><!-- TOC -->
@@ -442,8 +441,6 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -481,8 +478,6 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -520,6 +515,4 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

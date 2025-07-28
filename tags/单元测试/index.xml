@@ -16,8 +16,6 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
@@ -123,7 +121,6 @@
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
 <h2 id="引用">引用</h2>
-<h2 id="2golang-依赖注入-dependency-injectionhttpsguzhongrengithubio201909golang-e4be9de8b596e6b3a8e585a5dependency-injection"><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
+<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
+<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
 ]]></description></item></channel></rss>

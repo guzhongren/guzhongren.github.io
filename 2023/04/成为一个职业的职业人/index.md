@@ -91,6 +91,3 @@ TL 说"@All, 客服团队有人已经按照我们的模板开始提issue了，�
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

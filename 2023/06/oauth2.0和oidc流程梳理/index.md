@@ -136,6 +136,3 @@ OIDC 种有一个非常重要，从认证服务器下发的一个字段，就�
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

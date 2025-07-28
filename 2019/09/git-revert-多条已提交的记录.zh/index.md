@@ -27,6 +27,3 @@ $ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b8040123
 
 [1.https://guzhongren.github.io/](https://guzhongren.github.io/)
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

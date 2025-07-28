@@ -114,6 +114,3 @@ VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2020 23:04:31)
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

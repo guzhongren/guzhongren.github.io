@@ -65,8 +65,6 @@
 </ul>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" referrerpolicy="no-referrer">
             </div><h2 id="初始化工程">初始化工程</h2>
@@ -399,6 +397,4 @@ index.js  897 KiB   index  [emitted]  index
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

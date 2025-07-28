@@ -211,8 +211,6 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
@@ -225,6 +223,4 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

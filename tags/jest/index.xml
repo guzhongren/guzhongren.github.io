@@ -73,16 +73,6 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<h2 id="赞助">赞助</h2>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此 <a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a> 进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
 ]]></description></item><item><title>Window 对象的各种测试方法总结</title><link>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 07 Jun 2020 11:21:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1591510459618-ffd147f35f23?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2089&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
@@ -349,6 +339,4 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

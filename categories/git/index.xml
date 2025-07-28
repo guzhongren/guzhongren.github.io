@@ -92,8 +92,6 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>How to Encrypt Git Files</title><link>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</link><pubDate>Sun, 12 Jul 2020 11:00:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://s1.ax1x.com/2020/07/12/U32INn.png" referrerpolicy="no-referrer">
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
@@ -355,8 +353,6 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg" alt="Photo by Matheus Natan from Pexels" /></p>
 <p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>
 <p>此外，得益于这些工具，分布式团队可以畅通合作，使多个人可以同时处理项目的不同部分，然后将其结果合并为一个产品。 让我们仔细看看版本控制系统，git-flow 和 Trunk-based development（基于主干的开发）是如何形成的。</p>
@@ -471,8 +467,6 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <li><a href="https://trunkbaseddevelopment.com" target="_blank" rel="noopener noreffer ">3.https://trunkbaseddevelopment.com</a></li>
 <li><a href="https://guides.github.com/introduction/flow/" target="_blank" rel="noopener noreffer ">4.https://guides.github.com/introduction/flow/</a></li>
 </ul>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
             </div><p>我需要撤销最后的四个提交</p>
@@ -496,6 +490,4 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <p><img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" alt="image" /></p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

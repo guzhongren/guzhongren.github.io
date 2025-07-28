@@ -163,6 +163,3 @@ Ran all test suites matching /\/Users\/zhongren\.gu\/01\.Project\/test-window-ob
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

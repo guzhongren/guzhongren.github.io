@@ -145,7 +145,7 @@ Extended Validation（EV）证书是目前高信任级别的 SSL 证书
 
 
 
-## 赞助
+
 
 ![PayForGuzhongren](/images/pay/PayForGuzhongren.svg)
 

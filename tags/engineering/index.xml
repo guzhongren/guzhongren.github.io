@@ -103,8 +103,6 @@ Specific formatting is also possible for log information:</li>
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>日志记录的最佳实践</title><link>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 10 Jul 2022 12:01:50 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
@@ -224,6 +222,4 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>

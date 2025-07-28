@@ -255,6 +255,3 @@ DAST 通常在项目运行起来之后进行，是对应用程序的*行为*进�
 
 本文仅代表个人观点，与本人所供职的公司无任何关系。
 
-----
-![谷哥说-微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

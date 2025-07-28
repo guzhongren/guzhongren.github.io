@@ -10,8 +10,6 @@
 </ul>
 <h2 id="免责声明">免责声明</h2>
 <p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jan Kopřiva from Pexels" /></p>
 <h2 id="插件">插件</h2>
 <p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>
@@ -56,8 +54,6 @@
 <p><img src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png" alt="Debug" /></p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item><item><title>将函数放在对象的 Value 上，然后传给组件执行，实现组件抽象</title><link>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</link><pubDate>Mon, 14 Oct 2019 21:36:26 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3811731/pexels-photo-3811731.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="情景">情景</h2>
@@ -123,6 +119,4 @@
 <p>代码总是可以解决很多问题，在 Coding 时，应该及时重构，将代码中的坏味道及时剔除，为以后业务功能开发解决技术债。</p>
 <h2 id="引用">引用</h2>
 <p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
 ]]></description></item></channel></rss>
