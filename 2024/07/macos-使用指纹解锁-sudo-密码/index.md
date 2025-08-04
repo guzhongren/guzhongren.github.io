@@ -26,11 +26,3 @@ auth       sufficient     pam_tid.so
 
 配置即生产力。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

@@ -10,7 +10,8 @@
 <h2 id="分析">分析</h2>
 <p>所有的问题都是解决“人”的问题。</p>
 <p>代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。</p>
-<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
+<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/">Dora Metrics</a><sup>[1]</sup>
+, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
 <ul>
 <li>部署频率（Deployment frequency）</li>
 <li>前置时间（Lead time for change）</li>
@@ -30,10 +31,7 @@
 <blockquote>
 <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Dora Metrics: <a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" rel="noopener noreferrer">https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li></ol>
+            </div>]]></description></item></channel></rss>

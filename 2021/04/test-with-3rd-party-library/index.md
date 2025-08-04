@@ -71,13 +71,3 @@ it("jwt", () => {
 
 Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-* [mocking-modules: https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options]:(https://jestjs.io/docs/jest-object#jestmockmodulename-factory-options)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

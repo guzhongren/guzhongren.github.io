@@ -20,17 +20,14 @@
 <h3 id="note">Note</h3>
 <p>备注，这块可根据情况写自定义的内容，如公司地址，社交信息，个人博客网址等。这块也是增加个人影响力的重点区域。</p>
 <h2 id="邮件签名生成器">邮件签名生成器</h2>
-<p>网上有很多个性化的邮件签名生成器可以使用，也可以自己开发一个前端网页，然后将其部署在公开免费的云平台上，如<a href="https://www.netlify.com/" target="_blank" rel="noopener noreffer ">Netlify</a>, <a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer ">Heroku</a>, <a href="https://stackblitz.com/" target="_blank" rel="noopener noreffer ">Stackblitz</a>, <a href="https://codesandbox.io/" target="_blank" rel="noopener noreffer ">Codesadbox</a>上。</p>
+<p>网上有很多个性化的邮件签名生成器可以使用，也可以自己开发一个前端网页，然后将其部署在公开免费的云平台上，如<a href="https://www.netlify.com/">Netlify</a><sup>[1]</sup>
+, <a href="https://www.heroku.com/">Heroku</a><sup>[2]</sup>
+, <a href="https://stackblitz.com/">Stackblitz</a><sup>[3]</sup>
+, <a href="https://codesandbox.io/">Codesadbox</a><sup>[4]</sup>
+上。</p>
 <h2 id="总结">总结</h2>
 <p>影响力无处不在，打造个人影响力也要全方位进行，邮件签名只是小小的一部分。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.netlify.com/" target="_blank" rel="noopener noreffer ">Netlify</a></li>
-<li><a href="https://www.heroku.com/" target="_blank" rel="noopener noreffer ">Heroku</a></li>
-<li><a href="https://stackblitz.com/" target="_blank" rel="noopener noreffer ">Stackblitz</a></li>
-<li><a href="https://codesandbox.io/" target="_blank" rel="noopener noreffer ">Codesadbox</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Netlify: <a href="https://www.netlify.com/" rel="noopener noreferrer">https://www.netlify.com/</a></li><li>Heroku: <a href="https://www.heroku.com/" rel="noopener noreferrer">https://www.heroku.com/</a></li><li>Stackblitz: <a href="https://stackblitz.com/" rel="noopener noreferrer">https://stackblitz.com/</a></li><li>Codesadbox: <a href="https://codesandbox.io/" rel="noopener noreferrer">https://codesandbox.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

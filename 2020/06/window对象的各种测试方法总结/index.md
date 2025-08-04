@@ -253,16 +253,3 @@ describe('multiple', () => {
 
 源代码：[https://github.com/AndorLab/test-window-object](https://github.com/AndorLab/test-window-object)
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3.mock-window-location](https://remarkablemark.org/blog/2018/11/17/mock-window-location/)
-* [4.jest-how-to-mock-window-location-href](https://wildwolf.name/jest-how-to-mock-window-location-href/)
-* [5.Global Object defineProperty](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-* [6.test double](https://www.jyt0532.com/2018/01/24/jinyong-test-double/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

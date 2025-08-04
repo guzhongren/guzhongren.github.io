@@ -9,10 +9,11 @@
 <p>这两种方式都存在信息丢失的风险，可能由于时间推移或其他因素导致记录不完整或遗失。最理想的方式是建立一套自己的记录系统，使得回顾时能够一目了然地看到当时的审查意见。</p>
 <h2 id="解决方案">解决方案</h2>
 <p>针对这一需求，我开发了一个 VSCode 插件来专门记录 Code Review 过程中的反馈。这个项目使用了最近非常热门的 Vibe Coding 技术&hellip;</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="Code Review Comments" /></p>
+<p></p>
 <h2 id="实现细节">实现细节</h2>
 <h3 id="系统提示词设计">系统提示词设计</h3>
-<p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli" target="_blank" rel="noopener noreffer ">Gemini CLI</a> 工具。</p>
+<p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli">Gemini CLI</a><sup>[1]</sup>
+ 工具。</p>
 <p>在开始开发前，我创建了一个 gemini.md 文件，在其中详细描述了项目需求：</p>
 <ul>
 <li>系统角色定义：为 AI 设定一个专业的角色定位</li>
@@ -64,14 +65,10 @@
 <li>使用 Vibe Coding，我们可以更快地获得产品原型，同时也能更快地学习我们不熟悉的知识和技能。</li>
 <li>但所有生成的代码都需要良好且可维护的架构设计，而不是流水账式的代码堆砌。</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.npmjs.com/package/@google/gemini-cli" target="_blank" rel="noopener noreffer ">Gemini CLI: https://www.npmjs.com/package/@google/gemini-cli</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>使用uv来更好的管理你的python依赖</title><link>https://guzhongren.github.io/2025/06/%E4%BD%BF%E7%94%A8uv%E6%9D%A5%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84python%E4%BE%9D%E8%B5%96/</link><pubDate>Mon, 30 Jun 2025 20:43:58 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/06/%E4%BD%BF%E7%94%A8uv%E6%9D%A5%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84python%E4%BE%9D%E8%B5%96/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Gemini CLI: <a href="https://www.npmjs.com/package/@google/gemini-cli" rel="noopener noreferrer">https://www.npmjs.com/package/@google/gemini-cli</a></li></ol>
+            </div>]]></description></item><item><title>使用uv来更好的管理你的python依赖</title><link>https://guzhongren.github.io/2025/06/%E4%BD%BF%E7%94%A8uv%E6%9D%A5%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84python%E4%BE%9D%E8%B5%96/</link><pubDate>Mon, 30 Jun 2025 20:43:58 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/06/%E4%BD%BF%E7%94%A8uv%E6%9D%A5%E6%9B%B4%E5%A5%BD%E7%9A%84%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84python%E4%BE%9D%E8%B5%96/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="痛点">痛点</h2>
 <p>在Python 项目开发过程中，我们肯定会用到<code>requirements.txt</code> 来管理项目中所用到的第三方库，这么多年都是这么过来的，那有什么痛点呢？</p>
@@ -83,12 +80,14 @@
 <p>你是不是也是经常遇到？</p>
 <h2 id="工具介绍">工具介绍</h2>
 <h3 id="pyprojecttoml">pyproject.toml</h3>
-<p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/" target="_blank" rel="noopener noreffer ">pyproject.toml</a> 文件是定义项目配置的 Python 标准。</p>
+<p><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/">pyproject.toml</a><sup>[1]</sup>
+ 文件是定义项目配置的 Python 标准。</p>
 <p>与 <code>NodeJS</code> 项目中的 <code>package.json</code> 一样，可以管理第三方依赖，可以存储可以运行的命令，所使用的 Runtime 的版本号限制和项目的基本信息等等的，功能强大可见一斑。</p>
 <h3 id="uv">uv</h3>
-<p><img src="https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark" alt="uv" /></p>
+<p></p>
 <blockquote>
-<p>An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) &ndash; <a href="https://docs.astral.sh/uv/" target="_blank" rel="noopener noreffer ">https://docs.astral.sh/uv/</a></p>
+<p>An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) &ndash; <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a><sup>[2]</sup>
+</p>
 </blockquote>
 <p>速度快是其特点，但是使用也是相当方便。而且文档相当详细。</p>
 <h2 id="如何使用">如何使用</h2>
@@ -233,14 +232,10 @@
 <h2 id="总结">总结</h2>
 <p>好的工具的选择可以为工程构建增速提效。
 工具的组合更是可以产生解放生产力。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/" target="_blank" rel="noopener noreffer ">pyproject.toml: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>pyproject.toml: <a href="https://packaging.python.org/en/latest/guides/writing-pyproject-toml/" rel="noopener noreferrer">https://packaging.python.org/en/latest/guides/writing-pyproject-toml/</a></li><li>https://docs.astral.sh/uv/: <a href="https://docs.astral.sh/uv/" rel="noopener noreferrer">https://docs.astral.sh/uv/</a></li></ol>
+            </div>]]></description></item><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
@@ -250,7 +245,8 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><a href="https://strapi.io/" target="_blank" rel="noopener noreffer ">Strapi</a> 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+            <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
+ 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
         </div>
     </div>
 <p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
@@ -266,7 +262,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
+<p></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -312,7 +308,8 @@
 <p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
 <h2 id="进阶">进阶</h2>
 <p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
-<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a> 中</h3>
+<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
+ 中</h3>
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -329,7 +326,8 @@
 </ol>
 <p>可通过中间件（Middleware）统一处理请求参数。基本步骤：</p>
 <ol>
-<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate" target="_blank" rel="noopener noreffer ">strapi generate:middleware</a> 命令生成中间件
+<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate">strapi generate:middleware</a><sup>[2]</sup>
+ 命令生成中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -444,16 +442,10 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>Strapi 是一个强大的 Headless CMS，适合快速构建和管理内容驱动的应用。通过灵活的内容建模、API 生成和插件扩展，Strapi 能满足各种项目需求。本文介绍了 Strapi 的基本概念、主要流程和进阶用法，希望能帮助你快速上手。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html" target="_blank" rel="noopener noreffer ">Strapi 官方文档</a></li>
-<li><a href="https://docs.strapi.io/cms/api/rest/interactive-query-builder" target="_blank" rel="noopener noreffer ">Strapi interactive query builder</a></li>
-<li><a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Strapi Middleware: <a href="https://docs.strapi.io/cms/backend-customization/middlewares" rel="noopener noreferrer">https://docs.strapi.io/cms/backend-customization/middlewares</a></li><li>strapi generate:middleware: <a href="https://docs.strapi.io/cms/cli#strapi-generate" rel="noopener noreferrer">https://docs.strapi.io/cms/cli#strapi-generate</a></li><li>Strapi: <a href="https://strapi.io/" rel="noopener noreferrer">https://strapi.io/</a></li></ol>
+            </div>]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <p>作为程序员的你，正在开发一款基于全球地图的某资源分布网站，你的产品会被各个国家的人使用，而每个国家都有不同的法律法规和文化习惯。你需要考虑到这些因素，以确保你的产品在全球范围内都能正常使用。比如有争议的边界不能让用户看到对自己国家不利的标记，那么你需要怎么做呢？这时候，你就需要考虑跨功能性需求了。</p>
@@ -621,7 +613,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
+<p></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -666,8 +658,10 @@
 </li>
 </ol>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a>
-来源：<a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+
+来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
+</p>
 </blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
@@ -683,7 +677,8 @@
 <li>部署 CDN（内容分发网络）加速静态资源加载。</li>
 </ul>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+</p>
 </blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
@@ -694,7 +689,8 @@
 <h4 id="实例分布式数据库">实例：分布式数据库</h4>
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
-<p>来源：<a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreffer ">MongoDB 官方文档</a></p>
+<p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
+</p>
 </blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
@@ -706,7 +702,8 @@
 <h4 id="实例oauth-20">实例：OAuth 2.0</h4>
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
-<p>来源：<a href="https://oauth.net/2/" target="_blank" rel="noopener noreffer ">OAuth 2.0 规范</a></p>
+<p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
+</p>
 </blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
@@ -719,15 +716,10 @@
 <p>当然还有一种最简单的方法，只提供卫星影像地图，不提供边界图层。</p>
 <h3 id="关键点回顾与未来展望">关键点回顾与未来展望</h3>
 <p>跨功能性需求是软件开发中不可忽视的一部分。通过合理的需求优先级设定和跨团队协作，可以有效应对这些挑战。未来，随着技术的进步，跨功能性需求的管理将更加智能化和自动化。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></li>
-<li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>基于AI大模型开发一个Slack Bot的总结</title><link>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 28 Mar 2025 22:32:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Redis 官方文档: <a href="https://redis.io/documentation" rel="noopener noreferrer">https://redis.io/documentation</a></li><li>Nginx 官方文档: <a href="https://nginx.org/en/docs/" rel="noopener noreferrer">https://nginx.org/en/docs/</a></li><li>MongoDB 官方文档: <a href="https://www.mongodb.com/docs/" rel="noopener noreferrer">https://www.mongodb.com/docs/</a></li><li>OAuth 2.0 规范: <a href="https://oauth.net/2/" rel="noopener noreferrer">https://oauth.net/2/</a></li></ol>
+            </div>]]></description></item><item><title>基于AI大模型开发一个Slack Bot的总结</title><link>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 28 Mar 2025 22:32:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="起因">起因</h2>
 <p>最近一个半月都在Beach，虽然离开了项目，但每天的生活比项目期间还要忙碌，同时也学到了很多新知识。</p>
@@ -748,7 +740,8 @@
 <li>使用无服务器函数处理 Bot 发送的请求，获取 AI 所需数据，并将其传递给 AI 模型，最终将AI返回的内容发送回 Slack。</li>
 </ol>
 <h3 id="创建slack-bot">创建Slack Bot</h3>
-<p>在<a href="https://api.slack.com/apps" target="_blank" rel="noopener noreffer ">Slack官网</a>上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
+<p>在<a href="https://api.slack.com/apps">Slack官网</a><sup>[1]</sup>
+上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
 <div class="mermaid" id="id-2"></div><div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>提示<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -807,7 +800,7 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>示例<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot" target="_blank" rel="noopener noreffer ">https://serverless.functions.url/x-bot</a></div>
+            <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot">https://serverless.functions.url/x-bot</a><sup>[2]</sup></div>
         </div>
     </div>
 <p>这种方式适合已经创建过一个 Bot，需要重新创建的情况，例如测试完成后需要创建正式的 Bot。</p>
@@ -951,14 +944,10 @@
 </ul>
 <h2 id="总结">总结</h2>
 <p>Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某种特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://api.slack.com/apps" target="_blank" rel="noopener noreffer ">Slack 官网:https://api.slack.com/apps</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>本地跑deepseek 7b模型</title><link>https://guzhongren.github.io/2025/02/%E6%9C%AC%E5%9C%B0%E8%B7%91deepseek-7b%E6%A8%A1%E5%9E%8B/</link><pubDate>Tue, 11 Feb 2025 22:31:58 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/02/%E6%9C%AC%E5%9C%B0%E8%B7%91deepseek-7b%E6%A8%A1%E5%9E%8B/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Slack官网: <a href="https://api.slack.com/apps" rel="noopener noreferrer">https://api.slack.com/apps</a></li><li>https://serverless.functions.url/x-bot: <a href="https://serverless.functions.url/x-bot" rel="noopener noreferrer">https://serverless.functions.url/x-bot</a></li></ol>
+            </div>]]></description></item><item><title>本地跑deepseek 7b模型</title><link>https://guzhongren.github.io/2025/02/%E6%9C%AC%E5%9C%B0%E8%B7%91deepseek-7b%E6%A8%A1%E5%9E%8B/</link><pubDate>Tue, 11 Feb 2025 22:31:58 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/02/%E6%9C%AC%E5%9C%B0%E8%B7%91deepseek-7b%E6%A8%A1%E5%9E%8B/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="背景">背景</h2>
 <p>最近，Deepseek 因其卓越的性能和高效的推理速度在技术圈内引起了广泛关注。</p>
@@ -973,8 +962,10 @@
 </ul>
 <h4 id="软件">软件</h4>
 <ul>
-<li><strong><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama</a></strong>: 用于管理和运行大模型。</li>
-<li><strong><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI</a></strong>: 提供与大模型交互的界面。</li>
+<li><strong><a href="https://ollama.com/">Ollama</a><sup>[1]</sup>
+</strong>: 用于管理和运行大模型。</li>
+<li><strong><a href="https://chatboxai.app/">Chatbox AI</a><sup>[2]</sup>
+</strong>: 提供与大模型交互的界面。</li>
 </ul>
 <h3 id="安装步骤">安装步骤</h3>
 <h4 id="安装-ollama">安装 Ollama</h4>
@@ -1007,20 +998,16 @@
 <h2 id="总结">总结</h2>
 <p>随着人工智能技术的快速发展，社会分工可能会发生显著变化, 最明显的是人工智能会淘汰掉社会分工的中间层。</p>
 <p>未来的趋势可能是：要么成为顶层的规则设计者，要么成为底层的实践者。通过本地搭建和运行 Deepseek 模型，我们不仅能够避免在线服务的限制，还能更深入地理解和掌握这一前沿技术。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreffer ">Deepseek:https://www.deepseek.com/</a></li>
-<li><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama:https://ollama.com/</a></li>
-<li><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI:https://chatboxai.app/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Home Assistant搭建和配置并配置米家集成极简教程</title><link>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</link><pubDate>Sun, 05 Jan 2025 21:55:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Ollama: <a href="https://ollama.com/" rel="noopener noreferrer">https://ollama.com/</a></li><li>Chatbox AI: <a href="https://chatboxai.app/" rel="noopener noreferrer">https://chatboxai.app/</a></li></ol>
+            </div>]]></description></item><item><title>Home Assistant搭建和配置并配置米家集成极简教程</title><link>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</link><pubDate>Sun, 05 Jan 2025 21:55:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/01/home-assistant%E6%90%AD%E5%BB%BA%E5%92%8C%E9%85%8D%E7%BD%AE%E5%B9%B6%E9%85%8D%E7%BD%AE%E7%B1%B3%E5%AE%B6%E9%9B%86%E6%88%90%E6%9E%81%E7%AE%80%E6%95%99%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="小米发布home-assistant-集成">小米发布Home Assistant 集成</h2>
-<p>2024年底，小米突然在 GitHub 上开源了<a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a>，顿时引起热议，正好我家里也是小米的设备，并且也是个Home Assistant 小白，所以正好可以探索一波。</p>
-<p>因为网上有很多关于Home Assistant的说明及安装教程, 在这推荐<a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a>，我就不赘述了。</p>
+<p>2024年底，小米突然在 GitHub 上开源了<a href="https://github.com/XiaoMi/ha_xiaomi_home">基于Home Assistant的米家集成</a><sup>[1]</sup>
+，顿时引起热议，正好我家里也是小米的设备，并且也是个Home Assistant 小白，所以正好可以探索一波。</p>
+<p>因为网上有很多关于Home Assistant的说明及安装教程, 在这推荐<a href="https://sspai.com/post/95117">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a><sup>[2]</sup>
+，我就不赘述了。</p>
 <h2 id="基于-docker-的home-assistant-安装并集成小米集成">基于 Docker 的Home Assistant 安装并集成小米集成</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
@@ -1061,17 +1048,10 @@
 <h2 id="总结">总结</h2>
 <p>小米发布的 Home Assistant集成确实很简单，实用, 就像大家说的，通过这次开源和发布，小米已经在家庭物联网这块占据了领导地位，为其后续各种设备集成，扩展奠定了坚实的基础。</p>
 <p>如果小米后续推出其 NAS 集成，肯定又会收割一波 <code>流量</code>。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://sspai.com/post/95117" target="_blank" rel="noopener noreffer ">正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门</a></li>
-<li><a href="https://github.com/XiaoMi/ha_xiaomi_home" target="_blank" rel="noopener noreffer ">基于Home Assistant的米家集成</a></li>
-<li><a href="https://github.com/hacs/get" target="_blank" rel="noopener noreffer ">HACS</a></li>
-<li><a href="https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options" target="_blank" rel="noopener noreffer ">Configuration options</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Git多 user 管理</title><link>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</link><pubDate>Sat, 17 Aug 2024 07:53:16 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>基于Home Assistant的米家集成: <a href="https://github.com/XiaoMi/ha_xiaomi_home" rel="noopener noreferrer">https://github.com/XiaoMi/ha_xiaomi_home</a></li><li>正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门: <a href="https://sspai.com/post/95117" rel="noopener noreferrer">https://sspai.com/post/95117</a></li></ol>
+            </div>]]></description></item><item><title>Git多 user 管理</title><link>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</link><pubDate>Sat, 17 Aug 2024 07:53:16 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2024/08/git%E5%A4%9Auser%E7%AE%A1%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="痛点">痛点</h2>
 <p>平时在一个电脑上会有不同的项目开发，尤其是个人项目和公司项目；</p>
@@ -1159,12 +1139,6 @@
 <h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>MacOS 使用指纹解锁 Sudo 密码</title><link>https://guzhongren.github.io/2024/07/macos-%E4%BD%BF%E7%94%A8%E6%8C%87%E7%BA%B9%E8%A7%A3%E9%94%81-sudo-%E5%AF%86%E7%A0%81/</link><pubDate>Wed, 17 Jul 2024 13:01:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2024/07/macos-%E4%BD%BF%E7%94%A8%E6%8C%87%E7%BA%B9%E8%A7%A3%E9%94%81-sudo-%E5%AF%86%E7%A0%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="出发点">出发点</h2>
@@ -1194,12 +1168,6 @@
 </ul>
 <h2 id="总结">总结</h2>
 <p>配置即生产力。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>研发效能之度量</title><link>https://guzhongren.github.io/2024/03/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F/</link><pubDate>Sun, 31 Mar 2024 22:06:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2024/03/%E7%A0%94%E5%8F%91%E6%95%88%E8%83%BD%E4%B9%8B%E5%BA%A6%E9%87%8F/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>在当前复杂的商业环境下，企业普遍倡导内部降本增效。在这种背景下，研发活动也越来越倾向于数字化度量和呈现。通过研发效能度量，组织能够获取更准确、全面的研发数据，从而更好地制定优化研发的决策和计划。</p>
@@ -1234,7 +1202,10 @@
 <p>人人都在说提效，但没人能说清楚使用了某个方法论之后，到底提效了多少。</p>
 <h2 id="研发效能的难点">研发效能的难点</h2>
 <h3 id="工具不统一">工具不统一</h3>
-<p>大多数组织都在使用不用的工具进行项目管理和产品构建部署等，并没有统一的套件来组织整个流程; 比如有的组织在用 Jira 管理需求，也有的组织在用 Trello, 也有开源组织在用 GitHub 的 Issues 或者 <a href="https://github.com/kubernetes/kubernetes/projects/10" target="_blank" rel="noopener noreffer ">Projects</a>; 在部署工具中，有的组织在用Jenkins, Buildkite，有的组织也在用 <a href="" rel="">GitHub Actions</a>,<a href="" rel=""> GitLab Suites</a>; 在源代码控制方面，各个组织也有不同的选择，比如GitHub, GitLab 等版本控制工具。</p>
+<p>大多数组织都在使用不用的工具进行项目管理和产品构建部署等，并没有统一的套件来组织整个流程; 比如有的组织在用 Jira 管理需求，也有的组织在用 Trello, 也有开源组织在用 GitHub 的 Issues 或者 <a href="https://github.com/kubernetes/kubernetes/projects/10">Projects</a><sup>[1]</sup>
+; 在部署工具中，有的组织在用Jenkins, Buildkite，有的组织也在用 <a href="">GitHub Actions</a><sup>[2]</sup>
+,<a href=""> GitLab Suites</a><sup>[2]</sup>
+; 在源代码控制方面，各个组织也有不同的选择，比如GitHub, GitLab 等版本控制工具。</p>
 <h3 id="数据关系复杂">数据关系复杂</h3>
 <p>一个组织下肯定会有不同的项目组或者团队，每个团队在看板上对每一列的定义可能不尽相同，那么在计算效能的时候就需要定制化地去选择对应的数据。比如一个Account 大家都在用Jira, 每个团队有自己的定义过的看板，那么在最终统计看板效能的时候，大家的维度都不一样，可想而知，其最终的结果肯定也是不准确的。</p>
 <h3 id="统计维度多样">统计维度多样</h3>
@@ -1248,19 +1219,32 @@
 <h3 id="指标收集粗略且范围单一">指标收集粗略且范围单一</h3>
 <p>当然，市场上存在多种收集，统计工具，比如</p>
 <ul>
-<li><a href="https://web.techdash.thoughtworks.net/" target="_blank" rel="noopener noreffer ">Tech Dash</a> Thoughtworks 内部统计 DORA Metrics 的统计工具</li>
-<li><a href="https://www.sleuth.io/" target="_blank" rel="noopener noreffer ">Sleuth</a> 统计 DORA Metrics 的工具</li>
-<li><a href="https://polaris.thoughtworks.net/" target="_blank" rel="noopener noreffer ">polaris</a> Thoughtworks 内部统计 DORA Metrics 的统计工具</li>
-<li><a href="https://github.com/thoughtworks/metrik" target="_blank" rel="noopener noreffer ">Metrik</a> Thoughtworks 开源的 DORA Metrics 统计工具</li>
-<li><a href="https://devlake.apache.org/" target="_blank" rel="noopener noreffer ">DevLake</a>, 收集，分析和可视化 DevOps 工具的零散数据，以提取卓越工程的洞见。</li>
-<li><a href="https://github.com/GoogleCloudPlatform/fourkeys" target="_blank" rel="noopener noreffer ">Four Keys</a>, measures the four key metrics.</li>
-<li><a href="https://github.com/kuona/kuona-project" target="_blank" rel="noopener noreffer ">Kuona project for IT Analytics</a>, provides a dashboard on data from various sources.</li>
-<li><a href="https://github.com/anandbagmar/tta" target="_blank" rel="noopener noreffer ">Test Trend Analyzer</a>, consumes test results for test trends.</li>
-<li><a href="https://github.com/thetestpeople/trt" target="_blank" rel="noopener noreffer ">TRT</a>, consumes test results for test trends.</li>
-<li><a href="https://extensions-docs.gocd.org/analytics/current/" target="_blank" rel="noopener noreffer ">GoCD&rsquo;s analytics extension</a>, collects and displays build metrics for GoCD.</li>
-<li><a href="https://www.pulse.codacy.com" target="_blank" rel="noopener noreffer ">pulse</a>, support the continuous improvement of your engineering teams with data-driven insights.</li>
-<li><a href="https://jellyfish.co" target="_blank" rel="noopener noreffer ">Jellyfish</a>, translate and maximize the business impact of engineering.</li>
-<li><a href="https://github.com/marketplace/buildpulse" target="_blank" rel="noopener noreffer ">BuildPulse</a>, automatically detects flaky tests.</li>
+<li><a href="https://web.techdash.thoughtworks.net/">Tech Dash</a><sup>[3]</sup>
+ Thoughtworks 内部统计 DORA Metrics 的统计工具</li>
+<li><a href="https://www.sleuth.io/">Sleuth</a><sup>[4]</sup>
+ 统计 DORA Metrics 的工具</li>
+<li><a href="https://polaris.thoughtworks.net/">polaris</a><sup>[5]</sup>
+ Thoughtworks 内部统计 DORA Metrics 的统计工具</li>
+<li><a href="https://github.com/thoughtworks/metrik">Metrik</a><sup>[6]</sup>
+ Thoughtworks 开源的 DORA Metrics 统计工具</li>
+<li><a href="https://devlake.apache.org/">DevLake</a><sup>[7]</sup>
+, 收集，分析和可视化 DevOps 工具的零散数据，以提取卓越工程的洞见。</li>
+<li><a href="https://github.com/GoogleCloudPlatform/fourkeys">Four Keys</a><sup>[8]</sup>
+, measures the four key metrics.</li>
+<li><a href="https://github.com/kuona/kuona-project">Kuona project for IT Analytics</a><sup>[9]</sup>
+, provides a dashboard on data from various sources.</li>
+<li><a href="https://github.com/anandbagmar/tta">Test Trend Analyzer</a><sup>[10]</sup>
+, consumes test results for test trends.</li>
+<li><a href="https://github.com/thetestpeople/trt">TRT</a><sup>[11]</sup>
+, consumes test results for test trends.</li>
+<li><a href="https://extensions-docs.gocd.org/analytics/current/">GoCD&rsquo;s analytics extension</a><sup>[12]</sup>
+, collects and displays build metrics for GoCD.</li>
+<li><a href="https://www.pulse.codacy.com">pulse</a><sup>[13]</sup>
+, support the continuous improvement of your engineering teams with data-driven insights.</li>
+<li><a href="https://jellyfish.co">Jellyfish</a><sup>[14]</sup>
+, translate and maximize the business impact of engineering.</li>
+<li><a href="https://github.com/marketplace/buildpulse">BuildPulse</a><sup>[15]</sup>
+, automatically detects flaky tests.</li>
 </ul>
 <p>在此，我们选择如下部分工具进行对比并说明。</p>
 <h2 id="解决方案对比">解决方案对比</h2>
@@ -1481,12 +1465,9 @@
 </table>
 <h4 id="为什么会有-heartbeat">为什么会有 Heartbeat</h4>
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>
-<p><img src="..." alt="研发效能反馈图" /></p>
+<p></p>
 <h2 id="总结">总结</h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Projects: <a href="https://github.com/kubernetes/kubernetes/projects/10" rel="noopener noreferrer">https://github.com/kubernetes/kubernetes/projects/10</a></li><li>GitHub Actions: <a href="https://guzhongren.github.io/" rel="noopener noreferrer"></a></li><li>Tech Dash: <a href="https://web.techdash.thoughtworks.net/" rel="noopener noreferrer">https://web.techdash.thoughtworks.net/</a></li><li>Sleuth: <a href="https://www.sleuth.io/" rel="noopener noreferrer">https://www.sleuth.io/</a></li><li>polaris: <a href="https://polaris.thoughtworks.net/" rel="noopener noreferrer">https://polaris.thoughtworks.net/</a></li><li>Metrik: <a href="https://github.com/thoughtworks/metrik" rel="noopener noreferrer">https://github.com/thoughtworks/metrik</a></li><li>DevLake: <a href="https://devlake.apache.org/" rel="noopener noreferrer">https://devlake.apache.org/</a></li><li>Four Keys: <a href="https://github.com/GoogleCloudPlatform/fourkeys" rel="noopener noreferrer">https://github.com/GoogleCloudPlatform/fourkeys</a></li><li>Kuona project for IT Analytics: <a href="https://github.com/kuona/kuona-project" rel="noopener noreferrer">https://github.com/kuona/kuona-project</a></li><li>Test Trend Analyzer: <a href="https://github.com/anandbagmar/tta" rel="noopener noreferrer">https://github.com/anandbagmar/tta</a></li><li>TRT: <a href="https://github.com/thetestpeople/trt" rel="noopener noreferrer">https://github.com/thetestpeople/trt</a></li><li>GoCD&rsquo;s analytics extension: <a href="https://extensions-docs.gocd.org/analytics/current/" rel="noopener noreferrer">https://extensions-docs.gocd.org/analytics/current/</a></li><li>pulse: <a href="https://www.pulse.codacy.com" rel="noopener noreferrer">https://www.pulse.codacy.com</a></li><li>Jellyfish: <a href="https://jellyfish.co" rel="noopener noreferrer">https://jellyfish.co</a></li><li>BuildPulse: <a href="https://github.com/marketplace/buildpulse" rel="noopener noreferrer">https://github.com/marketplace/buildpulse</a></li></ol>
+            </div>]]></description></item></channel></rss>

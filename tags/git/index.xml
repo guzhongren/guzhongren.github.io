@@ -86,17 +86,12 @@
 <h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a></p>
+<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
+</p>
 </blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
@@ -115,7 +110,8 @@
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
 </ul>
 </blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak" target="_blank" rel="noopener noreffer ">oak</a></h3>
+<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</h3>
 <blockquote>
 <p>A middleware framework for Deno&rsquo;s net server 🦕</p>
 </blockquote>
@@ -127,9 +123,14 @@
 <p>工欲善其事，必先利其器。</p>
 </blockquote>
 <h3 id="开发工具">开发工具</h3>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer "><code>VS Code</code></a>, <a href="https://www.docker.com/" target="_blank" rel="noopener noreffer "><code>Docker</code></a></p>
+<p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
+, <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
+</p>
 <h3 id="环境工具">环境工具</h3>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer "><code>Deno</code></a>, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer "><code>Typescript</code></a>, <a href="https://nodejs.org/" target="_blank" rel="noopener noreffer "><code>Node</code></a></p>
+<p><a href="https://deno.land/"><code>Deno</code></a><sup>[5]</sup>
+, <a href="https://www.typescriptlang.org/"><code>Typescript</code></a><sup>[6]</sup>
+, <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
+</p>
 <blockquote>
 <p>注： Node 是用来调试 Deno 的</p>
 </blockquote>
@@ -161,12 +162,14 @@
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres" target="_blank" rel="noopener noreffer ">PostgreSql</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres">PostgreSql</a><sup>[8]</sup>
+</td>
           <td style="text-align: center">12</td>
           <td></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4" target="_blank" rel="noopener noreffer ">PGAdmin</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4">PGAdmin</a><sup>[9]</sup>
+</td>
           <td style="text-align: center">latest</td>
           <td></td>
       </tr>
@@ -197,7 +200,8 @@
 </span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files</span></span></code></pre></div></div>
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
-<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">代码实现</a>。</p>
+<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
+。</p>
 </blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
@@ -309,7 +313,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h3 id="依赖管理">依赖管理</h3>
 <p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
-<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" target="_blank" rel="noopener noreffer "><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
+<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html"><code>完整性检查与锁定文件</code></a><sup>[10]</sup>
+, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
 <p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -554,7 +559,8 @@
 </span></span><span class="line"><span class="cl">数据库链接成功！
 </span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000</span></span></code></pre></div></div>
 <h5 id="调用接口测试结果">调用接口测试结果</h5>
-<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" rel="noopener noreffer "><code>Rest Client</code></a> 插件进行辅助测试。</p>
+<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><code>Rest Client</code></a><sup>[11]</sup>
+ 插件进行辅助测试。</p>
 <h6 id="请求体">请求体</h6>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -590,7 +596,8 @@ content-type: application/json; charset=utf-8
 <li>如果输入错误参数，则抛异常</li>
 </ul>
 </blockquote>
-<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer "><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
+<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
+ 来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -1112,40 +1119,17 @@ content-type: application/json; charset=utf-8
 <li>去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，<code>Deno</code>提供了生成<code>lock.json</code>的形式来保证不同协作者之间的版本依赖；</li>
 <li>&hellip;</li>
 </ul>
-<p>最后感谢 <a href="https://yihaimen.github.io/" target="_blank" rel="noopener noreffer ">海门</a> 和 <a href="https://github.com/hylerrix" target="_blank" rel="noopener noreffer ">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer ">Denoland: https://deno.land/</a></p>
-</li>
-<li>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VS Code: https://code.visualstudio.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker: https://www.docker.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer ">Typescript: https://www.typescriptlang.org/</a></p>
-</li>
-<li>
-<p><a href="https://nodejs.org/" target="_blank" rel="noopener noreffer ">Node: https://nodejs.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer ">mock: https://github.com/udibo/mock</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg" alt="Photo by Daniel Ap from Pexels" /></p>
+<p>最后感谢 <a href="https://yihaimen.github.io/">海门</a><sup>[13]</sup>
+ 和 <a href="https://github.com/hylerrix">亦乐</a><sup>[14]</sup>
+ 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code>: <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" rel="noopener noreferrer">https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></li><li>oak: <a href="https://github.com/oakserver/oak" rel="noopener noreferrer">https://github.com/oakserver/oak</a></li><li><code>VS Code</code>: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li><code>Docker</code>: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li><code>Deno</code>: <a href="https://deno.land/" rel="noopener noreferrer">https://deno.land/</a></li><li><code>Typescript</code>: <a href="https://www.typescriptlang.org/" rel="noopener noreferrer">https://www.typescriptlang.org/</a></li><li><code>Node</code>: <a href="https://nodejs.org/" rel="noopener noreferrer">https://nodejs.org/</a></li><li>PostgreSql: <a href="https://hub.docker.com/_/postgres" rel="noopener noreferrer">https://hub.docker.com/_/postgres</a></li><li>PGAdmin: <a href="https://hub.docker.com/r/dpage/pgadmin4" rel="noopener noreferrer">https://hub.docker.com/r/dpage/pgadmin4</a></li><li><code>完整性检查与锁定文件</code>: <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" rel="noopener noreferrer">https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html</a></li><li><code>Rest Client</code>: <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=humao.rest-client</a></li><li><code>mock</code>: <a href="https://github.com/udibo/mock" rel="noopener noreferrer">https://github.com/udibo/mock</a></li><li>海门: <a href="https://yihaimen.github.io/" rel="noopener noreferrer">https://yihaimen.github.io/</a></li><li>亦乐: <a href="https://github.com/hylerrix" rel="noopener noreferrer">https://github.com/hylerrix</a></li></ol>
+            </div>]]></description></item><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p></p>
 <h2 id="overview">Overview</h2>
-<p><code>Hugo</code>是一款基于 golang 实现的静态网站生成器。以其简单、易用、高效、易扩展、快速部署受到开发者的喜爱，比起 <a href="https://hexo.io/" target="_blank" rel="noopener noreffer ">Hexo</a> 感觉更轻便。下图是我初步实现的博客截图。</p>
-<p><img src="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg" alt="博客截图" /></p>
+<p><code>Hugo</code>是一款基于 golang 实现的静态网站生成器。以其简单、易用、高效、易扩展、快速部署受到开发者的喜爱，比起 <a href="https://hexo.io/">Hexo</a><sup>[1]</sup>
+ 感觉更轻便。下图是我初步实现的博客截图。</p>
+<p></p>
 <h2 id="安装">安装</h2>
 <h3 id="golang">Golang</h3>
 <p>Hugo 是基于 Go 语言的，所以需要安装 go, 我的机器是 Mac, 所以直接用 homebrew 就搞定。</p>
@@ -1169,7 +1153,8 @@ content-type: application/json; charset=utf-8
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-zsh" data-lang="zsh"><span class="line"><span class="cl">$ hugo new site blog</span></span></code></pre></div></div>
-<h3 id="安装-loveithttpsgithubcomdillonzqloveit-主题">安装 <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer ">LoveIt</a> 主题</h3>
+<h3 id="安装-loveithttpsgithubcomdillonzqloveit-主题">安装 <a href="https://github.com/dillonzq/LoveIt">LoveIt</a><sup>[2]</sup>
+ 主题</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-zsh">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -1227,12 +1212,14 @@ content-type: application/json; charset=utf-8
 <h4 id="创建-blog分支">创建 <code>blog</code>分支</h4>
 <p>在 Github 上个创建 blog 分支。我们的博客都会在 blog 分支</p>
 <h4 id="创建personal_token-或者-deploy-token">创建<code>PERSONAL_TOKEN</code>, 或者 Deploy Token</h4>
-<p>我们在 <a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">Developer settings</a> 以 PERSONAL_TOKEN 为例。
-<img src="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg" alt="Image" /></p>
+<p>我们在 <a href="https://github.com/settings/tokens">Developer settings</a><sup>[3]</sup>
+ 以 PERSONAL_TOKEN 为例。
+</p>
 <p>然后在项目设置的 Secret 中用<code>PERSONAL_TOKEN</code>添加
-<img src="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg" alt="Image" /></p>
+</p>
 <h2 id="自动化部署配置">自动化部署配置</h2>
-<p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions" target="_blank" rel="noopener noreffer ">Github Actions</a>, 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
+<p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions">Github Actions</a><sup>[4]</sup>
+, 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -1359,16 +1346,10 @@ content-type: application/json; charset=utf-8
 <blockquote>
 <p>尽情享用吧。..🎉🎉🎉🎉🎉</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li>1.<a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">https://gohugo.io/</a></li>
-<li>2.<a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">https://golang.google.cn/</a></li>
-<li>3.<a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer ">https://github.com/dillonzq/LoveIt</a></li>
-<li>4.<a href="https://github.com/features/actions" target="_blank" rel="noopener noreffer ">https://github.com/features/actions</a></li>
-<li>5.<a href="https://github.com/settings/tokens" target="_blank" rel="noopener noreffer ">https://github.com/settings/tokens</a></li>
-<li>6.<a href="https://realfavicongenerator.net/" target="_blank" rel="noopener noreffer ">生成 icon: https://realfavicongenerator.net/</a></li>
-</ul>
-]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg" alt="Photo by Matheus Natan from Pexels" /></p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Hexo: <a href="https://hexo.io/" rel="noopener noreferrer">https://hexo.io/</a></li><li>LoveIt: <a href="https://github.com/dillonzq/LoveIt" rel="noopener noreferrer">https://github.com/dillonzq/LoveIt</a></li><li>Developer settings: <a href="https://github.com/settings/tokens" rel="noopener noreferrer">https://github.com/settings/tokens</a></li><li>Github Actions: <a href="https://github.com/features/actions" rel="noopener noreferrer">https://github.com/features/actions</a></li></ol>
+            </div>]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p></p>
 <p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>
 <p>此外，得益于这些工具，分布式团队可以畅通合作，使多个人可以同时处理项目的不同部分，然后将其结果合并为一个产品。 让我们仔细看看版本控制系统，git-flow 和 Trunk-based development（基于主干的开发）是如何形成的。</p>
 <h2 id="版本控制系统是怎样改变世界的">版本控制系统是怎样改变世界的</h2>
@@ -1415,7 +1396,7 @@ content-type: application/json; charset=utf-8
 另一个重大改进是引入了分布式系统。 Git 是采用这种理念的首批工具之一。 实际上，它使开源世界得以蓬勃发展。 Git 允许开发人员通过称为分叉的操作复制整个存储库，并引入所需的更改，而不必担心合并冲突。</p>
 <p>随后，开发者可以创建一个 PR(Pull request)，以将其更改合并到原始项目中。 如果最初的开发人员对合并其他存储库中的更改不感兴趣，那么他们可以自己将其转换 (Fork) 为单独的项目。 由于没有中央存储的概念，因此一切皆有可能。</p>
 <h2 id="git-flow">Git-flow</h2>
-<p><img src="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png" alt="Git-flow" /></p>
+<p></p>
 <p>在 Git-flow 开发模型中，你有一个主分支 (master branch)，从主分支创建开发分支 (develop branch)，所有开发工作提交都基于开发分支。<code>主分支和开发分支在 git-flow 的整个生命周期中都是一直存在的。</code></p>
 <p>开发人员从该开发分支创建功能分支 (Feature branch) 并对其进行 Coding。完成后，它们将创建 PR。在审查 (Review) PR 过程中，其他开发人员会对更改发表评论，并可能进行讨论，讨论时间也许会很长。</p>
 <p>对 PR 评审完成后，PR 将被接受并 merge 到开发分支。 一旦确定开发分支已经成熟到可以发布，就会创建一个单独的分支 (release branch) 来准备最终版本。 该分支的应用程序已经过测试，并且在准备好将其发布给最终用户之前会应用错误修复 (bugfixs)。 完成此操作后，我们会将最终产品合并到主 (master branch) 分支，并打标签 (Tag)。 同时，可以在 develop 分支上继续开发新功能。
@@ -1452,10 +1433,10 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </ul>
 <p>如果你的团队主要由相互合作了较长时间的高级开发人员组成，那么你实际上就不需要上述的 PR 。你应该信任你的开发人员，并且知道他们是专业人士，让他们做好自己的工作，不要让所有 Git-Flow 的流程拖慢开发进度。</p>
 <h2 id="github-flow">Github-flow</h2>
-<p><img src="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png" alt="github-flow.png" /></p>
+<p></p>
 <p>Github-flow 是在 git-flow 的基础上衍生而来的。他简化了 git-flow 的复杂模型，并且与 Github 可以很好的结合，在此就不赘述了。</p>
 <h2 id="trunk-based-developmenttbd">Trunk-based Development(TBD)</h2>
-<p><img src="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png" alt="Trunk-based Development" /></p>
+<p></p>
 <p>在基于主干的开发模型中，所有开发人员都在一个具有开放访问权限的分支上工作。通常它只是 master 分支。他们将代码提交给它并运行它，非常简单。</p>
 <p>在某些情况下，它们会创建短暂的功能分支。 分支上的代码编译并通过所有测试后，便将其直接合并到 master。 它可确保开发真正连续进行，并防止开发人员创建难以解决的合并冲突。</p>
 <p>用这种方法检查代码的唯一方法是进行完整的源代码检查。 通常，冗长的讨论是有限的。 没有人能严格控制源代码库中正在修改的内容，这就是为什么拥有可强制执行的代码样式很重要的原因。 以这种风格工作的开发人员应具有丰富的经验，以便你知道他们不会降低源代码的质量。</p>
@@ -1471,21 +1452,18 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <li>我们每个人各自负责前端、移动端和后端</li>
 <li>最重要的是我们的 CICD 完全一条龙操作，环境有 local、DEV、UAT 和 Prod, 在前一个环境 QA 验证不通过，是进入不到下一个环境的</li>
 </ul>
-<p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" target="_blank" rel="noopener noreffer ">《FeatureToggle 引起的。&hellip; 总结》</a>。</p>
+<p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL">《FeatureToggle 引起的。&hellip; 总结》</a><sup>[1]</sup>
+。</p>
 <blockquote>
 <p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://rc.sydney.edu.au/git-user-guide/history.html" target="_blank" rel="noopener noreffer ">1.https://rc.sydney.edu.au/git-user-guide/history.html</a></li>
-<li><a href="https://nvie.com/files/Git-branching-model.pdf" target="_blank" rel="noopener noreffer ">2.https://nvie.com/files/Git-branching-model.pdf</a></li>
-<li><a href="https://trunkbaseddevelopment.com" target="_blank" rel="noopener noreffer ">3.https://trunkbaseddevelopment.com</a></li>
-<li><a href="https://guides.github.com/introduction/flow/" target="_blank" rel="noopener noreffer ">4.https://guides.github.com/introduction/flow/</a></li>
-</ul>
-]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>《FeatureToggle 引起的。&hellip; 总结》: <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" rel="noopener noreferrer">https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL</a></li></ol>
+            </div>]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
             </div><p>我需要撤销最后的四个提交</p>
-<p><img src="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png" alt="image" /></p>
+<p></p>
 <p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -1502,9 +1480,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
 <p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
-<p><img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" alt="image" /></p>
-<h2 id="引用">引用</h2>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
+<p></p>
 ]]></description></item><item><title>使用 git 迁移 git 项目并保留提交记录</title><link>https://guzhongren.github.io/2019/09/%E4%BD%BF%E7%94%A8git%E8%BF%81%E7%A7%BBgit%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/%E4%BD%BF%E7%94%A8git%E8%BF%81%E7%A7%BBgit%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/EZGJPfDjFAvM2Ug.jpg" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -1545,18 +1521,14 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> project
 </span></span><span class="line"><span class="cl">$ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git</span></span></code></pre></div></div>
 <h2 id="晒个图">晒个图</h2>
-<p><img src="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png" alt="git.mirror.png" /></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY" target="_blank" rel="noopener noreffer ">2. 原文：https://yq.aliyun.com/articles/675073?spm=a2c4e.11155435.0.0.27543312iFnJbY</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<p></p>
 ]]></description></item><item><title>Npm 安装 git 资源</title><link>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</link><pubDate>Fri, 19 Oct 2018 19:27:23 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3979186/pexels-photo-3979186.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
-<p>我们大多数情况下用到的包都是存放在 <a href="https://www.npmjs.com/" target="_blank" rel="noopener noreffer ">npmjs.com</a> 这个网站上的，只要我们安装了 Node，我们就可以使用 Node 自带的 npm 包来下载你需要的包；但有时候我们想让我们自己的包或者库私有，哪怎么办呢？很多人就会想到自己搭一个私服，比如 <a href="https://oss.sonatype.org/#Documentation" target="_blank" rel="noopener noreffer ">Nexus Repository Manager </a> 和 <a href="https://github.com/rlidwka/sinopia" target="_blank" rel="noopener noreffer ">sinopia</a>;　虽然搭建起来不是很困难，尤其是 sinopia 就是一个 npm 包，安装灰常简单，但是都需要一台服务器，一台服务。.. 一台服。.. 一台。.. 一。..</p>
+<p>我们大多数情况下用到的包都是存放在 <a href="https://www.npmjs.com/">npmjs.com</a><sup>[1]</sup>
+ 这个网站上的，只要我们安装了 Node，我们就可以使用 Node 自带的 npm 包来下载你需要的包；但有时候我们想让我们自己的包或者库私有，哪怎么办呢？很多人就会想到自己搭一个私服，比如 <a href="https://oss.sonatype.org/#Documentation">Nexus Repository Manager </a><sup>[2]</sup>
+ 和 <a href="https://github.com/rlidwka/sinopia">sinopia</a><sup>[3]</sup>
+;　虽然搭建起来不是很困难，尤其是 sinopia 就是一个 npm 包，安装灰常简单，但是都需要一台服务器，一台服务。.. 一台服。.. 一台。.. 一。..</p>
 <p>现在大多数公司肯定有自己的 git 仓库了，[没有到 git？说明你们技术太 XXX 落后] 那么我们何不利用 git 仓库来存放我们的各种 lib 呢？</p>
 <h2 id="传统方式">传统方式</h2>
 <blockquote>
@@ -1570,7 +1542,8 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install XXX
 </span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
 <h2 id="git-仓库">git 仓库</h2>
-<p>假如你已经做了一个特别牛逼的库，但是因为只是公司内部使用，比如一些工具库，放出去比如放到 npmjs.com 上没任何意义的，你可以把这个库整理成一个 git 的 repo, 当然打个标签，发个各版本什么的那就更好了。当你把你牛逼的库放在你司的 git 上后，比如地址是 <em><strong>ssh:git.niubi.com/yourName/niubility.git</strong></em>　或者　<em><strong><a href="https://git.niubi.com/yourName/niubility.git" target="_blank" rel="noopener noreffer ">https://git.niubi.com/yourName/niubility.git</a></strong></em>, 接下来就是发大招。</p>
+<p>假如你已经做了一个特别牛逼的库，但是因为只是公司内部使用，比如一些工具库，放出去比如放到 npmjs.com 上没任何意义的，你可以把这个库整理成一个 git 的 repo, 当然打个标签，发个各版本什么的那就更好了。当你把你牛逼的库放在你司的 git 上后，比如地址是 <em><strong>ssh:git.niubi.com/yourName/niubility.git</strong></em>　或者　<em><strong><a href="https://git.niubi.com/yourName/niubility.git">https://git.niubi.com/yourName/niubility.git</a><sup>[4]</sup>
+</strong></em>, 接下来就是发大招。</p>
 <h2 id="大招">大招</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -1604,12 +1577,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install yourName/niubility
 </span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
 <h2 id="恩没什么可说的了我真是来测试打赏功能的">恩，没什么可说的了我真是来测试打赏功能的。</h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>npmjs.com: <a href="https://www.npmjs.com/" rel="noopener noreferrer">https://www.npmjs.com/</a></li><li>Nexus Repository Manager : <a href="https://oss.sonatype.org/#Documentation" rel="noopener noreferrer">https://oss.sonatype.org/#Documentation</a></li><li>sinopia: <a href="https://github.com/rlidwka/sinopia" rel="noopener noreferrer">https://github.com/rlidwka/sinopia</a></li><li>https://git.niubi.com/yourName/niubility.git: <a href="https://git.niubi.com/yourName/niubility.git" rel="noopener noreferrer">https://git.niubi.com/yourName/niubility.git</a></li></ol>
+            </div>]]></description></item></channel></rss>

@@ -142,13 +142,3 @@
 
 ![font](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/font.69qxu1ldebg0.webp)
 
-## 引用
-
-* [博客: https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [diagrams.net: https://www.diagrams.net/doc/faq/configure-diagram-editor](https://www.diagrams.net/doc/faq/configure-diagram-editor)
-* [vscode-drawio: https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio](https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

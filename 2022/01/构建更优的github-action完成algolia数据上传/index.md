@@ -249,13 +249,4 @@ ENTRYPOINT ["/entrypoint.sh"]
   ]
 }
 {{< /echarts >}}
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Algolia Docsearch Indexer: https://github.com/marketplace/actions/algolia-docsearch-indexer](https://github.com/marketplace/actions/algolia-docsearch-indexer)
-* [GitHub Action: https://docs.github.com/en/actions](https://docs.github.com/en/actions)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
 

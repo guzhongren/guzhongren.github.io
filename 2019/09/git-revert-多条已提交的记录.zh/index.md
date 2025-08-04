@@ -23,7 +23,3 @@ $ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b8040123
 
 ![image](https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png)
 
-## 引用
-
-[1.https://guzhongren.github.io/](https://guzhongren.github.io/)
-

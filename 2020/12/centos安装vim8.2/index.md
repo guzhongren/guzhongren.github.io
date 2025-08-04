@@ -106,11 +106,3 @@ VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Dec 16 2020 23:04:31)
 
 ```
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

@@ -56,7 +56,8 @@
 </span></span><span class="line"><span class="cl"><span class="mi">12</span><span class="o">================</span><span class="mi">2</span><span class="nx">forEach</span><span class="o">================</span></span></span></code></pre></div></div>
 <p>前面的 12 代表 这行在最近被重复输出了 12 次，而且看下面，promise 的结果也还没得到，然后程序在输出 2 forEach 的时候停顿了 3 秒；总之，我们没有达到效果。 为什么呢？</p>
 <h2 id="掩饰">掩饰</h2>
-<p>查看 MDN 官网中关于 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener noreffer ">Array.prototype.forEach()</a> 的解释，可以看到有一行说明</p>
+<p>查看 MDN 官网中关于 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Array.prototype.forEach()</a><sup>[1]</sup>
+ 的解释，可以看到有一行说明</p>
 <blockquote>
 <p>Note: There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.</p>
 </blockquote>
@@ -151,15 +152,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <li><strong>零信任</strong> 要有质疑精神，只要不是自己写的，就有可能有 bug， 不然那么多漏洞是怎么发现的</li>
 <li>Keep simple, Keep run</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank" rel="noopener noreffer ">Array.prototype.forEach()</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Array.prototype.forEach(): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" rel="noopener noreferrer">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach</a></li></ol>
+            </div>]]></description></item></channel></rss>

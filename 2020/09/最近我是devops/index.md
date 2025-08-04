@@ -86,11 +86,3 @@ docker-compose pull shush
 * `cfn` 不支持 `SecurityString`
 * `shush` 是个好工具，有 `Docker` 镜像，只要你的机器上有 `Docker`, 你就可以不用通过命令行安装它， 执行 `docker` 命令即可拿到结果；但需要注意的是：执行某个命令之前，需要先将镜像拉下来，不然第一次计算的结果中会有拉取镜像的日志。
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

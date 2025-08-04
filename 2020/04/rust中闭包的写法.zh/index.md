@@ -73,14 +73,3 @@ error[E0308]: mismatched types
 
 Rust 的闭包感觉和 js 的函数的写法很像，感觉到了 Rust 又借鉴了部分 js 的语法。
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3. 茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html](https://zhidao.baidu.com/question/1448503662321920660.html)
-* [4.Rust 闭包：https://doc.rust-lang.org/rust-by-example/fn/closures.html](https://doc.rust-lang.org/rust-by-example/fn/closures.html)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

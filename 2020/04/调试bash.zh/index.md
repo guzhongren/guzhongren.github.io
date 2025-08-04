@@ -50,14 +50,3 @@ sh -x run.sh
 
 > 好习惯都是踩坑踩出来的
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3. 编写可靠 bash 脚本的一些技巧：https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q](https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q)
-*
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

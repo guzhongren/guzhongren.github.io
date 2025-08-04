@@ -1,11 +1,8 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Documentation - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/documentation/</link><description>Documentation - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 03 Mar 2020 15:29:59 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/documentation/" rel="self" type="application/rss+xml"/><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"><img
-        src="https://guzhongren.github.io//svg/version/0.2.11-changed.min.svg"
-        srcset="/svg/version/0.2.11-changed.min.svg, /svg/version/0.2.11-changed.min.svg 1.5x, /svg/version/0.2.11-changed.min.svg 2x"
-        sizes="auto"
-        alt="LoveIt 更改 | 0.2.11"
-        title="LoveIt 更改 | 0.2.11" /></a>
-<p><code>mermaid</code> shortcode 使用 <a href="https://mermaidjs.github.io/" target="_blank" rel="noopener noreffer ">Mermaid</a> 库提供绘制图表和流程图的功能.</p>
-<p><a href="https://mermaidjs.github.io/" target="_blank" rel="noopener noreffer ">mermaid</a> 是一个可以帮助你在文章中绘制图表和流程图的库, 类似 Markdown 的语法.</p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Documentation - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/documentation/</link><description>Documentation - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 03 Mar 2020 15:29:59 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/documentation/" rel="self" type="application/rss+xml"/><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"></a>
+<p><code>mermaid</code> shortcode 使用 <a href="https://mermaidjs.github.io/">Mermaid</a><sup>[1]</sup>
+ 库提供绘制图表和流程图的功能.</p>
+<p><a href="https://mermaidjs.github.io/">mermaid</a><sup>[1]</sup>
+ 是一个可以帮助你在文章中绘制图表和流程图的库, 类似 Markdown 的语法.</p>
 <p>只需将你的 mermaid 代码插入 <code>mermaid</code> shortcode 中即可.</p>
 <h2 id="flowchart">流程图</h2>
 <p>一个 <strong>流程图</strong> <code>mermaid</code> 示例:</p>
@@ -212,4 +209,7 @@
 </span></span><span class="line"><span class="cl">test_entity - satisfies -&gt; test_req
 </span></span><span class="line"><span class="cl">{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">mermaid</span> <span class="p">&gt;</span>}}</span></span></code></pre></div></div>
 <p>呈现的输出效果如下:</p>
-<div class="mermaid" id="id-10"></div>]]></description></item></channel></rss>
+<div class="mermaid" id="id-10"></div><div class="references">
+                <h2>参考</h2>
+                <ol><li>Mermaid: <a href="https://mermaidjs.github.io/" rel="noopener noreferrer">https://mermaidjs.github.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

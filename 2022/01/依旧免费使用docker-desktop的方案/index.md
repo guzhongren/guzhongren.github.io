@@ -55,11 +55,3 @@ echo '127.0.0.1 desktop.docker.com' | sudo tee -a /etc/hosts
 
 ![docker.desktop.3.5.2.66501](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp)
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

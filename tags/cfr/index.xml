@@ -166,7 +166,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
+<p></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -211,8 +211,10 @@
 </li>
 </ol>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a>
-来源：<a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+
+来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
+</p>
 </blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
@@ -228,7 +230,8 @@
 <li>部署 CDN（内容分发网络）加速静态资源加载。</li>
 </ul>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+</p>
 </blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
@@ -239,7 +242,8 @@
 <h4 id="实例分布式数据库">实例：分布式数据库</h4>
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
-<p>来源：<a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreffer ">MongoDB 官方文档</a></p>
+<p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
+</p>
 </blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
@@ -251,7 +255,8 @@
 <h4 id="实例oauth-20">实例：OAuth 2.0</h4>
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
-<p>来源：<a href="https://oauth.net/2/" target="_blank" rel="noopener noreffer ">OAuth 2.0 规范</a></p>
+<p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
+</p>
 </blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
@@ -264,12 +269,7 @@
 <p>当然还有一种最简单的方法，只提供卫星影像地图，不提供边界图层。</p>
 <h3 id="关键点回顾与未来展望">关键点回顾与未来展望</h3>
 <p>跨功能性需求是软件开发中不可忽视的一部分。通过合理的需求优先级设定和跨团队协作，可以有效应对这些挑战。未来，随着技术的进步，跨功能性需求的管理将更加智能化和自动化。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></li>
-<li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Redis 官方文档: <a href="https://redis.io/documentation" rel="noopener noreferrer">https://redis.io/documentation</a></li><li>Nginx 官方文档: <a href="https://nginx.org/en/docs/" rel="noopener noreferrer">https://nginx.org/en/docs/</a></li><li>MongoDB 官方文档: <a href="https://www.mongodb.com/docs/" rel="noopener noreferrer">https://www.mongodb.com/docs/</a></li><li>OAuth 2.0 规范: <a href="https://oauth.net/2/" rel="noopener noreferrer">https://oauth.net/2/</a></li></ol>
+            </div>]]></description></item></channel></rss>

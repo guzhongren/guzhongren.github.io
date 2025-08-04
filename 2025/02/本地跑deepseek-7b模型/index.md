@@ -62,14 +62,3 @@ Chatbox 安装完成并且 deepseek 大模型运行起来后，在 Chatbox -> Se
 
 未来的趋势可能是：要么成为顶层的规则设计者，要么成为底层的实践者。通过本地搭建和运行 Deepseek 模型，我们不仅能够避免在线服务的限制，还能更深入地理解和掌握这一前沿技术。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Deepseek:https://www.deepseek.com/](https://www.deepseek.com/)
-* [Ollama:https://ollama.com/](https://ollama.com/)
-* [Chatbox AI:https://chatboxai.app/](https://chatboxai.app/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

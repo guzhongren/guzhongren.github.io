@@ -229,22 +229,3 @@ git-crypt unlock /path/to/git-crypt.key
 
 * 只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置
 
-## 引用
-
-* [Demo: git-crypt-test](https://github.com/beef-noodles/git-crypt-test)
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-* [https://gnupg.org/](https://gnupg.org/)
-* [AGWA/git-crypt](https://github.com/AGWA/git-crypt)
-* [git-crypt 使用](http://einverne.github.io/post/2019/11/git-crypt-usage.html)
-* [git 上的配置文件如何加密？](https://www.jianshu.com/p/a40fc90df943)
-* [Easy Git Crypt User Identification](https://www.devopsgroup.com/blog/easy-git-crypt-user-identification/)
-* [Update git crypt key](https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759)
-* [List gpg user](https://github.com/AGWA/git-crypt/issues/189#issuecomment-549787656)
-* [Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO （中文版）](https://www.gnupg.org/howtos/zh/index.html)
-* [transcrypt 使用案例](https://www.lnmpy.com/blog/transcrypt-intro/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

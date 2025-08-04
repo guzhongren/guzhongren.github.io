@@ -9,15 +9,3 @@
 
 > 方法论很多，重要的是使用方法论的人～单元测试  -- from @haihaio
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2.http://agiledata.org/essays/tdd.html](http://agiledata.org/essays/tdd.html)
-* [3.https://opensource.com/article/19/10/test-driven-development-best-practices](https://opensource.com/article/19/10/test-driven-development-best-practices)
-* [4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html](https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html)
-* [5.https://dzone.com/articles/7-popular-unit-test-naming](https://dzone.com/articles/7-popular-unit-test-naming)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

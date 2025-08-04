@@ -2,7 +2,8 @@
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a></p>
+<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
+</p>
 </blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
@@ -21,7 +22,8 @@
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
 </ul>
 </blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak" target="_blank" rel="noopener noreffer ">oak</a></h3>
+<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</h3>
 <blockquote>
 <p>A middleware framework for Deno&rsquo;s net server 🦕</p>
 </blockquote>
@@ -33,9 +35,14 @@
 <p>工欲善其事，必先利其器。</p>
 </blockquote>
 <h3 id="开发工具">开发工具</h3>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer "><code>VS Code</code></a>, <a href="https://www.docker.com/" target="_blank" rel="noopener noreffer "><code>Docker</code></a></p>
+<p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
+, <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
+</p>
 <h3 id="环境工具">环境工具</h3>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer "><code>Deno</code></a>, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer "><code>Typescript</code></a>, <a href="https://nodejs.org/" target="_blank" rel="noopener noreffer "><code>Node</code></a></p>
+<p><a href="https://deno.land/"><code>Deno</code></a><sup>[5]</sup>
+, <a href="https://www.typescriptlang.org/"><code>Typescript</code></a><sup>[6]</sup>
+, <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
+</p>
 <blockquote>
 <p>注： Node 是用来调试 Deno 的</p>
 </blockquote>
@@ -67,12 +74,14 @@
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres" target="_blank" rel="noopener noreffer ">PostgreSql</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres">PostgreSql</a><sup>[8]</sup>
+</td>
           <td style="text-align: center">12</td>
           <td></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4" target="_blank" rel="noopener noreffer ">PGAdmin</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4">PGAdmin</a><sup>[9]</sup>
+</td>
           <td style="text-align: center">latest</td>
           <td></td>
       </tr>
@@ -103,7 +112,8 @@
 </span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files</span></span></code></pre></div></div>
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
-<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">代码实现</a>。</p>
+<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
+。</p>
 </blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
@@ -215,7 +225,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h3 id="依赖管理">依赖管理</h3>
 <p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
-<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" target="_blank" rel="noopener noreffer "><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
+<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html"><code>完整性检查与锁定文件</code></a><sup>[10]</sup>
+, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
 <p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -460,7 +471,8 @@
 </span></span><span class="line"><span class="cl">数据库链接成功！
 </span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000</span></span></code></pre></div></div>
 <h5 id="调用接口测试结果">调用接口测试结果</h5>
-<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" rel="noopener noreffer "><code>Rest Client</code></a> 插件进行辅助测试。</p>
+<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><code>Rest Client</code></a><sup>[11]</sup>
+ 插件进行辅助测试。</p>
 <h6 id="请求体">请求体</h6>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -496,7 +508,8 @@ content-type: application/json; charset=utf-8
 <li>如果输入错误参数，则抛异常</li>
 </ul>
 </blockquote>
-<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer "><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
+<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
+ 来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -1018,48 +1031,16 @@ content-type: application/json; charset=utf-8
 <li>去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，<code>Deno</code>提供了生成<code>lock.json</code>的形式来保证不同协作者之间的版本依赖；</li>
 <li>&hellip;</li>
 </ul>
-<p>最后感谢 <a href="https://yihaimen.github.io/" target="_blank" rel="noopener noreffer ">海门</a> 和 <a href="https://github.com/hylerrix" target="_blank" rel="noopener noreffer ">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer ">Denoland: https://deno.land/</a></p>
-</li>
-<li>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VS Code: https://code.visualstudio.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker: https://www.docker.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer ">Typescript: https://www.typescriptlang.org/</a></p>
-</li>
-<li>
-<p><a href="https://nodejs.org/" target="_blank" rel="noopener noreffer ">Node: https://nodejs.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer ">mock: https://github.com/udibo/mock</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<p>最后感谢 <a href="https://yihaimen.github.io/">海门</a><sup>[13]</sup>
+ 和 <a href="https://github.com/hylerrix">亦乐</a><sup>[14]</sup>
+ 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code>: <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" rel="noopener noreferrer">https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></li><li>oak: <a href="https://github.com/oakserver/oak" rel="noopener noreferrer">https://github.com/oakserver/oak</a></li><li><code>VS Code</code>: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li><code>Docker</code>: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li><code>Deno</code>: <a href="https://deno.land/" rel="noopener noreferrer">https://deno.land/</a></li><li><code>Typescript</code>: <a href="https://www.typescriptlang.org/" rel="noopener noreferrer">https://www.typescriptlang.org/</a></li><li><code>Node</code>: <a href="https://nodejs.org/" rel="noopener noreferrer">https://nodejs.org/</a></li><li>PostgreSql: <a href="https://hub.docker.com/_/postgres" rel="noopener noreferrer">https://hub.docker.com/_/postgres</a></li><li>PGAdmin: <a href="https://hub.docker.com/r/dpage/pgadmin4" rel="noopener noreferrer">https://hub.docker.com/r/dpage/pgadmin4</a></li><li><code>完整性检查与锁定文件</code>: <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" rel="noopener noreferrer">https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html</a></li><li><code>Rest Client</code>: <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=humao.rest-client</a></li><li><code>mock</code>: <a href="https://github.com/udibo/mock" rel="noopener noreferrer">https://github.com/udibo/mock</a></li><li>海门: <a href="https://yihaimen.github.io/" rel="noopener noreferrer">https://yihaimen.github.io/</a></li><li>亦乐: <a href="https://github.com/hylerrix" rel="noopener noreferrer">https://github.com/hylerrix</a></li></ol>
+            </div>]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
-<iframe src="https://guzhongren.github.io///player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
 ]]></description></item><item><title>Window 对象的各种测试方法总结</title><link>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 07 Jun 2020 11:21:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1591510459618-ffd147f35f23?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2089&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
@@ -1314,44 +1295,33 @@ content-type: application/json; charset=utf-8
 <blockquote>
 <p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p>
 </blockquote>
-<p>源代码：<a href="https://github.com/AndorLab/test-window-object" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/test-window-object</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://remarkablemark.org/blog/2018/11/17/mock-window-location/" target="_blank" rel="noopener noreffer ">3.mock-window-location</a></li>
-<li><a href="https://wildwolf.name/jest-how-to-mock-window-location-href/" target="_blank" rel="noopener noreffer ">4.jest-how-to-mock-window-location-href</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener noreffer ">5.Global Object defineProperty</a></li>
-<li><a href="https://www.jyt0532.com/2018/01/24/jinyong-test-double/" target="_blank" rel="noopener noreffer ">6.test double</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
+<p>源代码：<a href="https://github.com/AndorLab/test-window-object">https://github.com/AndorLab/test-window-object</a><sup>[1]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://github.com/AndorLab/test-window-object: <a href="https://github.com/AndorLab/test-window-object" rel="noopener noreferrer">https://github.com/AndorLab/test-window-object</a></li></ol>
+            </div>]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
-            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
+            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio">@haihaio</a><sup>[1]</sup>
+ 完成。</p>
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
 <p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreffer ">2.http://agiledata.org/essays/tdd.html</a></li>
-<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreffer ">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
-<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreffer ">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
-<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreffer ">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>
+            </div>]]></description></item><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
 <p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
 Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
-<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreffer ">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest">Jest</a><sup>[1]</sup>
+ 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a>
+<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a><sup>[2]</sup>
+
 编写一个命令行工具库，打包并运行程序，根据工具名称后面的名称来显示 <code>'Hello, + 名称'</code>。</p>
 <h2 id="简化程序">简化程序</h2>
 <p>我们知道 golang 打包后就是一个可执行程序，程序名称根据你指定的名称显示，那么要实现这个工具就是需要接收到程序名后面的参数并显示出来。但本次的重点是实现 DI, 所以我们将重点放在命令行的测试与实现上。
@@ -1421,9 +1391,10 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </span></span><span class="line"><span class="cl">ok      dependency-injection    0.006s</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
-]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Jest: <a href="https://github.com/facebook/jest" rel="noopener noreferrer">https://github.com/facebook/jest</a></li><li>https://github.com/guzhongren/TDD/tree/master/10.dependency-injection: <a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a></li></ol>
+            </div>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
@@ -1434,7 +1405,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
 </blockquote>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></p>
+<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
+</p>
 <p>根据输入的字符串和重复次数，输出重复次数后的字符串。</p>
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -1527,7 +1499,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>因为默认情况下 go test 会运行单元测试，为了防止单元测试的输出影响我们查看基准测试的结果，可以使用-run=匹配一个从来没有的单元测试方法，过滤掉单元测试的输出，我们这里使用 none，因为我们基本上不会创建这个名字的单元测试方法。</p>
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://github.com/guzhongren/TDD/tree/master/09.benchmar: <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></li></ol>
+            </div>]]></description></item></channel></rss>

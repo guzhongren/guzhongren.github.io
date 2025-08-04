@@ -84,13 +84,3 @@
 介于此制作了一个可以复用的模板。
 [Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4](https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4)
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-* [Technical Debt:https://www.productplan.com/glossary/technical-debt/](https://www.productplan.com/glossary/technical-debt/)
-* [Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4](https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4)
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

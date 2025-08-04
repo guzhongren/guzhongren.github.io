@@ -92,19 +92,9 @@
 <p>对于分析后的问题，按照其所在的不同区域的重要程度，一般需要将<code>Fix it if have spare time</code>, <code>View result immediately</code>和<code>Split &amp; Plan</code>这三个区域的问题梳理为卡（业务卡，技术卡或者 Bug 卡），分在不同的迭代去做。</p>
 <h2 id="模板">模板</h2>
 <p>介于此制作了一个可以复用的模板。
-<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://www.productplan.com/glossary/technical-debt/" target="_blank" rel="noopener noreffer ">Technical Debt:https://www.productplan.com/glossary/technical-debt/</a></p>
-</li>
-<li>
-<p><a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a><sup>[1]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4: <a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" rel="noopener noreferrer">https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></li></ol>
+            </div>]]></description></item></channel></rss>

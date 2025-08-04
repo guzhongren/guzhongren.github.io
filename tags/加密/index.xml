@@ -18,8 +18,10 @@
 <p>针对第一种情况，当我们的数据越来多的时候，我们需要将其状态可控起来，其实就是 <code>date as code</code>, 每次对数据的增删改查，我们都可以有追踪和数据保存。</p>
 <h2 id="有哪些方案呢">有哪些方案呢？</h2>
 <ul>
-<li><a href="https://github.com/AGWA/git-crypt" target="_blank" rel="noopener noreffer ">git-crypt</a></li>
-<li><a href="https://github.com/elasticdog/transcrypt" target="_blank" rel="noopener noreffer ">transcrypt</a></li>
+<li><a href="https://github.com/AGWA/git-crypt">git-crypt</a><sup>[1]</sup>
+</li>
+<li><a href="https://github.com/elasticdog/transcrypt">transcrypt</a><sup>[2]</sup>
+</li>
 </ul>
 <p>在这里，我推荐使用 <code>git-crypt</code>, 其特点如下：</p>
 <ul>
@@ -31,10 +33,11 @@
 <li>利用了加密工具<code>gpg</code>进行加密处理。</li>
 </ul>
 <h3 id="gpg">GPG</h3>
-<p><img src="https://ruanyifeng.com/blogimg/asset/201307/bg2013071202.png" alt="GPG" /></p>
+<p></p>
 <p>要了解什么是 GPG，就要先了解 PGP。</p>
 <p>1991 年，程序员 Phil Zimmermann 为了避开政府监视，开发了加密软件 PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个 PGP 的替代品，取名为 GnuPG。这就是 GPG 的由来。</p>
-<p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html" target="_blank" rel="noopener noreffer ">《GPG 入门教程》</a></p>
+<p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html">《GPG 入门教程》</a><sup>[3]</sup>
+</p>
 <h2 id="git-crypt-操作">git-crypt 操作</h2>
 <h3 id="安装-gpg-和-git-crypt">安装 gpg 和 git-crypt</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -184,7 +187,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </span></span><span class="line"><span class="cl">git commit -m ‘git-crypt’
 </span></span><span class="line"><span class="cl">git push</span></span></code></pre></div></div>
 <p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
-<p><img src="https://i.loli.net/2020/07/12/lXVnNw5EbKCcvhe.png" alt="git-crypt.png" /></p>
+<p></p>
 <h2 id="协作">协作</h2>
 <p>与他人协作，别人需要知道对应解密的 key</p>
 <h3 id="导出密钥">导出密钥</h3>
@@ -203,7 +206,8 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt unlock /path/to/git-crypt.key</span></span></code></pre></div></div>
 <p>此时，在本地就可以看到加密后的文件内容了。</p>
 <h3 id="更新密钥">更新密钥</h3>
-<p>因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;" target="_blank" rel="noopener noreffer ">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a> 步骤如下：</p>
+<p>因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a><sup>[4]</sup>
+ 步骤如下：</p>
 <ul>
 <li>Make a backup (with decrypted files): cp -r . /path/to/backup</li>
 <li>Save a list of files that are encrypted: git crypt status | grep -v &rsquo;not encrypted&rsquo; &gt; ../encrypted-files.txt</li>
@@ -221,42 +225,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 <ul>
 <li>只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/beef-noodles/git-crypt-test" target="_blank" rel="noopener noreffer ">Demo: git-crypt-test</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://gnupg.org/" target="_blank" rel="noopener noreffer ">https://gnupg.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt" target="_blank" rel="noopener noreffer ">AGWA/git-crypt</a></p>
-</li>
-<li>
-<p><a href="http://einverne.github.io/post/2019/11/git-crypt-usage.html" target="_blank" rel="noopener noreffer ">git-crypt 使用</a></p>
-</li>
-<li>
-<p><a href="https://www.jianshu.com/p/a40fc90df943" target="_blank" rel="noopener noreffer ">git 上的配置文件如何加密？</a></p>
-</li>
-<li>
-<p><a href="https://www.devopsgroup.com/blog/easy-git-crypt-user-identification/" target="_blank" rel="noopener noreffer ">Easy Git Crypt User Identification</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759" target="_blank" rel="noopener noreffer ">Update git crypt key</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt/issues/189#issuecomment-549787656" target="_blank" rel="noopener noreffer ">List gpg user</a></p>
-</li>
-<li>
-<p><a href="https://www.gnupg.org/howtos/zh/index.html" target="_blank" rel="noopener noreffer ">Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO （中文版）</a></p>
-</li>
-<li>
-<p><a href="https://www.lnmpy.com/blog/transcrypt-intro/" target="_blank" rel="noopener noreffer ">transcrypt 使用案例</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>git-crypt: <a href="https://github.com/AGWA/git-crypt" rel="noopener noreferrer">https://github.com/AGWA/git-crypt</a></li><li>transcrypt: <a href="https://github.com/elasticdog/transcrypt" rel="noopener noreferrer">https://github.com/elasticdog/transcrypt</a></li><li>《GPG 入门教程》: <a href="https://ruanyifeng.com/blog/2013/07/gpg.html" rel="noopener noreferrer">https://ruanyifeng.com/blog/2013/07/gpg.html</a></li><li>https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;" rel="noopener noreferrer">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a></li></ol>
+            </div>]]></description></item></channel></rss>

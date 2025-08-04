@@ -229,12 +229,3 @@ gcloud functions deploy x-bot \
 
 Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某种特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Slack 官网:https://api.slack.com/apps](https://api.slack.com/apps)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

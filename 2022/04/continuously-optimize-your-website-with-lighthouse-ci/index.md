@@ -191,15 +191,3 @@ jobs:
 - Unlike: [treo](https://treo.sh/) or some other web performance testing tool
 - Its advantages are: `Open-Source`, `Free`, `Self-hosted` data and Server, `Easy to integrate`.
 
-## 引用
-
-* [Get Down to Business: Why the web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/](https://web.dev/i18n/zh/why-speed-matters/)
-* [why Speed Matters？: https://web.dev/i18n/zh/why-speed-matters](https://web.dev/i18n/zh/why-speed-matters)
-* [Lighthouse: https://developers.google.cn/web/tools/lighthouse](https://developers.google.cn/web/tools/lighthouse)
-* [WebPageTest: https://www.webpagetest.org/](https://www.webpagetest.org/)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

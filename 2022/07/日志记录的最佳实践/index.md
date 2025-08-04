@@ -91,14 +91,3 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 ## 总结
 好的日志不仅可以为程序开发提供便利，为故障排除提供最重要的辅助信息，更可以为业务或基础设施提供优化建议或数据统计。
 
-## 引用
-
-- [THE TOP 25 GRAFANA DASHBOARD EXAMPLES](https://logit.io/blog/post/the-top-21-grafana-dashboards-and-visualisations)
-- [Grafana lab](https://grafana.com/)
-- [SumoLogic](https://www.sumologic.com/)
-- [Log4j](https://logging.apache.org/log4j)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

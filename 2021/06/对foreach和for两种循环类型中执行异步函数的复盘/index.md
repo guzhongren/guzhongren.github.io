@@ -158,13 +158,3 @@ Promise {<pending>}
 * **零信任** 要有质疑精神，只要不是自己写的，就有可能有 bug， 不然那么多漏洞是怎么发现的
 * Keep simple, Keep run
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-* [Array.prototype.forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

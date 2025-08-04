@@ -27,5 +27,9 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>$ ssh myvm</code></pre></div>
 <h2 id="参考地址">参考地址</h2>
-<p><a href="https://blog.infox.ren/2019/10/24/ssh-guide/" target="_blank" rel="noopener noreffer ">https://blog.infox.ren/2019/10/24/ssh-guide/</a></p>
-]]></description></item></channel></rss>
+<p><a href="https://blog.infox.ren/2019/10/24/ssh-guide/">https://blog.infox.ren/2019/10/24/ssh-guide/</a><sup>[1]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://blog.infox.ren/2019/10/24/ssh-guide/: <a href="https://blog.infox.ren/2019/10/24/ssh-guide/" rel="noopener noreferrer">https://blog.infox.ren/2019/10/24/ssh-guide/</a></li></ol>
+            </div>]]></description></item></channel></rss>

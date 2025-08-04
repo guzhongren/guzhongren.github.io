@@ -131,24 +131,3 @@ Now, we must fix this issue to continue delivery. There are 2 steps to do, first
 
 Security is a very important issue no matter where you are. We can __Shift Left Security__, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.
 
-## 引用
-
-* [https://www.sonarqube.org/](https://www.sonarqube.org/)
-* [https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities](https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities)
-* [https://github.com/marketplace/actions/aqua-security-trivy](https://github.com/marketplace/actions/aqua-security-trivy)
-* [https://github.com/quay/clair](https://github.com/quay/clair)
-* [https://github.com/aquasecurity/trivy](https://github.com/aquasecurity/trivy)
-* [https://github.com/anchore/anchore-engine](https://github.com/anchore/anchore-engine)
-* [https://github.com/quay/quay](https://github.com/quay/quay)
-* [https://cloud.google.com/container-registry](https://cloud.google.com/container-registry)
-* [https://goharbor.io/blog/harbor-1.10-release/](https://goharbor.io/blog/harbor-1.10-release/)
-* [https://www.thoughtworks.com/radar/tools?blipid=201911077](https://www.thoughtworks.com/radar/tools?blipid=201911077)
-* [https://cve.mitre.org/index.html](https://cve.mitre.org/index.html)
-[https://nvd.nist.gov](https://nvd.nist.gov)
-* [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
-* [https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

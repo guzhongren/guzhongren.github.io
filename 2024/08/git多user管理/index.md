@@ -82,12 +82,3 @@ git company
 
 第一种方案自动化程度更高，更可取。
 
-
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

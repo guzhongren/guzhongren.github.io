@@ -5,13 +5,3 @@
 
 <iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3.Bilibili](https://www.bilibili.com)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

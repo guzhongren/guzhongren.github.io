@@ -126,13 +126,3 @@ OIDC 种有一个非常重要，从认证服务器下发的一个字段，就�
 
 ![OIDC Flow](https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg)
 
-## 引用
-
-* [Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA](https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

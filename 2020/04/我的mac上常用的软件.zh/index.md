@@ -163,21 +163,3 @@ brew cask install itsycal
 brew cask install tencent-lemon
 ```
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Todo: https://todo.microsoft.com/tasks/](https://todo.microsoft.com/tasks/)
-* [Visual Studio Cod: https://code.visualstudio.com/](https://code.visualstudio.com/)
-* [Vim: https://www.vim.org](https://www.vim.org/)
-* [Vimrc: https://github.com/guzhongren/.vim](https://github.com/guzhongren/.vim)
-* [Bitwarden:https://bitwarden.com/](https://bitwarden.com/)
-* [IDEA: https://www.jetbrains.com/idea/](https://www.jetbrains.com/idea/)
-* [微信：https://res.wx.qq.com/a/wx_fed/weixin_portal/res/static/img/3sPNXyP.gif](https://res.wx.qq.com/a/wx_fed/weixin_portal/res/static/img/3sPNXyP.gif)
-* [IINA:https://iina.io/](https://iina.io/)
-* [Adobe XD: https://www.adobe.com/cn/products/xd.html](https://www.adobe.com/cn/products/xd.html)
-* [Itsycal:https://www.mowglii.com/itsycal/](https://www.mowglii.com/itsycal/itsycalbanner2@2x.png)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

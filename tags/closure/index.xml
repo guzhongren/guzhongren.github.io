@@ -64,13 +64,4 @@
 <p>如果将数字 5 转换为字符串 5，那么程序就运行正常。</p>
 <h2 id="总结">总结</h2>
 <p>Rust 的闭包感觉和 js 的函数的写法很像，感觉到了 Rust 又借鉴了部分 js 的语法。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://zhidao.baidu.com/question/1448503662321920660.html" target="_blank" rel="noopener noreffer ">3. 茴香豆的茴字的写法：https://zhidao.baidu.com/question/1448503662321920660.html</a></li>
-<li><a href="https://doc.rust-lang.org/rust-by-example/fn/closures.html" target="_blank" rel="noopener noreffer ">4.Rust 闭包：https://doc.rust-lang.org/rust-by-example/fn/closures.html</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

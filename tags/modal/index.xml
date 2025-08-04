@@ -13,8 +13,10 @@
 </ul>
 <h4 id="软件">软件</h4>
 <ul>
-<li><strong><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama</a></strong>: 用于管理和运行大模型。</li>
-<li><strong><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI</a></strong>: 提供与大模型交互的界面。</li>
+<li><strong><a href="https://ollama.com/">Ollama</a><sup>[1]</sup>
+</strong>: 用于管理和运行大模型。</li>
+<li><strong><a href="https://chatboxai.app/">Chatbox AI</a><sup>[2]</sup>
+</strong>: 提供与大模型交互的界面。</li>
 </ul>
 <h3 id="安装步骤">安装步骤</h3>
 <h4 id="安装-ollama">安装 Ollama</h4>
@@ -47,13 +49,7 @@
 <h2 id="总结">总结</h2>
 <p>随着人工智能技术的快速发展，社会分工可能会发生显著变化, 最明显的是人工智能会淘汰掉社会分工的中间层。</p>
 <p>未来的趋势可能是：要么成为顶层的规则设计者，要么成为底层的实践者。通过本地搭建和运行 Deepseek 模型，我们不仅能够避免在线服务的限制，还能更深入地理解和掌握这一前沿技术。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreffer ">Deepseek:https://www.deepseek.com/</a></li>
-<li><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama:https://ollama.com/</a></li>
-<li><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI:https://chatboxai.app/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Ollama: <a href="https://ollama.com/" rel="noopener noreferrer">https://ollama.com/</a></li><li>Chatbox AI: <a href="https://chatboxai.app/" rel="noopener noreferrer">https://chatboxai.app/</a></li></ol>
+            </div>]]></description></item></channel></rss>

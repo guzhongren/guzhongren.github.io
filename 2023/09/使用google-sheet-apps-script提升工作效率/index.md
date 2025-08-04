@@ -162,12 +162,3 @@ function isMonday() {
 
 Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Google Chat Message Format: https://developers.google.com/chat/api/guides/message-formats/text](https://developers.google.com/chat/api/guides/message-formats/text)
-* [Google Chat Webhooks: https://developers.google.com/chat/how-tos/webhooks](https://developers.google.com/chat/how-tos/webhooks)
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

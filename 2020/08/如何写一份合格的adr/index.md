@@ -110,16 +110,3 @@ ADR 在大型项目或者大公司的项目中经常会用到，不管是对现�
 
 > 万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-* [Why write adrs:https://github.blog/2020-08-13-why-write-adrs/](https://github.blog/2020-08-13-why-write-adrs/)
-* [ADR: https://adr.github.io/](https://adr.github.io/)
-* [架构设计实践之架构决策记录：https://zhuanlan.zhihu.com/p/141385447](https://zhuanlan.zhihu.com/p/141385447)
-* [【译文】架构决策记录（Architecture Decision Records）](https://www.phodal.com/blog/documenting-architecture-decisions/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

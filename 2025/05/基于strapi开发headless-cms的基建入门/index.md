@@ -178,13 +178,3 @@ http://localhost:1337/api/global?populate[header][populate][0]=navItems&populate
 ## 总结
 Strapi 是一个强大的 Headless CMS，适合快速构建和管理内容驱动的应用。通过灵活的内容建模、API 生成和插件扩展，Strapi 能满足各种项目需求。本文介绍了 Strapi 的基本概念、主要流程和进阶用法，希望能帮助你快速上手。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Strapi 官方文档](https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html)
-* [Strapi interactive query builder](https://docs.strapi.io/cms/api/rest/interactive-query-builder)
-* [Strapi Middleware](https://docs.strapi.io/cms/backend-customization/middlewares)
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

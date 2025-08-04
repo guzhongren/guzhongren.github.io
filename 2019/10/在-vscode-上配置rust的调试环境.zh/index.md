@@ -47,7 +47,3 @@
 
 ![Debug](https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png)
 
-## 引用
-
-[1.https://guzhongren.github.io/](https://guzhongren.github.io/)
-

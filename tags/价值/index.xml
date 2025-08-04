@@ -17,7 +17,9 @@
 <h2 id="全局视角让你更游刃有余">全局视角，让你更游刃有余</h2>
 <p>工作的价值就是不要浪费时间且持续输出有价值的内容。比如做一个功能卡，要完成前端的一个展示组件，但是在这个组件背后有个隐形知识，就是需要设计一个全局的存储，将用户选择的内容存储下来，方便后面将其下载为配置文件。</p>
 <p>这样的隐形知识只有有全局的功能视角或者路线图的认知下才能想到。如果你有了这样的全局视角，你就会设计更合理的架构，编写更合理的数据结构，从而提升系统的可扩展，易维护的能力。</p>
-<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model" target="_blank" rel="noopener noreffer ">C4 Modeling</a>, <a href="https://plantuml.com/sequence-diagram" target="_blank" rel="noopener noreffer ">数据流图</a>等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
+<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model">C4 Modeling</a><sup>[1]</sup>
+, <a href="https://plantuml.com/sequence-diagram">数据流图</a><sup>[2]</sup>
+等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
 <h2 id="挖掘工作背后的真正目的从而向上管理">挖掘工作背后的真正目的，从而&quot;向上管理&quot;</h2>
 <p>比如，给你分配了一个统计团队能力结构的一个工作，表格模板也给你了，那么你要怎么做呢？</p>
 <p>首先，我们应该将模板调整为我们项目的技术栈、项目信息、人员情况，然后将表分享给组内小伙伴去在规定的时间内完成。等在最终截止日期时，把所有的信息分享给TL。大多时候，我们认为我们的工作就此结束了。</p>
@@ -39,10 +41,7 @@
 <p>当有人要问你相关的问题，你只需要甩给他一个图，一个链接，或者给他一个图片。</p>
 <p>一个人的厚重感，可能就是他脑子里归档好的所有有效的知识和链接吧。</p>
 <p>&hellip;&hellip;</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>C4 Modeling: <a href="https://guzhongren.github.io/slides/talks/01.C4-Model" rel="noopener noreferrer">https://guzhongren.github.io/slides/talks/01.C4-Model</a></li><li>数据流图: <a href="https://plantuml.com/sequence-diagram" rel="noopener noreferrer">https://plantuml.com/sequence-diagram</a></li></ol>
+            </div>]]></description></item></channel></rss>

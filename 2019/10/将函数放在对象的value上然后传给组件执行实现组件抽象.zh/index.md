@@ -69,7 +69,3 @@ const tools = [
 
 代码总是可以解决很多问题，在 Coding 时，应该及时重构，将代码中的坏味道及时剔除，为以后业务功能开发解决技术债。
 
-## 引用
-
-[1.https://guzhongren.github.io/](https://guzhongren.github.io/)
-

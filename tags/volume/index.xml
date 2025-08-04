@@ -1,7 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Volume - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/volume/</link><description>Volume - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 03 May 2023 10:58:17 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/volume/" rel="self" type="application/rss+xml"/><item><title>解决Podman未挂载Volume的问题</title><link>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Wed, 03 May 2023 10:58:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="问题">问题</h2>
-<p>在初次使用<a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a> 挂载本地文件系统的时候通常会报如下的一个错误提示；</p>
+<p>在初次使用<a href="https://podman.io/">podman</a><sup>[1]</sup>
+ 挂载本地文件系统的时候通常会报如下的一个错误提示；</p>
 <blockquote>
 <p>Error: statfs /Users/userName/yyy/xxx: no such file or directory</p>
 </blockquote>
@@ -26,11 +27,7 @@
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">podman run -ti --rm -v <span class="nv">$HOME</span>:<span class="nv">$HOME</span> busybox</span></span></code></pre></div></div>
 <h2 id="add-one">Add one</h2>
 <p>如此这样，以后在需要挂载特定目录时，只需要和 docker 的操作一样，只须挂载特定目录即可。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://podman.io/" target="_blank" rel="noopener noreffer ">podman</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>podman: <a href="https://podman.io/" rel="noopener noreferrer">https://podman.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

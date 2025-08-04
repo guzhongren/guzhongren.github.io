@@ -317,17 +317,16 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
+<p></p>
 <h2 id="在线体验">在线体验</h2>
-<p><a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">Markdown editor</a>: <a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">https://andorlab.github.io/WebAssembly/</a></p>
+<p><a href="https://andorlab.github.io/WebAssembly/">Markdown editor</a><sup>[1]</sup>
+: <a href="https://andorlab.github.io/WebAssembly/">https://andorlab.github.io/WebAssembly/</a><sup>[1]</sup>
+</p>
 <h2 id="后续">后续</h2>
 <p>后面会在这个基础上继续开发，并将 WASM 中的一些概念配置也写成文档共享在博客中。</p>
-<h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/web_assembly/tree/based_rust</a></h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust">https://github.com/AndorLab/web_assembly/tree/based_rust</a><sup>[2]</sup>
+</h2>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Markdown editor: <a href="https://andorlab.github.io/WebAssembly/" rel="noopener noreferrer">https://andorlab.github.io/WebAssembly/</a></li><li>https://github.com/AndorLab/web_assembly/tree/based_rust: <a href="https://github.com/AndorLab/web_assembly/tree/based_rust" rel="noopener noreferrer">https://github.com/AndorLab/web_assembly/tree/based_rust</a></li></ol>
+            </div>]]></description></item></channel></rss>

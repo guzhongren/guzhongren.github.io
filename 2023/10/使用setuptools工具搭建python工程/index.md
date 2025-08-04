@@ -242,13 +242,3 @@ Successfully installed zhongren-0.1.1
 
 项目工程地址: [https://github.com/beef-noodles/py-project](https://github.com/beef-noodles/py-project)
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html](https://setuptools.pypa.io/en/latest/userguide/index.html)
-* [Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/](https://www.delftstack.com/howto/python/python-import-from-parent-directory/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

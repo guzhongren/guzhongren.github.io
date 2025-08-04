@@ -8,7 +8,8 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><a href="https://strapi.io/" target="_blank" rel="noopener noreffer ">Strapi</a> 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+            <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
+ 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
         </div>
     </div>
 <p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
@@ -24,7 +25,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
+<p></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -70,7 +71,8 @@
 <p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
 <h2 id="进阶">进阶</h2>
 <p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
-<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a> 中</h3>
+<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
+ 中</h3>
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -87,7 +89,8 @@
 </ol>
 <p>可通过中间件（Middleware）统一处理请求参数。基本步骤：</p>
 <ol>
-<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate" target="_blank" rel="noopener noreffer ">strapi generate:middleware</a> 命令生成中间件
+<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate">strapi generate:middleware</a><sup>[2]</sup>
+ 命令生成中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -202,16 +205,10 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>Strapi 是一个强大的 Headless CMS，适合快速构建和管理内容驱动的应用。通过灵活的内容建模、API 生成和插件扩展，Strapi 能满足各种项目需求。本文介绍了 Strapi 的基本概念、主要流程和进阶用法，希望能帮助你快速上手。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html" target="_blank" rel="noopener noreffer ">Strapi 官方文档</a></li>
-<li><a href="https://docs.strapi.io/cms/api/rest/interactive-query-builder" target="_blank" rel="noopener noreffer ">Strapi interactive query builder</a></li>
-<li><a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Strapi Middleware: <a href="https://docs.strapi.io/cms/backend-customization/middlewares" rel="noopener noreferrer">https://docs.strapi.io/cms/backend-customization/middlewares</a></li><li>strapi generate:middleware: <a href="https://docs.strapi.io/cms/cli#strapi-generate" rel="noopener noreferrer">https://docs.strapi.io/cms/cli#strapi-generate</a></li><li>Strapi: <a href="https://strapi.io/" rel="noopener noreferrer">https://strapi.io/</a></li></ol>
+            </div>]]></description></item><item><title>软件开发中的跨功能性需求（RFC）</title><link>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</link><pubDate>Mon, 28 Apr 2025 08:40:12 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/04/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%8A%9F%E8%83%BD%E6%80%A7%E9%9C%80%E6%B1%82rfc/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <p>作为程序员的你，正在开发一款基于全球地图的某资源分布网站，你的产品会被各个国家的人使用，而每个国家都有不同的法律法规和文化习惯。你需要考虑到这些因素，以确保你的产品在全球范围内都能正常使用。比如有争议的边界不能让用户看到对自己国家不利的标记，那么你需要怎么做呢？这时候，你就需要考虑跨功能性需求了。</p>
@@ -379,7 +376,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
+<p></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -424,8 +421,10 @@
 </li>
 </ol>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a>
-来源：<a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+
+来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
+</p>
 </blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
@@ -441,7 +440,8 @@
 <li>部署 CDN（内容分发网络）加速静态资源加载。</li>
 </ul>
 <blockquote>
-<p>来源：<a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></p>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
+</p>
 </blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
@@ -452,7 +452,8 @@
 <h4 id="实例分布式数据库">实例：分布式数据库</h4>
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
-<p>来源：<a href="https://www.mongodb.com/docs/" target="_blank" rel="noopener noreffer ">MongoDB 官方文档</a></p>
+<p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
+</p>
 </blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
@@ -464,7 +465,8 @@
 <h4 id="实例oauth-20">实例：OAuth 2.0</h4>
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
-<p>来源：<a href="https://oauth.net/2/" target="_blank" rel="noopener noreffer ">OAuth 2.0 规范</a></p>
+<p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
+</p>
 </blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
@@ -477,15 +479,10 @@
 <p>当然还有一种最简单的方法，只提供卫星影像地图，不提供边界图层。</p>
 <h3 id="关键点回顾与未来展望">关键点回顾与未来展望</h3>
 <p>跨功能性需求是软件开发中不可忽视的一部分。通过合理的需求优先级设定和跨团队协作，可以有效应对这些挑战。未来，随着技术的进步，跨功能性需求的管理将更加智能化和自动化。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://redis.io/documentation" target="_blank" rel="noopener noreffer ">Redis 官方文档</a></li>
-<li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreffer ">Nginx 官方文档</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>使用Google Sheet Apps Script提升工作效率</title><link>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</link><pubDate>Wed, 13 Sep 2023 22:44:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Redis 官方文档: <a href="https://redis.io/documentation" rel="noopener noreferrer">https://redis.io/documentation</a></li><li>Nginx 官方文档: <a href="https://nginx.org/en/docs/" rel="noopener noreferrer">https://nginx.org/en/docs/</a></li><li>MongoDB 官方文档: <a href="https://www.mongodb.com/docs/" rel="noopener noreferrer">https://www.mongodb.com/docs/</a></li><li>OAuth 2.0 规范: <a href="https://oauth.net/2/" rel="noopener noreferrer">https://oauth.net/2/</a></li></ol>
+            </div>]]></description></item><item><title>使用Google Sheet Apps Script提升工作效率</title><link>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</link><pubDate>Wed, 13 Sep 2023 22:44:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/09/%E4%BD%BF%E7%94%A8google-sheet-apps-script%E6%8F%90%E5%8D%87%E5%B7%A5%E4%BD%9C%E6%95%88%E7%8E%87/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>一切总是在往熵增大的方向发展。</p>
 <h2 id="遇到的问题">遇到的问题</h2>
@@ -496,12 +493,13 @@
 <p>而Google 全家桶的好处就是其各个应用之间调用协作非常方便。那么我们就用Google Sheet 和Google Chat 来实现一个简单的机器人应用来干上面各种麻烦的事吧。</p>
 <h2 id="google-chat-webhooks">Google Chat Webhooks</h2>
 <p>Google Chat 的Webhooks 允许其他应用程序调用，并可以对消息进行<code>创建</code>、<code>读取</code> 、<code>更新</code> 和<code>删除</code>。如同对数据库的增删改差一般。</p>
-<p><img src="https://developers.google.com/static/chat/images/arch-pat-notifier.svg" alt="Google Chat Webhooks" /></p>
-<p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook" target="_blank" rel="noopener noreffer ">这里</a>; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
+<p></p>
+<p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook">这里</a><sup>[1]</sup>
+; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
 <h2 id="google-sheet-apps-script">Google Sheet Apps Script</h2>
 <p>Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google Sheet 最强大的地方在于他支持自定义脚本，虽然其名为<code>Apps Script</code>, 文件格式为<code>.gs</code>， 但是其就是一些简单的<code>JavaScript</code> API, 其请求也是同步的API, 而且没有跨域问题，这就让其作为一个机器人有了初步条件。</p>
 <p>当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp" alt="Google Sheet API Structure" /></p>
+<p></p>
 <p>从上图中可以看到</p>
 <table>
   <thead>
@@ -537,7 +535,7 @@
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
 <h3 id="创建google-chat-webhooks">创建Google Chat Webhooks</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp" alt="Google chat webhooks" /></p>
+<p></p>
 <p>点击创建好的Webhooks, 拷贝URL即可。</p>
 <h3 id="创建google-sheet-轮转数据">创建Google Sheet 轮转数据</h3>
 <p>新建Google Sheet，直接写入如下数据</p>
@@ -639,21 +637,16 @@ xiaoming10</code></pre></div>
 <li>直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。</li>
 <li>定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。</li>
 </ol>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp" alt="Trigger of Apps Script" /></p>
+<p></p>
 <h3 id="效果">效果</h3>
 <p>可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
-<img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp" alt="Chatbot message result" /></p>
+</p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://developers.google.com/chat/api/guides/message-formats/text" target="_blank" rel="noopener noreffer ">Google Chat Message Format: https://developers.google.com/chat/api/guides/message-formats/text</a></li>
-<li><a href="https://developers.google.com/chat/how-tos/webhooks" target="_blank" rel="noopener noreffer ">Google Chat Webhooks: https://developers.google.com/chat/how-tos/webhooks</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>端午Incident了</title><link>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</link><pubDate>Fri, 30 Jun 2023 23:23:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>这里: <a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook" rel="noopener noreferrer">https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook</a></li></ol>
+            </div>]]></description></item><item><title>端午Incident了</title><link>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</link><pubDate>Fri, 30 Jun 2023 23:23:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/06/%E7%AB%AF%E5%8D%88incident%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
 <p>现在，我们作为Ops 维护这一个新加坡的项目，项目还是比较复杂的。端午前一天00：00 上线了很多hotfix, 而这里面就隐藏了2个bug。</p>
@@ -715,12 +708,6 @@ xiaoming10</code></pre></div>
 <p>就像Thoughtworks 所倡导的，出了问题, 不要针对个人，不要问&quot;9：00～10：00, 你在干嘛&quot; 这样&quot;地震级&quot;的问题；而应该去分析为什么会出现这个Incident, 以后怎么避免。</p>
 <h2 id="总结">总结</h2>
 <p>在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告(Incident Report)这些才是最重要的。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>OAuth2.0和OIDC流程梳理</title><link>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</link><pubDate>Sat, 03 Jun 2023 10:31:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/06/oauth2.0%E5%92%8Coidc%E6%B5%81%E7%A8%8B%E6%A2%B3%E7%90%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -792,7 +779,7 @@ xiaoming10</code></pre></div>
 <p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
 <p>有服务器实现广泛使用且更安全。</p>
 <h3 id="authorization-code-实现的流程图">Authorization Code 实现的流程图</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg" alt="OAuth 2.0 Flow" /></p>
+<p></p>
 <h2 id="oidc">OIDC</h2>
 <p>OAuth2.0 是一种授权协议，而不是身份认证协议。OIDC 才是身份认证协议，而且是基于 OAuth 2.0 来执行用户身份认证的互通协议。更概括地说，OIDC 就是直接基于 OAuth 2.0 构建的身份认证框架协议。</p>
 <h3 id="其3个角色与oauth20的4个角色的对应关系">其3个角色与OAuth2.0的4个角色的对应关系</h3>
@@ -818,15 +805,7 @@ xiaoming10</code></pre></div>
 <li>iat，颁发令牌的时间戳</li>
 </ul>
 <h3 id="oidc-的流程图">OIDC 的流程图</h3>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg" alt="OIDC Flow" /></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow" target="_blank" rel="noopener noreffer ">Authorization Code Flow - Auth0: https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow</a></li>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA" target="_blank" rel="noopener noreffer ">SSO 单点登录和 OAuth2.0 的区别和理解:https://mp.weixin.qq.com/s/4A6_n-5n10Vax67EbBMSCA</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<p></p>
 ]]></description></item><item><title>成为一个职业的职业人</title><link>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</link><pubDate>Thu, 20 Apr 2023 22:21:35 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/04/%E6%88%90%E4%B8%BA%E4%B8%80%E4%B8%AA%E8%81%8C%E4%B8%9A%E7%9A%84%E8%81%8C%E4%B8%9A%E4%BA%BA/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>工作多年后，慢慢的人就成熟了，做事慢慢也有了章法，有了自己的方法论；对团队的理解也更深刻了。</p>
@@ -846,7 +825,9 @@ xiaoming10</code></pre></div>
 <h2 id="全局视角让你更游刃有余">全局视角，让你更游刃有余</h2>
 <p>工作的价值就是不要浪费时间且持续输出有价值的内容。比如做一个功能卡，要完成前端的一个展示组件，但是在这个组件背后有个隐形知识，就是需要设计一个全局的存储，将用户选择的内容存储下来，方便后面将其下载为配置文件。</p>
 <p>这样的隐形知识只有有全局的功能视角或者路线图的认知下才能想到。如果你有了这样的全局视角，你就会设计更合理的架构，编写更合理的数据结构，从而提升系统的可扩展，易维护的能力。</p>
-<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model" target="_blank" rel="noopener noreffer ">C4 Modeling</a>, <a href="https://plantuml.com/sequence-diagram" target="_blank" rel="noopener noreffer ">数据流图</a>等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
+<p>为了有这样的能力，推荐学习项目在业务方面的&quot;用户旅程&quot;，技术方面的<a href="https://guzhongren.github.io/slides/talks/01.C4-Model">C4 Modeling</a><sup>[1]</sup>
+, <a href="https://plantuml.com/sequence-diagram">数据流图</a><sup>[2]</sup>
+等等的。使用这些技术，将会加速你对项目的认知，做出更合理业务/架构决策。</p>
 <h2 id="挖掘工作背后的真正目的从而向上管理">挖掘工作背后的真正目的，从而&quot;向上管理&quot;</h2>
 <p>比如，给你分配了一个统计团队能力结构的一个工作，表格模板也给你了，那么你要怎么做呢？</p>
 <p>首先，我们应该将模板调整为我们项目的技术栈、项目信息、人员情况，然后将表分享给组内小伙伴去在规定的时间内完成。等在最终截止日期时，把所有的信息分享给TL。大多时候，我们认为我们的工作就此结束了。</p>
@@ -868,13 +849,10 @@ xiaoming10</code></pre></div>
 <p>当有人要问你相关的问题，你只需要甩给他一个图，一个链接，或者给他一个图片。</p>
 <p>一个人的厚重感，可能就是他脑子里归档好的所有有效的知识和链接吧。</p>
 <p>&hellip;&hellip;</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>C4 Modeling: <a href="https://guzhongren.github.io/slides/talks/01.C4-Model" rel="noopener noreferrer">https://guzhongren.github.io/slides/talks/01.C4-Model</a></li><li>数据流图: <a href="https://plantuml.com/sequence-diagram" rel="noopener noreferrer">https://plantuml.com/sequence-diagram</a></li></ol>
+            </div>]]></description></item><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="数字证书定义">数字证书定义</h2>
 <p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，数字证书由经国家工信部认证的权威机构——CA 机构发行，是身份认证机构盖在数字身份证上的一个章或印(或者说加在数字身份证上的一个签名)，人们可以在网上用它来识别对方的身份。</p>
@@ -915,7 +893,7 @@ x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
 P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
 <h2 id="covert">Covert</h2>
 <p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
+<p></p>
 <h2 id="ssl-证书分类">SSL 证书分类</h2>
 <h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
 <p>只验证域名所有权，在浏览器中显示锁形标志；</p>
@@ -950,7 +928,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>证书颁发机构对此的审核比较严格</li>
 </ul>
 <h2 id="根据域名分类">根据域名分类</h2>
-<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
+<p></p>
 <h3 id="单域名证书">单域名证书</h3>
 <p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
 <h3 id="多域名证书">多域名证书</h3>
@@ -959,44 +937,35 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <p>通配符证书可以保护一个域名下的同级子域名，并且不限制子域名的数量。例如：这类证书可以保护 free.abc.com，也可以保护 bbs.abc.com，也就是说他可以保护 abc.com 这个域名下的所有同级子域名</p>
 <h3 id="代码签名证书code-signing-certificates">代码签名证书（Code Signing Certificates）</h3>
 <p>为软件开发者提供代码软件数字签名的认证服务。通过对代码的数字签名可以减少软件下载时弹出的安全警告、保证代码不被恶意篡改、使厂商信息对下载用户公开可见等效果，从而建立良好的软件品牌信誉度。
-查看<a href="https://cloud.tencent.com/product/csc" target="_blank" rel="noopener noreffer ">腾讯 CSC</a> 一看便知。</p>
+查看<a href="https://cloud.tencent.com/product/csc">腾讯 CSC</a><sup>[1]</sup>
+ 一看便知。</p>
 <h2 id="ca">CA</h2>
 <p>要被别人信任，那么就得有个可靠的证书颁发机构。以下是一些比较著名的证书颁发机构。</p>
 <ul>
-<li><a href="https://www.digicert.com/" target="_blank" rel="noopener noreffer ">Digicert (收购 #Symantec )</a></li>
-<li><a href="https://www.cfca.com.cn/" target="_blank" rel="noopener noreffer ">中国金融认证中心(CFCA)</a></li>
-<li><a href="https://www.geotrust.com/" target="_blank" rel="noopener noreffer ">GeoTrust</a></li>
+<li><a href="https://www.digicert.com/">Digicert (收购 #Symantec )</a><sup>[2]</sup>
+</li>
+<li><a href="https://www.cfca.com.cn/">中国金融认证中心(CFCA)</a><sup>[3]</sup>
+</li>
+<li><a href="https://www.geotrust.com/">GeoTrust</a><sup>[4]</sup>
+</li>
 <li>&hellip;</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="http://www.youdzone.com/signature.html" target="_blank" rel="noopener noreffer ">http://www.youdzone.com/signature.html</a></li>
-<li><a href="https://www.chinassl.net/ssltools/convert-ssl.html" target="_blank" rel="noopener noreffer ">https://www.chinassl.net/ssltools/convert-ssl.html</a></li>
-<li><a href="https://www.wosign.com/column/ssl_20211231.htm" target="_blank" rel="noopener noreffer ">https://www.wosign.com/column/ssl_20211231.htm</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
-]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>腾讯 CSC: <a href="https://cloud.tencent.com/product/csc" rel="noopener noreferrer">https://cloud.tencent.com/product/csc</a></li><li>Digicert (收购 #Symantec ): <a href="https://www.digicert.com/" rel="noopener noreferrer">https://www.digicert.com/</a></li><li>中国金融认证中心(CFCA): <a href="https://www.cfca.com.cn/" rel="noopener noreferrer">https://www.cfca.com.cn/</a></li><li>GeoTrust: <a href="https://www.geotrust.com/" rel="noopener noreferrer">https://www.geotrust.com/</a></li></ol>
+            </div>]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
             </div><p>本文是近期为学弟学妹们演讲时用 Logseq 整理的大纲,在此记录一下，以备复用。</p>
 <h2 id="intro">Intro</h2>
-<p><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/about/</a></p>
+<p><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
+</p>
 <h2 id="know-yourself">Know yourself</h2>
 <p>Do you really like computer science???
 灵魂三问，你真的喜欢计算机科学吗？如果不喜欢早点放弃，不然你以后的每一刻都会感到无比的痛苦。</p>
 <h2 id="trend">Trend</h2>
 <p><strong>Trend is the future</strong>
-<a href="https://www.devjobsscanner.com/blog/" target="_blank" rel="noopener noreffer ">https://www.devjobsscanner.com/blog/</a></p>
+<a href="https://www.devjobsscanner.com/blog/">https://www.devjobsscanner.com/blog/</a><sup>[2]</sup>
+</p>
 <blockquote>
 <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
 《旧唐书·魏徵传》李世民
@@ -1005,7 +974,8 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
 <h3 id="roadmap">Roadmap</h3>
 <ul>
-<li><a href="https://roadmap.sh" target="_blank" rel="noopener noreffer ">https://roadmap.sh</a></li>
+<li><a href="https://roadmap.sh">https://roadmap.sh</a><sup>[3]</sup>
+</li>
 </ul>
 <h3 id="best-practice">Best Practice</h3>
 <ul>
@@ -1021,54 +991,70 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="frontend">Frontend</h2>
 <h3 id="basic">Basic</h3>
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer ">Node</a>
+<li><a href="https://nodejs.org/en/">Node</a><sup>[4]</sup>
+
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer ">https://nodejs.org/en/</a></li>
+<li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a><sup>[4]</sup>
+</li>
 </ul>
 </li>
 <li>Package management
 <ul>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreffer ">npm</a>
+<li><a href="https://www.npmjs.com/">npm</a><sup>[5]</sup>
+
 <ul>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreffer ">https://www.npmjs.com/</a></li>
+<li><a href="https://www.npmjs.com/">https://www.npmjs.com/</a><sup>[5]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">yarn</a>
+<li><a href="https://yarnpkg.com/">yarn</a><sup>[6]</sup>
+
 <ul>
-<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">https://yarnpkg.com/</a></li>
+<li><a href="https://yarnpkg.com/">https://yarnpkg.com/</a><sup>[6]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreffer ">pnpm</a>
+<li><a href="https://pnpm.io/">pnpm</a><sup>[7]</sup>
+
 <ul>
-<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreffer ">https://pnpm.io/</a></li>
+<li><a href="https://pnpm.io/">https://pnpm.io/</a><sup>[7]</sup>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>IDE
 <ul>
-<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VSCode</a>
+<li><a href="https://code.visualstudio.com/">VSCode</a><sup>[8]</sup>
+
 <ul>
-<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">https://code.visualstudio.com/</a></li>
+<li><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><sup>[8]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreffer ">JetBrains</a>
+<li><a href="https://www.jetbrains.com/">JetBrains</a><sup>[9]</sup>
+
 <ul>
-<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreffer ">https://www.jetbrains.com/</a></li>
+<li><a href="https://www.jetbrains.com/">https://www.jetbrains.com/</a><sup>[9]</sup>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Tools
 <ul>
-<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreffer ">Vite</a>
+<li><a href="https://vitejs.dev/">Vite</a><sup>[10]</sup>
+
 <ul>
-<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreffer ">https://vitejs.dev/</a></li>
+<li><a href="https://vitejs.dev/">https://vitejs.dev/</a><sup>[10]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer ">Webpack</a>
+<li><a href="https://www.webpackjs.com/">Webpack</a><sup>[11]</sup>
+
 <ul>
-<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer ">https://www.webpackjs.com/</a></li>
+<li><a href="https://www.webpackjs.com/">https://www.webpackjs.com/</a><sup>[11]</sup>
+</li>
 </ul>
 </li>
 <li>&hellip;</li>
@@ -1083,81 +1069,108 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 </ul>
 <h3 id="framework">Framework</h3>
 <ul>
-<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreffer ">React</a>
+<li><a href="https://reactjs.org/">React</a><sup>[12]</sup>
+
 <ul>
-<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreffer ">https://reactjs.org/</a></li>
+<li><a href="https://reactjs.org/">https://reactjs.org/</a><sup>[12]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreffer ">Vue</a>
+<li><a href="https://vuejs.org/">Vue</a><sup>[13]</sup>
+
 <ul>
-<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreffer ">https://vuejs.org/</a></li>
+<li><a href="https://vuejs.org/">https://vuejs.org/</a><sup>[13]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreffer ">Angular</a>
+<li><a href="https://angularjs.org/">Angular</a><sup>[14]</sup>
+
 <ul>
-<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreffer ">https://angularjs.org/</a></li>
+<li><a href="https://angularjs.org/">https://angularjs.org/</a><sup>[14]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreffer ">Svelte</a>
+<li><a href="https://svelte.dev/">Svelte</a><sup>[15]</sup>
+
 <ul>
-<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreffer ">https://svelte.dev/</a></li>
+<li><a href="https://svelte.dev/">https://svelte.dev/</a><sup>[15]</sup>
+</li>
 </ul>
 </li>
 <li>&hellip;</li>
 </ul>
 <h3 id="resources">Resources</h3>
 <ul>
-<li><a href="https://www.imooc.com/" target="_blank" rel="noopener noreffer ">幕课网</a></li>
-<li><a href="https://www.w3school.com.cn/" target="_blank" rel="noopener noreffer ">w3school</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener noreffer ">MDN</a></li>
+<li><a href="https://www.imooc.com/">幕课网</a><sup>[16]</sup>
+</li>
+<li><a href="https://www.w3school.com.cn/">w3school</a><sup>[17]</sup>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/">MDN</a><sup>[18]</sup>
+</li>
 </ul>
 <h2 id="backend">Backend</h2>
 <h3 id="nodejs">Nodejs</h3>
 <ul>
-<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreffer ">Express</a>
+<li><a href="https://expressjs.com/">Express</a><sup>[19]</sup>
+
 <ul>
-<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreffer ">https://expressjs.com/</a></li>
+<li><a href="https://expressjs.com/">https://expressjs.com/</a><sup>[19]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://koajs.com/" target="_blank" rel="noopener noreffer ">Koa</a>
+<li><a href="https://koajs.com/">Koa</a><sup>[20]</sup>
+
 <ul>
-<li><a href="https://koajs.com/" target="_blank" rel="noopener noreffer ">https://koajs.com/</a></li>
+<li><a href="https://koajs.com/">https://koajs.com/</a><sup>[20]</sup>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="javakotin">Java/Kotin</h3>
 <ul>
-<li><a href="https://spring.io/" target="_blank" rel="noopener noreffer ">Spring</a></li>
+<li><a href="https://spring.io/">Spring</a><sup>[21]</sup>
+</li>
 </ul>
 <h2 id="gis">GIS</h2>
 <h3 id="arcgisesri">ArcGIS[ESRI]</h3>
 <ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreffer ">Dev docs</a>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Dev docs</a><sup>[22]</sup>
+
 <ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreffer ">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a><sup>[22]</sup>
+</li>
 </ul>
 </li>
 <li>ArcGIS Desktop</li>
 <li>ArcGIS Server</li>
 </ul>
 <h3 id="supermap">Supermap</h3>
-<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/" target="_blank" rel="noopener noreffer ">OpenLayers</a></h3>
-<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/" target="_blank" rel="noopener noreffer ">https://openlayers.org/</a></h3>
+<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
+</h3>
+<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
+</h3>
 <h3 id="qgis">QGIS</h3>
 <h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/" target="_blank" rel="noopener noreffer ">Leaflet</a><a href="https://leafletjs.com/" target="_blank" rel="noopener noreffer ">https://leafletjs.com/</a></h3>
-<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreffer ">Cesiumjs</a><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreffer ">https://cesium.com/platform/cesiumjs/</a></h3>
+<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
+<a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
+</h3>
+<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
+<a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
+</h3>
 <h2 id="suggestions">Suggestions</h2>
 <p>Build common capabilities</p>
 <ul>
-<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a>
+<li><a href="https://www.docker.com/">Docker</a><sup>[26]</sup>
+
 <ul>
-<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">https://www.docker.com/</a></li>
+<li><a href="https://www.docker.com/">https://www.docker.com/</a><sup>[26]</sup>
+</li>
 </ul>
 </li>
 <li>Command line
 <ul>
-<li><a href="https://github.com/microsoft/terminal" target="_blank" rel="noopener noreffer ">https://github.com/microsoft/terminal</a></li>
+<li><a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a><sup>[27]</sup>
+</li>
 <li>Linux cmd</li>
 <li>Mac iterm2 / Warp</li>
 </ul>
@@ -1166,14 +1179,18 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <ul>
 <li>CI/CD
 <ul>
-<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Actions</a>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a><sup>[28]</sup>
+
 <ul>
-<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">https://docs.github.com/en/actions</a></li>
+<li><a href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a><sup>[28]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreffer ">Jenkins</a>
+<li><a href="https://www.jenkins.io/">Jenkins</a><sup>[29]</sup>
+
 <ul>
-<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreffer ">https://www.jenkins.io/</a></li>
+<li><a href="https://www.jenkins.io/">https://www.jenkins.io/</a><sup>[29]</sup>
+</li>
 </ul>
 </li>
 </ul>
@@ -1192,7 +1209,8 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 </ul>
 <h3 id="build-your-tech-radar">Build your <strong>Tech Radar</strong></h3>
 <ul>
-<li><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/about/</a></li>
+<li><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
+</li>
 </ul>
 <h3 id="always-summary">Always summary</h3>
 <ul>
@@ -1235,22 +1253,10 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>[[成事思维]]</li>
 </ul>
 <h2 id="qa">Q&amp;A</h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
-]]></description></item><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://guzhongren.github.io/about/: <a href="https://guzhongren.github.io/about/" rel="noopener noreferrer">https://guzhongren.github.io/about/</a></li><li>https://www.devjobsscanner.com/blog/: <a href="https://www.devjobsscanner.com/blog/" rel="noopener noreferrer">https://www.devjobsscanner.com/blog/</a></li><li>https://roadmap.sh: <a href="https://roadmap.sh" rel="noopener noreferrer">https://roadmap.sh</a></li><li>Node: <a href="https://nodejs.org/en/" rel="noopener noreferrer">https://nodejs.org/en/</a></li><li>npm: <a href="https://www.npmjs.com/" rel="noopener noreferrer">https://www.npmjs.com/</a></li><li>yarn: <a href="https://yarnpkg.com/" rel="noopener noreferrer">https://yarnpkg.com/</a></li><li>pnpm: <a href="https://pnpm.io/" rel="noopener noreferrer">https://pnpm.io/</a></li><li>VSCode: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li>JetBrains: <a href="https://www.jetbrains.com/" rel="noopener noreferrer">https://www.jetbrains.com/</a></li><li>Vite: <a href="https://vitejs.dev/" rel="noopener noreferrer">https://vitejs.dev/</a></li><li>Webpack: <a href="https://www.webpackjs.com/" rel="noopener noreferrer">https://www.webpackjs.com/</a></li><li>React: <a href="https://reactjs.org/" rel="noopener noreferrer">https://reactjs.org/</a></li><li>Vue: <a href="https://vuejs.org/" rel="noopener noreferrer">https://vuejs.org/</a></li><li>Angular: <a href="https://angularjs.org/" rel="noopener noreferrer">https://angularjs.org/</a></li><li>Svelte: <a href="https://svelte.dev/" rel="noopener noreferrer">https://svelte.dev/</a></li><li>幕课网: <a href="https://www.imooc.com/" rel="noopener noreferrer">https://www.imooc.com/</a></li><li>w3school: <a href="https://www.w3school.com.cn/" rel="noopener noreferrer">https://www.w3school.com.cn/</a></li><li>MDN: <a href="https://developer.mozilla.org/zh-CN/" rel="noopener noreferrer">https://developer.mozilla.org/zh-CN/</a></li><li>Express: <a href="https://expressjs.com/" rel="noopener noreferrer">https://expressjs.com/</a></li><li>Koa: <a href="https://koajs.com/" rel="noopener noreferrer">https://koajs.com/</a></li><li>Spring: <a href="https://spring.io/" rel="noopener noreferrer">https://spring.io/</a></li><li>Dev docs: <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" rel="noopener noreferrer">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li><li>OpenLayers: <a href="https://openlayers.org/" rel="noopener noreferrer">https://openlayers.org/</a></li><li>Leaflet: <a href="https://leafletjs.com/" rel="noopener noreferrer">https://leafletjs.com/</a></li><li>Cesiumjs: <a href="https://cesium.com/platform/cesiumjs/" rel="noopener noreferrer">https://cesium.com/platform/cesiumjs/</a></li><li>Docker: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li>https://github.com/microsoft/terminal: <a href="https://github.com/microsoft/terminal" rel="noopener noreferrer">https://github.com/microsoft/terminal</a></li><li>GitHub Actions: <a href="https://docs.github.com/en/actions" rel="noopener noreferrer">https://docs.github.com/en/actions</a></li><li>Jenkins: <a href="https://www.jenkins.io/" rel="noopener noreferrer">https://www.jenkins.io/</a></li></ol>
+            </div>]]></description></item><item><title>如何写一份合格的 ADR</title><link>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</link><pubDate>Tue, 04 Aug 2020 22:06:29 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/08/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E4%BB%BD%E5%90%88%E6%A0%BC%E7%9A%84adr/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1596199737455-0b2e92661915?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1491&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="什么是-adr">什么是 ADR</h2>
 <blockquote>
@@ -1268,7 +1274,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 </ul>
 </blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
-<p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
+<p></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
 <ul>
 <li>它可以记录某些决定背后的动机。</li>
@@ -1284,7 +1290,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>梳理业务</li>
 </ul>
 <p>ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以文字和图表等的形式记录下来，可以更好地辅助我们理解业务，共享知识。</p>
-<p><img src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80" alt="Photo by Brandi Redd" /></p>
+<p></p>
 <h2 id="什么情况下要使用-adr">什么情况下要使用 ADR</h2>
 <p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
 <h2 id="怎么写呢">怎么写呢</h2>
@@ -1407,52 +1413,46 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <p>在所有讨论完毕，要将 ADR 更新，并更新 ADR 的总结部分 (Summary)， 方便后面的人快速得到决策信息。</p>
 <h2 id="参考项目">参考项目</h2>
 <ul>
-<li><a href="https://adr.github.io/madr/" target="_blank" rel="noopener noreffer ">MADR</a> - Markdown 架构决策记录（MADR）。精益 ADR 可快速记录代码中的架构决策。</li>
-<li><a href="https://adr.github.io/adr-log/" target="_blank" rel="noopener noreffer ">adr-log: https://adr.github.io/adr-log/</a> - 从 MADR 生成体系结构决策日志。</li>
-<li><a href="https://adr.github.io/e-adr/" target="_blank" rel="noopener noreffer ">嵌入式架构决策记录：https://adr.github.io/e-adr/</a> 显示如何通过 ADR 注释将分布式 AD 日志嵌入 Java 代码中。</li>
-<li><a href="https://adr.github.io/eadlsync/" target="_blank" rel="noopener noreffer ">eadlsync:https://adr.github.io/eadlsync/</a> - 将嵌入式架构决策记录与架构决策存储库同步。</li>
-<li><a href="https://github.com/adr/serepo" target="_blank" rel="noopener noreffer ">SE Repo: https://github.com/adr/serepo</a> - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
+<li><a href="https://adr.github.io/madr/">MADR</a><sup>[1]</sup>
+ - Markdown 架构决策记录（MADR）。精益 ADR 可快速记录代码中的架构决策。</li>
+<li><a href="https://adr.github.io/adr-log/">adr-log: https://adr.github.io/adr-log/</a><sup>[2]</sup>
+ - 从 MADR 生成体系结构决策日志。</li>
+<li><a href="https://adr.github.io/e-adr/">嵌入式架构决策记录：https://adr.github.io/e-adr/</a><sup>[3]</sup>
+ 显示如何通过 ADR 注释将分布式 AD 日志嵌入 Java 代码中。</li>
+<li><a href="https://adr.github.io/eadlsync/">eadlsync:https://adr.github.io/eadlsync/</a><sup>[4]</sup>
+ - 将嵌入式架构决策记录与架构决策存储库同步。</li>
+<li><a href="https://github.com/adr/serepo">SE Repo: https://github.com/adr/serepo</a><sup>[5]</sup>
+ - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
 </ul>
-<p><img src="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Sheldon Liu" /></p>
+<p></p>
 <h2 id="总结">总结</h2>
 <p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
 <p>建议：</p>
 <ul>
-<li>使用版本控制工具来管理 ADR, 比如 <a href="https://www.atlassian.com/software/confluence" target="_blank" rel="noopener noreffer ">Confluence</a>, 国内的话有 <a href="https://www.yuque.com/" target="_blank" rel="noopener noreffer ">语雀</a>, <a href="https://shimo.im/" target="_blank" rel="noopener noreffer ">石墨</a>, 还有些代码管理平台也有<code>Wiki</code>, 如阿里云的 <a href="https://www.aliyun.com/product/yunxiao" target="_blank" rel="noopener noreffer ">云效</a>, 腾讯的 <a href="https://coding.net/" target="_blank" rel="noopener noreffer ">Coding</a> 等； 当然如果是小项目也可以存在代码仓库中。</li>
+<li>使用版本控制工具来管理 ADR, 比如 <a href="https://www.atlassian.com/software/confluence">Confluence</a><sup>[6]</sup>
+, 国内的话有 <a href="https://www.yuque.com/">语雀</a><sup>[7]</sup>
+, <a href="https://shimo.im/">石墨</a><sup>[8]</sup>
+, 还有些代码管理平台也有<code>Wiki</code>, 如阿里云的 <a href="https://www.aliyun.com/product/yunxiao">云效</a><sup>[9]</sup>
+, 腾讯的 <a href="https://coding.net/">Coding</a><sup>[10]</sup>
+ 等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
 <p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://github.blog/2020-08-13-why-write-adrs/" target="_blank" rel="noopener noreffer ">Why write adrs:https://github.blog/2020-08-13-why-write-adrs/</a></p>
-</li>
-<li>
-<p><a href="https://adr.github.io/" target="_blank" rel="noopener noreffer ">ADR: https://adr.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://zhuanlan.zhihu.com/p/141385447" target="_blank" rel="noopener noreffer ">架构设计实践之架构决策记录：https://zhuanlan.zhihu.com/p/141385447</a></p>
-</li>
-<li>
-<p><a href="https://www.phodal.com/blog/documenting-architecture-decisions/" target="_blank" rel="noopener noreffer ">【译文】架构决策记录（Architecture Decision Records）</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>我的知识图谱</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</link><pubDate>Wed, 08 Apr 2020 22:23:46 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>MADR: <a href="https://adr.github.io/madr/" rel="noopener noreferrer">https://adr.github.io/madr/</a></li><li>adr-log: https://adr.github.io/adr-log/: <a href="https://adr.github.io/adr-log/" rel="noopener noreferrer">https://adr.github.io/adr-log/</a></li><li>嵌入式架构决策记录：https://adr.github.io/e-adr/: <a href="https://adr.github.io/e-adr/" rel="noopener noreferrer">https://adr.github.io/e-adr/</a></li><li>eadlsync:https://adr.github.io/eadlsync/: <a href="https://adr.github.io/eadlsync/" rel="noopener noreferrer">https://adr.github.io/eadlsync/</a></li><li>SE Repo: https://github.com/adr/serepo: <a href="https://github.com/adr/serepo" rel="noopener noreferrer">https://github.com/adr/serepo</a></li><li>Confluence: <a href="https://www.atlassian.com/software/confluence" rel="noopener noreferrer">https://www.atlassian.com/software/confluence</a></li><li>语雀: <a href="https://www.yuque.com/" rel="noopener noreferrer">https://www.yuque.com/</a></li><li>石墨: <a href="https://shimo.im/" rel="noopener noreferrer">https://shimo.im/</a></li><li>云效: <a href="https://www.aliyun.com/product/yunxiao" rel="noopener noreferrer">https://www.aliyun.com/product/yunxiao</a></li><li>Coding: <a href="https://coding.net/" rel="noopener noreferrer">https://coding.net/</a></li></ol>
+            </div>]]></description></item><item><title>我的知识图谱</title><link>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</link><pubDate>Wed, 08 Apr 2020 22:23:46 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E6%88%91%E7%9A%84%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" referrerpolicy="no-referrer">
             </div><h2 id="插曲">插曲</h2>
 <p>去年与前 ThoughtWorks 咨询师 <code>李小波</code>的一次线下交流中，学习到了总结知识的一点技巧，非常受用，并且在交流后得到了小波老西自己整理的<code>知识图谱</code>，在自己不断积累下，有文字，也又图片。最近在整理知识，同时也在乱搞知识分享平台。自己虽然有这个博客，但是感觉有些东西不是博客所能呈现的，比如思维导图，我收集的各种模型图等。</p>
 <p>之前为了给社区做宣传海报等内容，学会了 Adobe XD, 去年年中前，中国区是可以访问 Adobo XD 的云文档的，后半年就不行了，必须要重新注册或者更换绑定到国外的初始注册站点才可以使用云文档，这也导致了我有一部分资源永远的留在了遥不可及的 Adobe 服务器上。</p>
-<p><img src="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg" alt="Adobe 云文档。png" /></p>
+<p></p>
 <p>对我这种穷人很不友好， 😂😂😂😂😂😂😂, 那么我就得需要找个地方薅羊毛了。</p>
 <h2 id="figma">Figma</h2>
-<p>某天记起听过的一篇<code>anyway</code>的 podcast 里提到过 <a href="https://www.figma.com/" target="_blank" rel="noopener noreffer ">Figma</a>, 据说有免费的资源可以使用，上去一看，果然<code>for up to 2 editors and 3 projects</code></p>
-<p><img src="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg" alt="figma-pricing.jpg" /></p>
+<p>某天记起听过的一篇<code>anyway</code>的 podcast 里提到过 <a href="https://www.figma.com/">Figma</a><sup>[1]</sup>
+, 据说有免费的资源可以使用，上去一看，果然<code>for up to 2 editors and 3 projects</code></p>
+<p></p>
 <p>这样的免费套餐对于我这样的小菜鸟完全足够用了，而且我还邀请了另一个小伙伴，人数刚刚好，😄 当然我也不怕资源丢失，我把我的设计文档同步到了 icloud 上，再也不用担心 Adobe XD 的悲剧了。</p>
 <h2 id="附加值">附加值</h2>
 <p>选了 Figma，其实还有其他原因；</p>
@@ -1465,15 +1465,10 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 </ul>
 <h2 id="成果">成果</h2>
 <p>经过整理，我将我的知识模型总结放在了 Figma 上，地址如下，并将其分享到了<code>zeplin</code>上，可以在<code>zeplin</code>上在线查看，学习或者别人查看的时候也是很方便。</p>
-<p><a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d" target="_blank" rel="noopener noreffer ">知识图谱</a></p>
-<p><img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" alt="知识图谱。jpg" /></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.figma.com/" target="_blank" rel="noopener noreffer ">3.Figma: https://www.figma.com/</a></li>
-<li><a href="https://app.zeplin.io/" target="_blank" rel="noopener noreffer ">4.Zeplin: https://app.zeplin.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<p><a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d">知识图谱</a><sup>[2]</sup>
+</p>
+<p></p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Figma: <a href="https://www.figma.com/" rel="noopener noreferrer">https://www.figma.com/</a></li><li>知识图谱: <a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d" rel="noopener noreferrer">https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d</a></li></ol>
+            </div>]]></description></item></channel></rss>

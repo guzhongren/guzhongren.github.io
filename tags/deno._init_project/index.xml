@@ -33,10 +33,4 @@
 <p>在 vscode 的扩展中搜索并安装 deno 插件。</p>
 <h2 id="测试">测试</h2>
 <p>打开 deno 相关的项目。CMD + Shift + P ， 输入 <code>deno：init</code>，应该不会再弹出命令找不到的错误提示了。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

@@ -13,8 +13,10 @@
 </ul>
 <h4 id="软件">软件</h4>
 <ul>
-<li><strong><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama</a></strong>: 用于管理和运行大模型。</li>
-<li><strong><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI</a></strong>: 提供与大模型交互的界面。</li>
+<li><strong><a href="https://ollama.com/">Ollama</a><sup>[1]</sup>
+</strong>: 用于管理和运行大模型。</li>
+<li><strong><a href="https://chatboxai.app/">Chatbox AI</a><sup>[2]</sup>
+</strong>: 提供与大模型交互的界面。</li>
 </ul>
 <h3 id="安装步骤">安装步骤</h3>
 <h4 id="安装-ollama">安装 Ollama</h4>
@@ -47,20 +49,15 @@
 <h2 id="总结">总结</h2>
 <p>随着人工智能技术的快速发展，社会分工可能会发生显著变化, 最明显的是人工智能会淘汰掉社会分工的中间层。</p>
 <p>未来的趋势可能是：要么成为顶层的规则设计者，要么成为底层的实践者。通过本地搭建和运行 Deepseek 模型，我们不仅能够避免在线服务的限制，还能更深入地理解和掌握这一前沿技术。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.deepseek.com/" target="_blank" rel="noopener noreffer ">Deepseek:https://www.deepseek.com/</a></li>
-<li><a href="https://ollama.com/" target="_blank" rel="noopener noreffer ">Ollama:https://ollama.com/</a></li>
-<li><a href="https://chatboxai.app/" target="_blank" rel="noopener noreffer ">Chatbox AI:https://chatboxai.app/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>使用 setuptools 工具搭建 Python 工程</title><link>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</link><pubDate>Fri, 13 Oct 2023 21:26:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Ollama: <a href="https://ollama.com/" rel="noopener noreferrer">https://ollama.com/</a></li><li>Chatbox AI: <a href="https://chatboxai.app/" rel="noopener noreferrer">https://chatboxai.app/</a></li></ol>
+            </div>]]></description></item><item><title>使用 setuptools 工具搭建 Python 工程</title><link>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</link><pubDate>Fri, 13 Oct 2023 21:26:15 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/10/%E4%BD%BF%E7%94%A8setuptools%E5%B7%A5%E5%85%B7%E6%90%AD%E5%BB%BApython%E5%B7%A5%E7%A8%8B/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>最近运维项目上要使用Pyspark进行报告生成，嗯，是的，运维项目的技术栈永远是你想象不到的。</p>
 <p>有活就干，这形势只能“狗着”。</p>
-<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools</a>, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
+<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html">setuptools</a><sup>[1]</sup>
+, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
 <h2 id="期望">期望</h2>
 <p>基于 setuptools 产出一个模块化的工程，高级模块要依赖通用模块(commons)。</p>
 <h2 id="工具介绍">工具介绍</h2>
@@ -294,20 +291,16 @@
 </span></span><span class="line"><span class="cl">Successfully installed zhongren-0.1.1</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>学习最佳实践，可以节约时间，同时，也是真爱生命。</p>
-<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project" target="_blank" rel="noopener noreffer ">https://github.com/beef-noodles/py-project</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html</a></li>
-<li><a href="https://www.delftstack.com/howto/python/python-import-from-parent-directory/" target="_blank" rel="noopener noreffer ">Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Some Good Practices of Logging</title><link>https://guzhongren.github.io/2022/08/some-good-practices-of-logging/</link><pubDate>Fri, 05 Aug 2022 09:33:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/08/some-good-practices-of-logging/</guid><description><![CDATA[<div class="featured-image">
+<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project">https://github.com/beef-noodles/py-project</a><sup>[2]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>setuptools: <a href="https://setuptools.pypa.io/en/latest/userguide/index.html" rel="noopener noreferrer">https://setuptools.pypa.io/en/latest/userguide/index.html</a></li><li>https://github.com/beef-noodles/py-project: <a href="https://github.com/beef-noodles/py-project" rel="noopener noreferrer">https://github.com/beef-noodles/py-project</a></li></ol>
+            </div>]]></description></item><item><title>Some Good Practices of Logging</title><link>https://guzhongren.github.io/2022/08/some-good-practices-of-logging/</link><pubDate>Fri, 05 Aug 2022 09:33:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/08/some-good-practices-of-logging/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp" referrerpolicy="no-referrer">
             </div><h2 id="introduction">Introduction</h2>
 <p>Logging is structured or unstructured text information generated by the system during operation. Usually, it can be regarded as a record of an event by the application. Logging can often help us discover unexpected behaviors in systems, especially in some microservice architecture systems. As an important part of Observability, Logging plays an irreplaceable role in our system development and maintenance.</p>
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+
 <h2 id="the-importance-of-logging">The importance of logging</h2>
 <p>To understand why logging plays an important role in products or systems, we must understand its value. Currently, the most widely used logging forms are <strong>alerting</strong>, <strong>troubleshooting</strong>, and <strong>business data visualization</strong>.</p>
 <h3 id="alerting">Alerting</h3>
@@ -319,7 +312,7 @@
 <h2 id="logging-how-to">Logging how-to</h2>
 <h3 id="templating">Templating</h3>
 <p>It’s necessary to sort out our log format and write logs according to certain specifications.
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" /></p>
+</p>
 <ul>
 <li>
 <p>Basic template</p>
@@ -353,7 +346,7 @@ Specific formatting is also possible for log information:</li>
 <p>If the recorded log is just a simple text description line by line, it’ll be hard to read. In a complex system or a system with frequent business operations, there will be multiple logs and we’ll have to spend time filtering out the relevant logs. The best way to solve this problem is through chain tracking of logs: putting one or more unique IDs in the business system that are added to each log, so that when locating business problems, we can quickly filter out the relevant logs through these unique IDs and Other criteria (e.g. time).</p>
 <h3 id="logging-on-demand">Logging on demand</h3>
 <h4 id="log-level">Log level</h4>
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
+
 <p>The output of the log is divided into levels.Different scenarios need to print different levels of logs.</p>
 <ul>
 <li>Debug: Record technical details and logs to help understand the system operation;</li>
@@ -396,40 +389,41 @@ Specific formatting is also possible for log information:</li>
 <li>The log needs to be printed in any abnormal place in the system.</li>
 </ul>
 <h2 id="tool-recommendation">Tool recommendation</h2>
-<p>Different programming languages have different logging tools; the most famous is Apache&rsquo;s <a href="https://logging.apache.org/log4j" target="_blank" rel="noopener noreffer ">Log4j</a>, which is highly configurable and can be configured via external files at runtime. It is based on logging priority and provides mechanisms to instruct logging information to many destinations such as database, file, console, UNIX system log, etc.; log4j has been ported to other programming languages, such as <a href="https://docs.python.org/3/library/logging.html" target="_blank" rel="noopener noreffer ">logging</a> in Python, <a href="https://www.npmjs.com/package/log4js" target="_blank" rel="noopener noreffer ">log4js</a> in NodeJS, <a href="https://crates.io/crates/log4rs" target="_blank" rel="noopener noreffer ">log4rs</a> in Rust.</p>
+<p>Different programming languages have different logging tools; the most famous is Apache&rsquo;s <a href="https://logging.apache.org/log4j">Log4j</a><sup>[1]</sup>
+, which is highly configurable and can be configured via external files at runtime. It is based on logging priority and provides mechanisms to instruct logging information to many destinations such as database, file, console, UNIX system log, etc.; log4j has been ported to other programming languages, such as <a href="https://docs.python.org/3/library/logging.html">logging</a><sup>[2]</sup>
+ in Python, <a href="https://www.npmjs.com/package/log4js">log4js</a><sup>[3]</sup>
+ in NodeJS, <a href="https://crates.io/crates/log4rs">log4rs</a><sup>[4]</sup>
+ in Rust.</p>
 <h2 id="tips">Tips</h2>
 <p>Avoid printing or recording any sensitive information, including but not limited to various <strong>PII</strong>, <strong>PCI</strong> information. Remember to obey local laws and regulations, such as China&rsquo;s <strong>PILI</strong> (Personal Information Protection Law) or Europe’s <strong>GDPR</strong> (General Data Protection Regulation). Choose the appropriate log level and log position as needed.
 ……</p>
 <h2 id="summary">Summary</h2>
 <p>A good log can not only facilitate program development and provide the most important auxiliary information for troubleshooting, it also gives optimization suggestions or data statistics for business or infrastructure.</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>日志记录的最佳实践</title><link>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 10 Jul 2022 12:01:50 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Log4j: <a href="https://logging.apache.org/log4j" rel="noopener noreferrer">https://logging.apache.org/log4j</a></li><li>logging: <a href="https://docs.python.org/3/library/logging.html" rel="noopener noreferrer">https://docs.python.org/3/library/logging.html</a></li><li>log4js: <a href="https://www.npmjs.com/package/log4js" rel="noopener noreferrer">https://www.npmjs.com/package/log4js</a></li><li>log4rs: <a href="https://crates.io/crates/log4rs" rel="noopener noreferrer">https://crates.io/crates/log4rs</a></li></ol>
+            </div>]]></description></item><item><title>日志记录的最佳实践</title><link>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 10 Jul 2022 12:01:50 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/07/%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95%E7%9A%84%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
 Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。</p>
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
+
 <h2 id="日志的重要性">日志的重要性</h2>
 <p>要理解为什么日志在产品或者系统中扮演着重要的角色，我们必须了解它的价值。至少到现在，日志被应用最广泛的是<strong>报警</strong>、<strong>故障排除</strong>和<strong>业务数据可视化</strong>。</p>
 <h3 id="报警">报警</h3>
 <p>日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。
-<img src='https://grafana.com/static/img/logs/logs-prometheus-alterting.svg' alt='Alert with logs' style="clear: both; display: block; margin: auto;" /></p>
+</p>
 <h3 id="故障排除">故障排除</h3>
 <p>这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。
-<img src='https://grafana.com/static/img/logs/logs-effective-debugging.gif' alt='Debug with logs' style="clear: both; display: block; margin: auto;" /></p>
+</p>
 <h3 id="业务数据可视化">业务数据可视化</h3>
 <p>很多公司可以利用存储在自己数据库里的生产环境的日志，结合相应的工具可以对业务进行业务数据可视化。这里最典型的代表是 Grafana 和 SumoLogic。
-<img src='https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png' alt='Grafana - Fitbit Health MonitorDebug with logs' style="clear: both; display: block; margin: auto;"/></p>
-<img src='https://help.sumologic.com/img/integrations/saas-cloud/Slack_Audit_Overview.png' alt='SumoLogic - Slack File And App Audit' style="clear: both; display: block; margin: auto;" />
+</p>
+
 <h2 id="怎么做">怎么做</h2>
 <h3 id="模版化">模版化</h3>
 <p>为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" /></p>
+</p>
 <ul>
 <li>基础版本
 <ul>
@@ -465,7 +459,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 解决上面问题的最好办法是日志的<strong>链式追踪</strong>；简单说就是，在每条日志中加入业务系统中的一个或者多个<strong>唯一</strong>的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。</p>
 <h3 id="按需记录日志">按需记录日志</h3>
 <h4 id="日志级别">日志级别</h4>
-<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
+
 <p>日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。</p>
 <ul>
 <li><strong>Debug</strong>: 记录技术细节，和一些帮助理解系统运行的日志;</li>
@@ -509,7 +503,11 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <p>还有一种特殊情况是，像消息传递之类的系统，为了节省日志存储和减少查看干扰，大多时候我们不需要在收到消息后直接打印该消息，一般建议在收到消息后，如果系统处理有异常，在异常中将原始消息打印。</p>
 <h2 id="工具推荐">工具推荐</h2>
-<p>不同的编程语言有不同的日志工具；比较著名的是 Apache 的 <a href="https://logging.apache.org/log4j" target="_blank" rel="noopener noreffer ">Log4j</a>, Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 <a href="https://docs.python.org/3/library/logging.html" target="_blank" rel="noopener noreffer ">logging</a>, NodeJS 中的<a href="https://www.npmjs.com/package/log4js" target="_blank" rel="noopener noreffer ">log4js</a>, Rust 中的<a href="https://crates.io/crates/log4rs" target="_blank" rel="noopener noreffer ">log4rs</a>。</p>
+<p>不同的编程语言有不同的日志工具；比较著名的是 Apache 的 <a href="https://logging.apache.org/log4j">Log4j</a><sup>[1]</sup>
+, Log4j是高度可配置的，并可通过在运行时的外部文件配置。它根据记录的优先级别，并提供机制以指示记录信息到许多的目的地，诸如：数据库，文件，控制台，UNIX系统日志等；而且 log4j 已经被移植到了其他编程语言中了，如 Python 中的 <a href="https://docs.python.org/3/library/logging.html">logging</a><sup>[2]</sup>
+, NodeJS 中的<a href="https://www.npmjs.com/package/log4js">log4js</a><sup>[3]</sup>
+, Rust 中的<a href="https://crates.io/crates/log4rs">log4rs</a><sup>[4]</sup>
+。</p>
 <h2 id="注意点">注意点</h2>
 <ul>
 <li>避免打印或记录任何敏感信息，包括但不限于各种PII，PCI信息，一定要记得遵守当地的各种法律法规，如中国的《个人信息保护法》（PILI）, 欧洲的一般数据保护条例GDPR等</li>
@@ -518,13 +516,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <h2 id="总结">总结</h2>
 <p>好的日志不仅可以为程序开发提供便利，为故障排除提供最重要的辅助信息，更可以为业务或基础设施提供优化建议或数据统计。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://logit.io/blog/post/the-top-21-grafana-dashboards-and-visualisations" target="_blank" rel="noopener noreffer ">THE TOP 25 GRAFANA DASHBOARD EXAMPLES</a></li>
-<li><a href="https://grafana.com/" target="_blank" rel="noopener noreffer ">Grafana lab</a></li>
-<li><a href="https://www.sumologic.com/" target="_blank" rel="noopener noreffer ">SumoLogic</a></li>
-<li><a href="https://logging.apache.org/log4j" target="_blank" rel="noopener noreffer ">Log4j</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Log4j: <a href="https://logging.apache.org/log4j" rel="noopener noreferrer">https://logging.apache.org/log4j</a></li><li>logging: <a href="https://docs.python.org/3/library/logging.html" rel="noopener noreferrer">https://docs.python.org/3/library/logging.html</a></li><li>log4js: <a href="https://www.npmjs.com/package/log4js" rel="noopener noreferrer">https://www.npmjs.com/package/log4js</a></li><li>log4rs: <a href="https://crates.io/crates/log4rs" rel="noopener noreferrer">https://crates.io/crates/log4rs</a></li></ol>
+            </div>]]></description></item></channel></rss>

@@ -142,17 +142,14 @@
 <p>这段代码需要写在 <code>tests/jest-setup.[t|j]s</code> 中。</p>
 </li>
 <li>
-<p>或者使用第三方成熟的 npm 包， 像 <a href="https://www.npmjs.com/package/jest-mock-console" target="_blank" rel="noopener noreffer ">jest-mock-console</a>, 这个包功能更强大一点。</p>
+<p>或者使用第三方成熟的 npm 包， 像 <a href="https://www.npmjs.com/package/jest-mock-console">jest-mock-console</a><sup>[1]</sup>
+, 这个包功能更强大一点。</p>
 </li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客: https://guzhongren.github.io/</a></li>
-<li><a href="http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger" target="_blank" rel="noopener noreffer ">Mock logger in jest: http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Test With 3rd Party Library</title><link>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</link><pubDate>Sun, 18 Apr 2021 21:57:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>jest-mock-console: <a href="https://www.npmjs.com/package/jest-mock-console" rel="noopener noreferrer">https://www.npmjs.com/package/jest-mock-console</a></li></ol>
+            </div>]]></description></item><item><title>Test With 3rd Party Library</title><link>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</link><pubDate>Sun, 18 Apr 2021 21:57:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/test-with-3rd-party-library/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>一般的前端开发情况下，我们都会用到其他的第三方库，比如 UI 库 <code>Ant Desgin</code>， 请求库 <code>axios</code> 等，通常对于 UI 库，我们可以通过快照等操作对其进行测试，但是对于像 axios 这类第三方库，我们必须通过 mock 的方式来实现。</p>
@@ -218,23 +215,16 @@
 </span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
 <p>然后运行 test，通过。</p>
 <p>Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
 <p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
 Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
-<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreffer ">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest">Jest</a><sup>[1]</sup>
+ 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a>
+<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a><sup>[2]</sup>
+
 编写一个命令行工具库，打包并运行程序，根据工具名称后面的名称来显示 <code>'Hello, + 名称'</code>。</p>
 <h2 id="简化程序">简化程序</h2>
 <p>我们知道 golang 打包后就是一个可执行程序，程序名称根据你指定的名称显示，那么要实现这个工具就是需要接收到程序名后面的参数并显示出来。但本次的重点是实现 DI, 所以我们将重点放在命令行的测试与实现上。
@@ -304,9 +294,10 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </span></span><span class="line"><span class="cl">ok      dependency-injection    0.006s</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
-]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Jest: <a href="https://github.com/facebook/jest" rel="noopener noreferrer">https://github.com/facebook/jest</a></li><li>https://github.com/guzhongren/TDD/tree/master/10.dependency-injection: <a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a></li></ol>
+            </div>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
@@ -317,7 +308,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
 </blockquote>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></p>
+<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
+</p>
 <p>根据输入的字符串和重复次数，输出重复次数后的字符串。</p>
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -410,7 +402,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>因为默认情况下 go test 会运行单元测试，为了防止单元测试的输出影响我们查看基准测试的结果，可以使用-run=匹配一个从来没有的单元测试方法，过滤掉单元测试的输出，我们这里使用 none，因为我们基本上不会创建这个名字的单元测试方法。</p>
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://github.com/guzhongren/TDD/tree/master/09.benchmar: <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></li></ol>
+            </div>]]></description></item></channel></rss>

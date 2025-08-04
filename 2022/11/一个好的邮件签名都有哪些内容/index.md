@@ -50,15 +50,3 @@
 
 影响力无处不在，打造个人影响力也要全方位进行，邮件签名只是小小的一部分。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Netlify](https://www.netlify.com/)
-* [Heroku](https://www.heroku.com/)
-* [Stackblitz](https://stackblitz.com/)
-* [Codesadbox](https://codesandbox.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

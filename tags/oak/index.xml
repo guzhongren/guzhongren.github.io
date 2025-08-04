@@ -2,7 +2,8 @@
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a></p>
+<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
+</p>
 </blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
@@ -21,7 +22,8 @@
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
 </ul>
 </blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak" target="_blank" rel="noopener noreffer ">oak</a></h3>
+<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</h3>
 <blockquote>
 <p>A middleware framework for Deno&rsquo;s net server 🦕</p>
 </blockquote>
@@ -33,9 +35,14 @@
 <p>工欲善其事，必先利其器。</p>
 </blockquote>
 <h3 id="开发工具">开发工具</h3>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer "><code>VS Code</code></a>, <a href="https://www.docker.com/" target="_blank" rel="noopener noreffer "><code>Docker</code></a></p>
+<p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
+, <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
+</p>
 <h3 id="环境工具">环境工具</h3>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer "><code>Deno</code></a>, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer "><code>Typescript</code></a>, <a href="https://nodejs.org/" target="_blank" rel="noopener noreffer "><code>Node</code></a></p>
+<p><a href="https://deno.land/"><code>Deno</code></a><sup>[5]</sup>
+, <a href="https://www.typescriptlang.org/"><code>Typescript</code></a><sup>[6]</sup>
+, <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
+</p>
 <blockquote>
 <p>注： Node 是用来调试 Deno 的</p>
 </blockquote>
@@ -67,12 +74,14 @@
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres" target="_blank" rel="noopener noreffer ">PostgreSql</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres">PostgreSql</a><sup>[8]</sup>
+</td>
           <td style="text-align: center">12</td>
           <td></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4" target="_blank" rel="noopener noreffer ">PGAdmin</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4">PGAdmin</a><sup>[9]</sup>
+</td>
           <td style="text-align: center">latest</td>
           <td></td>
       </tr>
@@ -103,7 +112,8 @@
 </span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files</span></span></code></pre></div></div>
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
-<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">代码实现</a>。</p>
+<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
+。</p>
 </blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
@@ -215,7 +225,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h3 id="依赖管理">依赖管理</h3>
 <p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
-<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" target="_blank" rel="noopener noreffer "><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
+<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html"><code>完整性检查与锁定文件</code></a><sup>[10]</sup>
+, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
 <p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -460,7 +471,8 @@
 </span></span><span class="line"><span class="cl">数据库链接成功！
 </span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000</span></span></code></pre></div></div>
 <h5 id="调用接口测试结果">调用接口测试结果</h5>
-<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" rel="noopener noreffer "><code>Rest Client</code></a> 插件进行辅助测试。</p>
+<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><code>Rest Client</code></a><sup>[11]</sup>
+ 插件进行辅助测试。</p>
 <h6 id="请求体">请求体</h6>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -496,7 +508,8 @@ content-type: application/json; charset=utf-8
 <li>如果输入错误参数，则抛异常</li>
 </ul>
 </blockquote>
-<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer "><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
+<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
+ 来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -1018,54 +1031,22 @@ content-type: application/json; charset=utf-8
 <li>去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，<code>Deno</code>提供了生成<code>lock.json</code>的形式来保证不同协作者之间的版本依赖；</li>
 <li>&hellip;</li>
 </ul>
-<p>最后感谢 <a href="https://yihaimen.github.io/" target="_blank" rel="noopener noreffer ">海门</a> 和 <a href="https://github.com/hylerrix" target="_blank" rel="noopener noreffer ">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer ">Denoland: https://deno.land/</a></p>
-</li>
-<li>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VS Code: https://code.visualstudio.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker: https://www.docker.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer ">Typescript: https://www.typescriptlang.org/</a></p>
-</li>
-<li>
-<p><a href="https://nodejs.org/" target="_blank" rel="noopener noreffer ">Node: https://nodejs.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer ">mock: https://github.com/udibo/mock</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<p>最后感谢 <a href="https://yihaimen.github.io/">海门</a><sup>[13]</sup>
+ 和 <a href="https://github.com/hylerrix">亦乐</a><sup>[14]</sup>
+ 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code>: <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" rel="noopener noreferrer">https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></li><li>oak: <a href="https://github.com/oakserver/oak" rel="noopener noreferrer">https://github.com/oakserver/oak</a></li><li><code>VS Code</code>: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li><code>Docker</code>: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li><code>Deno</code>: <a href="https://deno.land/" rel="noopener noreferrer">https://deno.land/</a></li><li><code>Typescript</code>: <a href="https://www.typescriptlang.org/" rel="noopener noreferrer">https://www.typescriptlang.org/</a></li><li><code>Node</code>: <a href="https://nodejs.org/" rel="noopener noreferrer">https://nodejs.org/</a></li><li>PostgreSql: <a href="https://hub.docker.com/_/postgres" rel="noopener noreferrer">https://hub.docker.com/_/postgres</a></li><li>PGAdmin: <a href="https://hub.docker.com/r/dpage/pgadmin4" rel="noopener noreferrer">https://hub.docker.com/r/dpage/pgadmin4</a></li><li><code>完整性检查与锁定文件</code>: <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" rel="noopener noreferrer">https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html</a></li><li><code>Rest Client</code>: <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=humao.rest-client</a></li><li><code>mock</code>: <a href="https://github.com/udibo/mock" rel="noopener noreferrer">https://github.com/udibo/mock</a></li><li>海门: <a href="https://yihaimen.github.io/" rel="noopener noreferrer">https://yihaimen.github.io/</a></li><li>亦乐: <a href="https://github.com/hylerrix" rel="noopener noreferrer">https://github.com/hylerrix</a></li></ol>
+            </div>]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
-<iframe src="https://guzhongren.github.io///player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
 ]]></description></item><item><title>整合资源为其他端提供统一资源</title><link>https://guzhongren.github.io/2020/05/%E6%95%B4%E5%90%88%E8%B5%84%E6%BA%90%E4%B8%BA%E5%85%B6%E4%BB%96%E7%AB%AF%E6%8F%90%E4%BE%9B%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90/</link><pubDate>Sat, 23 May 2020 18:29:22 +0800</pubDate><author>ByteWars</author><guid>https://guzhongren.github.io/2020/05/%E6%95%B4%E5%90%88%E8%B5%84%E6%BA%90%E4%B8%BA%E5%85%B6%E4%BB%96%E7%AB%AF%E6%8F%90%E4%BE%9B%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/05/10/67DtxyJqFRz2YZH.png" referrerpolicy="no-referrer">
             </div><h2 id="引子">引子</h2>
 <p>有些时候，软件开发过程中没有将系统功能，且分开从而将系统拆分为多个子系统，或者在自身系统开发过程中有必须要依赖的外部服务，那么对外提供服务的时候就得让所有的子服务都得随时候命，
 排列起来就像古代战场的对战状态一样了。</p>
-<p><img src="https://i.loli.net/2020/05/23/bnOYrJMiSzqhKVL.png" alt="apps.png" /></p>
+<p></p>
 <h2 id="存在的问题">存在的问题</h2>
 <p>对于这种情况存在什么问题呢？ 想象一个场景，作为老板或者业务对接方，我要集成和之前一样的系统，我要对接这么多接口么？如果对接方看到这么多的系统接口要对接，他肯定就放弃治疗了。</p>
 <p>总结一下存在的问题。</p>
@@ -1080,7 +1061,7 @@ content-type: application/json; charset=utf-8
 <p>对于上面提到的各种问题，我们有什么解决方案呢？</p>
 <p>最近，微服务的概念比较流行， 我们想想一下前端微服务是怎么组合的？是不是将很多个子页面服务都集成在一个一面中，最终这个页面为用户服务。让这个页面作为对接点。结合上面的图，我们可以设计如下图的方案， 抽离一个中间层，我们暂时可以称之为 <code>Platform</code>，
 让所有的资源都从<code>Platform</code>进和出，将要集成的各种服务屏蔽在<code>Platform</code>后面，对于对接方，他永远只知道一个<code>Platform</code>， 这样集成起来就好多了。</p>
-<p><img src="https://i.loli.net/2020/05/23/EbGaLkr5g6sHxpK.png" alt="apps-platform.png" /></p>
+<p></p>
 <h2 id="coding">Coding</h2>
 <p>方案也有了，那么接下来就是撸起袖子加油干的时候了。</p>
 <p>因为 <code>Platform</code> 会是一个后端的工程，其对外提供各种接口和资源；最近<code>Deno</code>比较🔥，为了尝试<code>真香定律</code>， 我们就拿它来实践一下。</p>
@@ -1091,7 +1072,8 @@ content-type: application/json; charset=utf-8
 <li>某个后端提供前端资源， 这个资源是由这个后端服务团队维护，且这个服务需要在前端使用</li>
 </ul>
 <p>在此， 我们将这个后端资源暂时抽象为<code>jquery.js</code>, 提供 jquery.js 服务的团队就是被我们 Platform 屏蔽起来的服务团队， 对我们本次实践来说就是某一个提供 Jquery 的 CDN 服务商。</p>
-<p>具体的 <a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">Code</a> 在此，如有需要可随时查看。在实现过程中也有两种方案，</p>
+<p>具体的 <a href="https://github.com/ByteWars/forwardJS">Code</a><sup>[1]</sup>
+ 在此，如有需要可随时查看。在实现过程中也有两种方案，</p>
 <p>资源请求的前端页面代码如下，<strong>重点就是 <code>script</code>标签中<code>src</code>的获取是一个 <code>GET</code>请求！</strong></p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-html">
@@ -1135,13 +1117,7 @@ content-type: application/json; charset=utf-8
 <p>这种方案是将资源请求到服务器，然后将资源再返回给前端。</p>
 <h2 id="总结">总结</h2>
 <p>对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">3.ForwardJS</a></li>
-<li><a href="https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw" target="_blank" rel="noopener noreffer ">4. 了不起的 Deno 实战教程</a></li>
-</ul>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="微信公众号" /></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Code: <a href="https://github.com/ByteWars/forwardJS" rel="noopener noreferrer">https://github.com/ByteWars/forwardJS</a></li></ol>
+            </div>]]></description></item></channel></rss>

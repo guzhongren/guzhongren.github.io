@@ -38,13 +38,3 @@ export RUSTFLAGS="-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Co
 
 删除该行记录，运行程序，成功输出`hello world`。
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3. grcov](https://github.com/mozilla/grcov/issues/433)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

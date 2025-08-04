@@ -59,14 +59,3 @@ https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json
 
 CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。
 
-## 引用
-
-* [博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [jsdelvr:https://www.jsdelivr.com/](https://www.jsdelivr.com/)
-* [prospectone: https://prospectone.io/](https://prospectone.io/)
-* [CDN: https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF](https://zh.wikipedia.org/wiki/%E5%85%A7%E5%AE%B9%E5%82%B3%E9%81%9E%E7%B6%B2%E8%B7%AF)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

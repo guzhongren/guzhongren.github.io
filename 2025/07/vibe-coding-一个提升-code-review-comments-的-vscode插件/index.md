@@ -76,12 +76,3 @@ Vibe Coding 的核心在于与 AI 工具进行持续的对话，通过精心设�
 - 使用 Vibe Coding，我们可以更快地获得产品原型，同时也能更快地学习我们不熟悉的知识和技能。
 - 但所有生成的代码都需要良好且可维护的架构设计，而不是流水账式的代码堆砌。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Gemini CLI: https://www.npmjs.com/package/@google/gemini-cli](https://www.npmjs.com/package/@google/gemini-cli)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

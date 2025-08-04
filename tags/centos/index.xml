@@ -113,10 +113,4 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 </span></span><span class="line"><span class="cl">         <span class="nv">$VIM</span> 预设值：<span class="s2">&#34;/usr/local/share/vim&#34;</span>
 </span></span><span class="line"><span class="cl">编译方式：gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE<span class="o">=</span><span class="m">1</span>
 </span></span><span class="line"><span class="cl">链接方式：gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf  -ldl</span></span></code></pre></div></div>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

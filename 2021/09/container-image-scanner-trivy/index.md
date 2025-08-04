@@ -133,24 +133,3 @@ https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566
 
 最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。
 
-## 引用
-
-* [https://www.sonarqube.org/](https://www.sonarqube.org/)
-* [https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities](https://hub.docker.com/r/aquasec/trivy#ignore-unfixed-vulnerabilities)
-* [https://github.com/marketplace/actions/aqua-security-trivy](https://github.com/marketplace/actions/aqua-security-trivy)
-* [https://github.com/quay/clair](https://github.com/quay/clair)
-* [https://github.com/aquasecurity/trivy](https://github.com/aquasecurity/trivy)
-* [https://github.com/anchore/anchore-engine](https://github.com/anchore/anchore-engine)
-* [https://github.com/quay/quay](https://github.com/quay/quay)
-* [https://cloud.google.com/container-registry](https://cloud.google.com/container-registry)
-* [https://goharbor.io/blog/harbor-1.10-release/](https://goharbor.io/blog/harbor-1.10-release/)
-* [https://www.thoughtworks.com/radar/tools?blipid=201911077](https://www.thoughtworks.com/radar/tools?blipid=201911077)
-* [https://cve.mitre.org/index.html](https://cve.mitre.org/index.html)
-[https://nvd.nist.gov](https://nvd.nist.gov)
-* [https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family](https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family)
-* [https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

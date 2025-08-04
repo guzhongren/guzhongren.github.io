@@ -219,12 +219,3 @@ pub:
 
 > 尽情享用吧。..🎉🎉🎉🎉🎉
 
-## 引用
-
-* 1.[https://gohugo.io/](https://gohugo.io/)
-* 2.[https://golang.google.cn/](https://golang.google.cn/)
-* 3.[https://github.com/dillonzq/LoveIt](https://github.com/dillonzq/LoveIt)
-* 4.[https://github.com/features/actions](https://github.com/features/actions)
-* 5.[https://github.com/settings/tokens](https://github.com/settings/tokens)
-* 6.[生成 icon: https://realfavicongenerator.net/](https://realfavicongenerator.net/)
-

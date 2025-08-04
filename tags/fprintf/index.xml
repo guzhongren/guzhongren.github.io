@@ -3,9 +3,11 @@
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
 <p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
 Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
-<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreffer ">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest">Jest</a><sup>[1]</sup>
+ 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a>
+<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a><sup>[2]</sup>
+
 编写一个命令行工具库，打包并运行程序，根据工具名称后面的名称来显示 <code>'Hello, + 名称'</code>。</p>
 <h2 id="简化程序">简化程序</h2>
 <p>我们知道 golang 打包后就是一个可执行程序，程序名称根据你指定的名称显示，那么要实现这个工具就是需要接收到程序名后面的参数并显示出来。但本次的重点是实现 DI, 所以我们将重点放在命令行的测试与实现上。
@@ -75,6 +77,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </span></span><span class="line"><span class="cl">ok      dependency-injection    0.006s</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Jest: <a href="https://github.com/facebook/jest" rel="noopener noreferrer">https://github.com/facebook/jest</a></li><li>https://github.com/guzhongren/TDD/tree/master/10.dependency-injection: <a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a></li></ol>
+            </div>]]></description></item></channel></rss>

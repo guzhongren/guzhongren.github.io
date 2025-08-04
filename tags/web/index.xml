@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Web - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/web/</link><description>Web - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/web/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by La Miko from Pexels" /></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Web - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/web/</link><description>Web - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/web/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
 <h2 id="cargotoml">Cargo.toml</h2>
 <p><code>cargo.toml</code>是 Rust 包管理器 <code>cargo</code> 的清单文件。这个文件包 <code>name</code>、 <code>version</code> 和包的依赖，在 Rust 中，我们一般称之为 <code>crate</code>。</p>
 <p>在示例中给出了一系列信息，但是我们主要讨论如下三点：</p>
@@ -19,7 +19,8 @@
 <p>如果你熟悉其他的 Rust crate，那么你肯定知道，大多的 crate 的类型是 <code>rlib</code>（默认）， 或者是二进制形式的 <code>bin</code>（这种形式不需要 <code>crate-type</code> 注解）, 并且 <code>[lib]</code> 注解在普通的 <code>Cargo</code> 项目中并不需要指定。</p>
 <p>crate-type = [&ldquo;cdylib&rdquo;] 指示你的工程将会被编译为动态系统库 [dynamic system library], 但是对于 WebAssembly，他将会编译为一个没有启动函数的 .wasm 文件，在 Linux 平台上，他将会创建*.so 文件，在 macOS 上将会创建*.dylib 文件，在 windows 平台上将会创建 *.dylib 文件。</p>
 <p>我们通常指定 <code>crate-type = [&quot;rlib&quot;]</code> 来确保我们的库可以用 wasm-pack 来做单元测试（稍后会看到）。如果没有这个配置，我们将不能测试我们的库，因为 cdylib 包类型和 wasm-pack 的单元测试类型相冲突。</p>
-<p>你可以使用此 <a href="https://doc.rust-lang.org/reference/linkage.html" target="_blank" rel="noopener noreffer ">链接</a> 获取更多关于包类型的知识。</p>
+<p>你可以使用此 <a href="https://doc.rust-lang.org/reference/linkage.html">链接</a><sup>[1]</sup>
+ 获取更多关于包类型的知识。</p>
 <h3 id="2-wasm-bindgen-依赖">2. wasm-bindgen 依赖</h3>
 <p>wasm-bindgen 在 WebAssembly 中是一个重要的依赖。 这个包允许我们使用 <code>[wasm-bindgen]</code> 为在 JavaScript 和 Rust 生成的 wasm 之间的代码打标签。以使我们使用它的属性可以导入 JS 并且导出 Rust。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -29,7 +30,8 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">wasm-bindgen</span> <span class="p">=</span> <span class="s2">&#34;0.2&#34;</span></span></span></code></pre></div></div>
 <p>当我们讨论 lib.rs 生成什么内容的时候，将会看到更多关于怎么使用这个库。
-如果你从 JavaScript 技术栈过来，你可能注意到了当我们添加依赖的时候并没有加 <code>^</code> 或者 <code>~</code> , 看起来像是我们只要 <code>0.2</code> 这个版本。然而，事实并非如此！在 Rust 里， <code>^</code> 是默认的，你可使用这个 <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html" target="_blank" rel="noopener noreffer ">链接</a> 查看更多信息</p>
+如果你从 JavaScript 技术栈过来，你可能注意到了当我们添加依赖的时候并没有加 <code>^</code> 或者 <code>~</code> , 看起来像是我们只要 <code>0.2</code> 这个版本。然而，事实并非如此！在 Rust 里， <code>^</code> 是默认的，你可使用这个 <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html">链接</a><sup>[2]</sup>
+ 查看更多信息</p>
 <h3 id="3-features-和-wee_alloc-console_error_panic_hook-dependencies">3. [features] 和 wee_alloc, console_error_panic_hook dependencies</h3>
 <p>作为我们设计模板的工作的一部分，该模板可帮助人们发现针对特定用例的有用包，该模板包括两个依赖项，这对于开发 Rust-wasm 包的人们可能非常有用：console_error_panic_hook 和 wee_alloc。</p>
 <p>因为这些依赖关系主要在 Rust-wasm 包开发工作流程的特定部分中有用，所以我们还设置了一些粘合代码，使我们既可以将它们都包含为依赖关系，又可以选择将它们包含在内。</p>
@@ -63,9 +65,10 @@
 <li>console_error_panic_hook ，用于将奔溃消息记录到开发人员控制台的功能。</li>
 <li>wee_alloc，一个使代码量更小而优化的分配器。</li>
 </ul>
-<h2 id="引用">引用</h2>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
-]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>链接: <a href="https://doc.rust-lang.org/reference/linkage.html" rel="noopener noreferrer">https://doc.rust-lang.org/reference/linkage.html</a></li><li>链接: <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html" rel="noopener noreferrer">https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html</a></li></ol>
+            </div>]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" referrerpolicy="no-referrer">
             </div><h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -384,17 +387,16 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
+<p></p>
 <h2 id="在线体验">在线体验</h2>
-<p><a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">Markdown editor</a>: <a href="https://andorlab.github.io/WebAssembly/" target="_blank" rel="noopener noreffer ">https://andorlab.github.io/WebAssembly/</a></p>
+<p><a href="https://andorlab.github.io/WebAssembly/">Markdown editor</a><sup>[1]</sup>
+: <a href="https://andorlab.github.io/WebAssembly/">https://andorlab.github.io/WebAssembly/</a><sup>[1]</sup>
+</p>
 <h2 id="后续">后续</h2>
 <p>后面会在这个基础上继续开发，并将 WASM 中的一些概念配置也写成文档共享在博客中。</p>
-<h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/web_assembly/tree/based_rust</a></h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust">https://github.com/AndorLab/web_assembly/tree/based_rust</a><sup>[2]</sup>
+</h2>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Markdown editor: <a href="https://andorlab.github.io/WebAssembly/" rel="noopener noreferrer">https://andorlab.github.io/WebAssembly/</a></li><li>https://github.com/AndorLab/web_assembly/tree/based_rust: <a href="https://github.com/AndorLab/web_assembly/tree/based_rust" rel="noopener noreferrer">https://github.com/AndorLab/web_assembly/tree/based_rust</a></li></ol>
+            </div>]]></description></item></channel></rss>

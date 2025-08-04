@@ -17,12 +17,3 @@
 
 [https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b](https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b)
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

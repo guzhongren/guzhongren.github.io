@@ -9,10 +9,11 @@
 <p>这两种方式都存在信息丢失的风险，可能由于时间推移或其他因素导致记录不完整或遗失。最理想的方式是建立一套自己的记录系统，使得回顾时能够一目了然地看到当时的审查意见。</p>
 <h2 id="解决方案">解决方案</h2>
 <p>针对这一需求，我开发了一个 VSCode 插件来专门记录 Code Review 过程中的反馈。这个项目使用了最近非常热门的 Vibe Coding 技术&hellip;</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="Code Review Comments" /></p>
+<p></p>
 <h2 id="实现细节">实现细节</h2>
 <h3 id="系统提示词设计">系统提示词设计</h3>
-<p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli" target="_blank" rel="noopener noreffer ">Gemini CLI</a> 工具。</p>
+<p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli">Gemini CLI</a><sup>[1]</sup>
+ 工具。</p>
 <p>在开始开发前，我创建了一个 gemini.md 文件，在其中详细描述了项目需求：</p>
 <ul>
 <li>系统角色定义：为 AI 设定一个专业的角色定位</li>
@@ -64,11 +65,7 @@
 <li>使用 Vibe Coding，我们可以更快地获得产品原型，同时也能更快地学习我们不熟悉的知识和技能。</li>
 <li>但所有生成的代码都需要良好且可维护的架构设计，而不是流水账式的代码堆砌。</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://www.npmjs.com/package/@google/gemini-cli" target="_blank" rel="noopener noreffer ">Gemini CLI: https://www.npmjs.com/package/@google/gemini-cli</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Gemini CLI: <a href="https://www.npmjs.com/package/@google/gemini-cli" rel="noopener noreferrer">https://www.npmjs.com/package/@google/gemini-cli</a></li></ol>
+            </div>]]></description></item></channel></rss>

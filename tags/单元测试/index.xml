@@ -1,22 +1,16 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>单元测试 - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</link><description>单元测试 - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 02 Apr 2020 21:56:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" rel="self" type="application/rss+xml"/><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
-            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
+            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio">@haihaio</a><sup>[1]</sup>
+ 完成。</p>
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
 <p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreffer ">2.http://agiledata.org/essays/tdd.html</a></li>
-<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreffer ">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
-<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreffer ">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
-<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreffer ">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>
+            </div>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
@@ -27,7 +21,8 @@
 <p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
 </blockquote>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></p>
+<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
+</p>
 <p>根据输入的字符串和重复次数，输出重复次数后的字符串。</p>
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -120,7 +115,7 @@
 <p>因为默认情况下 go test 会运行单元测试，为了防止单元测试的输出影响我们查看基准测试的结果，可以使用-run=匹配一个从来没有的单元测试方法，过滤掉单元测试的输出，我们这里使用 none，因为我们基本上不会创建这个名字的单元测试方法。</p>
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://github.com/guzhongren/TDD/tree/master/09.benchmar: <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></li></ol>
+            </div>]]></description></item></channel></rss>

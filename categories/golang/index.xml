@@ -3,9 +3,11 @@
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
 <p>依赖注入是目前很多优秀框架都在使用的一个设计模式。
 Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion of Control – IoC）的一个模式。</p>
-<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest" target="_blank" rel="noopener noreffer ">Jest</a> 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
+<p>在各种大工程中少不了各种测试，其中 TDD 就是非常流行的一种，在前端开发中用的比较多的 <a href="https://github.com/facebook/jest">Jest</a><sup>[1]</sup>
+ 就是一种，在 Golang 开发命令行工具的时候也是需要 DI 这种模式来实现命令行测试的。因为传统的测试室获取不到命令行的输入输出的。</p>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a>
+<p>仓库：<a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a><sup>[2]</sup>
+
 编写一个命令行工具库，打包并运行程序，根据工具名称后面的名称来显示 <code>'Hello, + 名称'</code>。</p>
 <h2 id="简化程序">简化程序</h2>
 <p>我们知道 golang 打包后就是一个可执行程序，程序名称根据你指定的名称显示，那么要实现这个工具就是需要接收到程序名后面的参数并显示出来。但本次的重点是实现 DI, 所以我们将重点放在命令行的测试与实现上。
@@ -75,9 +77,10 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </span></span><span class="line"><span class="cl">ok      dependency-injection    0.006s</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a></p>
-]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Jest: <a href="https://github.com/facebook/jest" rel="noopener noreferrer">https://github.com/facebook/jest</a></li><li>https://github.com/guzhongren/TDD/tree/master/10.dependency-injection: <a href="https://github.com/guzhongren/TDD/tree/master/10.dependency-injection" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/10.dependency-injection</a></li></ol>
+            </div>]]></description></item><item><title>Golang 基准测试 (Benchmark)</title><link>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</link><pubDate>Tue, 10 Sep 2019 09:56:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95benchmark.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
@@ -88,7 +91,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
 </blockquote>
 <h2 id="工程意图">工程意图</h2>
-<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" target="_blank" rel="noopener noreffer ">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></p>
+<p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
+</p>
 <p>根据输入的字符串和重复次数，输出重复次数后的字符串。</p>
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -181,45 +185,68 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <p>因为默认情况下 go test 会运行单元测试，为了防止单元测试的输出影响我们查看基准测试的结果，可以使用-run=匹配一个从来没有的单元测试方法，过滤掉单元测试的输出，我们这里使用 none，因为我们基本上不会创建这个名字的单元测试方法。</p>
 <p>下面着重解释下说出的结果，看到函数后面的-12 了吗？这个表示运行时对应的 GOMAXPROCS 的值。接着的 10000000 表示运行 for 循环的次数，也就是调用被测试代码的次数，最后的 116 ns/op 表示每次需要话费 116 纳秒。
 以上是测试时间默认是 1 秒，也就是 1 秒的时间，调用 10000000 次，每次调用花费 116 纳秒。如果想让测试运行的时间更长，可以通过 -lunchtime 指定，比如 5 秒。</p>
-<h2 id="引用">引用</h2>
-<p><a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">1.https://golang.google.cn/</a>
-<a href="https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection/" target="_blank" rel="noopener noreffer ">2.Golang 依赖注入 (Dependency Injection)</a></p>
-]]></description></item><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://github.com/guzhongren/TDD/tree/master/09.benchmar: <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar" rel="noopener noreferrer">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a></li></ol>
+            </div>]]></description></item><item><title>Golang With SQLLite Practice</title><link>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</link><pubDate>Sun, 01 Sep 2019 10:56:39 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-with-sqllite-practice.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/JEtYLcPTCDIU2bs.png" referrerpolicy="no-referrer">
             </div><!-- TOC -->
 <ul>
-<li><a href="#%E7%AE%80%E4%BB%8B" rel="">简介</a></li>
-<li><a href="#%E7%9B%AE%E6%A0%87" rel="">目标</a></li>
-<li><a href="#%E7%9B%AE%E7%9A%84" rel="">目的</a></li>
-<li><a href="#coding" rel="">Coding</a>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a><sup>[1]</sup>
+</li>
+<li><a href="#%E7%9B%AE%E6%A0%87">目标</a><sup>[2]</sup>
+</li>
+<li><a href="#%E7%9B%AE%E7%9A%84">目的</a><sup>[3]</sup>
+</li>
+<li><a href="#coding">Coding</a><sup>[4]</sup>
+
 <ul>
-<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" rel="">目录结构</a></li>
-<li><a href="#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0" rel="">封装 error 函数</a></li>
-<li><a href="#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93" rel="">安装 SQLLite 库及其他库</a></li>
-<li><a href="#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" rel="">申明 DB 全局变量</a></li>
-<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93" rel="">初始化数据库</a></li>
-<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C" rel="">用户模型构建及原子操作</a>
+<li><a href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">目录结构</a><sup>[5]</sup>
+</li>
+<li><a href="#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0">封装 error 函数</a><sup>[6]</sup>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93">安装 SQLLite 库及其他库</a><sup>[7]</sup>
+</li>
+<li><a href="#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F">申明 DB 全局变量</a><sup>[8]</sup>
+</li>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93">初始化数据库</a><sup>[9]</sup>
+</li>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C">用户模型构建及原子操作</a><sup>[10]</sup>
+
 <ul>
-<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B" rel="">用户模型</a></li>
-<li><a href="#%E6%96%B0%E5%A2%9E" rel="">新增</a></li>
-<li><a href="#%E5%88%A0%E9%99%A4" rel="">删除</a></li>
-<li><a href="#%E4%BF%AE%E6%94%B9" rel="">修改</a></li>
-<li><a href="#%E6%9F%A5%E8%AF%A2" rel="">查询</a></li>
+<li><a href="#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B">用户模型</a><sup>[11]</sup>
+</li>
+<li><a href="#%E6%96%B0%E5%A2%9E">新增</a><sup>[12]</sup>
+</li>
+<li><a href="#%E5%88%A0%E9%99%A4">删除</a><sup>[13]</sup>
+</li>
+<li><a href="#%E4%BF%AE%E6%94%B9">修改</a><sup>[14]</sup>
+</li>
+<li><a href="#%E6%9F%A5%E8%AF%A2">查询</a><sup>[15]</sup>
+</li>
 </ul>
 </li>
-<li><a href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95" rel="">在应用中启动并调用用户模型的方法</a></li>
-<li><a href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA" rel="">运行结果展示</a></li>
+<li><a href="#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95">在应用中启动并调用用户模型的方法</a><sup>[16]</sup>
+</li>
+<li><a href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA">运行结果展示</a><sup>[17]</sup>
+</li>
 </ul>
 </li>
-<li><a href="#%E6%80%BB%E7%BB%93" rel="">总结</a></li>
-<li><a href="#reference" rel="">Reference</a></li>
-<li><a href="#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E" rel="">Disclaimer</a></li>
+<li><a href="#%E6%80%BB%E7%BB%93">总结</a><sup>[18]</sup>
+</li>
+<li><a href="#reference">Reference</a><sup>[19]</sup>
+</li>
+<li><a href="#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E">Disclaimer</a><sup>[20]</sup>
+</li>
 </ul>
 <!-- /TOC -->
 <h2 id="简介">简介</h2>
-<p><a href="about:blank" rel="">SQLite</a> 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用 SQLLite 也相当简单，只需要安装 SQLLite 的 Golang  包即可使用；
-Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.google.cn/" target="_blank" rel="noopener noreffer ">Golang</a> 有一定的了解。</p>
-<p>仓库地址：<a href="https://github.com/AndorLab/golang-sqllite" target="_blank" rel="noopener noreffer ">https://github.com/AndorLab/golang-sqllite</a></p>
+<p><a href="about:blank">SQLite</a><sup>[21]</sup>
+ 是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，你不需要在系统中配置。在 Golang 中使用 SQLLite 也相当简单，只需要安装 SQLLite 的 Golang  包即可使用；
+Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.google.cn/">Golang</a><sup>[22]</sup>
+ 有一定的了解。</p>
+<p>仓库地址：<a href="https://github.com/AndorLab/golang-sqllite">https://github.com/AndorLab/golang-sqllite</a><sup>[23]</sup>
+</p>
 <h2 id="目标">目标</h2>
 <p>使用 SQLLite 通过构建一个社区用户表，包含如下字段；通过 SQLLite 的 API 实现对社区用户表进行增删改查。</p>
 <table>
@@ -512,15 +539,12 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 <p>SQLLite 使用的也是标准的 SQL 语法，可以让不同的开发者快速入手。</p>
 <p>为什么没有用到 Golang 的 Web 框架？</p>
 <p>因为我们的侧重点在 Golang 与 SQLLite，不在 API 实现上，最小化的实现目标，才是我们学习知识最快速的途径。</p>
-<p>原文链接：<a href="https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/" target="_blank" rel="noopener noreffer ">https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
-<li><a href="https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3" target="_blank" rel="noopener noreffer ">2. 原文：https://yq.aliyun.com/articles/716696?spm=a2c4e.11155435.0.0.5d7c3312dFgns3</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
+<p>原文链接：<a href="https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/">https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/</a><sup>[24]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>简介: <a href="https://guzhongren.github.io/#%E7%AE%80%E4%BB%8B" rel="noopener noreferrer">#%E7%AE%80%E4%BB%8B</a></li><li>目标: <a href="https://guzhongren.github.io/#%E7%9B%AE%E6%A0%87" rel="noopener noreferrer">#%E7%9B%AE%E6%A0%87</a></li><li>目的: <a href="https://guzhongren.github.io/#%E7%9B%AE%E7%9A%84" rel="noopener noreferrer">#%E7%9B%AE%E7%9A%84</a></li><li>Coding: <a href="https://guzhongren.github.io/#coding" rel="noopener noreferrer">#coding</a></li><li>目录结构: <a href="https://guzhongren.github.io/#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84" rel="noopener noreferrer">#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84</a></li><li>封装 error 函数: <a href="https://guzhongren.github.io/#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0" rel="noopener noreferrer">#%E5%B0%81%E8%A3%85-error-%E5%87%BD%E6%95%B0</a></li><li>安装 SQLLite 库及其他库: <a href="https://guzhongren.github.io/#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93" rel="noopener noreferrer">#%E5%AE%89%E8%A3%85-sqllite-%E5%BA%93%E5%8F%8A%E5%85%B6%E4%BB%96%E5%BA%93</a></li><li>申明 DB 全局变量: <a href="https://guzhongren.github.io/#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F" rel="noopener noreferrer">#%E7%94%B3%E6%98%8E-db-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F</a></li><li>初始化数据库: <a href="https://guzhongren.github.io/#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93" rel="noopener noreferrer">#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%95%B0%E6%8D%AE%E5%BA%93</a></li><li>用户模型构建及原子操作: <a href="https://guzhongren.github.io/#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C" rel="noopener noreferrer">#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E6%9E%84%E5%BB%BA%E5%8F%8A%E5%8E%9F%E5%AD%90%E6%93%8D%E4%BD%9C</a></li><li>用户模型: <a href="https://guzhongren.github.io/#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B" rel="noopener noreferrer">#%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B</a></li><li>新增: <a href="https://guzhongren.github.io/#%E6%96%B0%E5%A2%9E" rel="noopener noreferrer">#%E6%96%B0%E5%A2%9E</a></li><li>删除: <a href="https://guzhongren.github.io/#%E5%88%A0%E9%99%A4" rel="noopener noreferrer">#%E5%88%A0%E9%99%A4</a></li><li>修改: <a href="https://guzhongren.github.io/#%E4%BF%AE%E6%94%B9" rel="noopener noreferrer">#%E4%BF%AE%E6%94%B9</a></li><li>查询: <a href="https://guzhongren.github.io/#%E6%9F%A5%E8%AF%A2" rel="noopener noreferrer">#%E6%9F%A5%E8%AF%A2</a></li><li>在应用中启动并调用用户模型的方法: <a href="https://guzhongren.github.io/#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95" rel="noopener noreferrer">#%E5%9C%A8%E5%BA%94%E7%94%A8%E4%B8%AD%E5%90%AF%E5%8A%A8%E5%B9%B6%E8%B0%83%E7%94%A8%E7%94%A8%E6%88%B7%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95</a></li><li>运行结果展示: <a href="https://guzhongren.github.io/#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA" rel="noopener noreferrer">#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%E5%B1%95%E7%A4%BA</a></li><li>总结: <a href="https://guzhongren.github.io/#%E6%80%BB%E7%BB%93" rel="noopener noreferrer">#%E6%80%BB%E7%BB%93</a></li><li>Reference: <a href="https://guzhongren.github.io/#reference" rel="noopener noreferrer">#reference</a></li><li>Disclaimer: <a href="https://guzhongren.github.io/#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E" rel="noopener noreferrer">#hereby-declared%E7%89%B9%E6%AD%A4%E7%94%B3%E6%98%8E</a></li><li>SQLite: <a href="#ZgotmplZ" rel="noopener noreferrer">about:blank</a></li><li>Golang: <a href="https://golang.google.cn/" rel="noopener noreferrer">https://golang.google.cn/</a></li><li>https://github.com/AndorLab/golang-sqllite: <a href="https://github.com/AndorLab/golang-sqllite" rel="noopener noreferrer">https://github.com/AndorLab/golang-sqllite</a></li><li>https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/: <a href="https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/" rel="noopener noreferrer">https://chinese.freecodecamp.org/news/golang-with-sqllite-practice/</a></li></ol>
+            </div>]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/moaTGH6EWiqyhRt.png" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>在搭建私有云环境时，我们需要将我们打包的镜像存储在局域网内，而不是把镜像推送到 hub.docker.com；一方面是因为安全问题，另一方面在局域网内存储，网速炒鸡快。当然对于私有云搭建，在本地搭建镜像仓库那是必须的。接下来，对我安装 Harbor 做一个记录。</p>
@@ -715,7 +739,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
 </span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .</span></span></code></pre></div></div>
 <p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
-<p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
+<p></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
 <p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
@@ -768,12 +792,6 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">alpine: digest: sha256:5ec3232b32e6876c0941d66d8392f667c77ca1ef14cafb85991deea4339b92da size: <span class="m">1365</span></span></span></code></pre></div></div>
 <h2 id="小结">小结</h2>
 <p>Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a>*</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -803,14 +821,6 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -840,12 +850,4 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU" target="_blank" rel="noopener noreffer ">3. 原文：https://yq.aliyun.com/articles/663151?spm=a2c4e.11155435.0.0.3c783312bi9tbU</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

@@ -1,21 +1,13 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Typescript - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/typescript/</link><description>Typescript - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 05 Jul 2020 10:23:18 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/typescript/" rel="self" type="application/rss+xml"/><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
-<iframe src="https://guzhongren.github.io///player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://www.bilibili.com" target="_blank" rel="noopener noreffer ">3.Bilibili</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
+<iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
 ]]></description></item><item><title>整合资源为其他端提供统一资源</title><link>https://guzhongren.github.io/2020/05/%E6%95%B4%E5%90%88%E8%B5%84%E6%BA%90%E4%B8%BA%E5%85%B6%E4%BB%96%E7%AB%AF%E6%8F%90%E4%BE%9B%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90/</link><pubDate>Sat, 23 May 2020 18:29:22 +0800</pubDate><author>ByteWars</author><guid>https://guzhongren.github.io/2020/05/%E6%95%B4%E5%90%88%E8%B5%84%E6%BA%90%E4%B8%BA%E5%85%B6%E4%BB%96%E7%AB%AF%E6%8F%90%E4%BE%9B%E7%BB%9F%E4%B8%80%E8%B5%84%E6%BA%90/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/05/10/67DtxyJqFRz2YZH.png" referrerpolicy="no-referrer">
             </div><h2 id="引子">引子</h2>
 <p>有些时候，软件开发过程中没有将系统功能，且分开从而将系统拆分为多个子系统，或者在自身系统开发过程中有必须要依赖的外部服务，那么对外提供服务的时候就得让所有的子服务都得随时候命，
 排列起来就像古代战场的对战状态一样了。</p>
-<p><img src="https://i.loli.net/2020/05/23/bnOYrJMiSzqhKVL.png" alt="apps.png" /></p>
+<p></p>
 <h2 id="存在的问题">存在的问题</h2>
 <p>对于这种情况存在什么问题呢？ 想象一个场景，作为老板或者业务对接方，我要集成和之前一样的系统，我要对接这么多接口么？如果对接方看到这么多的系统接口要对接，他肯定就放弃治疗了。</p>
 <p>总结一下存在的问题。</p>
@@ -30,7 +22,7 @@
 <p>对于上面提到的各种问题，我们有什么解决方案呢？</p>
 <p>最近，微服务的概念比较流行， 我们想想一下前端微服务是怎么组合的？是不是将很多个子页面服务都集成在一个一面中，最终这个页面为用户服务。让这个页面作为对接点。结合上面的图，我们可以设计如下图的方案， 抽离一个中间层，我们暂时可以称之为 <code>Platform</code>，
 让所有的资源都从<code>Platform</code>进和出，将要集成的各种服务屏蔽在<code>Platform</code>后面，对于对接方，他永远只知道一个<code>Platform</code>， 这样集成起来就好多了。</p>
-<p><img src="https://i.loli.net/2020/05/23/EbGaLkr5g6sHxpK.png" alt="apps-platform.png" /></p>
+<p></p>
 <h2 id="coding">Coding</h2>
 <p>方案也有了，那么接下来就是撸起袖子加油干的时候了。</p>
 <p>因为 <code>Platform</code> 会是一个后端的工程，其对外提供各种接口和资源；最近<code>Deno</code>比较🔥，为了尝试<code>真香定律</code>， 我们就拿它来实践一下。</p>
@@ -41,7 +33,8 @@
 <li>某个后端提供前端资源， 这个资源是由这个后端服务团队维护，且这个服务需要在前端使用</li>
 </ul>
 <p>在此， 我们将这个后端资源暂时抽象为<code>jquery.js</code>, 提供 jquery.js 服务的团队就是被我们 Platform 屏蔽起来的服务团队， 对我们本次实践来说就是某一个提供 Jquery 的 CDN 服务商。</p>
-<p>具体的 <a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">Code</a> 在此，如有需要可随时查看。在实现过程中也有两种方案，</p>
+<p>具体的 <a href="https://github.com/ByteWars/forwardJS">Code</a><sup>[1]</sup>
+ 在此，如有需要可随时查看。在实现过程中也有两种方案，</p>
 <p>资源请求的前端页面代码如下，<strong>重点就是 <code>script</code>标签中<code>src</code>的获取是一个 <code>GET</code>请求！</strong></p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-html">
@@ -85,13 +78,7 @@
 <p>这种方案是将资源请求到服务器，然后将资源再返回给前端。</p>
 <h2 id="总结">总结</h2>
 <p>对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://sm.ms/" target="_blank" rel="noopener noreffer ">2. 图床：https://sm.ms/</a></li>
-<li><a href="https://github.com/ByteWars/forwardJS" target="_blank" rel="noopener noreffer ">3.ForwardJS</a></li>
-<li><a href="https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw" target="_blank" rel="noopener noreffer ">4. 了不起的 Deno 实战教程</a></li>
-</ul>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="微信公众号" /></p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Code: <a href="https://github.com/ByteWars/forwardJS" rel="noopener noreferrer">https://github.com/ByteWars/forwardJS</a></li></ol>
+            </div>]]></description></item></channel></rss>

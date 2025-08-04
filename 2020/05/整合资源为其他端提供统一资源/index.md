@@ -94,13 +94,3 @@ export default async (url: string) => {
 
 对于这两种方案，更加推荐第一种；第一种方案将资源的路径返回给前端然后由浏览器做跳转并将资源请求回来， 而第二种需要将资源请求回来，如果该资源的请求量比较大，那么就得做缓存，相比于第一种，第二种 Platform 在后期维护也不好，而且压力会在 Platform 和被屏蔽的服务那里，多了不必要的麻烦。
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3.ForwardJS](https://github.com/ByteWars/forwardJS)
-* [4. 了不起的 Deno 实战教程](https://mp.weixin.qq.com/s/J4A5EYL7Kk8cx_X7Kh36Iw)
-
-----
-![微信公众号](https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png)
-

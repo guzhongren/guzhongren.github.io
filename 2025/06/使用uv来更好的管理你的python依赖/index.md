@@ -164,12 +164,3 @@ pyfiglet==1.0.3
 好的工具的选择可以为工程构建增速提效。
 工具的组合更是可以产生解放生产力。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [pyproject.toml: https://packaging.python.org/en/latest/guides/writing-pyproject-toml/](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

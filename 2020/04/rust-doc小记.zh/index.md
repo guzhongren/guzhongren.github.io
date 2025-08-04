@@ -68,12 +68,3 @@ $ cargo doc --open
 
 Rust 的编译器相当严谨，结合 TDD 写代码应该会很爽。
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

@@ -327,12 +327,3 @@ function addElement() {
 
 ## 仓库地址：<https://github.com/AndorLab/web_assembly/tree/based_rust>
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

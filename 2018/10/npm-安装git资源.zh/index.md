@@ -53,13 +53,3 @@ $ npm install yourName/niubility
 
 ## 恩，没什么可说的了我真是来测试打赏功能的。
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3. 原文：https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU](https://yq.aliyun.com/articles/655108?spm=a2c4e.11155435.0.0.3c783312bi9tbU)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

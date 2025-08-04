@@ -2,13 +2,15 @@
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
             </div><p>本文是近期为学弟学妹们演讲时用 Logseq 整理的大纲,在此记录一下，以备复用。</p>
 <h2 id="intro">Intro</h2>
-<p><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/about/</a></p>
+<p><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
+</p>
 <h2 id="know-yourself">Know yourself</h2>
 <p>Do you really like computer science???
 灵魂三问，你真的喜欢计算机科学吗？如果不喜欢早点放弃，不然你以后的每一刻都会感到无比的痛苦。</p>
 <h2 id="trend">Trend</h2>
 <p><strong>Trend is the future</strong>
-<a href="https://www.devjobsscanner.com/blog/" target="_blank" rel="noopener noreffer ">https://www.devjobsscanner.com/blog/</a></p>
+<a href="https://www.devjobsscanner.com/blog/">https://www.devjobsscanner.com/blog/</a><sup>[2]</sup>
+</p>
 <blockquote>
 <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
 《旧唐书·魏徵传》李世民
@@ -17,7 +19,8 @@
 <h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
 <h3 id="roadmap">Roadmap</h3>
 <ul>
-<li><a href="https://roadmap.sh" target="_blank" rel="noopener noreffer ">https://roadmap.sh</a></li>
+<li><a href="https://roadmap.sh">https://roadmap.sh</a><sup>[3]</sup>
+</li>
 </ul>
 <h3 id="best-practice">Best Practice</h3>
 <ul>
@@ -33,54 +36,70 @@
 <h2 id="frontend">Frontend</h2>
 <h3 id="basic">Basic</h3>
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer ">Node</a>
+<li><a href="https://nodejs.org/en/">Node</a><sup>[4]</sup>
+
 <ul>
-<li><a href="https://nodejs.org/en/" target="_blank" rel="noopener noreffer ">https://nodejs.org/en/</a></li>
+<li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a><sup>[4]</sup>
+</li>
 </ul>
 </li>
 <li>Package management
 <ul>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreffer ">npm</a>
+<li><a href="https://www.npmjs.com/">npm</a><sup>[5]</sup>
+
 <ul>
-<li><a href="https://www.npmjs.com/" target="_blank" rel="noopener noreffer ">https://www.npmjs.com/</a></li>
+<li><a href="https://www.npmjs.com/">https://www.npmjs.com/</a><sup>[5]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">yarn</a>
+<li><a href="https://yarnpkg.com/">yarn</a><sup>[6]</sup>
+
 <ul>
-<li><a href="https://yarnpkg.com/" target="_blank" rel="noopener noreffer ">https://yarnpkg.com/</a></li>
+<li><a href="https://yarnpkg.com/">https://yarnpkg.com/</a><sup>[6]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreffer ">pnpm</a>
+<li><a href="https://pnpm.io/">pnpm</a><sup>[7]</sup>
+
 <ul>
-<li><a href="https://pnpm.io/" target="_blank" rel="noopener noreffer ">https://pnpm.io/</a></li>
+<li><a href="https://pnpm.io/">https://pnpm.io/</a><sup>[7]</sup>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>IDE
 <ul>
-<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VSCode</a>
+<li><a href="https://code.visualstudio.com/">VSCode</a><sup>[8]</sup>
+
 <ul>
-<li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">https://code.visualstudio.com/</a></li>
+<li><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><sup>[8]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreffer ">JetBrains</a>
+<li><a href="https://www.jetbrains.com/">JetBrains</a><sup>[9]</sup>
+
 <ul>
-<li><a href="https://www.jetbrains.com/" target="_blank" rel="noopener noreffer ">https://www.jetbrains.com/</a></li>
+<li><a href="https://www.jetbrains.com/">https://www.jetbrains.com/</a><sup>[9]</sup>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>Tools
 <ul>
-<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreffer ">Vite</a>
+<li><a href="https://vitejs.dev/">Vite</a><sup>[10]</sup>
+
 <ul>
-<li><a href="https://vitejs.dev/" target="_blank" rel="noopener noreffer ">https://vitejs.dev/</a></li>
+<li><a href="https://vitejs.dev/">https://vitejs.dev/</a><sup>[10]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer ">Webpack</a>
+<li><a href="https://www.webpackjs.com/">Webpack</a><sup>[11]</sup>
+
 <ul>
-<li><a href="https://www.webpackjs.com/" target="_blank" rel="noopener noreffer ">https://www.webpackjs.com/</a></li>
+<li><a href="https://www.webpackjs.com/">https://www.webpackjs.com/</a><sup>[11]</sup>
+</li>
 </ul>
 </li>
 <li>&hellip;</li>
@@ -95,81 +114,108 @@
 </ul>
 <h3 id="framework">Framework</h3>
 <ul>
-<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreffer ">React</a>
+<li><a href="https://reactjs.org/">React</a><sup>[12]</sup>
+
 <ul>
-<li><a href="https://reactjs.org/" target="_blank" rel="noopener noreffer ">https://reactjs.org/</a></li>
+<li><a href="https://reactjs.org/">https://reactjs.org/</a><sup>[12]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreffer ">Vue</a>
+<li><a href="https://vuejs.org/">Vue</a><sup>[13]</sup>
+
 <ul>
-<li><a href="https://vuejs.org/" target="_blank" rel="noopener noreffer ">https://vuejs.org/</a></li>
+<li><a href="https://vuejs.org/">https://vuejs.org/</a><sup>[13]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreffer ">Angular</a>
+<li><a href="https://angularjs.org/">Angular</a><sup>[14]</sup>
+
 <ul>
-<li><a href="https://angularjs.org/" target="_blank" rel="noopener noreffer ">https://angularjs.org/</a></li>
+<li><a href="https://angularjs.org/">https://angularjs.org/</a><sup>[14]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreffer ">Svelte</a>
+<li><a href="https://svelte.dev/">Svelte</a><sup>[15]</sup>
+
 <ul>
-<li><a href="https://svelte.dev/" target="_blank" rel="noopener noreffer ">https://svelte.dev/</a></li>
+<li><a href="https://svelte.dev/">https://svelte.dev/</a><sup>[15]</sup>
+</li>
 </ul>
 </li>
 <li>&hellip;</li>
 </ul>
 <h3 id="resources">Resources</h3>
 <ul>
-<li><a href="https://www.imooc.com/" target="_blank" rel="noopener noreffer ">幕课网</a></li>
-<li><a href="https://www.w3school.com.cn/" target="_blank" rel="noopener noreffer ">w3school</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/" target="_blank" rel="noopener noreffer ">MDN</a></li>
+<li><a href="https://www.imooc.com/">幕课网</a><sup>[16]</sup>
+</li>
+<li><a href="https://www.w3school.com.cn/">w3school</a><sup>[17]</sup>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/">MDN</a><sup>[18]</sup>
+</li>
 </ul>
 <h2 id="backend">Backend</h2>
 <h3 id="nodejs">Nodejs</h3>
 <ul>
-<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreffer ">Express</a>
+<li><a href="https://expressjs.com/">Express</a><sup>[19]</sup>
+
 <ul>
-<li><a href="https://expressjs.com/" target="_blank" rel="noopener noreffer ">https://expressjs.com/</a></li>
+<li><a href="https://expressjs.com/">https://expressjs.com/</a><sup>[19]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://koajs.com/" target="_blank" rel="noopener noreffer ">Koa</a>
+<li><a href="https://koajs.com/">Koa</a><sup>[20]</sup>
+
 <ul>
-<li><a href="https://koajs.com/" target="_blank" rel="noopener noreffer ">https://koajs.com/</a></li>
+<li><a href="https://koajs.com/">https://koajs.com/</a><sup>[20]</sup>
+</li>
 </ul>
 </li>
 </ul>
 <h3 id="javakotin">Java/Kotin</h3>
 <ul>
-<li><a href="https://spring.io/" target="_blank" rel="noopener noreffer ">Spring</a></li>
+<li><a href="https://spring.io/">Spring</a><sup>[21]</sup>
+</li>
 </ul>
 <h2 id="gis">GIS</h2>
 <h3 id="arcgisesri">ArcGIS[ESRI]</h3>
 <ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreffer ">Dev docs</a>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Dev docs</a><sup>[22]</sup>
+
 <ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" target="_blank" rel="noopener noreffer ">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li>
+<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a><sup>[22]</sup>
+</li>
 </ul>
 </li>
 <li>ArcGIS Desktop</li>
 <li>ArcGIS Server</li>
 </ul>
 <h3 id="supermap">Supermap</h3>
-<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/" target="_blank" rel="noopener noreffer ">OpenLayers</a></h3>
-<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/" target="_blank" rel="noopener noreffer ">https://openlayers.org/</a></h3>
+<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
+</h3>
+<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
+</h3>
 <h3 id="qgis">QGIS</h3>
 <h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/" target="_blank" rel="noopener noreffer ">Leaflet</a><a href="https://leafletjs.com/" target="_blank" rel="noopener noreffer ">https://leafletjs.com/</a></h3>
-<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreffer ">Cesiumjs</a><a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreffer ">https://cesium.com/platform/cesiumjs/</a></h3>
+<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
+<a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
+</h3>
+<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
+<a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
+</h3>
 <h2 id="suggestions">Suggestions</h2>
 <p>Build common capabilities</p>
 <ul>
-<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker</a>
+<li><a href="https://www.docker.com/">Docker</a><sup>[26]</sup>
+
 <ul>
-<li><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">https://www.docker.com/</a></li>
+<li><a href="https://www.docker.com/">https://www.docker.com/</a><sup>[26]</sup>
+</li>
 </ul>
 </li>
 <li>Command line
 <ul>
-<li><a href="https://github.com/microsoft/terminal" target="_blank" rel="noopener noreffer ">https://github.com/microsoft/terminal</a></li>
+<li><a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a><sup>[27]</sup>
+</li>
 <li>Linux cmd</li>
 <li>Mac iterm2 / Warp</li>
 </ul>
@@ -178,14 +224,18 @@
 <ul>
 <li>CI/CD
 <ul>
-<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">GitHub Actions</a>
+<li><a href="https://docs.github.com/en/actions">GitHub Actions</a><sup>[28]</sup>
+
 <ul>
-<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener noreffer ">https://docs.github.com/en/actions</a></li>
+<li><a href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a><sup>[28]</sup>
+</li>
 </ul>
 </li>
-<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreffer ">Jenkins</a>
+<li><a href="https://www.jenkins.io/">Jenkins</a><sup>[29]</sup>
+
 <ul>
-<li><a href="https://www.jenkins.io/" target="_blank" rel="noopener noreffer ">https://www.jenkins.io/</a></li>
+<li><a href="https://www.jenkins.io/">https://www.jenkins.io/</a><sup>[29]</sup>
+</li>
 </ul>
 </li>
 </ul>
@@ -204,7 +254,8 @@
 </ul>
 <h3 id="build-your-tech-radar">Build your <strong>Tech Radar</strong></h3>
 <ul>
-<li><a href="https://guzhongren.github.io/about/" target="_blank" rel="noopener noreffer ">https://guzhongren.github.io/about/</a></li>
+<li><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
+</li>
 </ul>
 <h3 id="always-summary">Always summary</h3>
 <ul>
@@ -247,19 +298,7 @@
 <li>[[成事思维]]</li>
 </ul>
 <h2 id="qa">Q&amp;A</h2>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>https://guzhongren.github.io/about/: <a href="https://guzhongren.github.io/about/" rel="noopener noreferrer">https://guzhongren.github.io/about/</a></li><li>https://www.devjobsscanner.com/blog/: <a href="https://www.devjobsscanner.com/blog/" rel="noopener noreferrer">https://www.devjobsscanner.com/blog/</a></li><li>https://roadmap.sh: <a href="https://roadmap.sh" rel="noopener noreferrer">https://roadmap.sh</a></li><li>Node: <a href="https://nodejs.org/en/" rel="noopener noreferrer">https://nodejs.org/en/</a></li><li>npm: <a href="https://www.npmjs.com/" rel="noopener noreferrer">https://www.npmjs.com/</a></li><li>yarn: <a href="https://yarnpkg.com/" rel="noopener noreferrer">https://yarnpkg.com/</a></li><li>pnpm: <a href="https://pnpm.io/" rel="noopener noreferrer">https://pnpm.io/</a></li><li>VSCode: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li>JetBrains: <a href="https://www.jetbrains.com/" rel="noopener noreferrer">https://www.jetbrains.com/</a></li><li>Vite: <a href="https://vitejs.dev/" rel="noopener noreferrer">https://vitejs.dev/</a></li><li>Webpack: <a href="https://www.webpackjs.com/" rel="noopener noreferrer">https://www.webpackjs.com/</a></li><li>React: <a href="https://reactjs.org/" rel="noopener noreferrer">https://reactjs.org/</a></li><li>Vue: <a href="https://vuejs.org/" rel="noopener noreferrer">https://vuejs.org/</a></li><li>Angular: <a href="https://angularjs.org/" rel="noopener noreferrer">https://angularjs.org/</a></li><li>Svelte: <a href="https://svelte.dev/" rel="noopener noreferrer">https://svelte.dev/</a></li><li>幕课网: <a href="https://www.imooc.com/" rel="noopener noreferrer">https://www.imooc.com/</a></li><li>w3school: <a href="https://www.w3school.com.cn/" rel="noopener noreferrer">https://www.w3school.com.cn/</a></li><li>MDN: <a href="https://developer.mozilla.org/zh-CN/" rel="noopener noreferrer">https://developer.mozilla.org/zh-CN/</a></li><li>Express: <a href="https://expressjs.com/" rel="noopener noreferrer">https://expressjs.com/</a></li><li>Koa: <a href="https://koajs.com/" rel="noopener noreferrer">https://koajs.com/</a></li><li>Spring: <a href="https://spring.io/" rel="noopener noreferrer">https://spring.io/</a></li><li>Dev docs: <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" rel="noopener noreferrer">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li><li>OpenLayers: <a href="https://openlayers.org/" rel="noopener noreferrer">https://openlayers.org/</a></li><li>Leaflet: <a href="https://leafletjs.com/" rel="noopener noreferrer">https://leafletjs.com/</a></li><li>Cesiumjs: <a href="https://cesium.com/platform/cesiumjs/" rel="noopener noreferrer">https://cesium.com/platform/cesiumjs/</a></li><li>Docker: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li>https://github.com/microsoft/terminal: <a href="https://github.com/microsoft/terminal" rel="noopener noreferrer">https://github.com/microsoft/terminal</a></li><li>GitHub Actions: <a href="https://docs.github.com/en/actions" rel="noopener noreferrer">https://docs.github.com/en/actions</a></li><li>Jenkins: <a href="https://www.jenkins.io/" rel="noopener noreferrer">https://www.jenkins.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

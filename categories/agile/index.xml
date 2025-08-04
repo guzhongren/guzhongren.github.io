@@ -10,7 +10,8 @@
 <h2 id="分析">分析</h2>
 <p>所有的问题都是解决“人”的问题。</p>
 <p>代码质量， 英语 Code Quality, 衡量代码测试覆盖率，Code Smells， Bug 数量，安全问题（Security HotSpot）等。 代码质量在软件开发过程中都是重中之重。</p>
-<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics</a>, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
+<p><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/">Dora Metrics</a><sup>[1]</sup>
+, 又称 <code>4 Key Metrics</code> 是一套衡量软件交付效能的指标，有</p>
 <ul>
 <li>部署频率（Deployment frequency）</li>
 <li>前置时间（Lead time for change）</li>
@@ -30,13 +31,10 @@
 <blockquote>
 <p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" target="_blank" rel="noopener noreffer ">Dora Metrics: https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>工作的常态是被打断</title><link>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</link><pubDate>Sat, 25 Dec 2021 09:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Dora Metrics: <a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" rel="noopener noreferrer">https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li></ol>
+            </div>]]></description></item><item><title>工作的常态是被打断</title><link>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</link><pubDate>Sat, 25 Dec 2021 09:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/12/%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%B8%B8%E6%80%81%E6%98%AF%E8%A2%AB%E6%89%93%E6%96%AD/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>最近西安疫情比较严重，不到一个月已经近 200 例了，而我也被确诊病例轨迹重重包围了；疫情刚开始我司就决定让大家居家办公，一直到现在；居家办公已经不是第一次了，但是在居家办公这个过程中，每个人都会遇到这样或者那样的事，今天就来说说，工作的常态就是被打断，以及如何有效的解决被打断这个问题。</p>
@@ -59,16 +57,10 @@
 - [ ] subTask3</code></pre></div>
 <h3 id="todo">ToDo</h3>
 <p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png" alt="microsoft-todo" /></p>
+<p></p>
 <h2 id="实践">实践</h2>
 <p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
 当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>敏捷开发中有哪些会议？</title><link>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</link><pubDate>Sat, 14 Aug 2021 11:35:52 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/08/%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91%E4%B8%AD%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%9A%E8%AE%AE/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="常用会议">常用会议</h2>
@@ -209,12 +201,6 @@
 </table>
 <h2 id="按需裁减">按需裁减</h2>
 <p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>Tech Debt</title><link>https://guzhongren.github.io/2021/01/tech-debt/</link><pubDate>Sun, 10 Jan 2021 12:57:09 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/01/tech-debt/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2021/01/10/ToABlS78eDgYUZi.png" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
@@ -309,40 +295,24 @@
 <p>对于分析后的问题，按照其所在的不同区域的重要程度，一般需要将<code>Fix it if have spare time</code>, <code>View result immediately</code>和<code>Split &amp; Plan</code>这三个区域的问题梳理为卡（业务卡，技术卡或者 Bug 卡），分在不同的迭代去做。</p>
 <h2 id="模板">模板</h2>
 <p>介于此制作了一个可以复用的模板。
-<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://www.productplan.com/glossary/technical-debt/" target="_blank" rel="noopener noreffer ">Technical Debt:https://www.productplan.com/glossary/technical-debt/</a></p>
-</li>
-<li>
-<p><a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
+<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a><sup>[1]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4: <a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" rel="noopener noreferrer">https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></li></ol>
+            </div>]]></description></item><item><title>开发眼中的 TDD</title><link>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</link><pubDate>Thu, 02 Apr 2020 21:56:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E5%BC%80%E5%8F%91%E7%9C%BC%E4%B8%AD%E7%9A%84tdd.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/04/02/ryXZAQDkdS94l3W.png" referrerpolicy="no-referrer">
-            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio" target="_blank" rel="noopener noreffer ">@haihaio</a> 完成。</p>
+            </div><p>本思维导图中大部分内容由 <a href="https://github.com/haihaio">@haihaio</a><sup>[1]</sup>
+ 完成。</p>
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
 <p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="http://agiledata.org/essays/tdd.html" target="_blank" rel="noopener noreffer ">2.http://agiledata.org/essays/tdd.html</a></li>
-<li><a href="https://opensource.com/article/19/10/test-driven-development-best-practices" target="_blank" rel="noopener noreffer ">3.https://opensource.com/article/19/10/test-driven-development-best-practices</a></li>
-<li><a href="https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html" target="_blank" rel="noopener noreffer ">4.https://osherove.com/blog/2005/4/3/naming-standards-for-unit-tests.html</a></li>
-<li><a href="https://dzone.com/articles/7-popular-unit-test-naming" target="_blank" rel="noopener noreffer ">5.https://dzone.com/articles/7-popular-unit-test-naming</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>
+            </div>]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://pic4.zhimg.com/80/v2-f8af3dcb49b2e0bdbfd7060fb36bdd5f.jpg" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
@@ -450,11 +420,4 @@
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreffer ">2. 翻译：https://translate.google.cn/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

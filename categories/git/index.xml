@@ -86,12 +86,6 @@
 <h2 id="总结">总结</h2>
 <p>99%的事物皆可自动化！</p>
 <p>第一种方案自动化程度更高，更可取。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>How to Encrypt Git Files</title><link>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</link><pubDate>Sun, 12 Jul 2020 11:00:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/how-to-encrypt-git-files/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://s1.ax1x.com/2020/07/12/U32INn.png" referrerpolicy="no-referrer">
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
@@ -112,8 +106,10 @@
 <p>针对第一种情况，当我们的数据越来多的时候，我们需要将其状态可控起来，其实就是 <code>date as code</code>, 每次对数据的增删改查，我们都可以有追踪和数据保存。</p>
 <h2 id="有哪些方案呢">有哪些方案呢？</h2>
 <ul>
-<li><a href="https://github.com/AGWA/git-crypt" target="_blank" rel="noopener noreffer ">git-crypt</a></li>
-<li><a href="https://github.com/elasticdog/transcrypt" target="_blank" rel="noopener noreffer ">transcrypt</a></li>
+<li><a href="https://github.com/AGWA/git-crypt">git-crypt</a><sup>[1]</sup>
+</li>
+<li><a href="https://github.com/elasticdog/transcrypt">transcrypt</a><sup>[2]</sup>
+</li>
 </ul>
 <p>在这里，我推荐使用 <code>git-crypt</code>, 其特点如下：</p>
 <ul>
@@ -125,10 +121,11 @@
 <li>利用了加密工具<code>gpg</code>进行加密处理。</li>
 </ul>
 <h3 id="gpg">GPG</h3>
-<p><img src="https://ruanyifeng.com/blogimg/asset/201307/bg2013071202.png" alt="GPG" /></p>
+<p></p>
 <p>要了解什么是 GPG，就要先了解 PGP。</p>
 <p>1991 年，程序员 Phil Zimmermann 为了避开政府监视，开发了加密软件 PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个 PGP 的替代品，取名为 GnuPG。这就是 GPG 的由来。</p>
-<p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html" target="_blank" rel="noopener noreffer ">《GPG 入门教程》</a></p>
+<p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html">《GPG 入门教程》</a><sup>[3]</sup>
+</p>
 <h2 id="git-crypt-操作">git-crypt 操作</h2>
 <h3 id="安装-gpg-和-git-crypt">安装 gpg 和 git-crypt</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -278,7 +275,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </span></span><span class="line"><span class="cl">git commit -m ‘git-crypt’
 </span></span><span class="line"><span class="cl">git push</span></span></code></pre></div></div>
 <p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
-<p><img src="https://i.loli.net/2020/07/12/lXVnNw5EbKCcvhe.png" alt="git-crypt.png" /></p>
+<p></p>
 <h2 id="协作">协作</h2>
 <p>与他人协作，别人需要知道对应解密的 key</p>
 <h3 id="导出密钥">导出密钥</h3>
@@ -297,7 +294,8 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">git-crypt unlock /path/to/git-crypt.key</span></span></code></pre></div></div>
 <p>此时，在本地就可以看到加密后的文件内容了。</p>
 <h3 id="更新密钥">更新密钥</h3>
-<p>因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;" target="_blank" rel="noopener noreffer ">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a> 步骤如下：</p>
+<p>因为 git-crypt 没有提供删除或者更新密钥的命令，所以参考了一个 issue: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a><sup>[4]</sup>
+ 步骤如下：</p>
 <ul>
 <li>Make a backup (with decrypted files): cp -r . /path/to/backup</li>
 <li>Save a list of files that are encrypted: git crypt status | grep -v &rsquo;not encrypted&rsquo; &gt; ../encrypted-files.txt</li>
@@ -315,45 +313,10 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 <ul>
 <li>只能添加不能删除 gpg userId, 导致更新密钥会比较麻烦，如果要更新密钥，那么就需要做重置</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/beef-noodles/git-crypt-test" target="_blank" rel="noopener noreffer ">Demo: git-crypt-test</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://gnupg.org/" target="_blank" rel="noopener noreffer ">https://gnupg.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt" target="_blank" rel="noopener noreffer ">AGWA/git-crypt</a></p>
-</li>
-<li>
-<p><a href="http://einverne.github.io/post/2019/11/git-crypt-usage.html" target="_blank" rel="noopener noreffer ">git-crypt 使用</a></p>
-</li>
-<li>
-<p><a href="https://www.jianshu.com/p/a40fc90df943" target="_blank" rel="noopener noreffer ">git 上的配置文件如何加密？</a></p>
-</li>
-<li>
-<p><a href="https://www.devopsgroup.com/blog/easy-git-crypt-user-identification/" target="_blank" rel="noopener noreffer ">Easy Git Crypt User Identification</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759" target="_blank" rel="noopener noreffer ">Update git crypt key</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AGWA/git-crypt/issues/189#issuecomment-549787656" target="_blank" rel="noopener noreffer ">List gpg user</a></p>
-</li>
-<li>
-<p><a href="https://www.gnupg.org/howtos/zh/index.html" target="_blank" rel="noopener noreffer ">Gnu 隐私卫士 (GnuPG) 袖珍 HOWTO （中文版）</a></p>
-</li>
-<li>
-<p><a href="https://www.lnmpy.com/blog/transcrypt-intro/" target="_blank" rel="noopener noreffer ">transcrypt 使用案例</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg" alt="Photo by Matheus Natan from Pexels" /></p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>git-crypt: <a href="https://github.com/AGWA/git-crypt" rel="noopener noreferrer">https://github.com/AGWA/git-crypt</a></li><li>transcrypt: <a href="https://github.com/elasticdog/transcrypt" rel="noopener noreferrer">https://github.com/elasticdog/transcrypt</a></li><li>《GPG 入门教程》: <a href="https://ruanyifeng.com/blog/2013/07/gpg.html" rel="noopener noreferrer">https://ruanyifeng.com/blog/2013/07/gpg.html</a></li><li>https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;: <a href="https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;" rel="noopener noreferrer">https://github.com/AGWA/git-crypt/issues/47#issuecomment-492939759;</a></li></ol>
+            </div>]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p></p>
 <p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>
 <p>此外，得益于这些工具，分布式团队可以畅通合作，使多个人可以同时处理项目的不同部分，然后将其结果合并为一个产品。 让我们仔细看看版本控制系统，git-flow 和 Trunk-based development（基于主干的开发）是如何形成的。</p>
 <h2 id="版本控制系统是怎样改变世界的">版本控制系统是怎样改变世界的</h2>
@@ -400,7 +363,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 另一个重大改进是引入了分布式系统。 Git 是采用这种理念的首批工具之一。 实际上，它使开源世界得以蓬勃发展。 Git 允许开发人员通过称为分叉的操作复制整个存储库，并引入所需的更改，而不必担心合并冲突。</p>
 <p>随后，开发者可以创建一个 PR(Pull request)，以将其更改合并到原始项目中。 如果最初的开发人员对合并其他存储库中的更改不感兴趣，那么他们可以自己将其转换 (Fork) 为单独的项目。 由于没有中央存储的概念，因此一切皆有可能。</p>
 <h2 id="git-flow">Git-flow</h2>
-<p><img src="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png" alt="Git-flow" /></p>
+<p></p>
 <p>在 Git-flow 开发模型中，你有一个主分支 (master branch)，从主分支创建开发分支 (develop branch)，所有开发工作提交都基于开发分支。<code>主分支和开发分支在 git-flow 的整个生命周期中都是一直存在的。</code></p>
 <p>开发人员从该开发分支创建功能分支 (Feature branch) 并对其进行 Coding。完成后，它们将创建 PR。在审查 (Review) PR 过程中，其他开发人员会对更改发表评论，并可能进行讨论，讨论时间也许会很长。</p>
 <p>对 PR 评审完成后，PR 将被接受并 merge 到开发分支。 一旦确定开发分支已经成熟到可以发布，就会创建一个单独的分支 (release branch) 来准备最终版本。 该分支的应用程序已经过测试，并且在准备好将其发布给最终用户之前会应用错误修复 (bugfixs)。 完成此操作后，我们会将最终产品合并到主 (master branch) 分支，并打标签 (Tag)。 同时，可以在 develop 分支上继续开发新功能。
@@ -437,10 +400,10 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </ul>
 <p>如果你的团队主要由相互合作了较长时间的高级开发人员组成，那么你实际上就不需要上述的 PR 。你应该信任你的开发人员，并且知道他们是专业人士，让他们做好自己的工作，不要让所有 Git-Flow 的流程拖慢开发进度。</p>
 <h2 id="github-flow">Github-flow</h2>
-<p><img src="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png" alt="github-flow.png" /></p>
+<p></p>
 <p>Github-flow 是在 git-flow 的基础上衍生而来的。他简化了 git-flow 的复杂模型，并且与 Github 可以很好的结合，在此就不赘述了。</p>
 <h2 id="trunk-based-developmenttbd">Trunk-based Development(TBD)</h2>
-<p><img src="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png" alt="Trunk-based Development" /></p>
+<p></p>
 <p>在基于主干的开发模型中，所有开发人员都在一个具有开放访问权限的分支上工作。通常它只是 master 分支。他们将代码提交给它并运行它，非常简单。</p>
 <p>在某些情况下，它们会创建短暂的功能分支。 分支上的代码编译并通过所有测试后，便将其直接合并到 master。 它可确保开发真正连续进行，并防止开发人员创建难以解决的合并冲突。</p>
 <p>用这种方法检查代码的唯一方法是进行完整的源代码检查。 通常，冗长的讨论是有限的。 没有人能严格控制源代码库中正在修改的内容，这就是为什么拥有可强制执行的代码样式很重要的原因。 以这种风格工作的开发人员应具有丰富的经验，以便你知道他们不会降低源代码的质量。</p>
@@ -456,21 +419,18 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <li>我们每个人各自负责前端、移动端和后端</li>
 <li>最重要的是我们的 CICD 完全一条龙操作，环境有 local、DEV、UAT 和 Prod, 在前一个环境 QA 验证不通过，是进入不到下一个环境的</li>
 </ul>
-<p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" target="_blank" rel="noopener noreffer ">《FeatureToggle 引起的。&hellip; 总结》</a>。</p>
+<p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL">《FeatureToggle 引起的。&hellip; 总结》</a><sup>[1]</sup>
+。</p>
 <blockquote>
 <p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
 </blockquote>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://rc.sydney.edu.au/git-user-guide/history.html" target="_blank" rel="noopener noreffer ">1.https://rc.sydney.edu.au/git-user-guide/history.html</a></li>
-<li><a href="https://nvie.com/files/Git-branching-model.pdf" target="_blank" rel="noopener noreffer ">2.https://nvie.com/files/Git-branching-model.pdf</a></li>
-<li><a href="https://trunkbaseddevelopment.com" target="_blank" rel="noopener noreffer ">3.https://trunkbaseddevelopment.com</a></li>
-<li><a href="https://guides.github.com/introduction/flow/" target="_blank" rel="noopener noreffer ">4.https://guides.github.com/introduction/flow/</a></li>
-</ul>
-]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>《FeatureToggle 引起的。&hellip; 总结》: <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" rel="noopener noreferrer">https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL</a></li></ol>
+            </div>]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
             </div><p>我需要撤销最后的四个提交</p>
-<p><img src="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png" alt="image" /></p>
+<p></p>
 <p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -487,7 +447,5 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
 <p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
-<p><img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" alt="image" /></p>
-<h2 id="引用">引用</h2>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1.https://guzhongren.github.io/</a></p>
+<p></p>
 ]]></description></item></channel></rss>

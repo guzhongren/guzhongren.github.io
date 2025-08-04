@@ -74,7 +74,3 @@ ok      dependency-injection    0.006s
 
 基本测试很简单，不用解读了。作为开发者，我们应该用最直接的工具来保证我们程序的健壮性，而不一定要绕个弯来解决问题，如上面的打印结果的测试。
 
-## 引用
-
-[1.https://golang.google.cn/](https://golang.google.cn/)
-

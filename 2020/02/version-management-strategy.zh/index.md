@@ -114,10 +114,3 @@ TBD 的适用情况与 git-flow 的适用情况恰好相反，可自行脑补。
 如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 [《FeatureToggle 引起的。... 总结》](https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL)。
 > 软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。
 
-## 引用
-
-* [1.https://rc.sydney.edu.au/git-user-guide/history.html](https://rc.sydney.edu.au/git-user-guide/history.html)
-* [2.https://nvie.com/files/Git-branching-model.pdf](https://nvie.com/files/Git-branching-model.pdf)
-* [3.https://trunkbaseddevelopment.com](https://trunkbaseddevelopment.com)
-* [4.https://guides.github.com/introduction/flow/](https://guides.github.com/introduction/flow/)
-

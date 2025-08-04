@@ -49,15 +49,3 @@ docker exec -it homeassistant sh -c "mkdir -p /config/custom_components && cd /c
 
 如果小米后续推出其 NAS 集成，肯定又会收割一波 `流量`。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [正是入坑好时节：在米家官方支持之际，再聊新人 Home Assistant 入门](https://sspai.com/post/95117)
-* [基于Home Assistant的米家集成](https://github.com/XiaoMi/ha_xiaomi_home)
-* [HACS](https://github.com/hacs/get)
-* [Configuration options](https://www.hacs.xyz/docs/use/configuration/options/#to-change-the-hacs-configuration-options)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

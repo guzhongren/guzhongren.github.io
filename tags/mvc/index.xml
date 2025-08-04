@@ -2,7 +2,8 @@
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a></p>
+<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
+</p>
 </blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
@@ -21,7 +22,8 @@
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
 </ul>
 </blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak" target="_blank" rel="noopener noreffer ">oak</a></h3>
+<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</h3>
 <blockquote>
 <p>A middleware framework for Deno&rsquo;s net server 🦕</p>
 </blockquote>
@@ -33,9 +35,14 @@
 <p>工欲善其事，必先利其器。</p>
 </blockquote>
 <h3 id="开发工具">开发工具</h3>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer "><code>VS Code</code></a>, <a href="https://www.docker.com/" target="_blank" rel="noopener noreffer "><code>Docker</code></a></p>
+<p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
+, <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
+</p>
 <h3 id="环境工具">环境工具</h3>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer "><code>Deno</code></a>, <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer "><code>Typescript</code></a>, <a href="https://nodejs.org/" target="_blank" rel="noopener noreffer "><code>Node</code></a></p>
+<p><a href="https://deno.land/"><code>Deno</code></a><sup>[5]</sup>
+, <a href="https://www.typescriptlang.org/"><code>Typescript</code></a><sup>[6]</sup>
+, <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
+</p>
 <blockquote>
 <p>注： Node 是用来调试 Deno 的</p>
 </blockquote>
@@ -67,12 +74,14 @@
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres" target="_blank" rel="noopener noreffer ">PostgreSql</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/_/postgres">PostgreSql</a><sup>[8]</sup>
+</td>
           <td style="text-align: center">12</td>
           <td></td>
       </tr>
       <tr>
-          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4" target="_blank" rel="noopener noreffer ">PGAdmin</a></td>
+          <td style="text-align: left"><a href="https://hub.docker.com/r/dpage/pgadmin4">PGAdmin</a><sup>[9]</sup>
+</td>
           <td style="text-align: center">latest</td>
           <td></td>
       </tr>
@@ -103,7 +112,8 @@
 </span></span><span class="line"><span class="cl"><span class="m">5</span> directories, <span class="m">5</span> files</span></span></code></pre></div></div>
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
-<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">代码实现</a>。</p>
+<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
+。</p>
 </blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
@@ -215,7 +225,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h3 id="依赖管理">依赖管理</h3>
 <p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
-<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" target="_blank" rel="noopener noreffer "><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
+<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html"><code>完整性检查与锁定文件</code></a><sup>[10]</sup>
+, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
 <p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -460,7 +471,8 @@
 </span></span><span class="line"><span class="cl">数据库链接成功！
 </span></span><span class="line"><span class="cl">Application started, and listen to 127.0.0.1:8000</span></span></code></pre></div></div>
 <h5 id="调用接口测试结果">调用接口测试结果</h5>
-<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" target="_blank" rel="noopener noreffer "><code>Rest Client</code></a> 插件进行辅助测试。</p>
+<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><code>Rest Client</code></a><sup>[11]</sup>
+ 插件进行辅助测试。</p>
 <h6 id="请求体">请求体</h6>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -496,7 +508,8 @@ content-type: application/json; charset=utf-8
 <li>如果输入错误参数，则抛异常</li>
 </ul>
 </blockquote>
-<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer "><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
+<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
+ 来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -1018,34 +1031,10 @@ content-type: application/json; charset=utf-8
 <li>去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，<code>Deno</code>提供了生成<code>lock.json</code>的形式来保证不同协作者之间的版本依赖；</li>
 <li>&hellip;</li>
 </ul>
-<p>最后感谢 <a href="https://yihaimen.github.io/" target="_blank" rel="noopener noreffer ">海门</a> 和 <a href="https://github.com/hylerrix" target="_blank" rel="noopener noreffer ">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" target="_blank" rel="noopener noreffer ">源码：https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></p>
-</li>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://deno.land/" target="_blank" rel="noopener noreffer ">Denoland: https://deno.land/</a></p>
-</li>
-<li>
-<p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreffer ">VS Code: https://code.visualstudio.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener noreffer ">Docker: https://www.docker.com/</a></p>
-</li>
-<li>
-<p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer ">Typescript: https://www.typescriptlang.org/</a></p>
-</li>
-<li>
-<p><a href="https://nodejs.org/" target="_blank" rel="noopener noreffer ">Node: https://nodejs.org/</a></p>
-</li>
-<li>
-<p><a href="https://github.com/udibo/mock" target="_blank" rel="noopener noreffer ">mock: https://github.com/udibo/mock</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<p>最后感谢 <a href="https://yihaimen.github.io/">海门</a><sup>[13]</sup>
+ 和 <a href="https://github.com/hylerrix">亦乐</a><sup>[14]</sup>
+ 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code>: <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd" rel="noopener noreferrer">https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd</a></li><li>oak: <a href="https://github.com/oakserver/oak" rel="noopener noreferrer">https://github.com/oakserver/oak</a></li><li><code>VS Code</code>: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li><code>Docker</code>: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li><code>Deno</code>: <a href="https://deno.land/" rel="noopener noreferrer">https://deno.land/</a></li><li><code>Typescript</code>: <a href="https://www.typescriptlang.org/" rel="noopener noreferrer">https://www.typescriptlang.org/</a></li><li><code>Node</code>: <a href="https://nodejs.org/" rel="noopener noreferrer">https://nodejs.org/</a></li><li>PostgreSql: <a href="https://hub.docker.com/_/postgres" rel="noopener noreferrer">https://hub.docker.com/_/postgres</a></li><li>PGAdmin: <a href="https://hub.docker.com/r/dpage/pgadmin4" rel="noopener noreferrer">https://hub.docker.com/r/dpage/pgadmin4</a></li><li><code>完整性检查与锁定文件</code>: <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html" rel="noopener noreferrer">https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html</a></li><li><code>Rest Client</code>: <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=humao.rest-client</a></li><li><code>mock</code>: <a href="https://github.com/udibo/mock" rel="noopener noreferrer">https://github.com/udibo/mock</a></li><li>海门: <a href="https://yihaimen.github.io/" rel="noopener noreferrer">https://yihaimen.github.io/</a></li><li>亦乐: <a href="https://github.com/hylerrix" rel="noopener noreferrer">https://github.com/hylerrix</a></li></ol>
+            </div>]]></description></item></channel></rss>

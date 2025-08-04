@@ -31,12 +31,3 @@
 
 - 量化。凡事皆可量化，所有的不可直接量化的事物，皆可通过抽象来量化。比如能力，很难直接用数字量化，但是你可以通过抽象，讲每个能力阶段量化为一组有序的数字就可以为别人呈现出直观的效果。比如我的[前端能力图谱](https://stackblitz.com/edit/frontend-capability-editor?file=index.js)。
 
-
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

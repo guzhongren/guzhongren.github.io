@@ -39,7 +39,7 @@ x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
 P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
 <h2 id="covert">Covert</h2>
 <p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
+<p></p>
 <h2 id="ssl-证书分类">SSL 证书分类</h2>
 <h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
 <p>只验证域名所有权，在浏览器中显示锁形标志；</p>
@@ -74,7 +74,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>证书颁发机构对此的审核比较严格</li>
 </ul>
 <h2 id="根据域名分类">根据域名分类</h2>
-<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
+<p></p>
 <h3 id="单域名证书">单域名证书</h3>
 <p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
 <h3 id="多域名证书">多域名证书</h3>
@@ -83,31 +83,20 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <p>通配符证书可以保护一个域名下的同级子域名，并且不限制子域名的数量。例如：这类证书可以保护 free.abc.com，也可以保护 bbs.abc.com，也就是说他可以保护 abc.com 这个域名下的所有同级子域名</p>
 <h3 id="代码签名证书code-signing-certificates">代码签名证书（Code Signing Certificates）</h3>
 <p>为软件开发者提供代码软件数字签名的认证服务。通过对代码的数字签名可以减少软件下载时弹出的安全警告、保证代码不被恶意篡改、使厂商信息对下载用户公开可见等效果，从而建立良好的软件品牌信誉度。
-查看<a href="https://cloud.tencent.com/product/csc" target="_blank" rel="noopener noreffer ">腾讯 CSC</a> 一看便知。</p>
+查看<a href="https://cloud.tencent.com/product/csc">腾讯 CSC</a><sup>[1]</sup>
+ 一看便知。</p>
 <h2 id="ca">CA</h2>
 <p>要被别人信任，那么就得有个可靠的证书颁发机构。以下是一些比较著名的证书颁发机构。</p>
 <ul>
-<li><a href="https://www.digicert.com/" target="_blank" rel="noopener noreffer ">Digicert (收购 #Symantec )</a></li>
-<li><a href="https://www.cfca.com.cn/" target="_blank" rel="noopener noreffer ">中国金融认证中心(CFCA)</a></li>
-<li><a href="https://www.geotrust.com/" target="_blank" rel="noopener noreffer ">GeoTrust</a></li>
+<li><a href="https://www.digicert.com/">Digicert (收购 #Symantec )</a><sup>[2]</sup>
+</li>
+<li><a href="https://www.cfca.com.cn/">中国金融认证中心(CFCA)</a><sup>[3]</sup>
+</li>
+<li><a href="https://www.geotrust.com/">GeoTrust</a><sup>[4]</sup>
+</li>
 <li>&hellip;</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="http://www.youdzone.com/signature.html" target="_blank" rel="noopener noreffer ">http://www.youdzone.com/signature.html</a></li>
-<li><a href="https://www.chinassl.net/ssltools/convert-ssl.html" target="_blank" rel="noopener noreffer ">https://www.chinassl.net/ssltools/convert-ssl.html</a></li>
-<li><a href="https://www.wosign.com/column/ssl_20211231.htm" target="_blank" rel="noopener noreffer ">https://www.wosign.com/column/ssl_20211231.htm</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-<hr>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/data-hosting@master/20210819/wechat.ae9zxgscqcg.png" alt="谷哥说-微信公众号" /></p>
-<p><img src="https://guzhongren.github.io//images/pay/PayForGuzhongren.svg" alt="PayForGuzhongren" /></p>
-<blockquote>
-<p><a href="https://emn178.github.io/online-tools/sha256_checksum.html" target="_blank" rel="noopener noreffer ">SHA256</a> checksum: 964978ecd2059064abe542e51dc02e204d3ee2e6c320ca68e2b1399ce0c6953c</p>
-</blockquote>
-<blockquote>
-<p>使用此<a href="https://guzhongren.github.io/images/pay/payforguzhongren.svg.sig" target="_blank" rel="noopener noreffer ">文件</a>进行校验： <code>gpg --verify PayForGuzhongren.svg.sig</code></p>
-</blockquote>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>腾讯 CSC: <a href="https://cloud.tencent.com/product/csc" rel="noopener noreferrer">https://cloud.tencent.com/product/csc</a></li><li>Digicert (收购 #Symantec ): <a href="https://www.digicert.com/" rel="noopener noreferrer">https://www.digicert.com/</a></li><li>中国金融认证中心(CFCA): <a href="https://www.cfca.com.cn/" rel="noopener noreferrer">https://www.cfca.com.cn/</a></li><li>GeoTrust: <a href="https://www.geotrust.com/" rel="noopener noreferrer">https://www.geotrust.com/</a></li></ol>
+            </div>]]></description></item></channel></rss>

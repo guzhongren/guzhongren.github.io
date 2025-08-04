@@ -8,7 +8,8 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content"><a href="https://strapi.io/" target="_blank" rel="noopener noreffer ">Strapi</a> 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+            <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
+ 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
         </div>
     </div>
 <p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
@@ -24,7 +25,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
+<p></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -70,7 +71,8 @@
 <p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
 <h2 id="进阶">进阶</h2>
 <p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
-<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a> 中</h3>
+<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
+ 中</h3>
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -87,7 +89,8 @@
 </ol>
 <p>可通过中间件（Middleware）统一处理请求参数。基本步骤：</p>
 <ol>
-<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate" target="_blank" rel="noopener noreffer ">strapi generate:middleware</a> 命令生成中间件
+<li>可使用 <a href="https://docs.strapi.io/cms/cli#strapi-generate">strapi generate:middleware</a><sup>[2]</sup>
+ 命令生成中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
@@ -202,13 +205,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>Strapi 是一个强大的 Headless CMS，适合快速构建和管理内容驱动的应用。通过灵活的内容建模、API 生成和插件扩展，Strapi 能满足各种项目需求。本文介绍了 Strapi 的基本概念、主要流程和进阶用法，希望能帮助你快速上手。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://strapi.io/documentation/developer-docs/latest/getting-started/introduction.html" target="_blank" rel="noopener noreffer ">Strapi 官方文档</a></li>
-<li><a href="https://docs.strapi.io/cms/api/rest/interactive-query-builder" target="_blank" rel="noopener noreffer ">Strapi interactive query builder</a></li>
-<li><a href="https://docs.strapi.io/cms/backend-customization/middlewares" target="_blank" rel="noopener noreffer ">Strapi Middleware</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Strapi Middleware: <a href="https://docs.strapi.io/cms/backend-customization/middlewares" rel="noopener noreferrer">https://docs.strapi.io/cms/backend-customization/middlewares</a></li><li>strapi generate:middleware: <a href="https://docs.strapi.io/cms/cli#strapi-generate" rel="noopener noreferrer">https://docs.strapi.io/cms/cli#strapi-generate</a></li><li>Strapi: <a href="https://strapi.io/" rel="noopener noreferrer">https://strapi.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

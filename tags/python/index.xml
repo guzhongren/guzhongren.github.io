@@ -2,7 +2,8 @@
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>最近运维项目上要使用Pyspark进行报告生成，嗯，是的，运维项目的技术栈永远是你想象不到的。</p>
 <p>有活就干，这形势只能“狗着”。</p>
-<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools</a>, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
+<p>技术栈是Python, 硅基生命时代的基础之一； 工程化管理工具是<a href="https://setuptools.pypa.io/en/latest/userguide/index.html">setuptools</a><sup>[1]</sup>
+, 嗯，对我来说是新工具，在工作的8年里，第一次听说这个。这次的重点就是利用它来构建一个模块化的工程。 相对于前端架构而言，其就相当于 <code>package.json</code>。</p>
 <h2 id="期望">期望</h2>
 <p>基于 setuptools 产出一个模块化的工程，高级模块要依赖通用模块(commons)。</p>
 <h2 id="工具介绍">工具介绍</h2>
@@ -236,16 +237,12 @@
 </span></span><span class="line"><span class="cl">Successfully installed zhongren-0.1.1</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p>学习最佳实践，可以节约时间，同时，也是真爱生命。</p>
-<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project" target="_blank" rel="noopener noreffer ">https://github.com/beef-noodles/py-project</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://setuptools.pypa.io/en/latest/userguide/index.html" target="_blank" rel="noopener noreffer ">setuptools: https://setuptools.pypa.io/en/latest/userguide/index.html</a></li>
-<li><a href="https://www.delftstack.com/howto/python/python-import-from-parent-directory/" target="_blank" rel="noopener noreffer ">Import Modules From Parent Directory in Python: https://www.delftstack.com/howto/python/python-import-from-parent-directory/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>最近我是 DevOps</title><link>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</link><pubDate>Tue, 22 Sep 2020 19:46:57 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</guid><description><![CDATA[<div class="featured-image">
+<p>项目工程地址: <a href="https://github.com/beef-noodles/py-project">https://github.com/beef-noodles/py-project</a><sup>[2]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>setuptools: <a href="https://setuptools.pypa.io/en/latest/userguide/index.html" rel="noopener noreferrer">https://setuptools.pypa.io/en/latest/userguide/index.html</a></li><li>https://github.com/beef-noodles/py-project: <a href="https://github.com/beef-noodles/py-project" rel="noopener noreferrer">https://github.com/beef-noodles/py-project</a></li></ol>
+            </div>]]></description></item><item><title>最近我是 DevOps</title><link>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</link><pubDate>Tue, 22 Sep 2020 19:46:57 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/09/%E6%9C%80%E8%BF%91%E6%88%91%E6%98%AFdevops/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>最近，在做项目中的 DevOps，主要工作是备份，恢复并且更新 <code>Parameter Store</code>， 即<code>Config as Code</code>; 由于使用<code>AWS 的服务</code>，可靠性还是由很多个 9 来保证的，但是在后期就会由很多问题；</p>
 <ul>
@@ -268,7 +265,8 @@
 </ul>
 <p>由于项目敏感性，在这就简单说说功能；项目中使用到 <code>AWS Parameter Store</code> 作为存储敏感数据的服务，而且所有的数据都是<code>SecurityString</code>（这种类型很重要，后面有坑），在每次项目部署或某些功能运行的时候需要使用其中的值，由于是经过 <code>KMS</code>加密的，要做备份和更新那么就需要调用<code>AWS</code>的服务或者<code>CLI</code>。</p>
 <h2 id="第一步-备份">第一步 备份</h2>
-<p>第一步，在恢复数据之前，先要获取原有的数据，并将其存储为原始数据。 获取数据倒是不难，写个 shell 直接调用 <code>AWS CLI</code>，将获取到的数据存在文本文件里即可。可以参考官网 <a href="" rel="">AWS CLI Get-Parameter by Path</a></p>
+<p>第一步，在恢复数据之前，先要获取原有的数据，并将其存储为原始数据。 获取数据倒是不难，写个 shell 直接调用 <code>AWS CLI</code>，将获取到的数据存在文本文件里即可。可以参考官网 <a href="">AWS CLI Get-Parameter by Path</a><sup>[1]</sup>
+</p>
 <h2 id="第二步-恢复">第二步 恢复</h2>
 <p>恢复，简单想一下就是将备份的数据执行命令，一条一条的插入就可以，然而，你这么想你就是小孩子了。原因自己体会。在这说说我做的过程。</p>
 <p>首先将所有的数据分类，分为<code>敏感数据</code>和<code>非敏感数据</code>，对于非敏感的数据我们直接将其存储为明文，对于非敏感的数据，我们需要在本地就行加密为密文，保存起来。然后通过读取敏感数据和非敏感数据，将其恢复即可。</p>
@@ -315,10 +313,7 @@
 <li><code>cfn</code> 不支持 <code>SecurityString</code></li>
 <li><code>shush</code> 是个好工具，有 <code>Docker</code> 镜像，只要你的机器上有 <code>Docker</code>, 你就可以不用通过命令行安装它， 执行 <code>docker</code> 命令即可拿到结果；但需要注意的是：执行某个命令之前，需要先将镜像拉下来，不然第一次计算的结果中会有拉取镜像的日志。</li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>AWS CLI Get-Parameter by Path: <a href="https://guzhongren.github.io/" rel="noopener noreferrer"></a></li></ol>
+            </div>]]></description></item></channel></rss>

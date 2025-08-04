@@ -186,14 +186,4 @@ jobs:
  - 它可以：测试你的 Web 页面，得到 Web 页面的 `Performance` 、 `Accessibility` 、 `Best Practices` 、 `SEO` 和 `PWA` 在不同`设备`上的分数, 这些分数可以用于分析产品性能，帮助提升用户转化率等
  - 不同于：[treo](https://treo.sh/) 或者其他一些 Web 性能测试工具
  - 它的优势是: `Open-Source`, `Free`, `Self-hosted` data and Server, `Easy to integrate`。
-## 引用
-
-* [Get Down to Business: Why the Web Matters (Chrome Dev Summit 2018): https://web.dev/i18n/zh/why-speed-matters/](https://web.dev/i18n/zh/why-speed-matters/)
-* [为什么速度很重要？: https://web.dev/i18n/zh/why-speed-matters](https://web.dev/i18n/zh/why-speed-matters)
-* [Lighthouse: https://developers.google.cn/web/tools/lighthouse](https://developers.google.cn/web/tools/lighthouse)
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
 

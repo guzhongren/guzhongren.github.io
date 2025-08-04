@@ -154,12 +154,3 @@ Ran all test suites matching /\/Users\/zhongren\.gu\/01\.Project\/test-window-ob
 
 - 或者使用第三方成熟的 npm 包， 像 [jest-mock-console](https://www.npmjs.com/package/jest-mock-console), 这个包功能更强大一点。
 
-
-## 引用
-
-* [博客: https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [Mock logger in jest: http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger](http://github.yanhaixiang.com/jest-tutorial/basic/mock-timer/#mock-logger)
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

@@ -19,7 +19,8 @@
 <li>使用无服务器函数处理 Bot 发送的请求，获取 AI 所需数据，并将其传递给 AI 模型，最终将AI返回的内容发送回 Slack。</li>
 </ol>
 <h3 id="创建slack-bot">创建Slack Bot</h3>
-<p>在<a href="https://api.slack.com/apps" target="_blank" rel="noopener noreffer ">Slack官网</a>上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
+<p>在<a href="https://api.slack.com/apps">Slack官网</a><sup>[1]</sup>
+上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
 <div class="mermaid" id="id-2"></div><div class="details admonition warning open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>提示<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
@@ -78,7 +79,7 @@
             <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>示例<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot" target="_blank" rel="noopener noreffer ">https://serverless.functions.url/x-bot</a></div>
+            <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot">https://serverless.functions.url/x-bot</a><sup>[2]</sup></div>
         </div>
     </div>
 <p>这种方式适合已经创建过一个 Bot，需要重新创建的情况，例如测试完成后需要创建正式的 Bot。</p>
@@ -222,11 +223,7 @@
 </ul>
 <h2 id="总结">总结</h2>
 <p>Slack bot 的开发相对简单，大部分内容是简单的配置；重要的是将获取到的数据以某种特定的 Prompt ，并将其传递给 AI model 获取到准确的结果。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客:https://guzhongren.github.io/</a></li>
-<li><a href="https://api.slack.com/apps" target="_blank" rel="noopener noreffer ">Slack 官网:https://api.slack.com/apps</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item></channel></rss>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Slack官网: <a href="https://api.slack.com/apps" rel="noopener noreferrer">https://api.slack.com/apps</a></li><li>https://serverless.functions.url/x-bot: <a href="https://serverless.functions.url/x-bot" rel="noopener noreferrer">https://serverless.functions.url/x-bot</a></li></ol>
+            </div>]]></description></item></channel></rss>

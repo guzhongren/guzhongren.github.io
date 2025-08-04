@@ -489,13 +489,3 @@ ingress.extensions "nginx" deleted
 
 ```
 
-## 引用
-
-* [1. 博客：https://guzhongren.github.io/](https://guzhongren.github.io/)
-* [2. 图床：https://sm.ms/](https://sm.ms/)
-* [3. 原文：https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj](https://yq.aliyun.com/articles/706912?spm=a2c4e.11155435.0.0.59853312vRSRSj)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-

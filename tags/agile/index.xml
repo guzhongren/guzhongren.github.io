@@ -138,12 +138,6 @@
 </table>
 <h2 id="按需裁减">按需裁减</h2>
 <p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item><item><title>Tech Debt</title><link>https://guzhongren.github.io/2021/01/tech-debt/</link><pubDate>Sun, 10 Jan 2021 12:57:09 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/01/tech-debt/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2021/01/10/ToABlS78eDgYUZi.png" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
@@ -238,22 +232,12 @@
 <p>对于分析后的问题，按照其所在的不同区域的重要程度，一般需要将<code>Fix it if have spare time</code>, <code>View result immediately</code>和<code>Split &amp; Plan</code>这三个区域的问题梳理为卡（业务卡，技术卡或者 Bug 卡），分在不同的迭代去做。</p>
 <h2 id="模板">模板</h2>
 <p>介于此制作了一个可以复用的模板。
-<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-<h2 id="引用">引用</h2>
-<ul>
-<li>
-<p><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">博客：https://guzhongren.github.io/</a></p>
-</li>
-<li>
-<p><a href="https://www.productplan.com/glossary/technical-debt/" target="_blank" rel="noopener noreffer ">Technical Debt:https://www.productplan.com/glossary/technical-debt/</a></p>
-</li>
-<li>
-<p><a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" target="_blank" rel="noopener noreffer ">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></p>
-</li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
-]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
+<a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4">Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a><sup>[1]</sup>
+</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Tech debt: https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4: <a href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4" rel="noopener noreferrer">https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=181%3A4</a></li></ol>
+            </div>]]></description></item><item><title>How to Host an English Standup Meeting</title><link>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</link><pubDate>Sun, 15 Mar 2020 10:28:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/how-to-host-an-english-standup-meeting.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://pic4.zhimg.com/80/v2-f8af3dcb49b2e0bdbfd7060fb36bdd5f.jpg" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>最近上了澳洲的项目，项目组 9 个人，我们的站会是每周有一个人来轮流主持，每天早上 10 点，在<code>Teams</code>上与澳洲的客户一起面对<code>Jira</code>看板进行工作同步；
@@ -361,11 +345,4 @@
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-<h2 id="引用">引用</h2>
-<ul>
-<li><a href="https://guzhongren.github.io/" target="_blank" rel="noopener noreffer ">1. 博客：https://guzhongren.github.io/</a></li>
-<li><a href="https://translate.google.cn/" target="_blank" rel="noopener noreffer ">2. 翻译：https://translate.google.cn/</a></li>
-</ul>
-<h2 id="免责声明">免责声明</h2>
-<p>本文仅代表个人观点，与本人所供职的公司无任何关系。</p>
 ]]></description></item></channel></rss>

@@ -94,11 +94,3 @@ select * from "table" where columnName='value'
 
 在Ops 项目中遇到Incident 应该是在平常不过的了，那么处理Incident 的过程中，流程和人才是最重要的。将流程标准化（SOP）,鼓励团队积极响应，认真分析，产出修复方案，做好事后事故报告(Incident Report)这些才是最重要的。
 
-## 引用
-
-* [博客:https://guzhongren.github.io/](https://guzhongren.github.io/)
-
-## 免责声明
-
-本文仅代表个人观点，与本人所供职的公司无任何关系。
-
