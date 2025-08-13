@@ -1314,7 +1314,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
 <h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-Makefile">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
