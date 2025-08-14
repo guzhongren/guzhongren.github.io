@@ -80,7 +80,7 @@
 </span></span><span class="line"><span class="cl">  <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h4 id="效果">效果</h4>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/web-style.2z3v7akawpe0.webp" alt="web-style" /></p>
 <h3 id="vs-code--插件版vscode-drawio">VS Code  插件版（vscode-drawio）</h3>
 <h4 id="配置信息-1">配置信息</h4>
 <p>对于插件版本，我们可以将配置信息存储在全局（VS Code菜单-Code-Performances-Setting, 搜索 drawio, 点击任意<code>Edit in settings.json</code>）或者当前工程（.vscode/settings.json）,然后将如下配置粘贴进去。</p>
@@ -133,8 +133,8 @@
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Inter&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span></span></span></code></pre></div></div>
 <h4 id="效果-1">效果</h4>
-<p></p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/preset.58se8wl6ltg0.webp" alt="preset" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/font.69qxu1ldebg0.webp" alt="font" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>在线版: <a href="https://app.diagrams.net/" rel="noopener noreferrer">https://app.diagrams.net/</a></li><li>vscode-drawio: <a href="https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio</a></li></ol>

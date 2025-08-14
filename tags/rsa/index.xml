@@ -33,7 +33,7 @@
 <li>利用了加密工具<code>gpg</code>进行加密处理。</li>
 </ul>
 <h3 id="gpg">GPG</h3>
-<p></p>
+<p><img src="https://ruanyifeng.com/blogimg/asset/201307/bg2013071202.png" alt="GPG" /></p>
 <p>要了解什么是 GPG，就要先了解 PGP。</p>
 <p>1991 年，程序员 Phil Zimmermann 为了避开政府监视，开发了加密软件 PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个 PGP 的替代品，取名为 GnuPG。这就是 GPG 的由来。</p>
 <p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html">《GPG 入门教程》</a><sup>[3]</sup>
@@ -187,7 +187,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </span></span><span class="line"><span class="cl">git commit -m ‘git-crypt’
 </span></span><span class="line"><span class="cl">git push</span></span></code></pre></div></div>
 <p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/07/12/lXVnNw5EbKCcvhe.png" alt="git-crypt.png" /></p>
 <h2 id="协作">协作</h2>
 <p>与他人协作，别人需要知道对应解密的 key</p>
 <h3 id="导出密钥">导出密钥</h3>

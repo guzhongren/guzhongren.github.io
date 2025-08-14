@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Wams - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/wams/</link><description>Wams - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/wams/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Wams - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/wams/</link><description>Wams - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 27 Nov 2019 23:23:36 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/wams/" rel="self" type="application/rss+xml"/><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by La Miko from Pexels" /></p>
 <h2 id="cargotoml">Cargo.toml</h2>
 <p><code>cargo.toml</code>是 Rust 包管理器 <code>cargo</code> 的清单文件。这个文件包 <code>name</code>、 <code>version</code> 和包的依赖，在 Rust 中，我们一般称之为 <code>crate</code>。</p>
 <p>在示例中给出了一系列信息，但是我们主要讨论如下三点：</p>
@@ -387,7 +387,7 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
 <h2 id="在线体验">在线体验</h2>
 <p><a href="https://andorlab.github.io/WebAssembly/">Markdown editor</a><sup>[1]</sup>
 : <a href="https://andorlab.github.io/WebAssembly/">https://andorlab.github.io/WebAssembly/</a><sup>[1]</sup>

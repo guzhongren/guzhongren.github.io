@@ -9,7 +9,7 @@
 <p>这两种方式都存在信息丢失的风险，可能由于时间推移或其他因素导致记录不完整或遗失。最理想的方式是建立一套自己的记录系统，使得回顾时能够一目了然地看到当时的审查意见。</p>
 <h2 id="解决方案">解决方案</h2>
 <p>针对这一需求，我开发了一个 VSCode 插件来专门记录 Code Review 过程中的反馈。这个项目使用了最近非常热门的 Vibe Coding 技术&hellip;</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="Code Review Comments" /></p>
 <h2 id="实现细节">实现细节</h2>
 <h3 id="系统提示词设计">系统提示词设计</h3>
 <p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli">Gemini CLI</a><sup>[1]</sup>
@@ -84,7 +84,7 @@
  文件是定义项目配置的 Python 标准。</p>
 <p>与 <code>NodeJS</code> 项目中的 <code>package.json</code> 一样，可以管理第三方依赖，可以存储可以运行的命令，所使用的 Runtime 的版本号限制和项目的基本信息等等的，功能强大可见一斑。</p>
 <h3 id="uv">uv</h3>
-<p></p>
+<p><img src="https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark" alt="uv" /></p>
 <blockquote>
 <p>An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) &ndash; <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a><sup>[2]</sup>
 </p>
@@ -262,7 +262,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -613,7 +613,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -1465,7 +1465,7 @@
 </table>
 <h4 id="为什么会有-heartbeat">为什么会有 Heartbeat</h4>
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>
-<p></p>
+<p><img src="..." alt="研发效能反馈图" /></p>
 <h2 id="总结">总结</h2>
 <div class="references">
                 <h2>参考</h2>
@@ -1736,13 +1736,13 @@
 <p>而Google 全家桶的好处就是其各个应用之间调用协作非常方便。那么我们就用Google Sheet 和Google Chat 来实现一个简单的机器人应用来干上面各种麻烦的事吧。</p>
 <h2 id="google-chat-webhooks">Google Chat Webhooks</h2>
 <p>Google Chat 的Webhooks 允许其他应用程序调用，并可以对消息进行<code>创建</code>、<code>读取</code> 、<code>更新</code> 和<code>删除</code>。如同对数据库的增删改差一般。</p>
-<p></p>
+<p><img src="https://developers.google.com/static/chat/images/arch-pat-notifier.svg" alt="Google Chat Webhooks" /></p>
 <p>关于如何创建Google Chat webhooks 可以参考<a href="https://ploi.io/documentation/notifications/how-do-i-create-a-google-chat-webhook">这里</a><sup>[1]</sup>
 ; 如果不想看这个链接，可以往下，在实践部分会有操作。</p>
 <h2 id="google-sheet-apps-script">Google Sheet Apps Script</h2>
 <p>Google Sheet 之于 Google Suite,就像 Excel 之于 Miscrosoft Office。Google Sheet 最强大的地方在于他支持自定义脚本，虽然其名为<code>Apps Script</code>, 文件格式为<code>.gs</code>， 但是其就是一些简单的<code>JavaScript</code> API, 其请求也是同步的API, 而且没有跨域问题，这就让其作为一个机器人有了初步条件。</p>
 <p>当然 Google Sheet Apps Script 最基本的对 Sheet 的读写删都是非常容易的，但在这里需要明白其 API 结构。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp" alt="Google Sheet API Structure" /></p>
 <p>从上图中可以看到</p>
 <table>
   <thead>
@@ -1778,7 +1778,7 @@
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
 <h3 id="创建google-chat-webhooks">创建Google Chat Webhooks</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chat-webhooks.1mqmo1im34g0.webp" alt="Google chat webhooks" /></p>
 <p>点击创建好的Webhooks, 拷贝URL即可。</p>
 <h3 id="创建google-sheet-轮转数据">创建Google Sheet 轮转数据</h3>
 <p>新建Google Sheet，直接写入如下数据</p>
@@ -1880,10 +1880,10 @@ xiaoming10</code></pre></div>
 <li>直接在代码编辑器顶部运行main.gs 里的sendMessageToChat 方法即可。</li>
 <li>定时运行,如下图, 以此，我们可以在特定的实践让其自动执行，实现自动化。</li>
 </ol>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/trigger-of-apps-script.5u953kav5cg0.webp" alt="Trigger of Apps Script" /></p>
 <h3 id="效果">效果</h3>
 <p>可以看到，之前的主持人是xiaoming6, 现在已经是xiaoming7了。
-</p>
+<img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/chatbot-message.4w4b6vs80rk0.webp" alt="Chatbot message result" /></p>
 <h2 id="总结">总结</h2>
 <p>Google Sheet 毕竟是Google 出品，不管是UI 还是API 都很简洁，更是和其自家产品集成的非常紧密；我们在这里实现了Google Sheet 调用Google Chat 来定时给Google Chat 发送消息的功能。当然Google Sheet 还有很多非常优秀的功能，期待你的挖掘。</p>
 <div class="references">
@@ -2024,7 +2024,7 @@ xiaoming10</code></pre></div>
 <p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
 <p>有服务器实现广泛使用且更安全。</p>
 <h3 id="authorization-code-实现的流程图">Authorization Code 实现的流程图</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OAuth2.0-Flow.67h7qmku8ak0.svg" alt="OAuth 2.0 Flow" /></p>
 <h2 id="oidc">OIDC</h2>
 <p>OAuth2.0 是一种授权协议，而不是身份认证协议。OIDC 才是身份认证协议，而且是基于 OAuth 2.0 来执行用户身份认证的互通协议。更概括地说，OIDC 就是直接基于 OAuth 2.0 构建的身份认证框架协议。</p>
 <h3 id="其3个角色与oauth20的4个角色的对应关系">其3个角色与OAuth2.0的4个角色的对应关系</h3>
@@ -2050,7 +2050,7 @@ xiaoming10</code></pre></div>
 <li>iat，颁发令牌的时间戳</li>
 </ul>
 <h3 id="oidc-的流程图">OIDC 的流程图</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/OAuth/OIDC-flow.6le76zwbokc0.svg" alt="OIDC Flow" /></p>
 ]]></description></item><item><title>解决Podman未挂载Volume的问题</title><link>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</link><pubDate>Wed, 03 May 2023 10:58:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/05/%E8%A7%A3%E5%86%B3podman%E6%9C%AA%E6%8C%82%E8%BD%BDvolume%E7%9A%84%E9%97%AE%E9%A2%98/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="问题">问题</h2>
@@ -2147,7 +2147,7 @@ xiaoming10</code></pre></div>
 <p>计算机世界几乎就是建立在开源项目之上的。近几年，国内外有很多开源项目出圈，例如 CNCF 的Kubernetes, 百度在Apache 毕业的 EChart。开源不仅可以展示自己的技术能力，而且还可以为他人提供免费“物料”，减少重复造轮子的事的发生，“间接为全球碳中和做贡献”。</p>
 <p>因为之前有一些开源相关的实践，只是在小范围内实践了部分项目，而最近正在参与并领导一个开源项目，正好把之前的一些实践给应用起来了，同时也在这里做个总结。</p>
 <h2 id="一图胜千言">一图胜千言</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e5%bc%80%e6%ba%90%e9%a1%b9%e7%9b%ae%e6%9e%84%e5%bb%ba%e5%8f%8a%e6%b2%bb%e7%90%86.2witgnrnxzc0.webp" alt="开源项目构建及治理" /></p>
 <h2 id="产品product">产品（Product）</h2>
 <p>开源的目的为了方便他人以最低的代价实现业务价值增长，或工作效率提升等；那么必须有一个产物（Artifact）,它可能是一个可下载, 可直接运行的软件包，也可能是一个有无服务器运行的在线应用程序，亦或是某一个领域，实践比较好或体验更好的第三方的依赖等。凡此种种，我们都可以称之为 “产品（Production）”。</p>
 <p>一个好的开源产品应该包含但不限于以下内容。</p>
@@ -2159,7 +2159,7 @@ xiaoming10</code></pre></div>
 <h3 id="标志logo">标志(Logo)</h3>
 <p>作为产品，首先被记住的肯定是产品的的使用，然后是标志(Logo)。Logo 有文字型的，有图形型的，也有两者都有的。但是一个不复杂，认知度低的Logo 的辨识度是非常高的。</p>
 <h3 id="许可证license">许可证(License)</h3>
-<p></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Open-source-license-chart.svg/1024px-Open-source-license-chart.svg.png" alt="Open Source License" /></p>
 <p>在开源的世界里，许可证的选择非常重要；有的是不可商用的，许可证包括GNU通用公共许可证（GPL）、GNU通用公共许可证版本3（GPLv3）、类似GPL的许可证，以及非常严格的自由软件许可证，著名软件如：Linux操作系统内核, GNU工具套件,WordPress博客系统等。也有可商用，但不能被云厂商托管使用的许可证，如<a href="https://opensource.org/licenses/BSD-3-Clause">BSD 3-Clause</a><sup>[1]</sup>
 ,软件如： <a href="https://github.com/redis/redis">Redis</a><sup>[2]</sup>
 ; 如<a href="https://www.mongodb.com/licensing/server-side-public-license">Server Side Public License (SSPL)</a><sup>[3]</sup>
@@ -2191,7 +2191,7 @@ xiaoming10</code></pre></div>
 </li>
 </ul>
 <h3 id="发布计划release-plan">发布计划(Release plan)</h3>
-<p></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/en/timeline/gogh13ap32j8q3u985j8sx5r65w01ya.png" alt="Linux Kernel Release" /></p>
 <p>发布计划在开源项目里也是一个非常重要项目，有计划地发布周期总是给人以稳定、靠谱的期望，有了期望之后，不管是贡献者还是使用者，大家都有了盼头。</p>
 <p>不同的项目有不同的发布方式。比如 <a href="https://www.kernel.org/">Linux Kernal</a><sup>[11]</sup>
  的发布计划，完全取决于 <a href="https://en.wikipedia.org/wiki/Linus_Torvalds">Linus Torvalds</a><sup>[12]</sup>
@@ -2228,7 +2228,7 @@ xiaoming10</code></pre></div>
 <h4 id="贡献策略contributing">贡献策略(Contributing)</h4>
 <p>开源项目总是欢迎来自世界各地的贡献者(Contributor)。为了更好地协作或者减少认知负载，开源社区一般会有自己的贡献策略，比如代码风格是什么样的，API 该怎么规范，如何做Code Review, 以及需要满足什么样的代码测试覆盖率等等。一般会在项目的README 中强调出来，当然也可以将其代码化，通过 CI 工具来实现自动化检查。比如 Playwright 就在自己的 <a href="https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md">Contributing</a><sup>[25]</sup>
  文档里阐述了如何为其项目贡献的贡献策略。</p>
-<p></p>
+<p><img src="https://allcontributors.org/img/icons/android-icon-192x192.png" alt="Allcontributors" /></p>
 <p>同时，如果你将项目的贡献者添加到项目中醒目的位置，让所有人看到他为这个项目贡献了内容，这将激励更多的贡献者为项目做贡献。这里推荐使用<a href="https://allcontributors.org/">Allcontributors</a><sup>[26]</sup>
 , 通过为你的开源项目集成这个工具，在项目的README 中可以显示共享者的头像及贡献类型，让贡献者感觉到参与开源项目的荣耀感。</p>
 <h4 id="代码请求pr">代码请求(PR)</h4>
@@ -2419,7 +2419,7 @@ xiaoming10</code></pre></div>
 <p>大多数文档框架都支持自定义，这样开发者可以将产品的介绍页也可以加进去，这样产品介绍和产品文档就在同一个项目和同一个网站中，提升用户体验和开发体验了。</p>
 <h2 id="社区">社区</h2>
 <p>社区是另一个比较大的话题，我们将在下篇中聊。这里放上《如何组织社区》的思维导图。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Open-Source/%e7%a4%be%e5%8c%ba%e5%bb%ba%e8%ae%be.6u6659b42mw0.webp" alt="如何组织社区" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>BSD 3-Clause: <a href="https://opensource.org/licenses/BSD-3-Clause" rel="noopener noreferrer">https://opensource.org/licenses/BSD-3-Clause</a></li><li>Redis: <a href="https://github.com/redis/redis" rel="noopener noreferrer">https://github.com/redis/redis</a></li><li>Server Side Public License (SSPL): <a href="https://www.mongodb.com/licensing/server-side-public-license" rel="noopener noreferrer">https://www.mongodb.com/licensing/server-side-public-license</a></li><li>MongoDB: <a href="https://github.com/mongodb" rel="noopener noreferrer">https://github.com/mongodb</a></li><li>opensource.org: <a href="https://opensource.org/licenses/category" rel="noopener noreferrer">https://opensource.org/licenses/category</a></li><li>License Selector: <a href="https://ufal.github.io/public-license-selector/" rel="noopener noreferrer">https://ufal.github.io/public-license-selector/</a></li><li>https://www.jenkins.io/: <a href="https://www.jenkins.io/" rel="noopener noreferrer">https://www.jenkins.io/</a></li><li>https://playwright.dev/: <a href="https://playwright.dev/" rel="noopener noreferrer">https://playwright.dev/</a></li><li>https://www.jenkins.io/project/roadmap/: <a href="https://www.jenkins.io/project/roadmap/" rel="noopener noreferrer">https://www.jenkins.io/project/roadmap/</a></li><li>https://github.com/Azure/AKS/projects/1: <a href="https://github.com/Azure/AKS/projects/1" rel="noopener noreferrer">https://github.com/Azure/AKS/projects/1</a></li><li>Linux Kernal: <a href="https://www.kernel.org/" rel="noopener noreferrer">https://www.kernel.org/</a></li><li>Linus Torvalds: <a href="https://en.wikipedia.org/wiki/Linus_Torvalds" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Linus_Torvalds</a></li><li>这里: <a href="https://en.wikipedia.org/wiki/Linux_kernel_version_history#:~:text=Property%20Value%20%20Version%20%20%20%20Original,Kroah-Hartman%20%20%20Named%20Blurry%20Fish%20Butt%20" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Linux_kernel_version_history#:~:text=Property%20Value%20%20Version%20%20%20%20Original,Kroah-Hartman%20%20%20Named%20Blurry%20Fish%20Butt%20</a></li><li>GoLang: <a href="https://github.com/golang/go" rel="noopener noreferrer">https://github.com/golang/go</a></li><li>这里: <a href="https://github.com/kubernetes/kubernetes/milestones" rel="noopener noreferrer">https://github.com/kubernetes/kubernetes/milestones</a></li><li>Semver: <a href="https://semver.org/" rel="noopener noreferrer">https://semver.org/</a></li><li>React: <a href="https://github.com/facebook/react/blob/main/packages/react/package.json" rel="noopener noreferrer">https://github.com/facebook/react/blob/main/packages/react/package.json</a></li><li>Ubuntu Desktop: <a href="https://ubuntu.com/download/desktop" rel="noopener noreferrer">https://ubuntu.com/download/desktop</a></li><li>uterance.es: <a href="https://utteranc.es/" rel="noopener noreferrer">https://utteranc.es/</a></li><li>gitment: <a href="https://github.com/imsun/gitment" rel="noopener noreferrer">https://github.com/imsun/gitment</a></li><li>gitalk: <a href="https://github.com/gitalk/gitalk" rel="noopener noreferrer">https://github.com/gitalk/gitalk</a></li><li>Contributor Convenant: <a href="https://www.contributor-covenant.org/" rel="noopener noreferrer">https://www.contributor-covenant.org/</a></li><li>Microsoft Open Source Code of Conduct: https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md: <a href="https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md" rel="noopener noreferrer">https://github.com/microsoft/playwright/blob/main/CODE_OF_CONDUCT.md</a></li><li>Thoughtworks Code of Conduct: https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf: <a href="https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf" rel="noopener noreferrer">https://www.thoughtworks.com/content/dam/thoughtworks/documents/guide/tw_guide_code_of_conduct_en_aug_2021.pdf</a></li><li>Contributing: <a href="https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">https://github.com/microsoft/playwright/blob/main/CONTRIBUTING.md</a></li><li>Allcontributors: <a href="https://allcontributors.org/" rel="noopener noreferrer">https://allcontributors.org/</a></li><li>SonarQube: <a href="https://www.sonarsource.com/" rel="noopener noreferrer">https://www.sonarsource.com/</a></li><li>Spot Bugs: <a href="https://spotbugs.github.io/" rel="noopener noreferrer">https://spotbugs.github.io/</a></li><li>Find-Sec-Bugs: <a href="https://find-sec-bugs.github.io/" rel="noopener noreferrer">https://find-sec-bugs.github.io/</a></li><li>Bandit: <a href="https://github.com/PyCQA/bandit" rel="noopener noreferrer">https://github.com/PyCQA/bandit</a></li><li>Brakeman: <a href="https://github.com/presidentbeef/brakeman" rel="noopener noreferrer">https://github.com/presidentbeef/brakeman</a></li><li>trufflehog: <a href="https://github.com/trufflesecurity/trufflehog" rel="noopener noreferrer">https://github.com/trufflesecurity/trufflehog</a></li><li>Talisman: <a href="https://github.com/thoughtworks/talisman" rel="noopener noreferrer">https://github.com/thoughtworks/talisman</a></li><li>Fortify: <a href="https://www.microfocus.com/en-us/cyberres/application-security" rel="noopener noreferrer">https://www.microfocus.com/en-us/cyberres/application-security</a></li><li>CheckMarx: <a href="https://checkmarx.com/" rel="noopener noreferrer">https://checkmarx.com/</a></li><li>OWASP® Zed Attack Proxy (ZAP): <a href="https://www.zaproxy.org/" rel="noopener noreferrer">https://www.zaproxy.org/</a></li><li>Arachni: <a href="https://www.arachni-scanner.com/" rel="noopener noreferrer">https://www.arachni-scanner.com/</a></li><li>Acunetix: <a href="https://www.acunetix.com/" rel="noopener noreferrer">https://www.acunetix.com/</a></li><li>Rapid7: <a href="https://www.rapid7.com/" rel="noopener noreferrer">https://www.rapid7.com/</a></li><li>Log4Shell 漏洞问题: <a href="https://en.wikipedia.org/wiki/Log4j#Log4Shell_vulnerability" rel="noopener noreferrer">https://en.wikipedia.org/wiki/Log4j#Log4Shell_vulnerability</a></li><li>Log4j: <a href="https://logging.apache.org/log4j/2.x/" rel="noopener noreferrer">https://logging.apache.org/log4j/2.x/</a></li><li>Mend renovate: <a href="https://www.mend.io/free-developer-tools/renovate/" rel="noopener noreferrer">https://www.mend.io/free-developer-tools/renovate/</a></li><li>npm-autit: <a href="https://docs.npmjs.com/cli/v6/commands/npm-audit" rel="noopener noreferrer">https://docs.npmjs.com/cli/v6/commands/npm-audit</a></li><li>OWASP DependencyCheck: <a href="https://owasp.org/www-project-dependency-check/" rel="noopener noreferrer">https://owasp.org/www-project-dependency-check/</a></li><li>GitHub Dependabot: <a href="https://github.com/dependabot" rel="noopener noreferrer">https://github.com/dependabot</a></li><li>Pipen: <a href="https://realpython.com/pipenv-guide/" rel="noopener noreferrer">https://realpython.com/pipenv-guide/</a></li><li>bundle-audit: <a href="https://github.com/rubysec/bundler-audit" rel="noopener noreferrer">https://github.com/rubysec/bundler-audit</a></li><li>Hawkeye: <a href="https://github.com/hawkeyesec/scanner-cli" rel="noopener noreferrer">https://github.com/hawkeyesec/scanner-cli</a></li><li>Trivy: <a href="https://github.com/aquasecurity/trivy" rel="noopener noreferrer">https://github.com/aquasecurity/trivy</a></li><li>Snyk: <a href="https://snyk.io/" rel="noopener noreferrer">https://snyk.io/</a></li><li>BlackDuck: <a href="https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html" rel="noopener noreferrer">https://www.synopsys.com/software-integrity/security-testing/software-composition-analysis.html</a></li><li>opensource.org: <a href="https://opensource.org/licenses" rel="noopener noreferrer">https://opensource.org/licenses</a></li><li>license-compliance: <a href="https://www.npmjs.com/package/license-compliance" rel="noopener noreferrer">https://www.npmjs.com/package/license-compliance</a></li><li>Gradle-License-Report: <a href="https://github.com/jk1/Gradle-License-Report" rel="noopener noreferrer">https://github.com/jk1/Gradle-License-Report</a></li><li>GitHub pages: <a href="https://pages.github.com/" rel="noopener noreferrer">https://pages.github.com/</a></li><li>Netlify: <a href="https://www.netlify.com/" rel="noopener noreferrer">https://www.netlify.com/</a></li><li>Docusaurus: <a href="https://docusaurus.io/" rel="noopener noreferrer">https://docusaurus.io/</a></li><li>Astro: <a href="https://astro.build/" rel="noopener noreferrer">https://astro.build/</a></li><li>Hugo: <a href="https://gohugo.io/" rel="noopener noreferrer">https://gohugo.io/</a></li><li>VuePress: <a href="https://vuepress.vuejs.org/" rel="noopener noreferrer">https://vuepress.vuejs.org/</a></li></ol>
@@ -2464,7 +2464,7 @@ x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
 P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
 <h2 id="covert">Covert</h2>
 <p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
 <h2 id="ssl-证书分类">SSL 证书分类</h2>
 <h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
 <p>只验证域名所有权，在浏览器中显示锁形标志；</p>
@@ -2499,7 +2499,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>证书颁发机构对此的审核比较严格</li>
 </ul>
 <h2 id="根据域名分类">根据域名分类</h2>
-<p></p>
+<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
 <h3 id="单域名证书">单域名证书</h3>
 <p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
 <h3 id="多域名证书">多域名证书</h3>
@@ -2913,7 +2913,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp" referrerpolicy="no-referrer">
             </div><h2 id="introduction">Introduction</h2>
 <p>Logging is structured or unstructured text information generated by the system during operation. Usually, it can be regarded as a record of an event by the application. Logging can often help us discover unexpected behaviors in systems, especially in some microservice architecture systems. As an important part of Observability, Logging plays an irreplaceable role in our system development and maintenance.</p>
-
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
 <h2 id="the-importance-of-logging">The importance of logging</h2>
 <p>To understand why logging plays an important role in products or systems, we must understand its value. Currently, the most widely used logging forms are <strong>alerting</strong>, <strong>troubleshooting</strong>, and <strong>business data visualization</strong>.</p>
 <h3 id="alerting">Alerting</h3>
@@ -2925,7 +2925,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <h2 id="logging-how-to">Logging how-to</h2>
 <h3 id="templating">Templating</h3>
 <p>It’s necessary to sort out our log format and write logs according to certain specifications.
-</p>
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" /></p>
 <ul>
 <li>
 <p>Basic template</p>
@@ -2959,7 +2959,7 @@ Specific formatting is also possible for log information:</li>
 <p>If the recorded log is just a simple text description line by line, it’ll be hard to read. In a complex system or a system with frequent business operations, there will be multiple logs and we’ll have to spend time filtering out the relevant logs. The best way to solve this problem is through chain tracking of logs: putting one or more unique IDs in the business system that are added to each log, so that when locating business problems, we can quickly filter out the relevant logs through these unique IDs and Other criteria (e.g. time).</p>
 <h3 id="logging-on-demand">Logging on demand</h3>
 <h4 id="log-level">Log level</h4>
-
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 <p>The output of the log is divided into levels.Different scenarios need to print different levels of logs.</p>
 <ul>
 <li>Debug: Record technical details and logs to help understand the system operation;</li>
@@ -3097,7 +3097,7 @@ Specific formatting is also possible for log information:</li>
 </span></span><span class="line"><span class="cl">  <span class="p">]</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h4 id="效果">效果</h4>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/web-style.2z3v7akawpe0.webp" alt="web-style" /></p>
 <h3 id="vs-code--插件版vscode-drawio">VS Code  插件版（vscode-drawio）</h3>
 <h4 id="配置信息-1">配置信息</h4>
 <p>对于插件版本，我们可以将配置信息存储在全局（VS Code菜单-Code-Performances-Setting, 搜索 drawio, 点击任意<code>Edit in settings.json</code>）或者当前工程（.vscode/settings.json）,然后将如下配置粘贴进去。</p>
@@ -3150,8 +3150,8 @@ Specific formatting is also possible for log information:</li>
 </span></span><span class="line"><span class="cl">    <span class="s2">&#34;Inter&#34;</span>
 </span></span><span class="line"><span class="cl">  <span class="p">]</span><span class="err">,</span></span></span></code></pre></div></div>
 <h4 id="效果-1">效果</h4>
-<p></p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/preset.58se8wl6ltg0.webp" alt="preset" /></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/DrawIO/font.69qxu1ldebg0.webp" alt="font" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>在线版: <a href="https://app.diagrams.net/" rel="noopener noreferrer">https://app.diagrams.net/</a></li><li>vscode-drawio: <a href="https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio" rel="noopener noreferrer">https://marketplace.visualstudio.com/items?itemName=eightHundreds.vscode-drawio</a></li></ol>
@@ -3160,23 +3160,23 @@ Specific formatting is also possible for log information:</li>
             </div><h2 id="简介">简介</h2>
 <p>日志（Log）是由系统在运行过程中产生的结构化或者非结构化的文字信息。通常情况，可以将其视为应用程序对某个事件（Event）的记录。日志通常可以帮助我们发现一些微服务架构系统的非预期或突发的行为。
 Logging作为 Observability的重要组成部分，在我们的系统开发、维护中起到无法替代的作用。</p>
-
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/01.Pillars-of-Observability.drawio.5ewrap798t40.webp' alt='Pillars of Observability' style="clear: both; display: block; margin: auto;" />
 <h2 id="日志的重要性">日志的重要性</h2>
 <p>要理解为什么日志在产品或者系统中扮演着重要的角色，我们必须了解它的价值。至少到现在，日志被应用最广泛的是<strong>报警</strong>、<strong>故障排除</strong>和<strong>业务数据可视化</strong>。</p>
 <h3 id="报警">报警</h3>
 <p>日志可以作为我们业务系统监控的重要数据来源；成熟的产品系统都有报警系统，如果系统中出现超过某个已定义的某个指标的问题，日志系统会自动将报警信息发送到通知平台，On-call 的人就可以根据报警信息定位解决问题了。
-</p>
+<img src='https://grafana.com/static/img/logs/logs-prometheus-alterting.svg' alt='Alert with logs' style="clear: both; display: block; margin: auto;" /></p>
 <h3 id="故障排除">故障排除</h3>
 <p>这种情况非常普遍；想象一下你最近负责开发维护的系统被他人发现有问题，在你梳理完思路之后第一件事是干什么？ 肯定是查看系统信息验证自己的假设是否成立， 这里打印在服务器上的日志就是最好的辅助信息。而作为程序员的我们，日志是我们最熟悉不过的解决问题的利器。
-</p>
+<img src='https://grafana.com/static/img/logs/logs-effective-debugging.gif' alt='Debug with logs' style="clear: both; display: block; margin: auto;" /></p>
 <h3 id="业务数据可视化">业务数据可视化</h3>
 <p>很多公司可以利用存储在自己数据库里的生产环境的日志，结合相应的工具可以对业务进行业务数据可视化。这里最典型的代表是 Grafana 和 SumoLogic。
-</p>
-
+<img src='https://images.contentful.com/aw6mkmszlj4x/4aSWLe82Z68yjdprQJHnLu/436403e98a0f28af4f38a6da948a84bc/fitbithealthmonitor.png' alt='Grafana - Fitbit Health MonitorDebug with logs' style="clear: both; display: block; margin: auto;"/></p>
+<img src='https://help.sumologic.com/img/integrations/saas-cloud/Slack_Audit_Overview.png' alt='SumoLogic - Slack File And App Audit' style="clear: both; display: block; margin: auto;" />
 <h2 id="怎么做">怎么做</h2>
 <h3 id="模版化">模版化</h3>
 <p>为了更好的支持上面的各种情况，我们需要对我们的日志格式进行梳理，按照一定的规范来写日志，而不是随便写一句废话。
-</p>
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/logging.25uhyh14zi2o.webp' alt='Logging Format' style="clear: both; display: block; margin: auto;" /></p>
 <ul>
 <li>基础版本
 <ul>
@@ -3212,7 +3212,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 解决上面问题的最好办法是日志的<strong>链式追踪</strong>；简单说就是，在每条日志中加入业务系统中的一个或者多个<strong>唯一</strong>的 ID，这样在定位业务问题的时候可以通过这些唯一的 ID 和 其他条件（e.g. 时间）快速过滤出相关的日志。</p>
 <h3 id="按需记录日志">按需记录日志</h3>
 <h4 id="日志级别">日志级别</h4>
-
+<img src='https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/Observability/Logging/Log-level.1p6czhkrcnr4.webp' alt='Log Level' style="clear: both; display: block; margin: auto;" />
 <p>日志的输出都是分级别的，不同的场景需要打印不同级别的日志；以下是几个比较重要的日志级别。</p>
 <ul>
 <li><strong>Debug</strong>: 记录技术细节，和一些帮助理解系统运行的日志;</li>
@@ -3497,7 +3497,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </blockquote>
 <p>It&rsquo;s very easy to use, take a look at the results of my audit of my open source project <a href="https://github.com/guzhongren/Powerboard">Powerboard</a><sup>[3]</sup>
 .
-</p>
+<img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="ways-of-lighthouse-ci-and-lighthouse-server">Ways of Lighthouse CI and Lighthouse Server</h2>
 <h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
 <blockquote>
@@ -3523,8 +3523,8 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp" alt="lhci-server" /></th>
+          <th><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp" alt="lhci-server-compare" /></th>
       </tr>
   </thead>
   <tbody>
@@ -3534,7 +3534,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>There are many ways to install LHCI Server, please refer to <a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server">here</a><sup>[5]</sup>
 , the recommended way is to use Docker. Note that the first run needs to create a Lighthouse App, you need to run the <code>lhci wizard</code> in the container and fill in the corresponding information, <strong>finally record the generated <code>Build token</code> and <code>Admin token</code></strong>.</p>
 <h3 id="integration-with-lighthouse-ci-and-lighthouse-server">Integration with Lighthouse CI and Lighthouse Server</h3>
-<p></p>
+<p><img src="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png" alt="Lighthouse CI Recommended Setup Progression" /></p>
 <ul>
 <li>We have already talked about how to install <code>lhci</code> and <code>lhci server</code>, the next step is to use the two together. Here we take <code>GitHub Actions</code> as an example to make a demo.</li>
 <li>Build <code>GitHub workflow</code>. For specific practices, please refer to the implementation details of <a href="https://github.com/guzhongren/Powerboard">Powerboard</a><sup>[3]</sup>
@@ -3648,7 +3648,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <ul>
 <li>Need to store the <code>Build token</code> generated by <code>lhci Server</code> and the address of <code>lhci Server</code> in the Secrets of the GitHub project</li>
 <li>Here the <code>lhci</code> command is executed twice. Because <code>lhci autorun</code> runs the default <code>assertion</code>, the first time you use the command without assertion, the purpose is to upload the current web page performance to the server side; the second time you configure various indicators Threshold, if it does not meet the requirements, Pipeline will block, to achieve <code>Shift-left of the web performance test</code>.</li>
-<li></li>
+<li><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp" alt="Powerboard Lighthouse Actions" /></li>
 </ul>
 <h2 id="summary">Summary</h2>
 <ul>
@@ -3697,7 +3697,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p>
 </blockquote>
 <p>使用方法非常简单，可以看一下我对我的开源项目 <code>Powerboard</code> 审计的结果。
-</p>
+<img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="lighthouse-ci-及-lighthouse-server-的使用">Lighthouse CI 及 Lighthouse Server 的使用</h2>
 <h3 id="lighthouse-ci-lhci">Lighthouse CI （LHCI）</h3>
 <blockquote>
@@ -3725,8 +3725,8 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <table>
   <thead>
       <tr>
-          <th></th>
-          <th></th>
+          <th><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server.5x95meg6f4w0.webp" alt="lhci-server" /></th>
+          <th><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/lhci-server-compare.64ass32uxhg0.webp" alt="lhci-server-compare" /></th>
       </tr>
   </thead>
   <tbody>
@@ -3736,7 +3736,7 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <p>LHCI Server 的安装有多种方式，具体可参考<a href="https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/server.md#lhci-server">这里</a><sup>[4]</sup>
 ，推荐使用 Docker 的方式运行。需要注意的是，第一次运行需要创建 Lighthouse App, 需要在容器中运行 <code>lhci wizard</code> 并填入相应的信息，<strong>最后记录下生成的 <code>Build token</code> 和 <code>Admin token</code></strong>。</p>
 <h3 id="lighthouse-ci-和-lighthouse-server-集成">Lighthouse CI 和 Lighthouse Server 集成</h3>
-<p></p>
+<p><img src="https://user-images.githubusercontent.com/2301202/81843922-f2e17300-9513-11ea-85f9-d3d8a0b52633.png" alt="Lighthouse CI Recommended Setup Progression" /></p>
 <ul>
 <li>前面已经讲了 <code>lhci</code> 和 <code>lhci server</code> 如何安装了，接下来就是需要将两者结合起来一起使用了。这里我们以 <code>GitHub Actions</code> 为例来搞一个 Demo。</li>
 <li>构建 <code>GitHub workflow</code>， 具体实践可参考 <a href="https://github.com/guzhongren/Powerboard">Powerboard</a><sup>[5]</sup>
@@ -3850,7 +3850,7 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 <ul>
 <li>需要将 <code>lhci Server</code> 生成的 <code>Build token</code> 和 <code>lhci Server</code> 的地址存放在 GitHub 项目的 Secrets 中</li>
 <li>这里执行了两次 <code>lhci</code> 命令。因为 <code>lhci autorun</code> 运行完成后会运行默认的断言(<code>Assertion</code>), 第一次用没有断言的命令，目的是将当前的网页性能可以上到 Server 端; 第二次配置了各项指标的阈值，如果不满足要求，Pipeline 将会阻断，实现 <code>Web 性能测试左移</code>。</li>
-<li></li>
+<li><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/powerboard-lighthouse-actions.40eis8x91cu0.webp" alt="Powerboard Lighthouse Actions" /></li>
 </ul>
 <h2 id="总结">总结</h2>
 <ul>
@@ -4236,7 +4236,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts</span></span></code></pre></div></div>
 <h3 id="验证未升级">验证未升级</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" alt="docker.desktop.3.5.2.66501" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Docker: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li>使用条款: <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" rel="noopener noreferrer">https://docs.docker.com/subscription/#docker-desktop-license-agreement</a></li><li>Facker.js: <a href="https://github.com/Marak/Faker.js" rel="noopener noreferrer">https://github.com/Marak/Faker.js</a></li><li>podman: <a href="https://github.com/containers/podman" rel="noopener noreferrer">https://github.com/containers/podman</a></li><li>lima: <a href="https://github.com/lima-vm/lima" rel="noopener noreferrer">https://github.com/lima-vm/lima</a></li><li>colima: <a href="https://github.com/abiosoft/colima" rel="noopener noreferrer">https://github.com/abiosoft/colima</a></li></ol>
@@ -4266,7 +4266,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
  是为 npm, GitHub, JavaScript 和 ESM 加速构建的免费，快速，可靠的开源 CDN。此开源项目是 <a href="https://prospectone.io/">prospectone</a><sup>[4]</sup>
  公司开源的一个项目，而 prospectone 是在 CDN 方面也是很有经验的技术公司。</p>
 <p>从其官网可以看到，jsdelivr CDN 遍布世界，在中国也有很多，更友好的是，在西安也有一个。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/cdn/cdn-around-the-world.12nesnyias8w.webp" alt="cdn-around-the-world" /></p>
 <h4 id="模式">模式</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
@@ -4289,7 +4289,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/cdn/cdn-github-data.5f2n2k3it68.webp" alt="jsdelivr 效果" /></p>
 <h2 id="总结">总结</h2>
 <p>CDN 是加速资源加载的有效方法，虽然我们没有能力去构建一个自己的 CDN, 但可以利用现有方案去解决自己的问题。只是需要扩大自己的眼界和提升自己的认知即可。</p>
 <div class="references">
@@ -4318,7 +4318,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 - [ ] subTask3</code></pre></div>
 <h3 id="todo">ToDo</h3>
 <p>如果没有地方记录，那么就可以找些 App 来记录，我常用的是 Microsoft-ToDo, 对于工作之外的事务，我都是列在上面；当完成一个小功能就点一下对应的子任务，直到所有的子功能完成，那么大目标也就完成了。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Microsoft-ToDo/microsoft-todo.4ir7qvpwrw20.png" alt="microsoft-todo" /></p>
 <h2 id="实践">实践</h2>
 <p>万事都有章法。分析系统有 C4 Model 等，做事可以 <code>分而治之</code>。
 当有人打电话或者突然来找你的时候，先来一句 “稍等”, 然后默默写下自己的 ToDo/Task 或者确认一下自己的 Task 已勾选，等到接完电话或者聊完天，只要瞅一眼 Todo 或者 Task 就又可以愉快的开始了。</p>
@@ -4350,14 +4350,14 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <blockquote>
 <p>一份特定的文件称为一项资源。当客户端获取资源的时候，会使用其对应的 URL 发送请求。服务器通过这个 URL 来选择它指向的资源的某一变体——每一个变体称为一种展现形式——然后将这个选定的展现形式返回给客户端。整个资源，连同它的各种展现形式，共享一个特定的 URL 。当一项资源被访问的时候，特定展现形式的选取是通过内容协商机制来决定的，并且客户端和服务器端之间存在多种协商方式。</p>
 </blockquote>
-<p></p>
+<p><img src="https://mdn.mozillademos.org/files/13789/HTTPNego.png" alt="Content Negotiation Principle" /></p>
 <h3 id="内容协商类别">内容协商类别</h3>
 <div class="mermaid" id="id-2"></div>
 <p>随着时间的推移，也有其他一些内容协商的提案被提出来，比如透明内容协商以及 Alternates 首部。但是它们都没有获得人们的认可从而被遗弃。</p>
 <h3 id="服务端驱动型内容协商机制流程">服务端驱动型内容协商机制流程</h3>
 <div class="mermaid" id="id-3"></div>
 <p>当客户端携带消息头（header）发送请求给服务端后，服务端使用消息头里的指定的可接受的压缩方式，自己通过内部特定的算法，找出最佳的压缩方案，然后将数据压缩并返回给客户端。</p>
-<p></p>
+<p><img src="https://mdn.mozillademos.org/files/13791/HTTPNegoServer.png" alt="HTTPNegoServer" /></p>
 <h4 id="用于启动服务端驱动型内容协商标准消息头">用于启动服务端驱动型内容协商标准消息头</h4>
 <div class="mermaid" id="id-4"></div>
 <p>这些消息头都是可以带有 Q 因子的清单；比如</p>
@@ -4411,7 +4411,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         </div>
     </div>
 <h3 id="代理驱动型内容协商机制">代理驱动型内容协商机制</h3>
-<p></p>
+<p><img src="https://mdn.mozillademos.org/files/13795/HTTPNego3.png" alt="代理驱动型内容协商机制" /></p>
 <p>服务端驱动型内容协商机制由于一些缺点而为人诟病——它在<strong>规模化</strong>方面存在问题。在协商机制中，每一个特性需要对应一个首部。如果想要使用屏幕大小、分辨率或者其他方面的特性，就需要创建一个新的首部。而且在每一次请求中都必须发送这些首部。在首部很少的时候，这并不是问题，但是随着数量的增多，消息体的体积会导致性能的下降。带有精确信息的首部发送的越多，信息熵就会越大，也就准许了更多 HTTP 指纹识别行为，以及与此相关的<strong>隐私问题</strong>的发生。</p>
 <p>从 HTTP 协议制定之初，该协议就准许另外一种协商机制：代理驱动型内容协商机制，或称为响应式协商机制。<em>在这种协商机制中，当面临不明确的请求时，服务器会返回一个页面，其中包含了可供选择的资源的链接。资源呈现给用户，由用户做出选择。</em></p>
 <p>不幸的是，HTTP 标准没有明确指定提供<strong>可选资源链接的页面的格式</strong>，这一点阻碍了将这一过程无痛自动化。除了退回至服务端驱动型内容协商机制外，这种自动化方法几乎无一例外都是通过<strong>脚本技术</strong>来完成的，尤其是 JavaScript 重定向技术：在检测了协商的条件之后，脚本会触发重定向动作。另外一个问题是，为了获得实际的资源，需要<strong>额外发送一次请求</strong>，<strong>减慢了将资源呈现给用户的速度</strong>。</p>
@@ -4421,9 +4421,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>http 压缩对纯文本可以压缩至原内容的 40%, 从而节省了 60%的数据传输。</p>
 <p>实例：访问我的博客网站，可以看到是进过 gzip 压缩的，原始大小为 34kB, 经过压缩后为 7.3kB，只有原先的 21%，在带宽上有很大的性能提升。</p>
 <p>文件大小</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/gzip.5ibqmeja92c0.png" alt="gzip" /></p>
 <p>gzip 压缩</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/accept-encoding.6zr4vfosvjk0.png" alt="accept-encoding" /></p>
 <h3 id="gzip-的缺点">Gzip 的缺点</h3>
 <p>JPEG 这类文件用 gzip 压缩的不够好。</p>
 <h3 id="gzip-是如何压缩的">Gzip 是如何压缩的</h3>
@@ -4499,7 +4499,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">Accept-Encoding: br;q=1.0, gzip;q=0.8, *;q=0.1</span></span></span></code></pre></div></div>
 <h3 id="浏览器兼容性">浏览器兼容性</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/caniuse.com_mdn-http_headers_accept-encoding.6p6klanhkcw0.png" alt="caniuse" /></p>
 <h2 id="最佳实践">最佳实践</h2>
 <p>对于 Accept-Encoding, 这个除了是后端请求，其他的只能由浏览器来自行设定，建议使用最新的浏览器即可。</p>
 <p>对于 content-encoding 这个 header 只能由服务器来指定。针对不同的环境如 Nginx, Apache Tomcat 和 IIS 等，都有不同的配置，这里以 Nginx 为例，在 Nginx 的 *.conf 文件中加入如下代码即可。</p>
@@ -4533,7 +4533,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>In modern software development, we leverage public images as base images to build up applications images quickly and deploy them into the production environment.</p>
 <p>With more and more applications containerized, container security is also becoming more important. To use vulnerability scanners, we can bring forward the security feedback cycle which is traditionally done towards the end. This aligns closely with our belief that by adopting agile, we will be able to get faster feedback. This is what we are doing in order to achieve it.</p>
 <h2 id="pain-points-on-application-environment-security">Pain points on application environment security</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" alt="Pain points on application environment security" /></p>
 <p>Now, we use advanced technology to build up our application, like NodeJS, Java and so on,  then store the code repository on git platforms like GitHub, Gitlab and so on. Code repository consists of our code and dependencies; For dependencies, we can use tools to ensure security like npm audit of NodeJS, and Dependabot of GitHub; And for our business code, there is another security tool to scan, like <a href="https://www.sonarqube.org/">SoneQube</a><sup>[1]</sup>
 .</p>
 <p>So, for the dependencies and our business code, those things are under our control, we can ensure the application’s security and get fast feedback and build confidence by using all kinds of tools before we deploy our application into the production environment. As you know, the basic system environment which our application runs is out of our control. Let’s consider from the opposite side, if we can’t ensure the security of our application and its system environment, it will lead to unexpected problems, like hackers attack, leakage of user information, property loss, what&rsquo;s more, cause damage to the reputation of the company. So, it is important to ensure the security of our product.</p>
@@ -4543,7 +4543,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <h3 id="build-our-respected-brand">Build our respected brand</h3>
 <p>The work we do is to make our clients succeed. Only if our customers succeed, we can succeed. So, we did not only archive business value, but also protect the security of the product.</p>
 <h2 id="best-2-solutions-to-keep-container-images-secure">Best 2 solutions to keep container images secure</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png" alt="Best 2 solutions to keep container images secure" /></p>
 <h3 id="solution-1-scan-the-image-at-a-regular-time-in-the-image-registry">Solution 1: Scan the image at a regular time in the image registry</h3>
 <p>In this way, we need to add a security scanner for the images&rsquo; registry. The scanner might be a cron job or an operable step that can be triggered by the operator.</p>
 <p>It will be automatically triggered by a cron job when a special time. For example, docker hub scans their official registry at a special time, it will send an alert to the organizer when there are any vulnerabilities.</p>
@@ -4634,14 +4634,14 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>March 16, 2020, Aqua Security, the leading platform provider for securing cloud-native applications and infrastructure, announced today that its open-source Trivy vulnerability scanner is being added as an integrated option in widely used cloud-native platforms, CNCF’s Harbor registry and Mirantis Docker Enterprise.  You can find this post <a href="https://blog.aquasec.com/trivy-vulnerability-scanner-joins-aqua-family">here</a><sup>[8]</sup>
 .</p>
 <h2 id="trivy-in-thoughtworks-technology-radar-volume-23">Trivy in Thoughtworks Technology radar volume 23</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png" alt="Trivy in TW tech radar" /></p>
 <p>Thoughtworks Technology Radar is famous for accurately responding to technological trends; In the latest technology radar, Thoughtworks put the Trivy into the <strong>adopt</strong> area, which means Trivy is useful, valuable and practicable.</p>
 <h2 id="inner-working-of-trivy">Inner working of Trivy</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png" alt="Inner working of Trivy" /></p>
 <p>Before we use Trivy, we need to know how Trivy works inside. As you see, there are 2 steps; first, we run the Trivy command, Trivy will download the vulnerability DB from the <a href="https://nvd.nist.gov">NVD</a><sup>[9]</sup>
  website into the local machine. And then Trivy uses the vulnerability data to scan every layer of your image.</p>
 <h2 id="how-to-use-trivy">How To Use Trivy</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png" alt="trivy in pipeline" /></p>
 <h3 id="pipeline">Pipeline</h3>
 <p>Now we have to know how Trivy works inside, we can integrate it into our pipeline; you can see this pipeline, first, we build code into docker image, next, Trivy will check the vulnerabilities in the docker image that build from the last step; if there is no vulnerability, the image will be pushed to the image registry and deploy it to the production environment. If there are some vulnerabilities, the pipeline will be broken by the Trivy command line, you need to fix the vulnerability to make the pipeline green.</p>
 <h3 id="usage-of-trivy">Usage of Trivy</h3>
@@ -4683,11 +4683,11 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
 <p>In this build job, we use <a href="https://hub.docker.com/_/nginx">Nignx:1.18</a><sup>[10]</sup>
  as a base image to build application images. This build failed because there are some vulnerabilities.</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
 <p>Now, we must fix this issue to continue delivery. There are 2 steps to do, firstly, we should use the latest Nginx image as a base image; secondly, we could ignore unfixed vulnerabilities, because maybe we are unable to fix vulnerabilities at the system level. You can review the change of code by clicking this link:
 <a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a><sup>[11]</sup>
 </p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png" alt="Trivy Dashboard Successfully" /></p>
 <h2 id="summary">Summary</h2>
 <p>Security is a very important issue no matter where you are. We can <strong>Shift Left Security</strong>, so we can reduce the security risk in the production environment; For the scanner tool Trivy,  it is very useful to keep the security of images, it can scan not only images but also git repositories, file systems, etc.</p>
 <div class="references">
@@ -4699,7 +4699,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>在现代软件开发中， 我们会使用一些公共镜像作为基础镜像来快速构建我们的应用镜像，并将其部署到生产环境中。</p>
 <p>随着越来越多的应用程序被容器化，容器安全也随之变得越来越重要。在项目的 Pipeline 中， 我们可以使用漏洞扫描器（Vulnerability Scanners）进行扫描并提前获得反馈，实现 “<strong>安全左移</strong>” ，也可以更好的实践敏捷。</p>
 <h2 id="基于容器的应用程序的安全痛点">基于容器的应用程序的安全痛点</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2052.5gp1z5ybbps0.png" alt="基于容器的应用程序的安全痛点" /></p>
 <p>现在，我们使用先进的技术来构建我们的应用程序，如 NodeJS、 Java 和 Kotlin 等，然后将代码库存储在托管的 Git 平台上，如 GitHub、Gitlab 等。代码库由我们的业务代码和依赖关系组成；对于依赖项，我们可以使用专业的扫描工具来确保安全，比如 NodeJS 的 npm audit , GitHub 的 Dependabot；至于我们的业务代码，可以使用其他的一些安全工具可以扫描，比如 <a href="https://www.sonarqube.org/">SoneQube</a><sup>[1]</sup>
  等。</p>
 <p>因此，对于依赖（ Dependencies）和我们的业务代码，这些都在我们的控制之下，我们可以确保应用程序的安全性，并且在 Pipeline 上获得快速反馈；同时在我们将应用程序部署到生产环境之前可以通过使用各种工具建立信心。但是，通常情况下我们的应用程序运行的系统环境是不受我们控制的，可能存在潜在的安全漏洞。在这我们可以换位思考一下，如果我们不能保证我们的应用程序运行的系统的环境安全，就会导致各种各样意想不到的问题，如黑客攻击、用户信息泄露、财产损失，更会对公司的声誉造成损害。所以，确保我们产出物（Artifact）的安全是很重要的。</p>
@@ -4709,7 +4709,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <h3 id="打造受人尊敬的品牌branding">打造受人尊敬的品牌（Branding）</h3>
 <p>我们的工作就是让我们的公司或客户成功。只有公司或客户成功，我们才能成功。因此，我们不仅要实现业务价值，还需要保护了产品的安全。用户使用安全的产品或者服务得到更大的价值，公司或者客户的品牌效应就会扩大，从而带来更大的价值。品牌及价值。</p>
 <h2 id="保持容器镜像安全的-2-个最佳方案">保持容器镜像安全的 2 个最佳方案</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2050.1czb512thukg.png" alt="保持容器镜像安全的 2 个最佳方案" /></p>
 <h3 id="方案-1-在镜像注册表中定期扫描">方案 1： 在镜像注册表中定期扫描</h3>
 <p>通过这种方式，我们需要为镜像注册表添加一个安全扫描程序，扫描程序可以是一个定时任务（Cron Job） 作业，也可以是由特定的人触发的可执行操作。</p>
 <p>如果是一个定时任务，它将在特定时刻由定时任务自动触发。例如，Docker Hub 会在特定的时间扫描他们的官方注册表，当有任何漏洞被扫描出来时，它会向镜像维护者发送报警信息。</p>
@@ -4799,14 +4799,14 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>同时，对于 Trivy、Clair 和 Anchore Engine，这三者的社区非常活跃，所以我们不能用没有人来帮你解决你的问题来评判； 而且作为一种工具，它必须易于使用并且有良好的文档可供参考。经过调研，发现 Trivy 的文档非常详细，非常友好， 而且 Trivy 的使用方式更加友好，比如我们可以过滤掉（.trivyignore）你指定的漏洞，对于最新发现的漏洞，官方没有给出修复版本，这时候我们就可以忽略这个漏洞继续构建，但 Anchore Engine 做不到。</p>
 <p>2020 年 3 月 16 日，领先的云原生应用和基础设施安全平台供应商 Aqua Security 宣布，其开源的 Trivy 漏洞扫描器将作为一个集成选项添加到其使用的云原生平台、CNCF 的 Harbor 注册表和 Mirantis Docker Enterprise 中。你可以在这里找到这篇文章。</p>
 <h2 id="trivy-在-thoughtworks-雷达-23-期中">Trivy 在 Thoughtworks 雷达 23 期中</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-tw-radar.2543ysqo6wf4.png" alt="Trivy in TW tech radar" /></p>
 <p>Thoughtworks 技术雷达以准反应技术趋势而闻名；在最新的技术雷达中，Thoughtworks 将 Trivy 引入了置于 <strong>Adopt</strong>，说明 Trivy 是有用的、有价值的和可行的。</p>
 <h2 id="trivy-的工作原理">Trivy 的工作原理</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/Group%2051.4icjkydqu3s0.png" alt="Inner working of Trivy" /></p>
 <p>在我们使用 Trivy 之前，我们需要知道 Trivy 内部是如何运作的。如上图所示，有两个步骤；首先，我们运行 Trivy 命令，Trivy 将从 <a href="https://nvd.nist.gov">NVD</a><sup>[8]</sup>
  网站下载漏洞数据库到本地机器。然后， Trivy 利用漏洞数据扫描你的镜像的每一层（Layer）。</p>
 <h2 id="实践-trivy">实践 Trivy</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-in-pipeline.6ksfsma323c0.png" alt="trivy in pipeline" /></p>
 <h3 id="pipeline">Pipeline</h3>
 <p>现在我们已经知道 Trivy 是如何工作的，我们可以将它集成到我们的 Pipeline 中；首先，将代码构建到 Docker 镜像中，接下来，Trivy 会扫描上一步构建的 Docker 镜像； 如果没有漏洞，镜像会被推送到镜像注册中心并部署到 Test 或者 UAT 环境； 如果存在漏洞，Pipeline 会被 Trivy 的命令行打断退出，这时候你就需要修复漏洞以使 Pipeline 变绿通过。</p>
 <h3 id="trivy-的使用方法">Trivy 的使用方法</h3>
@@ -4848,11 +4848,11 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
 <p>在这个 Job 中，我们使用 <a href="https://hub.docker.com/_/nginx">Nignx:1.18</a><sup>[9]</sup>
  作为基础镜像来构建应用程序镜像。可以看到由于存在一些漏洞，本次构建失败了。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
 <p>现在，我们必须解决这个问题来达到持续交付目的。这里有两个步骤要做，首先，我们应该使用最新的 Nginx 镜像作为基础镜像；其次，我们可以忽略未修复的漏洞，因为我们可能无法在系统级别修复某些最新的漏洞。你可以通过如下链接查看修复该问题的代码更改；
 <a href="https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303">https://github.com/guzhongren/Buildkite-Dashboard/commit/90182b9b3770aeb28a6e566208334dd0c6f8f725#annotation_843974303</a><sup>[10]</sup>
 </p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-successfully.28w37b5otts0.png" alt="Trivy Dashboard Successfully" /></p>
 <h2 id="总结">总结</h2>
 <p>无论你在哪里，安全都是一个非常重要的问题。我们可以将 “<strong>安全左移（Shift Left Security）</strong>”，这样就可以减少生产环境中的安全风险；对于扫描工具 Trivy 来说，它对于保证镜像的安全性非常有用，它不仅可以扫描镜像，还可以扫描 Git 仓库，文件系统等。</p>
 <p>最后，非常感谢同事张思楚、王亦晨和邢砚敏等人的大力支持和指导，在他们热心帮助和辛苦付出之下才有了这篇文章。</p>
@@ -5438,7 +5438,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
             </div>]]></description></item><item><title>[翻译] 初探性能测试</title><link>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link><pubDate>Sat, 03 Apr 2021 21:12:37 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/%E5%88%9D%E6%8E%A2%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="什么是性能测试">什么是性能测试</h2>
-<p></p>
+<p><img src="https://www.guru99.com/images/why_performance_testing.jpg" alt="为什么要做性能测试" /></p>
 <p>性能测试是一种软件测试过程，用于测试特定工作负载下软件应用程序的速度、响应时间、稳定性、可靠性、可伸缩性和资源使用情况。性能测试的主要目的是识别和消除软件应用程序中的性能瓶颈。它是性能工程的一个子集，也被称为&quot;Perf Testing&quot;。</p>
 <p>性能测试的重点是检查软件程序的以下几个性能：</p>
 <ul>
@@ -5488,7 +5488,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <h2 id="性能测试过程">性能测试过程</h2>
 <p>为性能测试所采用的方法可能有很大的不同，但是性能测试的目标是相同的。它可以帮助证明您的软件系统满足某些预先定义的性能标准。或者它可以帮助比较两个软件系统的性能。它还可以帮助识别降低软件系统性能的部分。</p>
 <p>下面是关于如何执行性能测试的一般流程：</p>
-<p></p>
+<p><img src="https://www.guru99.com/images/performance_testing_process.png" alt="性能测试过程" /></p>
 <ol>
 <li>
 <p><strong>确定您的测试环境</strong> —— 了解您的物理测试环境、生产环境以及可用的测试工具。在开始测试过程之前，请了解测试过程中使用的硬件、软件和网络配置的详细信息。它将帮助测试人员创建更有效的测试。它还将帮助识别测试人员在性能测试过程中可能遇到的挑战。</p>
@@ -5513,7 +5513,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 </li>
 </ol>
 <h2 id="性能测试指标参数监测">性能测试指标：参数监测</h2>
-<p></p>
+<p><img src="https://www.guru99.com/images/performancetestingparameters.png" alt="性能测试参数" /></p>
 <p>在性能测试期间监视的基本参数包括：</p>
 <ul>
 <li><strong>处理器使用 (Processor Usage)</strong>——处理器执行非空闲线程所花费的时间。</li>
@@ -5564,7 +5564,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <h3 id="我们应该对哪些应用程序进行性能测试">我们应该对哪些应用程序进行性能测试？</h3>
 <p>性能测试总是只针对基于客户机-服务器的系统。这意味着，任何不是基于客户机-服务器架构的应用程序都不需要性能测试。
 例如，微软计算器既不是基于客户机-服务器，也不是运行多个用户；因此，它不是性能测试的候选对象。
-</p>
+<img src="https://www.guru99.com/images/blog/Loadrunner_architecture_8.png" alt="" /></p>
 <h3 id="性能测试和性能工程的区别是什么">性能测试和性能工程的区别是什么</h3>
 <p>理解性能测试与性能工程的区别具有重要意义。达成以下共识：</p>
 <ul>
@@ -5940,7 +5940,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
             </div><h2 id="缘由">缘由</h2>
 <p>在平时开发中，尤其在 mac 上，我们经常要用到<code>iterm2</code>, 然而默认的配置使用起来对于开发者来说并不是那么高效，比如平时我们需要用<code>CMD+Delete</code>来删除整行命令， 使用<code>Opt+&lt;-</code>来向右跳过单词等等的，这些快捷键在默认情况下并没有，那么接下来就来解决这个问题，</p>
 <h2 id="解决方案">解决方案</h2>
-<p></p>
+<p><img src="https://res.cloudinary.com/practicaldev/image/fetch/s--wW-uFN_---/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://wp.gabsii.com/wp-content/uploads/2019/11/Screenshot-2019-11-03-at-22.15.09-1024x583.png" alt="Preferences" /></p>
 <p>使用<code>CMD+,</code>快捷键打开<code>Preferences &gt; Profile &gt; Keys</code>， 点击<code>Presets...</code>选择<code> Natural Text Editing</code>
 从此，你的 itemr2 如你的 IDE 一样高效。</p>
 <p>再也不用为删除单个单词，整行代码，左右快速跳转烦恼了。</p>
@@ -6036,7 +6036,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 </ul>
 </blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
-<p></p>
+<p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
 <ul>
 <li>它可以记录某些决定背后的动机。</li>
@@ -6052,7 +6052,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <li>梳理业务</li>
 </ul>
 <p>ADR 是一个思考过程，也是一个记录过程； 将抽象的思考，以文字和图表等的形式记录下来，可以更好地辅助我们理解业务，共享知识。</p>
-<p></p>
+<p><img src="https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=649&amp;q=80" alt="Photo by Brandi Redd" /></p>
 <h2 id="什么情况下要使用-adr">什么情况下要使用 ADR</h2>
 <p>如上所说，在项目架构有重大变更的时候需要做记录，让所有关系人都了解到这次变更。在此需要说一下，对于敏捷宣言其中有一句，<code>工作的软件高于详尽的文档</code>， 这句话的意思不是不写文档。所以，必要的文档还是要写的。</p>
 <h2 id="怎么写呢">怎么写呢</h2>
@@ -6186,7 +6186,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <li><a href="https://github.com/adr/serepo">SE Repo: https://github.com/adr/serepo</a><sup>[5]</sup>
  - 软件工程资料库。用于版本化软件工程工件的存储库，可以是架构决策，模式等。</li>
 </ul>
-<p></p>
+<p><img src="https://images.unsplash.com/photo-1569091791842-7cfb64e04797?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Sheldon Liu" /></p>
 <h2 id="总结">总结</h2>
 <p>ADR 在大型项目或者大公司的项目中经常会用到，不管是对现有业务的澄清总结，还是对不确定的业务的拉通都有积极作用。当然也是一个<code>甩锅利器</code>。</p>
 <p>建议：</p>
@@ -7278,7 +7278,7 @@ content-type: application/json; charset=utf-8
 <li>利用了加密工具<code>gpg</code>进行加密处理。</li>
 </ul>
 <h3 id="gpg">GPG</h3>
-<p></p>
+<p><img src="https://ruanyifeng.com/blogimg/asset/201307/bg2013071202.png" alt="GPG" /></p>
 <p>要了解什么是 GPG，就要先了解 PGP。</p>
 <p>1991 年，程序员 Phil Zimmermann 为了避开政府监视，开发了加密软件 PGP。这个软件非常好用，迅速流传开来，成了许多程序员的必备工具。但是，它是商业软件，不能自由使用。所以，自由软件基金会决定，开发一个 PGP 的替代品，取名为 GnuPG。这就是 GPG 的由来。</p>
 <p>gpg 可以对密钥的<code>增删改查</code>进行操作，也可以将公钥发送到 pgp 等服务器，让别人搜索到你，具体操作可以参考阮一峰的这片博文 <a href="https://ruanyifeng.com/blog/2013/07/gpg.html">《GPG 入门教程》</a><sup>[3]</sup>
@@ -7432,7 +7432,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </span></span><span class="line"><span class="cl">git commit -m ‘git-crypt’
 </span></span><span class="line"><span class="cl">git push</span></span></code></pre></div></div>
 <p>如果你去 git 仓库中浏览 secret.yaml 文件，会是一个二进制文件，如图：</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/07/12/lXVnNw5EbKCcvhe.png" alt="git-crypt.png" /></p>
 <h2 id="协作">协作</h2>
 <p>与他人协作，别人需要知道对应解密的 key</p>
 <h3 id="导出密钥">导出密钥</h3>
@@ -7476,7 +7476,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
             </div>]]></description></item><item><title>基于 Deno 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Sun, 05 Jul 2020 10:23:18 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Edeno%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1593918092889-a4cd49ee8081?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1489&amp;q=80" referrerpolicy="no-referrer">
             </div><p>视频记录了我基于<code>Deno</code> Web 框架 <code>oak</code> 使用 <code>TDD</code>的方式写的一个简单的工程化的 demo。</p>
-<iframe src="//player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
+<iframe src="https://guzhongren.github.io///player.bilibili.com/player.html?aid=413678008&bvid=BV1uV41167Fo&cid=208888409&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;min-height: 500px;> </iframe>
 ]]></description></item><item><title>Window 对象的各种测试方法总结</title><link>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 07 Jun 2020 11:21:14 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/06/window%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%90%84%E7%A7%8D%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1591510459618-ffd147f35f23?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2089&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="前言">前言</h2>
@@ -7780,7 +7780,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
             </div><h2 id="引子">引子</h2>
 <p>有些时候，软件开发过程中没有将系统功能，且分开从而将系统拆分为多个子系统，或者在自身系统开发过程中有必须要依赖的外部服务，那么对外提供服务的时候就得让所有的子服务都得随时候命，
 排列起来就像古代战场的对战状态一样了。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/05/23/bnOYrJMiSzqhKVL.png" alt="apps.png" /></p>
 <h2 id="存在的问题">存在的问题</h2>
 <p>对于这种情况存在什么问题呢？ 想象一个场景，作为老板或者业务对接方，我要集成和之前一样的系统，我要对接这么多接口么？如果对接方看到这么多的系统接口要对接，他肯定就放弃治疗了。</p>
 <p>总结一下存在的问题。</p>
@@ -7795,7 +7795,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 <p>对于上面提到的各种问题，我们有什么解决方案呢？</p>
 <p>最近，微服务的概念比较流行， 我们想想一下前端微服务是怎么组合的？是不是将很多个子页面服务都集成在一个一面中，最终这个页面为用户服务。让这个页面作为对接点。结合上面的图，我们可以设计如下图的方案， 抽离一个中间层，我们暂时可以称之为 <code>Platform</code>，
 让所有的资源都从<code>Platform</code>进和出，将要集成的各种服务屏蔽在<code>Platform</code>后面，对于对接方，他永远只知道一个<code>Platform</code>， 这样集成起来就好多了。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/05/23/EbGaLkr5g6sHxpK.png" alt="apps-platform.png" /></p>
 <h2 id="coding">Coding</h2>
 <p>方案也有了，那么接下来就是撸起袖子加油干的时候了。</p>
 <p>因为 <code>Platform</code> 会是一个后端的工程，其对外提供各种接口和资源；最近<code>Deno</code>比较🔥，为了尝试<code>真香定律</code>， 我们就拿它来实践一下。</p>
@@ -7966,8 +7966,8 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ cargo doc --open</span></span></code></pre></div></div>
 <p>执行如上命令，cargo 会根据注释生成 web 网页文档，并且自动打开，如下是上面文档生成的结果。</p>
-<p></p>
-<p></p>
+<p><img src="https://i.loli.net/2020/04/16/nBq8Zc2u3IV7Pmf.jpg" alt="rust-doc.jpg" /></p>
+<p><img src="https://i.loli.net/2020/04/16/mQ2W6hcNwv39Tb4.jpg" alt="rust-doc-fn.jpg" /></p>
 <h2 id="总结">总结</h2>
 <ul>
 <li>Rust 中写的注释代码，可以用来做方法示例，或者当作测试，如果是测试，运行<code>cargo test</code>	, cargo	不仅会测试 tests 文件夹下的测试案例，还会寻找注释中的测试。</li>
@@ -7984,12 +7984,12 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
             </div><h2 id="插曲">插曲</h2>
 <p>去年与前 ThoughtWorks 咨询师 <code>李小波</code>的一次线下交流中，学习到了总结知识的一点技巧，非常受用，并且在交流后得到了小波老西自己整理的<code>知识图谱</code>，在自己不断积累下，有文字，也又图片。最近在整理知识，同时也在乱搞知识分享平台。自己虽然有这个博客，但是感觉有些东西不是博客所能呈现的，比如思维导图，我收集的各种模型图等。</p>
 <p>之前为了给社区做宣传海报等内容，学会了 Adobe XD, 去年年中前，中国区是可以访问 Adobo XD 的云文档的，后半年就不行了，必须要重新注册或者更换绑定到国外的初始注册站点才可以使用云文档，这也导致了我有一部分资源永远的留在了遥不可及的 Adobe 服务器上。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/04/08/akDEgVPBX4jzhQR.jpg" alt="Adobe 云文档。png" /></p>
 <p>对我这种穷人很不友好， 😂😂😂😂😂😂😂, 那么我就得需要找个地方薅羊毛了。</p>
 <h2 id="figma">Figma</h2>
 <p>某天记起听过的一篇<code>anyway</code>的 podcast 里提到过 <a href="https://www.figma.com/">Figma</a><sup>[1]</sup>
 , 据说有免费的资源可以使用，上去一看，果然<code>for up to 2 editors and 3 projects</code></p>
-<p></p>
+<p><img src="https://i.loli.net/2020/04/08/reLFAUKDqpwoMNs.jpg" alt="figma-pricing.jpg" /></p>
 <p>这样的免费套餐对于我这样的小菜鸟完全足够用了，而且我还邀请了另一个小伙伴，人数刚刚好，😄 当然我也不怕资源丢失，我把我的设计文档同步到了 icloud 上，再也不用担心 Adobe XD 的悲剧了。</p>
 <h2 id="附加值">附加值</h2>
 <p>选了 Figma，其实还有其他原因；</p>
@@ -8004,7 +8004,7 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
 <p>经过整理，我将我的知识模型总结放在了 Figma 上，地址如下，并将其分享到了<code>zeplin</code>上，可以在<code>zeplin</code>上在线查看，学习或者别人查看的时候也是很方便。</p>
 <p><a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d">知识图谱</a><sup>[2]</sup>
 </p>
-<p></p>
+<p><img src="https://i.loli.net/2020/04/08/IUJTykqrf6ZzcKs.jpg" alt="知识图谱。jpg" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Figma: <a href="https://www.figma.com/" rel="noopener noreferrer">https://www.figma.com/</a></li><li>知识图谱: <a href="https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d" rel="noopener noreferrer">https://scene.zeplin.io/project/5e8b429f7e331bb99bd3b62d</a></li></ol>
@@ -8169,7 +8169,7 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
 <h1 id="生产力">生产力</h1>
 <h2 id="visual-studio-codehttpscodevisualstudiocom"><a href="https://code.visualstudio.com/">Visual Studio Code</a><sup>[2]</sup>
 </h2>
-<p></p>
+<p><img src="https://code.visualstudio.com/assets/home/home-screenshot-mac-lg-2x.png" alt="Visual Studio Cod" /></p>
 <p>从严格意义上来说，VSCode 并不算 IDE，但是其设计与插件系统非常完美，作为前端起家的我，只要能写代码我就可以创造世界，估计以后还有一篇写插件的博客。</p>
 <ul>
 <li>轻量</li>
@@ -8178,7 +8178,7 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
 </ul>
 <h2 id="vimhttpswwwvimorg"><a href="https://www.vim.org/">Vim</a><sup>[3]</sup>
 </h2>
-<p></p>
+<p><img src="https://www.vim.org/images/vim_header.gif" alt="Vim" /></p>
 <p>作为程序员开发必备利器！</p>
 <ul>
 <li>装逼利器</li>
@@ -8187,13 +8187,13 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
 <li>任何 Linux 版本都有的编辑器</li>
 <li>定制化程度非常高</li>
 <li>&hellip;&hellip;
-
+<img src="https://pic4.zhimg.com/80/v2-9e69dc4ead341789600ae4a46b11442a.png" alt="My vim" />
 在此推荐我的定制的 vimrc,<a href="https://github.com/guzhongren/.vim">地址在这</a><sup>[4]</sup>
 ,</li>
 </ul>
 <h2 id="iterm2httpsiterm2com"><a href="https://iterm2.com/">iTerm2</a><sup>[5]</sup>
 </h2>
-<p>
+<p><img src="https://iterm2.com/img/logo2x.jpg" alt="iTerm2" />
 Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种好用的快捷方式，比如简化的 git 命令，zsh 的自动补全等插件</p>
 <ul>
 <li>界面简洁</li>
@@ -8204,14 +8204,14 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </ul>
 <h2 id="ideahttpswwwjetbrainscomidea"><a href="https://www.jetbrains.com/idea/">IDEA</a><sup>[7]</sup>
 </h2>
-<p></p>
+<p><img src="https://www.jetbrains.com/idea/img/screenshots/idea_overview_5_1.png" alt="IDEA" /></p>
 <p>Java 开发必备</p>
 <h2 id="备忘录">备忘录</h2>
 <p>备忘录可以随时打开做笔记，记录重要的内容，当然和 iPhone 配合使用会更高效。主要就是使用自己制作的快捷指令，我的主要有两个，一个是<code>Copy and Paste</code>, 顾名思义，将复制的内容粘贴到备忘录中；第二个<code>顺便记</code>，这个快捷指令会将语音内容转化为文字并将其追加到备忘录中。</p>
 <p>使用这两个快捷指令，将非常高效，比如平时记录零碎的知识点，重要的总结内容等。</p>
 <h2 id="xmindhttpswwwxmindnet"><a href="https://www.xmind.net/">XMind</a><sup>[8]</sup>
 </h2>
-<p></p>
+<p><img src="https://assets.xmind.net/www/assets/images/home/home-hero-ui@2x-f649b7aa98.png" alt="XMind" /></p>
 <p>思维导图界的翘楚，当然需要付费。</p>
 <ul>
 <li>界面简洁赶紧</li>
@@ -8222,7 +8222,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </ul>
 <h2 id="adobe-xdhttpswwwadobecomcnproductsxdhtml"><a href="https://www.adobe.com/cn/products/xd.html">Adobe XD</a><sup>[9]</sup>
 </h2>
-<p></p>
+<p><img src="https://www.adobe.com/content/dam/cc/us/en/creative-cloud/xd.svg" alt="Adobe XD" /></p>
 <p>传统图像大厂 Adobe 产品，结合 Adobe 全家桶使用应该很爽，需要注意的是在国内，XD 不可以使用在线存储服务，所以在注册时记得将地区选择为其他地区，推荐美国🇺🇸，</p>
 <ul>
 <li>使用简单，免费，相比与 Sketchup, 这点还是很诱人的</li>
@@ -8243,7 +8243,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h1 id="效率">效率</h1>
 <h2 id="bitwardenhttpsbitwardencom"><a href="https://bitwarden.com/">Bitwarden</a><sup>[11]</sup>
 </h2>
-<p></p>
+<p><img src="https://bitwarden.com/images/hero.png" alt="Bitwarden" /></p>
 <p>用来存储和生成密码的工具</p>
 <ul>
 <li>开源</li>
@@ -8256,7 +8256,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </ul>
 <h2 id="microsoft-todohttpstodomicrosoftcomtasks"><a href="https://todo.microsoft.com/tasks/">Microsoft Todo</a><sup>[12]</sup>
 </h2>
-<p></p>
+<p><img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="Microsoft Todo" /></p>
 <p>微软收购了 Wunderlist, 然后推出了桌面版，Web 版，Mobile(Apple, Android), Pad 版的 Todo 应用，我比较看好的功能</p>
 <ul>
 <li>只需一个 Microsoft 账号就可以在各个终端进行数据同步</li>
@@ -8279,12 +8279,12 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal</span></span></code></pre></div></div>
 <h1 id="沟通">沟通</h1>
 <h2 id="微信">微信</h2>
-<p>
+<p><img src="https://i.loli.net/2020/04/01/IeZ5T6VYBHD8dxU.jpg" alt="微信" />
 不管是亲朋还是同事沟通，微信都是非常高效的工具，而且微信里面的小程序现在可以运行在桌面端了，使用场景也越来越多了；还有一个非常好用的功能：截屏！ 以前电脑上会安装 QQ， 现在 QQ 也不用了，快速分享内容并标注微信是不二之选。</p>
 <h1 id="娱乐">娱乐</h1>
 <p>##<a href="https://iina.io/">IINA</a><sup>[14]</sup>
 </p>
-<p></p>
+<p><img src="https://iina.io/images/sc-sky.png" alt="IINA" /></p>
 <blockquote>
 <p>The modern media player for macOS.</p>
 </blockquote>
@@ -8417,7 +8417,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-]]></description></item><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p></p>
+]]></description></item><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jeffrey Czum from Pexels" /></p>
 <h2 id="场景">场景</h2>
 <p>在公网上我们获取 npm 包的时候直接就用下面的命令就可以了</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -8462,7 +8462,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </span></span><span class="line"><span class="cl">always-auth<span class="o">=</span>true</span></span></code></pre></div></div>
 <h2 id="结果">结果</h2>
 <p>再次执行 <code>yarn add xxx</code> 之后就会正常安装了，以后就可以愉快的安装私服或者公网上的 package 了。</p>
-]]></description></item><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"></a>
+]]></description></item><item><title>主题文档 - mermaid Shortcode</title><link>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</link><pubDate>Tue, 03 Mar 2020 15:29:59 +0800</pubDate><author>Dillon</author><guid>https://guzhongren.github.io/2020/03/theme-documentation-mermaid-shortcode/</guid><description><![CDATA[<a href="https://github.com/dillonzq/LoveIt/releases/tag/v0.2.11" rel="noopener noreffer" target="_blank"><img</a>
 <p><code>mermaid</code> shortcode 使用 <a href="https://mermaidjs.github.io/">Mermaid</a><sup>[1]</sup>
  库提供绘制图表和流程图的功能.</p>
 <p><a href="https://mermaidjs.github.io/">mermaid</a><sup>[1]</sup>
@@ -8676,11 +8676,11 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <div class="mermaid" id="id-10"></div><div class="references">
                 <h2>参考</h2>
                 <ol><li>Mermaid: <a href="https://mermaidjs.github.io/" rel="noopener noreferrer">https://mermaidjs.github.io/</a></li></ol>
-            </div>]]></description></item><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p></p>
+            </div>]]></description></item><item><title>Build My Blog With Hugo</title><link>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</link><pubDate>Sun, 23 Feb 2020 18:17:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/build-my-blog-with-hugo.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/868306/pexels-photo-868306.jpeg?cs=srgb&amp;dl=orange-and-green-camping-tent-under-starry-sky-868306.jpg&amp;fm=jpg" alt="Photo by Daniel Ap from Pexels" /></p>
 <h2 id="overview">Overview</h2>
 <p><code>Hugo</code>是一款基于 golang 实现的静态网站生成器。以其简单、易用、高效、易扩展、快速部署受到开发者的喜爱，比起 <a href="https://hexo.io/">Hexo</a><sup>[1]</sup>
  感觉更轻便。下图是我初步实现的博客截图。</p>
-<p></p>
+<p><img src="https://pic4.zhimg.com/80/v2-074dbc08888a5aa31642c53bce79297f_hd.jpg" alt="博客截图" /></p>
 <h2 id="安装">安装</h2>
 <h3 id="golang">Golang</h3>
 <p>Hugo 是基于 Go 语言的，所以需要安装 go, 我的机器是 Mac, 所以直接用 homebrew 就搞定。</p>
@@ -8765,9 +8765,9 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h4 id="创建personal_token-或者-deploy-token">创建<code>PERSONAL_TOKEN</code>, 或者 Deploy Token</h4>
 <p>我们在 <a href="https://github.com/settings/tokens">Developer settings</a><sup>[3]</sup>
  以 PERSONAL_TOKEN 为例。
-</p>
+<img src="https://pic4.zhimg.com/80/v2-12b6bf464fe3bc0020eddc1660b9a590_hd.jpg" alt="Image" /></p>
 <p>然后在项目设置的 Secret 中用<code>PERSONAL_TOKEN</code>添加
-</p>
+<img src="https://pic4.zhimg.com/80/v2-776abce099d89d67e2b1f35b8b71d18d_hd.jpg" alt="Image" /></p>
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions">Github Actions</a><sup>[4]</sup>
 , 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
@@ -8865,7 +8865,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
 <h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-Makefile">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8900,7 +8900,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Hexo: <a href="https://hexo.io/" rel="noopener noreferrer">https://hexo.io/</a></li><li>LoveIt: <a href="https://github.com/dillonzq/LoveIt" rel="noopener noreferrer">https://github.com/dillonzq/LoveIt</a></li><li>Developer settings: <a href="https://github.com/settings/tokens" rel="noopener noreferrer">https://github.com/settings/tokens</a></li><li>Github Actions: <a href="https://github.com/features/actions" rel="noopener noreferrer">https://github.com/features/actions</a></li></ol>
-            </div>]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p></p>
+            </div>]]></description></item><item><title>Version Management Strategy</title><link>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</link><pubDate>Sun, 23 Feb 2020 11:11:22 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/02/version-management-strategy.zh/</guid><description><![CDATA[<p><img src="https://yqfile.alicdn.com/3b84530723a76268f2a99d3b65b3a354e87fe309.jpeg" alt="Photo by Matheus Natan from Pexels" /></p>
 <p>为了开发高质量的软件，我们需要能够跟踪所有更改并在必要时将其撤消。 版本控制系统通过跟踪项目历史记录并帮助合并多人所做的更改来填补这一角色，极大地加快了工作速度，并使我们能够更轻松地发现错误。</p>
 <p>此外，得益于这些工具，分布式团队可以畅通合作，使多个人可以同时处理项目的不同部分，然后将其结果合并为一个产品。 让我们仔细看看版本控制系统，git-flow 和 Trunk-based development（基于主干的开发）是如何形成的。</p>
 <h2 id="版本控制系统是怎样改变世界的">版本控制系统是怎样改变世界的</h2>
@@ -8947,7 +8947,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 另一个重大改进是引入了分布式系统。 Git 是采用这种理念的首批工具之一。 实际上，它使开源世界得以蓬勃发展。 Git 允许开发人员通过称为分叉的操作复制整个存储库，并引入所需的更改，而不必担心合并冲突。</p>
 <p>随后，开发者可以创建一个 PR(Pull request)，以将其更改合并到原始项目中。 如果最初的开发人员对合并其他存储库中的更改不感兴趣，那么他们可以自己将其转换 (Fork) 为单独的项目。 由于没有中央存储的概念，因此一切皆有可能。</p>
 <h2 id="git-flow">Git-flow</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/02/23/evmkayH8PSZfoCl.png" alt="Git-flow" /></p>
 <p>在 Git-flow 开发模型中，你有一个主分支 (master branch)，从主分支创建开发分支 (develop branch)，所有开发工作提交都基于开发分支。<code>主分支和开发分支在 git-flow 的整个生命周期中都是一直存在的。</code></p>
 <p>开发人员从该开发分支创建功能分支 (Feature branch) 并对其进行 Coding。完成后，它们将创建 PR。在审查 (Review) PR 过程中，其他开发人员会对更改发表评论，并可能进行讨论，讨论时间也许会很长。</p>
 <p>对 PR 评审完成后，PR 将被接受并 merge 到开发分支。 一旦确定开发分支已经成熟到可以发布，就会创建一个单独的分支 (release branch) 来准备最终版本。 该分支的应用程序已经过测试，并且在准备好将其发布给最终用户之前会应用错误修复 (bugfixs)。 完成此操作后，我们会将最终产品合并到主 (master branch) 分支，并打标签 (Tag)。 同时，可以在 develop 分支上继续开发新功能。
@@ -8984,10 +8984,10 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 </ul>
 <p>如果你的团队主要由相互合作了较长时间的高级开发人员组成，那么你实际上就不需要上述的 PR 。你应该信任你的开发人员，并且知道他们是专业人士，让他们做好自己的工作，不要让所有 Git-Flow 的流程拖慢开发进度。</p>
 <h2 id="github-flow">Github-flow</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/02/23/obvq1wuliJNczU9.png" alt="github-flow.png" /></p>
 <p>Github-flow 是在 git-flow 的基础上衍生而来的。他简化了 git-flow 的复杂模型，并且与 Github 可以很好的结合，在此就不赘述了。</p>
 <h2 id="trunk-based-developmenttbd">Trunk-based Development(TBD)</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/02/23/5JeLIEG2uxNokS4.png" alt="Trunk-based Development" /></p>
 <p>在基于主干的开发模型中，所有开发人员都在一个具有开放访问权限的分支上工作。通常它只是 master 分支。他们将代码提交给它并运行它，非常简单。</p>
 <p>在某些情况下，它们会创建短暂的功能分支。 分支上的代码编译并通过所有测试后，便将其直接合并到 master。 它可确保开发真正连续进行，并防止开发人员创建难以解决的合并冲突。</p>
 <p>用这种方法检查代码的唯一方法是进行完整的源代码检查。 通常，冗长的讨论是有限的。 没有人能严格控制源代码库中正在修改的内容，这就是为什么拥有可强制执行的代码样式很重要的原因。 以这种风格工作的开发人员应具有丰富的经验，以便你知道他们不会降低源代码的质量。</p>
@@ -9045,7 +9045,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>https://blog.infox.ren/2019/10/24/ssh-guide/: <a href="https://blog.infox.ren/2019/10/24/ssh-guide/" rel="noopener noreferrer">https://blog.infox.ren/2019/10/24/ssh-guide/</a></li></ol>
-            </div>]]></description></item><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p></p>
+            </div>]]></description></item><item><title>[翻译]Hello,wasm Pack Cargo.toml</title><link>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</link><pubDate>Wed, 27 Nov 2019 23:23:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E7%BF%BB%E8%AF%91hellowasm-pack-cargo.toml.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3681653/pexels-photo-3681653.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by La Miko from Pexels" /></p>
 <h2 id="cargotoml">Cargo.toml</h2>
 <p><code>cargo.toml</code>是 Rust 包管理器 <code>cargo</code> 的清单文件。这个文件包 <code>name</code>、 <code>version</code> 和包的依赖，在 Rust 中，我们一般称之为 <code>crate</code>。</p>
 <p>在示例中给出了一系列信息，但是我们主要讨论如下三点：</p>
@@ -9434,7 +9434,7 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
 </span></span></span></code></pre></div></div>
 <h2 id="效果图">效果图</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
 <h2 id="在线体验">在线体验</h2>
 <p><a href="https://andorlab.github.io/WebAssembly/">Markdown editor</a><sup>[1]</sup>
 : <a href="https://andorlab.github.io/WebAssembly/">https://andorlab.github.io/WebAssembly/</a><sup>[1]</sup>
@@ -9446,7 +9446,7 @@ index.js  897 KiB   index  [emitted]  index
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Markdown editor: <a href="https://andorlab.github.io/WebAssembly/" rel="noopener noreferrer">https://andorlab.github.io/WebAssembly/</a></li><li>https://github.com/AndorLab/web_assembly/tree/based_rust: <a href="https://github.com/AndorLab/web_assembly/tree/based_rust" rel="noopener noreferrer">https://github.com/AndorLab/web_assembly/tree/based_rust</a></li></ol>
-            </div>]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p></p>
+            </div>]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jan Kopřiva from Pexels" /></p>
 <h2 id="插件">插件</h2>
 <p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>
 <ul>
@@ -9485,15 +9485,15 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div></div>
-<p></p>
+<p><img src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png" alt="launch.json" /></p>
 <h2 id="调试">调试</h2>
-<p></p>
+<p><img src="https://yqfile.alicdn.com/17e76c562003f3128f02282c4751f9d77584dd9f.png" alt="Debug" /></p>
 ]]></description></item><item><title>将函数放在对象的 Value 上，然后传给组件执行，实现组件抽象</title><link>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</link><pubDate>Mon, 14 Oct 2019 21:36:26 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%B0%86%E5%87%BD%E6%95%B0%E6%94%BE%E5%9C%A8%E5%AF%B9%E8%B1%A1%E7%9A%84value%E4%B8%8A%E7%84%B6%E5%90%8E%E4%BC%A0%E7%BB%99%E7%BB%84%E4%BB%B6%E6%89%A7%E8%A1%8C%E5%AE%9E%E7%8E%B0%E7%BB%84%E4%BB%B6%E6%8A%BD%E8%B1%A1.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3811731/pexels-photo-3811731.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><h2 id="情景">情景</h2>
 <p>在我们开发中，我们通常需要对某一系列的组件 Coding, 但我们是程序员啊，我们怎么能容忍代码重复出现的坏味道呢。所以，对于一些列相同的操作我们就要用到循环处理了。</p>
 <h2 id="目标">目标</h2>
-<p></p>
+<p><img src="https://yqfile.alicdn.com/4254ffc9caefb928d7fdb8a60c6ed1aabe2bdc37.png" alt="image" /></p>
 <p>我们需要将底部两个按钮 <code>新建询价</code>和 <code>采购助手</code>展示出来，并且点击他们的操作后有不同的交互。</p>
 <h2 id="coding">coding</h2>
 <p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
@@ -9554,7 +9554,7 @@ index.js  897 KiB   index  [emitted]  index
 ]]></description></item><item><title>Git Revert 多条已提交的记录</title><link>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/git-revert-%E5%A4%9A%E6%9D%A1%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" referrerpolicy="no-referrer">
             </div><p>我需要撤销最后的四个提交</p>
-<p></p>
+<p><img src="https://yqfile.alicdn.com/3fbcbf5e8d1d7d7d1ab6f5978b9df1f702f4e420.png" alt="image" /></p>
 <p>如果用* git revert * 一个一个 revert 挺费劲，可以用* git revert OLDER_COMMIT^..NEWER_COMMIT* 这种格式，对应我的工程就是</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -9571,7 +9571,7 @@ index.js  897 KiB   index  [emitted]  index
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ git revert -n 54b23c2251acde.....09123463e99436fba83f9^..a19a10b24b648b80401234686aac65...</span></span></code></pre></div></div>
 <p>就是多加个 <em>-n</em> 参数，然后再通过 git add 和 git commit 等步骤就可以了。</p>
 <p>最后的效果如下</p>
-<p></p>
+<p><img src="https://yqfile.alicdn.com/4a5a82578aaa956e2fc4b83847feba87e44ad848.png" alt="image" /></p>
 ]]></description></item><item><title>使用 git 迁移 git 项目并保留提交记录</title><link>https://guzhongren.github.io/2019/09/%E4%BD%BF%E7%94%A8git%E8%BF%81%E7%A7%BBgit%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Mon, 30 Sep 2019 15:52:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/%E4%BD%BF%E7%94%A8git%E8%BF%81%E7%A7%BBgit%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BF%9D%E7%95%99%E6%8F%90%E4%BA%A4%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/EZGJPfDjFAvM2Ug.jpg" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -9612,7 +9612,7 @@ index.js  897 KiB   index  [emitted]  index
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> project
 </span></span><span class="line"><span class="cl">$ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git</span></span></code></pre></div></div>
 <h2 id="晒个图">晒个图</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png" alt="git.mirror.png" /></p>
 ]]></description></item><item><title>Golang 依赖注入 (Dependency Injection)</title><link>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</link><pubDate>Tue, 10 Sep 2019 10:52:24 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/09/golang-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5dependency-injection.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="dependency-injection-">Dependency Injection 🧪</h1>
@@ -10888,7 +10888,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
 </span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .</span></span></code></pre></div></div>
 <p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
 <p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>

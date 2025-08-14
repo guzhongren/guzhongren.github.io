@@ -9,7 +9,7 @@
 <p>这两种方式都存在信息丢失的风险，可能由于时间推移或其他因素导致记录不完整或遗失。最理想的方式是建立一套自己的记录系统，使得回顾时能够一目了然地看到当时的审查意见。</p>
 <h2 id="解决方案">解决方案</h2>
 <p>针对这一需求，我开发了一个 VSCode 插件来专门记录 Code Review 过程中的反馈。这个项目使用了最近非常热门的 Vibe Coding 技术&hellip;</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/plugins/code-review-comments/code-review-comments.6bhdgqda0w.gif" alt="Code Review Comments" /></p>
 <h2 id="实现细节">实现细节</h2>
 <h3 id="系统提示词设计">系统提示词设计</h3>
 <p>以上展示的功能就是通过 Vibe Coding 技术实现的。所有代码都是由 AI 自动生成，使用了 <a href="https://www.npmjs.com/package/@google/gemini-cli">Gemini CLI</a><sup>[1]</sup>
@@ -84,7 +84,7 @@
  文件是定义项目配置的 Python 标准。</p>
 <p>与 <code>NodeJS</code> 项目中的 <code>package.json</code> 一样，可以管理第三方依赖，可以存储可以运行的命令，所使用的 Runtime 的版本号限制和项目的基本信息等等的，功能强大可见一斑。</p>
 <h3 id="uv">uv</h3>
-<p></p>
+<p><img src="https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark" alt="uv" /></p>
 <blockquote>
 <p>An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) &ndash; <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a><sup>[2]</sup>
 </p>
@@ -262,7 +262,7 @@
 <li><strong>活跃社区与丰富文档</strong></li>
 </ul>
 <h2 id="主要流程">主要流程</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/Strapi/dev-with-strapi.2ks52vmd6j.webp" alt="dev-with-strapi" /></p>
 <ol>
 <li>设计内容模型（Content Types/Components）
 <ul>
@@ -613,7 +613,7 @@
 <h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
 <p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
 <h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR" /></p>
 <p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
 <ul>
 <li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
@@ -1465,7 +1465,7 @@
 </table>
 <h4 id="为什么会有-heartbeat">为什么会有 Heartbeat</h4>
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>
-<p></p>
+<p><img src="..." alt="研发效能反馈图" /></p>
 <h2 id="总结">总结</h2>
 <div class="references">
                 <h2>参考</h2>

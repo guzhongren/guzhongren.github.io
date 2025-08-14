@@ -739,7 +739,7 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
 </span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .</span></span></code></pre></div></div>
 <p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
 <p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>

@@ -39,7 +39,7 @@ x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
 P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
 <h2 id="covert">Covert</h2>
 <p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
 <h2 id="ssl-证书分类">SSL 证书分类</h2>
 <h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
 <p>只验证域名所有权，在浏览器中显示锁形标志；</p>
@@ -74,7 +74,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>证书颁发机构对此的审核比较严格</li>
 </ul>
 <h2 id="根据域名分类">根据域名分类</h2>
-<p></p>
+<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
 <h3 id="单域名证书">单域名证书</h3>
 <p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
 <h3 id="多域名证书">多域名证书</h3>

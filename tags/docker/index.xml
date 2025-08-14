@@ -48,7 +48,7 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;127.0.0.1 desktop.docker.com&#39;</span> <span class="p">|</span> sudo tee -a /etc/hosts</span></span></code></pre></div></div>
 <h3 id="验证未升级">验证未升级</h3>
-<p></p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/docker.desktop.3.5.3.66501.4nfe3o7foow0.webp" alt="docker.desktop.3.5.2.66501" /></p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Docker: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li>使用条款: <a href="https://docs.docker.com/subscription/#docker-desktop-license-agreement" rel="noopener noreferrer">https://docs.docker.com/subscription/#docker-desktop-license-agreement</a></li><li>Facker.js: <a href="https://github.com/Marak/Faker.js" rel="noopener noreferrer">https://github.com/Marak/Faker.js</a></li><li>podman: <a href="https://github.com/containers/podman" rel="noopener noreferrer">https://github.com/containers/podman</a></li><li>lima: <a href="https://github.com/lima-vm/lima" rel="noopener noreferrer">https://github.com/lima-vm/lima</a></li><li>colima: <a href="https://github.com/abiosoft/colima" rel="noopener noreferrer">https://github.com/abiosoft/colima</a></li></ol>
@@ -247,7 +247,7 @@
 </span></span><span class="line"><span class="cl">Now you should be able to visit the admin portal at http://hub.k8s.com.
 </span></span><span class="line"><span class="cl">For more details, please visit https://github.com/goharbor/harbor .</span></span></code></pre></div></div>
 <p>最后出现如上提示就安装成功了。将 hub.k8s.com 解析到本地即可访问。</p>
-<p></p>
+<p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
 <p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>

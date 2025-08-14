@@ -38,5 +38,5 @@
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">cd</span> project
 </span></span><span class="line"><span class="cl">$ git push --mirror git@codehub.devcloud.huaweicloud.com:leaderProject.git</span></span></code></pre></div></div>
 <h2 id="晒个图">晒个图</h2>
-<p></p>
+<p><img src="https://i.loli.net/2020/03/29/ow9O6BnDeuLjqQh.png" alt="git.mirror.png" /></p>
 ]]></description></item></channel></rss>
