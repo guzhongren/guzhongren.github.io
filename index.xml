@@ -1,4 +1,7 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 18 Aug 2025 07:58:34 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“爸爸真是个打坏大”</title><link>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E7%9C%9F%E6%98%AF%E4%B8%AA%E6%89%93%E5%9D%8F%E5%A4%A7/</link><pubDate>Mon, 18 Aug 2025 07:58:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E7%9C%9F%E6%98%AF%E4%B8%AA%E6%89%93%E5%9D%8F%E5%A4%A7/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 18 Aug 2025 08:01:17 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“妈妈，我想你了”</title><link>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</link><pubDate>Mon, 18 Aug 2025 08:01:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>“妈妈, 我想你了”</p>
+]]></description></item><item><title>“爸爸真是个打坏大”</title><link>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E7%9C%9F%E6%98%AF%E4%B8%AA%E6%89%93%E5%9D%8F%E5%A4%A7/</link><pubDate>Mon, 18 Aug 2025 07:58:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E7%9C%9F%E6%98%AF%E4%B8%AA%E6%89%93%E5%9D%8F%E5%A4%A7/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>女儿说：“爸爸又去买西瓜了。”
 又说：“爸爸真是个大坏蛋。”</p>
@@ -9144,7 +9147,7 @@ npx: 18 安装成功，用时 3.989 秒
  Rust +  WebAssembly + Webpack = ️
 Installed dependencies</code></pre></div>
 <h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -11015,62 +11018,4 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
-]]></description></item><item><title>Npm 安装 git 资源</title><link>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</link><pubDate>Fri, 19 Oct 2018 19:27:23 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/10/npm-%E5%AE%89%E8%A3%85git%E8%B5%84%E6%BA%90.zh/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.pexels.com/photos/3979186/pexels-photo-3979186.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
-            </div><h2 id="引言">引言</h2>
-<p>我们大多数情况下用到的包都是存放在 <a href="https://www.npmjs.com/">npmjs.com</a><sup>[1]</sup>
- 这个网站上的，只要我们安装了 Node，我们就可以使用 Node 自带的 npm 包来下载你需要的包；但有时候我们想让我们自己的包或者库私有，哪怎么办呢？很多人就会想到自己搭一个私服，比如 <a href="https://oss.sonatype.org/#Documentation">Nexus Repository Manager </a><sup>[2]</sup>
- 和 <a href="https://github.com/rlidwka/sinopia">sinopia</a><sup>[3]</sup>
-;　虽然搭建起来不是很困难，尤其是 sinopia 就是一个 npm 包，安装灰常简单，但是都需要一台服务器，一台服务。.. 一台服。.. 一台。.. 一。..</p>
-<p>现在大多数公司肯定有自己的 git 仓库了，[没有到 git？说明你们技术太 XXX 落后] 那么我们何不利用 git 仓库来存放我们的各种 lib 呢？</p>
-<h2 id="传统方式">传统方式</h2>
-<blockquote>
-<p>前事不忘，后事之师。先来复习一下怎么从 npmjs.com 获取包。[这句是我说的]</p>
-</blockquote>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install XXX
-</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
-<h2 id="git-仓库">git 仓库</h2>
-<p>假如你已经做了一个特别牛逼的库，但是因为只是公司内部使用，比如一些工具库，放出去比如放到 npmjs.com 上没任何意义的，你可以把这个库整理成一个 git 的 repo, 当然打个标签，发个各版本什么的那就更好了。当你把你牛逼的库放在你司的 git 上后，比如地址是 <em><strong>ssh:git.niubi.com/yourName/niubility.git</strong></em>　或者　<em><strong><a href="https://git.niubi.com/yourName/niubility.git">https://git.niubi.com/yourName/niubility.git</a><sup>[4]</sup>
-</strong></em>, 接下来就是发大招。</p>
-<h2 id="大招">大招</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install git+ssh:git.niubi.com/yourName/niubility.git
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">**#或者**
-</span></span><span class="line"><span class="cl">$ npm install git+https://git.niubi.com/yourName/niubility.git
-</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
-<h2 id="隐藏技能-不推荐">隐藏技能 [不推荐]</h2>
-<h3 id="用户名方式">用户名方式</h3>
-<p>如果你将 npm 注册到自己的 git 仓库，就可以直接省去域名等一切能定位到该 lib 的的通用信息。</p>
-<h4 id="注册及登录">注册及登录</h4>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm adduser --registry http://you.domain.com
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">$ npm login --registry http://you.domain.com
-</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
-<h4 id="安装">安装</h4>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install yourName/niubility
-</span></span><span class="line"><span class="cl">...</span></span></code></pre></div></div>
-<h2 id="恩没什么可说的了我真是来测试打赏功能的">恩，没什么可说的了我真是来测试打赏功能的。</h2>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>npmjs.com: <a href="https://www.npmjs.com/" rel="noopener noreferrer">https://www.npmjs.com/</a></li><li>Nexus Repository Manager : <a href="https://oss.sonatype.org/#Documentation" rel="noopener noreferrer">https://oss.sonatype.org/#Documentation</a></li><li>sinopia: <a href="https://github.com/rlidwka/sinopia" rel="noopener noreferrer">https://github.com/rlidwka/sinopia</a></li><li>https://git.niubi.com/yourName/niubility.git: <a href="https://git.niubi.com/yourName/niubility.git" rel="noopener noreferrer">https://git.niubi.com/yourName/niubility.git</a></li></ol>
-            </div>]]></description></item></channel></rss>
+]]></description></item></channel></rss>
