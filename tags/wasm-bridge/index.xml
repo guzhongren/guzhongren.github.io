@@ -11,7 +11,7 @@ npx: 18 安装成功，用时 3.989 秒
  Rust +  WebAssembly + Webpack = ️
 Installed dependencies</code></pre></div>
 <h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
