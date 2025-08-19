@@ -1,4 +1,11 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 18 Aug 2025 08:01:17 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“妈妈，我想你了”</title><link>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</link><pubDate>Mon, 18 Aug 2025 08:01:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 19 Aug 2025 07:56:19 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“真的么”</title><link>https://guzhongren.github.io/2025/08/%E7%9C%9F%E7%9A%84%E4%B9%88/</link><pubDate>Tue, 19 Aug 2025 07:56:19 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E7%9C%9F%E7%9A%84%E4%B9%88/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>妈妈说：“你真漂亮啊！”</p>
+<p>女儿说： “真的吗？”</p>
+<p>妈妈说：&ldquo;真的呀！&quot;；又说： “你去问爸爸呀。”</p>
+<p>女儿手：“爸爸，我漂亮吗？”</p>
+<p>我说：“漂亮呀！”</p>
+]]></description></item><item><title>“妈妈，我想你了”</title><link>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</link><pubDate>Mon, 18 Aug 2025 08:01:17 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E5%A6%88%E5%A6%88%E6%88%91%E6%83%B3%E4%BD%A0%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>女儿说：“妈妈, 我想你了。”
 妈妈说：“我也想你了。”</p>
@@ -8741,7 +8748,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8791,7 +8798,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions">Github Actions</a><sup>[4]</sup>
 , 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8885,7 +8892,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
 <h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-Makefile">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -10961,35 +10968,6 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">alpine: digest: sha256:5ec3232b32e6876c0941d66d8392f667c77ca1ef14cafb85991deea4339b92da size: <span class="m">1365</span></span></span></code></pre></div></div>
 <h2 id="小结">小结</h2>
 <p>Harbor 是一个 docker 镜像私有仓库的解决方案，是基于 docker-compose 运行起来的，使用相对简单。</p>
-]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
-            </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
-</span></span><span class="line"><span class="cl">...
-</span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
-</span></span><span class="line"><span class="cl">period of time, or established connection failed because connected host has failed to respond.<span class="o">)</span>
-</span></span><span class="line"><span class="cl">go: error loading module requirements</span></span></code></pre></div></div>
-<h2 id="如上不能安装-sys-和-crypto-这两个库用如下方式即可">如上，不能安装 sys 和 crypto 这两个库，用如下方式即可</h2>
-<p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0</span></span></code></pre></div></div>
-<p>2 用 github 上的镜像地址替换</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
 ]]></description></item><item><title>Go Module 安装不了 golang.org 时的处理方式记录</title><link>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</link><pubDate>Thu, 01 Nov 2018 21:46:40 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2018/11/go-module-%E5%AE%89%E8%A3%85%E4%B8%8D%E4%BA%86golang.org%E6%97%B6%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E8%AE%B0%E5%BD%95.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
