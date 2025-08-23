@@ -1170,7 +1170,7 @@ content-type: application/json; charset=utf-8
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
