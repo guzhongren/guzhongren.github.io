@@ -1,4 +1,16 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 29 Aug 2025 08:04:28 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“有爸爸保护我呢”</title><link>https://guzhongren.github.io/2025/08/%E6%9C%89%E7%88%B8%E7%88%B8%E4%BF%9D%E6%8A%A4%E6%88%91%E5%91%A2/</link><pubDate>Fri, 29 Aug 2025 08:04:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E6%9C%89%E7%88%B8%E7%88%B8%E4%BF%9D%E6%8A%A4%E6%88%91%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 30 Aug 2025 06:43:52 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“爸爸呢”</title><link>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E5%91%A2/</link><pubDate>Sat, 30 Aug 2025 06:43:52 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E7%88%B8%E7%88%B8%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>昨晚凌晨 2 点左右，女儿可能是做梦了突然醒来了一下，过了一会有哭了，嘟嘟囔囔的说了一些听不清的话，妈妈拍了几下还是没睡踏实。</p>
+<p>过了一会又醒了，嘟嘟囔囔地说：“爸爸呢？”</p>
+<p>妈妈说：“爸爸在呢。 “人之初&hellip;”</p>
+<p>女儿说：“嗯。”</p>
+<p>然后突然就哭了，又说：“爸爸呢？”</p>
+<p>我睡地比较死，媳妇说：“你给娃回一声。”</p>
+<p>我回了一声：“在这呢。”</p>
+<p>女儿还是苦的不行，最后妈妈只好抱起她到怀里哄。</p>
+<p>还是不行，应该是穿着睡袋睡太热了，于是我和妈妈给他换了个平时晚上穿的吊带。</p>
+<p>不一会儿在妈妈的怀里就睡着了，直到今天早上。</p>
+]]></description></item><item><title>“有爸爸保护我呢”</title><link>https://guzhongren.github.io/2025/08/%E6%9C%89%E7%88%B8%E7%88%B8%E4%BF%9D%E6%8A%A4%E6%88%91%E5%91%A2/</link><pubDate>Fri, 29 Aug 2025 08:04:28 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/08/%E6%9C%89%E7%88%B8%E7%88%B8%E4%BF%9D%E6%8A%A4%E6%88%91%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>昨天下午带着女儿去 Momopark 玩，由于路上人多，天还下着毛毛细雨，于是我抱着她走。</p>
 <p>妈妈挑逗地偷偷的戳了一下女儿。</p>
@@ -8844,7 +8856,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8894,7 +8906,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions">Github Actions</a><sup>[4]</sup>
 , 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8988,7 +9000,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </span></span><span class="line"><span class="cl">$ git push</span></span></code></pre></div></div>
 <h2 id="优化">优化</h2>
 <p>在敲 hugo 相关的命令的时候比较繁琐，有几个参数经常会敲， 所以使用 <code>Makefile</code> 优化一下，上面有些命令就是在此定义的。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-Makefile">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -9238,335 +9250,4 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>链接: <a href="https://doc.rust-lang.org/reference/linkage.html" rel="noopener noreferrer">https://doc.rust-lang.org/reference/linkage.html</a></li><li>链接: <a href="https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html" rel="noopener noreferrer">https://doc.rust-lang.org/cargo/reference/specifying-dependencies.html</a></li></ol>
-            </div>]]></description></item><item><title>基于 Rust 的 WebAssembly 工程开发过程小记</title><link>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</link><pubDate>Sat, 23 Nov 2019 22:43:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/11/%E5%9F%BA%E4%BA%8Erust%E7%9A%84webassembly%E5%B7%A5%E7%A8%8B%E5%BC%80%E5%8F%91%E8%BF%87%E7%A8%8B%E5%B0%8F%E8%AE%B0/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" referrerpolicy="no-referrer">
-            </div><h2 id="初始化工程">初始化工程</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>$ npm init rust-webpack web_assembly_demo
-npx: 18 安装成功，用时 3.989 秒
- Rust +  WebAssembly + Webpack = ️
-Installed dependencies</code></pre></div>
-<h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>$ yarn
-yarn install v1.19.1
-warning package.json: No license field
-info No lockfile found.
-warning package-lock.json found. Your project contains lock files generated by tools other than Yarn. It is advised not to mix package managers in order to avoid resolution inconsistencies caused by unsynchronized lock files. To clear this warning, remove package-lock.json.
-warning rust-webpack-template@0.1.0: No license field
-[1/4]   Resolving packages...
-warning @wasm-tool/wasm-pack-plugin &gt; watchpack &gt; chokidar &gt; fsevents@1.2.9: One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size
-[2/4]   Fetching packages...
-[3/4]   Linking dependencies...
-[4/4]   Building fresh packages...
-success Saved lockfile.
-  Done in 17.87s.</code></pre></div>
-<h2 id="修改-cargotoml-为">修改 Cargo.toml 为</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-toml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="c"># You must change these to your own details.</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">package</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">name</span> <span class="p">=</span> <span class="s2">&#34;web_assembly_demo&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">description</span> <span class="p">=</span> <span class="s2">&#34;My super awesome Rust, WebAssembly, and Webpack project!&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.1.0&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">authors</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;guzhongren &lt;guzhoongren@live.cn&gt;&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">categories</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;wasm&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">readme</span> <span class="p">=</span> <span class="s2">&#34;README.md&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">edition</span> <span class="p">=</span> <span class="s2">&#34;2018&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">lib</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">crate-type</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;cdylib&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">profile</span><span class="p">.</span><span class="nx">release</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="c"># This makes the compiled code faster and smaller, but it makes compiling slower,</span>
-</span></span><span class="line"><span class="cl"><span class="c"># so it&#39;s only enabled in release mode.</span>
-</span></span><span class="line"><span class="cl"><span class="nx">lto</span> <span class="p">=</span> <span class="kc">true</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">features</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="c"># If you uncomment this line, it will enable `wee_alloc`:</span>
-</span></span><span class="line"><span class="cl"><span class="c">#default = [&#34;wee_alloc&#34;]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dependencies</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="c"># The `wasm-bindgen` crate provides the bare minimum functionality needed</span>
-</span></span><span class="line"><span class="cl"><span class="c"># to interact with JavaScript.</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen</span> <span class="p">=</span> <span class="s2">&#34;0.2.45&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># `wee_alloc` is a tiny allocator for wasm that is only ~1K in code size</span>
-</span></span><span class="line"><span class="cl"><span class="c"># compared to the default allocator&#39;s ~10K. However, it is slower than the default</span>
-</span></span><span class="line"><span class="cl"><span class="c"># allocator, so it&#39;s not enabled by default.</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wee_alloc</span> <span class="p">=</span> <span class="p">{</span> <span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.4.2&#34;</span><span class="p">,</span> <span class="nx">optional</span> <span class="p">=</span> <span class="kc">true</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># The `web-sys` crate allows you to interact with the various browser APIs,</span>
-</span></span><span class="line"><span class="cl"><span class="c"># like the DOM.</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dependencies</span><span class="p">.</span><span class="nx">web-sys</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">version</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">features</span> <span class="p">=</span> <span class="p">[</span><span class="s2">&#34;console&#34;</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># The `console_error_panic_hook` crate provides better debugging of panics by</span>
-</span></span><span class="line"><span class="cl"><span class="c"># logging them with `console.error`. This is great for development, but requires</span>
-</span></span><span class="line"><span class="cl"><span class="c"># all the `std::fmt` and `std::panicking` infrastructure, so it&#39;s only enabled</span>
-</span></span><span class="line"><span class="cl"><span class="c"># in debug mode.</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">target</span><span class="p">.</span><span class="s2">&#34;cfg(debug_assertions)&#34;</span><span class="p">.</span><span class="nx">dependencies</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">console_error_panic_hook</span> <span class="p">=</span> <span class="s2">&#34;0.1.5&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c"># These crates are used for running unit tests.</span>
-</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">dev-dependencies</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen-test</span> <span class="p">=</span> <span class="s2">&#34;0.2.45&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">futures</span> <span class="p">=</span> <span class="s2">&#34;0.1.27&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">js-sys</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span>
-</span></span><span class="line"><span class="cl"><span class="nx">wasm-bindgen-futures</span> <span class="p">=</span> <span class="s2">&#34;0.3.22&#34;</span></span></span></code></pre></div></div>
-<p>Rust 的依赖会在启动 Web 程序的时候自动安装。</p>
-<h2 id="启动程序">启动程序</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>$ yarn start
-yarn run v1.19.1
-warning package.json: No license field
-$ rimraf dist pkg &amp;&amp; webpack-dev-server --open -d
-🧐  Checking for wasm-pack...
-
-  wasm-pack is installed.
-
-ℹ️  Compiling your crate in development mode...
-
-ℹ ｢wds｣: Project is running at http://localhost:8080/
-ℹ ｢wds｣: webpack output is served from /
-ℹ ｢wds｣: Content not from webpack is served from /Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo/dist
-[INFO]:   Checking for the Wasm target...
-[INFO]:   Compiling to Wasm...
-ℹ ｢wdm｣: wait until bundle finished: /
-   Compiling proc-macro2 v1.0.6
-   Compiling unicode-xid v0.2.0
-...
- 3 assets
-Entrypoint index = index.js
-[./pkg/index.js] 4.41 KiB {0} [built]
-[./pkg/index_bg.wasm] 145 KiB {0} [built]
-    + 33 hidden modules
-ℹ ｢wdm｣: Compiled successfully.
-ℹ️  Compiling your crate in development mode...
-
-[INFO]:   Checking for the Wasm target...
-[INFO]:   Compiling to Wasm...
-   Compiling rust-webpack-template v0.1.0 (/Users/c4/Desktop/Personal/01.Project/web_assembly/web_assembly_demo)
-    Finished dev [unoptimized + debuginfo] target(s) in 0.62s
-[INFO]: ⬇️  Installing wasm-bindgen...
-[INFO]: Optional fields missing from Cargo.toml: &#39;repository&#39;, &#39;license&#39;. These are not necessary, but recommended
-[INFO]:    Done in 0.77s
-[INFO]:    Your wasm pkg is ready to publish at ./pkg.
-  Your crate has been correctly compiled
-
-ℹ ｢wdm｣: Compiling...
-ℹ ｢wdm｣: Hash: d4e8a3c57ad23f847707
-Version: webpack 4.41.2
-Time: 411ms
-Built at: 2019-11-23 20:16:55
-                           Asset     Size  Chunks                         Chunk Names
-                            0.js   17 KiB       0  [emitted]
-beee557fb69dcfa0df60.module.wasm  161 KiB       0  [emitted] [immutable]
-                        index.js  897 KiB   index  [emitted]              index
-Entrypoint index = index.js
-[./pkg/index.js] 4.93 KiB {0} [built]
-[./pkg/index_bg.wasm] 161 KiB {0} [built]
-    + 33 hidden modules
-ℹ ｢wdm｣: Compiled successfully.
-ℹ ｢wdm｣: Compiling...
-ℹ ｢wdm｣: Hash: 3e1681b9b4c4c940722e
-Version: webpack 4.41.2
-Time: 16ms
-Built at: 2019-11-23 20:17:14
-   Asset     Size  Chunks             Chunk Names
-index.js  897 KiB   index  [emitted]  index
- + 2 hidden assets</code></pre></div>
-<h2 id="在-src-中新建-parsers-并编写处理-markdown-的-rust-代码">在 src 中新建 parse.rs 并编写处理 markdown 的 rust 代码</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-rust">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Parser</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">pos</span>: <span class="kt">usize</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">input</span>: <span class="nb">String</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">parse</span><span class="p">(</span><span class="n">source</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">Parser</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">pos</span>: <span class="mi">0</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">input</span>: <span class="nc">source</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}.</span><span class="n">parse_lines</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="w"> </span><span class="n">Parser</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">parse_lines</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">loop</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_whitespace</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">end_of_line</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">result</span><span class="p">.</span><span class="n">push_str</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">.</span><span class="n">parse_line</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">result</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">parse_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">match</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">next_char</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="sc">&#39;#&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_title</span><span class="p">(),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="sc">&#39;-&#39;</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="kt">char</span>::<span class="n">is_whitespace</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">input</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">..</span><span class="p">].</span><span class="n">chars</span><span class="p">().</span><span class="n">next</span><span class="p">().</span><span class="n">unwrap</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_list</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_text</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">_</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_text</span><span class="p">(),</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">parse_list</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_char</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_whitespace</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_text</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">create_html_element</span><span class="p">(</span><span class="s">&#34;li&#34;</span><span class="p">.</span><span class="n">to_string</span><span class="p">(),</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">parse_title</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">pound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_while</span><span class="p">(</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;#&#39;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_whitespace</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">parse_text</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">create_html_element</span><span class="p">(</span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;h</span><span class="si">{}</span><span class="s">&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">pound</span><span class="p">.</span><span class="n">len</span><span class="p">()),</span><span class="w"> </span><span class="n">text</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">parse_text</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_while</span><span class="p">(</span><span class="o">|</span><span class="n">c</span><span class="o">|</span><span class="w"> </span><span class="o">!</span><span class="n">is_new_line</span><span class="p">(</span><span class="n">c</span><span class="p">))</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">end_of_line</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">input</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">// fn starts_with(&amp;self, s: &amp;str) -&gt; bool {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="c1">//   self.input[self.pos..].starts_with(s)
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">  </span><span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">next_char</span><span class="p">(</span><span class="o">&amp;</span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">char</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">input</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">pos</span><span class="o">..</span><span class="p">].</span><span class="n">chars</span><span class="p">().</span><span class="n">next</span><span class="p">().</span><span class="n">unwrap</span><span class="p">()</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">consume_char</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">char</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">iter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">self</span><span class="p">.</span><span class="n">input</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">pos</span><span class="o">..</span><span class="p">].</span><span class="n">char_indices</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">cur_char</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">().</span><span class="n">unwrap</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">next_pos</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">iter</span><span class="p">.</span><span class="n">next</span><span class="p">().</span><span class="n">unwrap_or</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="p">));</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">pos</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">next_pos</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">cur_char</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">consume_while</span><span class="o">&lt;</span><span class="n">F</span><span class="o">&gt;</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">cond</span>: <span class="nc">F</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span>
-</span></span><span class="line"><span class="cl">  <span class="nc">where</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">F</span>: <span class="nb">Fn</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span><span class="p">,</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">String</span>::<span class="n">new</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="o">!</span><span class="bp">self</span><span class="p">.</span><span class="n">end_of_line</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">cond</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">next_char</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">result</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">consume_char</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">result</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">fn</span> <span class="nf">consume_whitespace</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="bp">self</span><span class="p">.</span><span class="n">consume_while</span><span class="p">(</span><span class="kt">char</span>::<span class="n">is_whitespace</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">create_html_element</span><span class="p">(</span><span class="n">tag_name</span>: <span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="n">text</span>: <span class="nb">String</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="fm">format!</span><span class="p">(</span><span class="s">&#34;&lt;</span><span class="si">{}</span><span class="s">&gt;</span><span class="si">{}</span><span class="s">&lt;/</span><span class="si">{}</span><span class="s">&gt;&#34;</span><span class="p">,</span><span class="w"> </span><span class="n">tag_name</span><span class="p">,</span><span class="w"> </span><span class="n">text</span><span class="p">,</span><span class="w"> </span><span class="n">tag_name</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">fn</span> <span class="nf">is_new_line</span><span class="p">(</span><span class="n">c</span>: <span class="kt">char</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kt">bool</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
-<h2 id="在-srclibrs-中引入-parse-mod-并编写向外暴露的函数">在 src/lib.rs 中引入 parse mod， 并编写向外暴露的函数</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-Rust">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Rust" data-lang="Rust"><span class="line"><span class="cl"><span class="k">mod</span> <span class="nn">parser</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">extern</span><span class="w"> </span><span class="k">crate</span><span class="w"> </span><span class="n">wasm_bindgen</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">use</span><span class="w"> </span><span class="n">wasm_bindgen</span>::<span class="n">prelude</span>::<span class="o">*</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[wasm_bindgen]</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">pub</span><span class="w"> </span><span class="k">fn</span> <span class="nf">parse</span><span class="p">(</span><span class="n">input</span>: <span class="kp">&amp;</span><span class="kt">str</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="nb">String</span> <span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="kd">let</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">parser</span>::<span class="n">parse</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">to_string</span><span class="p">());</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">result</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
-<h2 id="在-jsindexjs-中使用-web-assembly-修改结果如下">在 js/index.js 中使用 Web Assembly ，修改结果如下</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-rust">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">onload</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addElement</span><span class="p">;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">function</span><span class="w"> </span><span class="n">addElement</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">markdown</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="na">&#39;textarea&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">markdown</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="na">&#39;markdown&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">markdown</span><span class="p">.</span><span class="n">style</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;height: 300px; width: 400px ;&#34;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">markdown</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">parseBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="na">&#39;button&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">parseBtn</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="na">&#39;parse&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">parseBtn</span><span class="p">.</span><span class="n">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="na">&#39;</span><span class="err">解析</span><span class="w"> </span><span class="n">markdown</span><span class="na">&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">parseBtn</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">previewArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">createElement</span><span class="p">(</span><span class="na">&#39;div&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">previewArea</span><span class="p">.</span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="na">&#39;preview&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">document</span><span class="p">.</span><span class="n">body</span><span class="p">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">previewArea</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">rust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">import</span><span class="p">(</span><span class="na">&#39;</span><span class="o">../</span><span class="n">pkg</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">js</span><span class="na">&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">rust</span><span class="p">.</span><span class="n">then</span><span class="p">(</span><span class="n">module</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">btn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="na">&#39;parse&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">previewArea</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="na">&#39;preview&#39;</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">btn</span><span class="p">.</span><span class="n">addEventListener</span><span class="p">(</span><span class="na">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">document</span><span class="p">.</span><span class="n">getElementById</span><span class="p">(</span><span class="na">&#39;markdown&#39;</span><span class="p">).</span><span class="n">value</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="n">previewArea</span><span class="p">.</span><span class="n">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">module</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="n">input</span><span class="p">)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">})</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="p">})</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// import(&#34;../pkg/index.js&#34;).then(module =&gt; {
-</span></span></span><span class="line"><span class="cl"><span class="c1">//   const input = &#39;1233&#39;
-</span></span></span><span class="line"><span class="cl"><span class="c1">//     previewArea.innerHTML = module.parse(input)
-</span></span></span><span class="line"><span class="cl"><span class="c1">// }).catch(console.error);
-</span></span></span></code></pre></div></div>
-<h2 id="效果图">效果图</h2>
-<p><img src="https://i.loli.net/2020/06/27/PabvnjXR1MouQcz.png" alt="markdown editor" /></p>
-<h2 id="在线体验">在线体验</h2>
-<p><a href="https://andorlab.github.io/WebAssembly/">Markdown editor</a><sup>[1]</sup>
-: <a href="https://andorlab.github.io/WebAssembly/">https://andorlab.github.io/WebAssembly/</a><sup>[1]</sup>
-</p>
-<h2 id="后续">后续</h2>
-<p>后面会在这个基础上继续开发，并将 WASM 中的一些概念配置也写成文档共享在博客中。</p>
-<h2 id="仓库地址httpsgithubcomandorlabweb_assemblytreebased_rust">仓库地址：<a href="https://github.com/AndorLab/web_assembly/tree/based_rust">https://github.com/AndorLab/web_assembly/tree/based_rust</a><sup>[2]</sup>
-</h2>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>Markdown editor: <a href="https://andorlab.github.io/WebAssembly/" rel="noopener noreferrer">https://andorlab.github.io/WebAssembly/</a></li><li>https://github.com/AndorLab/web_assembly/tree/based_rust: <a href="https://github.com/AndorLab/web_assembly/tree/based_rust" rel="noopener noreferrer">https://github.com/AndorLab/web_assembly/tree/based_rust</a></li></ol>
             </div>]]></description></item></channel></rss>
