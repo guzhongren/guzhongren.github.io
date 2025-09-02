@@ -1,4 +1,14 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 01 Sep 2025 08:10:45 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“我爸爸呢”</title><link>https://guzhongren.github.io/2025/09/%E6%88%91%E7%88%B8%E7%88%B8%E5%91%A2/</link><pubDate>Mon, 01 Sep 2025 08:10:45 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E6%88%91%E7%88%B8%E7%88%B8%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 02 Sep 2025 17:14:58 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“爸爸，你到哪了”</title><link>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E5%88%B0%E5%93%AA%E4%BA%86/</link><pubDate>Tue, 02 Sep 2025 17:14:58 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E5%88%B0%E5%93%AA%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>平时，我和娃她妈妈一般都是差不多同时到家，昨天我晚了会。</p>
+<p>坐在地铁上，媳妇发来了微信视频，肯定是女儿发来的。打开毫不意外的就看到了女儿，。</p>
+<p>女儿说：“爸爸，你到哪了？”</p>
+<p>我竖起 3 个手指说：&ldquo;科技路，还有三站哦。&rdquo;</p>
+<p>女儿说： “三站么？”</p>
+<p>我说：“嗯，等会爸爸就回来了。”</p>
+<p>女儿说：“等会么？”</p>
+<p>我说：“嗯。”</p>
+]]></description></item><item><title>“我爸爸呢”</title><link>https://guzhongren.github.io/2025/09/%E6%88%91%E7%88%B8%E7%88%B8%E5%91%A2/</link><pubDate>Mon, 01 Sep 2025 08:10:45 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E6%88%91%E7%88%B8%E7%88%B8%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>每到周末，娃都是白天不睡觉，晚上依旧像周内一样，永远在线，永远精神慢慢。</p>
 <p>昨晚，女儿睡觉前要拉着我的手，说是方式我从床上掉下去。过了一会确实是睡着了。趁着还早，我就准备去码我的代码。刚过去 1 分钟不到，女儿就醒了，媳妇说是没摸到我的胳膊。如下是媳妇口述的场景在线。</p>
@@ -8867,7 +8877,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </blockquote>
 <h2 id="优化模板">优化模板</h2>
 <p>Hugo 生成的 markdown 文件都是由<code>archetypes/default.md</code>生成的， 所以我们可以在模板里加入一些我们通常使用的文案和图片。 比如：</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -8917,7 +8927,7 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h2 id="自动化部署配置">自动化部署配置</h2>
 <p>既然博客基于 github, 那么我们可以直接用 <a href="https://github.com/features/actions">Github Actions</a><sup>[4]</sup>
 , 在项目页点击<code>Actions</code>, 创建一个 Workflow, 其内容大致如下</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -9157,38 +9167,4 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>《FeatureToggle 引起的。&hellip; 总结》: <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" rel="noopener noreferrer">https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL</a></li></ol>
-            </div>]]></description></item><item><title>Config ssh to Keychina</title><link>https://guzhongren.github.io/2020/01/config-ssh-to-keychina.zh/</link><pubDate>Wed, 22 Jan 2020 15:07:49 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/01/config-ssh-to-keychina.zh/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="将生成的-ssh-私钥添加到-mac-的-keychain-中-如果是其他操作系统可忽略此步骤">将生成的 ssh 私钥添加到 Mac 的 keychain 中， 如果是其他操作系统，可忽略此步骤</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ ssh-add -K .ssh/is_rsa</span></span></code></pre></div></div>
-<h2 id="将登录信息配置到sshconfig-中">将登录信息配置到。ssh/config 中</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ touch ~/.ssh/config
-</span></span><span class="line"><span class="cl">$ vim ~/.ssh/config
-</span></span><span class="line"><span class="cl"><span class="c1"># edit text</span>
-</span></span><span class="line"><span class="cl">Host myvm
-</span></span><span class="line"><span class="cl">  Hostname ip
-</span></span><span class="line"><span class="cl">  User user</span></span></code></pre></div></div>
-<h2 id="保存之后就可以使用如下命令快捷登录服务器了">保存之后就可以使用如下命令快捷登录服务器了</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>$ ssh myvm</code></pre></div>
-<h2 id="参考地址">参考地址</h2>
-<p><a href="https://blog.infox.ren/2019/10/24/ssh-guide/">https://blog.infox.ren/2019/10/24/ssh-guide/</a><sup>[1]</sup>
-</p>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>https://blog.infox.ren/2019/10/24/ssh-guide/: <a href="https://blog.infox.ren/2019/10/24/ssh-guide/" rel="noopener noreferrer">https://blog.infox.ren/2019/10/24/ssh-guide/</a></li></ol>
             </div>]]></description></item></channel></rss>
