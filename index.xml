@@ -16,6 +16,16 @@
 <p>后来沐沐一家也来了，妈妈给他们又取了 20 个币一起玩。</p>
 <p>玩完游戏机就去吃饭了，点了虾仁水饺，毕竟饿了一下午，饺子上来一个劲的吃，基本三口一个，而且一吃一个不吱声，就是干饭。</p>
 <p>吃完回到家，睡觉前的流程一个还是没少，只不过最后我在讲军事科普书的时候躺下了，不到一分钟就开始打呼噜了。</p>
+]]></description></item><item><title>“有一个 bird”</title><link>https://guzhongren.github.io/2025/09/%E6%88%91%E6%83%B3%E5%87%BA%E5%8E%BB%E7%8E%A9/</link><pubDate>Thu, 04 Sep 2025 07:01:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E6%88%91%E6%83%B3%E5%87%BA%E5%8E%BB%E7%8E%A9/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>最近上了新项目，再也不用早上 8 点半就开站会了，然而需要 5 点半以后才能下班，通常都要到 6 点左右。</p>
+<p>快 6 点了了，像往常一样，女儿拿着妈妈的手机就给我打了视频电话，然而我不是在班车上就是在地铁上。昨天下午我更是刚坐上班车。</p>
+<p>接通视频电话，他第一句就是：“爸爸，你到哪了？我想出去玩。”</p>
+<p>我轻声说：“爸爸还在路上。”</p>
+<p>她又重复道：“爸爸，你到哪了？”</p>
+<p>我打开手机后置摄像头让她看了看我坐班车的场景，然后说：“我马上做地铁了。”</p>
+<p>女儿说：“哦耶，爸爸马上做地铁了。”</p>
+<p>因为昨天下午在下雨，我不敢答应她是不是要出去玩。</p>
 ]]></description></item><item><title>“有一个 bird”</title><link>https://guzhongren.github.io/2025/09/%E6%9C%89%E4%B8%80%E4%B8%AAbird/</link><pubDate>Thu, 04 Sep 2025 07:01:56 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E6%9C%89%E4%B8%80%E4%B8%AAbird/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>昨天九月三日，国家主题：纪念中国人民抗日战争暨世界反法西斯战争胜利 80 周年。</p>
@@ -8598,49 +8608,4 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <p>做为内容更新者， 我们要一边遵循 standup meeting 更新的套路，即昨天干了什么，有什么结果，今天计划要干什么，有什么风险或者需要帮助；另一边我们还要关注其他同事干了什么，某个功能进行到什么程度了，或者某个问题追踪到了什么阶段。每件事都要可执行且结果导向。</p>
 </li>
 </ul>
-]]></description></item><item><title>Config Yarn to Use Private Package</title><link>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</link><pubDate>Thu, 05 Mar 2020 22:45:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/03/config-yarn-to-use-private-package.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3750893/pexels-photo-3750893.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jeffrey Czum from Pexels" /></p>
-<h2 id="场景">场景</h2>
-<p>在公网上我们获取 npm 包的时候直接就用下面的命令就可以了</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npm install xxx
-</span></span><span class="line"><span class="cl">$ <span class="c1"># 或者</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># yarn add xxx</span></span></span></code></pre></div></div>
-<p>但是有时候，公司内部开发的工具库只想放在公司内部的服务器上，那么我们就需要对 npm 源进行配置了。因为 yarn 可以利用缓存，其速度比较快，且 npm 包是公司内部网络，鉴于效率，我们采用 yarn 来提速。</p>
-<h2 id="配置npmrc">配置。npmrc</h2>
-<p>下面是 .npmrc 的通常配置， 这里的 <code>https://npm.xxx.com/npm</code> 就是私服的地址， 下面<code>//</code>开头的内容就是用来鉴权的 token。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># .npmrc</span>
-</span></span><span class="line"><span class="cl"><span class="nv">registry</span><span class="o">=</span>https://npm.xxx.com/npm
-</span></span><span class="line"><span class="cl">//npm.xxx.com/npm/:_authToken<span class="o">=</span>dbef52be-1a83-46e1-a3ce-e0c8727e3fa4</span></span></code></pre></div></div>
-<p>上面的配置，在用 npm 安装私有库或者公有库的时候都没问题，但是我们要使用 yarn，如果再不配置任何内容，在执行 <code>yarn add xxx</code> 的时候，控制台会报如下错误</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yarn global v1.22.0
-</span></span><span class="line"><span class="cl"><span class="o">[</span>1/4<span class="o">]</span> 🔍  Resolving packages...
-</span></span><span class="line"><span class="cl">error An unexpected error occurred: <span class="s2">&#34;https://npm.xxx.com/npm/yyy: authentication required&#34;</span>.
-</span></span><span class="line"><span class="cl">info If you think this is a bug, please open a bug report with the information provided in <span class="s2">&#34;/Users/zhongren.gu/.config/yarn/global/yarn-error.log&#34;</span>.
-</span></span><span class="line"><span class="cl">info Visit https://yarnpkg.com/en/docs/cli/global <span class="k">for</span> documentation about this command.</span></span></code></pre></div></div>
-<p>这其实不是 <code>yarn</code> 的 bug, 我们需要在 .npmrc 中增加如下一行 <code>always-auth=true</code>, 最终结果如下</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># .npmrc</span>
-</span></span><span class="line"><span class="cl"><span class="nv">registry</span><span class="o">=</span>https://npm.xxx.com/npm
-</span></span><span class="line"><span class="cl">//npm.xxx.com/npm/:_authToken<span class="o">=</span>dbef52be-1a83-46e1-a3ce-e0c8727e3fa4
-</span></span><span class="line"><span class="cl">always-auth<span class="o">=</span>true</span></span></code></pre></div></div>
-<h2 id="结果">结果</h2>
-<p>再次执行 <code>yarn add xxx</code> 之后就会正常安装了，以后就可以愉快的安装私服或者公网上的 package 了。</p>
 ]]></description></item></channel></rss>
