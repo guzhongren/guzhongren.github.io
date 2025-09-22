@@ -1,4 +1,10 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 21 Sep 2025 07:12:53 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“爸爸，你怎么骗我呢？”</title><link>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E6%80%8E%E4%B9%88%E9%AA%97%E6%88%91%E5%91%A2/</link><pubDate>Sun, 21 Sep 2025 07:12:53 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E6%80%8E%E4%B9%88%E9%AA%97%E6%88%91%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 22 Sep 2025 08:45:00 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“自己的事情自己做”</title><link>https://guzhongren.github.io/2025/09/%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BA%8B%E6%83%85%E8%87%AA%E5%B7%B1%E5%81%9A/</link><pubDate>Mon, 22 Sep 2025 08:45:00 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E8%87%AA%E5%B7%B1%E7%9A%84%E4%BA%8B%E6%83%85%E8%87%AA%E5%B7%B1%E5%81%9A/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>今天女儿 6 点多就醒来了，在床上又玩起了新到的巧虎语音笔。</p>
+<p>早上准备出门上班去，发现胡子没刮，想到经常和女儿说以后和爸爸一起刮胡子好不好，然后就准备叫女儿，女儿躲在滑滑梯下面倒海底捞的零食，我说：“西西，和爸爸一起刮胡子好不好？”</p>
+<p>女儿说：“自己的事情自己做。”</p>
+<p>我只能一个人去卫生间刮胡子了。</p>
+]]></description></item><item><title>“爸爸，你怎么骗我呢？”</title><link>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E6%80%8E%E4%B9%88%E9%AA%97%E6%88%91%E5%91%A2/</link><pubDate>Sun, 21 Sep 2025 07:12:53 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/09/%E7%88%B8%E7%88%B8%E4%BD%A0%E6%80%8E%E4%B9%88%E9%AA%97%E6%88%91%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>昨晚下雨，女儿的巧虎玩具也终于到了，放到丰巢快递柜了，这几天心心念念的玩具终于到了，吃完饭，我就下楼去取了。当然我也顺便夹带了点私货，那就是去华润超市取媳妇给买的 2 箱 NFC 芒果汁。</p>
 <p>在华润超市取到果汁后，媳妇打来了电话，一想就知道是女儿要打的，接通后只见女儿坐在她的马桶上哭成了一个小泪人。第一句话就是：“爸爸，你在哪儿？”</p>
@@ -8356,25 +8362,4 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
 <blockquote>
 <p>好习惯都是踩坑踩出来的</p>
 </blockquote>
-]]></description></item><item><title>设计评审文档指南</title><link>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</link><pubDate>Sat, 04 Apr 2020 18:04:42 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/04/%E8%AE%BE%E8%AE%A1%E8%AF%84%E5%AE%A1%E6%96%87%E6%A1%A3%E6%8C%87%E5%8D%97.zh/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://i.loli.net/2020/04/04/BeMC7jm6faWlF1P.png" referrerpolicy="no-referrer">
-            </div><blockquote>
-<p>一句话的分量是否重，是要看能不能击中听者的痛点。</p>
-</blockquote>
-<p>设计评审过程中，需要各种文档或者其他资料来辅助，在此总结一番，以供后续查阅。</p>
-<ul>
-<li>产品 PRD：当有疑问时可以拿出来给评审者查看</li>
-<li>设计分析文档：用来沟通关于行业内对于同类型功能的设计优缺点的分析</li>
-<li>数据分析文档：用来展示当前版本数据上的表现和问题，以及可以帮助进行下一步改善</li>
-<li>功能逻辑图：复杂功能可以使用图形化表现功能逻辑，便于评审者理解</li>
-<li>用户路径图：通过用户路径讲解全局性问题，结合交互设计稿进行具体说明</li>
-<li>交互动效演示文档：用来解释一些比较复杂的交互过程</li>
-<li>配色情绪版：用来解释如何选择当前配色的思路</li>
-</ul>
-<p>制作的思维导图存放于石墨文档，地址如下</p>
-<p><a href="https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b">https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b</a><sup>[1]</sup>
-</p>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b: <a href="https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b" rel="noopener noreferrer">https://shimo.im/mindmaps/ne3VVNJy4Ju8FB3b</a></li></ol>
-            </div>]]></description></item></channel></rss>
+]]></description></item></channel></rss>
