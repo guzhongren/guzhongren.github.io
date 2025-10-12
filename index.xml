@@ -11,6 +11,18 @@
 <p>西西瞪大眼睛说：“我假吃不真吃。”</p>
 <p>我：“对不起，那你假吃可以。”</p>
 <p>西西说：“You are welcome.”</p>
+]]></description></item><item><title>“爸爸，涂防晒了没”</title><link>https://guzhongren.github.io/2025/10/%E7%88%B8%E7%88%B8%E6%B6%82%E9%98%B2%E6%99%92%E4%BA%86%E6%B2%A1/</link><pubDate>Sun, 05 Oct 2025 10:01:27 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/%E7%88%B8%E7%88%B8%E6%B6%82%E9%98%B2%E6%99%92%E4%BA%86%E6%B2%A1/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>国庆西安几乎一直在下雨，不下雨的时间少之又少。在快要结束国庆长假的时候，突然来了一个阴天，于是宅家好几天的西西和我，我们准备去西安电影厂玩一玩。</p>
+<p>在出门前，我给西西带了雨衣，雨鞋和厚厚的外套，当一切准备就绪之后，我们准备出发时，西西拿起自己一个白色的小小的手提包就想带着一起走，说：“爸爸，我要带我的小包包，可以么？”</p>
+<p>我说：“我们已经背了大包了，而且你的小包你拿了容易丢，我们回家再玩这个小包包好不好？”</p>
+<p>西西无奈的还是想拿，我说：“你要是拿了，我们就去不了了。你还要拿么？”</p>
+<p>最后只能在我的逼迫下放弃。</p>
+<p>&hellip;</p>
+<p>到楼下拿了给西西买的自行车上的小板凳，到小区门口找了一个美团自行车，把小板凳也放好了，我们准备出发了，西西说：“爸爸，涂防晒了么？”</p>
+<p>感觉好久都没涂防晒了，而且洗完脸都很少抹油，果然是个粗糙的爹呀。</p>
+<p>听完后我惊奇的睁大了眼睛看着西西说：“嗯？没有呀，我们这次不涂了，下次一定涂可以么？”</p>
+<p>西西也很无奈但时她说：“哦耶，下次涂防晒。”</p>
 ]]></description></item><item><title>“你真是一个大坏蛋”</title><link>https://guzhongren.github.io/2025/10/%E4%BD%A0%E7%9C%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%A7%E5%9D%8F%E8%9B%8B/</link><pubDate>Sun, 05 Oct 2025 10:01:27 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/%E4%BD%A0%E7%9C%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E5%A4%A7%E5%9D%8F%E8%9B%8B/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>早上 8 点多了，西西就要醒来了，因为我没有刮胡子，脸上的胡子还是比较扎人的，我就把我的脸贴了过去，准备吓唬她一下。</p>
@@ -8178,22 +8190,4 @@ import( f “fmt” ) 别名操作调用包函数时前缀变成了重命名的�
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span> <span class="err">“</span><span class="nx">database</span><span class="o">/</span><span class="nx">sql</span><span class="err">”</span> <span class="nx">_</span> <span class="err">“</span><span class="nx">github</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">ziutek</span><span class="o">/</span><span class="nx">mymysql</span><span class="o">/</span><span class="nx">godrv</span><span class="err">”</span></span></span></code></pre></div></div>
 <p>_操作其实只是引入该包。当导入一个包时，它所有的 init() 函数就会被执行，但有些时候并非真的需要使用这些包，仅仅是希望它的 init() 函数被执行而已。这个时候就可以使用_操作引用该包了。即使用_操作引用包是无法通过包名来调用包中的导出函数，而是只是为了简单的调用其 init 函数 ()。</p>
-]]></description></item><item><title>随记-知识点</title><link>https://guzhongren.github.io/2020/05/%E9%9A%8F%E8%AE%B0-%E7%9F%A5%E8%AF%86%E7%82%B9/</link><pubDate>Sat, 16 May 2020 19:29:07 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/05/%E9%9A%8F%E8%AE%B0-%E7%9F%A5%E8%AF%86%E7%82%B9/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="产品的特性">产品的特性</h2>
-<ul>
-<li>要像牙刷，高频切实用</li>
-<li>对用户一定要有价值，如谷歌搜索，反面教材如百度</li>
-</ul>
-<h2 id="协作">协作</h2>
-<p>协作的基础是对知识点的认同</p>
-<h2 id="个人品牌">个人品牌</h2>
-<p>个人魅力，个人品牌</p>
-<h2 id="解决问题">解决问题</h2>
-<p>阐述问题，探寻本质，给出解决方案</p>
-<h2 id="知识点">知识点</h2>
-<h3 id="马尔萨斯陷阱">马尔萨斯陷阱</h3>
-<blockquote>
-<p>200 多年前，英国经济学家马尔萨斯提出，人口按几何级数增长，而粮食只能按算术级数增长。这样，人口增加到一定程度便出现粮食紧缺、人地矛盾，不可避免地反复出现饥馑、战争和疾病。（《人口原理》，马尔萨斯）， 举例：黑死病、西班牙大流感的传染病，伯罗奔尼撒战争、百年战争、一战二战的大规模战争，孟加拉大饥荒、印度大饥荒的大灾难</p>
-</blockquote>
 ]]></description></item></channel></rss>
