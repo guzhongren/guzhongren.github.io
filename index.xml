@@ -1,4 +1,13 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Oct 2025 08:39:44 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>腺样体手术</title><link>https://guzhongren.github.io/2025/10/%E8%85%BA%E6%A0%B7%E4%BD%93%E6%89%8B%E6%9C%AF/</link><pubDate>Sun, 19 Oct 2025 07:01:27 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/%E8%85%BA%E6%A0%B7%E4%BD%93%E6%89%8B%E6%9C%AF/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 22 Oct 2025 19:46:13 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“明天就可以吃鲜花饼了”</title><link>https://guzhongren.github.io/2025/10/%E6%98%8E%E5%A4%A9%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%90%83%E9%B2%9C%E8%8A%B1%E9%A5%BC%E4%BA%86/</link><pubDate>Wed, 22 Oct 2025 19:46:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/%E6%98%8E%E5%A4%A9%E5%B0%B1%E5%8F%AF%E4%BB%A5%E5%90%83%E9%B2%9C%E8%8A%B1%E9%A5%BC%E4%BA%86/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>今天妈妈回来的早，嬉戏钻到了吧台下面，吧台下面有鲜花饼箱子，箱子里有刚买的鲜花饼，西西拿起其中的一个鲜花饼对着妈妈说：“妈妈，明天就可以吃鲜花饼了。”</p>
+<p>妈妈说：“你现在就可以吃了，不用等到明天。”</p>
+<p>西西说：“哦耶！”</p>
+<p>妈妈帮西西拆开了一袋鲜花饼，西西一吃一个不吱声，几下就吃完了，然后说：“鲜花饼真好吃！”</p>
+<p>妈妈说：“还吃吗？”</p>
+<p>西西说：“不吃了。”然后对着妈妈说：“要漱嘴了。”</p>
+<p>妈妈哈哈的说：“西西真乖，还知道漱口。”</p>
+]]></description></item><item><title>腺样体手术</title><link>https://guzhongren.github.io/2025/10/%E8%85%BA%E6%A0%B7%E4%BD%93%E6%89%8B%E6%9C%AF/</link><pubDate>Sun, 19 Oct 2025 07:01:27 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/%E8%85%BA%E6%A0%B7%E4%BD%93%E6%89%8B%E6%9C%AF/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>10 月 13 日，周一，西西和妈妈去儿童医院做了腺样体手术住院前的检查，一切顺利，回家吃了焖面。</p>
 <hr>
@@ -8011,43 +8020,4 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>https://github.com/AndorLab/test-window-object: <a href="https://github.com/AndorLab/test-window-object" rel="noopener noreferrer">https://github.com/AndorLab/test-window-object</a></li></ol>
-            </div>]]></description></item><item><title>Cargo 运行出错及解决方案</title><link>https://guzhongren.github.io/2020/06/cargo%E8%BF%90%E8%A1%8C%E5%87%BA%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</link><pubDate>Sat, 06 Jun 2020 11:03:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/06/cargo%E8%BF%90%E8%A1%8C%E5%87%BA%E9%94%99%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1591414855728-7e70d9a7b4e0?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1267&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="问题">问题</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ cargo run
-</span></span><span class="line"><span class="cl">error: failed to run <span class="sb">`</span>rustc<span class="sb">`</span> to learn about target-specific information
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Caused by:
-</span></span><span class="line"><span class="cl">  process didn<span class="err">&#39;</span>t <span class="nb">exit</span> successfully: <span class="sb">`</span>rustc - --crate-name ___ --print<span class="o">=</span>file-names -Zprofile -Ccodegen-units<span class="o">=</span><span class="m">1</span> -Copt-level<span class="o">=</span><span class="m">0</span> -Clink-dead-code -Coverflow-checks<span class="o">=</span>off -Zpanic_abort_tests -Cpanic<span class="o">=</span>abort --crate-type bin --crate-type rlib --crate-type dylib --crate-type cdylib --crate-type staticlib --crate-type proc-macro --print<span class="o">=</span>sysroot --print<span class="o">=</span>cfg<span class="sb">`</span> <span class="o">(</span><span class="nb">exit</span> code: 1<span class="o">)</span>
-</span></span><span class="line"><span class="cl">--- stderr
-</span></span><span class="line"><span class="cl">error: the option <span class="sb">`</span>Z<span class="sb">`</span> is only accepted on the nightly compiler<span class="sb">`</span></span></span></code></pre></div></div>
-<p>最近更新了<code>rust</code>, 然后运行<code>cargo run</code>, 莫名其妙的出现了上面的问题。</p>
-<h2 id="原因">原因</h2>
-<p>在 rust 官网的 issue 里找解决方案，都是 open 状态的，没有实际意义。那么就得回到原始方式。
-按照提示，说<code>Z</code> 这个参数仅适用于<code>nightly</code>版本的 rust 编译器，但是我用的是<code>stable</code>版本的 rust;</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ rustup show
-</span></span><span class="line"><span class="cl">Default host: x86_64-apple-darwin
-</span></span><span class="line"><span class="cl">rustup home:  /Users/c4/.rustup
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">stable-x86_64-apple-darwin <span class="o">(</span>default<span class="o">)</span>
-</span></span><span class="line"><span class="cl">rustc 1.44.0 <span class="o">(</span>49cae5576 2020-06-01<span class="o">)</span></span></span></code></pre></div></div>
-<p>版本确定，那么只能将语音归结到命令行某个地方有注入参数。第一个想到的就是环境变量，打开我的<code>~/.zshrc</code>, 果然在最下面找到了这么一条记录，看到<code>-Z</code>, 应该就是他了。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">RUSTFLAGS</span><span class="o">=</span><span class="s2">&#34;-Zprofile -Ccodegen-units=1 -Copt-level=0 -Clink-dead-code -Coverflow-checks=off -Zpanic_abort_tests -Cpanic=abort&#34;</span></span></span></code></pre></div></div>
-<h2 id="解决方案">解决方案</h2>
-<p>删除该行记录，运行程序，成功输出<code>hello world</code>。</p>
-]]></description></item></channel></rss>
+            </div>]]></description></item></channel></rss>
