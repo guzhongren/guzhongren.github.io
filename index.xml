@@ -423,8 +423,7 @@
 <p><img src="https://github.com/astral-sh/uv/assets/1309177/03aa9163-1c79-4a87-a31d-7a9311ed9310#only-dark" alt="uv" /></p>
 <blockquote>
 <p>An extremely fast Python package and project manager, written in Rust.(一个极快的 Python 包和项目管理器，用 Rust 编写。) &ndash; <a href="https://docs.astral.sh/uv/">https://docs.astral.sh/uv/</a><sup>[2]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <p>速度快是其特点，但是使用也是相当方便。而且文档相当详细。</p>
 <h2 id="如何使用">如何使用</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
@@ -644,7 +643,7 @@
 <p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
 <h2 id="进阶">进阶</h2>
 <p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
-<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
+<h3 id="将请求参数置于-strapi-middleware-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
  中</h3>
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -758,7 +757,7 @@
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="err">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.hero&#34;</span><span class="o">:</span> <span class="nx">Hero</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.heading-section&#34;</span><span class="o">:</span> <span class="nx">HeadingSection</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.card-grid&#34;</span><span class="o">:</span> <span class="nx">CardGrid</span><span class="p">,</span>
@@ -997,8 +996,7 @@
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
 
 来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
 <ol>
@@ -1014,8 +1012,7 @@
 </ul>
 <blockquote>
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
 <ol>
@@ -1026,8 +1023,7 @@
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
 <p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
 <ol>
@@ -1039,8 +1035,7 @@
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
 <p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
 <ol>
@@ -1828,8 +1823,7 @@
 <h2 id="工具介绍">工具介绍</h2>
 <p>按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 <code>build</code> 和 <code>whell</code>, 依赖管理会在 setuptools 的 <code>install_requires</code> 中体现，如下;</p>
 <blockquote>
-<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p>
-</blockquote>
+<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p></blockquote>
 <h2 id="代码实践">代码实践</h2>
 <h3 id="虚拟环境">虚拟环境</h3>
 <p>在 Python 工程中，虚拟环境是一个非常重要的概念。 你可以随时创建纯净的虚拟环境开始你的（已有/新的）工程。 最简单的好处就是不会在系统级别相互影响。</p>
@@ -2393,8 +2387,7 @@ xiaoming10</code></pre></div>
 <p>在初次使用<a href="https://podman.io/">podman</a><sup>[1]</sup>
  挂载本地文件系统的时候通常会报如下的一个错误提示；</p>
 <blockquote>
-<p>Error: statfs /Users/userName/yyy/xxx: no such file or directory</p>
-</blockquote>
+<p>Error: statfs /Users/userName/yyy/xxx: no such file or directory</p></blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>为 Podman 虚拟机挂载 $HOME 目录并且重启 podman machine 即可。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -2905,8 +2898,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <blockquote>
 <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
 《旧唐书·魏徵传》李世民
-只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p>
-</blockquote>
+只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p></blockquote>
 <h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
 <h3 id="roadmap">Roadmap</h3>
 <ul>
@@ -3081,16 +3073,16 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>ArcGIS Server</li>
 </ul>
 <h3 id="supermap">Supermap</h3>
-<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
+<h3 id="openlayers"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
 </h3>
-<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
+<h3><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
 </h3>
 <h3 id="qgis">QGIS</h3>
 <h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
+<h3 id="leaflet"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
 <a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
 </h3>
-<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
+<h3 id="cesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
 <a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
 </h3>
 <h2 id="suggestions">Suggestions</h2>
@@ -3611,8 +3603,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
             </div>]]></description></item><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-</blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
 <h2 id="起因">起因</h2>
 <p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
 <p>不能生成测试报告这个问题简单，只是因为运行测试的容器的用户对特定的目录没有权限，这个很好解决。</p>
@@ -3639,8 +3630,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 上线固然重要，但不能降低质量。就像在 Simple Design 中的&quot;通过测试&quot;，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
 <p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
 <blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-</blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Dora Metrics: <a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" rel="noopener noreferrer">https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li></ol>
@@ -3648,8 +3638,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
-<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
-</blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p></blockquote>
 <h2 id="写了-log-并且出错的程序">写了 log 并且出错的程序</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
@@ -3756,8 +3745,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </span></span><span class="line"><span class="cl"><span class="nx">Ran</span> <span class="nx">all</span> <span class="nx">test</span> <span class="nx">suites</span> <span class="nx">matching</span> <span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">Users</span><span class="err">\</span><span class="o">/</span><span class="nx">zhongren</span><span class="err">\</span><span class="p">.</span><span class="nx">gu</span><span class="err">\</span><span class="o">/</span><span class="mi">01</span><span class="err">\</span><span class="p">.</span><span class="nx">Project</span><span class="err">\</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nb">window</span><span class="o">-</span><span class="nx">object</span><span class="err">\</span><span class="o">/</span><span class="nx">__test__</span><span class="err">\</span><span class="o">/</span><span class="nx">method_sendMessage_mult_tests</span><span class="err">\</span><span class="p">.</span><span class="nx">spec</span><span class="err">\</span><span class="p">.</span><span class="nx">ts</span><span class="o">/</span><span class="nx">i</span> <span class="kd">with</span> <span class="nx">tests</span> <span class="nx">matching</span> <span class="s2">&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class="p">.</span></span></span></code></pre></div></div>
 <h2 id="在测试中写-log-有什么用">在测试中写 log 有什么用？</h2>
 <blockquote>
-<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
-</blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p></blockquote>
 <p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
 <p>在我看来，有以下几点：</p>
 <h3 id="影响总体的测试输出">影响总体的测试输出</h3>
@@ -3800,8 +3788,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
             </div><blockquote>
 <p>Performance has directly impacted the company&rsquo;s bottom line.
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366">Pinterest</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="intro">Intro</h2>
 <p>Since the development of the Internet, web page performance has always been an important issue. All major Internet companies are sparing no effort to optimize their web pages, in order to allow users to see the content that users want to see faster.</p>
 <p>During the development of the Internet in recent decades, various indicators and terms for measuring web performance have stabilized, and the measurement methods of various products have tended to be consistent.</p>
@@ -3823,14 +3810,11 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>As mentioned earlier, many tools either cannot be run locally or are Sass products, which cannot be well integrated with Pipeline, resulting in long feedback cycles of web performance results and make the engineering efficiency too low.</p>
 <h2 id="lighthouse">Lighthouse</h2>
 <blockquote>
-<p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO and more.</p>
-</blockquote>
+<p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO and more.</p></blockquote>
 <blockquote>
-<p>You can run Lighthouse in <code>Chrome DevTools</code>, from the command line, or as a <code>Node</code> module. You give <code>Lighthouse</code> a URL to audit, it runs a series of audits against the page, and then it generates a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important, as well as how to fix it.</p>
-</blockquote>
+<p>You can run Lighthouse in <code>Chrome DevTools</code>, from the command line, or as a <code>Node</code> module. You give <code>Lighthouse</code> a URL to audit, it runs a series of audits against the page, and then it generates a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important, as well as how to fix it.</p></blockquote>
 <blockquote>
-<p>You can also use Lighthouse CI to prevent regressions on your sites.</p>
-</blockquote>
+<p>You can also use Lighthouse CI to prevent regressions on your sites.</p></blockquote>
 <p>It&rsquo;s very easy to use, take a look at the results of my audit of my open source project <a href="https://github.com/guzhongren/Powerboard">Powerboard</a><sup>[3]</sup>
 .
 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
@@ -3839,8 +3823,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <blockquote>
 <p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
 &ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci">GoogleChrome/lighthouse-ci</a><sup>[4]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <p><code>Lighthouse CI</code> is a suite of tools that make continuously running, saving, retrieving, and asserting against Lighthouse results as easy as possible.</p>
 <h4 id="how-to-use">How to use</h4>
 <p><code>LHCI</code> provides the <code>npm</code> installation package, which can be well integrated on the Pipeline, just run the <code>autorun</code> command in the corresponding directory, the command is as follows</p>
@@ -3854,8 +3837,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>After the operation is completed, LHCI will store the results in the <code>.lighthouseci</code> directory, and you can open the corresponding report with a browser.</p>
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
-<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p>
-</blockquote>
+<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p></blockquote>
 <table>
   <thead>
       <tr>
@@ -3902,17 +3884,17 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
-</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
 </span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span></span></span></code></pre></div></div>
 <ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>
@@ -4006,8 +3988,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>性能是留住用户的关键，
 性能直接影响公司的命运。
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366">Pinterest</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="介绍">介绍</h2>
 <p>互联网发展至今，网页性能始终是一个重要的问题, 各大互联网公司都在不遗余力的优化自己的 Web 页面，为的就是更快的让用户更快的看到用户想看到的内容。</p>
 <p>互联网在近几十年的发展过程中，度量 Web 性能各个指标、术语已经稳定了，各个产品的度量方式都趋于一致。</p>
@@ -4030,8 +4011,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <h2 id="lighthouse">Lighthouse</h2>
 <blockquote>
 <p>Lighthouse 是一个开源的、自动化的工具，用以提高网页质量。你可以在任何网页上运行它，公开的或需要认证的。它对性能、可访问性、渐进式web应用程序、SEO 等进行审计。
-你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p>
-</blockquote>
+你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p></blockquote>
 <p>使用方法非常简单，可以看一下我对我的开源项目 <code>Powerboard</code> 审计的结果。
 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="lighthouse-ci-及-lighthouse-server-的使用">Lighthouse CI 及 Lighthouse Server 的使用</h2>
@@ -4040,8 +4020,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
 为每个提交自动化运行Lighthouse，查看更改，并防止回归
 &ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci">GoogleChrome/lighthouse-ci</a><sup>[3]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <p><code>Lighthouse CI</code> 是 <code>Google Chrome</code> 团队开发的一套可以让持续运行、保存、检索和对 Lighthouse 结果进行<code>断言</code>变得尽可能简单的工具,可以很方便的集成在 CI 上。</p>
 <h4 id="使用">使用</h4>
 <p><code>LHCI</code> 提供 <code>npm</code> 安装包，可以很好的在 Pipeline 上集成，只需要在对应目录下运行 <code>autorun</code> 命令即可，命令如下</p>
@@ -4056,8 +4035,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
 <p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
-LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。</p>
-</blockquote>
+LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。</p></blockquote>
 <table>
   <thead>
       <tr>
@@ -4104,17 +4082,17 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
-</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
 </span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span></span></span></code></pre></div></div>
 <ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>
@@ -4516,7 +4494,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
 <div class="references">
@@ -4534,11 +4512,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>如果你现在下载最新的或者旧版的 Docker 安装包，安装包的使用条款都已经被悄悄的动了手脚，里面的 Liscense 的条款已经有了上面说的内容了。所以说你还是会被要求收费的。除非你在一个小公司，人数和收入不在条款之内，那你就开心的用吧。</p>
 <p>但是还有一部分人就在这个条款的要求范围之内了。</p>
 <blockquote>
-<p>安全无小事。</p>
-</blockquote>
+<p>安全无小事。</p></blockquote>
 <blockquote>
-<p>雪崩的时候，没有一片雪花是无辜的。</p>
-</blockquote>
+<p>雪崩的时候，没有一片雪花是无辜的。</p></blockquote>
 <p>市面上还是有不少 Docker 的替代方案，比如 <a href="https://github.com/containers/podman">podman</a><sup>[4]</sup>
 , <a href="https://github.com/lima-vm/lima">lima</a><sup>[5]</sup>
  和 <a href="https://github.com/abiosoft/colima">colima</a><sup>[6]</sup>
@@ -4548,8 +4524,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <h3 id="安装旧版-docker-desktop">安装旧版 Docker Desktop</h3>
 <p>我在百度网盘有备份 Mac 版 3.5.2 版本的 Docker Desktop 副本，可以下载安装。</p>
 <blockquote>
-<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p>
-</blockquote>
+<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p></blockquote>
 <p>如果觉得慢，恰好我也有空，我可以将我本地的副本直接隔空给你。</p>
 <h3 id="验证安装的-docker-副本的修改时间">验证安装的 Docker 副本的修改时间</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -4587,8 +4562,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>但是这有个问题，就是 Gist 的访问在国内被墙了，被🧱了，被🧱了；而且 GitHub 的资源访问也比较慢。</p>
 <h2 id="前置知识">前置知识</h2>
 <blockquote>
-<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p>
-</blockquote>
+<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p></blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如</p>
 <ul>
@@ -4639,8 +4613,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
 <h2 id="解决方案">解决方案</h2>
 <blockquote>
-<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
-</blockquote>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p></blockquote>
 <p>对于这类问题，可以有如下解决方案：</p>
 <h3 id="task">Task</h3>
 <p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
@@ -4684,8 +4657,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
     </div>
 <h2 id="内容协商的基本原则">内容协商的基本原则</h2>
 <blockquote>
-<p>一份特定的文件称为一项资源。当客户端获取资源的时候，会使用其对应的 URL 发送请求。服务器通过这个 URL 来选择它指向的资源的某一变体——每一个变体称为一种展现形式——然后将这个选定的展现形式返回给客户端。整个资源，连同它的各种展现形式，共享一个特定的 URL 。当一项资源被访问的时候，特定展现形式的选取是通过内容协商机制来决定的，并且客户端和服务器端之间存在多种协商方式。</p>
-</blockquote>
+<p>一份特定的文件称为一项资源。当客户端获取资源的时候，会使用其对应的 URL 发送请求。服务器通过这个 URL 来选择它指向的资源的某一变体——每一个变体称为一种展现形式——然后将这个选定的展现形式返回给客户端。整个资源，连同它的各种展现形式，共享一个特定的 URL 。当一项资源被访问的时候，特定展现形式的选取是通过内容协商机制来决定的，并且客户端和服务器端之间存在多种协商方式。</p></blockquote>
 <p><img src="https://mdn.mozillademos.org/files/13789/HTTPNego.png" alt="Content Negotiation Principle" /></p>
 <h3 id="内容协商类别">内容协商类别</h3>
 <div class="mermaid" id="id-2"></div>
@@ -5016,7 +4988,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      aquasec/trivy image \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --severity HIGH,CRITICAL \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
-</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span></span></span></code></pre></div></div>
 <p>In this build job, we use <a href="https://hub.docker.com/_/nginx">Nignx:1.18</a><sup>[10]</sup>
  as a base image to build application images. This build failed because there are some vulnerabilities.</p>
 <p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
@@ -5181,7 +5153,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 </span></span></span><span class="line"><span class="cl"><span class="sd">      aquasec/trivy image \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --severity HIGH,CRITICAL \
 </span></span></span><span class="line"><span class="cl"><span class="sd">      --exit-code 1 \
-</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span><span class="w">      </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">      dashboard:${{ github.sha }}</span></span></span></code></pre></div></div>
 <p>在这个 Job 中，我们使用 <a href="https://hub.docker.com/_/nginx">Nignx:1.18</a><sup>[9]</sup>
  作为基础镜像来构建应用程序镜像。可以看到由于存在一些漏洞，本次构建失败了。</p>
 <p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/20210819/trivy-dashboard-failed.4bffhau2xvk0.png" alt="Trivy Dashboard Failed" /></p>
@@ -5402,8 +5374,7 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <blockquote>
 <p>1 位用来表示符号位
 11 位用来表示指数
-52 位表示位数</p>
-</blockquote>
+52 位表示位数</p></blockquote>
 <h2 id="example">Example</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
@@ -5522,11 +5493,9 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>查看 MDN 官网中关于 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Array.prototype.forEach()</a><sup>[1]</sup>
  的解释，可以看到有一行说明</p>
 <blockquote>
-<p>Note: There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.</p>
-</blockquote>
+<p>Note: There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.</p></blockquote>
 <blockquote>
-<p>Early termination may be accomplished with:</p>
-</blockquote>
+<p>Early termination may be accomplished with:</p></blockquote>
 <blockquote>
 <p>A simple for loop
 A for&hellip;of / for&hellip;in loops
@@ -5534,8 +5503,7 @@ Array.prototype.every()
 Array.prototype.some()
 Array.prototype.find()
 Array.prototype.findIndex()
-Array methods: every(), some(), find(), and findIndex() test the array elements with a predicate returning a truthy value &gt;  to determine if further iteration is required.</p>
-</blockquote>
+Array methods: every(), some(), find(), and findIndex() test the array elements with a predicate returning a truthy value &gt;  to determine if further iteration is required.</p></blockquote>
 <p>简单翻译一下，如果要让 forEach 停下，那么只有抛异常这一种方案；但是如果你想在循环中退出那么就需要考虑其他方案了。</p>
 <p>但是在我们的案例中，我们需要让循环中的所有结果都正常运行，所以，我们得使用官方建议的方案。【试了一下， every 也是一样的效果，难道是我对文档理解有误？】</p>
 <h2 id="新方案">新方案</h2>
@@ -5713,11 +5681,9 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg -a -o public-file.key --export keyId</span></span></code></pre></div></div>
 <blockquote>
-<p>-a 为 &ndash;armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；</p>
-</blockquote>
+<p>-a 为 &ndash;armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；</p></blockquote>
 <blockquote>
-<p>-o 为 &ndash;output 的简写，指定写入的文件；</p>
-</blockquote>
+<p>-o 为 &ndash;output 的简写，指定写入的文件；</p></blockquote>
 <p>导出会有一个 <code>public-file.key</code> 在当前目录下生成，里面存放你的公钥。</p>
 <h3 id="导出私钥">导出私钥</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -5966,8 +5932,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
             </div><h2 id="key-words">Key words</h2>
 <p><code>你创造的服务只能满足一小部分人</code></p>
 <blockquote>
-<p>企业家思维-发现问题，找到解决方案，规模化。</p>
-</blockquote>
+<p>企业家思维-发现问题，找到解决方案，规模化。</p></blockquote>
 <p>GIS 是个好东西，可惜在现在的传统行业中体现不出它的价值。既不能让大众使用，更不能让大众看，对比最明显的就是红绿灯，敢问哪个 ZF 部门做的 GIS 产品敢投放到群众经常出现的地方。</p>
 <p>没有哪个部门敢！因为做的东西不是为了完任务，就是为了捞钱。</p>
 <p>敢问哪个传统 GIS 公司敢把公司开发的地址放出来！要在网上传播开来，估计连 C1K 都顶不住。</p>
@@ -5985,8 +5950,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <h3 id="替国家着想">替国家着想</h3>
 <p>从去年武汉疫情开始，国家已经为这个社会付出了太多，没有哪个国家能做到如此。年，年年有，忍一忍，等国家彻底控制住疫情了，没有那么多危险的时候，年年都是年。</p>
 <blockquote>
-<p>小不忍则乱大谋。</p>
-</blockquote>
+<p>小不忍则乱大谋。</p></blockquote>
 <h3 id="嗯">嗯。</h3>
 <h2 id="期望">期望</h2>
 <p>疫情快点过去吧，就可以休婚假，各种出去嗨了</p>
@@ -6102,8 +6066,7 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <p>你可以相信自己，知道自己工作的每一个步骤，每一个文件的权限，但是别人呢，别人不一定和你对项目的认知在一个水平线上，这就决定了你们的项目存在不确定性。</p>
 <h2 id="结论">结论</h2>
 <blockquote>
-<p><em>人是不可信的</em></p>
-</blockquote>
+<p><em>人是不可信的</em></p></blockquote>
 <p>不管是你，还是别人，对于写代码这事都别相信。 你写的代码，做的配置都是最优的。</p>
 ]]></description></item><item><title>Centos 安装 vim8.2</title><link>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</link><pubDate>Wed, 16 Dec 2020 23:08:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
@@ -6234,8 +6197,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <p>什么样子呢？大概呢。</p>
 <p>至少有一天，你发了朋友圈或者抖音之类的，不再关注浏览量，不再在乎别人评论的好与坏。对每一条评论都可以随心所欲，淡定自若的恢复。</p>
 <blockquote>
-<p>但愿有一天，可以找回小时候的自己。</p>
-</blockquote>
+<p>但愿有一天，可以找回小时候的自己。</p></blockquote>
 ]]></description></item><item><title>解决 vscode 配置 deno 时命令不可用的问题的记录</title><link>https://guzhongren.github.io/2020/10/%E8%A7%A3%E5%86%B3vscode%E9%85%8D%E7%BD%AEdeno%E6%97%B6%E5%91%BD%E4%BB%A4%E4%B8%8D%E5%8F%AF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/</link><pubDate>Sun, 18 Oct 2020 17:43:16 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/10/%E8%A7%A3%E5%86%B3vscode%E9%85%8D%E7%BD%AEdeno%E6%97%B6%E5%91%BD%E4%BB%A4%E4%B8%8D%E5%8F%AF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98%E7%9A%84%E8%AE%B0%E5%BD%95/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="缘由">缘由</h2>
@@ -6369,8 +6331,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <li>
 <p>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</p>
 </li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
 <p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
@@ -6535,8 +6496,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
  等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
-<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
-</blockquote>
+<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>MADR: <a href="https://adr.github.io/madr/" rel="noopener noreferrer">https://adr.github.io/madr/</a></li><li>adr-log: https://adr.github.io/adr-log/: <a href="https://adr.github.io/adr-log/" rel="noopener noreferrer">https://adr.github.io/adr-log/</a></li><li>嵌入式架构决策记录：https://adr.github.io/e-adr/: <a href="https://adr.github.io/e-adr/" rel="noopener noreferrer">https://adr.github.io/e-adr/</a></li><li>eadlsync:https://adr.github.io/eadlsync/: <a href="https://adr.github.io/eadlsync/" rel="noopener noreferrer">https://adr.github.io/eadlsync/</a></li><li>SE Repo: https://github.com/adr/serepo: <a href="https://github.com/adr/serepo" rel="noopener noreferrer">https://github.com/adr/serepo</a></li><li>Confluence: <a href="https://www.atlassian.com/software/confluence" rel="noopener noreferrer">https://www.atlassian.com/software/confluence</a></li><li>语雀: <a href="https://www.yuque.com/" rel="noopener noreferrer">https://www.yuque.com/</a></li><li>石墨: <a href="https://shimo.im/" rel="noopener noreferrer">https://shimo.im/</a></li><li>云效: <a href="https://www.aliyun.com/product/yunxiao" rel="noopener noreferrer">https://www.aliyun.com/product/yunxiao</a></li><li>Coding: <a href="https://coding.net/" rel="noopener noreferrer">https://coding.net/</a></li></ol>
@@ -6545,8 +6505,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
 <p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
 <p>在软件开发中，为了开发出可维护，高质量的程序，使用<code>TDD</code>开发可以有效提升项目质量和开发效率。</p>
@@ -6562,20 +6521,17 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <li>只有一个单一的可执行文件。</li>
 <li>自带实用工具，例如依赖检查器（deno info）和 代码格式化工具（deno fmt）。</li>
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
-</ul>
-</blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</ul></blockquote>
+<h3 id="oak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
 </h3>
 <blockquote>
-<p>A middleware framework for Deno&rsquo;s net server 🦕</p>
-</blockquote>
+<p>A middleware framework for Deno&rsquo;s net server 🦕</p></blockquote>
 <p><code>oak</code> 是借鉴 <code>Node</code> 框架<code>Koa</code>的设计思路开发的一个高性能的框架，其<code>洋葱模型</code>式的中间件等思路在开发中使用起来也是非常方便。</p>
 <h2 id="目标">目标</h2>
 <p>基于对以上的基础知识的认识，我们计划开发一个用户管理的<code>API</code>平台；对于后端简单来说，就是提供关于用户的增删改查（<code>CURD</code>）操作。所以我们的主要目标就是提供 4 个对用户<code>CURD</code>的接口。</p>
 <h2 id="工具">工具</h2>
 <blockquote>
-<p>工欲善其事，必先利其器。</p>
-</blockquote>
+<p>工欲善其事，必先利其器。</p></blockquote>
 <h3 id="开发工具">开发工具</h3>
 <p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
 , <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
@@ -6586,8 +6542,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 , <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
 </p>
 <blockquote>
-<p>注： Node 是用来调试 Deno 的</p>
-</blockquote>
+<p>注： Node 是用来调试 Deno 的</p></blockquote>
 <h2 id="基础环境信息">基础环境信息</h2>
 <p>我的环境信息如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -6655,8 +6610,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
 <p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
-。</p>
-</blockquote>
+。</p></blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -6819,8 +6773,7 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <h3 id="health-接口">health 接口</h3>
 <p><code>health</code> 接口可以作为系统的健康检查的一个出口，在运维平台中非常实用。对于此接口，我们只需要返回一个状态<code>OK</code>即可。其他情况可忽略。那么对应的<code>Todo</code>应该如下：</p>
 <blockquote>
-<p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p>
-</blockquote>
+<p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p></blockquote>
 <p>所以，测试代码如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -6873,21 +6826,18 @@ Or specify the name of the library with –with-tlib.</code></pre></div>
 <li>接着， 向路由中添加一个<code>health</code>路由及其 handler；</li>
 <li>然后将路由挂在到应用程序上；</li>
 <li>监听应用程序端口，且传入应用程序信号。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="when">when</h4>
 <blockquote>
 <ul>
 <li>给启动的应用发一个 get 请求，请求路径为<code>/health</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="then">then</h4>
 <blockquote>
 <ul>
 <li>根据 fetch 到的结果进行判定，看收到的<code>response</code>是不是和期望的一致， 且在最后终止上面的应用程序。</li>
 <li>到此，如果运行测试肯定会发生错误，解决问题的也很简单，就是去实现<code>getHealthInfo</code> handler。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="实现-gethealthinfo-handler">实现 <code>getHealthInfo</code> handler</h4>
 <p>在 src/controller 下新建<code>health.ts</code>，并以最简单的方案实现上面期望的结果，如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
@@ -7048,8 +6998,7 @@ content-type: application/json; charset=utf-8
 <li>输入用户名和密码，返回特定数据结构的用户信息</li>
 <li>参数必须输入，否则抛异常</li>
 <li>如果输入错误参数，则抛异常</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
  来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
@@ -7224,40 +7173,34 @@ content-type: application/json; charset=utf-8
 <ul>
 <li>mock <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
 <li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="when-1">when</h5>
 <blockquote>
 <ul>
 <li>传入正确的 form 类型的参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="then-1">then</h5>
 <blockquote>
 <ul>
 <li>对获取到的结果进行判定，并中断测试应用，将打桩的方法恢复。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>在此解释两个测试，第二个测试即<code>#addUser should throw exception about no params given no params when add user</code>; <code>given</code>和<code>when</code>与第一个测试的<code>given</code>和<code>when</code>查不多，只是<code>body</code>参数为空；最重要的不同点是这次的<code>then</code>是在<code>when</code>里面，因为抛异常会在<code>handler</code>上抛，所以，需要将<code>then</code>的判定放在<code>handler</code> 上。这里用到了<code>Deno</code>的<code>assertThrowsAsync</code>来捕获异常并判定异常。</p>
 <h5 id="given-2">given</h5>
 <blockquote>
 <ul>
 <li><code>mock</code> <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
 <li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="when-2">when</h5>
 <blockquote>
 <ul>
 <li>给<code>body</code>传入空参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="then-2">then</h5>
 <blockquote>
 <ul>
 <li><code>then</code>部分处于<code>given</code>的路由处理<code>handler</code>中，对异常进行捕获并判定，接着中断测试应用，将打桩的方法恢复。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="运行测试-1">运行测试</h5>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -7278,8 +7221,7 @@ content-type: application/json; charset=utf-8
 <h4 id="service">Service</h4>
 <p><code>Service</code>是服务层，通过组合其他服务和调用底层数据接口层提供服务；对于用户添加，对于添加用户的<code>Service</code>, 我们只需要将用户对象传递过来，然后由<code>Repository</code>来处理；所以，我们的<code>Todo</code>对应如下：</p>
 <blockquote>
-<p>当传入期望的用户信息，可返回特定数据结构的用户信息</p>
-</blockquote>
+<p>当传入期望的用户信息，可返回特定数据结构的用户信息</p></blockquote>
 <p>新建<code>UserService.test.ts</code>， 并导入相关依赖；</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -7363,8 +7305,7 @@ content-type: application/json; charset=utf-8
 <ul>
 <li>将传入的用户存入数据亏并返回特定数据结构的信息</li>
 <li>如果参数中缺少基本字段则抛异常</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -7584,8 +7525,7 @@ content-type: application/json; charset=utf-8
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
 <p>在开发过程中经常会遇到一个问题：</p>
 <blockquote>
-<p>怎么将敏感数据让特定的人获取到？</p>
-</blockquote>
+<p>怎么将敏感数据让特定的人获取到？</p></blockquote>
 <p>常用的解决方法如下：</p>
 <ul>
 <li>使用如 AWS 的 KMS, ParameterStore 等服务，给不同的用户以访问该数据的角色；</li>
@@ -8065,8 +8005,7 @@ secretdir/** filter=git-crypt diff=git-crypt</code></pre></div>
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <blockquote>
-<p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p>
-</blockquote>
+<p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p></blockquote>
 <p>源代码：<a href="https://github.com/AndorLab/test-window-object">https://github.com/AndorLab/test-window-object</a><sup>[1]</sup>
 </p>
 <div class="references">

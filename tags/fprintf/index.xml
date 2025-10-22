@@ -30,16 +30,16 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestGreet</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">buffer</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span> <span class="s">&#34;chris&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 获取程序运行的结果
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">got</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 期望值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">want</span> <span class="o">:=</span> <span class="s">&#34;Hello, chris&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 测试判断
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">got</span> <span class="o">!=</span> <span class="nx">want</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buffer</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span> <span class="s">&#34;chris&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 获取程序运行的结果</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">got</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 期望值</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">want</span> <span class="o">:=</span> <span class="s">&#34;Hello, chris&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 测试判断</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">got</span> <span class="o">!=</span> <span class="nx">want</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`got %s, want %s`</span><span class="p">,</span> <span class="nx">got</span><span class="p">,</span> <span class="nx">want</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
@@ -56,8 +56,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&#34;Hello, &#34;</span><span class="o">+</span><span class="nx">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>重点说明，命令行的测试需要将结果打印在命令行窗口中，如果没有测试，我们可以用 fmt.Printf 等打印函数将结果打印出来，但是，

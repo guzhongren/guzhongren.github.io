@@ -1,8 +1,7 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>4 Key Metrics - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/4-key-metrics/</link><description>4 Key Metrics - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/4-key-metrics/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-</blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
 <h2 id="起因">起因</h2>
 <p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
 <p>不能生成测试报告这个问题简单，只是因为运行测试的容器的用户对特定的目录没有权限，这个很好解决。</p>
@@ -29,8 +28,7 @@
 上线固然重要，但不能降低质量。就像在 Simple Design 中的&quot;通过测试&quot;，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
 <p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
 <blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
-</blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Dora Metrics: <a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" rel="noopener noreferrer">https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li></ol>

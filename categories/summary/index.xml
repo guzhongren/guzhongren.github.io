@@ -71,7 +71,7 @@
 <p>插件用于扩展 Strapi 功能，如权限管理、内容版本控制、第三方集成等。官方和社区插件丰富，也支持自定义开发。</p>
 <h2 id="进阶">进阶</h2>
 <p>使用Strapi API 时有时需要对请求参数进行预处理，比如验证、转换等。可以通过中间件（Middleware）来实现。</p>
-<h3 id="将请求参数置于-strapi-middlewarehttpsdocsstrapiiocmsbackend-customizationmiddlewares-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
+<h3 id="将请求参数置于-strapi-middleware-中">将请求参数置于 <a href="https://docs.strapi.io/cms/backend-customization/middlewares">Strapi Middleware</a><sup>[1]</sup>
  中</h3>
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -185,7 +185,7 @@
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">...</span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="err">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.hero&#34;</span><span class="o">:</span> <span class="nx">Hero</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.heading-section&#34;</span><span class="o">:</span> <span class="nx">HeadingSection</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.card-grid&#34;</span><span class="o">:</span> <span class="nx">CardGrid</span><span class="p">,</span>
@@ -424,8 +424,7 @@
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
 
 来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
 <ol>
@@ -441,8 +440,7 @@
 </ul>
 <blockquote>
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
 <ol>
@@ -453,8 +451,7 @@
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
 <p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
 <ol>
@@ -466,8 +463,7 @@
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
 <p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
 <ol>
@@ -969,8 +965,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <blockquote>
 <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
 《旧唐书·魏徵传》李世民
-只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p>
-</blockquote>
+只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p></blockquote>
 <h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
 <h3 id="roadmap">Roadmap</h3>
 <ul>
@@ -1145,16 +1140,16 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>ArcGIS Server</li>
 </ul>
 <h3 id="supermap">Supermap</h3>
-<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
+<h3 id="openlayers"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
 </h3>
-<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
+<h3><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
 </h3>
 <h3 id="qgis">QGIS</h3>
 <h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
+<h3 id="leaflet"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
 <a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
 </h3>
-<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
+<h3 id="cesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
 <a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
 </h3>
 <h2 id="suggestions">Suggestions</h2>
@@ -1271,8 +1266,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <li>
 <p>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</p>
 </li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
 <p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
@@ -1437,8 +1431,7 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
  等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
-<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
-</blockquote>
+<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>MADR: <a href="https://adr.github.io/madr/" rel="noopener noreferrer">https://adr.github.io/madr/</a></li><li>adr-log: https://adr.github.io/adr-log/: <a href="https://adr.github.io/adr-log/" rel="noopener noreferrer">https://adr.github.io/adr-log/</a></li><li>嵌入式架构决策记录：https://adr.github.io/e-adr/: <a href="https://adr.github.io/e-adr/" rel="noopener noreferrer">https://adr.github.io/e-adr/</a></li><li>eadlsync:https://adr.github.io/eadlsync/: <a href="https://adr.github.io/eadlsync/" rel="noopener noreferrer">https://adr.github.io/eadlsync/</a></li><li>SE Repo: https://github.com/adr/serepo: <a href="https://github.com/adr/serepo" rel="noopener noreferrer">https://github.com/adr/serepo</a></li><li>Confluence: <a href="https://www.atlassian.com/software/confluence" rel="noopener noreferrer">https://www.atlassian.com/software/confluence</a></li><li>语雀: <a href="https://www.yuque.com/" rel="noopener noreferrer">https://www.yuque.com/</a></li><li>石墨: <a href="https://shimo.im/" rel="noopener noreferrer">https://shimo.im/</a></li><li>云效: <a href="https://www.aliyun.com/product/yunxiao" rel="noopener noreferrer">https://www.aliyun.com/product/yunxiao</a></li><li>Coding: <a href="https://coding.net/" rel="noopener noreferrer">https://coding.net/</a></li></ol>

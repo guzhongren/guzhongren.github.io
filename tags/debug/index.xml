@@ -46,8 +46,7 @@
 <p>在这里面，你会看到每条 shell 脚本运行的具体命令，以及参数等内容，这条命令也是一种执行，会对命令涉及的内容产生实际效果，不要以为知识<code>dry run</code>。</p>
 <h2 id="总结">总结</h2>
 <blockquote>
-<p>好习惯都是踩坑踩出来的</p>
-</blockquote>
+<p>好习惯都是踩坑踩出来的</p></blockquote>
 ]]></description></item><item><title>在 VSCode 上配置 Rust 的调试环境</title><link>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</link><pubDate>Thu, 17 Oct 2019 20:50:05 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/10/%E5%9C%A8-vscode-%E4%B8%8A%E9%85%8D%E7%BD%AErust%E7%9A%84%E8%B0%83%E8%AF%95%E7%8E%AF%E5%A2%83.zh/</guid><description><![CDATA[<p><img src="https://images.pexels.com/photos/3858142/pexels-photo-3858142.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Photo by Jan Kopřiva from Pexels" /></p>
 <h2 id="插件">插件</h2>
 <p>在 VS Code 上进行 Rust 的开发，需要使用一下两个库</p>

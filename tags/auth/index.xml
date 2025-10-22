@@ -27,11 +27,9 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg -a -o public-file.key --export keyId</span></span></code></pre></div></div>
 <blockquote>
-<p>-a 为 &ndash;armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；</p>
-</blockquote>
+<p>-a 为 &ndash;armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；</p></blockquote>
 <blockquote>
-<p>-o 为 &ndash;output 的简写，指定写入的文件；</p>
-</blockquote>
+<p>-o 为 &ndash;output 的简写，指定写入的文件；</p></blockquote>
 <p>导出会有一个 <code>public-file.key</code> 在当前目录下生成，里面存放你的公钥。</p>
 <h3 id="导出私钥">导出私钥</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">

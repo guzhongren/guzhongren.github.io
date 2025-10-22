@@ -225,8 +225,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
-<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
-</blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p></blockquote>
 <h2 id="写了-log-并且出错的程序">写了 log 并且出错的程序</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
@@ -333,8 +332,7 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </span></span><span class="line"><span class="cl"><span class="nx">Ran</span> <span class="nx">all</span> <span class="nx">test</span> <span class="nx">suites</span> <span class="nx">matching</span> <span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">Users</span><span class="err">\</span><span class="o">/</span><span class="nx">zhongren</span><span class="err">\</span><span class="p">.</span><span class="nx">gu</span><span class="err">\</span><span class="o">/</span><span class="mi">01</span><span class="err">\</span><span class="p">.</span><span class="nx">Project</span><span class="err">\</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nb">window</span><span class="o">-</span><span class="nx">object</span><span class="err">\</span><span class="o">/</span><span class="nx">__test__</span><span class="err">\</span><span class="o">/</span><span class="nx">method_sendMessage_mult_tests</span><span class="err">\</span><span class="p">.</span><span class="nx">spec</span><span class="err">\</span><span class="p">.</span><span class="nx">ts</span><span class="o">/</span><span class="nx">i</span> <span class="kd">with</span> <span class="nx">tests</span> <span class="nx">matching</span> <span class="s2">&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class="p">.</span></span></span></code></pre></div></div>
 <h2 id="在测试中写-log-有什么用">在测试中写 log 有什么用？</h2>
 <blockquote>
-<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
-</blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p></blockquote>
 <p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
 <p>在我看来，有以下几点：</p>
 <h3 id="影响总体的测试输出">影响总体的测试输出</h3>

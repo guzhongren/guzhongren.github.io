@@ -229,8 +229,7 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>但是这有个问题，就是 Gist 的访问在国内被墙了，被🧱了，被🧱了；而且 GitHub 的资源访问也比较慢。</p>
 <h2 id="前置知识">前置知识</h2>
 <blockquote>
-<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p>
-</blockquote>
+<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p></blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如</p>
 <ul>

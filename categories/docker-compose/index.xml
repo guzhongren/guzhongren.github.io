@@ -19,8 +19,7 @@
 </span></span><span class="line"><span class="cl">docker-compose version 1.24.0, build 1110ad01</span></span></code></pre></div></div>
 <h3 id="安装-harbor">安装 Harbor</h3>
 <blockquote>
-<p>离线安装版</p>
-</blockquote>
+<p>离线安装版</p></blockquote>
 <h4 id="获取并解压">获取并解压</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -196,8 +195,7 @@
 <p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
-<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
-</blockquote>
+<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p></blockquote>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>

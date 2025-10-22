@@ -13,8 +13,7 @@
 <li>
 <p>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</p>
 </li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
 <p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
@@ -179,8 +178,7 @@
  等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
-<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
-</blockquote>
+<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>MADR: <a href="https://adr.github.io/madr/" rel="noopener noreferrer">https://adr.github.io/madr/</a></li><li>adr-log: https://adr.github.io/adr-log/: <a href="https://adr.github.io/adr-log/" rel="noopener noreferrer">https://adr.github.io/adr-log/</a></li><li>嵌入式架构决策记录：https://adr.github.io/e-adr/: <a href="https://adr.github.io/e-adr/" rel="noopener noreferrer">https://adr.github.io/e-adr/</a></li><li>eadlsync:https://adr.github.io/eadlsync/: <a href="https://adr.github.io/eadlsync/" rel="noopener noreferrer">https://adr.github.io/eadlsync/</a></li><li>SE Repo: https://github.com/adr/serepo: <a href="https://github.com/adr/serepo" rel="noopener noreferrer">https://github.com/adr/serepo</a></li><li>Confluence: <a href="https://www.atlassian.com/software/confluence" rel="noopener noreferrer">https://www.atlassian.com/software/confluence</a></li><li>语雀: <a href="https://www.yuque.com/" rel="noopener noreferrer">https://www.yuque.com/</a></li><li>石墨: <a href="https://shimo.im/" rel="noopener noreferrer">https://shimo.im/</a></li><li>云效: <a href="https://www.aliyun.com/product/yunxiao" rel="noopener noreferrer">https://www.aliyun.com/product/yunxiao</a></li><li>Coding: <a href="https://coding.net/" rel="noopener noreferrer">https://coding.net/</a></li></ol>

@@ -59,11 +59,9 @@
 <p>查看 MDN 官网中关于 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Array.prototype.forEach()</a><sup>[1]</sup>
  的解释，可以看到有一行说明</p>
 <blockquote>
-<p>Note: There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.</p>
-</blockquote>
+<p>Note: There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.</p></blockquote>
 <blockquote>
-<p>Early termination may be accomplished with:</p>
-</blockquote>
+<p>Early termination may be accomplished with:</p></blockquote>
 <blockquote>
 <p>A simple for loop
 A for&hellip;of / for&hellip;in loops
@@ -71,8 +69,7 @@ Array.prototype.every()
 Array.prototype.some()
 Array.prototype.find()
 Array.prototype.findIndex()
-Array methods: every(), some(), find(), and findIndex() test the array elements with a predicate returning a truthy value &gt;  to determine if further iteration is required.</p>
-</blockquote>
+Array methods: every(), some(), find(), and findIndex() test the array elements with a predicate returning a truthy value &gt;  to determine if further iteration is required.</p></blockquote>
 <p>简单翻译一下，如果要让 forEach 停下，那么只有抛异常这一种方案；但是如果你想在循环中退出那么就需要考虑其他方案了。</p>
 <p>但是在我们的案例中，我们需要让循环中的所有结果都正常运行，所以，我们得使用官方建议的方案。【试了一下， every 也是一样的效果，难道是我对文档理解有误？】</p>
 <h2 id="新方案">新方案</h2>

@@ -3,8 +3,7 @@
             </div><blockquote>
 <p>Performance has directly impacted the company&rsquo;s bottom line.
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366">Pinterest</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="intro">Intro</h2>
 <p>Since the development of the Internet, web page performance has always been an important issue. All major Internet companies are sparing no effort to optimize their web pages, in order to allow users to see the content that users want to see faster.</p>
 <p>During the development of the Internet in recent decades, various indicators and terms for measuring web performance have stabilized, and the measurement methods of various products have tended to be consistent.</p>
@@ -26,14 +25,11 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>As mentioned earlier, many tools either cannot be run locally or are Sass products, which cannot be well integrated with Pipeline, resulting in long feedback cycles of web performance results and make the engineering efficiency too low.</p>
 <h2 id="lighthouse">Lighthouse</h2>
 <blockquote>
-<p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO and more.</p>
-</blockquote>
+<p>Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, SEO and more.</p></blockquote>
 <blockquote>
-<p>You can run Lighthouse in <code>Chrome DevTools</code>, from the command line, or as a <code>Node</code> module. You give <code>Lighthouse</code> a URL to audit, it runs a series of audits against the page, and then it generates a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important, as well as how to fix it.</p>
-</blockquote>
+<p>You can run Lighthouse in <code>Chrome DevTools</code>, from the command line, or as a <code>Node</code> module. You give <code>Lighthouse</code> a URL to audit, it runs a series of audits against the page, and then it generates a report on how well the page did. From there, use the failing audits as indicators on how to improve the page. Each audit has a reference doc explaining why the audit is important, as well as how to fix it.</p></blockquote>
 <blockquote>
-<p>You can also use Lighthouse CI to prevent regressions on your sites.</p>
-</blockquote>
+<p>You can also use Lighthouse CI to prevent regressions on your sites.</p></blockquote>
 <p>It&rsquo;s very easy to use, take a look at the results of my audit of my open source project <a href="https://github.com/guzhongren/Powerboard">Powerboard</a><sup>[3]</sup>
 .
 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
@@ -42,8 +38,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <blockquote>
 <p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
 &ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci">GoogleChrome/lighthouse-ci</a><sup>[4]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <p><code>Lighthouse CI</code> is a suite of tools that make continuously running, saving, retrieving, and asserting against Lighthouse results as easy as possible.</p>
 <h4 id="how-to-use">How to use</h4>
 <p><code>LHCI</code> provides the <code>npm</code> installation package, which can be well integrated on the Pipeline, just run the <code>autorun</code> command in the corresponding directory, the command is as follows</p>
@@ -57,8 +52,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>After the operation is completed, LHCI will store the results in the <code>.lighthouseci</code> directory, and you can open the corresponding report with a browser.</p>
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
-<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p>
-</blockquote>
+<p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.</p></blockquote>
 <table>
   <thead>
       <tr>
@@ -105,17 +99,17 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
-</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
 </span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span></span></span></code></pre></div></div>
 <ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>
@@ -209,8 +203,7 @@ It can be seen how important the performance of web pages is in today&rsquo;s In
 <p>性能是留住用户的关键，
 性能直接影响公司的命运。
 &ndash; <a href="https://www.youtube.com/watch?v=Xryhxi45Q5M&amp;feature=youtu.be&amp;t=1366">Pinterest</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="介绍">介绍</h2>
 <p>互联网发展至今，网页性能始终是一个重要的问题, 各大互联网公司都在不遗余力的优化自己的 Web 页面，为的就是更快的让用户更快的看到用户想看到的内容。</p>
 <p>互联网在近几十年的发展过程中，度量 Web 性能各个指标、术语已经稳定了，各个产品的度量方式都趋于一致。</p>
@@ -233,8 +226,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <h2 id="lighthouse">Lighthouse</h2>
 <blockquote>
 <p>Lighthouse 是一个开源的、自动化的工具，用以提高网页质量。你可以在任何网页上运行它，公开的或需要认证的。它对性能、可访问性、渐进式web应用程序、SEO 等进行审计。
-你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p>
-</blockquote>
+你可以在 <code>Chrome DevTools</code>、 命令行甚至是 <code>Node</code> 模块中运行 <code>Lighthouse</code>。 向 Lighthouse 提供一个要审计的 URL，它会对页面运行一系列审计，随即会生成一个关于页面运行情况的报告。对于失败的审计项，可以使用对应项的改进方案。每个审计项都有一个参考文档，解释为什么审核很重要，以及如何修复它。</p></blockquote>
 <p>使用方法非常简单，可以看一下我对我的开源项目 <code>Powerboard</code> 审计的结果。
 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/Lighthouse/Lighthouse-Chrome-DevTools.47rhl099s9c0.webp" alt="Lighthouse-Chrome-DevTools" /></p>
 <h2 id="lighthouse-ci-及-lighthouse-server-的使用">Lighthouse CI 及 Lighthouse Server 的使用</h2>
@@ -243,8 +235,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <p>Automate running Lighthouse for every commit, viewing the changes, and preventing regressions
 为每个提交自动化运行Lighthouse，查看更改，并防止回归
 &ndash; <a href="https://github.com/GoogleChrome/lighthouse-ci">GoogleChrome/lighthouse-ci</a><sup>[3]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <p><code>Lighthouse CI</code> 是 <code>Google Chrome</code> 团队开发的一套可以让持续运行、保存、检索和对 Lighthouse 结果进行<code>断言</code>变得尽可能简单的工具,可以很方便的集成在 CI 上。</p>
 <h4 id="使用">使用</h4>
 <p><code>LHCI</code> 提供 <code>npm</code> 安装包，可以很好的在 Pipeline 上集成，只需要在对应目录下运行 <code>autorun</code> 命令即可，命令如下</p>
@@ -259,8 +250,7 @@ AutoAnything 的页面加载时间减少一半后，其销售额提升 12-13%。
 <h3 id="lighthouse-server">Lighthouse Server</h3>
 <blockquote>
 <p>The LHCI server saves historical Lighthouse data, displays trends in a dashboard, and offers an in-depth build comparison UI to uncover differences between builds.
-LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。</p>
-</blockquote>
+LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势，并提供深入的构建比较 UI，以揭示构建之间的差异。</p></blockquote>
 <table>
   <thead>
       <tr>
@@ -307,17 +297,17 @@ LHCI Server 保存 Lighthouse 历史数据，并可在仪表板中显示趋势�
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">npm install, build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install
-</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          npm run build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Upload Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          npm install -g @lhci/cli
 </span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc-no-condition.json
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">          
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci upload --serverBaseUrl=${{ secrets.LHCI_SERVER_URL }} --token=${{ secrets.LHCI_BUILD_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">env</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="nt">LHCI_GITHUB_APP_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l">${{ secrets.LHCI_GITHUB_APP_TOKEN }}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Check Lighthouse Report</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          lhci autorun --config=.github/config/lighthouserc.json</span></span></span></code></pre></div></div>
 <ul>
 <li>.github/config/lighthouserc-no-condition.json</li>
 </ul>

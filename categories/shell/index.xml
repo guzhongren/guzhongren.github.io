@@ -46,8 +46,7 @@
 <p>在这里面，你会看到每条 shell 脚本运行的具体命令，以及参数等内容，这条命令也是一种执行，会对命令涉及的内容产生实际效果，不要以为知识<code>dry run</code>。</p>
 <h2 id="总结">总结</h2>
 <blockquote>
-<p>好习惯都是踩坑踩出来的</p>
-</blockquote>
+<p>好习惯都是踩坑踩出来的</p></blockquote>
 ]]></description></item><item><title>Harbor 安装小记</title><link>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</link><pubDate>Sun, 09 Jun 2019 14:32:13 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2019/06/harbor-%E5%AE%89%E8%A3%85%E5%B0%8F%E8%AE%B0.zh/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://i.loli.net/2020/03/29/moaTGH6EWiqyhRt.png" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
@@ -69,8 +68,7 @@
 </span></span><span class="line"><span class="cl">docker-compose version 1.24.0, build 1110ad01</span></span></code></pre></div></div>
 <h3 id="安装-harbor">安装 Harbor</h3>
 <blockquote>
-<p>离线安装版</p>
-</blockquote>
+<p>离线安装版</p></blockquote>
 <h4 id="获取并解压">获取并解压</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -246,8 +244,7 @@
 <p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
-<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
-</blockquote>
+<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p></blockquote>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>

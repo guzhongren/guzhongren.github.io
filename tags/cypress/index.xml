@@ -74,7 +74,7 @@
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
-</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span><span class="w">          </span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <p><code>Docker-compopse</code> 有很好的应用编排能力，可以很轻松的构建多服务程序；并在构建应用的时候可以使用多阶段构建来优化镜像大小。使用 <code>Cypress</code> 可以提高开发效率并可在 <code>Pipeline</code> 上保证程序的正确性。</p>
 <div class="references">

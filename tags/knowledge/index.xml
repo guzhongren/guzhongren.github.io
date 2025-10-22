@@ -14,8 +14,7 @@
 <blockquote>
 <p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
 《旧唐书·魏徵传》李世民
-只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p>
-</blockquote>
+只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p></blockquote>
 <h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
 <h3 id="roadmap">Roadmap</h3>
 <ul>
@@ -190,16 +189,16 @@
 <li>ArcGIS Server</li>
 </ul>
 <h3 id="supermap">Supermap</h3>
-<h3 id="openlayershttpsopenlayersorg"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
+<h3 id="openlayers"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
 </h3>
-<h3 id="httpsopenlayersorg"><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
+<h3><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
 </h3>
 <h3 id="qgis">QGIS</h3>
 <h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflethttpsleafletjscomhttpsleafletjscom"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
+<h3 id="leaflet"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
 <a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
 </h3>
-<h3 id="cesiumjshttpscesiumcomplatformcesiumjshttpscesiumcomplatformcesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
+<h3 id="cesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
 <a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
 </h3>
 <h2 id="suggestions">Suggestions</h2>

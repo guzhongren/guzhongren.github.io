@@ -28,8 +28,7 @@
 <p><code>a=6, b=6, c=6, d=6</code></p>
 <h2 id="重点说明">重点说明</h2>
 <blockquote>
-<p>闭包定义会为每个参数和返回值类型推导一个具体的类型，但是不能推导两次（不能让俩次或多次使用是不同类型的参数进行调用）</p>
-</blockquote>
+<p>闭包定义会为每个参数和返回值类型推导一个具体的类型，但是不能推导两次（不能让俩次或多次使用是不同类型的参数进行调用）</p></blockquote>
 <p>语言描述有点模糊，那么用代码说明问题</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-rust">

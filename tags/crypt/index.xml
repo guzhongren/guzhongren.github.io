@@ -3,8 +3,7 @@
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
 <p>在开发过程中经常会遇到一个问题：</p>
 <blockquote>
-<p>怎么将敏感数据让特定的人获取到？</p>
-</blockquote>
+<p>怎么将敏感数据让特定的人获取到？</p></blockquote>
 <p>常用的解决方法如下：</p>
 <ul>
 <li>使用如 AWS 的 KMS, ParameterStore 等服务，给不同的用户以访问该数据的角色；</li>

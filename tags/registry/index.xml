@@ -8,8 +8,7 @@
 <p>现在大多数公司肯定有自己的 git 仓库了，[没有到 git？说明你们技术太 XXX 落后] 那么我们何不利用 git 仓库来存放我们的各种 lib 呢？</p>
 <h2 id="传统方式">传统方式</h2>
 <blockquote>
-<p>前事不忘，后事之师。先来复习一下怎么从 npmjs.com 获取包。[这句是我说的]</p>
-</blockquote>
+<p>前事不忘，后事之师。先来复习一下怎么从 npmjs.com 获取包。[这句是我说的]</p></blockquote>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>

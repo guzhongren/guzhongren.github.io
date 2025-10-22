@@ -9,8 +9,7 @@
 <h2 id="工具介绍">工具介绍</h2>
 <p>按照 setuptools 官网介绍，我们需要更新最新的 setuptools，安装 <code>build</code> 和 <code>whell</code>, 依赖管理会在 setuptools 的 <code>install_requires</code> 中体现，如下;</p>
 <blockquote>
-<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p>
-</blockquote>
+<p>pip 最好是 pip3, Python 最好是最新版的 Python3。</p></blockquote>
 <h2 id="代码实践">代码实践</h2>
 <h3 id="虚拟环境">虚拟环境</h3>
 <p>在 Python 工程中，虚拟环境是一个非常重要的概念。 你可以随时创建纯净的虚拟环境开始你的（已有/新的）工程。 最简单的好处就是不会在系统级别相互影响。</p>

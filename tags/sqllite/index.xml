@@ -174,10 +174,10 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// openDB 打开数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">openDB</span><span class="p">()</span> <span class="o">*</span><span class="nx">sql</span><span class="p">.</span><span class="nx">DB</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">//打开数据库，如果不存在，则创建
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">sql</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">&#34;sqlite3&#34;</span><span class="p">,</span> <span class="s">&#34;./fcc.db&#34;</span><span class="p">)</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// openDB 打开数据库</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">openDB</span><span class="p">()</span> <span class="o">*</span><span class="nx">sql</span><span class="p">.</span><span class="nx">DB</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//打开数据库，如果不存在，则创建</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">db</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">sql</span><span class="p">.</span><span class="nf">Open</span><span class="p">(</span><span class="s">&#34;sqlite3&#34;</span><span class="p">,</span> <span class="s">&#34;./fcc.db&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nf">checkErr</span><span class="p">(</span><span class="nx">db</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">db</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
@@ -187,10 +187,10 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// initDB 初始化数据库
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">initDB</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">//创建表
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">sqlTable</span> <span class="o">:=</span> <span class="s">`
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// initDB 初始化数据库</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">initDB</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//创建表</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">sqlTable</span> <span class="o">:=</span> <span class="s">`
 </span></span></span><span class="line"><span class="cl"><span class="s">			CREATE TABLE IF NOT EXISTS userinfo(
 </span></span></span><span class="line"><span class="cl"><span class="s">					uid INTEGER PRIMARY KEY AUTOINCREMENT,
 </span></span></span><span class="line"><span class="cl"><span class="s">					username VARCHAR(64) NULL,
@@ -209,8 +209,8 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// UserModel 用户模型
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">type</span> <span class="nx">UserModel</span> <span class="kd">struct</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// UserModel 用户模型</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">UserModel</span> <span class="kd">struct</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">uid</span>      <span class="kt">int64</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">username</span> <span class="kt">string</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">city</span>     <span class="kt">string</span>
@@ -224,8 +224,8 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// insert 新增
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">insert</span><span class="p">()</span> <span class="p">(</span><span class="nx">sql</span><span class="p">.</span><span class="nx">Result</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// insert 新增</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">insert</span><span class="p">()</span> <span class="p">(</span><span class="nx">sql</span><span class="p">.</span><span class="nx">Result</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Prepare</span><span class="p">(</span><span class="s">&#34;insert into userinfo(username, city, skills, created) values(?,?,?,?)&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nf">checkErr</span><span class="p">(</span><span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span> <span class="nx">u</span><span class="p">.</span><span class="nx">city</span><span class="p">,</span> <span class="nx">u</span><span class="p">.</span><span class="nx">skills</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Unix</span><span class="p">())</span>
@@ -238,8 +238,8 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// delete 删除
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nb">delete</span><span class="p">(</span><span class="nx">id</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">int64</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// delete 删除</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nb">delete</span><span class="p">(</span><span class="nx">id</span> <span class="kt">int64</span><span class="p">)</span> <span class="kt">int64</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Prepare</span><span class="p">(</span><span class="s">&#34;delete from userinfo where uid=?&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nf">checkErr</span><span class="p">(</span><span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="nx">id</span><span class="p">)</span>
@@ -254,8 +254,8 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// update	更新用户技能
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">update</span><span class="p">(</span><span class="nx">id</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int64</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// update	更新用户技能</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">update</span><span class="p">(</span><span class="nx">id</span> <span class="kt">int</span><span class="p">)</span> <span class="kt">int64</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Prepare</span><span class="p">(</span><span class="s">&#34;update userinfo set skills=? where uid=?&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nf">checkErr</span><span class="p">(</span><span class="nx">stmt</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">res</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">stmt</span><span class="p">.</span><span class="nf">Exec</span><span class="p">(</span><span class="nx">u</span><span class="p">.</span><span class="nx">skills</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
@@ -270,8 +270,8 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// query 查询
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">query</span><span class="p">()</span> <span class="p">([]</span><span class="nx">UserModel</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="c1">// query 查询</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">u</span> <span class="nx">UserModel</span><span class="p">)</span> <span class="nf">query</span><span class="p">()</span> <span class="p">([]</span><span class="nx">UserModel</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">rows</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">db</span><span class="p">.</span><span class="nf">Query</span><span class="p">(</span><span class="s">&#34;select * from userinfo&#34;</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="nf">checkErr</span><span class="p">(</span><span class="nx">rows</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">userList</span> <span class="p">=</span> <span class="p">[]</span><span class="nx">UserModel</span><span class="p">{}</span>
@@ -309,26 +309,26 @@ Golang 就不多介绍了，能看到这个肯定对 <a href="https://golang.goo
 </span></span><span class="line"><span class="cl">  	<span class="nx">city</span><span class="p">:</span>     <span class="s">`西安`</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  	<span class="nx">skills</span><span class="p">:</span>   <span class="s">`TypeScript`</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// insert
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">result</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">user</span><span class="p">.</span><span class="nf">insert</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// insert</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">result</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">user</span><span class="p">.</span><span class="nf">insert</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">id</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">result</span><span class="p">.</span><span class="nf">LastInsertId</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="nf">checkErr</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;增：操作数据的 id:&#34;</span><span class="p">,</span> <span class="nx">id</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// update
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">updateUser</span> <span class="o">:=</span> <span class="nx">UserModel</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// update</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">updateUser</span> <span class="o">:=</span> <span class="nx">UserModel</span><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  	<span class="nx">skills</span><span class="p">:</span> <span class="s">`golang`</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="p">}</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">affectedRow</span> <span class="o">:=</span> <span class="nx">updateUser</span><span class="p">.</span><span class="nf">updateSkills</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;改：影响的行数：&#34;</span><span class="p">,</span> <span class="nx">affectedRow</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// query
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">queryUser</span> <span class="o">:=</span> <span class="nx">UserModel</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// query</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">queryUser</span> <span class="o">:=</span> <span class="nx">UserModel</span><span class="p">{}</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">list</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">queryUser</span><span class="p">.</span><span class="nf">query</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;查：&#34;</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// delete
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">affect</span> <span class="o">:=</span> <span class="nx">queryUser</span><span class="p">.</span><span class="nb">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// delete</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">affect</span> <span class="o">:=</span> <span class="nx">queryUser</span><span class="p">.</span><span class="nb">delete</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;删：&#34;</span><span class="p">,</span> <span class="nx">affect</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">  <span class="c1">// query
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">list</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">queryUser</span><span class="p">.</span><span class="nf">query</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// query</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">list</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">queryUser</span><span class="p">.</span><span class="nf">query</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">log</span><span class="p">.</span><span class="nf">Info</span><span class="p">(</span><span class="s">&#34;查：&#34;</span><span class="p">,</span> <span class="nx">list</span><span class="p">)</span></span></span></code></pre></div></div>
 <h3 id="运行结果展示">运行结果展示</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">

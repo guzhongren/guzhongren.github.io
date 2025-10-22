@@ -214,8 +214,7 @@
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
 
 来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
 <ol>
@@ -231,8 +230,7 @@
 </ul>
 <blockquote>
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
 <ol>
@@ -243,8 +241,7 @@
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
 <p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
 <ol>
@@ -256,8 +253,7 @@
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
 <p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
 <ol>

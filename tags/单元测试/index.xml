@@ -5,8 +5,7 @@
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
-<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
-</blockquote>
+<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>
@@ -14,12 +13,10 @@
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
-<p>基准测试是对计算机系统的性能的测试。</p>
-</blockquote>
+<p>基准测试是对计算机系统的性能的测试。</p></blockquote>
 <p>在程序中，基准测试，是一种测试代码性能的方法；比如有一个问题你有多种不同的方案，你想选择一种性能最好的方案，那么你就需要基准测试。</p>
 <blockquote>
-<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
-</blockquote>
+<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p></blockquote>
 <h2 id="工程意图">工程意图</h2>
 <p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
 </p>
@@ -62,8 +59,8 @@
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">result</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">result</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>

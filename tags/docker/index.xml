@@ -10,11 +10,9 @@
 <p>如果你现在下载最新的或者旧版的 Docker 安装包，安装包的使用条款都已经被悄悄的动了手脚，里面的 Liscense 的条款已经有了上面说的内容了。所以说你还是会被要求收费的。除非你在一个小公司，人数和收入不在条款之内，那你就开心的用吧。</p>
 <p>但是还有一部分人就在这个条款的要求范围之内了。</p>
 <blockquote>
-<p>安全无小事。</p>
-</blockquote>
+<p>安全无小事。</p></blockquote>
 <blockquote>
-<p>雪崩的时候，没有一片雪花是无辜的。</p>
-</blockquote>
+<p>雪崩的时候，没有一片雪花是无辜的。</p></blockquote>
 <p>市面上还是有不少 Docker 的替代方案，比如 <a href="https://github.com/containers/podman">podman</a><sup>[4]</sup>
 , <a href="https://github.com/lima-vm/lima">lima</a><sup>[5]</sup>
  和 <a href="https://github.com/abiosoft/colima">colima</a><sup>[6]</sup>
@@ -24,8 +22,7 @@
 <h3 id="安装旧版-docker-desktop">安装旧版 Docker Desktop</h3>
 <p>我在百度网盘有备份 Mac 版 3.5.2 版本的 Docker Desktop 副本，可以下载安装。</p>
 <blockquote>
-<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p>
-</blockquote>
+<p>链接：https://pan.baidu.com/s/1nmJezbYx8BmexK6eVXihtg 提取码：gedn</p></blockquote>
 <p>如果觉得慢，恰好我也有空，我可以将我本地的副本直接隔空给你。</p>
 <h3 id="验证安装的-docker-副本的修改时间">验证安装的 Docker 副本的修改时间</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -73,8 +70,7 @@
 </span></span><span class="line"><span class="cl">docker-compose version 1.24.0, build 1110ad01</span></span></code></pre></div></div>
 <h3 id="安装-harbor">安装 Harbor</h3>
 <blockquote>
-<p>离线安装版</p>
-</blockquote>
+<p>离线安装版</p></blockquote>
 <h4 id="获取并解压">获取并解压</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -250,8 +246,7 @@
 <p><img src="https://i.loli.net/2020/03/29/yhiqAI93LSwzVtk.jpg" alt="harbor" /></p>
 <h3 id="配置etcdockerdaemonjson">配置/etc/docker/daemon.json</h3>
 <blockquote>
-<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p>
-</blockquote>
+<p>配置此项的目的是让 docker push 可以将镜像推送到私有仓库中</p></blockquote>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>

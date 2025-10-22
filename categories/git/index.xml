@@ -91,8 +91,7 @@
             </div><h2 id="为什么需要-crypt">为什么需要 crypt</h2>
 <p>在开发过程中经常会遇到一个问题：</p>
 <blockquote>
-<p>怎么将敏感数据让特定的人获取到？</p>
-</blockquote>
+<p>怎么将敏感数据让特定的人获取到？</p></blockquote>
 <p>常用的解决方法如下：</p>
 <ul>
 <li>使用如 AWS 的 KMS, ParameterStore 等服务，给不同的用户以访问该数据的角色；</li>
@@ -422,8 +421,7 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL">《FeatureToggle 引起的。&hellip; 总结》</a><sup>[1]</sup>
 。</p>
 <blockquote>
-<p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
-</blockquote>
+<p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>《FeatureToggle 引起的。&hellip; 总结》: <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" rel="noopener noreferrer">https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL</a></li></ol>

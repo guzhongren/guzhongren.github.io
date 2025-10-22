@@ -3,8 +3,7 @@
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
 <p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &amp; TDD</code></a><sup>[1]</sup>
-</p>
-</blockquote>
+</p></blockquote>
 <h2 id="简介">简介</h2>
 <p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
 <p>在软件开发中，为了开发出可维护，高质量的程序，使用<code>TDD</code>开发可以有效提升项目质量和开发效率。</p>
@@ -20,20 +19,17 @@
 <li>只有一个单一的可执行文件。</li>
 <li>自带实用工具，例如依赖检查器（deno info）和 代码格式化工具（deno fmt）。</li>
 <li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
-</ul>
-</blockquote>
-<h3 id="oakhttpsgithubcomoakserveroak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
+</ul></blockquote>
+<h3 id="oak"><a href="https://github.com/oakserver/oak">oak</a><sup>[2]</sup>
 </h3>
 <blockquote>
-<p>A middleware framework for Deno&rsquo;s net server 🦕</p>
-</blockquote>
+<p>A middleware framework for Deno&rsquo;s net server 🦕</p></blockquote>
 <p><code>oak</code> 是借鉴 <code>Node</code> 框架<code>Koa</code>的设计思路开发的一个高性能的框架，其<code>洋葱模型</code>式的中间件等思路在开发中使用起来也是非常方便。</p>
 <h2 id="目标">目标</h2>
 <p>基于对以上的基础知识的认识，我们计划开发一个用户管理的<code>API</code>平台；对于后端简单来说，就是提供关于用户的增删改查（<code>CURD</code>）操作。所以我们的主要目标就是提供 4 个对用户<code>CURD</code>的接口。</p>
 <h2 id="工具">工具</h2>
 <blockquote>
-<p>工欲善其事，必先利其器。</p>
-</blockquote>
+<p>工欲善其事，必先利其器。</p></blockquote>
 <h3 id="开发工具">开发工具</h3>
 <p><a href="https://code.visualstudio.com/"><code>VS Code</code></a><sup>[3]</sup>
 , <a href="https://www.docker.com/"><code>Docker</code></a><sup>[4]</sup>
@@ -44,8 +40,7 @@
 , <a href="https://nodejs.org/"><code>Node</code></a><sup>[7]</sup>
 </p>
 <blockquote>
-<p>注： Node 是用来调试 Deno 的</p>
-</blockquote>
+<p>注： Node 是用来调试 Deno 的</p></blockquote>
 <h2 id="基础环境信息">基础环境信息</h2>
 <p>我的环境信息如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -113,8 +108,7 @@
 <h2 id="实现过程">实现过程</h2>
 <blockquote>
 <p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a><sup>[1]</sup>
-。</p>
-</blockquote>
+。</p></blockquote>
 <h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
 <h4 id="启动数据库">启动数据库</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
@@ -277,8 +271,7 @@
 <h3 id="health-接口">health 接口</h3>
 <p><code>health</code> 接口可以作为系统的健康检查的一个出口，在运维平台中非常实用。对于此接口，我们只需要返回一个状态<code>OK</code>即可。其他情况可忽略。那么对应的<code>Todo</code>应该如下：</p>
 <blockquote>
-<p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p>
-</blockquote>
+<p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p></blockquote>
 <p>所以，测试代码如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -331,21 +324,18 @@
 <li>接着， 向路由中添加一个<code>health</code>路由及其 handler；</li>
 <li>然后将路由挂在到应用程序上；</li>
 <li>监听应用程序端口，且传入应用程序信号。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="when">when</h4>
 <blockquote>
 <ul>
 <li>给启动的应用发一个 get 请求，请求路径为<code>/health</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="then">then</h4>
 <blockquote>
 <ul>
 <li>根据 fetch 到的结果进行判定，看收到的<code>response</code>是不是和期望的一致， 且在最后终止上面的应用程序。</li>
 <li>到此，如果运行测试肯定会发生错误，解决问题的也很简单，就是去实现<code>getHealthInfo</code> handler。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h4 id="实现-gethealthinfo-handler">实现 <code>getHealthInfo</code> handler</h4>
 <p>在 src/controller 下新建<code>health.ts</code>，并以最简单的方案实现上面期望的结果，如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
@@ -506,8 +496,7 @@ content-type: application/json; charset=utf-8
 <li>输入用户名和密码，返回特定数据结构的用户信息</li>
 <li>参数必须输入，否则抛异常</li>
 <li>如果输入错误参数，则抛异常</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a><sup>[12]</sup>
  来 <code>mock</code> 第三方依赖。</p>
 <p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
@@ -682,40 +671,34 @@ content-type: application/json; charset=utf-8
 <ul>
 <li>mock <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
 <li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="when-1">when</h5>
 <blockquote>
 <ul>
 <li>传入正确的 form 类型的参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="then-1">then</h5>
 <blockquote>
 <ul>
 <li>对获取到的结果进行判定，并中断测试应用，将打桩的方法恢复。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>在此解释两个测试，第二个测试即<code>#addUser should throw exception about no params given no params when add user</code>; <code>given</code>和<code>when</code>与第一个测试的<code>given</code>和<code>when</code>查不多，只是<code>body</code>参数为空；最重要的不同点是这次的<code>then</code>是在<code>when</code>里面，因为抛异常会在<code>handler</code>上抛，所以，需要将<code>then</code>的判定放在<code>handler</code> 上。这里用到了<code>Deno</code>的<code>assertThrowsAsync</code>来捕获异常并判定异常。</p>
 <h5 id="given-2">given</h5>
 <blockquote>
 <ul>
 <li><code>mock</code> <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
 <li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="when-2">when</h5>
 <blockquote>
 <ul>
 <li>给<code>body</code>传入空参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="then-2">then</h5>
 <blockquote>
 <ul>
 <li><code>then</code>部分处于<code>given</code>的路由处理<code>handler</code>中，对异常进行捕获并判定，接着中断测试应用，将打桩的方法恢复。</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <h5 id="运行测试-1">运行测试</h5>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
@@ -736,8 +719,7 @@ content-type: application/json; charset=utf-8
 <h4 id="service">Service</h4>
 <p><code>Service</code>是服务层，通过组合其他服务和调用底层数据接口层提供服务；对于用户添加，对于添加用户的<code>Service</code>, 我们只需要将用户对象传递过来，然后由<code>Repository</code>来处理；所以，我们的<code>Todo</code>对应如下：</p>
 <blockquote>
-<p>当传入期望的用户信息，可返回特定数据结构的用户信息</p>
-</blockquote>
+<p>当传入期望的用户信息，可返回特定数据结构的用户信息</p></blockquote>
 <p>新建<code>UserService.test.ts</code>， 并导入相关依赖；</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -821,8 +803,7 @@ content-type: application/json; charset=utf-8
 <ul>
 <li>将传入的用户存入数据亏并返回特定数据结构的信息</li>
 <li>如果参数中缺少基本字段则抛异常</li>
-</ul>
-</blockquote>
+</ul></blockquote>
 <p>测试如下：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
@@ -1293,8 +1274,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <blockquote>
-<p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p>
-</blockquote>
+<p>总结就是整理自己，方便自己，如若能方便他人，那就是意外了。</p></blockquote>
 <p>源代码：<a href="https://github.com/AndorLab/test-window-object">https://github.com/AndorLab/test-window-object</a><sup>[1]</sup>
 </p>
 <div class="references">
@@ -1307,8 +1287,7 @@ content-type: application/json; charset=utf-8
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
-<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
-</blockquote>
+<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>
@@ -1344,16 +1323,16 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestGreet</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">buffer</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span> <span class="s">&#34;chris&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 获取程序运行的结果
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">got</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 期望值
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">want</span> <span class="o">:=</span> <span class="s">&#34;Hello, chris&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 测试判断
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">got</span> <span class="o">!=</span> <span class="nx">want</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buffer</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span> <span class="s">&#34;chris&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 获取程序运行的结果</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">got</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 期望值</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">want</span> <span class="o">:=</span> <span class="s">&#34;Hello, chris&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 测试判断</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">got</span> <span class="o">!=</span> <span class="nx">want</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`got %s, want %s`</span><span class="p">,</span> <span class="nx">got</span><span class="p">,</span> <span class="nx">want</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
@@ -1370,8 +1349,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&#34;Hello, &#34;</span><span class="o">+</span><span class="nx">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>重点说明，命令行的测试需要将结果打印在命令行窗口中，如果没有测试，我们可以用 fmt.Printf 等打印函数将结果打印出来，但是，
@@ -1398,12 +1377,10 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
-<p>基准测试是对计算机系统的性能的测试。</p>
-</blockquote>
+<p>基准测试是对计算机系统的性能的测试。</p></blockquote>
 <p>在程序中，基准测试，是一种测试代码性能的方法；比如有一个问题你有多种不同的方案，你想选择一种性能最好的方案，那么你就需要基准测试。</p>
 <blockquote>
-<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
-</blockquote>
+<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p></blockquote>
 <h2 id="工程意图">工程意图</h2>
 <p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
 </p>
@@ -1446,8 +1423,8 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">result</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">result</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">		<span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span>
 </span></span><span class="line"><span class="cl">	<span class="p">}</span>

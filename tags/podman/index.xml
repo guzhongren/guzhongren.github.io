@@ -4,8 +4,7 @@
 <p>在初次使用<a href="https://podman.io/">podman</a><sup>[1]</sup>
  挂载本地文件系统的时候通常会报如下的一个错误提示；</p>
 <blockquote>
-<p>Error: statfs /Users/userName/yyy/xxx: no such file or directory</p>
-</blockquote>
+<p>Error: statfs /Users/userName/yyy/xxx: no such file or directory</p></blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>为 Podman 虚拟机挂载 $HOME 目录并且重启 podman machine 即可。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
