@@ -26,9 +26,21 @@
 </ul>
 <p>在基于 AI 开发的新项目中，有经验的程序员在解决复杂的业务/技术问题的时候往往具有更好的思维方式和更快的解决速度。</p>
 <h2 id="弱者疾速">弱者疾速</h2>
+<p>对于新晋程序员来说，AI 是个好助手。在学习开始前，可以先询问AI, 让其来规划学习路径，以减少不必需要的弯路。在具体的学习过程中，如果遇到问题，可以借助AI 让其帮你解决，但一定要自己总结遇到的问题和对应的解决办法。</p>
+<p>相比于没有使用AI 来学习的老一辈程序员来说，学习一门新语言，新技术的周期已经不可同日而语。</p>
+<p>AI 加速了学习周期，但最终的学习结果还是一样的，要熟悉语言的语法，模式，声明方式等等。</p>
+<h2 id="ai-只是辅助远远替代不了人">AI 只是辅助，远远替代不了人</h2>
+<p>社会运行的如此“高效”，机器只是其中一小部分，最大的因素往往是人，是人和人之间的关系。</p>
+<p>当AI 完全参与到你生活的方方面面的时候，也需要人的介入，将你和机器，你和其他人链接起来共同完成一项工作或者创造。</p>
+<p>还有AI 只是个概率机器，既然是概率，那么他就一定有出错的时候，不可对其产生的结果完全相信。还有另一个概念“<a href="https://cloud.google.com/discover/what-are-ai-hallucinations">AI幻觉(hallucinations)</a><sup>[3]</sup>
+”，意思就是AI在一本正经的胡说八道，人在看其给出的结果的每一步，都觉得没有问题，但是整个结果确实错误的。虽然AI 幻觉可以通过技术手段来判断解决，但在现实大部分情况下依然存在很大的挑战，不管是数据的正确性或者是使用的规模上都很难规模化，但是对于特定行业或者问题解决AI 幻觉还是可以实施的，因为其异常场景几乎可以枚举，且规模不大, 甚至，行业专家都可以肉眼判断。</p>
+<h2 id="练好基本功">练好基本功</h2>
+<p>不要听信网上各种不靠谱的非专业程序员短时间完成一个所谓的程序就放狂言“以后都不需要程序员了”，在我看来，大部分非专业程序员写的程序基本都是垃圾，好一点的可以称之为POC。工程化往往是一个项目或者产品在实现过程中最难的。如果你有良好的基本功，就可以对架构，流程等进行随意合理的更改，扩展。</p>
+<blockquote>
+<p>慢慢来，比较快。</p></blockquote>
 <div class="references">
                 <h2>参考</h2>
-                <ol><li>《AI 时代，编程语言选型更难也更重要：Go、Rust、Python、TypeScript 谁该上场？》: <a href="https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF" rel="noopener noreferrer">https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF</a></li><li>Instant karma: Employer who replaced his tech team with AI tries to hire new developers on LinkedIn. Here&rsquo;s what happened next: <a href="https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr" rel="noopener noreferrer">https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr</a></li></ol>
+                <ol><li>《AI 时代，编程语言选型更难也更重要：Go、Rust、Python、TypeScript 谁该上场？》: <a href="https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF" rel="noopener noreferrer">https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF</a></li><li>Instant karma: Employer who replaced his tech team with AI tries to hire new developers on LinkedIn. Here&rsquo;s what happened next: <a href="https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr" rel="noopener noreferrer">https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr</a></li><li>AI幻觉(hallucinations): <a href="https://cloud.google.com/discover/what-are-ai-hallucinations" rel="noopener noreferrer">https://cloud.google.com/discover/what-are-ai-hallucinations</a></li></ol>
             </div>]]></description></item><item><title>基于AI大模型开发一个Slack Bot的总结</title><link>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</link><pubDate>Fri, 28 Mar 2025 22:32:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/03/%E5%9F%BA%E4%BA%8Eai%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AAslack-bot%E7%9A%84%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="起因">起因</h2>
