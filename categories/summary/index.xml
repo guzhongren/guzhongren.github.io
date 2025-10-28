@@ -3,7 +3,13 @@
             </div><h2 id="可视化与标准化的重要性">可视化与标准化的重要性</h2>
 <blockquote>
 <p>从前车马邮件都慢，爱情像慢电影，而现在信息传播和协作节奏已大不相同——同样的，制图工具的变化也改变了我们展示系统的方式。</p></blockquote>
-<p>过去教科书和工程图多为严格规范的手工绘制，风格统一、标注清晰。如今我们有了 Miro、Figma、Mural，以及开源的 Excalidraw、Tldraw，和国内的 ProcessOn 之类的在线画布工具（链接见上文）。这些工具降低了协作门槛，但“工具易得、图能否被人读懂”仍取决于制图者是否遵循标准与约定。</p>
+<p>过去教科书和工程图多为严格规范的手工绘制，风格统一、标注清晰。如今我们有了 <a href="https://miro.com/">Miro</a><sup>[1]</sup>
+、<a href="https://www.figma.com/">Figma</a><sup>[2]</sup>
+、<a href="https://www.mural.co/">Mural</a><sup>[3]</sup>
+ ，以及开源的 <a href="hbttps://excalidraw.com">Excalidraw</a><sup>[4]</sup>
+、<a href="https://www.tldraw.com/">Tldraw</a><sup>[5]</sup>
+，和国内的 <a href="https://www.processon.com/">Processon</a><sup>[6]</sup>
+ 之类的在线画布工具（链接见上文）。这些工具降低了协作门槛，但“工具易得、图能否被人读懂”仍取决于制图者是否遵循标准与约定。</p>
 <p>非标准化的架构图会带来沟通成本和风险：误用图标、调用关系画错、层次不清、责任边界模糊，都会导致实现偏差，严重时甚至造成生产事故。因此在画架构图时，明确参与者（谁发起、谁被调用、哪些是第三方）、数据和控制流向、以及图示约定，比花哨的样式更重要。</p>
 <h2 id="东西流量eastwest与南北流量northsouth">东西流量（East–West）与南北流量（North–South）</h2>
 <p>这两个术语源自网络/系统架构图的约定：图的顶部（North）通常表示外部世界或客户端，底部（South）通常表示核心或后端基础设施。垂直方向上的流动（外部⇄内部）称为“南北流量”；而同一层级、横向相邻服务之间的流量称为“东西流量”。</p>
@@ -72,7 +78,10 @@
 <li>在团队内形成统一的制图规范，减少沟通误解。</li>
 </ol>
 <p>在下次绘制架构图时，把“流量方向”当成一条显性的维度：它会让设计更明晰，讨论更高效。</p>
-]]></description></item><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Miro: <a href="https://miro.com/" rel="noopener noreferrer">https://miro.com/</a></li><li>Figma: <a href="https://www.figma.com/" rel="noopener noreferrer">https://www.figma.com/</a></li><li>Mural: <a href="https://www.mural.co/" rel="noopener noreferrer">https://www.mural.co/</a></li><li>Excalidraw: <a href="#ZgotmplZ" rel="noopener noreferrer">hbttps://excalidraw.com</a></li><li>Tldraw: <a href="https://www.tldraw.com/" rel="noopener noreferrer">https://www.tldraw.com/</a></li><li>Processon: <a href="https://www.processon.com/" rel="noopener noreferrer">https://www.processon.com/</a></li></ol>
+            </div>]]></description></item><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
