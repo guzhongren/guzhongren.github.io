@@ -11,7 +11,7 @@ npx: 18 安装成功，用时 3.989 秒
  Rust +  WebAssembly + Webpack = ️
 Installed dependencies</code></pre></div>
 <h2 id="安装-web-依赖">安装 Web 依赖</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -260,7 +260,7 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="sc">&#39;\n&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="在-srclibrs-中引入-parse-mod-并编写向外暴露的函数">在 src/lib.rs 中引入 parse mod， 并编写向外暴露的函数</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-Rust">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -277,7 +277,7 @@ index.js  897 KiB   index  [emitted]  index
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="n">result</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="在-jsindexjs-中使用-web-assembly-修改结果如下">在 js/index.js 中使用 Web Assembly ，修改结果如下</h2>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-rust">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
