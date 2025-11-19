@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Host.docker.internal - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/host.docker.internal/</link><description>Host.docker.internal - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 19 Nov 2025 22:28:38 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/host.docker.internal/" rel="self" type="application/rss+xml"/><item><title>将 Colima 设置为 TestContainer 的容器运行时</title><link>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</link><pubDate>Wed, 19 Nov 2025 22:28:38 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="原因">原因</h2>
+<p>根据 docker 公司的策略，Docker Engine 是需要收费的，而作为开源方案的 <a href="https://github.com/abiosoft/colima">Colima</a><sup>[1]</sup>
+ 作为很多开发者的首选方案；而在集成测试中，<a href="https://testcontainers.com/">TestContainer</a><sup>[2]</sup>
+ 是一个非常实用的临时数据库构建工具，可为集成测试提供数据库，为整个工程做测试保障。</p>
+<p>但在基于 Colima 容器运行时的 TestContainer 运行却需要额外的配置，没有 Docker engine 那样直接。如果不做配置，我们经常会遇到一个问题“can&rsquo;t connect to host.docker.internal”，可以参考这个 <a href="https://github.com/abiosoft/colima/issues/902">colima issue</a><sup>[3]</sup>
+。</p>
+<p>这是由于在运行 TestContainer 的时候没有办法找到容器的 sock、host 等，同时需要禁用 TestContainer 用来控制新建容器的 sidecar 容器‘Ryuk’。</p>
+<h2 id="方案">方案</h2>
+<p>需要将 DOCKER_HOST、TESTCONTAINERS_HOST_OVERRIDE、TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE 和 TESTCONTAINERS_RYUK_DISABLED 这些变量暴露在环境变量中，这样可以使 TestContainer 和 Colima 容器运行时链接，就可以正常运行集成测试了。</p>
+<p>但，为了让这个配置生效，而不是每次在每个项目中手动配置，我们最好的方式是将其放置在 shell 运行的 profile 中，如 <code>.zshrc</code>。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&#34;unix://</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.colima/docker.sock&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_HOST_OVERRIDE</span><span class="o">=</span>127.0.0.1
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE</span><span class="o">=</span>/var/run/docker.sock
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_RYUK_DISABLED</span><span class="o">=</span>true</span></span></code></pre></div></div>
+<p>如此这样之后，可通过 <code>source ~./zshrc</code>使其立即生效，或者新建一个 shell tab，从而激活这些环境变量。。</p>
+<h2 id="总结">总结</h2>
+<p>Colima 的配置如此，基于 <a href="https://podman.io/">Podman</a><sup>[4]</sup>
+ 的方案也很简单，只需要保证 DOCKER_HOST、TESTCONTAINERS_HOST_OVERRIDE、TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE 和 TESTCONTAINERS_RYUK_DISABLED 的值被正确链接。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Colima: <a href="https://github.com/abiosoft/colima" rel="noopener noreferrer">https://github.com/abiosoft/colima</a></li><li>TestContainer: <a href="https://testcontainers.com/" rel="noopener noreferrer">https://testcontainers.com/</a></li><li>colima issue: <a href="https://github.com/abiosoft/colima/issues/902" rel="noopener noreferrer">https://github.com/abiosoft/colima/issues/902</a></li><li>Podman: <a href="https://podman.io/" rel="noopener noreferrer">https://podman.io/</a></li></ol>
+            </div>]]></description></item></channel></rss>

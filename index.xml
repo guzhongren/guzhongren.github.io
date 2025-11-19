@@ -1,4 +1,32 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sun, 16 Nov 2025 07:56:03 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“怎么可能呢”</title><link>https://guzhongren.github.io/2025/11/%E6%80%8E%E4%B9%88%E5%8F%AF%E8%83%BD%E5%91%A2/</link><pubDate>Sun, 16 Nov 2025 07:56:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E6%80%8E%E4%B9%88%E5%8F%AF%E8%83%BD%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 19 Nov 2025 22:28:38 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>将 Colima 设置为 TestContainer 的容器运行时</title><link>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</link><pubDate>Wed, 19 Nov 2025 22:28:38 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><h2 id="原因">原因</h2>
+<p>根据 docker 公司的策略，Docker Engine 是需要收费的，而作为开源方案的 <a href="https://github.com/abiosoft/colima">Colima</a><sup>[1]</sup>
+ 作为很多开发者的首选方案；而在集成测试中，<a href="https://testcontainers.com/">TestContainer</a><sup>[2]</sup>
+ 是一个非常实用的临时数据库构建工具，可为集成测试提供数据库，为整个工程做测试保障。</p>
+<p>但在基于 Colima 容器运行时的 TestContainer 运行却需要额外的配置，没有 Docker engine 那样直接。如果不做配置，我们经常会遇到一个问题“can&rsquo;t connect to host.docker.internal”，可以参考这个 <a href="https://github.com/abiosoft/colima/issues/902">colima issue</a><sup>[3]</sup>
+。</p>
+<p>这是由于在运行 TestContainer 的时候没有办法找到容器的 sock、host 等，同时需要禁用 TestContainer 用来控制新建容器的 sidecar 容器‘Ryuk’。</p>
+<h2 id="方案">方案</h2>
+<p>需要将 DOCKER_HOST、TESTCONTAINERS_HOST_OVERRIDE、TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE 和 TESTCONTAINERS_RYUK_DISABLED 这些变量暴露在环境变量中，这样可以使 TestContainer 和 Colima 容器运行时链接，就可以正常运行集成测试了。</p>
+<p>但，为了让这个配置生效，而不是每次在每个项目中手动配置，我们最好的方式是将其放置在 shell 运行的 profile 中，如 <code>.zshrc</code>。</p>
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+    <div class="code-header language-shell">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&#34;unix://</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.colima/docker.sock&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_HOST_OVERRIDE</span><span class="o">=</span>127.0.0.1
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE</span><span class="o">=</span>/var/run/docker.sock
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_RYUK_DISABLED</span><span class="o">=</span>true</span></span></code></pre></div></div>
+<p>如此这样之后，可通过 <code>source ~./zshrc</code>使其立即生效，或者新建一个 shell tab，从而激活这些环境变量。。</p>
+<h2 id="总结">总结</h2>
+<p>Colima 的配置如此，基于 <a href="https://podman.io/">Podman</a><sup>[4]</sup>
+ 的方案也很简单，只需要保证 DOCKER_HOST、TESTCONTAINERS_HOST_OVERRIDE、TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE 和 TESTCONTAINERS_RYUK_DISABLED 的值被正确链接。</p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Colima: <a href="https://github.com/abiosoft/colima" rel="noopener noreferrer">https://github.com/abiosoft/colima</a></li><li>TestContainer: <a href="https://testcontainers.com/" rel="noopener noreferrer">https://testcontainers.com/</a></li><li>colima issue: <a href="https://github.com/abiosoft/colima/issues/902" rel="noopener noreferrer">https://github.com/abiosoft/colima/issues/902</a></li><li>Podman: <a href="https://podman.io/" rel="noopener noreferrer">https://podman.io/</a></li></ol>
+            </div>]]></description></item><item><title>“怎么可能呢”</title><link>https://guzhongren.github.io/2025/11/%E6%80%8E%E4%B9%88%E5%8F%AF%E8%83%BD%E5%91%A2/</link><pubDate>Sun, 16 Nov 2025 07:56:03 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E6%80%8E%E4%B9%88%E5%8F%AF%E8%83%BD%E5%91%A2/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="怎么可能呢">“怎么可能呢”</h2>
 <p>昨天中午我打完篮球回到家，妈妈去剪头发了，我要洗澡，就给西西看了动画片，看完之后，妈妈也回来了，奶奶把饭也快做好了，但西西要玩 Switch, 于是我们就玩了打棒球，篮球和划船的游戏。</p>
@@ -6304,119 +6332,4 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 <blockquote>
 <p><em>人是不可信的</em></p></blockquote>
 <p>不管是你，还是别人，对于写代码这事都别相信。 你写的代码，做的配置都是最优的。</p>
-]]></description></item><item><title>Centos 安装 vim8.2</title><link>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</link><pubDate>Wed, 16 Dec 2020 23:08:36 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/12/centos%E5%AE%89%E8%A3%85vim8.2/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="删除已有的-vim">删除已有的 vim</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum remove vim</span></span></code></pre></div></div>
-<h2 id="下载最新的-vim-到你的-centos-上">下载最新的 vim 到你的 centos 上</h2>
-<p>vim 官网：https://www.vim.org/
-Vim8.2 下载：https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">wget https://ftp.nluug.nl/pub/vim/unix/vim-8.2.tar.bz2</span></span></code></pre></div></div>
-<h2 id="解压">解压</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">tar -jxvf vim-8.2.tar.bz2</span></span></code></pre></div></div>
-<p>解压生成 vim82 文件夹
-进入 cd /vim82/src</p>
-<h2 id="配置">配置</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>./configure</code></pre></div>
-<p>如果遇到如下问题</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><pre tabindex="0"><code>no terminal library found
-checking for tgetent()… configure: error: NOT FOUND!
-You need to install a terminal library; for example ncurses.
-Or specify the name of the library with –with-tlib.</code></pre></div>
-<p>请执行如下命令安装依赖</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">yum install ncurses ncurses-devel</span></span></code></pre></div></div>
-<h2 id="编译">编译</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">make</span></span></code></pre></div></div>
-<h2 id="安装">安装</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo make install</span></span></code></pre></div></div>
-<p>不出意外就安装完成了。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"> tencent@VM-0-9-centos  ~  vim --version                               ✔  <span class="m">242</span>  23:14:30
-</span></span><span class="line"><span class="cl">VIM - Vi IMproved 8.2 <span class="o">(</span><span class="m">2019</span> Dec 12, compiled Dec <span class="m">16</span> <span class="m">2020</span> 23:04:31<span class="o">)</span>
-</span></span><span class="line"><span class="cl">编译者 tencent@VM-0-9-centos
-</span></span><span class="line"><span class="cl">巨型版本 无图形界面。  可使用 <span class="o">(</span>+<span class="o">)</span> 与不可使用 <span class="o">(</span>-<span class="o">)</span> 的功能：
-</span></span><span class="line"><span class="cl">+acl               -farsi             -mouse_sysmouse    -tag_old_static
-</span></span><span class="line"><span class="cl">+arabic            +file_in_path      +mouse_urxvt       -tag_any_white
-</span></span><span class="line"><span class="cl">+autocmd           +find_in_path      +mouse_xterm       -tcl
-</span></span><span class="line"><span class="cl">+autochdir         +float             +multi_byte        +termguicolors
-</span></span><span class="line"><span class="cl">-autoservername    +folding           +multi_lang        +terminal
-</span></span><span class="line"><span class="cl">-balloon_eval      -footer            -mzscheme          +terminfo
-</span></span><span class="line"><span class="cl">+balloon_eval_term +fork<span class="o">()</span>            +netbeans_intg     +termresponse
-</span></span><span class="line"><span class="cl">-browse            +gettext           +num64             +textobjects
-</span></span><span class="line"><span class="cl">++builtin_terms    -hangul_input      +packages          +textprop
-</span></span><span class="line"><span class="cl">+byte_offset       +iconv             +path_extra        +timers
-</span></span><span class="line"><span class="cl">+channel           +insert_expand     -perl              +title
-</span></span><span class="line"><span class="cl">+cindent           +job               +persistent_undo   -toolbar
-</span></span><span class="line"><span class="cl">-clientserver      +jumplist          +popupwin          +user_commands
-</span></span><span class="line"><span class="cl">-clipboard         +keymap            +postscript        +vartabs
-</span></span><span class="line"><span class="cl">+cmdline_compl     +lambda            +printer           +vertsplit
-</span></span><span class="line"><span class="cl">+cmdline_hist      +langmap           +profile           +virtualedit
-</span></span><span class="line"><span class="cl">+cmdline_info      +libcall           -python            +visual
-</span></span><span class="line"><span class="cl">+comments          +linebreak         -python3           +visualextra
-</span></span><span class="line"><span class="cl">+conceal           +lispindent        +quickfix          +viminfo
-</span></span><span class="line"><span class="cl">+cryptv            +listcmds          +reltime           +vreplace
-</span></span><span class="line"><span class="cl">+cscope            +localmap          +rightleft         +wildignore
-</span></span><span class="line"><span class="cl">+cursorbind        -lua               -ruby              +wildmenu
-</span></span><span class="line"><span class="cl">+cursorshape       +menu              +scrollbind        +windows
-</span></span><span class="line"><span class="cl">+dialog_con        +mksession         +signs             +writebackup
-</span></span><span class="line"><span class="cl">+diff              +modify_fname      +smartindent       -X11
-</span></span><span class="line"><span class="cl">+digraphs          +mouse             -sound             -xfontset
-</span></span><span class="line"><span class="cl">-dnd               -mouseshape        +spell             -xim
-</span></span><span class="line"><span class="cl">-ebcdic            +mouse_dec         +startuptime       -xpm
-</span></span><span class="line"><span class="cl">+emacs_tags        -mouse_gpm         +statusline        -xsmp
-</span></span><span class="line"><span class="cl">+eval              -mouse_jsbterm     -sun_workshop      -xterm_clipboard
-</span></span><span class="line"><span class="cl">+ex_extra          +mouse_netterm     +syntax            -xterm_save
-</span></span><span class="line"><span class="cl">+extra_search      +mouse_sgr         +tag_binary
-</span></span><span class="line"><span class="cl">     系统 vimrc 文件：<span class="s2">&#34;</span><span class="nv">$VIM</span><span class="s2">/vimrc&#34;</span>
-</span></span><span class="line"><span class="cl">     用户 vimrc 文件：<span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.vimrc&#34;</span>
-</span></span><span class="line"><span class="cl"> 第二用户 vimrc 文件：<span class="s2">&#34;~/.vim/vimrc&#34;</span>
-</span></span><span class="line"><span class="cl">      用户 exrc 文件：<span class="s2">&#34;</span><span class="nv">$HOME</span><span class="s2">/.exrc&#34;</span>
-</span></span><span class="line"><span class="cl">       defaults file: <span class="s2">&#34;</span><span class="nv">$VIMRUNTIME</span><span class="s2">/defaults.vim&#34;</span>
-</span></span><span class="line"><span class="cl">         <span class="nv">$VIM</span> 预设值：<span class="s2">&#34;/usr/local/share/vim&#34;</span>
-</span></span><span class="line"><span class="cl">编译方式：gcc -c -I. -Iproto -DHAVE_CONFIG_H     -g -O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE<span class="o">=</span><span class="m">1</span>
-</span></span><span class="line"><span class="cl">链接方式：gcc   -L/usr/local/lib -Wl,--as-needed -o vim        -lm -ltinfo -lelf  -ldl</span></span></code></pre></div></div>
 ]]></description></item></channel></rss>
