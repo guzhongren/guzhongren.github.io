@@ -1,4 +1,34 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/summary/</link><description>Summary - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 19 Nov 2025 22:28:38 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/summary/" rel="self" type="application/rss+xml"/><item><title>将 Colima 设置为 TestContainer 的容器运行时</title><link>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</link><pubDate>Wed, 19 Nov 2025 22:28:38 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/summary/</link><description>Summary - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Nov 2025 23:49:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/summary/" rel="self" type="application/rss+xml"/><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</link><pubDate>Thu, 20 Nov 2025 23:49:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp" referrerpolicy="no-referrer">
+            </div><h2 id="问题">问题</h2>
+<p>前几天入手了 OLED 版本最新的 Switch 一代，顺便破解了装了好多游戏，拿到手之后，发现好多游戏都不喜欢玩，为了玩射击类和动作类游戏，随即开始自己安装游戏，问同事要了他安装游戏的网盘资源，晚上在闲鱼上花了不到 3 块钱开了个夸克的会员下游戏。</p>
+<p>游戏下载好之后就需要安装到 Switch 上了，接下来就把 Switch 和 我的 MacBook Pro 连接起来，准备安装游戏，但是 MacBook Pro 就是始终不识别我的 Switch SD 卡，估计是 SD 卡格式不识别。所以我就开始启用所谓的破解版的官方使用的 MTP 来安装游戏，但是 MacBook Pro 也是不能找到；</p>
+<p>因为在 MTP 下面还有个 FTP, 我准备用 FTP 来传输，然后再安装游戏，但是 MacBook Pro 可以访问 Switch 的 FTP 服务器，但是，没有写的权限，又失败了。</p>
+<h2 id="解决思路">解决思路</h2>
+<p>网上有很多说用一个<a href="https://commander-one.com/">Commander one</a><sup>[1]</sup>
+ 可以安装在 MacBook 上，然后就可以找到 Switch 的 MTP 设备，然后就可以安装游戏了。好消息是确实可以找到 Switch 的 MTP 设备，坏消息是，拷贝游戏到 Switch 时，会探窗框说继续免费使用拷贝，但是没有任何进度。好无语啊，连个提示都没有，这不应该是一个商业公司开发的产品。</p>
+<p>没有什么是能难到程序员的。于是我就在 GitHub 上搜 MTP, 果然有个 <a href="https://github.com/ganeshrvel/openmtp">OpenMTP</a><sup>[2]</sup>
+ 的项目，打开一看，README 文档也写的不错，直接就有 Homebrew 的安装命令，毫不犹豫的就尝试安装，果然有些开源的产品做的就是非常的懂用户体验，尤其是给程序员用的。</p>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-bash">
+        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask openmtp
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 最终方案</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">!<span class="o">[</span>OpenMTP<span class="o">](</span>https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">## 总结</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Commander One 可能是个好软件，但是在复制游戏到目标磁盘的时候不可用，但开源世界总有代替的东西，有时候可能很直接，拿来就可以用，有时候需要多个工具组合一下，但最终都可以解决问题。程序员的世界就是这样，永远不会缺少解决问题的工具。</span></span></code></pre></div></div>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>Commander one: <a href="https://commander-one.com/" rel="noopener noreferrer">https://commander-one.com/</a></li><li>OpenMTP: <a href="https://github.com/ganeshrvel/openmtp" rel="noopener noreferrer">https://github.com/ganeshrvel/openmtp</a></li></ol>
+            </div>]]></description></item><item><title>将 Colima 设置为 TestContainer 的容器运行时</title><link>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</link><pubDate>Wed, 19 Nov 2025 22:28:38 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E5%B0%86colima%E8%AE%BE%E7%BD%AE%E4%B8%BAtestcontainer%E7%9A%84%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="原因">原因</h2>
 <p>根据 docker 公司的策略，Docker Engine 是需要收费的，而作为开源方案的 <a href="https://github.com/abiosoft/colima">Colima</a><sup>[1]</sup>
@@ -1060,306 +1090,4 @@ P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>腾讯 CSC: <a href="https://cloud.tencent.com/product/csc" rel="noopener noreferrer">https://cloud.tencent.com/product/csc</a></li><li>Digicert (收购 #Symantec ): <a href="https://www.digicert.com/" rel="noopener noreferrer">https://www.digicert.com/</a></li><li>中国金融认证中心(CFCA): <a href="https://www.cfca.com.cn/" rel="noopener noreferrer">https://www.cfca.com.cn/</a></li><li>GeoTrust: <a href="https://www.geotrust.com/" rel="noopener noreferrer">https://www.geotrust.com/</a></li></ol>
-            </div>]]></description></item><item><title>How to Learn Development</title><link>https://guzhongren.github.io/2022/12/how-to-learn-development/</link><pubDate>Sat, 31 Dec 2022 17:56:21 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/12/how-to-learn-development/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/How-to/How-to-learn-development.svg" referrerpolicy="no-referrer">
-            </div><p>本文是近期为学弟学妹们演讲时用 Logseq 整理的大纲,在此记录一下，以备复用。</p>
-<h2 id="intro">Intro</h2>
-<p><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
-</p>
-<h2 id="know-yourself">Know yourself</h2>
-<p>Do you really like computer science???
-灵魂三问，你真的喜欢计算机科学吗？如果不喜欢早点放弃，不然你以后的每一刻都会感到无比的痛苦。</p>
-<h2 id="trend">Trend</h2>
-<p><strong>Trend is the future</strong>
-<a href="https://www.devjobsscanner.com/blog/">https://www.devjobsscanner.com/blog/</a><sup>[2]</sup>
-</p>
-<blockquote>
-<p>夫以铜为镜，可以正衣冠；以史为镜，可以知兴替；以人为镜，可以明得失。
-《旧唐书·魏徵传》李世民
-只有系统行地了解你所关注的内容的方向，你才能找到下一个发展的 G 点，从而成功。</p></blockquote>
-<h2 id="roadmap--best-pratice">Roadmap &amp; Best Pratice</h2>
-<h3 id="roadmap">Roadmap</h3>
-<ul>
-<li><a href="https://roadmap.sh">https://roadmap.sh</a><sup>[3]</sup>
-</li>
-</ul>
-<h3 id="best-practice">Best Practice</h3>
-<ul>
-<li>Article</li>
-</ul>
-<h4 id="道术法器">道术法器</h4>
-<ul>
-<li>道：<strong>核心思想、理念、本质规律</strong></li>
-<li>术：<strong>行为与技巧</strong></li>
-<li>法：<strong>法律、规章、制度、方法</strong></li>
-<li>器：<strong>工具</strong></li>
-</ul>
-<h2 id="frontend">Frontend</h2>
-<h3 id="basic">Basic</h3>
-<ul>
-<li><a href="https://nodejs.org/en/">Node</a><sup>[4]</sup>
-
-<ul>
-<li><a href="https://nodejs.org/en/">https://nodejs.org/en/</a><sup>[4]</sup>
-</li>
-</ul>
-</li>
-<li>Package management
-<ul>
-<li><a href="https://www.npmjs.com/">npm</a><sup>[5]</sup>
-
-<ul>
-<li><a href="https://www.npmjs.com/">https://www.npmjs.com/</a><sup>[5]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://yarnpkg.com/">yarn</a><sup>[6]</sup>
-
-<ul>
-<li><a href="https://yarnpkg.com/">https://yarnpkg.com/</a><sup>[6]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://pnpm.io/">pnpm</a><sup>[7]</sup>
-
-<ul>
-<li><a href="https://pnpm.io/">https://pnpm.io/</a><sup>[7]</sup>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>IDE
-<ul>
-<li><a href="https://code.visualstudio.com/">VSCode</a><sup>[8]</sup>
-
-<ul>
-<li><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a><sup>[8]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://www.jetbrains.com/">JetBrains</a><sup>[9]</sup>
-
-<ul>
-<li><a href="https://www.jetbrains.com/">https://www.jetbrains.com/</a><sup>[9]</sup>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Tools
-<ul>
-<li><a href="https://vitejs.dev/">Vite</a><sup>[10]</sup>
-
-<ul>
-<li><a href="https://vitejs.dev/">https://vitejs.dev/</a><sup>[10]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://www.webpackjs.com/">Webpack</a><sup>[11]</sup>
-
-<ul>
-<li><a href="https://www.webpackjs.com/">https://www.webpackjs.com/</a><sup>[11]</sup>
-</li>
-</ul>
-</li>
-<li>&hellip;</li>
-</ul>
-</li>
-</ul>
-<h3 id="language">Language</h3>
-<ul>
-<li>JavaScript/TypeScript</li>
-<li>CSS/Less/Sass</li>
-<li>HTML</li>
-</ul>
-<h3 id="framework">Framework</h3>
-<ul>
-<li><a href="https://reactjs.org/">React</a><sup>[12]</sup>
-
-<ul>
-<li><a href="https://reactjs.org/">https://reactjs.org/</a><sup>[12]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://vuejs.org/">Vue</a><sup>[13]</sup>
-
-<ul>
-<li><a href="https://vuejs.org/">https://vuejs.org/</a><sup>[13]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://angularjs.org/">Angular</a><sup>[14]</sup>
-
-<ul>
-<li><a href="https://angularjs.org/">https://angularjs.org/</a><sup>[14]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://svelte.dev/">Svelte</a><sup>[15]</sup>
-
-<ul>
-<li><a href="https://svelte.dev/">https://svelte.dev/</a><sup>[15]</sup>
-</li>
-</ul>
-</li>
-<li>&hellip;</li>
-</ul>
-<h3 id="resources">Resources</h3>
-<ul>
-<li><a href="https://www.imooc.com/">幕课网</a><sup>[16]</sup>
-</li>
-<li><a href="https://www.w3school.com.cn/">w3school</a><sup>[17]</sup>
-</li>
-<li><a href="https://developer.mozilla.org/zh-CN/">MDN</a><sup>[18]</sup>
-</li>
-</ul>
-<h2 id="backend">Backend</h2>
-<h3 id="nodejs">Nodejs</h3>
-<ul>
-<li><a href="https://expressjs.com/">Express</a><sup>[19]</sup>
-
-<ul>
-<li><a href="https://expressjs.com/">https://expressjs.com/</a><sup>[19]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://koajs.com/">Koa</a><sup>[20]</sup>
-
-<ul>
-<li><a href="https://koajs.com/">https://koajs.com/</a><sup>[20]</sup>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="javakotin">Java/Kotin</h3>
-<ul>
-<li><a href="https://spring.io/">Spring</a><sup>[21]</sup>
-</li>
-</ul>
-<h2 id="gis">GIS</h2>
-<h3 id="arcgisesri">ArcGIS[ESRI]</h3>
-<ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">Dev docs</a><sup>[22]</sup>
-
-<ul>
-<li><a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a><sup>[22]</sup>
-</li>
-</ul>
-</li>
-<li>ArcGIS Desktop</li>
-<li>ArcGIS Server</li>
-</ul>
-<h3 id="supermap">Supermap</h3>
-<h3 id="openlayers"><a href="https://openlayers.org/">OpenLayers</a><sup>[23]</sup>
-</h3>
-<h3><a href="https://openlayers.org/">https://openlayers.org/</a><sup>[23]</sup>
-</h3>
-<h3 id="qgis">QGIS</h3>
-<h3 id="geoserver">GeoServer</h3>
-<h3 id="leaflet"><a href="https://leafletjs.com/">Leaflet</a><sup>[24]</sup>
-<a href="https://leafletjs.com/">https://leafletjs.com/</a><sup>[24]</sup>
-</h3>
-<h3 id="cesiumjs"><a href="https://cesium.com/platform/cesiumjs/">Cesiumjs</a><sup>[25]</sup>
-<a href="https://cesium.com/platform/cesiumjs/">https://cesium.com/platform/cesiumjs/</a><sup>[25]</sup>
-</h3>
-<h2 id="suggestions">Suggestions</h2>
-<p>Build common capabilities</p>
-<ul>
-<li><a href="https://www.docker.com/">Docker</a><sup>[26]</sup>
-
-<ul>
-<li><a href="https://www.docker.com/">https://www.docker.com/</a><sup>[26]</sup>
-</li>
-</ul>
-</li>
-<li>Command line
-<ul>
-<li><a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a><sup>[27]</sup>
-</li>
-<li>Linux cmd</li>
-<li>Mac iterm2 / Warp</li>
-</ul>
-</li>
-<li>Tech stacks
-<ul>
-<li>CI/CD
-<ul>
-<li><a href="https://docs.github.com/en/actions">GitHub Actions</a><sup>[28]</sup>
-
-<ul>
-<li><a href="https://docs.github.com/en/actions">https://docs.github.com/en/actions</a><sup>[28]</sup>
-</li>
-</ul>
-</li>
-<li><a href="https://www.jenkins.io/">Jenkins</a><sup>[29]</sup>
-
-<ul>
-<li><a href="https://www.jenkins.io/">https://www.jenkins.io/</a><sup>[29]</sup>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Soft skills
-<ul>
-<li>Communication</li>
-<li>Management</li>
-<li>Plan</li>
-<li>Show</li>
-<li>&hellip;</li>
-</ul>
-</li>
-</ul>
-<h3 id="build-your-tech-radar">Build your <strong>Tech Radar</strong></h3>
-<ul>
-<li><a href="https://guzhongren.github.io/about/">https://guzhongren.github.io/about/</a><sup>[1]</sup>
-</li>
-</ul>
-<h3 id="always-summary">Always summary</h3>
-<ul>
-<li>Build your own blog website</li>
-<li>Wechat articles</li>
-<li>&hellip;</li>
-</ul>
-<h3 id="agile">[[Agile]]</h3>
-<ul>
-<li>[[🌰 Template-Way-of-working]]</li>
-<li>Tools
-<ul>
-<li>Calendar</li>
-<li>Trello</li>
-<li>&hellip;</li>
-</ul>
-</li>
-</ul>
-<h3 id="measure--track-anything-with-data">Measure &amp; track anything with data</h3>
-<ul>
-<li>[[💯 Capability Uplift]]</li>
-</ul>
-<h3 id="english">English</h3>
-<ul>
-<li>四级/六级/PTE</li>
-</ul>
-<h3 id="keep-smile">Keep smile</h3>
-<ul>
-<li>Stop complaining;</li>
-<li>Don&rsquo;t complain;</li>
-<li>No complaints.</li>
-</ul>
-<h2 id="key-points">Key Points</h2>
-<ul>
-<li>Quality vs Output
-<ul>
-<li>GitHub&hellip;</li>
-</ul>
-</li>
-<li>[[成事思维]]</li>
-</ul>
-<h2 id="qa">Q&amp;A</h2>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>https://guzhongren.github.io/about/: <a href="https://guzhongren.github.io/about/" rel="noopener noreferrer">https://guzhongren.github.io/about/</a></li><li>https://www.devjobsscanner.com/blog/: <a href="https://www.devjobsscanner.com/blog/" rel="noopener noreferrer">https://www.devjobsscanner.com/blog/</a></li><li>https://roadmap.sh: <a href="https://roadmap.sh" rel="noopener noreferrer">https://roadmap.sh</a></li><li>Node: <a href="https://nodejs.org/en/" rel="noopener noreferrer">https://nodejs.org/en/</a></li><li>npm: <a href="https://www.npmjs.com/" rel="noopener noreferrer">https://www.npmjs.com/</a></li><li>yarn: <a href="https://yarnpkg.com/" rel="noopener noreferrer">https://yarnpkg.com/</a></li><li>pnpm: <a href="https://pnpm.io/" rel="noopener noreferrer">https://pnpm.io/</a></li><li>VSCode: <a href="https://code.visualstudio.com/" rel="noopener noreferrer">https://code.visualstudio.com/</a></li><li>JetBrains: <a href="https://www.jetbrains.com/" rel="noopener noreferrer">https://www.jetbrains.com/</a></li><li>Vite: <a href="https://vitejs.dev/" rel="noopener noreferrer">https://vitejs.dev/</a></li><li>Webpack: <a href="https://www.webpackjs.com/" rel="noopener noreferrer">https://www.webpackjs.com/</a></li><li>React: <a href="https://reactjs.org/" rel="noopener noreferrer">https://reactjs.org/</a></li><li>Vue: <a href="https://vuejs.org/" rel="noopener noreferrer">https://vuejs.org/</a></li><li>Angular: <a href="https://angularjs.org/" rel="noopener noreferrer">https://angularjs.org/</a></li><li>Svelte: <a href="https://svelte.dev/" rel="noopener noreferrer">https://svelte.dev/</a></li><li>幕课网: <a href="https://www.imooc.com/" rel="noopener noreferrer">https://www.imooc.com/</a></li><li>w3school: <a href="https://www.w3school.com.cn/" rel="noopener noreferrer">https://www.w3school.com.cn/</a></li><li>MDN: <a href="https://developer.mozilla.org/zh-CN/" rel="noopener noreferrer">https://developer.mozilla.org/zh-CN/</a></li><li>Express: <a href="https://expressjs.com/" rel="noopener noreferrer">https://expressjs.com/</a></li><li>Koa: <a href="https://koajs.com/" rel="noopener noreferrer">https://koajs.com/</a></li><li>Spring: <a href="https://spring.io/" rel="noopener noreferrer">https://spring.io/</a></li><li>Dev docs: <a href="https://developers.arcgis.com/documentation/mapping-apis-and-services/" rel="noopener noreferrer">https://developers.arcgis.com/documentation/mapping-apis-and-services/</a></li><li>OpenLayers: <a href="https://openlayers.org/" rel="noopener noreferrer">https://openlayers.org/</a></li><li>Leaflet: <a href="https://leafletjs.com/" rel="noopener noreferrer">https://leafletjs.com/</a></li><li>Cesiumjs: <a href="https://cesium.com/platform/cesiumjs/" rel="noopener noreferrer">https://cesium.com/platform/cesiumjs/</a></li><li>Docker: <a href="https://www.docker.com/" rel="noopener noreferrer">https://www.docker.com/</a></li><li>https://github.com/microsoft/terminal: <a href="https://github.com/microsoft/terminal" rel="noopener noreferrer">https://github.com/microsoft/terminal</a></li><li>GitHub Actions: <a href="https://docs.github.com/en/actions" rel="noopener noreferrer">https://docs.github.com/en/actions</a></li><li>Jenkins: <a href="https://www.jenkins.io/" rel="noopener noreferrer">https://www.jenkins.io/</a></li></ol>
             </div>]]></description></item></channel></rss>
