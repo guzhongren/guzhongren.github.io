@@ -17,6 +17,7 @@
 
 ```bash
 brew install --cask openmtp
+```
 
 ## 最终方案
 

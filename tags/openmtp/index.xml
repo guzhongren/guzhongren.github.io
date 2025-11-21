@@ -9,22 +9,17 @@
  可以安装在 MacBook 上，然后就可以找到 Switch 的 MTP 设备，然后就可以安装游戏了。好消息是确实可以找到 Switch 的 MTP 设备，坏消息是，拷贝游戏到 Switch 时，会探窗框说继续免费使用拷贝，但是没有任何进度。好无语啊，连个提示都没有，这不应该是一个商业公司开发的产品。</p>
 <p>没有什么是能难到程序员的。于是我就在 GitHub 上搜 MTP, 果然有个 <a href="https://github.com/ganeshrvel/openmtp">OpenMTP</a><sup>[2]</sup>
  的项目，打开一看，README 文档也写的不错，直接就有 Homebrew 的安装命令，毫不犹豫的就尝试安装，果然有些开源的产品做的就是非常的懂用户体验，尤其是给程序员用的。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-bash">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
         <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask openmtp
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## 最终方案</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">!<span class="o">[</span>OpenMTP<span class="o">](</span>https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp<span class="o">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">## 总结</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Commander One 可能是个好软件，但是在复制游戏到目标磁盘的时候不可用，但开源世界总有代替的东西，有时候可能很直接，拿来就可以用，有时候需要多个工具组合一下，但最终都可以解决问题。程序员的世界就是这样，永远不会缺少解决问题的工具。</span></span></code></pre></div></div>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask openmtp</span></span></code></pre></div></div>
+<h2 id="最终方案">最终方案</h2>
+<p>因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp" alt="OpenMTP" /></p>
+<h2 id="总结">总结</h2>
+<p>Commander One 可能是个好软件，但是在复制游戏到目标磁盘的时候不可用，但开源世界总有代替的东西，有时候可能很直接，拿来就可以用，有时候需要多个工具组合一下，但最终都可以解决问题。程序员的世界就是这样，永远不会缺少解决问题的工具。</p>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Commander one: <a href="https://commander-one.com/" rel="noopener noreferrer">https://commander-one.com/</a></li><li>OpenMTP: <a href="https://github.com/ganeshrvel/openmtp" rel="noopener noreferrer">https://github.com/ganeshrvel/openmtp</a></li></ol>
