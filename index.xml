@@ -1,4 +1,123 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 23 Jan 2026 07:48:47 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>“妈妈，你看，月。”</title><link>https://guzhongren.github.io/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</link><pubDate>Fri, 23 Jan 2026 07:48:47 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>谷中仁的博客</title><description>最近的总结或者思考...</description><follow_challenge><feedId>74621993392456704</feedId><userId>74619979585483776</userId></follow_challenge><link>https://guzhongren.github.io/</link><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><generator>Hugo -- gohugo.io</generator><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Feb 2026 07:09:08 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>AI 时代需要什么？</title><link>https://guzhongren.github.io/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 07 Feb 2026 07:09:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</guid><description><![CDATA[<p>都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。</p>
+<p>如下是我参与的一个调查的回答，分享给大家：</p>
+<div class="details admonition question">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
+<ul>
+<li>
+<p>What you used AI for (be specific)</p>
+<ul>
+<li>A:
+<ul>
+<li>[Design] Generate <code>AGENTS.md</code> file for different project to avoid inaccurate answers about the specific project, e.g. Project overview to know the background, Tech Stack to make sure to generating related tech stack code, Architecture to generate the correct file under correct folder, and <strong>API</strong> Endpoints to generate the correct API endpoint code, restrictions to tell AI clearly state the &ldquo;Don&rsquo;ts&rdquo; and points to note, standards to make sure the code generated is in line with the project standards, and test cases to make sure the code generated is tested, commands to run the project and verify by Agent itself.</li>
+<li>[Design] Generate the Git issue via the <code>generate-git-issue</code> <code>SKILLS</code>; the agent will generate the issue with given requirement and related linked source based on the <code>Claude opus</code> model.</li>
+<li>[Design] Generate the change plan/tasks using <code>plan mode</code>, give more information if not enough</li>
+<li>[Development] Generate the code with the plan in the <code>agent mode</code> use well-performanced AI model, e.g. <code>Claude opus</code></li>
+<li>[Development] Review code using different AI model after finish code generation in local.</li>
+<li>[Testing] Review code via MCP, like <code>review this PR： https://git.realestate.com.au/financial-experiences/lead-franchise-matching-service/pull/41</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What you did without AI</p>
+<ul>
+<li>A: operation on the source code, e.e. create branch, commit code, push code, create PR, review PR, merge PR, deploy code, monitor the production system, etc.</li>
+<li>Operation of the JIRA card, it should be operated by AI and MCP&hellip; just need to try.</li>
+</ul>
+</li>
+<li>
+<p>Something AI helped with that surprised you</p>
+<ul>
+<li>A:
+<ul>
+<li>Generate the clean &amp; correct git issue (diagrams, business test strategies&hellip; ) with small prompt( contains short requirement description and some git repo&rsquo;s link)</li>
+<li>Fix the bug with a more elegant way
+<ul>
+<li>should save auditTrail info from lead in the DB, skip if empty from DB and empty in the request parameter; but if empty in the DB and user provided it, should save it; I just use pseudo-code describe the logic, but the code generated by AI is more elegant and concise than my code, and it works well.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Something AI failed at</p>
+<ul>
+<li>A: Generate the not good code when the prompt is short and leak of business background, tech stack, especially in the <code>glean chat</code></li>
+</ul>
+</li>
+<li>
+<p>One moment where you realized the workflow was better or worse than</p>
+<ul>
+<li>A: [Better] Test &amp; verify &amp; fix automatically with unit-test and integration test every time after generating code</li>
+</ul>
+</li>
+<li>
+<p>Rough time: did it speed them up, slow them down, or no change?</p>
+<ul>
+<li>A: [speed them up] at most time, especially when generating code and test cases, and the time for review code is also reduced a lot.</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="ai-时代你需要什么样的能力">AI 时代，你需要什么样的能力？</h2>
+<p>AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：</p>
+<h3 id="定义问题">定义问题</h3>
+<p>你的任何输入都会得到 AI 的反馈，但是不一定保证正确。</p>
+<p>AI 模型总是会猜测你的任何问题，但是如果你给他足够多且准确的信息，那么，他就会将你的问题转化成一个清晰的技术问题，并且给出一个可靠的解决方案。</p>
+<p>可以按照如下内容或步骤来定义你的 Prompt, AI 会更好地理解你的问题，并且给出更准确的答案：</p>
+<ol>
+<li>明确目标与成功指标：集成某个外部服务，使其可以让他我们的用户提供服务。</li>
+<li>限定约束条件：需要使用什么样的技术框架，满足什么架构要求，遵守什么样的安全规范&hellip;</li>
+<li>拆分子问题：按照架构层次、功能模块或数据流，把大问题拆成更小的、可交付的子问题，形成可追踪的 Task。</li>
+<li>设计验证回路：单元/集成测试如何运行并验证覆盖率。</li>
+</ol>
+<h3 id="管理">管理</h3>
+<p>AI 模型已经是一个百事通了，但是它不一定能把所有的知识都正确的组合起来，来解决一个复杂的问题。对此，我们需要有能力来管理我们的经验/知识系统，以及管理多任务的 Agent 系统，来加速产品或项目的落地。</p>
+<h4 id="管理知识">管理知识</h4>
+<p>知识管理是把企业经验、文档和长期记忆转化为可供模型利用的资源。一个好用的知识层，能显著提高模型的可靠性与可控性。</p>
+<p>同时，人作为我们与 AI 交互的协作者，我们需要把人类的专业领域的经验系统性的编排起来，然后在提示词中将步骤一步一步的告诉 AI, 如此 AI 才能遵循正确的业务流程才完成任务，而不是凭空编造一个看似合理但不符合业务逻辑的答案。</p>
+<p>通用的知识，AI 比我们知道的多。不要低估它，但也不要高估自己。</p>
+<p>我们要做的是：把我们特有的、与业务相关的知识，结构化地管理起来，让 AI 能够正确地调用和组合这些知识。</p>
+<ol>
+<li>知识库结构化：将经验总结为“活”文档（诸如，README.md, AGENTS.md, SKILL.md Confluence page, Git Repo&hellip;），搭配 MCP/Agent/Skills 等技术让其可以与模型交互。</li>
+<li>版本与可追溯性：记录知识条目的变更历史与作者，输出时附带来源以便验证。</li>
+</ol>
+<h4 id="管理多-agent">管理多 Agent</h4>
+<p>随着系统复杂度提升，常出现把不同能力的模型或 Agent 组合使用的需求。管理多 Agent 需要明确角色分工、通信协议与失败处理。</p>
+<ol>
+<li>明确角色：给每个 Agent 一个清晰的职责（例如：Plan、generate code、tech debt manager &amp; refactor、review&hellip;），避免责任重叠。</li>
+<li>定义接口与契约：输入/输出格式、异常语义、超时与重试策略要事先规定好。</li>
+<li>中央编排 vs 分散协作：复杂情景下建议采用“指挥者（orchestrator）”模式统一调度；简单流水线可用轻量链式调用。</li>
+<li>可观测性：记录每个 Agent 的原始输入、模型版本、耗时与置信度，便于排查与演进。</li>
+</ol>
+<p>常见模式：先用检索+RAG 获取背景知识，再让生成模型根据约束完成任务；或者把复杂任务拆成多轮子任务，由专门 Agent 逐一解决并最终汇总答案。</p>
+<h3 id="快速学习">快速学习</h3>
+<p>在快速变化的领域，学习能力本身成为关键竞争力。更重要的是，把学习变成可复用的工程化流程。</p>
+<ul>
+<li>小步实验：把学习目标拆成可验证的小实验，用最简单的模型与数据先试验想法。</li>
+<li>模板化复用：把成功的 prompt、pipeline、测试用例做成模板库，供团队共享与快速复现。</li>
+<li>读懂论文与工程实现：关注落地性强的工作，把论文中的方法先在小规模上复现验证。</li>
+<li>复盘与知识沉淀：每个实验都写复盘，总结失败原因与可复用结论。</li>
+</ul>
+<p>学习路径建议：从“问题定义→验证→集成→监控”的闭环入手，先学会把 AI 功能稳定地嵌进产品，再逐步研究更底层的新技术。</p>
+<h2 id="总结">总结</h2>
+<p>AI 时代，需要更多的有经验的人。</p>
+<p>AI 带来的不是单纯替代，而是把重复性的认知劳动放到工具里，把复杂性留给人来管理。经验丰富的人在这个阶段反而更值钱，因为他们能做的事情，更偏向判断、抽象、取舍与责任承担。</p>
+<ul>
+<li>经验帮助你定义什么是“正确”的输入和输出，而不是被模型表面的“答案”迷惑。</li>
+<li>经验让你有能力评估风险、成本和收益，从而决定何时引入模型、何时保守为上。</li>
+<li>经验意味着能在模糊的需求里快速拆解出可交付的小目标，搭建迭代回路，让 AI 产出落地为产品价值。</li>
+</ul>
+<p>换句话说，AI 并不是真正把“思考”全盘接手，而是把大量机械化的认知任务交给了工具。最有价值的岗位，反而是能用更少的尝试把问题框定准确、能管理复杂系统、并对最终结果负责的人。</p>
+<p>AI 把工具能力放大，但不会自动带来判断力、责任和对上下文的深刻理解。那些能把问题定义清楚、建立稳定回路、并持续学习的人，在未来会更有竞争力。我们要做的，不是和模型比赛写代码，而是学会用模型去解决更有价值的、更需要经验与判断力的问题。</p>
+]]></description></item><item><title>“妈妈，你看，月。”</title><link>https://guzhongren.github.io/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</link><pubDate>Fri, 23 Jan 2026 07:48:47 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><p>昨天晚上本来想让西西早点睡觉，所以我们就早早就上床了，假装要睡觉了，可西西还是很兴奋，在主卧，客厅，次卧之间不停跑，不停大声说话。</p>
 <p>妈妈骗她说：“外面有大灰狼，赶紧上来睡觉来。”</p>
@@ -6039,89 +6158,4 @@ Array methods: every(), some(), find(), and findIndex() test the array elements 
 </span></span><span class="line"><span class="cl"><span class="p">});</span></span></span></code></pre></div></div>
 <p>然后运行 test，通过。</p>
 <p>Code 地址：https://github.com/guzhongren/awesome-unittest/tree/main/JavaScript/Frontend/src/3rd-part-test</p>
-]]></description></item><item><title>导出并保存 GPG 公密钥</title><link>https://guzhongren.github.io/2021/04/%E5%AF%BC%E5%87%BA%E5%B9%B6%E4%BF%9D%E5%AD%98gpg%E5%85%AC%E5%AF%86%E9%92%A5/</link><pubDate>Sat, 10 Apr 2021 20:12:25 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2021/04/%E5%AF%BC%E5%87%BA%E5%B9%B6%E4%BF%9D%E5%AD%98gpg%E5%85%AC%E5%AF%86%E9%92%A5/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="简介">简介</h2>
-<p>GPG 是开源免费的身份验证工具，简单一句话就是对于公钥使用者可以和密钥拥有者秘密通信；对于密钥使用者，可以像外界证明某句话是你说的；在现实场景中，你可以写了一份信，但是大家怎么知道这份信是你写的呢？如果你身边有熟悉你的人，那 TA 可以通过你的笔迹或者你家生产的信纸来知道这份信是你的，但是对于别人呢？他们对你不了解，所以他们很难证明：你就是你？</p>
-<p>在程序的世界里，你身边都是陌生人，怎么证明你就是你？一般都使用公钥私钥的非对称加密算法。在网上有很多关于 GPG 和 Github 结合的说明，比如 <a href="https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification">GitHub 官网的 Doc</a><sup>[1]</sup>
-; 最重要的另一件事是备份你的公钥和密钥。</p>
-<h2 id="备份">备份</h2>
-<h3 id="列出公钥">列出公钥</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg --list-secret-keys --keyid-format LONG
-</span></span><span class="line"><span class="cl">/Users/c4/.gnupg/pubring.kbx
-</span></span><span class="line"><span class="cl">----------------------------
-</span></span><span class="line"><span class="cl">sec   rsa4096/XXXXXXXXXXXXXX 2021-04-10 <span class="o">[</span>SC<span class="o">]</span>
-</span></span><span class="line"><span class="cl">      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-</span></span><span class="line"><span class="cl">uid                 <span class="o">[</span> 绝对 <span class="o">]</span> user（仅用来签名 git, message<span class="o">)</span> &lt;user@email.com&gt;
-</span></span><span class="line"><span class="cl">ssb   rsa4096/202XXXXXXXXXXXXX 2021-04-10 <span class="o">[</span>E<span class="o">]</span></span></span></code></pre></div></div>
-<p>sec 下面的第二行 也就是所有字符都是 X 的那一行就是 keyId;</p>
-<h3 id="导出公钥">导出公钥</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg -a -o public-file.key --export keyId</span></span></code></pre></div></div>
-<blockquote>
-<p>-a 为 &ndash;armor 的简写，表示密钥以 ASCII 的形式输出，默认以二进制的形式输出；</p></blockquote>
-<blockquote>
-<p>-o 为 &ndash;output 的简写，指定写入的文件；</p></blockquote>
-<p>导出会有一个 <code>public-file.key</code> 在当前目录下生成，里面存放你的公钥。</p>
-<h3 id="导出私钥">导出私钥</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg -a -o private-file.key --export-secret-keys keyId</span></span></code></pre></div></div>
-<p>导出一个私钥 private-file.key.</p>
-<h3 id="导入公钥私钥">导入公钥私钥</h3>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg --import xxxx.key</span></span></code></pre></div></div>
-<p>xxxx.key 可以是公钥，也可以是私钥。</p>
-<h3 id="保存">保存</h3>
-<p>公钥可以放在自己的网站或者信任的服务器上，但是私钥一定要自己保管，千万千万不能泄漏出去。否则在计算机的世界里，人人都可以是你。</p>
-<p>推荐将你的公钥和私钥都保存在像<code>1password</code>, <code>lastpassword</code> 或者<code>Bitwarden</code>里，我用的是 <code>bitwarden</code>; 因为不能存文件，只能将公钥和私钥的内容复制并拷贝进去。但效果是一样的。</p>
-<h4 id="缓存">缓存</h4>
-<p>在设置了强密码的前提下， 我们可以稍微的牺牲一些安全性， 通过配置 gpg-agent 的 default-cache-ttl， 让我们解密后的私钥在内存中存在的时间稍微长一些（默认 10 分钟）， 比如， 一天：</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#~/.gnupg/gpg-agent.conf</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">default-cache-ttl-ssh <span class="m">86400</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">max-cache-ttl-ssh <span class="m">86400</span></span></span></code></pre></div></div>
-<h2 id="分发">分发</h2>
-<p>将公钥发送到 CA 管理中间机构，方便别人验证。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
-    <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ gpg -k
-</span></span><span class="line"><span class="cl">/Users/c4/.gnupg/pubring.kbx
-</span></span><span class="line"><span class="cl">----------------------------
-</span></span><span class="line"><span class="cl">pub   rsa4096 2021-04-11 <span class="o">[</span>SC<span class="o">]</span>
-</span></span><span class="line"><span class="cl">      3D4DC54CDDA6FAFDD13A4970D18Axxxxxxxxxx
-</span></span><span class="line"><span class="cl">uid           <span class="o">[</span> 绝对 <span class="o">]</span> guzhongren <span class="o">(</span>used <span class="k">for</span> git<span class="p">&amp;</span>message<span class="o">)</span> &lt;guzhongren@live.cn&gt;
-</span></span><span class="line"><span class="cl">sub   rsa4096 2021-04-11 <span class="o">[</span>E<span class="o">]</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">❯ gpg --send-key 3D4DC54CDDA6FAFDD13A4970D18Axxxxxxxxxx</span></span></code></pre></div></div>
-<h2 id="-注意">⚠️ 注意</h2>
-<p>你的私钥差不多就是计算机世界里的另一个你，所以，把你自己保护好。</p>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>GitHub 官网的 Doc: <a href="https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification" rel="noopener noreferrer">https://docs.github.com/en/github/authenticating-to-github/managing-commit-signature-verification</a></li></ol>
-            </div>]]></description></item></channel></rss>
+]]></description></item></channel></rss>

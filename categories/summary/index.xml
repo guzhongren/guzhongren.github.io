@@ -1,4 +1,123 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/summary/</link><description>Summary - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Nov 2025 23:49:51 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/summary/" rel="self" type="application/rss+xml"/><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</link><pubDate>Thu, 20 Nov 2025 23:49:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Summary - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/summary/</link><description>Summary - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 07 Feb 2026 07:09:08 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/summary/" rel="self" type="application/rss+xml"/><item><title>AI 时代需要什么？</title><link>https://guzhongren.github.io/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</link><pubDate>Sat, 07 Feb 2026 07:09:08 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</guid><description><![CDATA[<p>都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。</p>
+<p>如下是我参与的一个调查的回答，分享给大家：</p>
+<div class="details admonition question">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
+<ul>
+<li>
+<p>What you used AI for (be specific)</p>
+<ul>
+<li>A:
+<ul>
+<li>[Design] Generate <code>AGENTS.md</code> file for different project to avoid inaccurate answers about the specific project, e.g. Project overview to know the background, Tech Stack to make sure to generating related tech stack code, Architecture to generate the correct file under correct folder, and <strong>API</strong> Endpoints to generate the correct API endpoint code, restrictions to tell AI clearly state the &ldquo;Don&rsquo;ts&rdquo; and points to note, standards to make sure the code generated is in line with the project standards, and test cases to make sure the code generated is tested, commands to run the project and verify by Agent itself.</li>
+<li>[Design] Generate the Git issue via the <code>generate-git-issue</code> <code>SKILLS</code>; the agent will generate the issue with given requirement and related linked source based on the <code>Claude opus</code> model.</li>
+<li>[Design] Generate the change plan/tasks using <code>plan mode</code>, give more information if not enough</li>
+<li>[Development] Generate the code with the plan in the <code>agent mode</code> use well-performanced AI model, e.g. <code>Claude opus</code></li>
+<li>[Development] Review code using different AI model after finish code generation in local.</li>
+<li>[Testing] Review code via MCP, like <code>review this PR： https://git.realestate.com.au/financial-experiences/lead-franchise-matching-service/pull/41</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>What you did without AI</p>
+<ul>
+<li>A: operation on the source code, e.e. create branch, commit code, push code, create PR, review PR, merge PR, deploy code, monitor the production system, etc.</li>
+<li>Operation of the JIRA card, it should be operated by AI and MCP&hellip; just need to try.</li>
+</ul>
+</li>
+<li>
+<p>Something AI helped with that surprised you</p>
+<ul>
+<li>A:
+<ul>
+<li>Generate the clean &amp; correct git issue (diagrams, business test strategies&hellip; ) with small prompt( contains short requirement description and some git repo&rsquo;s link)</li>
+<li>Fix the bug with a more elegant way
+<ul>
+<li>should save auditTrail info from lead in the DB, skip if empty from DB and empty in the request parameter; but if empty in the DB and user provided it, should save it; I just use pseudo-code describe the logic, but the code generated by AI is more elegant and concise than my code, and it works well.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Something AI failed at</p>
+<ul>
+<li>A: Generate the not good code when the prompt is short and leak of business background, tech stack, especially in the <code>glean chat</code></li>
+</ul>
+</li>
+<li>
+<p>One moment where you realized the workflow was better or worse than</p>
+<ul>
+<li>A: [Better] Test &amp; verify &amp; fix automatically with unit-test and integration test every time after generating code</li>
+</ul>
+</li>
+<li>
+<p>Rough time: did it speed them up, slow them down, or no change?</p>
+<ul>
+<li>A: [speed them up] at most time, especially when generating code and test cases, and the time for review code is also reduced a lot.</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h2 id="ai-时代你需要什么样的能力">AI 时代，你需要什么样的能力？</h2>
+<p>AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：</p>
+<h3 id="定义问题">定义问题</h3>
+<p>你的任何输入都会得到 AI 的反馈，但是不一定保证正确。</p>
+<p>AI 模型总是会猜测你的任何问题，但是如果你给他足够多且准确的信息，那么，他就会将你的问题转化成一个清晰的技术问题，并且给出一个可靠的解决方案。</p>
+<p>可以按照如下内容或步骤来定义你的 Prompt, AI 会更好地理解你的问题，并且给出更准确的答案：</p>
+<ol>
+<li>明确目标与成功指标：集成某个外部服务，使其可以让他我们的用户提供服务。</li>
+<li>限定约束条件：需要使用什么样的技术框架，满足什么架构要求，遵守什么样的安全规范&hellip;</li>
+<li>拆分子问题：按照架构层次、功能模块或数据流，把大问题拆成更小的、可交付的子问题，形成可追踪的 Task。</li>
+<li>设计验证回路：单元/集成测试如何运行并验证覆盖率。</li>
+</ol>
+<h3 id="管理">管理</h3>
+<p>AI 模型已经是一个百事通了，但是它不一定能把所有的知识都正确的组合起来，来解决一个复杂的问题。对此，我们需要有能力来管理我们的经验/知识系统，以及管理多任务的 Agent 系统，来加速产品或项目的落地。</p>
+<h4 id="管理知识">管理知识</h4>
+<p>知识管理是把企业经验、文档和长期记忆转化为可供模型利用的资源。一个好用的知识层，能显著提高模型的可靠性与可控性。</p>
+<p>同时，人作为我们与 AI 交互的协作者，我们需要把人类的专业领域的经验系统性的编排起来，然后在提示词中将步骤一步一步的告诉 AI, 如此 AI 才能遵循正确的业务流程才完成任务，而不是凭空编造一个看似合理但不符合业务逻辑的答案。</p>
+<p>通用的知识，AI 比我们知道的多。不要低估它，但也不要高估自己。</p>
+<p>我们要做的是：把我们特有的、与业务相关的知识，结构化地管理起来，让 AI 能够正确地调用和组合这些知识。</p>
+<ol>
+<li>知识库结构化：将经验总结为“活”文档（诸如，README.md, AGENTS.md, SKILL.md Confluence page, Git Repo&hellip;），搭配 MCP/Agent/Skills 等技术让其可以与模型交互。</li>
+<li>版本与可追溯性：记录知识条目的变更历史与作者，输出时附带来源以便验证。</li>
+</ol>
+<h4 id="管理多-agent">管理多 Agent</h4>
+<p>随着系统复杂度提升，常出现把不同能力的模型或 Agent 组合使用的需求。管理多 Agent 需要明确角色分工、通信协议与失败处理。</p>
+<ol>
+<li>明确角色：给每个 Agent 一个清晰的职责（例如：Plan、generate code、tech debt manager &amp; refactor、review&hellip;），避免责任重叠。</li>
+<li>定义接口与契约：输入/输出格式、异常语义、超时与重试策略要事先规定好。</li>
+<li>中央编排 vs 分散协作：复杂情景下建议采用“指挥者（orchestrator）”模式统一调度；简单流水线可用轻量链式调用。</li>
+<li>可观测性：记录每个 Agent 的原始输入、模型版本、耗时与置信度，便于排查与演进。</li>
+</ol>
+<p>常见模式：先用检索+RAG 获取背景知识，再让生成模型根据约束完成任务；或者把复杂任务拆成多轮子任务，由专门 Agent 逐一解决并最终汇总答案。</p>
+<h3 id="快速学习">快速学习</h3>
+<p>在快速变化的领域，学习能力本身成为关键竞争力。更重要的是，把学习变成可复用的工程化流程。</p>
+<ul>
+<li>小步实验：把学习目标拆成可验证的小实验，用最简单的模型与数据先试验想法。</li>
+<li>模板化复用：把成功的 prompt、pipeline、测试用例做成模板库，供团队共享与快速复现。</li>
+<li>读懂论文与工程实现：关注落地性强的工作，把论文中的方法先在小规模上复现验证。</li>
+<li>复盘与知识沉淀：每个实验都写复盘，总结失败原因与可复用结论。</li>
+</ul>
+<p>学习路径建议：从“问题定义→验证→集成→监控”的闭环入手，先学会把 AI 功能稳定地嵌进产品，再逐步研究更底层的新技术。</p>
+<h2 id="总结">总结</h2>
+<p>AI 时代，需要更多的有经验的人。</p>
+<p>AI 带来的不是单纯替代，而是把重复性的认知劳动放到工具里，把复杂性留给人来管理。经验丰富的人在这个阶段反而更值钱，因为他们能做的事情，更偏向判断、抽象、取舍与责任承担。</p>
+<ul>
+<li>经验帮助你定义什么是“正确”的输入和输出，而不是被模型表面的“答案”迷惑。</li>
+<li>经验让你有能力评估风险、成本和收益，从而决定何时引入模型、何时保守为上。</li>
+<li>经验意味着能在模糊的需求里快速拆解出可交付的小目标，搭建迭代回路，让 AI 产出落地为产品价值。</li>
+</ul>
+<p>换句话说，AI 并不是真正把“思考”全盘接手，而是把大量机械化的认知任务交给了工具。最有价值的岗位，反而是能用更少的尝试把问题框定准确、能管理复杂系统、并对最终结果负责的人。</p>
+<p>AI 把工具能力放大，但不会自动带来判断力、责任和对上下文的深刻理解。那些能把问题定义清楚、建立稳定回路、并持续学习的人，在未来会更有竞争力。我们要做的，不是和模型比赛写代码，而是学会用模型去解决更有价值的、更需要经验与判断力的问题。</p>
+]]></description></item><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</link><pubDate>Thu, 20 Nov 2025 23:49:51 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp" referrerpolicy="no-referrer">
             </div><h2 id="问题">问题</h2>
 <p>前几天入手了 OLED 版本最新的 Switch 一代，顺便破解了装了好多游戏，拿到手之后，发现好多游戏都不喜欢玩，为了玩射击类和动作类游戏，随即开始自己安装游戏，问同事要了他安装游戏的网盘资源，晚上在闲鱼上花了不到 3 块钱开了个夸克的会员下游戏。</p>
@@ -984,105 +1103,4 @@ xiaoming10</code></pre></div>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>C4 Modeling: <a href="https://guzhongren.github.io/slides/talks/01.C4-Model" rel="noopener noreferrer">https://guzhongren.github.io/slides/talks/01.C4-Model</a></li><li>数据流图: <a href="https://plantuml.com/sequence-diagram" rel="noopener noreferrer">https://plantuml.com/sequence-diagram</a></li></ol>
-            </div>]]></description></item><item><title>数字证书分类总结</title><link>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</link><pubDate>Sun, 08 Jan 2023 20:35:00 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2023/01/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E5%88%86%E7%B1%BB%E6%80%BB%E7%BB%93/</guid><description><![CDATA[<div class="featured-image">
-                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
-            </div><h2 id="数字证书定义">数字证书定义</h2>
-<p>数字证书就是互联网通讯中标志通讯各方身份信息的一串数字，数字证书由经国家工信部认证的权威机构——CA 机构发行，是身份认证机构盖在数字身份证上的一个章或印(或者说加在数字身份证上的一个签名)，人们可以在网上用它来识别对方的身份。</p>
-<h3 id="作用">作用</h3>
-<ul>
-<li>信息的保密性</li>
-<li>交易者身份的确定性</li>
-<li>不可否认性</li>
-<li>不可修改性</li>
-</ul>
-<h2 id="常见标准">常见标准</h2>
-<h3 id="符合-pki-itu-t-x509-标准传统标准der-pem-cer-crt">符合 PKI ITU-T X509 标准，传统标准（.DER .PEM .CER .CRT）</h3>
-<p>X509 是数字证书的基本规范，而 P7 和 P12 则是两个实现规范，P7 用于数字信封，P12 则是带有私钥的证书实现规范。</p>
-<p>基本的证书格式，只包含公钥。
-x509 证书由用户公共密钥和用户标识符组成。此外还包括</p>
-<ul>
-<li>版本号</li>
-<li>证书序列号</li>
-<li>CA 标识符</li>
-<li>签名算法标识</li>
-<li>签发者名称</li>
-<li>证书有效期等信息。</li>
-</ul>
-<h3 id="符合-pkcs7-加密消息语法标准p7b-p7c-spc-p7r">符合 PKCS#7 加密消息语法标准(.P7B .P7C .SPC .P7R)</h3>
-<p>Public Key Cryptography Standards #7</p>
-<p>一般主要用来做数字信封。
-一般把证书分成两个文件，一个公钥、一个私钥，有 PEM 和 DER 两种编码方式</p>
-<ul>
-<li>PEM 比较多见，是纯文本的，一般用于分发公钥，看到的是一串可见的字符串，通常以.crt，.cer，.key 为文件后缀</li>
-<li>DER 是二进制编码</li>
-</ul>
-<h3 id="符合-pkcs10-证书请求标准p10">符合 PKCS#10 证书请求标准(.p10)</h3>
-<p>证书请求语法</p>
-<h3 id="符合-pkcs12-个人信息交换标准pfx-p12">符合 PKCS#12 个人信息交换标准（.pfx *.p12）</h3>
-<p>Public Key Cryptography Standards #12</p>
-<p>一种文件<strong>打包格式</strong>，为存储和发布用户和服务器私钥、公钥和证书指定了一个可移植的格式，是一种<strong>二进制</strong>格式，通常以**.pfx<strong>或</strong>.p12**为文件后缀名。
-使用 OpenSSL 的 pkcs12 命令可以创建、解析和读取这些文件。
-P12 是把证书压成一个文件，<strong>xxx.pfx</strong> 。主要是考虑分发证书，私钥是要绝对保密的，不能随便以文本方式散播。所以 P7 格式不适合分发。.pfx 中可以加密码保护，所以更安全。</p>
-<h2 id="covert">Covert</h2>
-<p>数字证书格式之间是可以相互转换的，只是需要在特定的转换过程中，使用特定的参数，比如有的转换需要私钥， 有的转换需要密码。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Security/Degital-Cert.3y4w8ewfimc0.webp" alt="Digital-Cert" /></p>
-<h2 id="ssl-证书分类">SSL 证书分类</h2>
-<h3 id="dv-ssl-证书域名型">DV SSL 证书（域名型）</h3>
-<p>只验证域名所有权，在浏览器中显示锁形标志；</p>
-<h4 id="适用">适用</h4>
-<ul>
-<li>个人网站或者小微企业使用</li>
-</ul>
-<h4 id="优点">优点</h4>
-<ul>
-<li>申请容易 - 颁发快 - 价格较低</li>
-</ul>
-<h4 id="缺点">缺点</h4>
-<ul>
-<li>证书中无法显示企业信息 - 安全性较差</li>
-</ul>
-<h3 id="ov-ssl-证书企业型">OV SSL 证书（企业型）</h3>
-<p>验证域名所有权以及申请的主体身份的合法性</p>
-<h4 id="适用-1">适用</h4>
-<p>中小型企业、企事业单位官网使用</p>
-<h4 id="优点-1">优点</h4>
-<ul>
-<li>安全性较高，可点击浏览器小锁标志查看证书信息</li>
-</ul>
-<h3 id="ev-ssl-证书增强型">EV SSL 证书（增强型）</h3>
-<p>Extended Validation（EV）证书是目前高信任级别的 SSL 证书</p>
-<h4 id="适用-2">适用</h4>
-<ul>
-<li>大型商业网站或者是对网站安全有较高要求的公司。可在绿色地址栏显示公司名称</li>
-</ul>
-<h3 id="优点-2">优点</h3>
-<ul>
-<li>证书颁发机构对此的审核比较严格</li>
-</ul>
-<h2 id="根据域名分类">根据域名分类</h2>
-<p><img src="https://www.wosign.com/column/images/ssl_20211231_1.png" alt="Domain" /></p>
-<h3 id="单域名证书">单域名证书</h3>
-<p>这类证书只保护一个域名，这些域名形如www.abc.com；bcd.com；a.store.cn等; 默认是可以保护不带 www 的主域名，但是当你为其他前缀的子域名申请证书时，则只能保护当前子域名，不能保护不带前缀的主域名。</p>
-<h3 id="多域名证书">多域名证书</h3>
-<p>这种类型的证书可以同时保护多个域名，例如：同时保护www.abc.com、bcd.com；a.store.cn等; 不同品牌的多域名证书默认保护的域名数量不一样。</p>
-<h3 id="通配符证书">通配符证书</h3>
-<p>通配符证书可以保护一个域名下的同级子域名，并且不限制子域名的数量。例如：这类证书可以保护 free.abc.com，也可以保护 bbs.abc.com，也就是说他可以保护 abc.com 这个域名下的所有同级子域名</p>
-<h3 id="代码签名证书code-signing-certificates">代码签名证书（Code Signing Certificates）</h3>
-<p>为软件开发者提供代码软件数字签名的认证服务。通过对代码的数字签名可以减少软件下载时弹出的安全警告、保证代码不被恶意篡改、使厂商信息对下载用户公开可见等效果，从而建立良好的软件品牌信誉度。
-查看<a href="https://cloud.tencent.com/product/csc">腾讯 CSC</a><sup>[1]</sup>
- 一看便知。</p>
-<h2 id="ca">CA</h2>
-<p>要被别人信任，那么就得有个可靠的证书颁发机构。以下是一些比较著名的证书颁发机构。</p>
-<ul>
-<li><a href="https://www.digicert.com/">Digicert (收购 #Symantec )</a><sup>[2]</sup>
-</li>
-<li><a href="https://www.cfca.com.cn/">中国金融认证中心(CFCA)</a><sup>[3]</sup>
-</li>
-<li><a href="https://www.geotrust.com/">GeoTrust</a><sup>[4]</sup>
-</li>
-<li>&hellip;</li>
-</ul>
-<div class="references">
-                <h2>参考</h2>
-                <ol><li>腾讯 CSC: <a href="https://cloud.tencent.com/product/csc" rel="noopener noreferrer">https://cloud.tencent.com/product/csc</a></li><li>Digicert (收购 #Symantec ): <a href="https://www.digicert.com/" rel="noopener noreferrer">https://www.digicert.com/</a></li><li>中国金融认证中心(CFCA): <a href="https://www.cfca.com.cn/" rel="noopener noreferrer">https://www.cfca.com.cn/</a></li><li>GeoTrust: <a href="https://www.geotrust.com/" rel="noopener noreferrer">https://www.geotrust.com/</a></li></ol>
             </div>]]></description></item></channel></rss>
