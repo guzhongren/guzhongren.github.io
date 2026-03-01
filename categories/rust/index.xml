@@ -61,7 +61,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></div></div>
 <h3 id="为-add_one-添加注释">为 add_one 添加注释</h3>
 <p>最终效果如下：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-rust">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
