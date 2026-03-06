@@ -1,0 +1,27 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Xmind - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/xmind/</link><description>Xmind - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 13 Aug 2020 20:42:44 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/xmind/" rel="self" type="application/rss+xml"/><item><title>万事皆可法 Xmind</title><link>https://guzhongren.github.io/2020/08/%E4%B8%87%E4%BA%8B%E7%9A%86%E5%8F%AF%E6%B3%95-xmind/</link><pubDate>Thu, 13 Aug 2020 20:42:44 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/08/%E4%B8%87%E4%BA%8B%E7%9A%86%E5%8F%AF%E6%B3%95-xmind/</guid><description><![CDATA[<div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
+            </div><p>在工作，学习或这生活中，我们常常需要将我们的思路或者方法整理起来。比如读书笔记，头脑风暴，任务列表展示等。对于我一个工作快 5 年的高效<code>小年轻</code>来说，有各种个样的工具，今天就来说说头脑风暴利器-xmind。</p>
+<h2 id="缘起">缘起</h2>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/assets.xmind.cn/www/assets/images/zen/zen-outliner-1@2x-39fc9681ac.png" alt="XMind" /></p>
+<p><a href="https://www.xmind.cn/">XMind</a><sup>[1]</sup>
+ 的创始人孙方据说也是一个技术宅，倡导 965，即早九晚六，一周上五天班，是不是很技术？所以 XMind 是一个纯国产软件。</p>
+<blockquote>
+<p>如果你需要员工的创造力，而不是体力。你就必须按时放员工回家，让他们看电影，约会，泡书店，旅行，休息，运动，早睡早起，在家带小孩。我们的员工都有个人的爱好，例如画画，玩音乐。我们也鼓励他们丰富下班后的生活，甚至花额外的时间做个人的项目。</p>
+<p>——孙方 XMind 创始人兼 CEO</p></blockquote>
+<p>XMind 可以帮助你整合各种资源。作为软件开发者，你经常需要整理学习到的资料，或者与别人进行沟通，所谓<code>用图说话</code>直接了当。这时候你拿出你的 XMind, 在那一摆，顿时你就是全场最靓的仔。</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/assets.xmind.cn/www/assets/images/zen/zen-newui-lg@2x-9e7a9b60a5.png" alt="xmind" /></p>
+<h2 id="作为开发者">作为开发者</h2>
+<p>作为一个敏捷 Developer，我经常需要将我的工作可视化，或者 Todo 化，用这种方式我可以更高效的工作，让我在任何时候都可以知道，我当前的状态和我将来要做的事。</p>
+<p>在平时的开发中，可以将项目卡在 XMind 中拆解，这不是大题小作；比如有时候你需要将复杂的操作逻辑连贯起来，就可以变相的使用<code>鱼骨图</code>;</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/assets.xmind.cn/www/assets/images/zen/zen-zmode-2@2x-260f92607e.png" alt="鱼骨图" /></p>
+<h2 id="作为社区组织者">作为社区组织者</h2>
+<p>开源社区的工作繁杂且具有挑战性。通过应用合理的方法可以将复杂的问题简化。</p>
+<p>比如在平时的例会中，我们会将不同的志愿者或者组织者进行分组，然后给每个小组分派不同的任务。当我们将最终结果展示在志愿者面前，每个人都可以看到自己和别人都要干什么，清晰明了。</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/assets.xmind.cn/www/assets/images/zen/zen-theme-tree-3b10e514d2.svg" alt="xmind" /></p>
+<h2 id="作为读者">作为读者</h2>
+<p>在平时看书的时候，我经常需要做笔记，对我来说，最好的方式莫过于使用思维导图来完成笔记，不管是纵向还是横向，总体还是局部，我都可以对每个细节进行查看。还可以导出图片进行分享。</p>
+<p><img src="https://s3.cn-north-1.amazonaws.com.cn/assets.xmind.cn/www/assets/images/zen/zen-export-map@2x-40a32550b7.png" alt="xmind" /></p>
+<div class="references">
+                <h2>参考</h2>
+                <ol><li>XMind: <a href="https://www.xmind.cn/" rel="noopener noreferrer">https://www.xmind.cn/</a></li></ol>
+            </div>]]></description></item></channel></rss>
