@@ -46,6 +46,14 @@
 
 ## 技术栈
 
+### [编程语言](https://capability-editor-dmduafrl.stackblitz.io/?file=index.js)
+
+<iframe src="https://capability-editor-dmduafrl.stackblitz.io" style="
+    border: none;
+    height: 40rem;
+    width: 100%;
+"></iframe>
+
 ### [前端](https://stackblitz.com/edit/frontend-capability-editor?file=index.js)
 
 <iframe src="https://frontend-capability-editoro.stackblitz.io" style="
