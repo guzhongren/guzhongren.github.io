@@ -1140,7 +1140,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h3 id="method---addhash">method - addHash</h3>
 <h4 id="delete-1">delete</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-typescript">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -1165,7 +1165,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h4 id="objectdefineproperty-1">Object.defineProperty</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-typescript">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -1189,7 +1189,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl">    <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h4 id="mockfile">mockFile</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-typescript">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -1220,7 +1220,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h4 id="spyon-1">spyOn</h4>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-typescript">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
@@ -1248,7 +1248,7 @@ content-type: application/json; charset=utf-8
 </span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span><span class="line"><span class="cl"><span class="p">})</span></span></span></code></pre></div></div>
 <h3 id="method---postmessage">method - postMessage</h3>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-typescript">
         <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
