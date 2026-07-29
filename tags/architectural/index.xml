@@ -7,7 +7,8 @@
 <li>架构决策（AD）是一种软件设计选择，针对功能性或非功能性的需求进行的选择设计。</li>
 <li>架构上重要的要求（ASR, Architecturally Significant Requirement）是对一个软件系统的体系结构和质量衡量效果的要求。</li>
 <li>架构决策记录（ADR）捕捉 AD，如经常做写个人笔记或会议记录时；在项目中创建和维护的 ADR 集合构成其决策日志。</li>
-</ul></blockquote>
+</ul>
+</blockquote>
 <p>所有这些都属于架构知识管理 (AKM) 的主题。</p>
 <p><img src="https://images.unsplash.com/photo-1583591900414-7031eb309cb6?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=675&amp;q=80" alt="Photo by Josep Martins" /></p>
 <h2 id="adr-能干什么">ADR 能干什么</h2>
@@ -35,58 +36,58 @@
 <p>这部分的主要任务是让别人快速知道你的这次 ADR 的上下文 (Context) 是什么，有哪些目标 (Objective), 有哪些备选方案 (Options)，谁在主导 (Owner), 有谁审阅了 (Reviews), 有哪些相关的决策 (Related Decisions), 当前 ADR 的状态 (Status) 是什么等。</p>
 <p>一般情况下，在 ADR 开始的时候用一个表格来总体概括当前 ADR 的一些状态。比如：</p>
 <table>
-  <thead>
-      <tr>
-          <th>Item</th>
-          <th>Content</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>名称 (Title)</td>
-          <td>ADR 的标题</td>
-      </tr>
-      <tr>
-          <td>序号 (ID)</td>
-          <td>ADR 序列号</td>
-      </tr>
-      <tr>
-          <td>主导人 (Owner)</td>
-          <td>负责人</td>
-      </tr>
-      <tr>
-          <td>审阅人 (Reviewers)</td>
-          <td>参与的审阅者</td>
-      </tr>
-      <tr>
-          <td>上下文 (Context)</td>
-          <td>这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里</td>
-      </tr>
-      <tr>
-          <td>目标 (Objective)</td>
-          <td>列出所有要达到的目标</td>
-      </tr>
-      <tr>
-          <td>备选方案 (Options)</td>
-          <td>以列表 (<code>Option</code>) 形式列出所有的备选方案</td>
-      </tr>
-      <tr>
-          <td>相关决策 (Related decisions)</td>
-          <td>关于此次决策相关的一些其他辅助链接</td>
-      </tr>
-      <tr>
-          <td>状态 (Status)</td>
-          <td>本 ADR 的状态，<code>INPROGRESS</code>, <code>PROPOSED</code>, <code>PENDING</code>, <code>DECIDED</code>和<code>REJECTED</code> 中的一个</td>
-      </tr>
-      <tr>
-          <td>决定 (Decision)</td>
-          <td>接受 (<code>Accepted</code>) 或者拒绝 (<code>Rejected</code>)</td>
-      </tr>
-      <tr>
-          <td>决策 (Consequences)</td>
-          <td>选择了哪个方案，有什么后果或者代价</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Item</th>
+					<th>Content</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>名称 (Title)</td>
+					<td>ADR 的标题</td>
+			</tr>
+			<tr>
+					<td>序号 (ID)</td>
+					<td>ADR 序列号</td>
+			</tr>
+			<tr>
+					<td>主导人 (Owner)</td>
+					<td>负责人</td>
+			</tr>
+			<tr>
+					<td>审阅人 (Reviewers)</td>
+					<td>参与的审阅者</td>
+			</tr>
+			<tr>
+					<td>上下文 (Context)</td>
+					<td>这里介绍 ADR 的背景 (background)，目标 (objective)，是否紧急 (urgent)，如果不解决会有什么影响 (impact) 或者风险 (risk)，有什么限制，顾虑 (constraints) 等，所有可以为作出决定的内容都可以写在这里</td>
+			</tr>
+			<tr>
+					<td>目标 (Objective)</td>
+					<td>列出所有要达到的目标</td>
+			</tr>
+			<tr>
+					<td>备选方案 (Options)</td>
+					<td>以列表 (<code>Option</code>) 形式列出所有的备选方案</td>
+			</tr>
+			<tr>
+					<td>相关决策 (Related decisions)</td>
+					<td>关于此次决策相关的一些其他辅助链接</td>
+			</tr>
+			<tr>
+					<td>状态 (Status)</td>
+					<td>本 ADR 的状态，<code>INPROGRESS</code>, <code>PROPOSED</code>, <code>PENDING</code>, <code>DECIDED</code>和<code>REJECTED</code> 中的一个</td>
+			</tr>
+			<tr>
+					<td>决定 (Decision)</td>
+					<td>接受 (<code>Accepted</code>) 或者拒绝 (<code>Rejected</code>)</td>
+			</tr>
+			<tr>
+					<td>决策 (Consequences)</td>
+					<td>选择了哪个方案，有什么后果或者代价</td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="详细背景-background">详细背景 (Background)</h3>
 <p>如果以上的表格并没有清楚的说明问题，那么在这块就可以详细说明了。</p>
@@ -98,75 +99,75 @@
 <p>以上内容已经让你的甲方了解到了你们遇到了什么问题，接下来的内容就是在各个方案之间对比了，当然作为陈述 ADR 的人，你必须有一个你推荐 (prefer) 的方案。</p>
 <p>方案对比一般也是一个表格，比如：</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">对比项</th>
-          <th style="text-align: left">方案 1-option1 title</th>
-          <th style="text-align: left">方案 2-option1 title</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">方案详细信息 (Solution Details)</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">优势 (pros)</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">劣势 (Cons)</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">成本（Cost）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">业务影响（Business Impact）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">风险/可靠性（Risk/Reliability）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">性能/可扩展性（Performance/Scalability）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">操作性/可维护性（Operability/Maintainability）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">灵活性/可进化性（Flexibility/Evolvaility）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">决策后果/代价 (Consideration)</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">开发/测试成本 (Dev&amp;test Effort)</td>
-          <td style="text-align: left">较小 (Small), 中等 (Medium)，较难 (High) 中的一个</td>
-          <td style="text-align: left"></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">安全性/合规性（Security/Compliance）</td>
-          <td style="text-align: left"></td>
-          <td style="text-align: left"></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">对比项</th>
+					<th style="text-align: left">方案 1-option1 title</th>
+					<th style="text-align: left">方案 2-option1 title</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">方案详细信息 (Solution Details)</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">优势 (pros)</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">劣势 (Cons)</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">成本（Cost）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">业务影响（Business Impact）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">风险/可靠性（Risk/Reliability）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">性能/可扩展性（Performance/Scalability）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">操作性/可维护性（Operability/Maintainability）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">灵活性/可进化性（Flexibility/Evolvaility）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">决策后果/代价 (Consideration)</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">开发/测试成本 (Dev&amp;test Effort)</td>
+					<td style="text-align: left">较小 (Small), 中等 (Medium)，较难 (High) 中的一个</td>
+					<td style="text-align: left"></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">安全性/合规性（Security/Compliance）</td>
+					<td style="text-align: left"></td>
+					<td style="text-align: left"></td>
+			</tr>
+	</tbody>
 </table>
 <h3 id="讨论拉通-discuss">讨论拉通 (Discuss)</h3>
 <p>上面所有做的工作都是为这一次讨论服务的，在拉通的会议上，需要拉上所有与本次变更有关系的人，当然最主要的是将甲方爸爸拉上；在会议上，你需要先陈述上上面的内容，最后把选择权交到甲方爸爸手里，千万不要把甲方爸爸的唯一的权利剥夺了。至于为什么，我也不知道。😄</p>
@@ -197,7 +198,8 @@
  等； 当然如果是小项目也可以存在代码仓库中。</li>
 </ul>
 <blockquote>
-<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p></blockquote>
+<p>万事皆可法；工作中的大部分事物都是有套路的；愿你选对套路，归来仍是高效 dev。</p>
+</blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>MADR: <a href="https://adr.github.io/madr/" rel="noopener noreferrer">https://adr.github.io/madr/</a></li><li>adr-log: https://adr.github.io/adr-log/: <a href="https://adr.github.io/adr-log/" rel="noopener noreferrer">https://adr.github.io/adr-log/</a></li><li>嵌入式架构决策记录：https://adr.github.io/e-adr/: <a href="https://adr.github.io/e-adr/" rel="noopener noreferrer">https://adr.github.io/e-adr/</a></li><li>eadlsync:https://adr.github.io/eadlsync/: <a href="https://adr.github.io/eadlsync/" rel="noopener noreferrer">https://adr.github.io/eadlsync/</a></li><li>SE Repo: https://github.com/adr/serepo: <a href="https://github.com/adr/serepo" rel="noopener noreferrer">https://github.com/adr/serepo</a></li><li>Confluence: <a href="https://www.atlassian.com/software/confluence" rel="noopener noreferrer">https://www.atlassian.com/software/confluence</a></li><li>语雀: <a href="https://www.yuque.com/" rel="noopener noreferrer">https://www.yuque.com/</a></li><li>石墨: <a href="https://shimo.im/" rel="noopener noreferrer">https://shimo.im/</a></li><li>云效: <a href="https://www.aliyun.com/product/yunxiao" rel="noopener noreferrer">https://www.aliyun.com/product/yunxiao</a></li><li>Coding: <a href="https://coding.net/" rel="noopener noreferrer">https://coding.net/</a></li></ol>

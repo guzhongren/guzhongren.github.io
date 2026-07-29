@@ -2,13 +2,14 @@
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
-<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p></blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
+</blockquote>
 <h2 id="写了-log-并且出错的程序">写了 log 并且出错的程序</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be send when invoke the method sendMessage&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -32,9 +33,9 @@
 <p>运行输出</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">mockConstructor</span><span class="p">]</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">_isMockFunction</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -109,7 +110,8 @@
 </span></span><span class="line"><span class="cl"><span class="nx">Ran</span> <span class="nx">all</span> <span class="nx">test</span> <span class="nx">suites</span> <span class="nx">matching</span> <span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">Users</span><span class="err">\</span><span class="o">/</span><span class="nx">zhongren</span><span class="err">\</span><span class="p">.</span><span class="nx">gu</span><span class="err">\</span><span class="o">/</span><span class="mi">01</span><span class="err">\</span><span class="p">.</span><span class="nx">Project</span><span class="err">\</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nb">window</span><span class="o">-</span><span class="nx">object</span><span class="err">\</span><span class="o">/</span><span class="nx">__test__</span><span class="err">\</span><span class="o">/</span><span class="nx">method_sendMessage_mult_tests</span><span class="err">\</span><span class="p">.</span><span class="nx">spec</span><span class="err">\</span><span class="p">.</span><span class="nx">ts</span><span class="o">/</span><span class="nx">i</span> <span class="kd">with</span> <span class="nx">tests</span> <span class="nx">matching</span> <span class="s2">&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class="p">.</span></span></span></code></pre></div></div>
 <h2 id="在测试中写-log-有什么用">在测试中写 log 有什么用？</h2>
 <blockquote>
-<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p></blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
+</blockquote>
 <p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
 <p>在我看来，有以下几点：</p>
 <h3 id="影响总体的测试输出">影响总体的测试输出</h3>
@@ -130,9 +132,9 @@
 <p>对于前端，我们可以在所有测试运行前 Spy <code>console.*</code>的所有的方法，</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;warn&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
@@ -156,9 +158,9 @@
 <p>妹子的问题如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s1">&#39;jwt-decode&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -173,9 +175,9 @@
 <p>官网示例如下，是一个 mock 有方法的类的，但是通过上面的代码可知，这个不是一个类，而是直接使用的一个方法。</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">moduleName</span><span class="p">,</span> <span class="p">{</span><span class="nx">foo</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../moduleName&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../moduleName&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -187,15 +189,15 @@
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">moduleName</span><span class="p">();</span> <span class="c1">// Will return 42
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">foo</span><span class="p">();</span> <span class="c1">// Will return 43
+</span></span></span><span class="line"><span class="cl"><span class="nx">foo</span><span class="p">();</span> <span class="c1">// Will return 43
 </span></span></span></code></pre></div></div>
 <p>很明显这是不符合我么场景的。通过观察可知，jest.mock 的第二参数是工参数，返回了一个对象，然后通过调用个这个对象的方法，返回特定的 mock 数据。 那么对于我们这种情况，我们只需要返回一个 mock 后的方法即可。</p>
 <p>so, 方案可整理如下</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s2">&#34;jwt-decode&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s2">&#34;jwt-decode&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -230,9 +232,9 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go mod init dependency-injection</span></span></code></pre></div></div>
 <p>按照惯例，测试的函数需要以 Test 开头，参数为 *testing.T 类型</p>
 <h2 id="test">Test</h2>
@@ -241,23 +243,23 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestGreet</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">buffer</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，</span>
-</span></span><span class="line"><span class="cl">	<span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span> <span class="s">&#34;chris&#34;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 获取程序运行的结果</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">got</span> <span class="o">:=</span> <span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 期望值</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">want</span> <span class="o">:=</span> <span class="s">&#34;Hello, chris&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="c1">// 测试判断</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">got</span> <span class="o">!=</span> <span class="nx">want</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`got %s, want %s`</span><span class="p">,</span> <span class="nx">got</span><span class="p">,</span> <span class="nx">want</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">TestGreet</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 申明 buffer，准备接受数据， 因为 bytes.Buffer， 重点：bytes.Buffer 实现了 io.Writer</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">buffer</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bytes</span><span class="p">.</span><span class="nx">Buffer</span><span class="p">{}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 将 buffer 传入，此时就是依赖注入的入口，</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nf">Greet</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">buffer</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;chris&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 获取程序运行的结果</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">got</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">buffer</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 期望值</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">want</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">&#34;Hello, chris&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="c1">// 测试判断</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">got</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">want</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`got %s, want %s`</span><span class="p">,</span><span class="w"> </span><span class="nx">got</span><span class="p">,</span><span class="w"> </span><span class="nx">want</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <ul>
 <li>
 <p>运行 <strong>go test</strong>, 程序会报错，因为没有实现 Greet 函数。</p>
@@ -268,13 +270,13 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候</span>
-</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span> <span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span> <span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="s">&#34;Hello, &#34;</span><span class="o">+</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Greet 打印问候</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">Greet</span><span class="p">(</span><span class="nx">w</span><span class="w"> </span><span class="nx">io</span><span class="p">.</span><span class="nx">Writer</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Hello, &#34;</span><span class="o">+</span><span class="nx">name</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>重点说明，命令行的测试需要将结果打印在命令行窗口中，如果没有测试，我们可以用 fmt.Printf 等打印函数将结果打印出来，但是，
 测试需要拿到打印的内容，就需要将内容用标准输出；当然可以变相的先用其他打印函数将结果打印出来，然后再将结果 return 出去，
 在测试中，接受返回值，再比较；这样做不标准而已，学了今天内容其实就可以用 DI 来解决了。</p>
@@ -284,9 +286,9 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">PASS
 </span></span><span class="line"><span class="cl">ok      dependency-injection    0.006s</span></span></code></pre></div></div>
@@ -299,10 +301,12 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
                 <img src="https://golang.google.cn/lib/godoc/images/footer-gopher.jpg" referrerpolicy="no-referrer">
             </div><h1 id="benchmark-">Benchmark 🧪</h1>
 <blockquote>
-<p>基准测试是对计算机系统的性能的测试。</p></blockquote>
+<p>基准测试是对计算机系统的性能的测试。</p>
+</blockquote>
 <p>在程序中，基准测试，是一种测试代码性能的方法；比如有一个问题你有多种不同的方案，你想选择一种性能最好的方案，那么你就需要基准测试。</p>
 <blockquote>
-<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p></blockquote>
+<p>基准测试主要是通过测试 CPU 和内存的效率问题，来评估被测试代码的性能，进而找到更好的解决方案。比如链接池的数量不是越多越好，那么哪个值才是最优值呢，这就需要配合基准测试不断调优了。</p>
+</blockquote>
 <h2 id="工程意图">工程意图</h2>
 <p>仓库： <a href="https://github.com/guzhongren/TDD/tree/master/09.benchmar">https://github.com/guzhongren/TDD/tree/master/09.benchmar</a><sup>[1]</sup>
 </p>
@@ -310,9 +314,9 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <h2 id="初始化工程">初始化工程</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go mod init benchmark</span></span></code></pre></div></div>
 <p>测试的函数需要以 Test 开头，参数为 *testing.T 类型</p>
 <h2 id="test">Test</h2>
@@ -321,17 +325,17 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">#</span> <span class="nx">测试</span> <span class="nx">Repeat</span> <span class="nx">函数</span>
-</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">TestRepeat</span><span class="p">(</span><span class="nx">t</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">actual</span> <span class="o">:=</span> <span class="nf">Repeat</span><span class="p">(</span><span class="s">`a`</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">expect</span> <span class="o">:=</span> <span class="s">`aaaaaa`</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">actual</span> <span class="o">!=</span> <span class="nx">expect</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`expect %s, but got %s`</span><span class="p">,</span> <span class="nx">expect</span><span class="p">,</span> <span class="nx">actual</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="err">#</span><span class="w"> </span><span class="nx">测试</span><span class="w"> </span><span class="nx">Repeat</span><span class="w"> </span><span class="nx">函数</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">TestRepeat</span><span class="p">(</span><span class="nx">t</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">actual</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nf">Repeat</span><span class="p">(</span><span class="s">`a`</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="nx">expect</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s">`aaaaaa`</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">if</span><span class="w"> </span><span class="nx">actual</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nx">expect</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">t</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">`expect %s, but got %s`</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="p">,</span><span class="w"> </span><span class="nx">actual</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <ul>
 <li>
 <p>运行 <strong>go test</strong>, 程序会报错，因为没有实现 Repeat 函数。</p>
@@ -342,39 +346,39 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char</span>
-</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">count</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="nx">result</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">count</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">result</span> <span class="o">+=</span> <span class="nx">char</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Repeat return a string with same char</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">Repeat</span><span class="p">(</span><span class="nx">char</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">count</span><span class="w"> </span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">count</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nx">result</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">char</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>上面的函数中 return 并没有返回值，是因为，在 Repeat 函数的返回值部分有一个 result，
 当返回值是函数体里面的值的时候，可以不用写返回值，go 程序自动将该值返回。但 return 依旧不能省略。</p>
 <h2 id="benchmark">Benchmark</h2>
 <p>基准测试的函数名须以 Benchmark 开头， 参数须为 *testing.B；循环中的 b.N， go 会根据系统情况生成，不用用户设定。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">BenchmarkRepeat</span><span class="p">(</span><span class="nx">b</span> <span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nf">Repeat</span><span class="p">(</span><span class="s">`b`</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span><span class="w"> </span><span class="nf">BenchmarkRepeat</span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">*</span><span class="nx">testing</span><span class="p">.</span><span class="nx">B</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="p">&lt;</span><span class="w"> </span><span class="nx">b</span><span class="p">.</span><span class="nx">N</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">		</span><span class="nf">Repeat</span><span class="p">(</span><span class="s">`b`</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <h2 id="运行测试">运行测试</h2>
 <ul>
 <li>基本测试</li>
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go <span class="nb">test</span>
 </span></span><span class="line"><span class="cl">PASS
 </span></span><span class="line"><span class="cl">ok      benchmark       0.006s</span></span></code></pre></div></div>
@@ -384,9 +388,9 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go <span class="nb">test</span> -bench<span class="o">=</span>. -run<span class="o">=</span>none
 </span></span><span class="line"><span class="cl">goos: darwin
 </span></span><span class="line"><span class="cl">goarch: amd64

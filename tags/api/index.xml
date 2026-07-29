@@ -1,17 +1,17 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>API - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/api/</link><description>API - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 May 2025 10:15:31 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/api/" rel="self" type="application/rss+xml"/><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Api - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/api/</link><description>Api - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 16 May 2025 10:15:31 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/api/" rel="self" type="application/rss+xml"/><item><title>基于Strapi开发Headless CMS的基建入门</title><link>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</link><pubDate>Fri, 16 May 2025 10:15:31 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/05/%E5%9F%BA%E4%BA%8Estrapi%E5%BC%80%E5%8F%91headless-cms%E7%9A%84%E5%9F%BA%E5%BB%BA%E5%85%A5%E9%97%A8/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="简介">简介</h2>
 <p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
 <h2 id="strapi简介">Strapi简介</h2>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
- 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
-        </div>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-lightbulb" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+        <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
+ 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+    </div>
+</div>
 <p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
 <p>主要特性包括：</p>
 <ul>
@@ -76,9 +76,9 @@
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>http://localhost:1337/api/global?populate[header][populate][0]=navItems&amp;populate[footer][populate][0]=socialLinks.Link</code></pre></div>
 <p>通常情况呢，这个 url 的请求参数一般不会改变，每次都要返回Global Page 的所有内容，那么我们就可以把这个请求参数放在中间件中，避免每次都要在 URL 中传递。我们在请求时直接使用url <code>http://localhost:1337/api/global</code> 即可，而不用带query参数。
 这样做的好处是：</p>
@@ -93,9 +93,9 @@
  命令生成中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pnpm run strapi generate
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">&gt; my-strapi-project@0.1.0 strapi ~/01.Personal/tmp/my-strapi-project
@@ -108,11 +108,11 @@
 </span></span><span class="line"><span class="cl">✔  ++ /api/global/middlewares/global-page-populate.ts</span></span></code></pre></div></div>
 </li>
 <li>定义中间件函数并处理 <code>ctx.query</code>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">Core</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">populate</span> <span class="o">=</span> <span class="p">{</span>
@@ -125,24 +125,24 @@
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="c1">// 获取 dynamic zone 的内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// const populate = {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   blocks: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     on: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.hero&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           links: true,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           image: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//             fields: [&#34;url&#34;, &#34;name&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         },
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       },
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.heading-section&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: &#39;*&#39;,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl"> <span class="c1">// const populate = {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//   blocks: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//     on: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       &#34;blocks.hero&#34;: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         populate: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           links: true,
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           image: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//             fields: [&#34;url&#34;, &#34;name&#34;]
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         },
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       },
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       &#34;blocks.heading-section&#34;: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         populate: &#39;*&#39;,
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//     }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//   }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">// }
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">strapi</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">strapi</span>: <span class="kt">Core.Strapi</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">     <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">populate</span> <span class="o">=</span> <span class="nx">populate</span><span class="p">;</span>
@@ -154,9 +154,9 @@
 <li>在 <code>src/api/global/routes/global.ts</code> 注册中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">factories</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="k">default</span> <span class="nx">factories</span><span class="p">.</span><span class="nx">createCoreRouter</span><span class="p">(</span><span class="s1">&#39;api::global.global&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -170,20 +170,20 @@
 <li>使用API 请求测试等工具测试
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl <span class="s1">&#39;http://localhost:1337/api/global&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 应该返回Global Page 的所有内容</span></span></span></code></pre></div></div>
 </li>
 </ol>
 <h3 id="前端动态渲染-dynamic-zone-组件">前端动态渲染 Dynamic Zone 组件</h3>
 <p>前端可根据后端返回的 Dynamic Zone 数据动态渲染组件，为代码如下：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-tsx">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.hero&#34;</span><span class="o">:</span> <span class="nx">Hero</span><span class="p">,</span>

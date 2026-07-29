@@ -58,30 +58,30 @@ Specific formatting is also possible for log information:</li>
 </ul>
 <p>At the same time, not all logs need to be recorded, we need to record as needed. The following table shows which logs should be recorded depending on the environment.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Environment</th>
-          <th>Log Leave</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Dev</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>Test</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>UAT</td>
-          <td>Info</td>
-      </tr>
-      <tr>
-          <td>Prod</td>
-          <td>Info</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Environment</th>
+					<th>Log Leave</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Dev</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>Test</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>UAT</td>
+					<td>Info</td>
+			</tr>
+			<tr>
+					<td>Prod</td>
+					<td>Info</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="logging-position">Logging position</h4>
 <p>The location of the log print also needs to be made clear.</p>
@@ -171,30 +171,30 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <p>同时不是所有的日志都需要记录，我们要做到按需记录。下表是推荐在不同的环境选择不同的日志级别。</p>
 <table>
-  <thead>
-      <tr>
-          <th>Environment</th>
-          <th>Log Leave</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Dev</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>Test</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>UAT</td>
-          <td>Info</td>
-      </tr>
-      <tr>
-          <td>Prod</td>
-          <td>Info</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Environment</th>
+					<th>Log Leave</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Dev</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>Test</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>UAT</td>
+					<td>Info</td>
+			</tr>
+			<tr>
+					<td>Prod</td>
+					<td>Info</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="日志位置">日志位置</h4>
 <p>有了日志级别，日志打印的位置也需要明确。一般情况下：</p>

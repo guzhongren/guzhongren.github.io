@@ -92,60 +92,60 @@
 <p>在开源项目中，大家通常使用 PR (Pull Request) 来贡献代码, 所以项目的维护者(Maintainer)要将一部分精力放在 Reveiw 别的贡献者的PR 上，同时给予鼓励性的言语评语(Comment), 或者给予适当的建议意见。要相信正向的鼓励总是会带来不一样的额外收获。</p>
 <p>当然，我们也要推荐大家使用一些约定俗成的简写，如：</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">简写</th>
-          <th style="text-align: left">英语全拼</th>
-          <th style="text-align: left">中文释义</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">PR</td>
-          <td style="text-align: left">Pull request</td>
-          <td style="text-align: left">请求合并代码</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">WIP</td>
-          <td style="text-align: left">Work in progress</td>
-          <td style="text-align: left">贡献者做了很大的改动，但部分完成了，这里就是WIP,这样就方便别人知道你的提交的进展，审核已经完成的部分</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">PTAL</td>
-          <td style="text-align: left">Please take a look</td>
-          <td style="text-align: left">请求别人进行 Code Review</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TBR</td>
-          <td style="text-align: left">To be reviewed</td>
-          <td style="text-align: left">提示别人这些代码要被Review</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">TL/DR</td>
-          <td style="text-align: left">Too long, Don&rsquo;t read</td>
-          <td style="text-align: left">太长了，懒得看</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">LGTM</td>
-          <td style="text-align: left">Look good to me</td>
-          <td style="text-align: left">通常是指Review 通过</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SGTM</td>
-          <td style="text-align: left">Sound good to me</td>
-          <td style="text-align: left">和LGTM 同义</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">AFAIK</td>
-          <td style="text-align: left">As far as I know</td>
-          <td style="text-align: left">据我所知</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">CC</td>
-          <td style="text-align: left">Carbon Copy</td>
-          <td style="text-align: left">抄送</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">简写</th>
+					<th style="text-align: left">英语全拼</th>
+					<th style="text-align: left">中文释义</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">PR</td>
+					<td style="text-align: left">Pull request</td>
+					<td style="text-align: left">请求合并代码</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">WIP</td>
+					<td style="text-align: left">Work in progress</td>
+					<td style="text-align: left">贡献者做了很大的改动，但部分完成了，这里就是WIP,这样就方便别人知道你的提交的进展，审核已经完成的部分</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">PTAL</td>
+					<td style="text-align: left">Please take a look</td>
+					<td style="text-align: left">请求别人进行 Code Review</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">TBR</td>
+					<td style="text-align: left">To be reviewed</td>
+					<td style="text-align: left">提示别人这些代码要被Review</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">TL/DR</td>
+					<td style="text-align: left">Too long, Don&rsquo;t read</td>
+					<td style="text-align: left">太长了，懒得看</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">LGTM</td>
+					<td style="text-align: left">Look good to me</td>
+					<td style="text-align: left">通常是指Review 通过</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">SGTM</td>
+					<td style="text-align: left">Sound good to me</td>
+					<td style="text-align: left">和LGTM 同义</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">AFAIK</td>
+					<td style="text-align: left">As far as I know</td>
+					<td style="text-align: left">据我所知</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">CC</td>
+					<td style="text-align: left">Carbon Copy</td>
+					<td style="text-align: left">抄送</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="安全security">安全(Security)</h4>
 <p>安全问题不管是在开源项目还是商业项目中都非常重要，我们可以将其分为<code>静态应用安全测试</code>、<code>动态应用安全测试</code>和<code>依赖安全检查</code>几大类。</p>

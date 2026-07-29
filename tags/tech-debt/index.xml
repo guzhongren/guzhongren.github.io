@@ -17,34 +17,34 @@
 </ul>
 <h3 id="tech-debt-收集">Tech debt 收集</h3>
 <table>
-  <thead>
-      <tr>
-          <th>Id</th>
-          <th>Problem description</th>
-          <th>Difficulty[easy, hard]</th>
-          <th>Importance[low, high]</th>
-          <th>Service involved</th>
-          <th>Related resource</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>Upgrade dependences</td>
-          <td>easy</td>
-          <td>high</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Id</th>
+					<th>Problem description</th>
+					<th>Difficulty[easy, hard]</th>
+					<th>Importance[low, high]</th>
+					<th>Service involved</th>
+					<th>Related resource</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Upgrade dependences</td>
+					<td>easy</td>
+					<td>high</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="说明">说明</h4>
 <ul>
@@ -57,11 +57,11 @@
 <p>根据上面的表格，组织会议，让大家填写自己所能想到的所有的技术债，然后对每一条技术债进行说明，对齐认识。然后对每一条从 Difficulty 和 Importance 角度进行投票。</p>
 <h4 id="分析">分析</h4>
 <p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
 </span></span><span class="line"><span class="cl">  I<span class="p">|</span>      View result immediately       <span class="p">|</span>     Split <span class="p">&amp;</span> Plan
 </span></span><span class="line"><span class="cl">  m<span class="p">|</span>                                    <span class="p">|</span>

@@ -1,7 +1,8 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Agile - 分类 - 谷中仁的博客</title><link>https://guzhongren.github.io/categories/agile/</link><description>Agile - 分类 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 23 Jun 2022 20:14:48 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/categories/agile/" rel="self" type="application/rss+xml"/><item><title>代码质量和Dora Metrics， 哪个更重要？</title><link>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</link><pubDate>Thu, 23 Jun 2022 20:14:48 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/06/%E4%BB%A3%E7%A0%81%E8%B4%A8%E9%87%8F%E5%92%8Cdora-metrics-%E5%93%AA%E4%B8%AA%E6%9B%B4%E9%87%8D%E8%A6%81/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
 <h2 id="起因">起因</h2>
 <p>最近在项目上搞代码质量方面的工作，发现项目代码运行测试后不能生成测试报告，导致 SonarQube 上没有关于测试覆盖率的Metric, 而且Pipeline 还可以正确运行，并没有因为不满足 SonarQube 的 Quality Gate 而 break Pipeline 的运行。</p>
 <p>不能生成测试报告这个问题简单，只是因为运行测试的容器的用户对特定的目录没有权限，这个很好解决。</p>
@@ -28,7 +29,8 @@
 上线固然重要，但不能降低质量。就像在 Simple Design 中的&quot;通过测试&quot;，通过测试要成为你的信仰，不可动摇。 在完全自动化的自动部署（CD）项目中，如果你的代码质量有问题（会导致生产环境 P1 的事故），经过了质量门禁的检测，发现了问题，但没有及时将流水线打断，那么因为没有及时阻止带来的损失肯定远比你为 Pipeline 失败修复付出的资金和时间要大。</p>
 <p>所以，个人认为，在正常的软件交付过程中，代码质量更为重要, 代码质量应该也必须是我们开发者的信仰。 应该通过一定的检测技术来阻止有问题的代码部署到生产环境，就像<code>测试左移(Shift-left Testing)</code>。这样，我们可以确保我们的代码没有任何问题，避免了代码层面的可能引起的生产问题。</p>
 <blockquote>
-<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p></blockquote>
+<p>勿以恶小而为之，勿以善小而不为 &ndash;《三国志·蜀志传》</p>
+</blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>Dora Metrics: <a href="https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/" rel="noopener noreferrer">https://devops.com/dora-and-google-cloud-to-collaborate-on-devops-research/</a></li></ol>
@@ -40,15 +42,16 @@
 <p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
 <h2 id="解决方案">解决方案</h2>
 <blockquote>
-<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p></blockquote>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
+</blockquote>
 <p>对于这类问题，可以有如下解决方案：</p>
 <h3 id="task">Task</h3>
 <p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-todo">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code class="language-todo" data-lang="todo">- [x] subTask1
 - [ ] subTask2
 - [ ] subTask3</code></pre></div>
@@ -63,138 +66,138 @@
             </div><h2 id="常用会议">常用会议</h2>
 <p>以下是一些我们在敏捷开发中常用的会议目录，我们可以使用这张表格对相关会议进行适当裁剪，应用到自身团队来提升团队的敏捷实践，提高效率。</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Meeting name</th>
-          <th style="text-align: left">Frequency</th>
-          <th style="text-align: left">Duration</th>
-          <th style="text-align: left">Host</th>
-          <th style="text-align: left">Participators</th>
-          <th style="text-align: left">Main content &amp; Target</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Standup meeting</td>
-          <td style="text-align: left">Everyday</td>
-          <td style="text-align: left">10’~15’</td>
-          <td style="text-align: left">Team member take turns</td>
-          <td style="text-align: left">All team member and your PO PM and so on</td>
-          <td style="text-align: left">Describe your job yesterday and today, call out the block, and give a deadline</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Showcase</td>
-          <td style="text-align: left">Fortnightly</td>
-          <td style="text-align: left">30’</td>
-          <td style="text-align: left">Team member take turns</td>
-          <td style="text-align: left">All team member and your PO PM and so on</td>
-          <td style="text-align: left">Show delivery value</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Code Review</td>
-          <td style="text-align: left">Everyday</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">Every dev</td>
-          <td style="text-align: left">All dev</td>
-          <td style="text-align: left">Go thought your code which is written today, feedback to others from tech and biz perspective</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Backlog grooming</td>
-          <td style="text-align: left">Fortnightly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">BA</td>
-          <td style="text-align: left">All team member</td>
-          <td style="text-align: left">BA and others will explain what /why we will do</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Tech Huddle</td>
-          <td style="text-align: left">Twice a week(1 short , 1 long)</td>
-          <td style="text-align: left">30’ or 1h</td>
-          <td style="text-align: left">Every dev take turns</td>
-          <td style="text-align: left">All dev</td>
-          <td style="text-align: left">Show some new tech, or deep work in some domain, Expand your influence</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Retro</td>
-          <td style="text-align: left">Fortnightly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">Every dev take turns</td>
-          <td style="text-align: left">All team member, PO, PM</td>
-          <td style="text-align: left">Collection some tips which can improve team member work efficiency and make work env more safe and happy</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Delivery Health Check</td>
-          <td style="text-align: left">Fortnightly</td>
-          <td style="text-align: left">30’</td>
-          <td style="text-align: left">BA / TL/ Volunteer</td>
-          <td style="text-align: left">All team member</td>
-          <td style="text-align: left">Check spring’s all cards and hight light the abnormal card， explain it and collection some tips to improve the  accuracy of estimating</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Poker Planning</td>
-          <td style="text-align: left">Fortnightly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">BA</td>
-          <td style="text-align: left">All team member</td>
-          <td style="text-align: left">Estimate cost which you do the specific card, and BA will pull some cards into next spring which all points match some number</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Bug bash</td>
-          <td style="text-align: left">Every release Before go-live</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">QA</td>
-          <td style="text-align: left">All team member</td>
-          <td style="text-align: left">Find bugs from different perspective with different role</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">1 on 1</td>
-          <td style="text-align: left">Monthly</td>
-          <td style="text-align: left">20’</td>
-          <td style="text-align: left">You or your PM/DM</td>
-          <td style="text-align: left">You and your PM/DM</td>
-          <td style="text-align: left">Talk about daily work and life, best to give feedbacks or suggestions</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Meeting name</th>
+					<th style="text-align: left">Frequency</th>
+					<th style="text-align: left">Duration</th>
+					<th style="text-align: left">Host</th>
+					<th style="text-align: left">Participators</th>
+					<th style="text-align: left">Main content &amp; Target</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Standup meeting</td>
+					<td style="text-align: left">Everyday</td>
+					<td style="text-align: left">10’~15’</td>
+					<td style="text-align: left">Team member take turns</td>
+					<td style="text-align: left">All team member and your PO PM and so on</td>
+					<td style="text-align: left">Describe your job yesterday and today, call out the block, and give a deadline</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Showcase</td>
+					<td style="text-align: left">Fortnightly</td>
+					<td style="text-align: left">30’</td>
+					<td style="text-align: left">Team member take turns</td>
+					<td style="text-align: left">All team member and your PO PM and so on</td>
+					<td style="text-align: left">Show delivery value</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Code Review</td>
+					<td style="text-align: left">Everyday</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">Every dev</td>
+					<td style="text-align: left">All dev</td>
+					<td style="text-align: left">Go thought your code which is written today, feedback to others from tech and biz perspective</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Backlog grooming</td>
+					<td style="text-align: left">Fortnightly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">BA</td>
+					<td style="text-align: left">All team member</td>
+					<td style="text-align: left">BA and others will explain what /why we will do</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Tech Huddle</td>
+					<td style="text-align: left">Twice a week(1 short , 1 long)</td>
+					<td style="text-align: left">30’ or 1h</td>
+					<td style="text-align: left">Every dev take turns</td>
+					<td style="text-align: left">All dev</td>
+					<td style="text-align: left">Show some new tech, or deep work in some domain, Expand your influence</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Retro</td>
+					<td style="text-align: left">Fortnightly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">Every dev take turns</td>
+					<td style="text-align: left">All team member, PO, PM</td>
+					<td style="text-align: left">Collection some tips which can improve team member work efficiency and make work env more safe and happy</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Delivery Health Check</td>
+					<td style="text-align: left">Fortnightly</td>
+					<td style="text-align: left">30’</td>
+					<td style="text-align: left">BA / TL/ Volunteer</td>
+					<td style="text-align: left">All team member</td>
+					<td style="text-align: left">Check spring’s all cards and hight light the abnormal card， explain it and collection some tips to improve the  accuracy of estimating</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Poker Planning</td>
+					<td style="text-align: left">Fortnightly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">BA</td>
+					<td style="text-align: left">All team member</td>
+					<td style="text-align: left">Estimate cost which you do the specific card, and BA will pull some cards into next spring which all points match some number</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Bug bash</td>
+					<td style="text-align: left">Every release Before go-live</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">QA</td>
+					<td style="text-align: left">All team member</td>
+					<td style="text-align: left">Find bugs from different perspective with different role</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">1 on 1</td>
+					<td style="text-align: left">Monthly</td>
+					<td style="text-align: left">20’</td>
+					<td style="text-align: left">You or your PM/DM</td>
+					<td style="text-align: left">You and your PM/DM</td>
+					<td style="text-align: left">Talk about daily work and life, best to give feedbacks or suggestions</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="提升会议">提升会议</h2>
 <p>上面这些都是些正常的日常会议，但是在日常的工作中还有其他不那么频繁的会议，并且这些会议大多数只是需要参与进去，而不是主持者；这些会议通常是扩大团队或者个人影响力的会议，所以建议你抓住机会。</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Meeting name</th>
-          <th style="text-align: left">Frequency</th>
-          <th style="text-align: left">Duration</th>
-          <th style="text-align: left">Host</th>
-          <th style="text-align: left">Participators</th>
-          <th style="text-align: left">Main content &amp; Target</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Vertical or All Hands</td>
-          <td style="text-align: left">Monthly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">Volunteer or someone who has impact</td>
-          <td style="text-align: left">All team member and customer</td>
-          <td style="text-align: left">understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Developer Cop(community of Practice)</td>
-          <td style="text-align: left">Monthly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">TL/ Volunteer/TP</td>
-          <td style="text-align: left">All dev and customer</td>
-          <td style="text-align: left">Show some useful and practice tech, make everyone know and use your tech according to your suggestion</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Gamba work</td>
-          <td style="text-align: left">Once a year or  half-yearly</td>
-          <td style="text-align: left">1h</td>
-          <td style="text-align: left">TL/ Volunteer/TP</td>
-          <td style="text-align: left">All team member</td>
-          <td style="text-align: left">Show what your team members are doing and daily work to customer</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Meeting name</th>
+					<th style="text-align: left">Frequency</th>
+					<th style="text-align: left">Duration</th>
+					<th style="text-align: left">Host</th>
+					<th style="text-align: left">Participators</th>
+					<th style="text-align: left">Main content &amp; Target</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Vertical or All Hands</td>
+					<td style="text-align: left">Monthly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">Volunteer or someone who has impact</td>
+					<td style="text-align: left">All team member and customer</td>
+					<td style="text-align: left">understand some direction from customer’s company, and show what your team do to customers or other teams, expand you and your team member’s influence</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Developer Cop(community of Practice)</td>
+					<td style="text-align: left">Monthly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">TL/ Volunteer/TP</td>
+					<td style="text-align: left">All dev and customer</td>
+					<td style="text-align: left">Show some useful and practice tech, make everyone know and use your tech according to your suggestion</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Gamba work</td>
+					<td style="text-align: left">Once a year or  half-yearly</td>
+					<td style="text-align: left">1h</td>
+					<td style="text-align: left">TL/ Volunteer/TP</td>
+					<td style="text-align: left">All team member</td>
+					<td style="text-align: left">Show what your team members are doing and daily work to customer</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="按需裁减">按需裁减</h2>
 <p>会议只是流程，选择真正适合自己团队的会议才能发挥更好的作用，同时，也要根据自己团队的现实情况适当裁减会议流程。</p>
@@ -217,34 +220,34 @@
 </ul>
 <h3 id="tech-debt-收集">Tech debt 收集</h3>
 <table>
-  <thead>
-      <tr>
-          <th>Id</th>
-          <th>Problem description</th>
-          <th>Difficulty[easy, hard]</th>
-          <th>Importance[low, high]</th>
-          <th>Service involved</th>
-          <th>Related resource</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>Upgrade dependences</td>
-          <td>easy</td>
-          <td>high</td>
-          <td></td>
-          <td></td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Id</th>
+					<th>Problem description</th>
+					<th>Difficulty[easy, hard]</th>
+					<th>Importance[low, high]</th>
+					<th>Service involved</th>
+					<th>Related resource</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>Upgrade dependences</td>
+					<td>easy</td>
+					<td>high</td>
+					<td></td>
+					<td></td>
+			</tr>
+			<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="说明">说明</h4>
 <ul>
@@ -257,11 +260,11 @@
 <p>根据上面的表格，组织会议，让大家填写自己所能想到的所有的技术债，然后对每一条技术债进行说明，对齐认识。然后对每一条从 Difficulty 和 Importance 角度进行投票。</p>
 <h4 id="分析">分析</h4>
 <p>在投票完成后需要对所有条目进行梳理分类，可以按照下面的表格进行分类。</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">   ^
 </span></span><span class="line"><span class="cl">  I<span class="p">|</span>      View result immediately       <span class="p">|</span>     Split <span class="p">&amp;</span> Plan
 </span></span><span class="line"><span class="cl">  m<span class="p">|</span>                                    <span class="p">|</span>
@@ -304,7 +307,8 @@
 <p>此思维导图中总结了 TDD 的概念，原则，套路，案例及策略等，不失为一份很好的学习资料。</p>
 <p>项目地址：https://github.com/AndorLab/MindKnowledgeGraph</p>
 <blockquote>
-<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p></blockquote>
+<p>方法论很多，重要的是使用方法论的人～单元测试  &ndash; from @haihaio</p>
+</blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>@haihaio: <a href="https://github.com/haihaio" rel="noopener noreferrer">https://github.com/haihaio</a></li></ol>

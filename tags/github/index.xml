@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>GitHub - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/github/</link><description>GitHub - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Jan 2022 23:02:34 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/github/" rel="self" type="application/rss+xml"/><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Github - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/github/</link><description>Github - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Thu, 20 Jan 2022 23:02:34 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/github/" rel="self" type="application/rss+xml"/><item><title>构建更优的 GitHub Action 完成 Algolia 数据上传</title><link>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</link><pubDate>Thu, 20 Jan 2022 23:02:34 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2022/01/%E6%9E%84%E5%BB%BA%E6%9B%B4%E4%BC%98%E7%9A%84github-action%E5%AE%8C%E6%88%90algolia%E6%95%B0%E6%8D%AE%E4%B8%8A%E4%BC%A0/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/DevOps/Github-Action.6lpf9wwtga80.webp" referrerpolicy="no-referrer">
             </div><h2 id="场景">场景</h2>
 <p>程序员喜欢写博客，大都喜欢自己 Host 一个自己的 Blog, 通常 Blog 会有一个全局的搜索功能，开源博客一般都会选择 <a href="https://lunrjs.com/">lunrjs</a><sup>[1]</sup>
@@ -12,20 +12,20 @@
 <p>突然有一天我要使用搜索功能，但是怎么也搜索不到我想搜索的内容，看了 GitHub 项目的构建状态，一切正常，然后登陆到 algolia 后台一看， 最后一次的数据更新是在 21 年 8 月； 然后打开最近的博客构建记录，看了执行如下 GitHub workflow 的 yaml 日志，大吃一惊：程序执行错误，但还是在最后给我们送了一个🚀，同样是写代码，你能忍？</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l">darrenjennings/algolia-docsearch-action@master</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_application_id</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_APPLICATION_ID}}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">algolia_api_key</span><span class="p">:</span><span class="w"> </span><span class="l">${{secrets.ALGOLIA_API_KEY}}</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;./public/index.json&#39;</span></span></span></code></pre></div></div>
 <p>运行日志</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-log">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code class="language-log" data-lang="log">Run darrenjennings/algolia-docsearch-action@master
 /usr/bin/docker run --name a682564a13d76444749d3b720346ba2365371_9474ad --label 6a6825 --workdir /github/workspace --rm -e INPUT_ALGOLIA_APPLICATION_ID -e INPUT_ALGOLIA_API_KEY -e INPUT_FILE -e HOME -e GITHUB_JOB -e GITHUB_REF -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_REPOSITORY_OWNER -e GITHUB_RUN_ID -e GITHUB_RUN_NUMBER -e GITHUB_RETENTION_DAYS -e GITHUB_RUN_ATTEMPT -e GITHUB_ACTOR -e GITHUB_WORKFLOW -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GITHUB_EVENT_NAME -e GITHUB_SERVER_URL -e GITHUB_API_URL -e GITHUB_GRAPHQL_URL -e GITHUB_REF_NAME -e GITHUB_REF_PROTECTED -e GITHUB_REF_TYPE -e GITHUB_WORKSPACE -e GITHUB_ACTION -e GITHUB_EVENT_PATH -e GITHUB_ACTION_REPOSITORY -e GITHUB_ACTION_REF -e GITHUB_PATH -e GITHUB_ENV -e RUNNER_OS -e RUNNER_ARCH -e RUNNER_NAME -e RUNNER_TOOL_CACHE -e RUNNER_TEMP -e RUNNER_WORKSPACE -e ACTIONS_RUNTIME_URL -e ACTIONS_RUNTIME_TOKEN -e ACTIONS_CACHE_URL -e GITHUB_ACTIONS=true -e CI=true -v &#34;/var/run/docker.sock&#34;:&#34;/var/run/docker.sock&#34; -v &#34;/home/runner/work/_temp/_github_home&#34;:&#34;/github/home&#34; -v &#34;/home/runner/work/_temp/_github_workflow&#34;:&#34;/github/workflow&#34; -v &#34;/home/runner/work/_temp/_runner_file_commands&#34;:&#34;/github/file_commands&#34; -v &#34;/home/runner/work/blog/blog&#34;:&#34;/github/workspace&#34; 6a6825:64a13d76444749d3b720346ba2365371  &#34;***&#34; &#34;***&#34; &#34;./public/index.json&#34;
 Cloning into &#39;docsearch-scraper&#39;...
@@ -87,55 +87,55 @@ AttributeError: &#39;list&#39; object has no attribute &#39;items&#39;
 </ul>
 <h2 id="方案-spike">方案 Spike</h2>
 <table>
-  <thead>
-      <tr>
-          <th>Item</th>
-          <th>Option1 使用 algolia 自己的 Restful 接口</th>
-          <th>Option 2 algolia SDK</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>描述</td>
-          <td>使用 algolia 自己的 Restful 接口实现上传</td>
-          <td>使用其官方提供的 SDK 编写代码来集成</td>
-      </tr>
-      <tr>
-          <td>是否推荐</td>
-          <td>No</td>
-          <td>Yes</td>
-      </tr>
-      <tr>
-          <td>实现难度</td>
-          <td>Middle</td>
-          <td>Low</td>
-      </tr>
-      <tr>
-          <td>优点</td>
-          <td>流程可控</td>
-          <td>简单直接，无需担心错误情况的处理</td>
-      </tr>
-      <tr>
-          <td>缺点</td>
-          <td>需要写更多的代码来控制整个流程</td>
-          <td>整个上传过程不可控</td>
-      </tr>
-      <tr>
-          <td>安全问题</td>
-          <td>No</td>
-          <td>No</td>
-      </tr>
-      <tr>
-          <td>相对难度</td>
-          <td>Middle</td>
-          <td>Low</td>
-      </tr>
-      <tr>
-          <td>相对成本</td>
-          <td>Middle</td>
-          <td>Low</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Item</th>
+					<th>Option1 使用 algolia 自己的 Restful 接口</th>
+					<th>Option 2 algolia SDK</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>描述</td>
+					<td>使用 algolia 自己的 Restful 接口实现上传</td>
+					<td>使用其官方提供的 SDK 编写代码来集成</td>
+			</tr>
+			<tr>
+					<td>是否推荐</td>
+					<td>No</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>实现难度</td>
+					<td>Middle</td>
+					<td>Low</td>
+			</tr>
+			<tr>
+					<td>优点</td>
+					<td>流程可控</td>
+					<td>简单直接，无需担心错误情况的处理</td>
+			</tr>
+			<tr>
+					<td>缺点</td>
+					<td>需要写更多的代码来控制整个流程</td>
+					<td>整个上传过程不可控</td>
+			</tr>
+			<tr>
+					<td>安全问题</td>
+					<td>No</td>
+					<td>No</td>
+			</tr>
+			<tr>
+					<td>相对难度</td>
+					<td>Middle</td>
+					<td>Low</td>
+			</tr>
+			<tr>
+					<td>相对成本</td>
+					<td>Middle</td>
+					<td>Low</td>
+			</tr>
+	</tbody>
 </table>
 <p>综上分析，使用 Option2 SDK 的方案更佳。</p>
 <h2 id="执行方案">执行方案</h2>
@@ -144,43 +144,43 @@ AttributeError: &#39;list&#39; object has no attribute &#39;items&#39;
 <li>新建 entrypoint.sh 并写入如下代码，脚本执行需要传入如下几个变量：</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Required</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>FILE_PATH</td>
-          <td>要上传的文件路径</td>
-          <td>Yes</td>
-      </tr>
-      <tr>
-          <td>ALGOLIA_APPLICATION_ID</td>
-          <td>Algolia 平台的应用 Id</td>
-          <td>Yes</td>
-      </tr>
-      <tr>
-          <td>ADMIN_API_KEY</td>
-          <td>Algolia 上传所用的 API Key</td>
-          <td>Yes</td>
-      </tr>
-      <tr>
-          <td>INDEX_NAME</td>
-          <td>在 Algolia 上你所创建的索引名</td>
-          <td>Yes</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Required</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>FILE_PATH</td>
+					<td>要上传的文件路径</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>ALGOLIA_APPLICATION_ID</td>
+					<td>Algolia 平台的应用 Id</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>ADMIN_API_KEY</td>
+					<td>Algolia 上传所用的 API Key</td>
+					<td>Yes</td>
+			</tr>
+			<tr>
+					<td>INDEX_NAME</td>
+					<td>在 Algolia 上你所创建的索引名</td>
+					<td>Yes</td>
+			</tr>
+	</tbody>
 </table>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#!/bin/sh
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="nb">set</span> -eu
+</span></span></span><span class="line"><span class="cl"><span class="nb">set</span> -eu
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">npm install -g @algolia/cli
 </span></span><span class="line"><span class="cl">
@@ -197,9 +197,9 @@ AttributeError: &#39;list&#39; object has no attribute &#39;items&#39;
 </ul>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-dcokerfile">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code class="language-dcokerfile" data-lang="dcokerfile">FROM node:lts-alpine
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
@@ -212,9 +212,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>在完成 Action 并将其集成到 Pipeline 上之后，成功运行，数据可成功上传到 Algolia 平台上，并且博客的右上角的搜索功能可以成功搜索到最新的文章，说明我们的 Action 是可以完成我们的需求的。</p>
 <h3 id="运行效率比较">运行效率比较</h3>
 <p>没有对比就没有伤害。下面对我自己写的 Action 和之前集成过的 Action 在<code>镜像大小</code>和<code>执行效率</code>方面进行对比。</p>
-<div class="echarts" id="id-1" style="width: 100%; height: 30rem;"></div>
+<div class="echarts" id="id-3" style="width: 100%; height: 30rem;"></div>
 <h3 id="镜像大小比较">镜像大小比较</h3>
-<div class="echarts" id="id-2" style="width: 100%; height: 30rem;"></div>
+<div class="echarts" id="id-4" style="width: 100%; height: 30rem;"></div>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>lunrjs: <a href="https://lunrjs.com/" rel="noopener noreferrer">https://lunrjs.com/</a></li><li>algolia: <a href="https://www.algolia.com/" rel="noopener noreferrer">https://www.algolia.com/</a></li><li>Hugo: <a href="https://gohugo.io/" rel="noopener noreferrer">https://gohugo.io/</a></li><li>LoveIt: <a href="https://hugoloveit.com/" rel="noopener noreferrer">https://hugoloveit.com/</a></li><li>Algolia Docsearch Indexer: <a href="https://github.com/marketplace/actions/algolia-docsearch-indexer" rel="noopener noreferrer">https://github.com/marketplace/actions/algolia-docsearch-indexer</a></li><li>源码: <a href="https://github.com/darrenjennings/algolia-docsearch-action" rel="noopener noreferrer">https://github.com/darrenjennings/algolia-docsearch-action</a></li><li>工具: <a href="https://github.com/algolia/docsearch-scraper.git" rel="noopener noreferrer">https://github.com/algolia/docsearch-scraper.git</a></li><li>algolia-docsearch-upload-action: <a href="https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile" rel="noopener noreferrer">https://github.com/guzhongren/algolia-docsearch-upload-action/blob/main/Dockerfile</a></li></ol>
@@ -229,7 +229,8 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>但是这有个问题，就是 Gist 的访问在国内被墙了，被🧱了，被🧱了；而且 GitHub 的资源访问也比较慢。</p>
 <h2 id="前置知识">前置知识</h2>
 <blockquote>
-<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p></blockquote>
+<p>内容分发网络（英语：Content Delivery Network 或 Content Distribution Network，缩写：CDN）是指一种透过互联网互相连接的电脑网络系统，利用最靠近每位用户的服务器，更快、更可靠地将音乐、图片、视频、应用程序及其他文件发送给用户，来提供高性能、可扩展性及低成本的网络内容传递给用户。 &mdash;- wikipedia</p>
+</blockquote>
 <h2 id="解决方案">解决方案</h2>
 <p>之前想过提高 GitHub 资源的下载速度，了解过各种 GitHub 资源的 Proxy。比如</p>
 <ul>
@@ -247,9 +248,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <h4 id="模式">模式</h4>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/{usernameOrOrgName}/{repoName@version}/{filePath}</code></pre></div>
 <ul>
 <li>usernameOrOrgName: GitHub 用户名或者组织名</li>
@@ -262,9 +263,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>按照上面 jsdelivr 的模式配置路径，效果如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>https://cdn.jsdelivr.net/gh/guzhongren/Buildkite-Dashboard/cypress.json</code></pre></div>
 <p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/cdn/cdn-github-data.5f2n2k3it68.webp" alt="jsdelivr 效果" /></p>
 <h2 id="总结">总结</h2>
@@ -276,9 +277,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
@@ -288,16 +289,16 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0</span></span></code></pre></div></div>
 <p>2 用 github 上的镜像地址替换</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>
@@ -305,9 +306,9 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
                 <img src="https://images.pexels.com/photos/3467149/pexels-photo-3467149.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260" referrerpolicy="no-referrer">
             </div><div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">go: golang.org/x/sys@v0.0.0-20180905080454-ebe1bf3edb33: unrecognized import path <span class="s2">&#34;golang.orgnrecognized import path &#34;</span>golang.org/x/sys<span class="s2">&#34; (https fetch: G1: dial tcp 216.239.37.1:443: conneet https://golang.org/x/sys?go-get=1: dial tcp 216.239.37.rty did not properly respond after1:443: connectex: A connection attempt failed because the  connected host has failed to respoconnected party did not properly respond after a period of time, or established connection failed because connected : unrecognized import path &#34;</span>golang.host has failed to respond.<span class="o">)</span>
 </span></span><span class="line"><span class="cl">...
 </span></span><span class="line"><span class="cl">go: golang.org/x/crypto@v0.0.0-20180904163835-0709b304e793nected party did not properly respo: unrecognized import path <span class="s2">&#34;golang.org/x/crypto&#34;</span> <span class="o">(</span>https fed because connected host has failedtch: Get https://golang.org/x/crypto?go-get<span class="o">=</span>1: dial tcp 216.239.37.1:443: connectex: A connection attempt failed because the connected party did not properly respond after a
@@ -317,16 +318,16 @@ ENTRYPOINT [&#34;/entrypoint.sh&#34;]</code></pre></div>
 <p>1 手动加入被墙的包（原始包），一定要记住版本号，实在不知道的话，就试试 v0.0.0；</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -require<span class="o">=</span>golang.org/x/net@v0.0.0</span></span></code></pre></div></div>
 <p>2 用 github 上的镜像地址替换</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/crypto@v0.0.0<span class="o">=</span>github.com/golang/crypto@latest
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">$ go mod edit -replace<span class="o">=</span>golang.org/x/sys@v0.0.0<span class="o">=</span>github.com/golang/sys@latest</span></span></code></pre></div></div>

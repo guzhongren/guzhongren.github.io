@@ -3,11 +3,11 @@
             </div><p>都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。</p>
 <p>如下是我参与的一个调查的回答，分享给大家：</p>
 <div class="details admonition question">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-circle-question" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
 <ul>
 <li>
 <p>What you used AI for (be specific)</p>
@@ -66,8 +66,8 @@
 </li>
 </ul>
 </div>
-        </div>
     </div>
+</div>
 <h2 id="ai-时代你需要什么样的能力">AI 时代，你需要什么样的能力？</h2>
 <p>AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：</p>
 <h3 id="定义问题">定义问题</h3>

@@ -2,13 +2,14 @@
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
-<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p></blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
+</blockquote>
 <h2 id="写了-log-并且出错的程序">写了 log 并且出错的程序</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be send when invoke the method sendMessage&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -32,9 +33,9 @@
 <p>运行输出</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">mockConstructor</span><span class="p">]</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">_isMockFunction</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -109,7 +110,8 @@
 </span></span><span class="line"><span class="cl"><span class="nx">Ran</span> <span class="nx">all</span> <span class="nx">test</span> <span class="nx">suites</span> <span class="nx">matching</span> <span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">Users</span><span class="err">\</span><span class="o">/</span><span class="nx">zhongren</span><span class="err">\</span><span class="p">.</span><span class="nx">gu</span><span class="err">\</span><span class="o">/</span><span class="mi">01</span><span class="err">\</span><span class="p">.</span><span class="nx">Project</span><span class="err">\</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nb">window</span><span class="o">-</span><span class="nx">object</span><span class="err">\</span><span class="o">/</span><span class="nx">__test__</span><span class="err">\</span><span class="o">/</span><span class="nx">method_sendMessage_mult_tests</span><span class="err">\</span><span class="p">.</span><span class="nx">spec</span><span class="err">\</span><span class="p">.</span><span class="nx">ts</span><span class="o">/</span><span class="nx">i</span> <span class="kd">with</span> <span class="nx">tests</span> <span class="nx">matching</span> <span class="s2">&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class="p">.</span></span></span></code></pre></div></div>
 <h2 id="在测试中写-log-有什么用">在测试中写 log 有什么用？</h2>
 <blockquote>
-<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p></blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
+</blockquote>
 <p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
 <p>在我看来，有以下几点：</p>
 <h3 id="影响总体的测试输出">影响总体的测试输出</h3>
@@ -130,9 +132,9 @@
 <p>对于前端，我们可以在所有测试运行前 Spy <code>console.*</code>的所有的方法，</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;warn&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
@@ -172,27 +174,27 @@
  中。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">FROM node:17-alpine as distPackage</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY ./ /app</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">WORKDIR /app</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">COPY ./ /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">WORKDIR /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">RUN yarn</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">RUN yarn build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">FROM nginx:latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="l">FROM nginx:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
 <h3 id="编排-service">编排 service</h3>
 <p>因为我们的程序需要在测试的时候就要部署好，所以我们可以利用 Docker-compose 的 <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#build">build</a><sup>[7]</sup>
  参数，在容器启动时构建应用并部署。并在 cypress/included 启动是执行测试命令 <code>npx cy:docker</code>, 具体就是<code>cross-env ENV=docker cypress run --spec 'cypress/integration/dashboard.spec.js</code>。</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">./</span><span class="w">
@@ -218,9 +220,9 @@
 。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span></span></span></code></pre></div></div>
@@ -238,9 +240,9 @@
 <p>妹子的问题如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s1">&#39;jwt-decode&#39;</span>
 </span></span><span class="line"><span class="cl">
@@ -255,9 +257,9 @@
 <p>官网示例如下，是一个 mock 有方法的类的，但是通过上面的代码可知，这个不是一个类，而是直接使用的一个方法。</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">moduleName</span><span class="p">,</span> <span class="p">{</span><span class="nx">foo</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;../moduleName&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s1">&#39;../moduleName&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
@@ -269,15 +271,15 @@
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">moduleName</span><span class="p">();</span> <span class="c1">// Will return 42
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">foo</span><span class="p">();</span> <span class="c1">// Will return 43
+</span></span></span><span class="line"><span class="cl"><span class="nx">foo</span><span class="p">();</span> <span class="c1">// Will return 43
 </span></span></span></code></pre></div></div>
 <p>很明显这是不符合我么场景的。通过观察可知，jest.mock 的第二参数是工参数，返回了一个对象，然后通过调用个这个对象的方法，返回特定的 mock 数据。 那么对于我们这种情况，我们只需要返回一个 mock 后的方法即可。</p>
 <p>so, 方案可整理如下</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">jwt_decode</span> <span class="nx">from</span> <span class="s2">&#34;jwt-decode&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">mock</span><span class="p">(</span><span class="s2">&#34;jwt-decode&#34;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>

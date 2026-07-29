@@ -30,11 +30,11 @@
             </div><p>都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。</p>
 <p>如下是我参与的一个调查的回答，分享给大家：</p>
 <div class="details admonition question">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-circle-question" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
 <ul>
 <li>
 <p>What you used AI for (be specific)</p>
@@ -93,8 +93,8 @@
 </li>
 </ul>
 </div>
-        </div>
     </div>
+</div>
 <h2 id="ai-时代你需要什么样的能力">AI 时代，你需要什么样的能力？</h2>
 <p>AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：</p>
 <h3 id="定义问题">定义问题</h3>
@@ -149,7 +149,8 @@
 ]]></description></item><item><title>AI 使强者更强</title><link>https://guzhongren.github.io/2025/10/ai%E4%BD%BF%E5%BC%BA%E8%80%85%E6%9B%B4%E5%BC%BA/</link><pubDate>Wed, 22 Oct 2025 08:39:44 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2025/10/ai%E4%BD%BF%E5%BC%BA%E8%80%85%E6%9B%B4%E5%BC%BA/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" referrerpolicy="no-referrer">
             </div><blockquote>
-<p>工作固然重要，但没有什么值得你为此失去完整的人生。</p></blockquote>
+<p>工作固然重要，但没有什么值得你为此失去完整的人生。</p>
+</blockquote>
 <p>这是今天看到一篇公众号文章<a href="https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF">《AI 时代，编程语言选型更难也更重要：Go、Rust、Python、TypeScript 谁该上场？》</a><sup>[1]</sup>
 上写的。自从 7 年前加入 Thougthworks 好像就从来没加过班一样的。周末可以正常休息，还可以打球，而且从来不出差。感恩公司。</p>
 <h2 id="强者恒强">强者恒强</h2>
@@ -165,7 +166,8 @@
 <li>
 <p>再比如，我在为项目写 E2E 时，Playwright 脚本报了一个奇怪的错误，我有点不了解，并且我也不想去了解，我直接可以给出大致如下的 Prompt:</p>
 <blockquote>
-<p>请运行 E2E 测试脚本使用 @Playwright MCP 修复xxx.e2e.ts中错误。</p></blockquote>
+<p>请运行 E2E 测试脚本使用 @Playwright MCP 修复xxx.e2e.ts中错误。</p>
+</blockquote>
 </li>
 </ul>
 <p>如此简单，AI 会自动启动浏览器，并且打开浏览器控制台，在运行出错后，AI 收集信息，然后分析，给出解决方案并实施，不到 2 分钟，一个棘手的问题就被 AI 修复了，回过头来，我再让 AI 帮我总结一下刚才的问题，我只需要做适当的理解，在下次发生相同问题的时候，我就可以快速修复了。</p>
@@ -185,7 +187,8 @@
 <h2 id="练好基本功">练好基本功</h2>
 <p>不要听信网上各种不靠谱的非专业程序员短时间完成一个所谓的程序就放狂言“以后都不需要程序员了”，在我看来，大部分非专业程序员写的程序基本都是垃圾，好一点的可以称之为 POC。工程化往往是一个项目或者产品在实现过程中最难的。如果你有良好的基本功，就可以对架构，流程等进行随意合理的更改，扩展。</p>
 <blockquote>
-<p>慢慢来，比较快。</p></blockquote>
+<p>慢慢来，比较快。</p>
+</blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>《AI 时代，编程语言选型更难也更重要：Go、Rust、Python、TypeScript 谁该上场？》: <a href="https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF" rel="noopener noreferrer">https://www.infoq.cn/article/2mcpfRO4ocBWJG7jb6HF</a></li><li>Instant karma: Employer who replaced his tech team with AI tries to hire new developers on LinkedIn. Here&rsquo;s what happened next: <a href="https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr" rel="noopener noreferrer">https://economictimes.indiatimes.com/magazines/panache/instant-karma-employer-who-replaced-his-tech-team-with-ai-asks-for-new-developers-on-linkedin-heres-what-happened-next/articleshow/116625826.cms?from=mdr</a></li><li>AI 幻觉 (hallucinations): <a href="https://cloud.google.com/discover/what-are-ai-hallucinations" rel="noopener noreferrer">https://cloud.google.com/discover/what-are-ai-hallucinations</a></li></ol>
@@ -203,7 +206,17 @@
 <p>在<code>ChatOps</code>中，当 Manager 加入 Incident 处理的聊天组时，需要及时获取当前 Incident 的处理情况，包括实时状态、关键行为以及可能的建议。</p>
 <h2 id="基本流程">基本流程</h2>
 <p>基于上述需求，我们需要为 Chat 设计一个 Bot。这个 Bot 在接收到简单指令后，可以生成当前 Incident 的关键数据报告，类似于 PIR（Post-Incident Report），但不需要那么详细。</p>
-<div class="mermaid" id="id-1"></div><h2 id="开发流程">开发流程</h2>
+<div class="mermaid" id="id-3">sequenceDiagram
+  participant User as 用户
+  participant Slack as Slack
+  participant ServerLessFunction as 无服务器函数
+  participant AI as AI模型
+  User-&gt;&gt;Slack: 输入`/Summary`命令
+  Slack-&gt;&gt;ServerLessFunction: 请求摘要/报告
+  ServerLessFunction-&gt;&gt;AI: 请求摘要/报告
+  AI--&gt;&gt;ServerLessFunction: 返回响应
+  ServerLessFunction--&gt;&gt;Slack: 返回摘要/报告
+  Slack--&gt;&gt;User: 返回摘要/报告</div><h2 id="开发流程">开发流程</h2>
 <p>在开发过程中，我们需要完成以下任务：</p>
 <ol>
 <li>在 Slack 上创建一个 Bot，作为用户与 Slack 之间的沟通桥梁。</li>
@@ -212,24 +225,26 @@
 <h3 id="创建slack-bot">创建Slack Bot</h3>
 <p>在<a href="https://api.slack.com/apps">Slack官网</a><sup>[1]</sup>
 上创建 Bot 有两种方式： 1, Manifest， 2，Scratch 方式</p>
-<div class="mermaid" id="id-2"></div><div class="details admonition warning open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-exclamation-triangle fa-fw" aria-hidden="true"></i>提示<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">创建Slack Bot需要Slack Workspace的管理员权限。</div>
-        </div>
+<div class="mermaid" id="id-4">graph LR;
+    A{Slack App开发} --&gt; B[Manifest方式]
+    A --&gt; C[Scratch方式]</div><div class="details admonition warning open">
+    <div class="details-summary admonition-title">
+        <i class="icon fas fa-exclamation" aria-hidden="true"></i>提示<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+        <div class="admonition-content">创建Slack Bot需要Slack Workspace的管理员权限。</div>
+    </div>
+</div>
 <h4 id="manifest方式">Manifest方式</h4>
 <p>这种方式相对简单，支持 JSON 和 YAML 格式，所有配置都集中在 Manifest文件中。以下是一个 YAML 格式的示例：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">display_information</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">XBot</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">features</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">features</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">bot_user</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">display_name</span><span class="p">:</span><span class="w"> </span><span class="l">XBot</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">always_online</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -239,7 +254,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l">summary</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">usage_hint</span><span class="p">:</span><span class="w"> </span><span class="l">it</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">should_escape</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">oauth_config</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">oauth_config</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">scopes</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bot</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">app_mentions:read</span><span class="w">
@@ -254,7 +269,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">im:history</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">mpim:history</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="l">users:read</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">settings</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">settings</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">event_subscriptions</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">request_url</span><span class="p">:</span><span class="w"> </span><span class="l">&lt;ServerLess HTTPS URL&gt;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">bot_events</span><span class="p">:</span><span class="w">
@@ -266,63 +281,63 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">socket_mode_enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">token_rotation_enabled</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span></span></span></code></pre></div></div>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>示例<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot">https://serverless.functions.url/x-bot</a><sup>[2]</sup></div>
-        </div>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-lightbulb" aria-hidden="true"></i>示例<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+        <div class="admonition-content">ServerLess HTTPS URL: <a href="https://serverless.functions.url/x-bot">https://serverless.functions.url/x-bot</a><sup>[2]</sup></div>
+    </div>
+</div>
 <p>这种方式适合已经创建过一个 Bot，需要重新创建的情况，例如测试完成后需要创建正式的 Bot。</p>
 <h4 id="scratch方式">Scratch方式</h4>
 <p>按照提示逐步完成配置，涉及多个模块，例如<code>Basic Information</code>、<code>Socket Mode</code>、<code>Incoming Webhooks</code>、<code>Slash Command</code>、<code>OAuth &amp; Permissions</code>和<code>Event Subscriptions</code>等。具体权限可参考 Manifest 的 YAML 配置。</p>
 <p>通过上述两种方式之一创建Bot后，需要获取以下Token，这些Token将在无服务器函数中使用：</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">项目</th>
-          <th style="text-align: left">位置</th>
-          <th style="text-align: left">操作</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">SIGNING_SECRET</td>
-          <td style="text-align: left"><code>Basic Information</code> -&gt; <code>Signing Secret</code></td>
-          <td style="text-align: left">复制</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SLACK_APP_TOKEN</td>
-          <td style="text-align: left"><code>Basic Information</code> -&gt; <code>App-Level Tokens</code></td>
-          <td style="text-align: left">点击<code>Generate Token and Scope</code>，命名并赋予<code>connections:write</code>权限</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">SLACK_BOT_TOKEN</td>
-          <td style="text-align: left"><code>OAuth &amp; Permissions</code> -&gt; <code>OAuth Tokens</code></td>
-          <td style="text-align: left">复制</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">项目</th>
+					<th style="text-align: left">位置</th>
+					<th style="text-align: left">操作</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">SIGNING_SECRET</td>
+					<td style="text-align: left"><code>Basic Information</code> -&gt; <code>Signing Secret</code></td>
+					<td style="text-align: left">复制</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">SLACK_APP_TOKEN</td>
+					<td style="text-align: left"><code>Basic Information</code> -&gt; <code>App-Level Tokens</code></td>
+					<td style="text-align: left">点击<code>Generate Token and Scope</code>，命名并赋予<code>connections:write</code>权限</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">SLACK_BOT_TOKEN</td>
+					<td style="text-align: left"><code>OAuth &amp; Permissions</code> -&gt; <code>OAuth Tokens</code></td>
+					<td style="text-align: left">复制</td>
+			</tr>
+	</tbody>
 </table>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>重要提示<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><ul>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-lightbulb" aria-hidden="true"></i>重要提示<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><ul>
 <li>在本地开发代码并与Slack测试时，启用<code>Socket Mode</code>可以避免每次都部署代码，从而节省时间和资源</li>
 <li>启用<code>Socket Mode</code>时，如果多人开发同一个Bot，可能会收到彼此的请求返回结果。建议每人创建一个独立的Workspace以避免冲突</li>
 <li>更改完配置之后，需要将 App 安装到你的 Workspace 中</li>
 </ul>
 </div>
-        </div>
     </div>
+</div>
 <h3 id="创建无服务器函数处理用户请求">创建无服务器函数处理用户请求</h3>
 <p>这里选择使用 Python 来作为 Serferless 处理工具，并将其部署在云服务器上，比如 AWS Lambda, Azure Function， 或者 Google Cloud Platform 的 Cloud Run Functions中，这里不讲工程构建之类的，直接给出部分参考代码。</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="o">...</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">slack_bolt</span> <span class="kn">import</span> <span class="n">App</span>
 </span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">slack_bolt.adapter.flask</span> <span class="n">imp</span>
@@ -348,7 +363,7 @@
 </span></span><span class="line"><span class="cl">    <span class="c1"># Use AI to summarize</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="n">system_prompt</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span><span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span><span class="s1">    You are an operations analysis expert. You .....
+</span></span></span><span class="line"><span class="cl"><span class="s1">    You are an operations analysis expert. You .....
 </span></span></span><span class="line"><span class="cl"><span class="s1">    ......
 </span></span></span><span class="line"><span class="cl"><span class="s1">    Output format:
 </span></span></span><span class="line"><span class="cl"><span class="s1">    ......
@@ -393,18 +408,18 @@
 <p>比如使用如下命令将这个程序部署在 GCP 中：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">gcloud functions deploy x-bot <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --runtime python310 <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --trigger-http <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --allow-unauthenticated <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --entry-point slack_bot <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --timeout<span class="o">=</span>120s <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set-env-vars <span class="nv">GCP_PROJECT</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set-env-vars <span class="nv">SLACK_BOT_TOKEN</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --set-env-vars <span class="nv">SIGNING_SECRET</span><span class="o">=</span><span class="s1">&#39;&#39;</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl">    --runtime python310 <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --trigger-http <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --allow-unauthenticated <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --entry-point slack_bot <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --timeout<span class="o">=</span>120s <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --set-env-vars <span class="nv">GCP_PROJECT</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --set-env-vars <span class="nv">SLACK_BOT_TOKEN</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">    --set-env-vars <span class="nv">SIGNING_SECRET</span><span class="o">=</span><span class="s1">&#39;&#39;</span></span></span></code></pre></div></div>
 <h2 id="注意事项">注意事项</h2>
 <p>部署好 Serverless Function 之后，需要将Serverless Function 的访问的 URL 添加到 Slack App 的配置中；</p>
 <ul>
@@ -442,9 +457,9 @@
 <p>Ollama 可以通过命令行或手动下载安装包进行安装。手动安装后，系统会自动启动 Ollama 服务；而通过命令行安装后，则需要手动启动服务。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">brew install ollama
 </span></span><span class="line"><span class="cl"><span class="c1"># 安装完成后，启动 Ollama 服务</span>
 </span></span><span class="line"><span class="cl">ollama serve</span></span></code></pre></div></div>
@@ -456,9 +471,9 @@
 </ol>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">ollama run deepseek-r1:7b</span></span></code></pre></div></div>
 <h4 id="安装-chatbox">安装 Chatbox</h4>
 <p>Chatbox 是与大模型进行交互的界面。你可以选择直接安装软件或通过 Docker 运行。推荐使用软件安装，以便快速启动和操作。</p>

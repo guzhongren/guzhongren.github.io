@@ -7,38 +7,38 @@
 <p>软件的目的是为了更好、更高效的完成工作。<code>工欲善其事必先利其器</code>，那么作为开发者肯定会在产出软件之前对自己的代码进行更有效的管理。</p>
 <p>当我们回顾历史时 [1]，我们可以大致区分出三代阶段的控制软件。</p>
 <table>
-  <thead>
-      <tr>
-          <th>阶段</th>
-          <th>操作</th>
-          <th>并发</th>
-          <th>存储</th>
-          <th>工具</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>1</td>
-          <td>单文件</td>
-          <td>锁定文件</td>
-          <td>集中式</td>
-          <td>RCS</td>
-      </tr>
-      <tr>
-          <td>2</td>
-          <td>多文件</td>
-          <td>提交前 merge</td>
-          <td>集中式</td>
-          <td>Subversion, CVS</td>
-      </tr>
-      <tr>
-          <td>3</td>
-          <td>多文件</td>
-          <td>merge 前提交</td>
-          <td>分布式</td>
-          <td>Git, Mercurial</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>阶段</th>
+					<th>操作</th>
+					<th>并发</th>
+					<th>存储</th>
+					<th>工具</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>1</td>
+					<td>单文件</td>
+					<td>锁定文件</td>
+					<td>集中式</td>
+					<td>RCS</td>
+			</tr>
+			<tr>
+					<td>2</td>
+					<td>多文件</td>
+					<td>提交前 merge</td>
+					<td>集中式</td>
+					<td>Subversion, CVS</td>
+			</tr>
+			<tr>
+					<td>3</td>
+					<td>多文件</td>
+					<td>merge 前提交</td>
+					<td>分布式</td>
+					<td>Git, Mercurial</td>
+			</tr>
+	</tbody>
 </table>
 <p>我们注意到随着版本控制系统的成熟，并行处理项目的能力成为了趋势。</p>
 <p>最具突破性的更改之一是从锁定文件转变为合并更改。它使开发者能够更有效地工作。
@@ -104,7 +104,8 @@ Git 流的优点之一是严格控制。仔细查看更改后，只有授权的�
 <p>如果开发速度比较快，有些内容是要在下个版本才要上，那么团队就需要启用 FeatureToggle 了， 关于这部分可参考之前的 <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL">《FeatureToggle 引起的。&hellip; 总结》</a><sup>[1]</sup>
 。</p>
 <blockquote>
-<p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p></blockquote>
+<p>软件开发是一场人、语言和工具的故事，但愿你在合适的场景选择合适的工具。</p>
+</blockquote>
 <div class="references">
                 <h2>参考</h2>
                 <ol><li>《FeatureToggle 引起的。&hellip; 总结》: <a href="https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL" rel="noopener noreferrer">https://yq.aliyun.com/articles/727991?spm=a2c4e.11155435.0.0.152d3312ob5mmL</a></li></ol>

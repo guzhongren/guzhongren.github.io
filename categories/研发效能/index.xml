@@ -79,219 +79,219 @@
 <p>在此，我们选择如下部分工具进行对比并说明。</p>
 <h2 id="解决方案对比">解决方案对比</h2>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left">Heartbeat</th>
-          <th style="text-align: left">Sleuth</th>
-          <th style="text-align: left">Metrik</th>
-          <th style="text-align: left">DevLake</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">开源</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">免费</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">自动统计</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">人工表单收集</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">社区活跃程度</td>
-          <td style="text-align: left">🔋</td>
-          <td style="text-align: left">🪫</td>
-          <td style="text-align: left">➖</td>
-          <td style="text-align: left">🔋</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 GitHub 作为版本控制工具</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 GitLab 作为版本控制工具</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 GitHub Actions 作为 Pipeline 工具</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 BuildKite 作为 Pipeline 工具</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 GitLab 套件作为 Pipeline 工具</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 Jenkins 作为 Pipeline 工具</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量 PR/MR 的前置时间</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量基于版本控制工具的特定分支的 DORA Metrics</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持自定义仓库统计</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持 Jira 作为项目管理工具</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量迭代完成点数</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量迭代完成卡数</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持按人统计迭代卡的时间分配</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量每张卡在每个状态中的时间消耗</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">支持度量返工（Rework）</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">导出 DORA Metrics 报告</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">导出迭代内项目管理工具每张卡的时间消耗报告</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">多个迭代的图表展示</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left">Heartbeat</th>
+					<th style="text-align: left">Sleuth</th>
+					<th style="text-align: left">Metrik</th>
+					<th style="text-align: left">DevLake</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">开源</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">免费</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">自动统计</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">人工表单收集</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">社区活跃程度</td>
+					<td style="text-align: left">🔋</td>
+					<td style="text-align: left">🪫</td>
+					<td style="text-align: left">➖</td>
+					<td style="text-align: left">🔋</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 GitHub 作为版本控制工具</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 GitLab 作为版本控制工具</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 GitHub Actions 作为 Pipeline 工具</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 BuildKite 作为 Pipeline 工具</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 GitLab 套件作为 Pipeline 工具</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 Jenkins 作为 Pipeline 工具</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量 PR/MR 的前置时间</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量基于版本控制工具的特定分支的 DORA Metrics</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持自定义仓库统计</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持 Jira 作为项目管理工具</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量迭代完成点数</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量迭代完成卡数</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持按人统计迭代卡的时间分配</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量每张卡在每个状态中的时间消耗</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">支持度量返工（Rework）</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">导出 DORA Metrics 报告</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">导出迭代内项目管理工具每张卡的时间消耗报告</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">多个迭代的图表展示</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+			</tr>
+	</tbody>
 </table>
 <p>从组织精准度量研发效能角度看，Heartbeat 统计的数据来源更多，比如统计 DORA Metrics 的数据源 Pipeline(BuildKite), 项目管理工具(Jira) 和版本控制工具(GitHub)，并且各个部分的自定义能力较强, 更能体现出交付质量和价值。</p>
 <h3 id="heartbeat-的解决方案">Heartbeat 的解决方案</h3>
 <h4 id="heartbeat-是什么">Heartbeat 是什么</h4>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left"></th>
-          <th></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">对于</br> 目标用户/客户</td>
-          <td style="text-align: left">TL, BA, PM, PO</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">谁</br> 需求/机会</td>
-          <td style="text-align: left">1. 更好的了解交付效能</br> 2. 提高团队生产力和效率</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">产品</td>
-          <td style="text-align: left">Heartbeat</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">是一个</br></td>
-          <td style="text-align: left">可视化项目交付效能的开源工具</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">它可以</br>关键好处，使用的竞争理由</td>
-          <td style="text-align: left">1. 整合3个开发与进度管理产品</br> 2. 自动计算8个交付性能指标</br> 3. 可以导出相关数据报告</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">相比于</br>主要竞争替代方案</td>
-          <td style="text-align: left">Sleuth, Metrics 和 DevLake</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">优势</br>差异点</td>
-          <td style="text-align: left">1. 自动从第三方获取数据并计算交付效能指标</br> 2. 从数据源获取的最真实的交付效能指标，而不是通过手动收集所得</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">对于</br> 目标用户/客户</td>
+					<td style="text-align: left">TL, BA, PM, PO</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">谁</br> 需求/机会</td>
+					<td style="text-align: left">1. 更好的了解交付效能</br> 2. 提高团队生产力和效率</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">产品</td>
+					<td style="text-align: left">Heartbeat</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">是一个</br></td>
+					<td style="text-align: left">可视化项目交付效能的开源工具</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">它可以</br>关键好处，使用的竞争理由</td>
+					<td style="text-align: left">1. 整合3个开发与进度管理产品</br> 2. 自动计算8个交付性能指标</br> 3. 可以导出相关数据报告</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">相比于</br>主要竞争替代方案</td>
+					<td style="text-align: left">Sleuth, Metrics 和 DevLake</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">优势</br>差异点</td>
+					<td style="text-align: left">1. 自动从第三方获取数据并计算交付效能指标</br> 2. 从数据源获取的最真实的交付效能指标，而不是通过手动收集所得</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="为什么会有-heartbeat">为什么会有 Heartbeat</h4>
 <p>在 Thoughtworks， 我们有 SDP(Sensible Default Practice) 来指导日常的软件工程开发工作，通过遵循 SDP 的最佳实践，组织可以提高研发效能；反之，通过分析收集到的各个指标，作为 TL 等角色的人，可以分析出哪些行为是团队所需要提升的，从而针对性地在找到最佳实践，近而采取行动来促进研发效能。</p>

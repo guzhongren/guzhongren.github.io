@@ -11,9 +11,9 @@
  的项目，打开一看，README 文档也写的不错，直接就有 Homebrew 的安装命令，毫不犹豫的就尝试安装，果然有些开源的产品做的就是非常的懂用户体验，尤其是给程序员用的。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-bash">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask openmtp</span></span></code></pre></div></div>
 <h2 id="最终方案">最终方案</h2>
 <p>因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。</p>

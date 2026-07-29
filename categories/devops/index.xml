@@ -51,73 +51,73 @@
  and <a href="https://cloud.google.com/container-registry">GCR</a><sup>[7]</sup>
 . We made a comparison from different dimensions.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Scanner</th>
-          <th style="text-align: left">OS packages</th>
-          <th style="text-align: left">Application dependencies</th>
-          <th style="text-align: left">Easy to use</th>
-          <th style="text-align: left">Accuracy</th>
-          <th style="text-align: left">Suitable for CI</th>
-          <th style="text-align: left">Suitable for Solution</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Trivy</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Clair</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Anchore Engine</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Quay</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Docker Hub</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐⭐⭐</td>
-          <td style="text-align: left">⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">GCR</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Scanner</th>
+					<th style="text-align: left">OS packages</th>
+					<th style="text-align: left">Application dependencies</th>
+					<th style="text-align: left">Easy to use</th>
+					<th style="text-align: left">Accuracy</th>
+					<th style="text-align: left">Suitable for CI</th>
+					<th style="text-align: left">Suitable for Solution</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Trivy</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Clair</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anchore Engine</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Quay</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Docker Hub</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐⭐⭐</td>
+					<td style="text-align: left">⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">GCR</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+	</tbody>
 </table>
 <p>Firstly we can separate those scanners into 2 parts suitable for solution, the Trivy, Clair, Anchore Engine, and Quay are suitable for solution, the others are suitable for solution 1.</p>
 <p>For the first dimension: OS package, those scanners can do it, but for the second dimension: Application dependence, just only Trivy and Anchore engine can do it, and for the fifth dimension is it suitable for ci; only the first three left.</p>
@@ -140,16 +140,16 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>Before we write code to integrate, we have to know how to use Trivy. As we know, Trivy is a binary application, so we can use it in the command line. At the same time, Trivy provides its docker image, so we can easily setup it and use it, the command is as follows. For this command, we need to highlight some parameters.</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ docker run --rm <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  aquasec/trivy <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  image <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --exit-code <span class="m">1</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --ignore-unfixed <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl">  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl">  aquasec/trivy <span class="se">\
+</span></span></span><span class="line"><span class="cl">  image <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exit-code <span class="m">1</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --ignore-unfixed <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span></span></span></code></pre></div></div>
 <ul>
 <li>-v /var/run/docker.sock:/var/run/docker.sock  If you would like to scan the image on your local host machine, you need to mount docker.sock</li>
 <li>&ndash;ignore-unfixed Ignore the unfixed issue of vulnerability; If there are some unfixed vulnerabilities, trivy will ignore those vulnerabilities</li>
@@ -162,9 +162,9 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>Below is a demo to show how the trivy breaks the pipeline and what happens when we fix the issues; This project is about to build a Buildkite dashboard, it will filter the built information of your organization which you specify. We use Github actions to build application and setup the Trivy in the pipeline;</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Trivy scanner</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">      docker run --rm \
@@ -217,73 +217,73 @@ it will check the update to keep the metadata latest when the tool runs again. A
  和 <a href="https://cloud.google.com/container-registry">GCR</a><sup>[7]</sup>
  等几种扫描工具，从不同维度进行对比。</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">Scanner</th>
-          <th style="text-align: left">OS packages</th>
-          <th style="text-align: left">Application dependencies</th>
-          <th style="text-align: left">Easy to use</th>
-          <th style="text-align: left">Accuracy</th>
-          <th style="text-align: left">Suitable for CI</th>
-          <th style="text-align: left">Suitable for Solution</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">Trivy</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Clair</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Anchore Engine</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">2</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Quay</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Docker Hub</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐⭐⭐</td>
-          <td style="text-align: left">⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">GCR</td>
-          <td style="text-align: left">✅</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">⭐ ⭐ ⭐</td>
-          <td style="text-align: left">⭐ ⭐</td>
-          <td style="text-align: left">❌</td>
-          <td style="text-align: left">1</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">Scanner</th>
+					<th style="text-align: left">OS packages</th>
+					<th style="text-align: left">Application dependencies</th>
+					<th style="text-align: left">Easy to use</th>
+					<th style="text-align: left">Accuracy</th>
+					<th style="text-align: left">Suitable for CI</th>
+					<th style="text-align: left">Suitable for Solution</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">Trivy</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Clair</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anchore Engine</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">2</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Quay</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Docker Hub</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐⭐⭐</td>
+					<td style="text-align: left">⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">GCR</td>
+					<td style="text-align: left">✅</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">⭐ ⭐ ⭐</td>
+					<td style="text-align: left">⭐ ⭐</td>
+					<td style="text-align: left">❌</td>
+					<td style="text-align: left">1</td>
+			</tr>
+	</tbody>
 </table>
 <p>首先，我们可以将这些扫描工具按照其执行的环境简单分类； 因为 Docker Hub、GCR 和 Quay 是需要在服务端也就是容器注册中心运行的， 所以适合方案 1； Trivy、Clair 和 Anchor Engine 可以在 Pipeline 上工作，所以适合解决方案 2。</p>
 <p>对于第一个维度：OS Package，这些所有的扫描工具都可以做到，但是对于第二个维度：Application dependencies，只有 Trivy 和 Anchore Engine 可以做到，对于第五个维度：Suitable for CI, 只有前三个符合条件。</p>
@@ -305,16 +305,16 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>在编写代码进行集成之前，我们必须知道如何使用 Trivy，Trivy 是一个二进制应用程序，所以我们可以在命令行中使用它。同时，Trivy 提供了它的 Docker 镜像，所以我们可以很容易地在 Pipeline 上设置和使用。命令如下，对于这个命令，我们需要重点说明一些参数。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">❯ docker run --rm <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  aquasec/trivy <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  image <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --exit-code <span class="m">1</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --ignore-unfixed <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl">  -v /var/run/docker.sock:/var/run/docker.sock <span class="se">\
+</span></span></span><span class="line"><span class="cl">  aquasec/trivy <span class="se">\
+</span></span></span><span class="line"><span class="cl">  image <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --exit-code <span class="m">1</span> <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --ignore-unfixed <span class="se">\
+</span></span></span><span class="line"><span class="cl">  --severity HIGH,CRITICAL <span class="si">${</span><span class="nv">YOUR_IMAGE</span><span class="si">}</span></span></span></code></pre></div></div>
 <ul>
 <li>-v /var/run/docker.sock:/var/run/docker.sock 如果想扫描本地主机上的镜像，需要挂载 docker.sock</li>
 <li>&ndash;ignore-unfixed 忽略未修复的漏洞问题；如果存在未修复的漏洞，Trivy 将忽略这些漏洞</li>
@@ -327,9 +327,9 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>下面是一个 Demo，展示了 Trivy 如何打断 Pipeline 的执行 ，以及当我们修复问题后又发生什么。该项目将构建一个 Buildkite Dashboard（Buildkite 是一个 CI/CD 平台），它将过滤出你指定的组织下的项目的构建信息。这里我们使用 GitHub Actions 来构建这个应用程序，并在 Pipeline 中集成 Trivy，代码如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Trivy scanner</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">      docker run --rm \
@@ -389,9 +389,9 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>在写代码之前，我先将数据重新整理成了 <code>yaml</code> 格式，毕竟比 <code>JSON</code> 好用（可以写注释）。格式大致如下</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">parameter</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">appName</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">customKey</span><span class="p">:</span><span class="w"> </span><span class="l">customKey</span><span class="w">
@@ -404,16 +404,16 @@ it will check the update to keep the metadata latest when the tool runs again. A
 <p>综合以上因素，将 <code>YAML</code>格式的数据转换为 <code>JSON</code>, 由 <code>Python</code> 解析 <code>JSON</code>, 然后循环数据，循环过程中使用 <code>subprocess</code> 调用 <code>shell</code>, 在 <code>shell</code>中调用 AWS CLI 命令即可将数据更新上去或者执行解密操作等。 调用示例代码如下；</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-python">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">subprocess</span><span class="o">.</span></span></span></code></pre></div></div>
 <p>在这需要重点说明一下的是，如果 <code>subprocess</code>调用的 <code>shell</code>是执行 <code>docker</code>命令，那么一定要在你要执行 <code>subprocess.run(['docker-compose', 'run', '-T', '-rm', 'shush', value])</code>这类命令前确保你已经拉取了 <code>shush</code> 涉及的镜像， 否则你第一次运行的输出结果里会有拉取镜像的日志。解决办法是在脚本真正运行之前获取镜像，可以使用如下密令</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-Shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Shell" data-lang="Shell"><span class="line"><span class="cl">docker-compose pull shush</span></span></code></pre></div></div>
 <h2 id="总结">总结</h2>
 <ul>

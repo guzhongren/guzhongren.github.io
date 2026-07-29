@@ -9,9 +9,9 @@
 <p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">      <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -49,9 +49,9 @@
 <p>在 render 函数里我们循环即可实现代码的抽象</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">tools</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tool</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">TouchableOpacity</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">toolWrapper</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">index</span><span class="p">}</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">onPress</span><span class="p">}</span> <span class="o">&gt;</span>

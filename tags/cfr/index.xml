@@ -8,142 +8,142 @@
 <p>跨功能性需求贯穿于软件开发的各个阶段，直接影响系统的稳定性、用户满意度和长期维护成本。例如，在一个实时通信应用中，低延迟（性能需求）和数据加密（安全性需求）是用户体验的核心。如果忽视这些需求，可能导致系统在高负载或恶意攻击下崩溃，甚至无法满足用户的基本期望。</p>
 <h2 id="跨功能性需求详细讨论">跨功能性需求详细讨论</h2>
 <table>
-  <thead>
-      <tr>
-          <th>需求类别</th>
-          <th>具体问题</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>可扩展性（Extensibility）</strong></td>
-          <td>是否需要组件化？是否需要提供一个插件功能，由谁来实施？</td>
-      </tr>
-      <tr>
-          <td><strong>可移植性（Portability）</strong></td>
-          <td>是否有迁移到另一个数据库产品或操作系统的必要性？</td>
-      </tr>
-      <tr>
-          <td><strong>可安装性和可部署性（Installability &amp; Deployment）</strong></td>
-          <td>需要提供什么样的基础设施？需要什么样的安装便利性？是否支持持续交付？如何回滚或升级版本？</td>
-      </tr>
-      <tr>
-          <td><strong>兼容性（Compatibility）</strong></td>
-          <td>需要与哪些其他系统集成？需要遵循哪些行业标准？是否需要考虑现有数据格式？</td>
-      </tr>
-      <tr>
-          <td><strong>可集成性和互操作性（Integratability &amp; Interoperability）</strong></td>
-          <td>是否需要提供 API 或库供其他系统使用？版本管理和升级策略是什么？</td>
-      </tr>
-      <tr>
-          <td><strong>可复用性（Leveragability &amp; Reuse）</strong></td>
-          <td>是否能够复用企业现有组件/库，或者当前组件/库是否将被重用？</td>
-      </tr>
-      <tr>
-          <td><strong>可伸缩性（Scalability）</strong></td>
-          <td>如何根据不断变化的用户量来提高吞吐量？如何对此进行测试？</td>
-      </tr>
-      <tr>
-          <td><strong>版本化和升级策略（Versioning and upgrades）</strong></td>
-          <td>版本化策略是什么？如何跟踪内部/外部的版本？有没有向后兼容的限制？</td>
-      </tr>
-      <tr>
-          <td><strong>可访问性（Accessibility）</strong></td>
-          <td>是否支持有特殊需要的用户（如读屏）？</td>
-      </tr>
-      <tr>
-          <td><strong>本地化和国际化（Localisation &amp; Internationalisation）</strong></td>
-          <td>是否支持多语言？日期/时间/货币的转换和翻译？</td>
-      </tr>
-      <tr>
-          <td><strong>可用性和用户体验（Usability and user experience）</strong></td>
-          <td>用户体验对系统有多重要？是否有公司用户体验准则？是否支持多设备？</td>
-      </tr>
-      <tr>
-          <td><strong>分布性（Distributability）</strong></td>
-          <td>系统是否能在特定区域使用？是否支持离线运行？如何同步信息？</td>
-      </tr>
-      <tr>
-          <td><strong>帮助与支持（Help &amp; Support）</strong></td>
-          <td>是否需要用户文档、教程或支持团队？是否需要计划培训？</td>
-      </tr>
-      <tr>
-          <td><strong>可配置性（Configurability）</strong></td>
-          <td>用户或管理员是否可以配置功能？如何进行配置管理？</td>
-      </tr>
-      <tr>
-          <td><strong>支持性（Supportability）</strong></td>
-          <td>用户/操作支持的级别是什么？如何提供支持？</td>
-      </tr>
-      <tr>
-          <td><strong>归档（Archiving）</strong></td>
-          <td>归档什么信息？何时归档？如何归档？谁可以访问归档信息？</td>
-      </tr>
-      <tr>
-          <td><strong>可用性（Availability）</strong></td>
-          <td>是否有可用性目标？需要什么架构来满足这些要求？是否有高峰负载需求？</td>
-      </tr>
-      <tr>
-          <td><strong>容量（Capacity）</strong></td>
-          <td>是否有存储要求？高峰负载如何处理？系统需要处理的数据量和用户数量？</td>
-      </tr>
-      <tr>
-          <td><strong>连续性（Continuity）</strong></td>
-          <td>是否有灾难恢复计划？</td>
-      </tr>
-      <tr>
-          <td><strong>数据完整性和一致性（Data Integrity and Consistency）</strong></td>
-          <td>是否需要数据校验、日志追踪或数据恢复机制？</td>
-      </tr>
-      <tr>
-          <td><strong>可维护性（Maintainability）</strong></td>
-          <td>最大可容忍停机时间是什么？是否有停机通知要求？错误页面如何处理？</td>
-      </tr>
-      <tr>
-          <td><strong>监控（Monitoring）</strong></td>
-          <td>应该衡量哪些业务/技术指标？如何监测？需要哪些警报？</td>
-      </tr>
-      <tr>
-          <td><strong>多环境支持（Multiple Environment Support）</strong></td>
-          <td>需要多少环境？如何配置和管理这些环境？</td>
-      </tr>
-      <tr>
-          <td><strong>性能（Performance）</strong></td>
-          <td>吞吐量/响应时间要求是什么？是否需要性能测试？是否需要考虑异步场景？</td>
-      </tr>
-      <tr>
-          <td><strong>弹性和容错性（Resilience &amp; Fault Tolerance）</strong></td>
-          <td>如果外部依赖失效，系统如何降级？</td>
-      </tr>
-      <tr>
-          <td><strong>可靠性（Reliability）</strong></td>
-          <td>不可靠的成本是什么？需要多少成本来保证可靠？</td>
-      </tr>
-      <tr>
-          <td><strong>可审计性（Auditability）</strong></td>
-          <td>哪些操作需要被跟踪？是否有法律或监管要求？</td>
-      </tr>
-      <tr>
-          <td><strong>认证（Authentication）</strong></td>
-          <td>如何鉴别用户身份？是否遵循标准或使用现有认证系统？</td>
-      </tr>
-      <tr>
-          <td><strong>授权（Authorisation）</strong></td>
-          <td>哪些角色和权限是必要的？如何维护和应用权限？</td>
-      </tr>
-      <tr>
-          <td><strong>法律合规性（Legal Compliance）</strong></td>
-          <td>是否有数据/系统或软件交付过程的法律限制？</td>
-      </tr>
-      <tr>
-          <td><strong>数据隐私（Data Privacy）</strong></td>
-          <td>哪些数据需要加密？哪些数据对用户和操作人员可见/隐藏？如何处理脱敏？</td>
-      </tr>
-      <tr>
-          <td><strong>安全性（Security）</strong></td>
-          <td>是否需要安全审计或渗透测试？企业的安全准则是什么？是否有 SSL 或 VPN 要求？</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>需求类别</th>
+					<th>具体问题</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>可扩展性（Extensibility）</strong></td>
+					<td>是否需要组件化？是否需要提供一个插件功能，由谁来实施？</td>
+			</tr>
+			<tr>
+					<td><strong>可移植性（Portability）</strong></td>
+					<td>是否有迁移到另一个数据库产品或操作系统的必要性？</td>
+			</tr>
+			<tr>
+					<td><strong>可安装性和可部署性（Installability &amp; Deployment）</strong></td>
+					<td>需要提供什么样的基础设施？需要什么样的安装便利性？是否支持持续交付？如何回滚或升级版本？</td>
+			</tr>
+			<tr>
+					<td><strong>兼容性（Compatibility）</strong></td>
+					<td>需要与哪些其他系统集成？需要遵循哪些行业标准？是否需要考虑现有数据格式？</td>
+			</tr>
+			<tr>
+					<td><strong>可集成性和互操作性（Integratability &amp; Interoperability）</strong></td>
+					<td>是否需要提供 API 或库供其他系统使用？版本管理和升级策略是什么？</td>
+			</tr>
+			<tr>
+					<td><strong>可复用性（Leveragability &amp; Reuse）</strong></td>
+					<td>是否能够复用企业现有组件/库，或者当前组件/库是否将被重用？</td>
+			</tr>
+			<tr>
+					<td><strong>可伸缩性（Scalability）</strong></td>
+					<td>如何根据不断变化的用户量来提高吞吐量？如何对此进行测试？</td>
+			</tr>
+			<tr>
+					<td><strong>版本化和升级策略（Versioning and upgrades）</strong></td>
+					<td>版本化策略是什么？如何跟踪内部/外部的版本？有没有向后兼容的限制？</td>
+			</tr>
+			<tr>
+					<td><strong>可访问性（Accessibility）</strong></td>
+					<td>是否支持有特殊需要的用户（如读屏）？</td>
+			</tr>
+			<tr>
+					<td><strong>本地化和国际化（Localisation &amp; Internationalisation）</strong></td>
+					<td>是否支持多语言？日期/时间/货币的转换和翻译？</td>
+			</tr>
+			<tr>
+					<td><strong>可用性和用户体验（Usability and user experience）</strong></td>
+					<td>用户体验对系统有多重要？是否有公司用户体验准则？是否支持多设备？</td>
+			</tr>
+			<tr>
+					<td><strong>分布性（Distributability）</strong></td>
+					<td>系统是否能在特定区域使用？是否支持离线运行？如何同步信息？</td>
+			</tr>
+			<tr>
+					<td><strong>帮助与支持（Help &amp; Support）</strong></td>
+					<td>是否需要用户文档、教程或支持团队？是否需要计划培训？</td>
+			</tr>
+			<tr>
+					<td><strong>可配置性（Configurability）</strong></td>
+					<td>用户或管理员是否可以配置功能？如何进行配置管理？</td>
+			</tr>
+			<tr>
+					<td><strong>支持性（Supportability）</strong></td>
+					<td>用户/操作支持的级别是什么？如何提供支持？</td>
+			</tr>
+			<tr>
+					<td><strong>归档（Archiving）</strong></td>
+					<td>归档什么信息？何时归档？如何归档？谁可以访问归档信息？</td>
+			</tr>
+			<tr>
+					<td><strong>可用性（Availability）</strong></td>
+					<td>是否有可用性目标？需要什么架构来满足这些要求？是否有高峰负载需求？</td>
+			</tr>
+			<tr>
+					<td><strong>容量（Capacity）</strong></td>
+					<td>是否有存储要求？高峰负载如何处理？系统需要处理的数据量和用户数量？</td>
+			</tr>
+			<tr>
+					<td><strong>连续性（Continuity）</strong></td>
+					<td>是否有灾难恢复计划？</td>
+			</tr>
+			<tr>
+					<td><strong>数据完整性和一致性（Data Integrity and Consistency）</strong></td>
+					<td>是否需要数据校验、日志追踪或数据恢复机制？</td>
+			</tr>
+			<tr>
+					<td><strong>可维护性（Maintainability）</strong></td>
+					<td>最大可容忍停机时间是什么？是否有停机通知要求？错误页面如何处理？</td>
+			</tr>
+			<tr>
+					<td><strong>监控（Monitoring）</strong></td>
+					<td>应该衡量哪些业务/技术指标？如何监测？需要哪些警报？</td>
+			</tr>
+			<tr>
+					<td><strong>多环境支持（Multiple Environment Support）</strong></td>
+					<td>需要多少环境？如何配置和管理这些环境？</td>
+			</tr>
+			<tr>
+					<td><strong>性能（Performance）</strong></td>
+					<td>吞吐量/响应时间要求是什么？是否需要性能测试？是否需要考虑异步场景？</td>
+			</tr>
+			<tr>
+					<td><strong>弹性和容错性（Resilience &amp; Fault Tolerance）</strong></td>
+					<td>如果外部依赖失效，系统如何降级？</td>
+			</tr>
+			<tr>
+					<td><strong>可靠性（Reliability）</strong></td>
+					<td>不可靠的成本是什么？需要多少成本来保证可靠？</td>
+			</tr>
+			<tr>
+					<td><strong>可审计性（Auditability）</strong></td>
+					<td>哪些操作需要被跟踪？是否有法律或监管要求？</td>
+			</tr>
+			<tr>
+					<td><strong>认证（Authentication）</strong></td>
+					<td>如何鉴别用户身份？是否遵循标准或使用现有认证系统？</td>
+			</tr>
+			<tr>
+					<td><strong>授权（Authorisation）</strong></td>
+					<td>哪些角色和权限是必要的？如何维护和应用权限？</td>
+			</tr>
+			<tr>
+					<td><strong>法律合规性（Legal Compliance）</strong></td>
+					<td>是否有数据/系统或软件交付过程的法律限制？</td>
+			</tr>
+			<tr>
+					<td><strong>数据隐私（Data Privacy）</strong></td>
+					<td>哪些数据需要加密？哪些数据对用户和操作人员可见/隐藏？如何处理脱敏？</td>
+			</tr>
+			<tr>
+					<td><strong>安全性（Security）</strong></td>
+					<td>是否需要安全审计或渗透测试？企业的安全准则是什么？是否有 SSL 或 VPN 要求？</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="跨功能性需求的挑战">跨功能性需求的挑战</h2>
 <h3 id="难以量化和验证">难以量化和验证</h3>
@@ -214,7 +214,8 @@
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
 
 来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
 <ol>
@@ -230,7 +231,8 @@
 </ul>
 <blockquote>
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
 <ol>
@@ -241,7 +243,8 @@
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
 <p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
 <ol>
@@ -253,7 +256,8 @@
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
 <p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
 <ol>

@@ -2,7 +2,8 @@
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Arch/system-design/system-design-master-template.3ns0ueadqk.webp" referrerpolicy="no-referrer">
             </div><h2 id="可视化与标准化的重要性">可视化与标准化的重要性</h2>
 <blockquote>
-<p>从前车马邮件都慢，爱情像慢电影，而现在信息传播和协作节奏已大不相同——同样的，制图工具的变化也改变了我们展示系统的方式。</p></blockquote>
+<p>从前车马邮件都慢，爱情像慢电影，而现在信息传播和协作节奏已大不相同——同样的，制图工具的变化也改变了我们展示系统的方式。</p>
+</blockquote>
 <p>过去教科书和工程图多为严格规范的手工绘制，风格统一、标注清晰。如今我们有了 <a href="https://miro.com/">Miro</a><sup>[1]</sup>
 、<a href="https://www.figma.com/">Figma</a><sup>[2]</sup>
 、<a href="https://www.mural.co/">Mural</a><sup>[3]</sup>
@@ -20,40 +21,40 @@
 </ul>
 <h3 id="对比精简">对比（精简）</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: right">特征</th>
-          <th style="text-align: left">东西流量 (East–West)</th>
-          <th style="text-align: left">南北流量 (North–South)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: right">流向角色</td>
-          <td style="text-align: left">服务 ↔ 服务（Server–Server）</td>
-          <td style="text-align: left">客户端 ↔ 服务（Client–Server）</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">覆盖范围</td>
-          <td style="text-align: left">数据中心 / 系统内部</td>
-          <td style="text-align: left">外部与内部之间的进出边界</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">典型示例</td>
-          <td style="text-align: left">微服务之间的 RPC/HTTP 调用、应用读写数据库、集群内同步</td>
-          <td style="text-align: left">浏览器或 App 访问 API、外部用户下载/上传、CDN 边缘请求</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">关注点</td>
-          <td style="text-align: left">延迟、抖动、内部带宽、服务治理</td>
-          <td style="text-align: left">带宽、鉴权/安全、限流、对外 QoS</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">直观比喻</td>
-          <td style="text-align: left">办公楼内的走廊与通道（内部协作）</td>
-          <td style="text-align: left">办公楼的大门和主干道（对外出入口）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: right">特征</th>
+					<th style="text-align: left">东西流量 (East–West)</th>
+					<th style="text-align: left">南北流量 (North–South)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: right">流向角色</td>
+					<td style="text-align: left">服务 ↔ 服务（Server–Server）</td>
+					<td style="text-align: left">客户端 ↔ 服务（Client–Server）</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">覆盖范围</td>
+					<td style="text-align: left">数据中心 / 系统内部</td>
+					<td style="text-align: left">外部与内部之间的进出边界</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">典型示例</td>
+					<td style="text-align: left">微服务之间的 RPC/HTTP 调用、应用读写数据库、集群内同步</td>
+					<td style="text-align: left">浏览器或 App 访问 API、外部用户下载/上传、CDN 边缘请求</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">关注点</td>
+					<td style="text-align: left">延迟、抖动、内部带宽、服务治理</td>
+					<td style="text-align: left">带宽、鉴权/安全、限流、对外 QoS</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">直观比喻</td>
+					<td style="text-align: left">办公楼内的走廊与通道（内部协作）</td>
+					<td style="text-align: left">办公楼的大门和主干道（对外出入口）</td>
+			</tr>
+	</tbody>
 </table>
 <p>把东西流量想成系统的“血液循环”，把南北流量想成系统的“呼吸/进出门”有助于把握两者在设计与运维上的侧重点。</p>
 <h2 id="在架构图中如何使用这些概念">在架构图中如何使用这些概念</h2>

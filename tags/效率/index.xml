@@ -5,9 +5,9 @@
 <p>对我而言，我们公司都是把所有的会议时间都会以日历的形式发给需要参会的人。 然后我们只需要在特定的日历上登录我们的账号就可以跟踪参会了。对于 Apple 的设备，Mac, Pad, Watch， iPhone 都是互联的，所有只要你有一个账号登录的对应的应用，那么你的其他设备也是会时时收到消息的。比如，我将我的公司邮箱的日历订阅登陆到手机， Mac 和 pad 上，当有新的会议发过来的时候，我的这些设备都会收到消息；然后在你需要参会的时候，他会提前 15 分钟（默认）提醒你参加会议。还是很方便的，别的应用就先不说了。</p>
 <p>那么， 问题就会是，你的生活中真的需要一部 iWatch 来辅助你么？</p>
 <ul>
-<li><i class="far fa-square fa-fw" aria-hidden="true"></i> 如果你有像我这样的需求，参会，信息提示等，那么你需要它；</li>
-<li><i class="far fa-square fa-fw" aria-hidden="true"></i> 如果你想在带孩子的时候，不想被拿起手机影响你和孩子的互动，你需要它；</li>
-<li><i class="far fa-square fa-fw" aria-hidden="true"></i> 如果……你需要它；</li>
+<li><i class="far fa-square" aria-hidden="true"></i> 如果你有像我这样的需求，参会，信息提示等，那么你需要它；</li>
+<li><i class="far fa-square" aria-hidden="true"></i> 如果你想在带孩子的时候，不想被拿起手机影响你和孩子的互动，你需要它；</li>
+<li><i class="far fa-square" aria-hidden="true"></i> 如果……你需要它；</li>
 </ul>
 <p>每个产品都有他的价值，但是需要你用你的财富去买。作为使用者，我们如果能用它产生比产品更大的价值，那么它就买值了。</p>
 <p>去买吧，用一次小小的尝试去满足一下你的小小的好奇心，下次，你就知道了你要买的东西值不值了。</p>
@@ -17,7 +17,8 @@
 <p>软件常用常新，软件大多的目的都是效率，办公，沟通，和娱乐等。虽说 Mac 也有自己的时间机器，可以随时将新机器回复到旧机器上，但是作为分享和传播，那么写一篇文章那是最有效率的了，也可为自己后期使用做备份。
 最近由同事的一个脚本启发，特制做了我自己 Mac 电脑上必备的一些软件的快速安装脚本；程序员的本质就是将一切事物简单化，代码化。.. 化； 地址如下，欢迎提 PR：
 <a href="https://github.com/guzhongren/awesome-setup">awesome-setup: https://github.com/guzhongren/awesome-setup</a><sup>[1]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <p>接下来，我将按照生产力，效率，沟通和娱乐这几类将我 Mac 上的常用软件列个清单。</p>
 <h1 id="生产力">生产力</h1>
 <h2 id="visual-studio-code"><a href="https://code.visualstudio.com/">Visual Studio Code</a><sup>[2]</sup>
@@ -89,9 +90,9 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h3 id="安装">安装</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew install jsonpp</span></span></code></pre></div></div>
 <h1 id="效率">效率</h1>
 <h2 id="bitwarden"><a href="https://bitwarden.com/">Bitwarden</a><sup>[11]</sup>
@@ -126,9 +127,9 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h3 id="安装-1">安装</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install itsycal</span></span></code></pre></div></div>
 <h1 id="沟通">沟通</h1>
 <h2 id="微信">微信</h2>
@@ -139,7 +140,8 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 </p>
 <p><img src="https://iina.io/images/sc-sky.png" alt="IINA" /></p>
 <blockquote>
-<p>The modern media player for macOS.</p></blockquote>
+<p>The modern media player for macOS.</p>
+</blockquote>
 <ul>
 <li>开源，免费</li>
 <li>支持多种资源播放（在线，本地文件，Youtube 等）</li>
@@ -154,9 +156,9 @@ Mac 上非常好用的终端，安装之后自带 zsh, 而 zsh 又自带各种�
 <h3 id="安装-2">安装</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">brew cask install tencent-lemon</span></span></code></pre></div></div>
 <div class="references">
                 <h2>参考</h2>

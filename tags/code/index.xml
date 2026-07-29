@@ -13,21 +13,21 @@
 <h2 id="配置">配置</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-json">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="c1">// 使用 IntelliSense 了解相关属性。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 悬停以查看现有属性的描述。
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// 欲了解更多信息，请访问：https://go.microsoft.com/fwlink/?linkid=830387
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;0.2.0&#34;</span><span class="p">,</span>
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 悬停以查看现有属性的描述。
+</span></span></span><span class="line"><span class="cl">  <span class="c1">// 欲了解更多信息，请访问：https://go.microsoft.com/fwlink/?linkid=830387
+</span></span></span><span class="line"><span class="cl">  <span class="nt">&#34;version&#34;</span><span class="p">:</span> <span class="s2">&#34;0.2.0&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">  <span class="nt">&#34;configurations&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">    <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Debug executable &#39;show_posts&#39;&#34;</span><span class="p">,</span> <span class="c1">// 配置名称，将会在调试配置下拉列表中显示
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;lldb&#34;</span><span class="p">,</span> <span class="c1">// 调试器类型：Windows 表示器使用 cppvsdbg；GDB 和 LLDB 使用 cppdbg。该值自动生成
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;request&#34;</span><span class="p">:</span> <span class="s2">&#34;launch&#34;</span><span class="p">,</span> <span class="c1">// 调试方式
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cargo&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// 运行的参数
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span></span><span class="line"><span class="cl">      <span class="nt">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;lldb&#34;</span><span class="p">,</span> <span class="c1">// 调试器类型：Windows 表示器使用 cppvsdbg；GDB 和 LLDB 使用 cppdbg。该值自动生成
+</span></span></span><span class="line"><span class="cl">      <span class="nt">&#34;request&#34;</span><span class="p">:</span> <span class="s2">&#34;launch&#34;</span><span class="p">,</span> <span class="c1">// 调试方式
+</span></span></span><span class="line"><span class="cl">      <span class="nt">&#34;cargo&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="c1">// 运行的参数
+</span></span></span><span class="line"><span class="cl">        <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">          <span class="s2">&#34;build&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">          <span class="s2">&#34;--bin=show_posts&#34;</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl">          <span class="s2">&#34;--package=diesel_demo&#34;</span>
@@ -38,8 +38,8 @@
 </span></span><span class="line"><span class="cl">        <span class="p">}</span>
 </span></span><span class="line"><span class="cl">      <span class="p">},</span>
 </span></span><span class="line"><span class="cl">      <span class="nt">&#34;args&#34;</span><span class="p">:</span> <span class="p">[],</span> <span class="c1">// 传递给程序的参数，没有参数留空即可
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">},</span>
+</span></span></span><span class="line"><span class="cl">      <span class="nt">&#34;cwd&#34;</span><span class="p">:</span> <span class="s2">&#34;${workspaceFolder}&#34;</span> <span class="c1">// 调试程序时的工作目录
+</span></span></span><span class="line"><span class="cl">    <span class="p">},</span>
 </span></span><span class="line"><span class="cl"><span class="err">}</span></span></span></code></pre></div></div>
 <p><img src="https://yqfile.alicdn.com/418ec9989800421ab7ab8d03aa79b3ebde85e77d.png" alt="launch.json" /></p>
 <h2 id="调试">调试</h2>
@@ -55,9 +55,9 @@
 <p>对于此情况，我们需要将对两个按钮做抽象，抽象为数组，在 render 函数里循环执行即可，这里有个地方需要说明一下，我们把事件处理函数也放在了抽象好的对象上，如下</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">tools</span> <span class="o">=</span> <span class="p">[</span>
 </span></span><span class="line"><span class="cl">      <span class="p">{</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">index</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -95,9 +95,9 @@
 <p>在 render 函数里我们循环即可实现代码的抽象</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nx">tools</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">tool</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
 </span></span><span class="line"><span class="cl">      <span class="o">&lt;</span><span class="nx">TouchableOpacity</span> <span class="nx">style</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">toolWrapper</span><span class="p">}</span> <span class="nx">key</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">index</span><span class="p">}</span> <span class="nx">onPress</span><span class="o">=</span><span class="p">{</span><span class="nx">tool</span><span class="p">.</span><span class="nx">onPress</span><span class="p">}</span> <span class="o">&gt;</span>

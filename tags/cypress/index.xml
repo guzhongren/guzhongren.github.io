@@ -23,27 +23,27 @@
  中。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">FROM node:17-alpine as distPackage</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY ./ /app</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">WORKDIR /app</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">RUN yarn build</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">COPY ./ /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">WORKDIR /app</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">RUN yarn</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">RUN yarn build</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">FROM nginx:latest</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="l">FROM nginx:latest</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">COPY --from=distPackage /app/dist /usr/share/nginx/html</span></span></span></code></pre></div></div>
 <h3 id="编排-service">编排 service</h3>
 <p>因为我们的程序需要在测试的时候就要部署好，所以我们可以利用 Docker-compose 的 <a href="https://docs.docker.com/compose/compose-file/compose-file-v3/#build">build</a><sup>[7]</sup>
  参数，在容器启动时构建应用并部署。并在 cypress/included 启动是执行测试命令 <code>npx cy:docker</code>, 具体就是<code>cross-env ENV=docker cypress run --spec 'cypress/integration/dashboard.spec.js</code>。</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-yaml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">services</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="nt">services</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">context</span><span class="p">:</span><span class="w"> </span><span class="l">./</span><span class="w">
@@ -69,9 +69,9 @@
 。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-yml">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="w">      </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">E2E</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
 </span></span></span><span class="line"><span class="cl"><span class="sd">          docker-compose up --build e2e</span></span></span></code></pre></div></div>

@@ -18,35 +18,35 @@
 <p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp" alt="Google Sheet API Structure" /></p>
 <p>从上图中可以看到</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">序号</th>
-          <th style="text-align: left">说明</th>
-          <th style="text-align: left">Note</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">SpreadsheetApp</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">ActiveSheet</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">DataRange</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">4</td>
-          <td style="text-align: left">Value</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">序号</th>
+					<th style="text-align: left">说明</th>
+					<th style="text-align: left">Note</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">SpreadsheetApp</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">ActiveSheet</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3</td>
+					<td style="text-align: left">DataRange</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">4</td>
+					<td style="text-align: left">Value</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
@@ -57,9 +57,9 @@
 <p>新建Google Sheet，直接写入如下数据</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>xiaoming1
 xiaoming2
 xiaoming3
@@ -73,11 +73,11 @@ xiaoming10</code></pre></div>
 <h3 id="创建google-sheet-处理脚本">创建Google Sheet 处理脚本</h3>
 <p>接下来在Google Sheet 中创建Apps Script; 位置：Menu-&gt;Extention-&gt; Apps Script;</p>
 <p>在编辑器里可以编写处理Google Sheet 的代码，比如有个sheet.gs 里面处理Sheet 相关的操作，如下</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">CURRENT</span> <span class="o">=</span> <span class="s1">&#39;current&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getTheNextStandupPerson</span><span class="p">()</span> <span class="p">{</span>
@@ -112,15 +112,15 @@ xiaoming10</code></pre></div>
 </span></span><span class="line"><span class="cl">   <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Successfully update the latest standup person to </span><span class="si">${</span><span class="nx">nextperson</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>main.gs 处理整个流程，并且在里面发送消息到刚才的Space中，</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">WEBHOOK_URL</span> <span class="o">=</span> <span class="s2">&#34;https://chat.googleapis.com/v1/spaces/AAAAPhOvPUg/messages?key=AIzaSxxxxxxxxxxxxxxxxxxxxxxxx&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// main function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">sendMessageToChat</span><span class="p">()</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">sendMessageToChat</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isMonday</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span><span class="nx">currentStandupPersonIndex</span><span class="p">,</span>

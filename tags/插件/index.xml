@@ -28,14 +28,14 @@
 <p>示例提示词：</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-md">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
-    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">system</span><span class="p">&gt;</span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">&lt;system&gt;
 </span></span><span class="line"><span class="cl">你是一个专业且资深的 VSCode 插件开发者；请对每次的更改都做编译检查。
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">system</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">&lt;/system&gt;
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">user</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">&lt;user&gt;
 </span></span><span class="line"><span class="cl">这是一个用于记录 code review 过程中产生的 comment 的插件，这样可以很方便在 code review 后对提交的代码进行更改，功能类似 GitHub PR 的 comment。
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">在修复 bug 或者开发新功能的时候，尽量不要让我给你提供除了提示词以外的其他内容。
@@ -54,7 +54,7 @@
 </span></span><span class="line"><span class="cl"><span class="k">-</span> 当用户在侧边栏中点击某个 comment 时，右侧应出现添加 comment 时的 diff view，且跳转到对应的文件和行号
 </span></span><span class="line"><span class="cl"><span class="k">-</span> 当用户在 diff view 添加 comment 时，插件会自动记录当前的 git hash 和时间戳，且在 diff view 右侧文件的行号前面（可以添加 debug icon 的位置）显示一个小图标，表示有 comment 记录；鼠标移动到这个小图标上时，会显示 comment 的内容摘要
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">user</span><span class="p">&gt;</span></span></span></code></pre></div></div>
+</span></span><span class="line"><span class="cl">&lt;/user&gt;</span></span></code></pre></div></div>
 <h3 id="有效的-prompt-工程">有效的 Prompt 工程</h3>
 <p>Vibe Coding 的核心在于与 AI 工具进行持续的对话，通过精心设计的提示词让 AI 实现我们的需求。在实现过程中会遇到各种问题，这时需要详细描述场景，并尽可能提供错误日志，让 AI 能够准确分析并提出解决方案。</p>
 <p>在具体实现过程中，某些功能可能存在多种实现方案，AI 可能会选择不合适的方案导致需求无法实现。例如，在实现 diff view 时，如何获取当前文件的 git commit hash？Gemini 最初建议在程序运行时执行 <code>git log ...</code> 命令，但对于有合并 PR 的 Commit 来说，获取正确的 git commit hash 很复杂，因为 <code>git log</code> 命令会返回所有父 Commit 的 hash，而不是当前 Commit 的 hash。这样获取到的 commit hash 在做 diff view 显示时就会找不到对应的 commit。如果不深入了解 VSCode 的 git diff 实现机制，很容易陷入这个误区。</p>

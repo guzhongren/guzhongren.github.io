@@ -58,30 +58,30 @@ Specific formatting is also possible for log information:</li>
 </ul>
 <p>At the same time, not all logs need to be recorded, we need to record as needed. The following table shows which logs should be recorded depending on the environment.</p>
 <table>
-  <thead>
-      <tr>
-          <th>Environment</th>
-          <th>Log Leave</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Dev</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>Test</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>UAT</td>
-          <td>Info</td>
-      </tr>
-      <tr>
-          <td>Prod</td>
-          <td>Info</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Environment</th>
+					<th>Log Leave</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Dev</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>Test</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>UAT</td>
+					<td>Info</td>
+			</tr>
+			<tr>
+					<td>Prod</td>
+					<td>Info</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="logging-position">Logging position</h4>
 <p>The location of the log print also needs to be made clear.</p>
@@ -171,30 +171,30 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </ul>
 <p>同时不是所有的日志都需要记录，我们要做到按需记录。下表是推荐在不同的环境选择不同的日志级别。</p>
 <table>
-  <thead>
-      <tr>
-          <th>Environment</th>
-          <th>Log Leave</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Dev</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>Test</td>
-          <td>Debug</td>
-      </tr>
-      <tr>
-          <td>UAT</td>
-          <td>Info</td>
-      </tr>
-      <tr>
-          <td>Prod</td>
-          <td>Info</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>Environment</th>
+					<th>Log Leave</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Dev</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>Test</td>
+					<td>Debug</td>
+			</tr>
+			<tr>
+					<td>UAT</td>
+					<td>Info</td>
+			</tr>
+			<tr>
+					<td>Prod</td>
+					<td>Info</td>
+			</tr>
+	</tbody>
 </table>
 <h4 id="日志位置">日志位置</h4>
 <p>有了日志级别，日志打印的位置也需要明确。一般情况下：</p>
@@ -225,13 +225,14 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
                 <img src="https://images.unsplash.com/photo-1654885506947-fe5280d8e0ea?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" referrerpolicy="no-referrer">
             </div><h2 id="引言">引言</h2>
 <blockquote>
-<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p></blockquote>
+<p>&ldquo;调试程序是程序员最大的耻辱&rdquo; &ndash; CTO</p>
+</blockquote>
 <h2 id="写了-log-并且出错的程序">写了 log 并且出错的程序</h2>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;multiple&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;should be send when invoke the method sendMessage&#39;</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span> <span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -255,9 +256,9 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 <p>运行输出</p>
 <div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span>
 </span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">Function</span><span class="o">:</span> <span class="nx">mockConstructor</span><span class="p">]</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">      <span class="nx">_isMockFunction</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -332,7 +333,8 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 </span></span><span class="line"><span class="cl"><span class="nx">Ran</span> <span class="nx">all</span> <span class="nx">test</span> <span class="nx">suites</span> <span class="nx">matching</span> <span class="o">/</span><span class="err">\</span><span class="o">/</span><span class="nx">Users</span><span class="err">\</span><span class="o">/</span><span class="nx">zhongren</span><span class="err">\</span><span class="p">.</span><span class="nx">gu</span><span class="err">\</span><span class="o">/</span><span class="mi">01</span><span class="err">\</span><span class="p">.</span><span class="nx">Project</span><span class="err">\</span><span class="o">/</span><span class="nx">test</span><span class="o">-</span><span class="nb">window</span><span class="o">-</span><span class="nx">object</span><span class="err">\</span><span class="o">/</span><span class="nx">__test__</span><span class="err">\</span><span class="o">/</span><span class="nx">method_sendMessage_mult_tests</span><span class="err">\</span><span class="p">.</span><span class="nx">spec</span><span class="err">\</span><span class="p">.</span><span class="nx">ts</span><span class="o">/</span><span class="nx">i</span> <span class="kd">with</span> <span class="nx">tests</span> <span class="nx">matching</span> <span class="s2">&#34;multiple should be send when invoke the method sendMessage&#34;</span><span class="p">.</span></span></span></code></pre></div></div>
 <h2 id="在测试中写-log-有什么用">在测试中写 log 有什么用？</h2>
 <blockquote>
-<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p></blockquote>
+<p>本文所说的测试中写的 Log 是提交到代码仓库中的日志。</p>
+</blockquote>
 <p>看了上面的测试和 UT 运行后的结果，你有什么看法？</p>
 <p>在我看来，有以下几点：</p>
 <h3 id="影响总体的测试输出">影响总体的测试输出</h3>
@@ -353,9 +355,9 @@ Logging作为 Observability的重要组成部分，在我们的系统开发、�
 <p>对于前端，我们可以在所有测试运行前 Spy <code>console.*</code>的所有的方法，</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;log&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;info&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="nx">jest</span><span class="p">.</span><span class="nx">spyOn</span><span class="p">(</span><span class="nx">console</span><span class="p">,</span> <span class="s1">&#39;warn&#39;</span><span class="p">).</span><span class="nx">mockReturnValue</span><span class="p">();</span>

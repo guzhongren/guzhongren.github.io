@@ -6,15 +6,16 @@
 <p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
 <h2 id="解决方案">解决方案</h2>
 <blockquote>
-<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p></blockquote>
+<p>在工作中不光光是被电话打断，更多的可能是别人突然来找你问问题或者打个招呼；场景各有各的不同，但结果都一样。</p>
+</blockquote>
 <p>对于这类问题，可以有如下解决方案：</p>
 <h3 id="task">Task</h3>
 <p>分而治之，此方法适用于在工作之前就将工作拆解，待所有的子任务完成后就可以完成整个功能，Task 可以记录在所做的卡上，或者写在某个 App 上，比如 Conflunence 或者 Trello 上都有 Tasklist 功能，很方便记录📝, 大致结构如下：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-todo">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code class="language-todo" data-lang="todo">- [x] subTask1
 - [ ] subTask2
 - [ ] subTask3</code></pre></div>

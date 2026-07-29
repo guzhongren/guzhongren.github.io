@@ -30,11 +30,11 @@
             </div><p>都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。</p>
 <p>如下是我参与的一个调查的回答，分享给大家：</p>
 <div class="details admonition question">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-circle-question" aria-hidden="true"></i>This is a survey<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
+    </div>
+    <div class="details-content">
+        <div class="admonition-content"><h2 id="as-an-engineer">As an engineer:</h2>
 <ul>
 <li>
 <p>What you used AI for (be specific)</p>
@@ -93,8 +93,8 @@
 </li>
 </ul>
 </div>
-        </div>
     </div>
+</div>
 <h2 id="ai-时代你需要什么样的能力">AI 时代，你需要什么样的能力？</h2>
 <p>AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：</p>
 <h3 id="定义问题">定义问题</h3>
@@ -159,9 +159,9 @@
  的项目，打开一看，README 文档也写的不错，直接就有 Homebrew 的安装命令，毫不犹豫的就尝试安装，果然有些开源的产品做的就是非常的懂用户体验，尤其是给程序员用的。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-bash">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">brew install --cask openmtp</span></span></code></pre></div></div>
 <h2 id="最终方案">最终方案</h2>
 <p>因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。</p>
@@ -185,9 +185,9 @@
 <p>但，为了让这个配置生效，而不是每次在每个项目中手动配置，我们最好的方式是将其放置在 shell 运行的 profile 中，如 <code>.zshrc</code>。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-shell">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span><span class="s2">&#34;unix://</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.colima/docker.sock&#34;</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_HOST_OVERRIDE</span><span class="o">=</span>127.0.0.1
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE</span><span class="o">=</span>/var/run/docker.sock
@@ -203,7 +203,8 @@
                 <img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Arch/system-design/system-design-master-template.3ns0ueadqk.webp" referrerpolicy="no-referrer">
             </div><h2 id="可视化与标准化的重要性">可视化与标准化的重要性</h2>
 <blockquote>
-<p>从前车马邮件都慢，爱情像慢电影，而现在信息传播和协作节奏已大不相同——同样的，制图工具的变化也改变了我们展示系统的方式。</p></blockquote>
+<p>从前车马邮件都慢，爱情像慢电影，而现在信息传播和协作节奏已大不相同——同样的，制图工具的变化也改变了我们展示系统的方式。</p>
+</blockquote>
 <p>过去教科书和工程图多为严格规范的手工绘制，风格统一、标注清晰。如今我们有了 <a href="https://miro.com/">Miro</a><sup>[1]</sup>
 、<a href="https://www.figma.com/">Figma</a><sup>[2]</sup>
 、<a href="https://www.mural.co/">Mural</a><sup>[3]</sup>
@@ -221,40 +222,40 @@
 </ul>
 <h3 id="对比精简">对比（精简）</h3>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: right">特征</th>
-          <th style="text-align: left">东西流量 (East–West)</th>
-          <th style="text-align: left">南北流量 (North–South)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: right">流向角色</td>
-          <td style="text-align: left">服务 ↔ 服务（Server–Server）</td>
-          <td style="text-align: left">客户端 ↔ 服务（Client–Server）</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">覆盖范围</td>
-          <td style="text-align: left">数据中心 / 系统内部</td>
-          <td style="text-align: left">外部与内部之间的进出边界</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">典型示例</td>
-          <td style="text-align: left">微服务之间的 RPC/HTTP 调用、应用读写数据库、集群内同步</td>
-          <td style="text-align: left">浏览器或 App 访问 API、外部用户下载/上传、CDN 边缘请求</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">关注点</td>
-          <td style="text-align: left">延迟、抖动、内部带宽、服务治理</td>
-          <td style="text-align: left">带宽、鉴权/安全、限流、对外 QoS</td>
-      </tr>
-      <tr>
-          <td style="text-align: right">直观比喻</td>
-          <td style="text-align: left">办公楼内的走廊与通道（内部协作）</td>
-          <td style="text-align: left">办公楼的大门和主干道（对外出入口）</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: right">特征</th>
+					<th style="text-align: left">东西流量 (East–West)</th>
+					<th style="text-align: left">南北流量 (North–South)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: right">流向角色</td>
+					<td style="text-align: left">服务 ↔ 服务（Server–Server）</td>
+					<td style="text-align: left">客户端 ↔ 服务（Client–Server）</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">覆盖范围</td>
+					<td style="text-align: left">数据中心 / 系统内部</td>
+					<td style="text-align: left">外部与内部之间的进出边界</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">典型示例</td>
+					<td style="text-align: left">微服务之间的 RPC/HTTP 调用、应用读写数据库、集群内同步</td>
+					<td style="text-align: left">浏览器或 App 访问 API、外部用户下载/上传、CDN 边缘请求</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">关注点</td>
+					<td style="text-align: left">延迟、抖动、内部带宽、服务治理</td>
+					<td style="text-align: left">带宽、鉴权/安全、限流、对外 QoS</td>
+			</tr>
+			<tr>
+					<td style="text-align: right">直观比喻</td>
+					<td style="text-align: left">办公楼内的走廊与通道（内部协作）</td>
+					<td style="text-align: left">办公楼的大门和主干道（对外出入口）</td>
+			</tr>
+	</tbody>
 </table>
 <p>把东西流量想成系统的“血液循环”，把南北流量想成系统的“呼吸/进出门”有助于把握两者在设计与运维上的侧重点。</p>
 <h2 id="在架构图中如何使用这些概念">在架构图中如何使用这些概念</h2>
@@ -288,14 +289,14 @@
 <p>在现代电商和企业网站中，内容需要频繁变更。理想的系统应支持后台灵活编辑内容，前端自动渲染，无需频繁重构和部署。以电商为例，产品信息、价格、描述等常常调整，页面布局也需随时优化。对于缺乏开发经验的运营人员，易用的 CMS 能极大提升效率和响应速度。</p>
 <h2 id="strapi简介">Strapi简介</h2>
 <div class="details admonition tip open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right fa-fw" aria-hidden="true"></i>
-        </div>
-        <div class="details-content">
-            <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
- 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
-        </div>
+    <div class="details-summary admonition-title">
+        <i class="icon far fa-lightbulb" aria-hidden="true"></i>Tips<i class="details-icon fas fa-angle-right" aria-hidden="true"></i>
     </div>
+    <div class="details-content">
+        <div class="admonition-content"><a href="https://strapi.io/">Strapi</a><sup>[3]</sup>
+ 是一个 API 级低代码内容管理系统（Headless CMS）。</div>
+    </div>
+</div>
 <p>Strapi 是开源、灵活的 Headless CMS，支持多数据库和多前端框架。它提供内容建模、权限管理、插件扩展等能力，适合各种规模项目。前后端分离架构让前端可用 React/Vue/Angular 等技术开发，后端通过 Strapi API 提供数据，提升开发效率、降低维护成本。</p>
 <p>主要特性包括：</p>
 <ul>
@@ -360,9 +361,9 @@
 <p>如果要获取一个 Global Page的内容，普通情况下，我们会把查询参数放在URL 的query中，比如：</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>http://localhost:1337/api/global?populate[header][populate][0]=navItems&amp;populate[footer][populate][0]=socialLinks.Link</code></pre></div>
 <p>通常情况呢，这个 url 的请求参数一般不会改变，每次都要返回Global Page 的所有内容，那么我们就可以把这个请求参数放在中间件中，避免每次都要在 URL 中传递。我们在请求时直接使用url <code>http://localhost:1337/api/global</code> 即可，而不用带query参数。
 这样做的好处是：</p>
@@ -377,9 +378,9 @@
  命令生成中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pnpm run strapi generate
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">&gt; my-strapi-project@0.1.0 strapi ~/01.Personal/tmp/my-strapi-project
@@ -392,11 +393,11 @@
 </span></span><span class="line"><span class="cl">✔  ++ /api/global/middlewares/global-page-populate.ts</span></span></code></pre></div></div>
 </li>
 <li>定义中间件函数并处理 <code>ctx.query</code>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"> <span class="kr">import</span> <span class="kr">type</span> <span class="p">{</span> <span class="nx">Core</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="kr">const</span> <span class="nx">populate</span> <span class="o">=</span> <span class="p">{</span>
@@ -409,24 +410,24 @@
 </span></span><span class="line"><span class="cl">   <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="p">}</span>
 </span></span><span class="line"><span class="cl"> <span class="c1">// 获取 dynamic zone 的内容
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// const populate = {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   blocks: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     on: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.hero&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           links: true,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           image: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//             fields: [&#34;url&#34;, &#34;name&#34;]
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//           }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         },
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       },
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       &#34;blocks.heading-section&#34;: {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//         populate: &#39;*&#39;,
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//       }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//     }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">//   }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span> <span class="c1">// }
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span></span><span class="line"><span class="cl"> <span class="c1">// const populate = {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//   blocks: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//     on: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       &#34;blocks.hero&#34;: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         populate: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           links: true,
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           image: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//             fields: [&#34;url&#34;, &#34;name&#34;]
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//           }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         },
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       },
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       &#34;blocks.heading-section&#34;: {
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//         populate: &#39;*&#39;,
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//       }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//     }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">//   }
+</span></span></span><span class="line"><span class="cl"> <span class="c1">// }
+</span></span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"> <span class="kr">export</span> <span class="k">default</span> <span class="p">(</span><span class="nx">config</span><span class="p">,</span> <span class="p">{</span> <span class="nx">strapi</span> <span class="p">}</span><span class="o">:</span> <span class="p">{</span> <span class="nx">strapi</span>: <span class="kt">Core.Strapi</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="kr">async</span> <span class="p">(</span><span class="nx">ctx</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">     <span class="nx">ctx</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">populate</span> <span class="o">=</span> <span class="nx">populate</span><span class="p">;</span>
@@ -438,9 +439,9 @@
 <li>在 <code>src/api/global/routes/global.ts</code> 注册中间件
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-ts">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">  <span class="kr">import</span> <span class="p">{</span> <span class="nx">factories</span> <span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;@strapi/strapi&#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">export</span> <span class="k">default</span> <span class="nx">factories</span><span class="p">.</span><span class="nx">createCoreRouter</span><span class="p">(</span><span class="s1">&#39;api::global.global&#39;</span><span class="p">,</span> <span class="p">{</span>
@@ -454,20 +455,20 @@
 <li>使用API 请求测试等工具测试
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sh">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">curl <span class="s1">&#39;http://localhost:1337/api/global&#39;</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># 应该返回Global Page 的所有内容</span></span></span></code></pre></div></div>
 </li>
 </ol>
 <h3 id="前端动态渲染-dynamic-zone-组件">前端动态渲染 Dynamic Zone 组件</h3>
 <p>前端可根据后端返回的 Dynamic Zone 数据动态渲染组件，为代码如下：</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-tsx">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tsx" data-lang="tsx"><span class="line"><span class="cl"><span class="p">...</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">componentMap</span>: <span class="kt">Record</span><span class="p">&lt;</span><span class="nt">ComponentType</span><span class="p">,</span> <span class="na">any</span><span class="p">&gt;</span> <span class="o">=</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="s2">&#34;blocks.hero&#34;</span><span class="o">:</span> <span class="nx">Hero</span><span class="p">,</span>
@@ -502,142 +503,142 @@
 <p>跨功能性需求贯穿于软件开发的各个阶段，直接影响系统的稳定性、用户满意度和长期维护成本。例如，在一个实时通信应用中，低延迟（性能需求）和数据加密（安全性需求）是用户体验的核心。如果忽视这些需求，可能导致系统在高负载或恶意攻击下崩溃，甚至无法满足用户的基本期望。</p>
 <h2 id="跨功能性需求详细讨论">跨功能性需求详细讨论</h2>
 <table>
-  <thead>
-      <tr>
-          <th>需求类别</th>
-          <th>具体问题</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><strong>可扩展性（Extensibility）</strong></td>
-          <td>是否需要组件化？是否需要提供一个插件功能，由谁来实施？</td>
-      </tr>
-      <tr>
-          <td><strong>可移植性（Portability）</strong></td>
-          <td>是否有迁移到另一个数据库产品或操作系统的必要性？</td>
-      </tr>
-      <tr>
-          <td><strong>可安装性和可部署性（Installability &amp; Deployment）</strong></td>
-          <td>需要提供什么样的基础设施？需要什么样的安装便利性？是否支持持续交付？如何回滚或升级版本？</td>
-      </tr>
-      <tr>
-          <td><strong>兼容性（Compatibility）</strong></td>
-          <td>需要与哪些其他系统集成？需要遵循哪些行业标准？是否需要考虑现有数据格式？</td>
-      </tr>
-      <tr>
-          <td><strong>可集成性和互操作性（Integratability &amp; Interoperability）</strong></td>
-          <td>是否需要提供 API 或库供其他系统使用？版本管理和升级策略是什么？</td>
-      </tr>
-      <tr>
-          <td><strong>可复用性（Leveragability &amp; Reuse）</strong></td>
-          <td>是否能够复用企业现有组件/库，或者当前组件/库是否将被重用？</td>
-      </tr>
-      <tr>
-          <td><strong>可伸缩性（Scalability）</strong></td>
-          <td>如何根据不断变化的用户量来提高吞吐量？如何对此进行测试？</td>
-      </tr>
-      <tr>
-          <td><strong>版本化和升级策略（Versioning and upgrades）</strong></td>
-          <td>版本化策略是什么？如何跟踪内部/外部的版本？有没有向后兼容的限制？</td>
-      </tr>
-      <tr>
-          <td><strong>可访问性（Accessibility）</strong></td>
-          <td>是否支持有特殊需要的用户（如读屏）？</td>
-      </tr>
-      <tr>
-          <td><strong>本地化和国际化（Localisation &amp; Internationalisation）</strong></td>
-          <td>是否支持多语言？日期/时间/货币的转换和翻译？</td>
-      </tr>
-      <tr>
-          <td><strong>可用性和用户体验（Usability and user experience）</strong></td>
-          <td>用户体验对系统有多重要？是否有公司用户体验准则？是否支持多设备？</td>
-      </tr>
-      <tr>
-          <td><strong>分布性（Distributability）</strong></td>
-          <td>系统是否能在特定区域使用？是否支持离线运行？如何同步信息？</td>
-      </tr>
-      <tr>
-          <td><strong>帮助与支持（Help &amp; Support）</strong></td>
-          <td>是否需要用户文档、教程或支持团队？是否需要计划培训？</td>
-      </tr>
-      <tr>
-          <td><strong>可配置性（Configurability）</strong></td>
-          <td>用户或管理员是否可以配置功能？如何进行配置管理？</td>
-      </tr>
-      <tr>
-          <td><strong>支持性（Supportability）</strong></td>
-          <td>用户/操作支持的级别是什么？如何提供支持？</td>
-      </tr>
-      <tr>
-          <td><strong>归档（Archiving）</strong></td>
-          <td>归档什么信息？何时归档？如何归档？谁可以访问归档信息？</td>
-      </tr>
-      <tr>
-          <td><strong>可用性（Availability）</strong></td>
-          <td>是否有可用性目标？需要什么架构来满足这些要求？是否有高峰负载需求？</td>
-      </tr>
-      <tr>
-          <td><strong>容量（Capacity）</strong></td>
-          <td>是否有存储要求？高峰负载如何处理？系统需要处理的数据量和用户数量？</td>
-      </tr>
-      <tr>
-          <td><strong>连续性（Continuity）</strong></td>
-          <td>是否有灾难恢复计划？</td>
-      </tr>
-      <tr>
-          <td><strong>数据完整性和一致性（Data Integrity and Consistency）</strong></td>
-          <td>是否需要数据校验、日志追踪或数据恢复机制？</td>
-      </tr>
-      <tr>
-          <td><strong>可维护性（Maintainability）</strong></td>
-          <td>最大可容忍停机时间是什么？是否有停机通知要求？错误页面如何处理？</td>
-      </tr>
-      <tr>
-          <td><strong>监控（Monitoring）</strong></td>
-          <td>应该衡量哪些业务/技术指标？如何监测？需要哪些警报？</td>
-      </tr>
-      <tr>
-          <td><strong>多环境支持（Multiple Environment Support）</strong></td>
-          <td>需要多少环境？如何配置和管理这些环境？</td>
-      </tr>
-      <tr>
-          <td><strong>性能（Performance）</strong></td>
-          <td>吞吐量/响应时间要求是什么？是否需要性能测试？是否需要考虑异步场景？</td>
-      </tr>
-      <tr>
-          <td><strong>弹性和容错性（Resilience &amp; Fault Tolerance）</strong></td>
-          <td>如果外部依赖失效，系统如何降级？</td>
-      </tr>
-      <tr>
-          <td><strong>可靠性（Reliability）</strong></td>
-          <td>不可靠的成本是什么？需要多少成本来保证可靠？</td>
-      </tr>
-      <tr>
-          <td><strong>可审计性（Auditability）</strong></td>
-          <td>哪些操作需要被跟踪？是否有法律或监管要求？</td>
-      </tr>
-      <tr>
-          <td><strong>认证（Authentication）</strong></td>
-          <td>如何鉴别用户身份？是否遵循标准或使用现有认证系统？</td>
-      </tr>
-      <tr>
-          <td><strong>授权（Authorisation）</strong></td>
-          <td>哪些角色和权限是必要的？如何维护和应用权限？</td>
-      </tr>
-      <tr>
-          <td><strong>法律合规性（Legal Compliance）</strong></td>
-          <td>是否有数据/系统或软件交付过程的法律限制？</td>
-      </tr>
-      <tr>
-          <td><strong>数据隐私（Data Privacy）</strong></td>
-          <td>哪些数据需要加密？哪些数据对用户和操作人员可见/隐藏？如何处理脱敏？</td>
-      </tr>
-      <tr>
-          <td><strong>安全性（Security）</strong></td>
-          <td>是否需要安全审计或渗透测试？企业的安全准则是什么？是否有 SSL 或 VPN 要求？</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th>需求类别</th>
+					<th>具体问题</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>可扩展性（Extensibility）</strong></td>
+					<td>是否需要组件化？是否需要提供一个插件功能，由谁来实施？</td>
+			</tr>
+			<tr>
+					<td><strong>可移植性（Portability）</strong></td>
+					<td>是否有迁移到另一个数据库产品或操作系统的必要性？</td>
+			</tr>
+			<tr>
+					<td><strong>可安装性和可部署性（Installability &amp; Deployment）</strong></td>
+					<td>需要提供什么样的基础设施？需要什么样的安装便利性？是否支持持续交付？如何回滚或升级版本？</td>
+			</tr>
+			<tr>
+					<td><strong>兼容性（Compatibility）</strong></td>
+					<td>需要与哪些其他系统集成？需要遵循哪些行业标准？是否需要考虑现有数据格式？</td>
+			</tr>
+			<tr>
+					<td><strong>可集成性和互操作性（Integratability &amp; Interoperability）</strong></td>
+					<td>是否需要提供 API 或库供其他系统使用？版本管理和升级策略是什么？</td>
+			</tr>
+			<tr>
+					<td><strong>可复用性（Leveragability &amp; Reuse）</strong></td>
+					<td>是否能够复用企业现有组件/库，或者当前组件/库是否将被重用？</td>
+			</tr>
+			<tr>
+					<td><strong>可伸缩性（Scalability）</strong></td>
+					<td>如何根据不断变化的用户量来提高吞吐量？如何对此进行测试？</td>
+			</tr>
+			<tr>
+					<td><strong>版本化和升级策略（Versioning and upgrades）</strong></td>
+					<td>版本化策略是什么？如何跟踪内部/外部的版本？有没有向后兼容的限制？</td>
+			</tr>
+			<tr>
+					<td><strong>可访问性（Accessibility）</strong></td>
+					<td>是否支持有特殊需要的用户（如读屏）？</td>
+			</tr>
+			<tr>
+					<td><strong>本地化和国际化（Localisation &amp; Internationalisation）</strong></td>
+					<td>是否支持多语言？日期/时间/货币的转换和翻译？</td>
+			</tr>
+			<tr>
+					<td><strong>可用性和用户体验（Usability and user experience）</strong></td>
+					<td>用户体验对系统有多重要？是否有公司用户体验准则？是否支持多设备？</td>
+			</tr>
+			<tr>
+					<td><strong>分布性（Distributability）</strong></td>
+					<td>系统是否能在特定区域使用？是否支持离线运行？如何同步信息？</td>
+			</tr>
+			<tr>
+					<td><strong>帮助与支持（Help &amp; Support）</strong></td>
+					<td>是否需要用户文档、教程或支持团队？是否需要计划培训？</td>
+			</tr>
+			<tr>
+					<td><strong>可配置性（Configurability）</strong></td>
+					<td>用户或管理员是否可以配置功能？如何进行配置管理？</td>
+			</tr>
+			<tr>
+					<td><strong>支持性（Supportability）</strong></td>
+					<td>用户/操作支持的级别是什么？如何提供支持？</td>
+			</tr>
+			<tr>
+					<td><strong>归档（Archiving）</strong></td>
+					<td>归档什么信息？何时归档？如何归档？谁可以访问归档信息？</td>
+			</tr>
+			<tr>
+					<td><strong>可用性（Availability）</strong></td>
+					<td>是否有可用性目标？需要什么架构来满足这些要求？是否有高峰负载需求？</td>
+			</tr>
+			<tr>
+					<td><strong>容量（Capacity）</strong></td>
+					<td>是否有存储要求？高峰负载如何处理？系统需要处理的数据量和用户数量？</td>
+			</tr>
+			<tr>
+					<td><strong>连续性（Continuity）</strong></td>
+					<td>是否有灾难恢复计划？</td>
+			</tr>
+			<tr>
+					<td><strong>数据完整性和一致性（Data Integrity and Consistency）</strong></td>
+					<td>是否需要数据校验、日志追踪或数据恢复机制？</td>
+			</tr>
+			<tr>
+					<td><strong>可维护性（Maintainability）</strong></td>
+					<td>最大可容忍停机时间是什么？是否有停机通知要求？错误页面如何处理？</td>
+			</tr>
+			<tr>
+					<td><strong>监控（Monitoring）</strong></td>
+					<td>应该衡量哪些业务/技术指标？如何监测？需要哪些警报？</td>
+			</tr>
+			<tr>
+					<td><strong>多环境支持（Multiple Environment Support）</strong></td>
+					<td>需要多少环境？如何配置和管理这些环境？</td>
+			</tr>
+			<tr>
+					<td><strong>性能（Performance）</strong></td>
+					<td>吞吐量/响应时间要求是什么？是否需要性能测试？是否需要考虑异步场景？</td>
+			</tr>
+			<tr>
+					<td><strong>弹性和容错性（Resilience &amp; Fault Tolerance）</strong></td>
+					<td>如果外部依赖失效，系统如何降级？</td>
+			</tr>
+			<tr>
+					<td><strong>可靠性（Reliability）</strong></td>
+					<td>不可靠的成本是什么？需要多少成本来保证可靠？</td>
+			</tr>
+			<tr>
+					<td><strong>可审计性（Auditability）</strong></td>
+					<td>哪些操作需要被跟踪？是否有法律或监管要求？</td>
+			</tr>
+			<tr>
+					<td><strong>认证（Authentication）</strong></td>
+					<td>如何鉴别用户身份？是否遵循标准或使用现有认证系统？</td>
+			</tr>
+			<tr>
+					<td><strong>授权（Authorisation）</strong></td>
+					<td>哪些角色和权限是必要的？如何维护和应用权限？</td>
+			</tr>
+			<tr>
+					<td><strong>法律合规性（Legal Compliance）</strong></td>
+					<td>是否有数据/系统或软件交付过程的法律限制？</td>
+			</tr>
+			<tr>
+					<td><strong>数据隐私（Data Privacy）</strong></td>
+					<td>哪些数据需要加密？哪些数据对用户和操作人员可见/隐藏？如何处理脱敏？</td>
+			</tr>
+			<tr>
+					<td><strong>安全性（Security）</strong></td>
+					<td>是否需要安全审计或渗透测试？企业的安全准则是什么？是否有 SSL 或 VPN 要求？</td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="跨功能性需求的挑战">跨功能性需求的挑战</h2>
 <h3 id="难以量化和验证">难以量化和验证</h3>
@@ -708,7 +709,8 @@
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
 
 来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a><sup>[2]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="性能">性能</h3>
 <p>性能需求通常包括以下几个方面：</p>
 <ol>
@@ -724,7 +726,8 @@
 </ul>
 <blockquote>
 <p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a><sup>[1]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="可扩展性">可扩展性</h3>
 <p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
 <ol>
@@ -735,7 +738,8 @@
 <p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
 <blockquote>
 <p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a><sup>[3]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h3 id="安全性">安全性</h3>
 <p>安全性需求包括以下几个方面：</p>
 <ol>
@@ -747,7 +751,8 @@
 <p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
 <blockquote>
 <p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a><sup>[4]</sup>
-</p></blockquote>
+</p>
+</blockquote>
 <h2 id="总结">总结</h2>
 <p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
 <ol>
@@ -782,35 +787,35 @@
 <p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/GoogleSheet/AppsScript.7401tjjcz9g0.webp" alt="Google Sheet API Structure" /></p>
 <p>从上图中可以看到</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">序号</th>
-          <th style="text-align: left">说明</th>
-          <th style="text-align: left">Note</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">1</td>
-          <td style="text-align: left">SpreadsheetApp</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">2</td>
-          <td style="text-align: left">ActiveSheet</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">3</td>
-          <td style="text-align: left">DataRange</td>
-          <td></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">4</td>
-          <td style="text-align: left">Value</td>
-          <td></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">序号</th>
+					<th style="text-align: left">说明</th>
+					<th style="text-align: left">Note</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">1</td>
+					<td style="text-align: left">SpreadsheetApp</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">2</td>
+					<td style="text-align: left">ActiveSheet</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">3</td>
+					<td style="text-align: left">DataRange</td>
+					<td></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">4</td>
+					<td style="text-align: left">Value</td>
+					<td></td>
+			</tr>
+	</tbody>
 </table>
 <h2 id="实践">实践</h2>
 <p>如下，我们实现一个每周一提醒团队谁是本周的站会主持人的机器人。</p>
@@ -821,9 +826,9 @@
 <p>新建Google Sheet，直接写入如下数据</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><pre tabindex="0"><code>xiaoming1
 xiaoming2
 xiaoming3
@@ -837,11 +842,11 @@ xiaoming10</code></pre></div>
 <h3 id="创建google-sheet-处理脚本">创建Google Sheet 处理脚本</h3>
 <p>接下来在Google Sheet 中创建Apps Script; 位置：Menu-&gt;Extention-&gt; Apps Script;</p>
 <p>在编辑器里可以编写处理Google Sheet 的代码，比如有个sheet.gs 里面处理Sheet 相关的操作，如下</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">CURRENT</span> <span class="o">=</span> <span class="s1">&#39;current&#39;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">getTheNextStandupPerson</span><span class="p">()</span> <span class="p">{</span>
@@ -876,15 +881,15 @@ xiaoming10</code></pre></div>
 </span></span><span class="line"><span class="cl">   <span class="nx">Logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Successfully update the latest standup person to </span><span class="si">${</span><span class="nx">nextperson</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></div></div>
 <p>main.gs 处理整个流程，并且在里面发送消息到刚才的Space中，</p>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-js">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">WEBHOOK_URL</span> <span class="o">=</span> <span class="s2">&#34;https://chat.googleapis.com/v1/spaces/AAAAPhOvPUg/messages?key=AIzaSxxxxxxxxxxxxxxxxxxxxxxxx&#34;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1">// main function
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">function</span> <span class="nx">sendMessageToChat</span><span class="p">()</span> <span class="p">{</span>
+</span></span></span><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">sendMessageToChat</span><span class="p">()</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">isMonday</span><span class="p">())</span> <span class="k">return</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="p">{</span><span class="nx">currentStandupPersonIndex</span><span class="p">,</span>
@@ -936,9 +941,9 @@ xiaoming10</code></pre></div>
 <h3 id="数据库cpu-拉满">数据库CPU 拉满</h3>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-sql">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="s2">&#34;table&#34;</span><span class="w"> </span><span class="k">where</span><span class="w"> </span><span class="n">columnName</span><span class="o">=</span><span class="s1">&#39;value&#39;</span></span></span></code></pre></div></div>
 <p>新的代码修改是根据数据库某一列去查找对应的数据，然而Dev 对于这一列并没有添加索引，导致在Job 运行，Job 运行时间过长，通过数据库指标的dashboard 查看，数据库CPU 爆满,进而对该Job 的代码重新review， 发现时数据库查询没有加索引的问题。</p>
 <p>发现有问题后，我们开始分析是否可以回滚该服务；但是发现该服务还涉及到其他hotfix, 如果这个service rollback，那么还有其他2个service 也需要回滚，影响面比较大。最终，我们的解决方案是，hotfix 依旧上线，但是涉及的Daily Job 从任务中删除，通知客户该incident 的影响面，并且在第二天晚上定时任务执行的时候再次确认是否又执行了; 对于在新的fix 上线之前的报告，我们使用手动生成的方式,以使业务持续。</p>
@@ -1017,43 +1022,43 @@ xiaoming10</code></pre></div>
 小票软件使用访问令牌来获取小明店铺的订单信息，并生成发票。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">grantType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getParameter</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">if</span><span class="p">(</span><span class="s">&#34;authorization_code&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">grantType</span><span class="p">)){</span><span class="w">  </span><span class="p">}</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="s">&#34;authorization_code&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">grantType</span><span class="p">)){</span><span class="w">  </span><span class="p">}</span></span></span></code></pre></div></div>
 <h4 id="资源拥有者凭据许可resource-owner-password-credential">资源拥有者凭据许可(Resource Owner Password Credential)</h4>
 <p>资源拥有者凭据许可是一种直接使用用户名和密码进行认证的许可类型。该许可类型要求客户端直接获取用户的凭据，并使用这些凭据向授权服务器进行身份验证。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;password&#34;</span><span class="p">);</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;password&#34;</span><span class="p">);</span></span></span></code></pre></div></div>
 <h4 id="客户端凭据许可client-credential">客户端凭据许可(Client Credential)</h4>
 <p>客户端凭据许可适用于没有资源拥有者参与的情况下，客户端直接与授权服务器进行身份验证并获取访问令牌。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;client_credentials&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_secret&#34;</span><span class="p">,</span><span class="s">&#34;APPSECRETTEST&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">doPost</span><span class="p">(</span><span class="n">oauthURl</span><span class="p">,</span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">mapToStr</span><span class="p">(</span><span class="n">params</span><span class="p">));</span><span class="err">”</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;grant_type&#34;</span><span class="p">,</span><span class="s">&#34;client_credentials&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_secret&#34;</span><span class="p">,</span><span class="s">&#34;APPSECRETTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">accessToken</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">doPost</span><span class="p">(</span><span class="n">oauthURl</span><span class="p">,</span><span class="n">HttpURLClient</span><span class="p">.</span><span class="na">mapToStr</span><span class="p">(</span><span class="n">params</span><span class="p">));</span><span class="err">”</span></span></span></code></pre></div></div>
 <h4 id="隐式许可implicit">隐式许可（Implicit)</h4>
 <p>隐式许可是一种在浏览器中直接向授权服务器请求访问令牌的许可类型。这种许可类型通常用于单页应用程序或移动应用程序，因为它们无法安全地保持客户端凭据。</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-java">
-        <span class="code-title"><i class="arrow fas fa-angle-right fa-fw" aria-hidden="true"></i></span>
-        <span class="ellipses"><i class="fas fa-ellipsis-h fa-fw" aria-hidden="true"></i></span>
-        <span class="copy" title="复制到剪贴板"><i class="far fa-copy fa-fw" aria-hidden="true"></i></span>
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
     </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">params</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;response_type&#34;</span><span class="p">,</span><span class="s">&#34;token&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">toOauthUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URLParamsUtil</span><span class="p">.</span><span class="na">appendParams</span><span class="p">(</span><span class="n">oauthUrl</span><span class="p">,</span><span class="n">params</span><span class="p">);</span></span></span></code></pre></div></div>
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;response_type&#34;</span><span class="p">,</span><span class="s">&#34;token&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">params</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&#34;app_id&#34;</span><span class="p">,</span><span class="s">&#34;APPIDTEST&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="n">toOauthUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URLParamsUtil</span><span class="p">.</span><span class="na">appendParams</span><span class="p">(</span><span class="n">oauthUrl</span><span class="p">,</span><span class="n">params</span><span class="p">);</span></span></span></code></pre></div></div>
 <h3 id="authorization-code-的实现分类">Authorization Code 的实现分类</h3>
 <p>Authorization Code的实现主要分为两类：无服务器实现（使用PKCE）和有服务器实现。</p>
 <p>无服务器实现使用PKCE（Proof Key for Code Exchange by OAuth Public Clients）来增加安全性，但应用较少。</p>
