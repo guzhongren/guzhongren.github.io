@@ -241,7 +241,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <ul>
 <li>测试先行</li>
 </ul>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-go">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>

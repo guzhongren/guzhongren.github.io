@@ -205,7 +205,7 @@
 <h3 id="3-features-和-wee_alloc-console_error_panic_hook-dependencies">3. [features] 和 wee_alloc, console_error_panic_hook dependencies</h3>
 <p>作为我们设计模板的工作的一部分，该模板可帮助人们发现针对特定用例的有用包，该模板包括两个依赖项，这对于开发 Rust-wasm 包的人们可能非常有用：console_error_panic_hook 和 wee_alloc。</p>
 <p>因为这些依赖关系主要在 Rust-wasm 包开发工作流程的特定部分中有用，所以我们还设置了一些粘合代码，使我们既可以将它们都包含为依赖关系，又可以选择将它们包含在内。</p>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-toml">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
@@ -578,7 +578,7 @@ index.js  897 KiB   index  [emitted]  index
 </ul>
 <p>安装很简单，不用说</p>
 <h2 id="配置">配置</h2>
-<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
     <div class="code-header language-json">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
