@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>TDD - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/tdd/</link><description>TDD - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Jul 2020 22:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/tdd/" rel="self" type="application/rss+xml"/><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Tdd - 标签 - 谷中仁的博客</title><link>https://guzhongren.github.io/tags/tdd/</link><description>Tdd - 标签 - 谷中仁的博客</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>guzhongren@live.cn (谷中仁)</managingEditor><webMaster>guzhongren@live.cn (谷中仁)</webMaster><copyright>Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 24 Jul 2020 22:21:11 +0800</lastBuildDate><atom:link href="https://guzhongren.github.io/tags/tdd/" rel="self" type="application/rss+xml"/><item><title>基于 oak 的一次 TDD 实践</title><link>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</link><pubDate>Fri, 24 Jul 2020 22:21:11 +0800</pubDate><author>谷中仁</author><guid>https://guzhongren.github.io/2020/07/%E5%9F%BA%E4%BA%8Eoak%E7%9A%84%E4%B8%80%E6%AC%A1tdd%E5%AE%9E%E8%B7%B5/</guid><description><![CDATA[<div class="featured-image">
                 <img src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" referrerpolicy="no-referrer">
             </div><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
 <blockquote>
@@ -1338,7 +1338,7 @@ Dependency Injection 常常简称为：DI。它是实现控制反转（Inversion
 <ul>
 <li>测试先行</li>
 </ul>
-<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+<div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-go">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
         <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
