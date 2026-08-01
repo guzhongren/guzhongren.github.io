@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-theme="system"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content><link rel="icon" href="/avatars/avatar.svg"><link rel="apple-touch-icon" href="/avatars/avatar.svg"><title>软件开发中的跨功能性需求（RFC） - 谷中仁的博客</title><script>(function(){const defaultMode = "system";
+
+      const stored = localStorage.getItem("theme");
+      const mode = stored || defaultMode;
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", mode === "dark" || (mode === "system" && prefersDark));
+      document.documentElement.dataset.theme = mode;
+    })();</script><link rel="stylesheet" href="/_astro/BaseLayout.B6ek5H76.css"></head><body class="min-h-dvh bg-[var(--page-bg)] text-[var(--text-body)] antialiased"><header class="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--page-bg)]/90 backdrop-blur"><div class="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6"><a href="/" class="flex min-w-0 items-center gap-2 font-semibold text-[var(--text-strong)]" aria-label="谷中仁的博客"><img class="avatar-mark shrink-0 rounded-full object-cover size-7 text-xs" src="/avatars/avatar.svg" alt="谷中仁"><span class="truncate">谷中仁的博客</span></a><nav class="header-nav hidden items-center text-sm font-medium text-[var(--text-muted)] md:flex" aria-label="Primary"><a class="hover:text-[var(--text-strong)]" href="/posts">文章</a><a class="hover:text-[var(--text-strong)]" href="/tags">标签</a><a class="hover:text-[var(--text-strong)]" href="/categories">分类</a><a class="hover:text-[var(--text-strong)]" href="https://guzhongren.github.io/slides/" target="_blank" rel="noopener noreferrer">演讲</a><a class="hover:text-[var(--text-strong)]" href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" target="_blank" rel="noopener noreferrer">知识图谱</a><a class="hover:text-[var(--text-strong)]" href="/about">关于</a><button class="search-trigger" type="button" data-search-trigger aria-label="Open search"><span>Search</span><kbd>⌘K</kbd></button><button type="button" class="grid size-8 cursor-pointer place-items-center rounded-full border border-[var(--border-soft)] text-sm text-[var(--text-muted)] hover:text-[var(--text-strong)]" aria-label="Toggle color theme" data-theme-toggle>◐</button><script type="module">var e=document.querySelector(`[data-theme-toggle]`),t=[`system`,`light`,`dark`];e?.addEventListener(`click`,()=>{let e=document.documentElement.dataset.theme||`system`,n=t[(t.indexOf(e)+1)%t.length];localStorage.setItem(`theme`,n),document.documentElement.dataset.theme=n;let r=window.matchMedia(`(prefers-color-scheme: dark)`).matches;document.documentElement.classList.toggle(`dark`,n===`dark`||n===`system`&&r)});</script></nav><div class="flex items-center gap-3 md:hidden"><button class="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-strong)]" type="button" data-search-trigger>Search</button><button type="button" class="grid size-8 cursor-pointer place-items-center rounded-full border border-[var(--border-soft)] text-sm text-[var(--text-muted)] hover:text-[var(--text-strong)]" aria-label="Toggle color theme" data-theme-toggle>◐</button></div></div></header><div class="mx-auto grid min-h-dvh max-w-7xl grid-cols-1 pt-14 lg:grid-cols-[2rem_minmax(0,1fr)_2rem]"><div class="gutter-stripes hidden border-x border-[var(--border-soft)] lg:block" aria-hidden="true"></div><main id="main-content"><div class="mx-auto grid max-w-6xl grid-cols-1 xl:grid-cols-[minmax(0,1fr)_18rem]"><article class="min-w-0 px-4 py-12 sm:px-6 lg:px-10" data-pagefind-body><p class="font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]"><a class="hover:text-[var(--accent)]" href="/categories/Summary" data-pagefind-meta="category">Summary</a></p><h1 class="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-[var(--text-strong)]">软件开发中的跨功能性需求（RFC）</h1><p class="mt-5 max-w-2xl text-base/7 text-[var(--text-muted)]"></p><div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-[var(--text-muted)]"><time datetime="2025-04-28T00:40:12.000Z" data-pagefind-meta="date">2025/04/28</time></div><div class="mt-6"><div class="flex flex-wrap gap-2"><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/CFR">CFR</a></div></div><img class="mt-10 aspect-[16/8] w-full rounded-xl border border-[var(--border-soft)] object-cover" src="https://images.unsplash.com/photo-1671227498016-93aa927686f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1074&amp;q=80" alt=""><div class="prose mt-10 max-w-none" data-emoji-shortcodes><h2 id="引言">引言</h2>
+<p>作为程序员的你，正在开发一款基于全球地图的某资源分布网站，你的产品会被各个国家的人使用，而每个国家都有不同的法律法规和文化习惯。你需要考虑到这些因素，以确保你的产品在全球范围内都能正常使用。比如有争议的边界不能让用户看到对自己国家不利的标记，那么你需要怎么做呢？这时候，你就需要考虑跨功能性需求了。</p>
+<h3 id="什么是跨功能性需求">什么是跨功能性需求</h3>
+<p>跨功能性需求（Cross-Functional Requirements, CFRs）是指那些不直接与特定功能相关，但对整个系统的质量、性能和用户体验有重要影响的需求。例如，性能、安全性和可扩展性等。这些需求通常被称为“非功能性需求”，但它们对系统的成功至关重要。</p>
+<h3 id="其在软件开发中的重要性">其在软件开发中的重要性</h3>
+<p>跨功能性需求贯穿于软件开发的各个阶段，直接影响系统的稳定性、用户满意度和长期维护成本。例如，在一个实时通信应用中，低延迟（性能需求）和数据加密（安全性需求）是用户体验的核心。如果忽视这些需求，可能导致系统在高负载或恶意攻击下崩溃，甚至无法满足用户的基本期望。</p>
+<h2 id="跨功能性需求详细讨论">跨功能性需求详细讨论</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>需求类别</th><th>具体问题</th></tr></thead><tbody><tr><td><strong>可扩展性（Extensibility）</strong></td><td>是否需要组件化？是否需要提供一个插件功能，由谁来实施？</td></tr><tr><td><strong>可移植性（Portability）</strong></td><td>是否有迁移到另一个数据库产品或操作系统的必要性？</td></tr><tr><td><strong>可安装性和可部署性（Installability &#x26; Deployment）</strong></td><td>需要提供什么样的基础设施？需要什么样的安装便利性？是否支持持续交付？如何回滚或升级版本？</td></tr><tr><td><strong>兼容性（Compatibility）</strong></td><td>需要与哪些其他系统集成？需要遵循哪些行业标准？是否需要考虑现有数据格式？</td></tr><tr><td><strong>可集成性和互操作性（Integratability &#x26; Interoperability）</strong></td><td>是否需要提供 API 或库供其他系统使用？版本管理和升级策略是什么？</td></tr><tr><td><strong>可复用性（Leveragability &#x26; Reuse）</strong></td><td>是否能够复用企业现有组件/库，或者当前组件/库是否将被重用？</td></tr><tr><td><strong>可伸缩性（Scalability）</strong></td><td>如何根据不断变化的用户量来提高吞吐量？如何对此进行测试？</td></tr><tr><td><strong>版本化和升级策略（Versioning and upgrades）</strong></td><td>版本化策略是什么？如何跟踪内部/外部的版本？有没有向后兼容的限制？</td></tr><tr><td><strong>可访问性（Accessibility）</strong></td><td>是否支持有特殊需要的用户（如读屏）？</td></tr><tr><td><strong>本地化和国际化（Localisation &#x26; Internationalisation）</strong></td><td>是否支持多语言？日期/时间/货币的转换和翻译？</td></tr><tr><td><strong>可用性和用户体验（Usability and user experience）</strong></td><td>用户体验对系统有多重要？是否有公司用户体验准则？是否支持多设备？</td></tr><tr><td><strong>分布性（Distributability）</strong></td><td>系统是否能在特定区域使用？是否支持离线运行？如何同步信息？</td></tr><tr><td><strong>帮助与支持（Help &#x26; Support）</strong></td><td>是否需要用户文档、教程或支持团队？是否需要计划培训？</td></tr><tr><td><strong>可配置性（Configurability）</strong></td><td>用户或管理员是否可以配置功能？如何进行配置管理？</td></tr><tr><td><strong>支持性（Supportability）</strong></td><td>用户/操作支持的级别是什么？如何提供支持？</td></tr><tr><td><strong>归档（Archiving）</strong></td><td>归档什么信息？何时归档？如何归档？谁可以访问归档信息？</td></tr><tr><td><strong>可用性（Availability）</strong></td><td>是否有可用性目标？需要什么架构来满足这些要求？是否有高峰负载需求？</td></tr><tr><td><strong>容量（Capacity）</strong></td><td>是否有存储要求？高峰负载如何处理？系统需要处理的数据量和用户数量？</td></tr><tr><td><strong>连续性（Continuity）</strong></td><td>是否有灾难恢复计划？</td></tr><tr><td><strong>数据完整性和一致性（Data Integrity and Consistency）</strong></td><td>是否需要数据校验、日志追踪或数据恢复机制？</td></tr><tr><td><strong>可维护性（Maintainability）</strong></td><td>最大可容忍停机时间是什么？是否有停机通知要求？错误页面如何处理？</td></tr><tr><td><strong>监控（Monitoring）</strong></td><td>应该衡量哪些业务/技术指标？如何监测？需要哪些警报？</td></tr><tr><td><strong>多环境支持（Multiple Environment Support）</strong></td><td>需要多少环境？如何配置和管理这些环境？</td></tr><tr><td><strong>性能（Performance）</strong></td><td>吞吐量/响应时间要求是什么？是否需要性能测试？是否需要考虑异步场景？</td></tr><tr><td><strong>弹性和容错性（Resilience &#x26; Fault Tolerance）</strong></td><td>如果外部依赖失效，系统如何降级？</td></tr><tr><td><strong>可靠性（Reliability）</strong></td><td>不可靠的成本是什么？需要多少成本来保证可靠？</td></tr><tr><td><strong>可审计性（Auditability）</strong></td><td>哪些操作需要被跟踪？是否有法律或监管要求？</td></tr><tr><td><strong>认证（Authentication）</strong></td><td>如何鉴别用户身份？是否遵循标准或使用现有认证系统？</td></tr><tr><td><strong>授权（Authorisation）</strong></td><td>哪些角色和权限是必要的？如何维护和应用权限？</td></tr><tr><td><strong>法律合规性（Legal Compliance）</strong></td><td>是否有数据/系统或软件交付过程的法律限制？</td></tr><tr><td><strong>数据隐私（Data Privacy）</strong></td><td>哪些数据需要加密？哪些数据对用户和操作人员可见/隐藏？如何处理脱敏？</td></tr><tr><td><strong>安全性（Security）</strong></td><td>是否需要安全审计或渗透测试？企业的安全准则是什么？是否有 SSL 或 VPN 要求？</td></tr></tbody></table>
+<h2 id="跨功能性需求的挑战">跨功能性需求的挑战</h2>
+<h3 id="难以量化和验证">难以量化和验证</h3>
+<p>跨功能性需求的定义通常较为模糊。例如：</p>
+<ul>
+<li>性能需求可能以“系统应快速响应”描述，但“快速”缺乏具体标准。</li>
+<li>安全性需求可能以“系统应安全”描述，但安全的程度难以量化。</li>
+</ul>
+<h4 id="解决方法">解决方法</h4>
+<ul>
+<li>使用具体的指标定义需求，例如“响应时间小于 200 毫秒”。</li>
+<li>借助工具（如 JMeter）进行性能测试，或使用安全扫描工具（如 OWASP ZAP）验证安全性。</li>
+</ul>
+<h3 id="与功能性需求的冲突">与功能性需求的冲突</h3>
+<p>跨功能性需求可能与功能性需求发生冲突。例如：</p>
+<ul>
+<li>为了提高性能，可能需要简化某些功能。</li>
+<li>为了增强安全性，可能会增加用户操作的复杂性。</li>
+</ul>
+<h4 id="实例权衡性能与安全性">实例：权衡性能与安全性</h4>
+<p>某在线支付系统在设计时，为了提高性能，采用了分布式架构；但为了保证安全性，又引入了多层加密和双因子认证。</p>
+<h2 id="如何发现跨功能性需求">如何发现跨功能性需求</h2>
+<p><img src="https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Software-Engineering/CFR/crf.1e8tg7u4l3.webp" alt="CFR"></p>
+<p>跨功能需求影响着软件的整个生命周期，在项目交付过程中，可以根据软件产品的目标和特点，从以下几个视角来收集和确定跨功能需求：</p>
+<ul>
+<li><strong>研发团队视角</strong>，关注软件研发过程中的跨功能特性，包括软件架构设计相关的一些特性，如可扩展性、可移植性、可伸缩性、兼容性等。</li>
+<li><strong>用户视角</strong>，关注软件使用过程中的跨功能特性，关注用户体验，如设备兼容性、可访问性、可配置性等。</li>
+<li><strong>运维团队视角</strong>，关注软件维护过程中的跨功能特性，包括基础设施运营维护、数据维护、故障恢复相关的一些特性，如性能、可用性、容量、监控、熔断降级策略等。</li>
+<li><strong>安全审计团队视角</strong>，关注软件全生命周期的安全相关的跨功能特性，大部分企业有专门的安全审计部门，会对软件产品的安全提出很多需求，如可审计性，法律合规性，数据隐私性。</li>
+</ul>
+<h2 id="解决方案与实践">解决方案与实践</h2>
+<h3 id="需求优先级的设定">需求优先级的设定</h3>
+<p>通过与利益相关者协商，明确跨功能性需求的优先级。例如：</p>
+<ul>
+<li>使用 MoSCoW 方法（Must, Should, Could, Won’t）分类需求。</li>
+<li>在项目初期定义关键性能指标（KPIs）和安全目标。</li>
+</ul>
+<h4 id="实例敏捷开发中的需求优先级">实例：敏捷开发中的需求优先级</h4>
+<p>某团队在敏捷开发中，每个迭代周期都会评估跨功能性需求的优先级，并在冲刺计划中分配资源。</p>
+<h3 id="跨团队协作的重要性">跨团队协作的重要性</h3>
+<p>跨功能性需求通常涉及多个团队的协作。例如：</p>
+<ul>
+<li>开发团队需要与运维团队合作，确保系统的可扩展性。</li>
+<li>安全团队需要与开发团队合作，进行代码审查和漏洞修复。</li>
+</ul>
+<h4 id="实例devsecops-实践">实例：DevSecOps 实践</h4>
+<p>某企业通过 DevSecOps 实践，将安全性集成到开发和运维流程中，确保跨功能性需求在整个生命周期内得到满足。</p>
+<h2 id="案例分析">案例分析</h2>
+<h3 id="实际项目中的跨功能性需求处理">实际项目中的跨功能性需求处理</h3>
+<p>在某大型电商平台的开发中，性能和安全性是两个关键的跨功能性需求。通过以下措施，成功满足了这些需求：</p>
+<ol>
+<li>
+<p><strong>性能优化</strong>：</p>
+<ul>
+<li>使用 Redis 缓存机制减少数据库查询。</li>
+<li>部署 Nginx 负载均衡器分发流量。</li>
+</ul>
+</li>
+<li>
+<p><strong>安全性增强</strong>：</p>
+<ul>
+<li>引入 Web 应用防火墙（WAF）防止常见攻击（如 SQL 注入）。</li>
+<li>定期进行渗透测试，发现并修复漏洞。</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a>
+来源：<a href="https://nginx.org/en/docs/">Nginx 官方文档</a></p>
+</blockquote>
+<h3 id="性能">性能</h3>
+<p>性能需求通常包括以下几个方面：</p>
+<ol>
+<li><strong>响应时间</strong>：用户操作后系统的响应速度。例如，搜索引擎的响应时间通常需要在几百毫秒内完成。</li>
+<li><strong>吞吐量</strong>：系统在单位时间内能够处理的请求数量。例如，支付网关需要支持每秒数千笔交易。</li>
+<li><strong>资源利用率</strong>：系统在运行时对 CPU、内存和网络等资源的使用效率。</li>
+</ol>
+<h4 id="实例高性能电商平台">实例：高性能电商平台</h4>
+<p>某电商平台在促销活动期间，通过以下措施优化性能：</p>
+<ul>
+<li>使用 Redis 缓存热门商品数据，减少数据库查询压力。</li>
+<li>部署 CDN（内容分发网络）加速静态资源加载。</li>
+</ul>
+<blockquote>
+<p>来源：<a href="https://redis.io/documentation">Redis 官方文档</a></p>
+</blockquote>
+<h3 id="可扩展性">可扩展性</h3>
+<p>可扩展性需求确保系统能够随着用户数量或数据量的增长而扩展。主要包括：</p>
+<ol>
+<li><strong>水平扩展</strong>：通过增加更多服务器来提升系统能力。</li>
+<li><strong>垂直扩展</strong>：通过升级硬件资源（如 CPU 和内存）来提升性能。</li>
+</ol>
+<h4 id="实例分布式数据库">实例：分布式数据库</h4>
+<p>某社交媒体平台采用分布式数据库（如 MongoDB）来存储用户数据，支持动态扩展以应对用户增长。</p>
+<blockquote>
+<p>来源：<a href="https://www.mongodb.com/docs/">MongoDB 官方文档</a></p>
+</blockquote>
+<h3 id="安全性">安全性</h3>
+<p>安全性需求包括以下几个方面：</p>
+<ol>
+<li><strong>数据加密</strong>：保护敏感数据在传输和存储中的安全性。</li>
+<li><strong>身份验证</strong>：确保只有授权用户能够访问系统。</li>
+<li><strong>权限管理</strong>：限制用户对系统资源的访问范围。</li>
+</ol>
+<h4 id="实例oauth-20">实例：OAuth 2.0</h4>
+<p>某金融应用通过 OAuth 2.0 实现第三方登录，同时保护用户的敏感信息。</p>
+<blockquote>
+<p>来源：<a href="https://oauth.net/2/">OAuth 2.0 规范</a></p>
+</blockquote>
+<h2 id="总结">总结</h2>
+<p>回到开头的问题，如何处理全球地图资源分布网站的跨功能性需求？可以通过以下步骤：</p>
+<ol>
+<li><strong>需求收集</strong>：与各国法律法规专家沟通，了解不同国家的要求，比如使用不同国家官方支持的地图地址。</li>
+<li><strong>需求优先级</strong>：使用 MoSCoW 方法确定哪些需求是必须的，哪些是可选的， 这里就是国界。</li>
+<li><strong>跨团队协作</strong>：与开发、运维和安全团队密切合作，确保需求在设计和实现中得到满足, 最好实现配置即代码。</li>
+<li><strong>测试与验证</strong>：在不同国家的环境中进行测试，确保系统符合各国的法律法规。</li>
+</ol>
+<p>当然还有一种最简单的方法，只提供卫星影像地图，不提供边界图层。</p>
+<h3 id="关键点回顾与未来展望">关键点回顾与未来展望</h3>
+<p>跨功能性需求是软件开发中不可忽视的一部分。通过合理的需求优先级设定和跨团队协作，可以有效应对这些挑战。未来，随着技术的进步，跨功能性需求的管理将更加智能化和自动化。</p></div></article><aside class="sticky top-20 hidden max-h-[calc(100dvh-5rem)] overflow-auto px-6 py-10 xl:block"><h2 class="font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">On this page</h2><nav class="mt-4 grid gap-2 text-sm text-[var(--text-muted)]" data-emoji-shortcodes><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#引言">引言</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#什么是跨功能性需求">什么是跨功能性需求</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#其在软件开发中的重要性">其在软件开发中的重要性</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#跨功能性需求详细讨论">跨功能性需求详细讨论</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#跨功能性需求的挑战">跨功能性需求的挑战</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#难以量化和验证">难以量化和验证</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#与功能性需求的冲突">与功能性需求的冲突</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#如何发现跨功能性需求">如何发现跨功能性需求</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#解决方案与实践">解决方案与实践</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#需求优先级的设定">需求优先级的设定</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#跨团队协作的重要性">跨团队协作的重要性</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#案例分析">案例分析</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#实际项目中的跨功能性需求处理">实际项目中的跨功能性需求处理</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#性能">性能</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#可扩展性">可扩展性</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#安全性">安全性</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#总结">总结</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#关键点回顾与未来展望">关键点回顾与未来展望</a></nav></aside></div></main><div class="gutter-stripes hidden border-x border-[var(--border-soft)] lg:block" aria-hidden="true"></div></div><footer class="border-t border-[var(--border-soft)] bg-[var(--page-bg)]"><div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between sm:px-6"><p>&copy; 2026 谷中仁</p><div class="flex flex-wrap gap-4"><a class="hover:text-[var(--text-strong)]" href="/posts">文章</a><a class="hover:text-[var(--text-strong)]" href="/tags">标签</a><a class="hover:text-[var(--text-strong)]" href="/categories">分类</a><a class="hover:text-[var(--text-strong)]" href="https://guzhongren.github.io/slides/" target="_blank" rel="noopener noreferrer">演讲</a><a class="hover:text-[var(--text-strong)]" href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" target="_blank" rel="noopener noreferrer">知识图谱</a><a class="hover:text-[var(--text-strong)]" href="/about">关于</a></div></div></footer><script>(function(){const emojiShortcodes = {"100":"💯","1234":"🔢","grinning":"😀","smiley":"😃","smile":"😄","grin":"😁","laughing":"😆","satisfied":"😆","sweat_smile":"😅","rofl":"🤣","joy":"😂","slightly_smiling_face":"🙂","upside_down_face":"🙃","melting_face":"🫠","wink":"😉","blush":"😊","innocent":"😇","smiling_face_with_three_hearts":"🥰","heart_eyes":"😍","star_struck":"🤩","kissing_heart":"😘","kissing":"😗","relaxed":"☺️","kissing_closed_eyes":"😚","kissing_smiling_eyes":"😙","smiling_face_with_tear":"🥲","yum":"😋","stuck_out_tongue":"😛","stuck_out_tongue_winking_eye":"😜","zany_face":"🤪","stuck_out_tongue_closed_eyes":"😝","money_mouth_face":"🤑","hugs":"🤗","hand_over_mouth":"🤭","face_with_open_eyes_and_hand_over_mouth":"🫢","face_with_peeking_eye":"🫣","shushing_face":"🤫","thinking":"🤔","saluting_face":"🫡","zipper_mouth_face":"🤐","raised_eyebrow":"🤨","neutral_face":"😐","expressionless":"😑","no_mouth":"😶","dotted_line_face":"🫥","face_in_clouds":"😶‍🌫️","smirk":"😏","unamused":"😒","roll_eyes":"🙄","grimacing":"😬","face_exhaling":"😮‍💨","lying_face":"🤥","shaking_face":"🫨","relieved":"😌","pensive":"😔","sleepy":"😪","drooling_face":"🤤","sleeping":"😴","mask":"😷","face_with_thermometer":"🤒","face_with_head_bandage":"🤕","nauseated_face":"🤢","vomiting_face":"🤮","sneezing_face":"🤧","hot_face":"🥵","cold_face":"🥶","woozy_face":"🥴","dizzy_face":"😵","face_with_spiral_eyes":"😵‍💫","exploding_head":"🤯","cowboy_hat_face":"🤠","partying_face":"🥳","disguised_face":"🥸","sunglasses":"😎","nerd_face":"🤓","monocle_face":"🧐","confused":"😕","face_with_diagonal_mouth":"🫤","worried":"😟","slightly_frowning_face":"🙁","frowning_face":"☹️","open_mouth":"😮","hushed":"😯","astonished":"😲","flushed":"😳","pleading_face":"🥺","face_holding_back_tears":"🥹","frowning":"😦","anguished":"😧","fearful":"😨","cold_sweat":"😰","disappointed_relieved":"😥","cry":"😢","sob":"😭","scream":"😱","confounded":"😖","persevere":"😣","disappointed":"😞","sweat":"😓","weary":"😩","tired_face":"😫","yawning_face":"🥱","triumph":"😤","rage":"😡","pout":"😡","angry":"😠","cursing_face":"🤬","smiling_imp":"😈","imp":"👿","skull":"💀","skull_and_crossbones":"☠️","hankey":"💩","poop":"💩","shit":"💩","clown_face":"🤡","japanese_ogre":"👹","japanese_goblin":"👺","ghost":"👻","alien":"👽","space_invader":"👾","robot":"🤖","smiley_cat":"😺","smile_cat":"😸","joy_cat":"😹","heart_eyes_cat":"😻","smirk_cat":"😼","kissing_cat":"😽","scream_cat":"🙀","crying_cat_face":"😿","pouting_cat":"😾","see_no_evil":"🙈","hear_no_evil":"🙉","speak_no_evil":"🙊","love_letter":"💌","cupid":"💘","gift_heart":"💝","sparkling_heart":"💖","heartpulse":"💗","heartbeat":"💓","revolving_hearts":"💞","two_hearts":"💕","heart_decoration":"💟","heavy_heart_exclamation":"❣️","broken_heart":"💔","heart_on_fire":"❤️‍🔥","mending_heart":"❤️‍🩹","heart":"❤️","pink_heart":"🩷","orange_heart":"🧡","yellow_heart":"💛","green_heart":"💚","blue_heart":"💙","light_blue_heart":"🩵","purple_heart":"💜","brown_heart":"🤎","black_heart":"🖤","grey_heart":"🩶","white_heart":"🤍","kiss":"💋","anger":"💢","boom":"💥","collision":"💥","dizzy":"💫","sweat_drops":"💦","dash":"💨","hole":"🕳️","speech_balloon":"💬","eye_speech_bubble":"👁️‍🗨️","left_speech_bubble":"🗨️","right_anger_bubble":"🗯️","thought_balloon":"💭","zzz":"💤","wave":"👋","raised_back_of_hand":"🤚","raised_hand_with_fingers_splayed":"🖐️","hand":"✋","raised_hand":"✋","vulcan_salute":"🖖","rightwards_hand":"🫱","leftwards_hand":"🫲","palm_down_hand":"🫳","palm_up_hand":"🫴","leftwards_pushing_hand":"🫷","rightwards_pushing_hand":"🫸","ok_hand":"👌","pinched_fingers":"🤌","pinching_hand":"🤏","v":"✌️","crossed_fingers":"🤞","hand_with_index_finger_and_thumb_crossed":"🫰","love_you_gesture":"🤟","metal":"🤘","call_me_hand":"🤙","point_left":"👈","point_right":"👉","point_up_2":"👆","middle_finger":"🖕","fu":"🖕","point_down":"👇","point_up":"☝️","index_pointing_at_the_viewer":"🫵","+1":"👍","thumbsup":"👍","-1":"👎","thumbsdown":"👎","fist_raised":"✊","fist":"✊","fist_oncoming":"👊","facepunch":"👊","punch":"👊","fist_left":"🤛","fist_right":"🤜","clap":"👏","raised_hands":"🙌","heart_hands":"🫶","open_hands":"👐","palms_up_together":"🤲","handshake":"🤝","pray":"🙏","writing_hand":"✍️","nail_care":"💅","selfie":"🤳","muscle":"💪","mechanical_arm":"🦾","mechanical_leg":"🦿","leg":"🦵","foot":"🦶","ear":"👂","ear_with_hearing_aid":"🦻","nose":"👃","brain":"🧠","anatomical_heart":"🫀","lungs":"🫁","tooth":"🦷","bone":"🦴","eyes":"👀","eye":"👁️","tongue":"👅","lips":"👄","biting_lip":"🫦","baby":"👶","child":"🧒","boy":"👦","girl":"👧","adult":"🧑","blond_haired_person":"👱","man":"👨","bearded_person":"🧔","man_beard":"🧔‍♂️","woman_beard":"🧔‍♀️","red_haired_man":"👨‍🦰","curly_haired_man":"👨‍🦱","white_haired_man":"👨‍🦳","bald_man":"👨‍🦲","woman":"👩","red_haired_woman":"👩‍🦰","person_red_hair":"🧑‍🦰","curly_haired_woman":"👩‍🦱","person_curly_hair":"🧑‍🦱","white_haired_woman":"👩‍🦳","person_white_hair":"🧑‍🦳","bald_woman":"👩‍🦲","person_bald":"🧑‍🦲","blond_haired_woman":"👱‍♀️","blonde_woman":"👱‍♀️","blond_haired_man":"👱‍♂️","older_adult":"🧓","older_man":"👴","older_woman":"👵","frowning_person":"🙍","frowning_man":"🙍‍♂️","frowning_woman":"🙍‍♀️","pouting_face":"🙎","pouting_man":"🙎‍♂️","pouting_woman":"🙎‍♀️","no_good":"🙅","no_good_man":"🙅‍♂️","ng_man":"🙅‍♂️","no_good_woman":"🙅‍♀️","ng_woman":"🙅‍♀️","ok_person":"🙆","ok_man":"🙆‍♂️","ok_woman":"🙆‍♀️","tipping_hand_person":"💁","information_desk_person":"💁","tipping_hand_man":"💁‍♂️","sassy_man":"💁‍♂️","tipping_hand_woman":"💁‍♀️","sassy_woman":"💁‍♀️","raising_hand":"🙋","raising_hand_man":"🙋‍♂️","raising_hand_woman":"🙋‍♀️","deaf_person":"🧏","deaf_man":"🧏‍♂️","deaf_woman":"🧏‍♀️","bow":"🙇","bowing_man":"🙇‍♂️","bowing_woman":"🙇‍♀️","facepalm":"🤦","man_facepalming":"🤦‍♂️","woman_facepalming":"🤦‍♀️","shrug":"🤷","man_shrugging":"🤷‍♂️","woman_shrugging":"🤷‍♀️","health_worker":"🧑‍⚕️","man_health_worker":"👨‍⚕️","woman_health_worker":"👩‍⚕️","student":"🧑‍🎓","man_student":"👨‍🎓","woman_student":"👩‍🎓","teacher":"🧑‍🏫","man_teacher":"👨‍🏫","woman_teacher":"👩‍🏫","judge":"🧑‍⚖️","man_judge":"👨‍⚖️","woman_judge":"👩‍⚖️","farmer":"🧑‍🌾","man_farmer":"👨‍🌾","woman_farmer":"👩‍🌾","cook":"🧑‍🍳","man_cook":"👨‍🍳","woman_cook":"👩‍🍳","mechanic":"🧑‍🔧","man_mechanic":"👨‍🔧","woman_mechanic":"👩‍🔧","factory_worker":"🧑‍🏭","man_factory_worker":"👨‍🏭","woman_factory_worker":"👩‍🏭","office_worker":"🧑‍💼","man_office_worker":"👨‍💼","woman_office_worker":"👩‍💼","scientist":"🧑‍🔬","man_scientist":"👨‍🔬","woman_scientist":"👩‍🔬","technologist":"🧑‍💻","man_technologist":"👨‍💻","woman_technologist":"👩‍💻","singer":"🧑‍🎤","man_singer":"👨‍🎤","woman_singer":"👩‍🎤","artist":"🧑‍🎨","man_artist":"👨‍🎨","woman_artist":"👩‍🎨","pilot":"🧑‍✈️","man_pilot":"👨‍✈️","woman_pilot":"👩‍✈️","astronaut":"🧑‍🚀","man_astronaut":"👨‍🚀","woman_astronaut":"👩‍🚀","firefighter":"🧑‍🚒","man_firefighter":"👨‍🚒","woman_firefighter":"👩‍🚒","police_officer":"👮","cop":"👮","policeman":"👮‍♂️","policewoman":"👮‍♀️","detective":"🕵️","male_detective":"🕵️‍♂️","female_detective":"🕵️‍♀️","guard":"💂","guardsman":"💂‍♂️","guardswoman":"💂‍♀️","ninja":"🥷","construction_worker":"👷","construction_worker_man":"👷‍♂️","construction_worker_woman":"👷‍♀️","person_with_crown":"🫅","prince":"🤴","princess":"👸","person_with_turban":"👳","man_with_turban":"👳‍♂️","woman_with_turban":"👳‍♀️","man_with_gua_pi_mao":"👲","woman_with_headscarf":"🧕","person_in_tuxedo":"🤵","man_in_tuxedo":"🤵‍♂️","woman_in_tuxedo":"🤵‍♀️","person_with_veil":"👰","man_with_veil":"👰‍♂️","woman_with_veil":"👰‍♀️","bride_with_veil":"👰‍♀️","pregnant_woman":"🤰","pregnant_man":"🫃","pregnant_person":"🫄","breast_feeding":"🤱","woman_feeding_baby":"👩‍🍼","man_feeding_baby":"👨‍🍼","person_feeding_baby":"🧑‍🍼","angel":"👼","santa":"🎅","mrs_claus":"🤶","mx_claus":"🧑‍🎄","superhero":"🦸","superhero_man":"🦸‍♂️","superhero_woman":"🦸‍♀️","supervillain":"🦹","supervillain_man":"🦹‍♂️","supervillain_woman":"🦹‍♀️","mage":"🧙","mage_man":"🧙‍♂️","mage_woman":"🧙‍♀️","fairy":"🧚","fairy_man":"🧚‍♂️","fairy_woman":"🧚‍♀️","vampire":"🧛","vampire_man":"🧛‍♂️","vampire_woman":"🧛‍♀️","merperson":"🧜","merman":"🧜‍♂️","mermaid":"🧜‍♀️","elf":"🧝","elf_man":"🧝‍♂️","elf_woman":"🧝‍♀️","genie":"🧞","genie_man":"🧞‍♂️","genie_woman":"🧞‍♀️","zombie":"🧟","zombie_man":"🧟‍♂️","zombie_woman":"🧟‍♀️","troll":"🧌","massage":"💆","massage_man":"💆‍♂️","massage_woman":"💆‍♀️","haircut":"💇","haircut_man":"💇‍♂️","haircut_woman":"💇‍♀️","walking":"🚶","walking_man":"🚶‍♂️","walking_woman":"🚶‍♀️","standing_person":"🧍","standing_man":"🧍‍♂️","standing_woman":"🧍‍♀️","kneeling_person":"🧎","kneeling_man":"🧎‍♂️","kneeling_woman":"🧎‍♀️","person_with_probing_cane":"🧑‍🦯","man_with_probing_cane":"👨‍🦯","woman_with_probing_cane":"👩‍🦯","person_in_motorized_wheelchair":"🧑‍🦼","man_in_motorized_wheelchair":"👨‍🦼","woman_in_motorized_wheelchair":"👩‍🦼","person_in_manual_wheelchair":"🧑‍🦽","man_in_manual_wheelchair":"👨‍🦽","woman_in_manual_wheelchair":"👩‍🦽","runner":"🏃","running":"🏃","running_man":"🏃‍♂️","running_woman":"🏃‍♀️","woman_dancing":"💃","dancer":"💃","man_dancing":"🕺","business_suit_levitating":"🕴️","dancers":"👯","dancing_men":"👯‍♂️","dancing_women":"👯‍♀️","sauna_person":"🧖","sauna_man":"🧖‍♂️","sauna_woman":"🧖‍♀️","climbing":"🧗","climbing_man":"🧗‍♂️","climbing_woman":"🧗‍♀️","person_fencing":"🤺","horse_racing":"🏇","skier":"⛷️","snowboarder":"🏂","golfing":"🏌️","golfing_man":"🏌️‍♂️","golfing_woman":"🏌️‍♀️","surfer":"🏄","surfing_man":"🏄‍♂️","surfing_woman":"🏄‍♀️","rowboat":"🚣","rowing_man":"🚣‍♂️","rowing_woman":"🚣‍♀️","swimmer":"🏊","swimming_man":"🏊‍♂️","swimming_woman":"🏊‍♀️","bouncing_ball_person":"⛹️","bouncing_ball_man":"⛹️‍♂️","basketball_man":"⛹️‍♂️","bouncing_ball_woman":"⛹️‍♀️","basketball_woman":"⛹️‍♀️","weight_lifting":"🏋️","weight_lifting_man":"🏋️‍♂️","weight_lifting_woman":"🏋️‍♀️","bicyclist":"🚴","biking_man":"🚴‍♂️","biking_woman":"🚴‍♀️","mountain_bicyclist":"🚵","mountain_biking_man":"🚵‍♂️","mountain_biking_woman":"🚵‍♀️","cartwheeling":"🤸","man_cartwheeling":"🤸‍♂️","woman_cartwheeling":"🤸‍♀️","wrestling":"🤼","men_wrestling":"🤼‍♂️","women_wrestling":"🤼‍♀️","water_polo":"🤽","man_playing_water_polo":"🤽‍♂️","woman_playing_water_polo":"🤽‍♀️","handball_person":"🤾","man_playing_handball":"🤾‍♂️","woman_playing_handball":"🤾‍♀️","juggling_person":"🤹","man_juggling":"🤹‍♂️","woman_juggling":"🤹‍♀️","lotus_position":"🧘","lotus_position_man":"🧘‍♂️","lotus_position_woman":"🧘‍♀️","bath":"🛀","sleeping_bed":"🛌","people_holding_hands":"🧑‍🤝‍🧑","two_women_holding_hands":"👭","couple":"👫","two_men_holding_hands":"👬","couplekiss":"💏","couplekiss_man_woman":"👩‍❤️‍💋‍👨","couplekiss_man_man":"👨‍❤️‍💋‍👨","couplekiss_woman_woman":"👩‍❤️‍💋‍👩","couple_with_heart":"💑","couple_with_heart_woman_man":"👩‍❤️‍👨","couple_with_heart_man_man":"👨‍❤️‍👨","couple_with_heart_woman_woman":"👩‍❤️‍👩","family":"👪","family_man_woman_boy":"👨‍👩‍👦","family_man_woman_girl":"👨‍👩‍👧","family_man_woman_girl_boy":"👨‍👩‍👧‍👦","family_man_woman_boy_boy":"👨‍👩‍👦‍👦","family_man_woman_girl_girl":"👨‍👩‍👧‍👧","family_man_man_boy":"👨‍👨‍👦","family_man_man_girl":"👨‍👨‍👧","family_man_man_girl_boy":"👨‍👨‍👧‍👦","family_man_man_boy_boy":"👨‍👨‍👦‍👦","family_man_man_girl_girl":"👨‍👨‍👧‍👧","family_woman_woman_boy":"👩‍👩‍👦","family_woman_woman_girl":"👩‍👩‍👧","family_woman_woman_girl_boy":"👩‍👩‍👧‍👦","family_woman_woman_boy_boy":"👩‍👩‍👦‍👦","family_woman_woman_girl_girl":"👩‍👩‍👧‍👧","family_man_boy":"👨‍👦","family_man_boy_boy":"👨‍👦‍👦","family_man_girl":"👨‍👧","family_man_girl_boy":"👨‍👧‍👦","family_man_girl_girl":"👨‍👧‍👧","family_woman_boy":"👩‍👦","family_woman_boy_boy":"👩‍👦‍👦","family_woman_girl":"👩‍👧","family_woman_girl_boy":"👩‍👧‍👦","family_woman_girl_girl":"👩‍👧‍👧","speaking_head":"🗣️","bust_in_silhouette":"👤","busts_in_silhouette":"👥","people_hugging":"🫂","footprints":"👣","monkey_face":"🐵","monkey":"🐒","gorilla":"🦍","orangutan":"🦧","dog":"🐶","dog2":"🐕","guide_dog":"🦮","service_dog":"🐕‍🦺","poodle":"🐩","wolf":"🐺","fox_face":"🦊","raccoon":"🦝","cat":"🐱","cat2":"🐈","black_cat":"🐈‍⬛","lion":"🦁","tiger":"🐯","tiger2":"🐅","leopard":"🐆","horse":"🐴","moose":"🫎","donkey":"🫏","racehorse":"🐎","unicorn":"🦄","zebra":"🦓","deer":"🦌","bison":"🦬","cow":"🐮","ox":"🐂","water_buffalo":"🐃","cow2":"🐄","pig":"🐷","pig2":"🐖","boar":"🐗","pig_nose":"🐽","ram":"🐏","sheep":"🐑","goat":"🐐","dromedary_camel":"🐪","camel":"🐫","llama":"🦙","giraffe":"🦒","elephant":"🐘","mammoth":"🦣","rhinoceros":"🦏","hippopotamus":"🦛","mouse":"🐭","mouse2":"🐁","rat":"🐀","hamster":"🐹","rabbit":"🐰","rabbit2":"🐇","chipmunk":"🐿️","beaver":"🦫","hedgehog":"🦔","bat":"🦇","bear":"🐻","polar_bear":"🐻‍❄️","koala":"🐨","panda_face":"🐼","sloth":"🦥","otter":"🦦","skunk":"🦨","kangaroo":"🦘","badger":"🦡","feet":"🐾","paw_prints":"🐾","turkey":"🦃","chicken":"🐔","rooster":"🐓","hatching_chick":"🐣","baby_chick":"🐤","hatched_chick":"🐥","bird":"🐦","penguin":"🐧","dove":"🕊️","eagle":"🦅","duck":"🦆","swan":"🦢","owl":"🦉","dodo":"🦤","feather":"🪶","flamingo":"🦩","peacock":"🦚","parrot":"🦜","wing":"🪽","black_bird":"🐦‍⬛","goose":"🪿","frog":"🐸","crocodile":"🐊","turtle":"🐢","lizard":"🦎","snake":"🐍","dragon_face":"🐲","dragon":"🐉","sauropod":"🦕","t-rex":"🦖","whale":"🐳","whale2":"🐋","dolphin":"🐬","flipper":"🐬","seal":"🦭","fish":"🐟","tropical_fish":"🐠","blowfish":"🐡","shark":"🦈","octopus":"🐙","shell":"🐚","coral":"🪸","jellyfish":"🪼","snail":"🐌","butterfly":"🦋","bug":"🐛","ant":"🐜","bee":"🐝","honeybee":"🐝","beetle":"🪲","lady_beetle":"🐞","cricket":"🦗","cockroach":"🪳","spider":"🕷️","spider_web":"🕸️","scorpion":"🦂","mosquito":"🦟","fly":"🪰","worm":"🪱","microbe":"🦠","bouquet":"💐","cherry_blossom":"🌸","white_flower":"💮","lotus":"🪷","rosette":"🏵️","rose":"🌹","wilted_flower":"🥀","hibiscus":"🌺","sunflower":"🌻","blossom":"🌼","tulip":"🌷","hyacinth":"🪻","seedling":"🌱","potted_plant":"🪴","evergreen_tree":"🌲","deciduous_tree":"🌳","palm_tree":"🌴","cactus":"🌵","ear_of_rice":"🌾","herb":"🌿","shamrock":"☘️","four_leaf_clover":"🍀","maple_leaf":"🍁","fallen_leaf":"🍂","leaves":"🍃","empty_nest":"🪹","nest_with_eggs":"🪺","mushroom":"🍄","grapes":"🍇","melon":"🍈","watermelon":"🍉","tangerine":"🍊","orange":"🍊","mandarin":"🍊","lemon":"🍋","banana":"🍌","pineapple":"🍍","mango":"🥭","apple":"🍎","green_apple":"🍏","pear":"🍐","peach":"🍑","cherries":"🍒","strawberry":"🍓","blueberries":"🫐","kiwi_fruit":"🥝","tomato":"🍅","olive":"🫒","coconut":"🥥","avocado":"🥑","eggplant":"🍆","potato":"🥔","carrot":"🥕","corn":"🌽","hot_pepper":"🌶️","bell_pepper":"🫑","cucumber":"🥒","leafy_green":"🥬","broccoli":"🥦","garlic":"🧄","onion":"🧅","peanuts":"🥜","beans":"🫘","chestnut":"🌰","ginger_root":"🫚","pea_pod":"🫛","bread":"🍞","croissant":"🥐","baguette_bread":"🥖","flatbread":"🫓","pretzel":"🥨","bagel":"🥯","pancakes":"🥞","waffle":"🧇","cheese":"🧀","meat_on_bone":"🍖","poultry_leg":"🍗","cut_of_meat":"🥩","bacon":"🥓","hamburger":"🍔","fries":"🍟","pizza":"🍕","hotdog":"🌭","sandwich":"🥪","taco":"🌮","burrito":"🌯","tamale":"🫔","stuffed_flatbread":"🥙","falafel":"🧆","egg":"🥚","fried_egg":"🍳","shallow_pan_of_food":"🥘","stew":"🍲","fondue":"🫕","bowl_with_spoon":"🥣","green_salad":"🥗","popcorn":"🍿","butter":"🧈","salt":"🧂","canned_food":"🥫","bento":"🍱","rice_cracker":"🍘","rice_ball":"🍙","rice":"🍚","curry":"🍛","ramen":"🍜","spaghetti":"🍝","sweet_potato":"🍠","oden":"🍢","sushi":"🍣","fried_shrimp":"🍤","fish_cake":"🍥","moon_cake":"🥮","dango":"🍡","dumpling":"🥟","fortune_cookie":"🥠","takeout_box":"🥡","crab":"🦀","lobster":"🦞","shrimp":"🦐","squid":"🦑","oyster":"🦪","icecream":"🍦","shaved_ice":"🍧","ice_cream":"🍨","doughnut":"🍩","cookie":"🍪","birthday":"🎂","cake":"🍰","cupcake":"🧁","pie":"🥧","chocolate_bar":"🍫","candy":"🍬","lollipop":"🍭","custard":"🍮","honey_pot":"🍯","baby_bottle":"🍼","milk_glass":"🥛","coffee":"☕","teapot":"🫖","tea":"🍵","sake":"🍶","champagne":"🍾","wine_glass":"🍷","cocktail":"🍸","tropical_drink":"🍹","beer":"🍺","beers":"🍻","clinking_glasses":"🥂","tumbler_glass":"🥃","pouring_liquid":"🫗","cup_with_straw":"🥤","bubble_tea":"🧋","beverage_box":"🧃","mate":"🧉","ice_cube":"🧊","chopsticks":"🥢","plate_with_cutlery":"🍽️","fork_and_knife":"🍴","spoon":"🥄","hocho":"🔪","knife":"🔪","jar":"🫙","amphora":"🏺","earth_africa":"🌍","earth_americas":"🌎","earth_asia":"🌏","globe_with_meridians":"🌐","world_map":"🗺️","japan":"🗾","compass":"🧭","mountain_snow":"🏔️","mountain":"⛰️","volcano":"🌋","mount_fuji":"🗻","camping":"🏕️","beach_umbrella":"🏖️","desert":"🏜️","desert_island":"🏝️","national_park":"🏞️","stadium":"🏟️","classical_building":"🏛️","building_construction":"🏗️","bricks":"🧱","rock":"🪨","wood":"🪵","hut":"🛖","houses":"🏘️","derelict_house":"🏚️","house":"🏠","house_with_garden":"🏡","office":"🏢","post_office":"🏣","european_post_office":"🏤","hospital":"🏥","bank":"🏦","hotel":"🏨","love_hotel":"🏩","convenience_store":"🏪","school":"🏫","department_store":"🏬","factory":"🏭","japanese_castle":"🏯","european_castle":"🏰","wedding":"💒","tokyo_tower":"🗼","statue_of_liberty":"🗽","church":"⛪","mosque":"🕌","hindu_temple":"🛕","synagogue":"🕍","shinto_shrine":"⛩️","kaaba":"🕋","fountain":"⛲","tent":"⛺","foggy":"🌁","night_with_stars":"🌃","cityscape":"🏙️","sunrise_over_mountains":"🌄","sunrise":"🌅","city_sunset":"🌆","city_sunrise":"🌇","bridge_at_night":"🌉","hotsprings":"♨️","carousel_horse":"🎠","playground_slide":"🛝","ferris_wheel":"🎡","roller_coaster":"🎢","barber":"💈","circus_tent":"🎪","steam_locomotive":"🚂","railway_car":"🚃","bullettrain_side":"🚄","bullettrain_front":"🚅","train2":"🚆","metro":"🚇","light_rail":"🚈","station":"🚉","tram":"🚊","monorail":"🚝","mountain_railway":"🚞","train":"🚋","bus":"🚌","oncoming_bus":"🚍","trolleybus":"🚎","minibus":"🚐","ambulance":"🚑","fire_engine":"🚒","police_car":"🚓","oncoming_police_car":"🚔","taxi":"🚕","oncoming_taxi":"🚖","car":"🚗","red_car":"🚗","oncoming_automobile":"🚘","blue_car":"🚙","pickup_truck":"🛻","truck":"🚚","articulated_lorry":"🚛","tractor":"🚜","racing_car":"🏎️","motorcycle":"🏍️","motor_scooter":"🛵","manual_wheelchair":"🦽","motorized_wheelchair":"🦼","auto_rickshaw":"🛺","bike":"🚲","kick_scooter":"🛴","skateboard":"🛹","roller_skate":"🛼","busstop":"🚏","motorway":"🛣️","railway_track":"🛤️","oil_drum":"🛢️","fuelpump":"⛽","wheel":"🛞","rotating_light":"🚨","traffic_light":"🚥","vertical_traffic_light":"🚦","stop_sign":"🛑","construction":"🚧","anchor":"⚓","ring_buoy":"🛟","boat":"⛵","sailboat":"⛵","canoe":"🛶","speedboat":"🚤","passenger_ship":"🛳️","ferry":"⛴️","motor_boat":"🛥️","ship":"🚢","airplane":"✈️","small_airplane":"🛩️","flight_departure":"🛫","flight_arrival":"🛬","parachute":"🪂","seat":"💺","helicopter":"🚁","suspension_railway":"🚟","mountain_cableway":"🚠","aerial_tramway":"🚡","artificial_satellite":"🛰️","rocket":"🚀","flying_saucer":"🛸","bellhop_bell":"🛎️","luggage":"🧳","hourglass":"⌛","hourglass_flowing_sand":"⏳","watch":"⌚","alarm_clock":"⏰","stopwatch":"⏱️","timer_clock":"⏲️","mantelpiece_clock":"🕰️","clock12":"🕛","clock1230":"🕧","clock1":"🕐","clock130":"🕜","clock2":"🕑","clock230":"🕝","clock3":"🕒","clock330":"🕞","clock4":"🕓","clock430":"🕟","clock5":"🕔","clock530":"🕠","clock6":"🕕","clock630":"🕡","clock7":"🕖","clock730":"🕢","clock8":"🕗","clock830":"🕣","clock9":"🕘","clock930":"🕤","clock10":"🕙","clock1030":"🕥","clock11":"🕚","clock1130":"🕦","new_moon":"🌑","waxing_crescent_moon":"🌒","first_quarter_moon":"🌓","moon":"🌔","waxing_gibbous_moon":"🌔","full_moon":"🌕","waning_gibbous_moon":"🌖","last_quarter_moon":"🌗","waning_crescent_moon":"🌘","crescent_moon":"🌙","new_moon_with_face":"🌚","first_quarter_moon_with_face":"🌛","last_quarter_moon_with_face":"🌜","thermometer":"🌡️","sunny":"☀️","full_moon_with_face":"🌝","sun_with_face":"🌞","ringed_planet":"🪐","star":"⭐","star2":"🌟","stars":"🌠","milky_way":"🌌","cloud":"☁️","partly_sunny":"⛅","cloud_with_lightning_and_rain":"⛈️","sun_behind_small_cloud":"🌤️","sun_behind_large_cloud":"🌥️","sun_behind_rain_cloud":"🌦️","cloud_with_rain":"🌧️","cloud_with_snow":"🌨️","cloud_with_lightning":"🌩️","tornado":"🌪️","fog":"🌫️","wind_face":"🌬️","cyclone":"🌀","rainbow":"🌈","closed_umbrella":"🌂","open_umbrella":"☂️","umbrella":"☔","parasol_on_ground":"⛱️","zap":"⚡","snowflake":"❄️","snowman_with_snow":"☃️","snowman":"⛄","comet":"☄️","fire":"🔥","droplet":"💧","ocean":"🌊","jack_o_lantern":"🎃","christmas_tree":"🎄","fireworks":"🎆","sparkler":"🎇","firecracker":"🧨","sparkles":"✨","balloon":"🎈","tada":"🎉","confetti_ball":"🎊","tanabata_tree":"🎋","bamboo":"🎍","dolls":"🎎","flags":"🎏","wind_chime":"🎐","rice_scene":"🎑","red_envelope":"🧧","ribbon":"🎀","gift":"🎁","reminder_ribbon":"🎗️","tickets":"🎟️","ticket":"🎫","medal_military":"🎖️","trophy":"🏆","medal_sports":"🏅","1st_place_medal":"🥇","2nd_place_medal":"🥈","3rd_place_medal":"🥉","soccer":"⚽","baseball":"⚾","softball":"🥎","basketball":"🏀","volleyball":"🏐","football":"🏈","rugby_football":"🏉","tennis":"🎾","flying_disc":"🥏","bowling":"🎳","cricket_game":"🏏","field_hockey":"🏑","ice_hockey":"🏒","lacrosse":"🥍","ping_pong":"🏓","badminton":"🏸","boxing_glove":"🥊","martial_arts_uniform":"🥋","goal_net":"🥅","golf":"⛳","ice_skate":"⛸️","fishing_pole_and_fish":"🎣","diving_mask":"🤿","running_shirt_with_sash":"🎽","ski":"🎿","sled":"🛷","curling_stone":"🥌","dart":"🎯","yo_yo":"🪀","kite":"🪁","gun":"🔫","8ball":"🎱","crystal_ball":"🔮","magic_wand":"🪄","video_game":"🎮","joystick":"🕹️","slot_machine":"🎰","game_die":"🎲","jigsaw":"🧩","teddy_bear":"🧸","pinata":"🪅","mirror_ball":"🪩","nesting_dolls":"🪆","spades":"♠️","hearts":"♥️","diamonds":"♦️","clubs":"♣️","chess_pawn":"♟️","black_joker":"🃏","mahjong":"🀄","flower_playing_cards":"🎴","performing_arts":"🎭","framed_picture":"🖼️","art":"🎨","thread":"🧵","sewing_needle":"🪡","yarn":"🧶","knot":"🪢","eyeglasses":"👓","dark_sunglasses":"🕶️","goggles":"🥽","lab_coat":"🥼","safety_vest":"🦺","necktie":"👔","shirt":"👕","tshirt":"👕","jeans":"👖","scarf":"🧣","gloves":"🧤","coat":"🧥","socks":"🧦","dress":"👗","kimono":"👘","sari":"🥻","one_piece_swimsuit":"🩱","swim_brief":"🩲","shorts":"🩳","bikini":"👙","womans_clothes":"👚","folding_hand_fan":"🪭","purse":"👛","handbag":"👜","pouch":"👝","shopping":"🛍️","school_satchel":"🎒","thong_sandal":"🩴","mans_shoe":"👞","shoe":"👞","athletic_shoe":"👟","hiking_boot":"🥾","flat_shoe":"🥿","high_heel":"👠","sandal":"👡","ballet_shoes":"🩰","boot":"👢","hair_pick":"🪮","crown":"👑","womans_hat":"👒","tophat":"🎩","mortar_board":"🎓","billed_cap":"🧢","military_helmet":"🪖","rescue_worker_helmet":"⛑️","prayer_beads":"📿","lipstick":"💄","ring":"💍","gem":"💎","mute":"🔇","speaker":"🔈","sound":"🔉","loud_sound":"🔊","loudspeaker":"📢","mega":"📣","postal_horn":"📯","bell":"🔔","no_bell":"🔕","musical_score":"🎼","musical_note":"🎵","notes":"🎶","studio_microphone":"🎙️","level_slider":"🎚️","control_knobs":"🎛️","microphone":"🎤","headphones":"🎧","radio":"📻","saxophone":"🎷","accordion":"🪗","guitar":"🎸","musical_keyboard":"🎹","trumpet":"🎺","violin":"🎻","banjo":"🪕","drum":"🥁","long_drum":"🪘","maracas":"🪇","flute":"🪈","iphone":"📱","calling":"📲","phone":"☎️","telephone":"☎️","telephone_receiver":"📞","pager":"📟","fax":"📠","battery":"🔋","low_battery":"🪫","electric_plug":"🔌","computer":"💻","desktop_computer":"🖥️","printer":"🖨️","keyboard":"⌨️","computer_mouse":"🖱️","trackball":"🖲️","minidisc":"💽","floppy_disk":"💾","cd":"💿","dvd":"📀","abacus":"🧮","movie_camera":"🎥","film_strip":"🎞️","film_projector":"📽️","clapper":"🎬","tv":"📺","camera":"📷","camera_flash":"📸","video_camera":"📹","vhs":"📼","mag":"🔍","mag_right":"🔎","candle":"🕯️","bulb":"💡","flashlight":"🔦","izakaya_lantern":"🏮","lantern":"🏮","diya_lamp":"🪔","notebook_with_decorative_cover":"📔","closed_book":"📕","book":"📖","open_book":"📖","green_book":"📗","blue_book":"📘","orange_book":"📙","books":"📚","notebook":"📓","ledger":"📒","page_with_curl":"📃","scroll":"📜","page_facing_up":"📄","newspaper":"📰","newspaper_roll":"🗞️","bookmark_tabs":"📑","bookmark":"🔖","label":"🏷️","moneybag":"💰","coin":"🪙","yen":"💴","dollar":"💵","euro":"💶","pound":"💷","money_with_wings":"💸","credit_card":"💳","receipt":"🧾","chart":"💹","envelope":"✉️","email":"📧","e-mail":"📧","incoming_envelope":"📨","envelope_with_arrow":"📩","outbox_tray":"📤","inbox_tray":"📥","package":"📦","mailbox":"📫","mailbox_closed":"📪","mailbox_with_mail":"📬","mailbox_with_no_mail":"📭","postbox":"📮","ballot_box":"🗳️","pencil2":"✏️","black_nib":"✒️","fountain_pen":"🖋️","pen":"🖊️","paintbrush":"🖌️","crayon":"🖍️","memo":"📝","pencil":"📝","briefcase":"💼","file_folder":"📁","open_file_folder":"📂","card_index_dividers":"🗂️","date":"📅","calendar":"📆","spiral_notepad":"🗒️","spiral_calendar":"🗓️","card_index":"📇","chart_with_upwards_trend":"📈","chart_with_downwards_trend":"📉","bar_chart":"📊","clipboard":"📋","pushpin":"📌","round_pushpin":"📍","paperclip":"📎","paperclips":"🖇️","straight_ruler":"📏","triangular_ruler":"📐","scissors":"✂️","card_file_box":"🗃️","file_cabinet":"🗄️","wastebasket":"🗑️","lock":"🔒","unlock":"🔓","lock_with_ink_pen":"🔏","closed_lock_with_key":"🔐","key":"🔑","old_key":"🗝️","hammer":"🔨","axe":"🪓","pick":"⛏️","hammer_and_pick":"⚒️","hammer_and_wrench":"🛠️","dagger":"🗡️","crossed_swords":"⚔️","bomb":"💣","boomerang":"🪃","bow_and_arrow":"🏹","shield":"🛡️","carpentry_saw":"🪚","wrench":"🔧","screwdriver":"🪛","nut_and_bolt":"🔩","gear":"⚙️","clamp":"🗜️","balance_scale":"⚖️","probing_cane":"🦯","link":"🔗","chains":"⛓️","hook":"🪝","toolbox":"🧰","magnet":"🧲","ladder":"🪜","alembic":"⚗️","test_tube":"🧪","petri_dish":"🧫","dna":"🧬","microscope":"🔬","telescope":"🔭","satellite":"📡","syringe":"💉","drop_of_blood":"🩸","pill":"💊","adhesive_bandage":"🩹","crutch":"🩼","stethoscope":"🩺","x_ray":"🩻","door":"🚪","elevator":"🛗","mirror":"🪞","window":"🪟","bed":"🛏️","couch_and_lamp":"🛋️","chair":"🪑","toilet":"🚽","plunger":"🪠","shower":"🚿","bathtub":"🛁","mouse_trap":"🪤","razor":"🪒","lotion_bottle":"🧴","safety_pin":"🧷","broom":"🧹","basket":"🧺","roll_of_paper":"🧻","bucket":"🪣","soap":"🧼","bubbles":"🫧","toothbrush":"🪥","sponge":"🧽","fire_extinguisher":"🧯","shopping_cart":"🛒","smoking":"🚬","coffin":"⚰️","headstone":"🪦","funeral_urn":"⚱️","nazar_amulet":"🧿","hamsa":"🪬","moyai":"🗿","placard":"🪧","identification_card":"🪪","atm":"🏧","put_litter_in_its_place":"🚮","potable_water":"🚰","wheelchair":"♿","mens":"🚹","womens":"🚺","restroom":"🚻","baby_symbol":"🚼","wc":"🚾","passport_control":"🛂","customs":"🛃","baggage_claim":"🛄","left_luggage":"🛅","warning":"⚠️","children_crossing":"🚸","no_entry":"⛔","no_entry_sign":"🚫","no_bicycles":"🚳","no_smoking":"🚭","do_not_litter":"🚯","non-potable_water":"🚱","no_pedestrians":"🚷","no_mobile_phones":"📵","underage":"🔞","radioactive":"☢️","biohazard":"☣️","arrow_up":"⬆️","arrow_upper_right":"↗️","arrow_right":"➡️","arrow_lower_right":"↘️","arrow_down":"⬇️","arrow_lower_left":"↙️","arrow_left":"⬅️","arrow_upper_left":"↖️","arrow_up_down":"↕️","left_right_arrow":"↔️","leftwards_arrow_with_hook":"↩️","arrow_right_hook":"↪️","arrow_heading_up":"⤴️","arrow_heading_down":"⤵️","arrows_clockwise":"🔃","arrows_counterclockwise":"🔄","back":"🔙","end":"🔚","on":"🔛","soon":"🔜","top":"🔝","place_of_worship":"🛐","atom_symbol":"⚛️","om":"🕉️","star_of_david":"✡️","wheel_of_dharma":"☸️","yin_yang":"☯️","latin_cross":"✝️","orthodox_cross":"☦️","star_and_crescent":"☪️","peace_symbol":"☮️","menorah":"🕎","six_pointed_star":"🔯","khanda":"🪯","aries":"♈","taurus":"♉","gemini":"♊","cancer":"♋","leo":"♌","virgo":"♍","libra":"♎","scorpius":"♏","sagittarius":"♐","capricorn":"♑","aquarius":"♒","pisces":"♓","ophiuchus":"⛎","twisted_rightwards_arrows":"🔀","repeat":"🔁","repeat_one":"🔂","arrow_forward":"▶️","fast_forward":"⏩","next_track_button":"⏭️","play_or_pause_button":"⏯️","arrow_backward":"◀️","rewind":"⏪","previous_track_button":"⏮️","arrow_up_small":"🔼","arrow_double_up":"⏫","arrow_down_small":"🔽","arrow_double_down":"⏬","pause_button":"⏸️","stop_button":"⏹️","record_button":"⏺️","eject_button":"⏏️","cinema":"🎦","low_brightness":"🔅","high_brightness":"🔆","signal_strength":"📶","wireless":"🛜","vibration_mode":"📳","mobile_phone_off":"📴","female_sign":"♀️","male_sign":"♂️","transgender_symbol":"⚧️","heavy_multiplication_x":"✖️","heavy_plus_sign":"➕","heavy_minus_sign":"➖","heavy_division_sign":"➗","heavy_equals_sign":"🟰","infinity":"♾️","bangbang":"‼️","interrobang":"⁉️","question":"❓","grey_question":"❔","grey_exclamation":"❕","exclamation":"❗","heavy_exclamation_mark":"❗","wavy_dash":"〰️","currency_exchange":"💱","heavy_dollar_sign":"💲","medical_symbol":"⚕️","recycle":"♻️","fleur_de_lis":"⚜️","trident":"🔱","name_badge":"📛","beginner":"🔰","o":"⭕","white_check_mark":"✅","ballot_box_with_check":"☑️","heavy_check_mark":"✔️","x":"❌","negative_squared_cross_mark":"❎","curly_loop":"➰","loop":"➿","part_alternation_mark":"〽️","eight_spoked_asterisk":"✳️","eight_pointed_black_star":"✴️","sparkle":"❇️","copyright":"©️","registered":"®️","tm":"™️","hash":"#️⃣","asterisk":"*️⃣","zero":"0️⃣","one":"1️⃣","two":"2️⃣","three":"3️⃣","four":"4️⃣","five":"5️⃣","six":"6️⃣","seven":"7️⃣","eight":"8️⃣","nine":"9️⃣","keycap_ten":"🔟","capital_abcd":"🔠","abcd":"🔡","symbols":"🔣","abc":"🔤","a":"🅰️","ab":"🆎","b":"🅱️","cl":"🆑","cool":"🆒","free":"🆓","information_source":"ℹ️","id":"🆔","m":"Ⓜ️","new":"🆕","ng":"🆖","o2":"🅾️","ok":"🆗","parking":"🅿️","sos":"🆘","up":"🆙","vs":"🆚","koko":"🈁","sa":"🈂️","u6708":"🈷️","u6709":"🈶","u6307":"🈯","ideograph_advantage":"🉐","u5272":"🈹","u7121":"🈚","u7981":"🈲","accept":"🉑","u7533":"🈸","u5408":"🈴","u7a7a":"🈳","congratulations":"㊗️","secret":"㊙️","u55b6":"🈺","u6e80":"🈵","red_circle":"🔴","orange_circle":"🟠","yellow_circle":"🟡","green_circle":"🟢","large_blue_circle":"🔵","purple_circle":"🟣","brown_circle":"🟤","black_circle":"⚫","white_circle":"⚪","red_square":"🟥","orange_square":"🟧","yellow_square":"🟨","green_square":"🟩","blue_square":"🟦","purple_square":"🟪","brown_square":"🟫","black_large_square":"⬛","white_large_square":"⬜","black_medium_square":"◼️","white_medium_square":"◻️","black_medium_small_square":"◾","white_medium_small_square":"◽","black_small_square":"▪️","white_small_square":"▫️","large_orange_diamond":"🔶","large_blue_diamond":"🔷","small_orange_diamond":"🔸","small_blue_diamond":"🔹","small_red_triangle":"🔺","small_red_triangle_down":"🔻","diamond_shape_with_a_dot_inside":"💠","radio_button":"🔘","white_square_button":"🔳","black_square_button":"🔲","checkered_flag":"🏁","triangular_flag_on_post":"🚩","crossed_flags":"🎌","black_flag":"🏴","white_flag":"🏳️","rainbow_flag":"🏳️‍🌈","transgender_flag":"🏳️‍⚧️","pirate_flag":"🏴‍☠️","ascension_island":"🇦🇨","andorra":"🇦🇩","united_arab_emirates":"🇦🇪","afghanistan":"🇦🇫","antigua_barbuda":"🇦🇬","anguilla":"🇦🇮","albania":"🇦🇱","armenia":"🇦🇲","angola":"🇦🇴","antarctica":"🇦🇶","argentina":"🇦🇷","american_samoa":"🇦🇸","austria":"🇦🇹","australia":"🇦🇺","aruba":"🇦🇼","aland_islands":"🇦🇽","azerbaijan":"🇦🇿","bosnia_herzegovina":"🇧🇦","barbados":"🇧🇧","bangladesh":"🇧🇩","belgium":"🇧🇪","burkina_faso":"🇧🇫","bulgaria":"🇧🇬","bahrain":"🇧🇭","burundi":"🇧🇮","benin":"🇧🇯","st_barthelemy":"🇧🇱","bermuda":"🇧🇲","brunei":"🇧🇳","bolivia":"🇧🇴","caribbean_netherlands":"🇧🇶","brazil":"🇧🇷","bahamas":"🇧🇸","bhutan":"🇧🇹","bouvet_island":"🇧🇻","botswana":"🇧🇼","belarus":"🇧🇾","belize":"🇧🇿","canada":"🇨🇦","cocos_islands":"🇨🇨","congo_kinshasa":"🇨🇩","central_african_republic":"🇨🇫","congo_brazzaville":"🇨🇬","switzerland":"🇨🇭","cote_divoire":"🇨🇮","cook_islands":"🇨🇰","chile":"🇨🇱","cameroon":"🇨🇲","cn":"🇨🇳","colombia":"🇨🇴","clipperton_island":"🇨🇵","costa_rica":"🇨🇷","cuba":"🇨🇺","cape_verde":"🇨🇻","curacao":"🇨🇼","christmas_island":"🇨🇽","cyprus":"🇨🇾","czech_republic":"🇨🇿","de":"🇩🇪","diego_garcia":"🇩🇬","djibouti":"🇩🇯","denmark":"🇩🇰","dominica":"🇩🇲","dominican_republic":"🇩🇴","algeria":"🇩🇿","ceuta_melilla":"🇪🇦","ecuador":"🇪🇨","estonia":"🇪🇪","egypt":"🇪🇬","western_sahara":"🇪🇭","eritrea":"🇪🇷","es":"🇪🇸","ethiopia":"🇪🇹","eu":"🇪🇺","european_union":"🇪🇺","finland":"🇫🇮","fiji":"🇫🇯","falkland_islands":"🇫🇰","micronesia":"🇫🇲","faroe_islands":"🇫🇴","fr":"🇫🇷","gabon":"🇬🇦","gb":"🇬🇧","uk":"🇬🇧","grenada":"🇬🇩","georgia":"🇬🇪","french_guiana":"🇬🇫","guernsey":"🇬🇬","ghana":"🇬🇭","gibraltar":"🇬🇮","greenland":"🇬🇱","gambia":"🇬🇲","guinea":"🇬🇳","guadeloupe":"🇬🇵","equatorial_guinea":"🇬🇶","greece":"🇬🇷","south_georgia_south_sandwich_islands":"🇬🇸","guatemala":"🇬🇹","guam":"🇬🇺","guinea_bissau":"🇬🇼","guyana":"🇬🇾","hong_kong":"🇭🇰","heard_mcdonald_islands":"🇭🇲","honduras":"🇭🇳","croatia":"🇭🇷","haiti":"🇭🇹","hungary":"🇭🇺","canary_islands":"🇮🇨","indonesia":"🇮🇩","ireland":"🇮🇪","israel":"🇮🇱","isle_of_man":"🇮🇲","india":"🇮🇳","british_indian_ocean_territory":"🇮🇴","iraq":"🇮🇶","iran":"🇮🇷","iceland":"🇮🇸","it":"🇮🇹","jersey":"🇯🇪","jamaica":"🇯🇲","jordan":"🇯🇴","jp":"🇯🇵","kenya":"🇰🇪","kyrgyzstan":"🇰🇬","cambodia":"🇰🇭","kiribati":"🇰🇮","comoros":"🇰🇲","st_kitts_nevis":"🇰🇳","north_korea":"🇰🇵","kr":"🇰🇷","kuwait":"🇰🇼","cayman_islands":"🇰🇾","kazakhstan":"🇰🇿","laos":"🇱🇦","lebanon":"🇱🇧","st_lucia":"🇱🇨","liechtenstein":"🇱🇮","sri_lanka":"🇱🇰","liberia":"🇱🇷","lesotho":"🇱🇸","lithuania":"🇱🇹","luxembourg":"🇱🇺","latvia":"🇱🇻","libya":"🇱🇾","morocco":"🇲🇦","monaco":"🇲🇨","moldova":"🇲🇩","montenegro":"🇲🇪","st_martin":"🇲🇫","madagascar":"🇲🇬","marshall_islands":"🇲🇭","macedonia":"🇲🇰","mali":"🇲🇱","myanmar":"🇲🇲","mongolia":"🇲🇳","macau":"🇲🇴","northern_mariana_islands":"🇲🇵","martinique":"🇲🇶","mauritania":"🇲🇷","montserrat":"🇲🇸","malta":"🇲🇹","mauritius":"🇲🇺","maldives":"🇲🇻","malawi":"🇲🇼","mexico":"🇲🇽","malaysia":"🇲🇾","mozambique":"🇲🇿","namibia":"🇳🇦","new_caledonia":"🇳🇨","niger":"🇳🇪","norfolk_island":"🇳🇫","nigeria":"🇳🇬","nicaragua":"🇳🇮","netherlands":"🇳🇱","norway":"🇳🇴","nepal":"🇳🇵","nauru":"🇳🇷","niue":"🇳🇺","new_zealand":"🇳🇿","oman":"🇴🇲","panama":"🇵🇦","peru":"🇵🇪","french_polynesia":"🇵🇫","papua_new_guinea":"🇵🇬","philippines":"🇵🇭","pakistan":"🇵🇰","poland":"🇵🇱","st_pierre_miquelon":"🇵🇲","pitcairn_islands":"🇵🇳","puerto_rico":"🇵🇷","palestinian_territories":"🇵🇸","portugal":"🇵🇹","palau":"🇵🇼","paraguay":"🇵🇾","qatar":"🇶🇦","reunion":"🇷🇪","romania":"🇷🇴","serbia":"🇷🇸","ru":"🇷🇺","rwanda":"🇷🇼","saudi_arabia":"🇸🇦","solomon_islands":"🇸🇧","seychelles":"🇸🇨","sudan":"🇸🇩","sweden":"🇸🇪","singapore":"🇸🇬","st_helena":"🇸🇭","slovenia":"🇸🇮","svalbard_jan_mayen":"🇸🇯","slovakia":"🇸🇰","sierra_leone":"🇸🇱","san_marino":"🇸🇲","senegal":"🇸🇳","somalia":"🇸🇴","suriname":"🇸🇷","south_sudan":"🇸🇸","sao_tome_principe":"🇸🇹","el_salvador":"🇸🇻","sint_maarten":"🇸🇽","syria":"🇸🇾","swaziland":"🇸🇿","tristan_da_cunha":"🇹🇦","turks_caicos_islands":"🇹🇨","chad":"🇹🇩","french_southern_territories":"🇹🇫","togo":"🇹🇬","thailand":"🇹🇭","tajikistan":"🇹🇯","tokelau":"🇹🇰","timor_leste":"🇹🇱","turkmenistan":"🇹🇲","tunisia":"🇹🇳","tonga":"🇹🇴","tr":"🇹🇷","trinidad_tobago":"🇹🇹","tuvalu":"🇹🇻","taiwan":"🇹🇼","tanzania":"🇹🇿","ukraine":"🇺🇦","uganda":"🇺🇬","us_outlying_islands":"🇺🇲","united_nations":"🇺🇳","us":"🇺🇸","uruguay":"🇺🇾","uzbekistan":"🇺🇿","vatican_city":"🇻🇦","st_vincent_grenadines":"🇻🇨","venezuela":"🇻🇪","british_virgin_islands":"🇻🇬","us_virgin_islands":"🇻🇮","vietnam":"🇻🇳","vanuatu":"🇻🇺","wallis_futuna":"🇼🇫","samoa":"🇼🇸","kosovo":"🇽🇰","yemen":"🇾🇪","mayotte":"🇾🇹","south_africa":"🇿🇦","zambia":"🇿🇲","zimbabwe":"🇿🇼","england":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","scotland":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","wales":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"};
+
+  const shortcodePattern = /:([+-]1|[a-z0-9_+-]+):/gi;
+  const skipSelector = "code, pre, kbd, samp, script, style, textarea";
+  const roots = document.querySelectorAll("[data-emoji-shortcodes]");
+
+  function renderShortcodes(value) {
+    return value.replace(shortcodePattern, (match, shortcode) => emojiShortcodes[shortcode.toLowerCase()] || match);
+  }
+
+  function enhance(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !shortcodePattern.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        shortcodePattern.lastIndex = 0;
+        if (node.parentElement?.closest(skipSelector)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) node.nodeValue = renderShortcodes(node.nodeValue || "");
+  }
+
+  for (const root of roots) enhance(root);
+})();</script><script type="module">var e=[`.prose h1[id]`,`.prose h2[id]`,`.prose h3[id]`,`.prose h4[id]`,`.prose h5[id]`,`.prose h6[id]`].join(`, `);document.querySelectorAll(e).forEach(e=>{if(e.querySelector(`a.heading-anchor`))return;let t=document.createElement(`a`);for(t.className=`heading-anchor`,t.href=`#${e.id}`;e.firstChild;)t.appendChild(e.firstChild);e.appendChild(t)});</script><script type="module" src="/_astro/EChartsEnhancer.astro_astro_type_script_index_0_lang.CVUOkBi5.js"></script><script type="module">[...document.querySelectorAll(`.prose pre > code`)].forEach(e=>{let t=e.parentElement;if(!t||t.parentElement?.classList.contains(`code-copy-frame`))return;let n=document.createElement(`div`),r=document.createElement(`button`);n.className=`code-copy-frame`,r.type=`button`,r.className=`code-copy-button`,r.textContent=`Copy`,r.setAttribute(`aria-label`,`Copy code`),t.replaceWith(n),n.append(r,t),r.addEventListener(`click`,async()=>{await navigator.clipboard.writeText(e.textContent||``),r.textContent=`Copied`,window.setTimeout(()=>{r.textContent=`Copy`},1200)})});</script><dialog class="search-dialog" data-search-dialog aria-label="Search"><section class="search-modal" data-search-root data-search-mode="modal" data-search-limit="8"><div class="search-modal-header"><p class="utility-note text-xs">full-text search</p><button class="search-close" type="button" data-search-close aria-label="Close search">Esc</button></div><label class="search-field"><span class="sr-only">Search posts</span><input data-search-input type="search" placeholder="Search posts..." autocomplete="off"></label><p class="search-status" data-search-status>Type at least 2 characters to search.</p><ol class="search-results" data-search-results></ol></section></dialog><script type="module" src="/_astro/SearchEnhancer.astro_astro_type_script_index_0_lang.BE8U6X6I.js"></script><script id="blog-theme-diagrams" type="application/json">{"mermaid":true,"plantuml":{"enabled":true,"serverUrl":"https://www.plantuml.com/plantuml/svg"}}</script><script type="module" src="/_astro/DiagramEnhancer.astro_astro_type_script_index_0_lang.DN3pt0_d.js"></script></body></html>

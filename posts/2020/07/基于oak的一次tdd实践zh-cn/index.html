@@ -1,0 +1,876 @@
+<!DOCTYPE html><html lang="zh-CN" data-default-theme="system"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content><link rel="icon" href="/avatars/avatar.svg"><link rel="apple-touch-icon" href="/avatars/avatar.svg"><title>基于 oak 的一次 TDD 实践 - 谷中仁的博客</title><script>(function(){const defaultMode = "system";
+
+      const stored = localStorage.getItem("theme");
+      const mode = stored || defaultMode;
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      document.documentElement.classList.toggle("dark", mode === "dark" || (mode === "system" && prefersDark));
+      document.documentElement.dataset.theme = mode;
+    })();</script><link rel="stylesheet" href="/_astro/BaseLayout.B6ek5H76.css"></head><body class="min-h-dvh bg-[var(--page-bg)] text-[var(--text-body)] antialiased"><header class="fixed inset-x-0 top-0 z-50 border-b border-[var(--border-soft)] bg-[var(--page-bg)]/90 backdrop-blur"><div class="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6"><a href="/" class="flex min-w-0 items-center gap-2 font-semibold text-[var(--text-strong)]" aria-label="谷中仁的博客"><img class="avatar-mark shrink-0 rounded-full object-cover size-7 text-xs" src="/avatars/avatar.svg" alt="谷中仁"><span class="truncate">谷中仁的博客</span></a><nav class="header-nav hidden items-center text-sm font-medium text-[var(--text-muted)] md:flex" aria-label="Primary"><a class="hover:text-[var(--text-strong)]" href="/posts">文章</a><a class="hover:text-[var(--text-strong)]" href="/tags">标签</a><a class="hover:text-[var(--text-strong)]" href="/categories">分类</a><a class="hover:text-[var(--text-strong)]" href="https://guzhongren.github.io/slides/" target="_blank" rel="noopener noreferrer">演讲</a><a class="hover:text-[var(--text-strong)]" href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" target="_blank" rel="noopener noreferrer">知识图谱</a><a class="hover:text-[var(--text-strong)]" href="/about">关于</a><button class="search-trigger" type="button" data-search-trigger aria-label="Open search"><span>Search</span><kbd>⌘K</kbd></button><button type="button" class="grid size-8 cursor-pointer place-items-center rounded-full border border-[var(--border-soft)] text-sm text-[var(--text-muted)] hover:text-[var(--text-strong)]" aria-label="Toggle color theme" data-theme-toggle>◐</button><script type="module">var e=document.querySelector(`[data-theme-toggle]`),t=[`system`,`light`,`dark`];e?.addEventListener(`click`,()=>{let e=document.documentElement.dataset.theme||`system`,n=t[(t.indexOf(e)+1)%t.length];localStorage.setItem(`theme`,n),document.documentElement.dataset.theme=n;let r=window.matchMedia(`(prefers-color-scheme: dark)`).matches;document.documentElement.classList.toggle(`dark`,n===`dark`||n===`system`&&r)});</script></nav><div class="flex items-center gap-3 md:hidden"><button class="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--text-strong)]" type="button" data-search-trigger>Search</button><button type="button" class="grid size-8 cursor-pointer place-items-center rounded-full border border-[var(--border-soft)] text-sm text-[var(--text-muted)] hover:text-[var(--text-strong)]" aria-label="Toggle color theme" data-theme-toggle>◐</button></div></div></header><div class="mx-auto grid min-h-dvh max-w-7xl grid-cols-1 pt-14 lg:grid-cols-[2rem_minmax(0,1fr)_2rem]"><div class="gutter-stripes hidden border-x border-[var(--border-soft)] lg:block" aria-hidden="true"></div><main id="main-content"><div class="mx-auto grid max-w-6xl grid-cols-1 xl:grid-cols-[minmax(0,1fr)_18rem]"><article class="min-w-0 px-4 py-12 sm:px-6 lg:px-10" data-pagefind-body><p class="font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]"><a class="hover:text-[var(--accent)]" href="/categories/deno" data-pagefind-meta="category">deno</a></p><h1 class="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-[var(--text-strong)]">基于 oak 的一次 TDD 实践</h1><p class="mt-5 max-w-2xl text-base/7 text-[var(--text-muted)]"></p><div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-[var(--text-muted)]"><time datetime="2020-07-24T14:21:11.000Z" data-pagefind-meta="date">2020/07/24</time></div><div class="mt-6"><div class="flex flex-wrap gap-2"><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/deno">deno</a><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/oak">oak</a><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/tdd">tdd</a><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/git">git</a><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/mvc">mvc</a><a class="rounded-full border border-[var(--border-soft)] px-2.5 py-1 font-mono text-xs text-[var(--text-muted)] hover:text-[var(--accent)]" href="/tags/fetch">fetch</a></div></div><img class="mt-10 aspect-[16/8] w-full rounded-xl border border-[var(--border-soft)] object-cover" src="https://wx2.sbimg.cn/2020/07/28/PpGwl.jpg" alt=""><div class="prose mt-10 max-w-none" data-emoji-shortcodes><h2 id="talking-is-cheap-show-me-code"><code>Talking is cheap! Show me code!</code></h2>
+<blockquote>
+<p><a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">源码地址：<code>Deno Restful API With PostgreSql &#x26; TDD</code></a></p>
+</blockquote>
+<h2 id="简介">简介</h2>
+<p><code>Deno</code> 是<code>ry(Ryan Dahl)</code>的新项目，近期发布了其 <code>1.0.0</code> 版，在开发圈子里掀起了不小的风浪，与之创建的 Node 运行时有异曲同工之妙，<code>真香定律</code>又一次出现了。</p>
+<p>在软件开发中，为了开发出可维护，高质量的程序，使用<code>TDD</code>开发可以有效提升项目质量和开发效率。</p>
+<p>在这篇博客中，我将使用<code>Deno</code>, <code>Typescript</code>, <code>PostgreSql</code>来开发一个用户管理的 <code>API</code> 接口。</p>
+<h2 id="deno--oak">Deno &#x26; oak</h2>
+<p>下面都是来自官网的介绍，写的很通俗易懂，就不用我来解读了。</p>
+<h3 id="deno">Deno</h3>
+<blockquote>
+<p>Deno 是一个简单、现代且安全的 JavaScript 和 TypeScript 运行时环境，其基于 V8 引擎并采用 Rust 编程语言构建。</p>
+<ul>
+<li>默认安全设置。除非 显式开启，否则没有文件、网络，也不能访问运行环境。</li>
+<li>天生支持 TypeScript。</li>
+<li>只有一个单一的可执行文件。</li>
+<li>自带实用工具，例如依赖检查器（deno info）和 代码格式化工具（deno fmt）。</li>
+<li>有一套经过审核（审计）的标准模块， 确保与 Deno 兼容： deno.land/std。</li>
+</ul>
+</blockquote>
+<h3 id="oak"><a href="https://github.com/oakserver/oak">oak</a></h3>
+<blockquote>
+<p>A middleware framework for Deno’s net server 🦕</p>
+</blockquote>
+<p><code>oak</code> 是借鉴 <code>Node</code> 框架<code>Koa</code>的设计思路开发的一个高性能的框架，其<code>洋葱模型</code>式的中间件等思路在开发中使用起来也是非常方便。</p>
+<h2 id="目标">目标</h2>
+<p>基于对以上的基础知识的认识，我们计划开发一个用户管理的<code>API</code>平台；对于后端简单来说，就是提供关于用户的增删改查（<code>CURD</code>）操作。所以我们的主要目标就是提供 4 个对用户<code>CURD</code>的接口。</p>
+<h2 id="工具">工具</h2>
+<blockquote>
+<p>工欲善其事，必先利其器。</p>
+</blockquote>
+<h3 id="开发工具">开发工具</h3>
+<p><a href="https://code.visualstudio.com/"><code>VS Code</code></a>, <a href="https://www.docker.com/"><code>Docker</code></a></p>
+<h3 id="环境工具">环境工具</h3>
+<p><a href="https://deno.land/"><code>Deno</code></a>, <a href="https://www.typescriptlang.org/"><code>Typescript</code></a>, <a href="https://nodejs.org/"><code>Node</code></a></p>
+<blockquote>
+<p>注： Node 是用来调试 Deno 的</p>
+</blockquote>
+<h2 id="基础环境信息">基础环境信息</h2>
+<p>我的环境信息如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> node</span><span style="color:#79B8FF"> -v</span></span>
+<span class="line"><span style="color:#B392F0">v12.13.0</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> deno</span><span style="color:#79B8FF"> --version</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#79B8FF"> 1.2.0</span></span>
+<span class="line"><span style="color:#B392F0">v8</span><span style="color:#79B8FF"> 8.5.216</span></span>
+<span class="line"><span style="color:#B392F0">typescript</span><span style="color:#79B8FF"> 3.9.2</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> docker</span><span style="color:#79B8FF"> --version</span></span>
+<span class="line"><span style="color:#B392F0">Docker</span><span style="color:#9ECBFF"> version</span><span style="color:#9ECBFF"> 19.03.8,</span><span style="color:#9ECBFF"> build</span><span style="color:#9ECBFF"> afacb8b</span></span>
+<span class="line"></span></code></pre>
+<p>其他信息</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">类型</th><th align="center">版本</th><th align="center">备注</th></tr></thead><tbody><tr><td align="left"><a href="https://hub.docker.com/_/postgres">PostgreSql</a></td><td align="center">12</td><td align="center"></td></tr><tr><td align="left"><a href="https://hub.docker.com/r/dpage/pgadmin4">PGAdmin</a></td><td align="center">latest</td><td align="center"></td></tr></tbody></table>
+<h3 id="项目结构">项目结构</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> tree</span><span style="color:#79B8FF"> -L</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> deno-restful-api-with-postgresql-tdd</span></span>
+<span class="line"><span style="color:#B392F0">deno-restful-api-with-postgresql-tdd</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> .github</span><span style="color:#9ECBFF">         //</span><span style="color:#9ECBFF"> github</span><span style="color:#9ECBFF"> action</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> .vscode</span><span style="color:#9ECBFF">         //</span><span style="color:#9ECBFF"> debug</span><span style="color:#9ECBFF"> 及</span><span style="color:#9ECBFF"> vscode</span><span style="color:#9ECBFF"> 配置文件</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> LICENSE</span><span style="color:#9ECBFF">         //</span><span style="color:#9ECBFF"> 仓库许可</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> README.md</span><span style="color:#9ECBFF">       //</span><span style="color:#9ECBFF"> 项目说明，包括数据库连接，简化后的运行命令等</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> _resources</span><span style="color:#9ECBFF">      //</span><span style="color:#9ECBFF"> 基础资源</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> IaaS</span><span style="color:#9ECBFF">        //</span><span style="color:#9ECBFF"> 基础设施，docker-compose</span><span style="color:#9ECBFF"> 启动</span><span style="color:#9ECBFF"> postgresql</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> httpClient</span><span style="color:#9ECBFF">  //</span><span style="color:#9ECBFF"> http</span><span style="color:#9ECBFF"> 请求测试</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> migration</span><span style="color:#9ECBFF">   //</span><span style="color:#9ECBFF"> 负责生成数据库表</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> deps.ts</span><span style="color:#9ECBFF">         //</span><span style="color:#9ECBFF"> 项目依赖的库及项目中要用到的资源（import）</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> lock.json</span><span style="color:#9ECBFF">       //</span><span style="color:#9ECBFF"> 完整性检查与锁定文件，参考：https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> makefile</span><span style="color:#9ECBFF">        //</span><span style="color:#9ECBFF"> 将开发需要的命令行简化后目录</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> src</span><span style="color:#9ECBFF">             //</span><span style="color:#9ECBFF"> 源代码目录</span></span>
+<span class="line"><span style="color:#B392F0">└──</span><span style="color:#9ECBFF"> tests</span><span style="color:#9ECBFF">           //</span><span style="color:#9ECBFF"> 测试目录</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">5</span><span style="color:#9ECBFF"> directories,</span><span style="color:#79B8FF"> 5</span><span style="color:#9ECBFF"> files</span></span>
+<span class="line"></span></code></pre>
+<h2 id="实现过程">实现过程</h2>
+<blockquote>
+<p>先说明一下，如果要用文字写完整个开发过程个人认为是没有必要的，所以就以最开始的<code>health</code>和<code>addUser</code>(<code>post</code>接口）为例， 其他接口请参考 <a href="https://github.com/guzhongren/deno-restful-api-with-postgresql-tdd">代码实现</a>。</p>
+</blockquote>
+<h3 id="启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</h3>
+<h4 id="启动数据库">启动数据库</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> db</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ./_resources/Iaas</span><span style="color:#E1E4E8"> &#x26;&#x26; </span><span style="color:#B392F0">docker-compose</span><span style="color:#9ECBFF"> up</span><span style="color:#79B8FF"> -d</span></span>
+<span class="line"><span style="color:#B392F0">Starting</span><span style="color:#9ECBFF"> iaas_db_1</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> done</span></span>
+<span class="line"><span style="color:#B392F0">Starting</span><span style="color:#9ECBFF"> iaas_pgadmin_1</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> done</span></span></code></pre>
+<h4 id="登录pgadmin-在默认的数据库postgres中新建query并执行如下操作完成初始化数据库">登录<code>pgadmin</code>, 在默认的数据库<code>postgres</code>中新建<code>Query</code>并执行如下操作，完成初始化数据库</h4>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="sql"><code><span class="line"><span style="color:#F97583">CREATE</span><span style="color:#F97583"> TABLE</span><span style="color:#B392F0"> public</span><span style="color:#E1E4E8">.</span><span style="color:#9ECBFF">"user"</span></span>
+<span class="line"><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    id uuid </span><span style="color:#F97583">NOT NULL</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    username </span><span style="color:#F97583">character varying</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">50</span><span style="color:#E1E4E8">)  </span><span style="color:#F97583">NOT NULL</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    registration_date </span><span style="color:#F97583">timestamp without time zone</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#F97583">    password</span><span style="color:#F97583"> character varying</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">20</span><span style="color:#E1E4E8">)  </span><span style="color:#F97583">NOT NULL</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    deleted </span><span style="color:#F97583">boolean</span></span>
+<span class="line"><span style="color:#E1E4E8">);</span></span></code></pre>
+<h3 id="src-最终目录">src 最终目录</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> tree</span><span style="color:#79B8FF"> -a</span><span style="color:#79B8FF"> -L</span><span style="color:#79B8FF"> 4</span><span style="color:#9ECBFF"> src</span></span>
+<span class="line"><span style="color:#B392F0">src</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> Utils</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> client.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> config.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> controllers</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> UserController.ts</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> health.ts</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> model</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">       └──</span><span style="color:#9ECBFF"> IResponse.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> entity</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> User.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> exception</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> InvalidedParamsException.ts</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> NotFoundException.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> index.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> middlewares</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> error.ts</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   ├──</span><span style="color:#9ECBFF"> logger.ts</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> time.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> repositories</span></span>
+<span class="line"><span style="color:#B392F0">│</span><span style="color:#9ECBFF">   └──</span><span style="color:#9ECBFF"> userRepo.ts</span></span>
+<span class="line"><span style="color:#B392F0">├──</span><span style="color:#9ECBFF"> router.ts</span></span>
+<span class="line"><span style="color:#B392F0">└──</span><span style="color:#9ECBFF"> services</span></span>
+<span class="line"><span style="color:#B392F0">    ├──</span><span style="color:#9ECBFF"> UserService.ts</span></span>
+<span class="line"><span style="color:#B392F0">    └──</span><span style="color:#9ECBFF"> fetchResource.ts</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">8</span><span style="color:#9ECBFF"> directories,</span><span style="color:#79B8FF"> 16</span><span style="color:#9ECBFF"> files</span></span></code></pre>
+<p>在开始之前，我们先定义一些常用的结构体和对象，如：response，exception 等</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/controllers/model/IResponse.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> IResponse</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  success</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">; </span><span style="color:#6A737D">// 表示此次请求是否成功</span></span>
+<span class="line"><span style="color:#FFAB70">  msg</span><span style="color:#F97583">?:</span><span style="color:#B392F0"> String</span><span style="color:#E1E4E8">;     </span><span style="color:#6A737D">// 发生错误时的一些日志信息</span></span>
+<span class="line"><span style="color:#FFAB70">  data</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> any</span><span style="color:#E1E4E8">;       </span><span style="color:#6A737D">// 请求成功时返回给前端的数据</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/entity/User.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> interface</span><span style="color:#B392F0"> IUser</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#FFAB70">  id</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  username</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  password</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  registrationDate</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#FFAB70">  deleted</span><span style="color:#F97583">?:</span><span style="color:#79B8FF"> boolean</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> User</span><span style="color:#F97583"> implements</span><span style="color:#B392F0"> IUser</span><span style="color:#E1E4E8"> {}</span></span>
+<span class="line"></span></code></pre>
+<p>异常用来处理错误情况，在最终返回给用户结果的时候，我们不能将异常返回给用户，而是以一种更友好的方式返回，具体流程可以参考<code>src/middlewares/error.ts</code>这个中间件的处理方式。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/exception/InvalidedParamsException.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> InvalidedParamsException</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">message</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">    super</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Invalided parameters, please check, ${</span><span style="color:#E1E4E8">message</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/exception/NotFoundException.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> NotFoundException</span><span style="color:#F97583"> extends</span><span style="color:#B392F0"> Error</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  constructor</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">message</span><span style="color:#F97583">:</span><span style="color:#79B8FF"> string</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#79B8FF">    super</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Not found resource, ${</span><span style="color:#E1E4E8">message</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h3 id="依赖管理">依赖管理</h3>
+<p>Deno 没有像 Node 一样的诸如<code>package.json</code>来管理依赖，因为<code>Deno</code>的依赖是去中心化的，也就是以远程文件作为库，这一点和<code>Golang</code>很像。</p>
+<p>我将系统中用到的依赖存放在根目录的<code>deps.ts</code>中，在最终提交的时候做一次 <a href="https://nugine.github.io/deno-manual-cn/linking_to_external_code/integrity_checking.html"><code>完整性检查与锁定文件</code></a>, 来保证我所有的依赖在与其他协作者之间是相同的。</p>
+<p>首先导入用到的测试相关的依赖。<strong>在后面开发中用到的相关依赖请自行添加到本文件中。</strong> 比较重要的我会列出来。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  assert,</span></span>
+<span class="line"><span style="color:#E1E4E8">  equal,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "https://deno.land/std/testing/asserts.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre>
+<h3 id="测试先行">测试先行</h3>
+<p>现在<code>tests</code>目录下新建一个测试命名为<code>index.test.ts</code>, 写基本测试，证明测试和程序是可以<code>work</code>的。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { assert, equal } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">test</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Deno;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"should work"</span><span style="color:#E1E4E8">, () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> universal</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 42</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#B392F0">  equal</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">42</span><span style="color:#E1E4E8">, universal);</span></span>
+<span class="line"><span style="color:#B392F0">  assert</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">42</span><span style="color:#F97583"> ===</span><span style="color:#E1E4E8"> universal);</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h3 id="第一次运行测试">第一次运行测试</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> test</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> test</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">Check</span><span style="color:#9ECBFF"> file:///xxxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts</span></span>
+<span class="line"><span style="color:#B392F0">running</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> tests</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> should</span><span style="color:#9ECBFF"> work</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (6ms)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> result:</span><span style="color:#9ECBFF"> ok.</span><span style="color:#79B8FF"> 1</span><span style="color:#9ECBFF"> passed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> failed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> ignored</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> measured</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> filtered</span><span style="color:#9ECBFF"> out</span><span style="color:#E1E4E8"> (6ms)</span></span></code></pre>
+<h3 id="建立测试固件">建立测试固件</h3>
+<p>将测试中用到的通用的测试信息存放在测试固件（<code>testFixtures</code>）中，可以在测试中复用，且可以简化代码。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// tests/testFixtures.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> TEST_PORT</span><span style="color:#F97583"> =</span><span style="color:#79B8FF"> 9000</span></span></code></pre>
+<h3 id="health-接口">health 接口</h3>
+<p><code>health</code> 接口可以作为系统的健康检查的一个出口，在运维平台中非常实用。对于此接口，我们只需要返回一个状态<code>OK</code>即可。其他情况可忽略。那么对应的<code>Todo</code>应该如下：</p>
+<blockquote>
+<p>当访问到系统的时候，应该返回系统的状态，且为 OK。</p>
+</blockquote>
+<p>所以，测试代码如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertEquals,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Application,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Router,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { getHealthInfo } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/controllers/health.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {TEST_PORT} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '../testFixtures.ts'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">test</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Deno;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"health check"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> expectResponse</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    data: </span><span style="color:#9ECBFF">"Ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> abortController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AbortController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">signal</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> abortController;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  router.</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/health"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#B392F0">    getHealthInfo</span><span style="color:#E1E4E8">({ response });</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">routes</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">({ port: </span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#E1E4E8">, signal });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`http://127.0.0.1:${</span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#9ECBFF">}/health`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(response.ok, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> responseJSON</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(responseJSON, expectResponse);</span></span>
+<span class="line"><span style="color:#E1E4E8">  abortController.</span><span style="color:#B392F0">abort</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<h4 id="given">given</h4>
+<blockquote>
+<ul>
+<li>上面的代码中，首先声明了我们期望的数据结构，即<code>expectResponse</code>；</li>
+<li>然后创建一个应用程序和一个路由，</li>
+<li>再创建一个终止应用的控制器，且从中取到信号标识，</li>
+<li>接着， 向路由中添加一个<code>health</code>路由及其 handler；</li>
+<li>然后将路由挂在到应用程序上；</li>
+<li>监听应用程序端口，且传入应用程序信号。</li>
+</ul>
+</blockquote>
+<h4 id="when">when</h4>
+<blockquote>
+<ul>
+<li>给启动的应用发一个 get 请求，请求路径为<code>/health</code>;</li>
+</ul>
+</blockquote>
+<h4 id="then">then</h4>
+<blockquote>
+<ul>
+<li>根据 fetch 到的结果进行判定，看收到的<code>response</code>是不是和期望的一致， 且在最后终止上面的应用程序。</li>
+<li>到此，如果运行测试肯定会发生错误，解决问题的也很简单，就是去实现<code>getHealthInfo</code> handler。</li>
+</ul>
+</blockquote>
+<h4 id="实现-gethealthinfo-handler">实现 <code>getHealthInfo</code> handler</h4>
+<p>在 src/controller 下新建<code>health.ts</code>，并以最简单的方案实现上面期望的结果，如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/controllers/health.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Response, Status } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IResponse </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./model/IResponse.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#B392F0"> getHealthInfo</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> ({ </span><span style="color:#FFAB70">response</span><span style="color:#E1E4E8"> }</span><span style="color:#F97583">:</span><span style="color:#E1E4E8"> { </span><span style="color:#FFAB70">response</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Response</span><span style="color:#E1E4E8"> }) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  response.status </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Status.</span><span style="color:#79B8FF">OK</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> res</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IResponse</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    data: </span><span style="color:#9ECBFF">"Ok"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">  response.body </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> res;</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span></code></pre>
+<h4 id="运行测试">运行测试</h4>
+<p>运行测试命令，测试通过；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> test</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> test</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">Check</span><span style="color:#9ECBFF"> file://xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts</span></span>
+<span class="line"><span style="color:#B392F0">running</span><span style="color:#79B8FF"> 2</span><span style="color:#9ECBFF"> tests</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> should</span><span style="color:#9ECBFF"> work</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (6ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> health</span><span style="color:#9ECBFF"> check</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (3ms)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> result:</span><span style="color:#9ECBFF"> ok.</span><span style="color:#79B8FF"> 2</span><span style="color:#9ECBFF"> passed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> failed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> ignored</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> measured</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> filtered</span><span style="color:#9ECBFF"> out</span><span style="color:#E1E4E8"> (9ms)</span></span></code></pre>
+<p>至此，使用<code>TDD</code>完成第一个简单的<code>health</code>接口；但对外没有暴露接口，所以需要在<code>src</code>目录中实现一个对外暴露该接口的应用。</p>
+<h5 id="新建configts-做应用程序的配置管理文件">新建<code>config.ts</code>， 做应用程序的配置管理文件</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/config.ts</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> env</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> Deno.env.</span><span style="color:#B392F0">toObject</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> APP_HOST</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">APP_HOST</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "127.0.0.1"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> APP_PORT</span><span style="color:#F97583"> =</span><span style="color:#B392F0"> parseInt</span><span style="color:#E1E4E8">(env.</span><span style="color:#79B8FF">APP_PORT</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">||</span><span style="color:#79B8FF"> 8000</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> API_VERSION</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">API_VERSION</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "/api/v1"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre>
+<p>配置文件中，记录了应用程序启动的默认 host, 端口，及数据库相关的信息，最后记录了应用程序 api 的前缀。</p>
+<p>在开始之前，需要在<code>deps.ts</code>中引入所需要的库；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  Application,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Router,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Response,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Status,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Request,</span></span>
+<span class="line"><span style="color:#E1E4E8">  RouteParams,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Context,</span></span>
+<span class="line"><span style="color:#E1E4E8">  RouterContext,</span></span>
+<span class="line"><span style="color:#E1E4E8">  helpers,</span></span>
+<span class="line"><span style="color:#E1E4E8">  send,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "https://deno.land/x/oak/mod.ts"</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<h5 id="新建路由-routerts-引入heathts并绑定路由">新建路由 <code>router.ts</code>, 引入<code>Heath.ts</code>并绑定路由</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/router.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Router } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { API_VERSION } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./config.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { getHealthInfo } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./controllers/health.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">router.</span><span style="color:#B392F0">prefix</span><span style="color:#E1E4E8">(</span><span style="color:#79B8FF">API_VERSION</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">router</span></span>
+<span class="line"><span style="color:#E1E4E8">  .</span><span style="color:#B392F0">get</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/health"</span><span style="color:#E1E4E8">, getHealthInfo)</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> router;</span></span>
+<span class="line"></span></code></pre>
+<h5 id="新建indexts-建立应用程序">新建<code>index.ts</code>, 建立应用程序</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/index.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Application, send } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { APP_HOST, APP_PORT } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./config.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> router </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "./router.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#B392F0"> listenToServer</span><span style="color:#F97583"> =</span><span style="color:#F97583"> async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">app</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`Application started, and listen to ${</span><span style="color:#79B8FF">APP_HOST</span><span style="color:#9ECBFF">}:${</span><span style="color:#79B8FF">APP_PORT</span><span style="color:#9ECBFF">}`</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">    hostname: </span><span style="color:#79B8FF">APP_HOST</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    port: </span><span style="color:#79B8FF">APP_PORT</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    secure: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> function</span><span style="color:#B392F0"> createApplication</span><span style="color:#E1E4E8">()</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Promise</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Application</span><span style="color:#E1E4E8">> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">routes</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"><span style="color:#F97583">  return</span><span style="color:#79B8FF"> Promise</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">resolve</span><span style="color:#E1E4E8">(app);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">import</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">meta</span><span style="color:#E1E4E8">.main) {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> createApplication</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#B392F0"> listenToServer</span><span style="color:#E1E4E8">(app);</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h5 id="启动应用">启动应用</h5>
+<p>如果是<code>VSCode</code>， 可以使用<code>F5</code>功能键，快速启动应用，在低版本的 <code>VS Code(1.47.2 以下）</code> 中可以启动调试。也可以以下命令启动；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> dev</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#9ECBFF"> ./src/index.ts</span></span>
+<span class="line"><span style="color:#B392F0">数据库链接成功！</span></span>
+<span class="line"><span style="color:#B392F0">Application</span><span style="color:#9ECBFF"> started,</span><span style="color:#9ECBFF"> and</span><span style="color:#9ECBFF"> listen</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> 127.0.0.1:8000</span></span></code></pre>
+<h5 id="调用接口测试结果">调用接口测试结果</h5>
+<p>这里使用<code>VS Code</code> 的 <a href="https://marketplace.visualstudio.com/items?itemName=humao.rest-client"><code>Rest Client</code></a> 插件进行辅助测试。</p>
+<h6 id="请求体">请求体</h6>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// _resources/httpClient/healthCheck.http</span></span>
+<span class="line"><span>GET http://localhost:8000/api/v1/health HTTP/1.1</span></span></code></pre>
+<h6 id="请求结果">请求结果</h6>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>HTTP/1.1 200 OK</span></span>
+<span class="line"><span>content-length: 28</span></span>
+<span class="line"><span>x-response-time: 0ms</span></span>
+<span class="line"><span>content-type: application/json; charset=utf-8</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  "success": true,</span></span>
+<span class="line"><span>  "data": "Ok"</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>至此，完成第一个接口，有 <code>Oak</code> 提供应用服务，经过了<code>Unit test</code>和 <code>RestClient</code>的测试。完成了开始的<code>Todo</code>。</p>
+<h3 id="添加用户接口-adduser">添加用户接口 (<code>addUser</code>)</h3>
+<p>添加用户涉及到<code>Controller</code>, <code>Service</code> 和 <code>Repository</code>, 所以我们分三步来实现该接口。</p>
+<h4 id="controller">Controller</h4>
+<p><code>Controller</code> 是控制层，对外提供服务；添加用户接口可以为系统添加用户，那么对应的<code>Todo</code>如下：</p>
+<blockquote>
+<ul>
+<li>输入用户名和密码，返回特定数据结构的用户信息</li>
+<li>参数必须输入，否则抛异常</li>
+<li>如果输入错误参数，则抛异常</li>
+</ul>
+</blockquote>
+<p>在此过程中，我们需要用到 <a href="https://github.com/udibo/mock"><code>mock</code></a> 来 <code>mock</code> 第三方依赖。</p>
+<p>导入所需依赖，并新建<code>UserController.test.ts</code>，在<code>Coding</code> 过程中需要实现<code>UserService</code>, 但不需要实现<code>addUser</code>方法； 测试如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// tests/controllers/UserController.test.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertEquals,</span></span>
+<span class="line"><span style="color:#E1E4E8">  v4,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertThrowsAsync,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Application,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Router,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserController </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/controllers/UserController.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IResponse </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/controllers/model/IResponse.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserService </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/services/UserService.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IUser, { User } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/entity/User.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> InvalidedParamsException </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/exception/InvalidedParamsException.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {TEST_PORT} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> '../testFixtures.ts'</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">test</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Deno;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> userId</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> v4.</span><span style="color:#B392F0">generate</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> registrationDate</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">toISOString</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> mockedUser</span><span style="color:#F97583">:</span><span style="color:#B392F0"> User</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  id: userId,</span></span>
+<span class="line"><span style="color:#E1E4E8">  username: </span><span style="color:#9ECBFF">"username"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  registrationDate,</span></span>
+<span class="line"><span style="color:#E1E4E8">  deleted: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"#addUser should return added user when add user"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> queryAllStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">UserService</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(userService, </span><span style="color:#9ECBFF">"addUser"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> expectResponse</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    data: mockedUser,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">  queryAllStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedUser];</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userController.userService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> abortController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AbortController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">signal</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> abortController;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  router.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/users"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> userController.</span><span style="color:#B392F0">addUser</span><span style="color:#E1E4E8">(context);</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">routes</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">({ port: </span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#E1E4E8">, signal });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`http://127.0.0.1:${</span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#9ECBFF">}/users`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">"POST"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#9ECBFF">"name=name&#x26;password=123"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">      "Content-Type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"application/x-www-form-urlencoded"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(response.ok, </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> responseJSON</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> response.</span><span style="color:#B392F0">json</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(responseJSON, expectResponse);</span></span>
+<span class="line"><span style="color:#E1E4E8">  abortController.</span><span style="color:#B392F0">abort</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  queryAllStub.</span><span style="color:#B392F0">restore</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"#addUser should throw exception about no params given no params when add user"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> queryAllStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">UserService</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(userService, </span><span style="color:#9ECBFF">"addUser"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  queryAllStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedUser];</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userController.userService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> abortController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AbortController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">signal</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> abortController;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  router.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/users"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#B392F0"> assertThrowsAsync</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#F97583">      async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> userController.</span><span style="color:#B392F0">addUser</span><span style="color:#E1E4E8">(context);</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      InvalidedParamsException,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "should given params: name ..."</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">    abortController.</span><span style="color:#B392F0">abort</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    queryAllStub.</span><span style="color:#B392F0">restore</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">routes</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">({ port: </span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#E1E4E8">, signal });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`http://127.0.0.1:${</span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#9ECBFF">}/users`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">"POST"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">      "Content-Type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"application/x-www-form-urlencoded"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> response.body</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">cancel</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"#addUser should throw exception about no correct params given wrong params when add user"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> queryAllStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">UserService</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(userService, </span><span style="color:#9ECBFF">"addUser"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  queryAllStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedUser];</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userController.userService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Application</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> router</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Router</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> abortController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> AbortController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">signal</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> abortController;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  router.</span><span style="color:#B392F0">post</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"/users"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">context</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#B392F0"> assertThrowsAsync</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#F97583">      async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">        await</span><span style="color:#E1E4E8"> userController.</span><span style="color:#B392F0">addUser</span><span style="color:#E1E4E8">(context);</span></span>
+<span class="line"><span style="color:#E1E4E8">      },</span></span>
+<span class="line"><span style="color:#E1E4E8">      InvalidedParamsException,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "should given param name and password"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    );</span></span>
+<span class="line"><span style="color:#E1E4E8">    abortController.</span><span style="color:#B392F0">abort</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">    queryAllStub.</span><span style="color:#B392F0">restore</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">use</span><span style="color:#E1E4E8">(router.</span><span style="color:#B392F0">routes</span><span style="color:#E1E4E8">());</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  app.</span><span style="color:#B392F0">listen</span><span style="color:#E1E4E8">({ port: </span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#E1E4E8">, signal });</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> response</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> fetch</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">`http://127.0.0.1:${</span><span style="color:#79B8FF">TEST_PORT</span><span style="color:#9ECBFF">}/users`</span><span style="color:#E1E4E8">, {</span></span>
+<span class="line"><span style="color:#E1E4E8">    method: </span><span style="color:#9ECBFF">"POST"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    body: </span><span style="color:#9ECBFF">"wrong=params"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    headers: {</span></span>
+<span class="line"><span style="color:#9ECBFF">      "Content-Type"</span><span style="color:#E1E4E8">: </span><span style="color:#9ECBFF">"application/x-www-form-urlencoded"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    },</span></span>
+<span class="line"><span style="color:#E1E4E8">  });</span></span>
+<span class="line"><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> response.body</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">.</span><span style="color:#B392F0">cancel</span><span style="color:#E1E4E8">();</span></span></code></pre>
+<p><code>controller</code> 这一层需要调用<code>service</code>的服；作为<code>service</code>，对于<code>controller</code>是一个第三方服务，因此需要将<code>service</code>的方法<code>mock</code>，并以参数的形式传入<code>Controller</code>; 下面这段代码就是<code>mock</code>的应用；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> queryAllStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">UserService</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(userService, </span><span style="color:#9ECBFF">"addUser"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> expectResponse</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    success: </span><span style="color:#79B8FF">true</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    data: mockedUser,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">  queryAllStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedUser];</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userController</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserController</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userController.userService </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userService;</span></span></code></pre>
+<p>在此解释两个测试，第一个测试即<code>#addUser should return added user when add user</code>;</p>
+<h5 id="given-1">given</h5>
+<blockquote>
+<ul>
+<li>mock <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
+<li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
+</ul>
+</blockquote>
+<h5 id="when-1">when</h5>
+<blockquote>
+<ul>
+<li>传入正确的 form 类型的参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
+</ul>
+</blockquote>
+<h5 id="then-1">then</h5>
+<blockquote>
+<ul>
+<li>对获取到的结果进行判定，并中断测试应用，将打桩的方法恢复。</li>
+</ul>
+</blockquote>
+<p>在此解释两个测试，第二个测试即<code>#addUser should throw exception about no params given no params when add user</code>; <code>given</code>和<code>when</code>与第一个测试的<code>given</code>和<code>when</code>查不多，只是<code>body</code>参数为空；最重要的不同点是这次的<code>then</code>是在<code>when</code>里面，因为抛异常会在<code>handler</code>上抛，所以，需要将<code>then</code>的判定放在<code>handler</code> 上。这里用到了<code>Deno</code>的<code>assertThrowsAsync</code>来捕获异常并判定异常。</p>
+<h5 id="given-2">given</h5>
+<blockquote>
+<ul>
+<li><code>mock</code> <code>UserService</code>, 给 UserService 的 <code>addUser</code>方法打桩，并返回特定的用户结构；</li>
+<li>新建测试服务，并将 <code>UserController</code>注册给 post 接口 <code>/users</code>;</li>
+</ul>
+</blockquote>
+<h5 id="when-2">when</h5>
+<blockquote>
+<ul>
+<li>给<code>body</code>传入空参数，用<code>fetch</code>请求<code>http://127.0.0.1:9000/users</code>;</li>
+</ul>
+</blockquote>
+<h5 id="then-2">then</h5>
+<blockquote>
+<ul>
+<li><code>then</code>部分处于<code>given</code>的路由处理<code>handler</code>中，对异常进行捕获并判定，接着中断测试应用，将打桩的方法恢复。</li>
+</ul>
+</blockquote>
+<h5 id="运行测试-1">运行测试</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> test</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> test</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">Check</span><span style="color:#9ECBFF"> file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts</span></span>
+<span class="line"><span style="color:#B392F0">running</span><span style="color:#79B8FF"> 5</span><span style="color:#9ECBFF"> tests</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> should</span><span style="color:#9ECBFF"> work</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (5ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should return added user when add user ... ok (21ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no params given no params when add user ... ok (4ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no correct params given wrong params when add user ... ok (3ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> health</span><span style="color:#9ECBFF"> check</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (4ms)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> result:</span><span style="color:#9ECBFF"> ok.</span><span style="color:#79B8FF"> 5</span><span style="color:#9ECBFF"> passed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> failed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> ignored</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> measured</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> filtered</span><span style="color:#9ECBFF"> out</span><span style="color:#E1E4E8"> (37ms)</span></span>
+<span class="line"></span></code></pre>
+<h4 id="service">Service</h4>
+<p><code>Service</code>是服务层，通过组合其他服务和调用底层数据接口层提供服务；对于用户添加，对于添加用户的<code>Service</code>, 我们只需要将用户对象传递过来，然后由<code>Repository</code>来处理；所以，我们的<code>Todo</code>对应如下：</p>
+<blockquote>
+<p>当传入期望的用户信息，可返回特定数据结构的用户信息</p>
+</blockquote>
+<p>新建<code>UserService.test.ts</code>， 并导入相关依赖；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// tests/services/UserService.test.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertEquals,</span></span>
+<span class="line"><span style="color:#E1E4E8">  v4,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserRepo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/repositories/userRepo.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserService </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/services/UserService.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IUser </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/entity/User.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">test</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Deno;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserService #addUser should return added user"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> parameter</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IUser</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    username: </span><span style="color:#9ECBFF">"username"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    password: </span><span style="color:#9ECBFF">"password"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> registrationDate</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">new</span><span style="color:#B392F0"> Date</span><span style="color:#E1E4E8">()).</span><span style="color:#B392F0">toISOString</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> id</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> v4.</span><span style="color:#B392F0">generate</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> mockedUser</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IUser</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    ...</span><span style="color:#E1E4E8">parameter,</span></span>
+<span class="line"><span style="color:#E1E4E8">    id,</span></span>
+<span class="line"><span style="color:#E1E4E8">    registrationDate,</span></span>
+<span class="line"><span style="color:#E1E4E8">    deleted: </span><span style="color:#79B8FF">false</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userRepo</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserRepo</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> createUserStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">UserRepo</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(userRepo, </span><span style="color:#9ECBFF">"create"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#E1E4E8">  createUserStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedUser];</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userService</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userService.userRepo </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> userRepo;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">await</span><span style="color:#E1E4E8"> userService.</span><span style="color:#B392F0">addUser</span><span style="color:#E1E4E8">(parameter), mockedUser);</span></span>
+<span class="line"><span style="color:#E1E4E8">  createUserStub.</span><span style="color:#B392F0">restore</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span></code></pre>
+<p>代码逻辑很简单，基本不需要解释。运行测试肯定会失败，为了让代码通过测试，编写<code>UserService.ts</code>, 在<code>UserService.ts</code>中调用<code>Repository</code>的<code>create</code>方法。所以，也需要简单实现<code>UserRepo</code>，只需要添加<code>create</code>方法即可。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/services/UserService.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserRepo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../repositories/userRepo.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IUser </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../entity/User.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#F97583"> class</span><span style="color:#B392F0"> UserService</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  constructor</span><span style="color:#E1E4E8">() {</span></span>
+<span class="line"><span style="color:#79B8FF">    this</span><span style="color:#E1E4E8">.userRepo </span><span style="color:#F97583">=</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserRepo</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#FFAB70">  userRepo</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserRepo</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">  async</span><span style="color:#B392F0"> addUser</span><span style="color:#E1E4E8">(</span><span style="color:#FFAB70">user</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IUser</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#F97583">    return</span><span style="color:#F97583"> await</span><span style="color:#79B8FF"> this</span><span style="color:#E1E4E8">.userRepo.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(user);</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span></code></pre>
+<h5 id="运行测试-2">运行测试</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> test</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> test</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">Check</span><span style="color:#9ECBFF"> file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts</span></span>
+<span class="line"><span style="color:#B392F0">running</span><span style="color:#79B8FF"> 6</span><span style="color:#9ECBFF"> tests</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> should</span><span style="color:#9ECBFF"> work</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (5ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should return added user when add user ... ok (21ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no params given no params when add user ... ok (4ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no correct params given wrong params when add user ... ok (3ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> health</span><span style="color:#9ECBFF"> check</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (4ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserService</span><span style="color:#6A737D"> #addUser should return added user ... ok (1ms)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> result:</span><span style="color:#9ECBFF"> ok.</span><span style="color:#79B8FF"> 6</span><span style="color:#9ECBFF"> passed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> failed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> ignored</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> measured</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> filtered</span><span style="color:#9ECBFF"> out</span><span style="color:#E1E4E8"> (38ms)</span></span>
+<span class="line"></span></code></pre>
+<h4 id="repository">Repository</h4>
+<p><code>Repository</code>通常和数据库交互，将传入的数据持久化到数据库中；对于添加用户这个接口，我们的需求因该是将传入的信息以数据库要求的格式存储起来，并将结果返回给<code>Service</code>; 因此，<code>Todo</code>大致如下：</p>
+<blockquote>
+<ul>
+<li>将传入的用户存入数据亏并返回特定数据结构的信息</li>
+<li>如果参数中缺少基本字段则抛异常</li>
+</ul>
+</blockquote>
+<p>测试如下：</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// tests/repositories/UserRepo.test.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Stub,</span></span>
+<span class="line"><span style="color:#E1E4E8">  Client,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertEquals,</span></span>
+<span class="line"><span style="color:#E1E4E8">  v4,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assert,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertMatch,</span></span>
+<span class="line"><span style="color:#E1E4E8">  assertThrowsAsync,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> UserRepo </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/repositories/userRepo.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> client </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/Utils/client.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> IUser </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/entity/User.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> NotFoundException </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/exception/NotFoundException.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> InvalidedParamsException </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../src/exception/InvalidedParamsException.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">test</span><span style="color:#E1E4E8"> } </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> Deno;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserRepo #create should return mocked User given username&#x26;password when create"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> queryStub</span><span style="color:#F97583">:</span><span style="color:#B392F0"> Stub</span><span style="color:#E1E4E8">&#x3C;</span><span style="color:#B392F0">Client</span><span style="color:#E1E4E8">> </span><span style="color:#F97583">=</span><span style="color:#B392F0"> stub</span><span style="color:#E1E4E8">(client, </span><span style="color:#9ECBFF">"query"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> mockedQueryResult</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    rowCount: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#E1E4E8">  queryStub.returns </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> [mockedQueryResult];</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> parameter</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IUser</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    username: </span><span style="color:#9ECBFF">"username"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    password: </span><span style="color:#9ECBFF">"password"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userRepo</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserRepo</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">  userRepo.client </span><span style="color:#F97583">=</span><span style="color:#E1E4E8"> client;</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> createdUserResult</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#E1E4E8"> userRepo.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(parameter);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(createdUserResult.username, parameter.username);</span></span>
+<span class="line"><span style="color:#B392F0">  assertEquals</span><span style="color:#E1E4E8">(createdUserResult.password, parameter.password);</span></span>
+<span class="line"><span style="color:#B392F0">  assert</span><span style="color:#E1E4E8">(v4.</span><span style="color:#B392F0">validate</span><span style="color:#E1E4E8">(createdUserResult.id</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">));</span></span>
+<span class="line"><span style="color:#B392F0">  assertMatch</span><span style="color:#E1E4E8">(</span></span>
+<span class="line"><span style="color:#E1E4E8">    createdUserResult.registrationDate</span><span style="color:#F97583">!</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">    /</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{4}</span><span style="color:#DBEDFF">-</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{2}</span><span style="color:#DBEDFF">-</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{2}</span><span style="color:#DBEDFF">T</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{2}</span><span style="color:#DBEDFF">:</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{2}</span><span style="color:#DBEDFF">:</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{2}</span><span style="color:#85E89D;font-weight:bold">\.</span><span style="color:#79B8FF">[\d]</span><span style="color:#F97583">{1,3}</span><span style="color:#DBEDFF">Z</span><span style="color:#9ECBFF">/</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  );</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E1E4E8">  queryStub.</span><span style="color:#B392F0">restore</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">test</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"UserRepo #create should throw exception given no value for field when create"</span><span style="color:#E1E4E8">, </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> parameter</span><span style="color:#F97583">:</span><span style="color:#B392F0"> IUser</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">    username: </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    password: </span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">  const</span><span style="color:#79B8FF"> userRepo</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> UserRepo</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">  assertThrowsAsync</span><span style="color:#E1E4E8">(</span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> () </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#F97583">    await</span><span style="color:#E1E4E8"> userRepo.</span><span style="color:#B392F0">create</span><span style="color:#E1E4E8">(parameter)</span></span>
+<span class="line"><span style="color:#E1E4E8">  }, InvalidedParamsException,</span></span>
+<span class="line"><span style="color:#9ECBFF">  "should supply valid username and password!"</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span></code></pre>
+<p>因为<code>Repository</code>层要和数据库打交道，所以需要一个和数据库操作相应的处理工具库；在此我们期望通过使用<code>PostgreSql</code>自己的的<code>Client</code>来执行数据库操作。</p>
+<p>在上面第一个测试代码中， 我们<code>mock</code>了<code>Client</code>的<code>query</code>方法，并且返回了预定的数据。接着调用<code>UserRepo</code>的<code>create</code>方法，判断返回数据的数据字段值与期望值是否一致。</p>
+<p>运行测试依旧会失败，接下来以最简单的方式实现让测试通过。</p>
+<p>导入<code>PostgreSql</code>相关的依赖；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">export</span><span style="color:#E1E4E8"> { Client } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "https://deno.land/x/postgres/mod.ts"</span><span style="color:#E1E4E8">;</span></span></code></pre>
+<p>及定义数据库连接信息</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/config.ts</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> DB_HOST</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">DB_HOST</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "localhost"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> DB_USER</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">DB_USER</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "postgres"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> DB_PASSWORD</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">DB_PASSWORD</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "0"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> DB_DATABASE</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">DB_DATABASE</span><span style="color:#F97583"> ||</span><span style="color:#9ECBFF"> "postgres"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> const</span><span style="color:#79B8FF"> DB_PORT</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> env.</span><span style="color:#79B8FF">DB_PORT</span><span style="color:#F97583"> ?</span><span style="color:#B392F0"> parseInt</span><span style="color:#E1E4E8">(env.</span><span style="color:#79B8FF">DB_PORT</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">:</span><span style="color:#79B8FF"> 5432</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span></code></pre>
+<p>获取数据库连接的<code>Client</code>实例</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// src/Utils/client.ts</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> { Client } </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../../deps.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#F97583">import</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  DB_HOST,</span></span>
+<span class="line"><span style="color:#E1E4E8">  DB_DATABASE,</span></span>
+<span class="line"><span style="color:#E1E4E8">  DB_PORT,</span></span>
+<span class="line"><span style="color:#E1E4E8">  DB_USER,</span></span>
+<span class="line"><span style="color:#E1E4E8">  DB_PASSWORD,</span></span>
+<span class="line"><span style="color:#E1E4E8">} </span><span style="color:#F97583">from</span><span style="color:#9ECBFF"> "../config.ts"</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">const</span><span style="color:#79B8FF"> client</span><span style="color:#F97583"> =</span><span style="color:#F97583"> new</span><span style="color:#B392F0"> Client</span><span style="color:#E1E4E8">({</span></span>
+<span class="line"><span style="color:#E1E4E8">  hostname: </span><span style="color:#79B8FF">DB_HOST</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  database: </span><span style="color:#79B8FF">DB_DATABASE</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  user: </span><span style="color:#79B8FF">DB_USER</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  password: </span><span style="color:#79B8FF">DB_PASSWORD</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  port: </span><span style="color:#79B8FF">DB_PORT</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">});</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#F97583">export</span><span style="color:#F97583"> default</span><span style="color:#E1E4E8"> client;</span></span>
+<span class="line"></span></code></pre>
+<p>数据库应该在应用启动时连接，所以在<code>index.ts</code>引入<code>client</code>并建立连接和管理连接。</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#F97583">if</span><span style="color:#E1E4E8"> (</span><span style="color:#F97583">import</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">meta</span><span style="color:#E1E4E8">.main) {</span></span>
+<span class="line"><span style="color:#F97583">+</span><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> client.</span><span style="color:#B392F0">connect</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">+</span><span style="color:#E1E4E8">  console.</span><span style="color:#B392F0">info</span><span style="color:#E1E4E8">(</span><span style="color:#9ECBFF">"数据库链接成功！"</span><span style="color:#E1E4E8">);</span></span>
+<span class="line"><span style="color:#F97583">   const</span><span style="color:#79B8FF"> app</span><span style="color:#F97583"> =</span><span style="color:#F97583"> await</span><span style="color:#B392F0"> createApplication</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#F97583">   await</span><span style="color:#B392F0"> listenToServer</span><span style="color:#E1E4E8">(app);</span></span>
+<span class="line"><span style="color:#F97583">+</span><span style="color:#F97583">  await</span><span style="color:#E1E4E8"> client.</span><span style="color:#B392F0">end</span><span style="color:#E1E4E8">();</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span>
+<span class="line"></span></code></pre>
+<h5 id="重新启动测试">重新启动测试</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> test</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> test</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> -L</span><span style="color:#9ECBFF"> info</span></span>
+<span class="line"><span style="color:#B392F0">Check</span><span style="color:#9ECBFF"> file:///xxx/deno-restful-api-with-postgresql-tdd/.deno.test.ts</span></span>
+<span class="line"><span style="color:#B392F0">running</span><span style="color:#79B8FF"> 8</span><span style="color:#9ECBFF"> tests</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> should</span><span style="color:#9ECBFF"> work</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (2ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserRepo</span><span style="color:#6A737D"> #create should return mocked User given username&#x26;password when create ... ok (1ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserRepo</span><span style="color:#6A737D"> #create should throw exception given no value for field when create ... ok (1ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should return added user when add user ... ok (14ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no params given no params when add user ... ok (4ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserController</span><span style="color:#6A737D"> #addUser should throw exception about no correct params given wrong params when add user ... ok (2ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> health</span><span style="color:#9ECBFF"> check</span><span style="color:#9ECBFF"> ...</span><span style="color:#9ECBFF"> ok</span><span style="color:#E1E4E8"> (3ms)</span></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> UserService</span><span style="color:#6A737D"> #addUser should return added user ... ok (1ms)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#79B8FF">test</span><span style="color:#9ECBFF"> result:</span><span style="color:#9ECBFF"> ok.</span><span style="color:#79B8FF"> 8</span><span style="color:#9ECBFF"> passed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> failed</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> ignored</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> measured</span><span style="color:#E1E4E8">; </span><span style="color:#B392F0">0</span><span style="color:#9ECBFF"> filtered</span><span style="color:#9ECBFF"> out</span><span style="color:#E1E4E8"> (28ms)</span></span>
+<span class="line"></span></code></pre>
+<h5 id="请求体-1">请求体</h5>
+<p>由<code>RestClient</code>验证请求； 现在启动应用，发送如下请求；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// _resources/httpClient/addUser.http</span></span>
+<span class="line"><span>POST http://localhost:8000/api/v1/users HTTP/1.1</span></span>
+<span class="line"><span>Content-Type: application/x-www-form-urlencoded</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>name=foo&#x26;password=123</span></span>
+<span class="line"><span></span></span></code></pre>
+<h5 id="请求结果-1">请求结果</h5>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>HTTP/1.1 201 Created</span></span>
+<span class="line"><span>content-length: 149</span></span>
+<span class="line"><span>x-response-time: 34ms</span></span>
+<span class="line"><span>content-type: application/json; charset=utf-8</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>{</span></span>
+<span class="line"><span>  "success": true,</span></span>
+<span class="line"><span>  "data": {</span></span>
+<span class="line"><span>    "username": "foo",</span></span>
+<span class="line"><span>    "password": "123",</span></span>
+<span class="line"><span>    "id": "7aea0bb7-e0bc-4f1f-a516-3a43f4e30fb6",</span></span>
+<span class="line"><span>    "registrationDate": "2020-07-27T14:11:24.140Z"</span></span>
+<span class="line"><span>  }</span></span>
+<span class="line"><span>}</span></span></code></pre>
+<p>异常情况可以自己制造，在此就不演示了，至此完成用户添加的接口。</p>
+<h2 id="打包">打包</h2>
+<p>按照上面的步骤，我们可以完成查询单个用户 (<code>GET</code>:<code>/users/:id</code>), 查询所有用户 (<code>GET</code>:<code>/users</code>) 和删除 (<code>DELETE</code>:<code>/users/:id</code>) 等接口，快速且高效。当我们完成测试和接口后，使用<code>deno</code>的命令行工具，我们可以将整个工程打包为一个<code>.js</code>文件；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> bundle</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#9ECBFF"> dist</span></span>
+<span class="line"><span style="color:#B392F0">deno</span><span style="color:#9ECBFF"> bundle</span><span style="color:#9ECBFF"> src/index.ts</span><span style="color:#9ECBFF"> dist/platform.js</span></span>
+<span class="line"><span style="color:#B392F0">Bundle</span><span style="color:#9ECBFF"> file:///xxx/deno-restful-api-with-postgresql-tdd/src/index.ts</span></span>
+<span class="line"><span style="color:#B392F0">Emit</span><span style="color:#9ECBFF"> "dist/platform.js"</span><span style="color:#E1E4E8"> (856.11 </span><span style="color:#9ECBFF">KB</span><span style="color:#E1E4E8">)</span></span>
+<span class="line"></span></code></pre>
+<p>对于<code>NodeJs</code>开发的后端应用，可怕的<code>node_modules</code>依赖在打包时会是个问题，一般的<code>Node</code>后端应用都是直接将环境变量更新一下，然后将其部署在生产环境；
+开发者写的工程文件并没有多大，而应用依赖的<code>node_modules</code>大多时候时工程文件的几十倍甚至几百倍。然后<code>Deno</code>很好的解决了这个问题。</p>
+<h2 id="启动应用-1">启动应用</h2>
+<p>如有需要将打包好的<code>.js</code>拷贝到目标目录，只要有<code>Deno</code>环境，我们就可以直接启动应用；</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="shell"><code><span class="line"><span style="color:#B392F0">❯</span><span style="color:#9ECBFF"> make</span><span style="color:#9ECBFF"> start</span></span>
+<span class="line"><span style="color:#E1E4E8">APP_PORT</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">1234</span><span style="color:#B392F0"> deno</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> --allow-net</span><span style="color:#79B8FF"> --allow-env</span><span style="color:#9ECBFF"> ./dist/platform.js</span></span>
+<span class="line"><span style="color:#B392F0">数据库链接成功！</span></span>
+<span class="line"><span style="color:#B392F0">Application</span><span style="color:#9ECBFF"> started,</span><span style="color:#9ECBFF"> and</span><span style="color:#9ECBFF"> listen</span><span style="color:#9ECBFF"> to</span><span style="color:#9ECBFF"> 127.0.0.1:1234</span></span></code></pre>
+<h2 id="乱中取整">乱中取整</h2>
+<p>通过学习<code>Deno</code>, 有了一些心得体会；</p>
+<ul>
+<li>兼容浏览器<code>API</code>,<code>Deno</code>工程可以使用<code>Javascript</code>和<code>Typescript</code>进行编程，大大降低了认知复杂度和学习难度；</li>
+<li>如果使用<code>Typescript</code>开发，那么会避免<code>动态一时爽，重构火葬场</code>的尴尬局面，所以推荐使用<code>Typescript</code>来写应用；</li>
+<li>去中心化仓库，以单文件的形式分发，在协作开发的时候，为了统一库版本，就需校验依赖的版本，<code>Deno</code>提供了生成<code>lock.json</code>的形式来保证不同协作者之间的版本依赖；</li>
+<li>…</li>
+</ul>
+<p>最后感谢 <a href="https://yihaimen.github.io/">海门</a> 和 <a href="https://github.com/hylerrix">亦乐</a> 的校对与指导；在他们的帮助下，我顺利完成了这篇博客。</p></div></article><aside class="sticky top-20 hidden max-h-[calc(100dvh-5rem)] overflow-auto px-6 py-10 xl:block"><h2 class="font-mono text-xs font-medium uppercase tracking-widest text-[var(--text-muted)]">On this page</h2><nav class="mt-4 grid gap-2 text-sm text-[var(--text-muted)]" data-emoji-shortcodes><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#talking-is-cheap-show-me-code">Talking is cheap! Show me code!</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#简介">简介</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#deno--oak">Deno &amp; oak</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#deno">Deno</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#oak">oak</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#目标">目标</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#工具">工具</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#开发工具">开发工具</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#环境工具">环境工具</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#基础环境信息">基础环境信息</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#项目结构">项目结构</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#实现过程">实现过程</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#启动基础设施数据库并初始化数据表">启动基础设施（数据库）并初始化数据表</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#src-最终目录">src 最终目录</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#依赖管理">依赖管理</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#测试先行">测试先行</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#第一次运行测试">第一次运行测试</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#建立测试固件">建立测试固件</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#health-接口">health 接口</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-6" href="#添加用户接口-adduser">添加用户接口 (addUser)</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#打包">打包</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#启动应用-1">启动应用</a><a class="border-l border-[var(--border-soft)] hover:text-[var(--text-strong)] pl-3" href="#乱中取整">乱中取整</a></nav></aside></div></main><div class="gutter-stripes hidden border-x border-[var(--border-soft)] lg:block" aria-hidden="true"></div></div><footer class="border-t border-[var(--border-soft)] bg-[var(--page-bg)]"><div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between sm:px-6"><p>&copy; 2026 谷中仁</p><div class="flex flex-wrap gap-4"><a class="hover:text-[var(--text-strong)]" href="/posts">文章</a><a class="hover:text-[var(--text-strong)]" href="/tags">标签</a><a class="hover:text-[var(--text-strong)]" href="/categories">分类</a><a class="hover:text-[var(--text-strong)]" href="https://guzhongren.github.io/slides/" target="_blank" rel="noopener noreferrer">演讲</a><a class="hover:text-[var(--text-strong)]" href="https://www.figma.com/file/7EzjLtMRXKcaJrGEmudLwC/%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1?node-id=0%3A1" target="_blank" rel="noopener noreferrer">知识图谱</a><a class="hover:text-[var(--text-strong)]" href="/about">关于</a></div></div></footer><script>(function(){const emojiShortcodes = {"100":"💯","1234":"🔢","grinning":"😀","smiley":"😃","smile":"😄","grin":"😁","laughing":"😆","satisfied":"😆","sweat_smile":"😅","rofl":"🤣","joy":"😂","slightly_smiling_face":"🙂","upside_down_face":"🙃","melting_face":"🫠","wink":"😉","blush":"😊","innocent":"😇","smiling_face_with_three_hearts":"🥰","heart_eyes":"😍","star_struck":"🤩","kissing_heart":"😘","kissing":"😗","relaxed":"☺️","kissing_closed_eyes":"😚","kissing_smiling_eyes":"😙","smiling_face_with_tear":"🥲","yum":"😋","stuck_out_tongue":"😛","stuck_out_tongue_winking_eye":"😜","zany_face":"🤪","stuck_out_tongue_closed_eyes":"😝","money_mouth_face":"🤑","hugs":"🤗","hand_over_mouth":"🤭","face_with_open_eyes_and_hand_over_mouth":"🫢","face_with_peeking_eye":"🫣","shushing_face":"🤫","thinking":"🤔","saluting_face":"🫡","zipper_mouth_face":"🤐","raised_eyebrow":"🤨","neutral_face":"😐","expressionless":"😑","no_mouth":"😶","dotted_line_face":"🫥","face_in_clouds":"😶‍🌫️","smirk":"😏","unamused":"😒","roll_eyes":"🙄","grimacing":"😬","face_exhaling":"😮‍💨","lying_face":"🤥","shaking_face":"🫨","relieved":"😌","pensive":"😔","sleepy":"😪","drooling_face":"🤤","sleeping":"😴","mask":"😷","face_with_thermometer":"🤒","face_with_head_bandage":"🤕","nauseated_face":"🤢","vomiting_face":"🤮","sneezing_face":"🤧","hot_face":"🥵","cold_face":"🥶","woozy_face":"🥴","dizzy_face":"😵","face_with_spiral_eyes":"😵‍💫","exploding_head":"🤯","cowboy_hat_face":"🤠","partying_face":"🥳","disguised_face":"🥸","sunglasses":"😎","nerd_face":"🤓","monocle_face":"🧐","confused":"😕","face_with_diagonal_mouth":"🫤","worried":"😟","slightly_frowning_face":"🙁","frowning_face":"☹️","open_mouth":"😮","hushed":"😯","astonished":"😲","flushed":"😳","pleading_face":"🥺","face_holding_back_tears":"🥹","frowning":"😦","anguished":"😧","fearful":"😨","cold_sweat":"😰","disappointed_relieved":"😥","cry":"😢","sob":"😭","scream":"😱","confounded":"😖","persevere":"😣","disappointed":"😞","sweat":"😓","weary":"😩","tired_face":"😫","yawning_face":"🥱","triumph":"😤","rage":"😡","pout":"😡","angry":"😠","cursing_face":"🤬","smiling_imp":"😈","imp":"👿","skull":"💀","skull_and_crossbones":"☠️","hankey":"💩","poop":"💩","shit":"💩","clown_face":"🤡","japanese_ogre":"👹","japanese_goblin":"👺","ghost":"👻","alien":"👽","space_invader":"👾","robot":"🤖","smiley_cat":"😺","smile_cat":"😸","joy_cat":"😹","heart_eyes_cat":"😻","smirk_cat":"😼","kissing_cat":"😽","scream_cat":"🙀","crying_cat_face":"😿","pouting_cat":"😾","see_no_evil":"🙈","hear_no_evil":"🙉","speak_no_evil":"🙊","love_letter":"💌","cupid":"💘","gift_heart":"💝","sparkling_heart":"💖","heartpulse":"💗","heartbeat":"💓","revolving_hearts":"💞","two_hearts":"💕","heart_decoration":"💟","heavy_heart_exclamation":"❣️","broken_heart":"💔","heart_on_fire":"❤️‍🔥","mending_heart":"❤️‍🩹","heart":"❤️","pink_heart":"🩷","orange_heart":"🧡","yellow_heart":"💛","green_heart":"💚","blue_heart":"💙","light_blue_heart":"🩵","purple_heart":"💜","brown_heart":"🤎","black_heart":"🖤","grey_heart":"🩶","white_heart":"🤍","kiss":"💋","anger":"💢","boom":"💥","collision":"💥","dizzy":"💫","sweat_drops":"💦","dash":"💨","hole":"🕳️","speech_balloon":"💬","eye_speech_bubble":"👁️‍🗨️","left_speech_bubble":"🗨️","right_anger_bubble":"🗯️","thought_balloon":"💭","zzz":"💤","wave":"👋","raised_back_of_hand":"🤚","raised_hand_with_fingers_splayed":"🖐️","hand":"✋","raised_hand":"✋","vulcan_salute":"🖖","rightwards_hand":"🫱","leftwards_hand":"🫲","palm_down_hand":"🫳","palm_up_hand":"🫴","leftwards_pushing_hand":"🫷","rightwards_pushing_hand":"🫸","ok_hand":"👌","pinched_fingers":"🤌","pinching_hand":"🤏","v":"✌️","crossed_fingers":"🤞","hand_with_index_finger_and_thumb_crossed":"🫰","love_you_gesture":"🤟","metal":"🤘","call_me_hand":"🤙","point_left":"👈","point_right":"👉","point_up_2":"👆","middle_finger":"🖕","fu":"🖕","point_down":"👇","point_up":"☝️","index_pointing_at_the_viewer":"🫵","+1":"👍","thumbsup":"👍","-1":"👎","thumbsdown":"👎","fist_raised":"✊","fist":"✊","fist_oncoming":"👊","facepunch":"👊","punch":"👊","fist_left":"🤛","fist_right":"🤜","clap":"👏","raised_hands":"🙌","heart_hands":"🫶","open_hands":"👐","palms_up_together":"🤲","handshake":"🤝","pray":"🙏","writing_hand":"✍️","nail_care":"💅","selfie":"🤳","muscle":"💪","mechanical_arm":"🦾","mechanical_leg":"🦿","leg":"🦵","foot":"🦶","ear":"👂","ear_with_hearing_aid":"🦻","nose":"👃","brain":"🧠","anatomical_heart":"🫀","lungs":"🫁","tooth":"🦷","bone":"🦴","eyes":"👀","eye":"👁️","tongue":"👅","lips":"👄","biting_lip":"🫦","baby":"👶","child":"🧒","boy":"👦","girl":"👧","adult":"🧑","blond_haired_person":"👱","man":"👨","bearded_person":"🧔","man_beard":"🧔‍♂️","woman_beard":"🧔‍♀️","red_haired_man":"👨‍🦰","curly_haired_man":"👨‍🦱","white_haired_man":"👨‍🦳","bald_man":"👨‍🦲","woman":"👩","red_haired_woman":"👩‍🦰","person_red_hair":"🧑‍🦰","curly_haired_woman":"👩‍🦱","person_curly_hair":"🧑‍🦱","white_haired_woman":"👩‍🦳","person_white_hair":"🧑‍🦳","bald_woman":"👩‍🦲","person_bald":"🧑‍🦲","blond_haired_woman":"👱‍♀️","blonde_woman":"👱‍♀️","blond_haired_man":"👱‍♂️","older_adult":"🧓","older_man":"👴","older_woman":"👵","frowning_person":"🙍","frowning_man":"🙍‍♂️","frowning_woman":"🙍‍♀️","pouting_face":"🙎","pouting_man":"🙎‍♂️","pouting_woman":"🙎‍♀️","no_good":"🙅","no_good_man":"🙅‍♂️","ng_man":"🙅‍♂️","no_good_woman":"🙅‍♀️","ng_woman":"🙅‍♀️","ok_person":"🙆","ok_man":"🙆‍♂️","ok_woman":"🙆‍♀️","tipping_hand_person":"💁","information_desk_person":"💁","tipping_hand_man":"💁‍♂️","sassy_man":"💁‍♂️","tipping_hand_woman":"💁‍♀️","sassy_woman":"💁‍♀️","raising_hand":"🙋","raising_hand_man":"🙋‍♂️","raising_hand_woman":"🙋‍♀️","deaf_person":"🧏","deaf_man":"🧏‍♂️","deaf_woman":"🧏‍♀️","bow":"🙇","bowing_man":"🙇‍♂️","bowing_woman":"🙇‍♀️","facepalm":"🤦","man_facepalming":"🤦‍♂️","woman_facepalming":"🤦‍♀️","shrug":"🤷","man_shrugging":"🤷‍♂️","woman_shrugging":"🤷‍♀️","health_worker":"🧑‍⚕️","man_health_worker":"👨‍⚕️","woman_health_worker":"👩‍⚕️","student":"🧑‍🎓","man_student":"👨‍🎓","woman_student":"👩‍🎓","teacher":"🧑‍🏫","man_teacher":"👨‍🏫","woman_teacher":"👩‍🏫","judge":"🧑‍⚖️","man_judge":"👨‍⚖️","woman_judge":"👩‍⚖️","farmer":"🧑‍🌾","man_farmer":"👨‍🌾","woman_farmer":"👩‍🌾","cook":"🧑‍🍳","man_cook":"👨‍🍳","woman_cook":"👩‍🍳","mechanic":"🧑‍🔧","man_mechanic":"👨‍🔧","woman_mechanic":"👩‍🔧","factory_worker":"🧑‍🏭","man_factory_worker":"👨‍🏭","woman_factory_worker":"👩‍🏭","office_worker":"🧑‍💼","man_office_worker":"👨‍💼","woman_office_worker":"👩‍💼","scientist":"🧑‍🔬","man_scientist":"👨‍🔬","woman_scientist":"👩‍🔬","technologist":"🧑‍💻","man_technologist":"👨‍💻","woman_technologist":"👩‍💻","singer":"🧑‍🎤","man_singer":"👨‍🎤","woman_singer":"👩‍🎤","artist":"🧑‍🎨","man_artist":"👨‍🎨","woman_artist":"👩‍🎨","pilot":"🧑‍✈️","man_pilot":"👨‍✈️","woman_pilot":"👩‍✈️","astronaut":"🧑‍🚀","man_astronaut":"👨‍🚀","woman_astronaut":"👩‍🚀","firefighter":"🧑‍🚒","man_firefighter":"👨‍🚒","woman_firefighter":"👩‍🚒","police_officer":"👮","cop":"👮","policeman":"👮‍♂️","policewoman":"👮‍♀️","detective":"🕵️","male_detective":"🕵️‍♂️","female_detective":"🕵️‍♀️","guard":"💂","guardsman":"💂‍♂️","guardswoman":"💂‍♀️","ninja":"🥷","construction_worker":"👷","construction_worker_man":"👷‍♂️","construction_worker_woman":"👷‍♀️","person_with_crown":"🫅","prince":"🤴","princess":"👸","person_with_turban":"👳","man_with_turban":"👳‍♂️","woman_with_turban":"👳‍♀️","man_with_gua_pi_mao":"👲","woman_with_headscarf":"🧕","person_in_tuxedo":"🤵","man_in_tuxedo":"🤵‍♂️","woman_in_tuxedo":"🤵‍♀️","person_with_veil":"👰","man_with_veil":"👰‍♂️","woman_with_veil":"👰‍♀️","bride_with_veil":"👰‍♀️","pregnant_woman":"🤰","pregnant_man":"🫃","pregnant_person":"🫄","breast_feeding":"🤱","woman_feeding_baby":"👩‍🍼","man_feeding_baby":"👨‍🍼","person_feeding_baby":"🧑‍🍼","angel":"👼","santa":"🎅","mrs_claus":"🤶","mx_claus":"🧑‍🎄","superhero":"🦸","superhero_man":"🦸‍♂️","superhero_woman":"🦸‍♀️","supervillain":"🦹","supervillain_man":"🦹‍♂️","supervillain_woman":"🦹‍♀️","mage":"🧙","mage_man":"🧙‍♂️","mage_woman":"🧙‍♀️","fairy":"🧚","fairy_man":"🧚‍♂️","fairy_woman":"🧚‍♀️","vampire":"🧛","vampire_man":"🧛‍♂️","vampire_woman":"🧛‍♀️","merperson":"🧜","merman":"🧜‍♂️","mermaid":"🧜‍♀️","elf":"🧝","elf_man":"🧝‍♂️","elf_woman":"🧝‍♀️","genie":"🧞","genie_man":"🧞‍♂️","genie_woman":"🧞‍♀️","zombie":"🧟","zombie_man":"🧟‍♂️","zombie_woman":"🧟‍♀️","troll":"🧌","massage":"💆","massage_man":"💆‍♂️","massage_woman":"💆‍♀️","haircut":"💇","haircut_man":"💇‍♂️","haircut_woman":"💇‍♀️","walking":"🚶","walking_man":"🚶‍♂️","walking_woman":"🚶‍♀️","standing_person":"🧍","standing_man":"🧍‍♂️","standing_woman":"🧍‍♀️","kneeling_person":"🧎","kneeling_man":"🧎‍♂️","kneeling_woman":"🧎‍♀️","person_with_probing_cane":"🧑‍🦯","man_with_probing_cane":"👨‍🦯","woman_with_probing_cane":"👩‍🦯","person_in_motorized_wheelchair":"🧑‍🦼","man_in_motorized_wheelchair":"👨‍🦼","woman_in_motorized_wheelchair":"👩‍🦼","person_in_manual_wheelchair":"🧑‍🦽","man_in_manual_wheelchair":"👨‍🦽","woman_in_manual_wheelchair":"👩‍🦽","runner":"🏃","running":"🏃","running_man":"🏃‍♂️","running_woman":"🏃‍♀️","woman_dancing":"💃","dancer":"💃","man_dancing":"🕺","business_suit_levitating":"🕴️","dancers":"👯","dancing_men":"👯‍♂️","dancing_women":"👯‍♀️","sauna_person":"🧖","sauna_man":"🧖‍♂️","sauna_woman":"🧖‍♀️","climbing":"🧗","climbing_man":"🧗‍♂️","climbing_woman":"🧗‍♀️","person_fencing":"🤺","horse_racing":"🏇","skier":"⛷️","snowboarder":"🏂","golfing":"🏌️","golfing_man":"🏌️‍♂️","golfing_woman":"🏌️‍♀️","surfer":"🏄","surfing_man":"🏄‍♂️","surfing_woman":"🏄‍♀️","rowboat":"🚣","rowing_man":"🚣‍♂️","rowing_woman":"🚣‍♀️","swimmer":"🏊","swimming_man":"🏊‍♂️","swimming_woman":"🏊‍♀️","bouncing_ball_person":"⛹️","bouncing_ball_man":"⛹️‍♂️","basketball_man":"⛹️‍♂️","bouncing_ball_woman":"⛹️‍♀️","basketball_woman":"⛹️‍♀️","weight_lifting":"🏋️","weight_lifting_man":"🏋️‍♂️","weight_lifting_woman":"🏋️‍♀️","bicyclist":"🚴","biking_man":"🚴‍♂️","biking_woman":"🚴‍♀️","mountain_bicyclist":"🚵","mountain_biking_man":"🚵‍♂️","mountain_biking_woman":"🚵‍♀️","cartwheeling":"🤸","man_cartwheeling":"🤸‍♂️","woman_cartwheeling":"🤸‍♀️","wrestling":"🤼","men_wrestling":"🤼‍♂️","women_wrestling":"🤼‍♀️","water_polo":"🤽","man_playing_water_polo":"🤽‍♂️","woman_playing_water_polo":"🤽‍♀️","handball_person":"🤾","man_playing_handball":"🤾‍♂️","woman_playing_handball":"🤾‍♀️","juggling_person":"🤹","man_juggling":"🤹‍♂️","woman_juggling":"🤹‍♀️","lotus_position":"🧘","lotus_position_man":"🧘‍♂️","lotus_position_woman":"🧘‍♀️","bath":"🛀","sleeping_bed":"🛌","people_holding_hands":"🧑‍🤝‍🧑","two_women_holding_hands":"👭","couple":"👫","two_men_holding_hands":"👬","couplekiss":"💏","couplekiss_man_woman":"👩‍❤️‍💋‍👨","couplekiss_man_man":"👨‍❤️‍💋‍👨","couplekiss_woman_woman":"👩‍❤️‍💋‍👩","couple_with_heart":"💑","couple_with_heart_woman_man":"👩‍❤️‍👨","couple_with_heart_man_man":"👨‍❤️‍👨","couple_with_heart_woman_woman":"👩‍❤️‍👩","family":"👪","family_man_woman_boy":"👨‍👩‍👦","family_man_woman_girl":"👨‍👩‍👧","family_man_woman_girl_boy":"👨‍👩‍👧‍👦","family_man_woman_boy_boy":"👨‍👩‍👦‍👦","family_man_woman_girl_girl":"👨‍👩‍👧‍👧","family_man_man_boy":"👨‍👨‍👦","family_man_man_girl":"👨‍👨‍👧","family_man_man_girl_boy":"👨‍👨‍👧‍👦","family_man_man_boy_boy":"👨‍👨‍👦‍👦","family_man_man_girl_girl":"👨‍👨‍👧‍👧","family_woman_woman_boy":"👩‍👩‍👦","family_woman_woman_girl":"👩‍👩‍👧","family_woman_woman_girl_boy":"👩‍👩‍👧‍👦","family_woman_woman_boy_boy":"👩‍👩‍👦‍👦","family_woman_woman_girl_girl":"👩‍👩‍👧‍👧","family_man_boy":"👨‍👦","family_man_boy_boy":"👨‍👦‍👦","family_man_girl":"👨‍👧","family_man_girl_boy":"👨‍👧‍👦","family_man_girl_girl":"👨‍👧‍👧","family_woman_boy":"👩‍👦","family_woman_boy_boy":"👩‍👦‍👦","family_woman_girl":"👩‍👧","family_woman_girl_boy":"👩‍👧‍👦","family_woman_girl_girl":"👩‍👧‍👧","speaking_head":"🗣️","bust_in_silhouette":"👤","busts_in_silhouette":"👥","people_hugging":"🫂","footprints":"👣","monkey_face":"🐵","monkey":"🐒","gorilla":"🦍","orangutan":"🦧","dog":"🐶","dog2":"🐕","guide_dog":"🦮","service_dog":"🐕‍🦺","poodle":"🐩","wolf":"🐺","fox_face":"🦊","raccoon":"🦝","cat":"🐱","cat2":"🐈","black_cat":"🐈‍⬛","lion":"🦁","tiger":"🐯","tiger2":"🐅","leopard":"🐆","horse":"🐴","moose":"🫎","donkey":"🫏","racehorse":"🐎","unicorn":"🦄","zebra":"🦓","deer":"🦌","bison":"🦬","cow":"🐮","ox":"🐂","water_buffalo":"🐃","cow2":"🐄","pig":"🐷","pig2":"🐖","boar":"🐗","pig_nose":"🐽","ram":"🐏","sheep":"🐑","goat":"🐐","dromedary_camel":"🐪","camel":"🐫","llama":"🦙","giraffe":"🦒","elephant":"🐘","mammoth":"🦣","rhinoceros":"🦏","hippopotamus":"🦛","mouse":"🐭","mouse2":"🐁","rat":"🐀","hamster":"🐹","rabbit":"🐰","rabbit2":"🐇","chipmunk":"🐿️","beaver":"🦫","hedgehog":"🦔","bat":"🦇","bear":"🐻","polar_bear":"🐻‍❄️","koala":"🐨","panda_face":"🐼","sloth":"🦥","otter":"🦦","skunk":"🦨","kangaroo":"🦘","badger":"🦡","feet":"🐾","paw_prints":"🐾","turkey":"🦃","chicken":"🐔","rooster":"🐓","hatching_chick":"🐣","baby_chick":"🐤","hatched_chick":"🐥","bird":"🐦","penguin":"🐧","dove":"🕊️","eagle":"🦅","duck":"🦆","swan":"🦢","owl":"🦉","dodo":"🦤","feather":"🪶","flamingo":"🦩","peacock":"🦚","parrot":"🦜","wing":"🪽","black_bird":"🐦‍⬛","goose":"🪿","frog":"🐸","crocodile":"🐊","turtle":"🐢","lizard":"🦎","snake":"🐍","dragon_face":"🐲","dragon":"🐉","sauropod":"🦕","t-rex":"🦖","whale":"🐳","whale2":"🐋","dolphin":"🐬","flipper":"🐬","seal":"🦭","fish":"🐟","tropical_fish":"🐠","blowfish":"🐡","shark":"🦈","octopus":"🐙","shell":"🐚","coral":"🪸","jellyfish":"🪼","snail":"🐌","butterfly":"🦋","bug":"🐛","ant":"🐜","bee":"🐝","honeybee":"🐝","beetle":"🪲","lady_beetle":"🐞","cricket":"🦗","cockroach":"🪳","spider":"🕷️","spider_web":"🕸️","scorpion":"🦂","mosquito":"🦟","fly":"🪰","worm":"🪱","microbe":"🦠","bouquet":"💐","cherry_blossom":"🌸","white_flower":"💮","lotus":"🪷","rosette":"🏵️","rose":"🌹","wilted_flower":"🥀","hibiscus":"🌺","sunflower":"🌻","blossom":"🌼","tulip":"🌷","hyacinth":"🪻","seedling":"🌱","potted_plant":"🪴","evergreen_tree":"🌲","deciduous_tree":"🌳","palm_tree":"🌴","cactus":"🌵","ear_of_rice":"🌾","herb":"🌿","shamrock":"☘️","four_leaf_clover":"🍀","maple_leaf":"🍁","fallen_leaf":"🍂","leaves":"🍃","empty_nest":"🪹","nest_with_eggs":"🪺","mushroom":"🍄","grapes":"🍇","melon":"🍈","watermelon":"🍉","tangerine":"🍊","orange":"🍊","mandarin":"🍊","lemon":"🍋","banana":"🍌","pineapple":"🍍","mango":"🥭","apple":"🍎","green_apple":"🍏","pear":"🍐","peach":"🍑","cherries":"🍒","strawberry":"🍓","blueberries":"🫐","kiwi_fruit":"🥝","tomato":"🍅","olive":"🫒","coconut":"🥥","avocado":"🥑","eggplant":"🍆","potato":"🥔","carrot":"🥕","corn":"🌽","hot_pepper":"🌶️","bell_pepper":"🫑","cucumber":"🥒","leafy_green":"🥬","broccoli":"🥦","garlic":"🧄","onion":"🧅","peanuts":"🥜","beans":"🫘","chestnut":"🌰","ginger_root":"🫚","pea_pod":"🫛","bread":"🍞","croissant":"🥐","baguette_bread":"🥖","flatbread":"🫓","pretzel":"🥨","bagel":"🥯","pancakes":"🥞","waffle":"🧇","cheese":"🧀","meat_on_bone":"🍖","poultry_leg":"🍗","cut_of_meat":"🥩","bacon":"🥓","hamburger":"🍔","fries":"🍟","pizza":"🍕","hotdog":"🌭","sandwich":"🥪","taco":"🌮","burrito":"🌯","tamale":"🫔","stuffed_flatbread":"🥙","falafel":"🧆","egg":"🥚","fried_egg":"🍳","shallow_pan_of_food":"🥘","stew":"🍲","fondue":"🫕","bowl_with_spoon":"🥣","green_salad":"🥗","popcorn":"🍿","butter":"🧈","salt":"🧂","canned_food":"🥫","bento":"🍱","rice_cracker":"🍘","rice_ball":"🍙","rice":"🍚","curry":"🍛","ramen":"🍜","spaghetti":"🍝","sweet_potato":"🍠","oden":"🍢","sushi":"🍣","fried_shrimp":"🍤","fish_cake":"🍥","moon_cake":"🥮","dango":"🍡","dumpling":"🥟","fortune_cookie":"🥠","takeout_box":"🥡","crab":"🦀","lobster":"🦞","shrimp":"🦐","squid":"🦑","oyster":"🦪","icecream":"🍦","shaved_ice":"🍧","ice_cream":"🍨","doughnut":"🍩","cookie":"🍪","birthday":"🎂","cake":"🍰","cupcake":"🧁","pie":"🥧","chocolate_bar":"🍫","candy":"🍬","lollipop":"🍭","custard":"🍮","honey_pot":"🍯","baby_bottle":"🍼","milk_glass":"🥛","coffee":"☕","teapot":"🫖","tea":"🍵","sake":"🍶","champagne":"🍾","wine_glass":"🍷","cocktail":"🍸","tropical_drink":"🍹","beer":"🍺","beers":"🍻","clinking_glasses":"🥂","tumbler_glass":"🥃","pouring_liquid":"🫗","cup_with_straw":"🥤","bubble_tea":"🧋","beverage_box":"🧃","mate":"🧉","ice_cube":"🧊","chopsticks":"🥢","plate_with_cutlery":"🍽️","fork_and_knife":"🍴","spoon":"🥄","hocho":"🔪","knife":"🔪","jar":"🫙","amphora":"🏺","earth_africa":"🌍","earth_americas":"🌎","earth_asia":"🌏","globe_with_meridians":"🌐","world_map":"🗺️","japan":"🗾","compass":"🧭","mountain_snow":"🏔️","mountain":"⛰️","volcano":"🌋","mount_fuji":"🗻","camping":"🏕️","beach_umbrella":"🏖️","desert":"🏜️","desert_island":"🏝️","national_park":"🏞️","stadium":"🏟️","classical_building":"🏛️","building_construction":"🏗️","bricks":"🧱","rock":"🪨","wood":"🪵","hut":"🛖","houses":"🏘️","derelict_house":"🏚️","house":"🏠","house_with_garden":"🏡","office":"🏢","post_office":"🏣","european_post_office":"🏤","hospital":"🏥","bank":"🏦","hotel":"🏨","love_hotel":"🏩","convenience_store":"🏪","school":"🏫","department_store":"🏬","factory":"🏭","japanese_castle":"🏯","european_castle":"🏰","wedding":"💒","tokyo_tower":"🗼","statue_of_liberty":"🗽","church":"⛪","mosque":"🕌","hindu_temple":"🛕","synagogue":"🕍","shinto_shrine":"⛩️","kaaba":"🕋","fountain":"⛲","tent":"⛺","foggy":"🌁","night_with_stars":"🌃","cityscape":"🏙️","sunrise_over_mountains":"🌄","sunrise":"🌅","city_sunset":"🌆","city_sunrise":"🌇","bridge_at_night":"🌉","hotsprings":"♨️","carousel_horse":"🎠","playground_slide":"🛝","ferris_wheel":"🎡","roller_coaster":"🎢","barber":"💈","circus_tent":"🎪","steam_locomotive":"🚂","railway_car":"🚃","bullettrain_side":"🚄","bullettrain_front":"🚅","train2":"🚆","metro":"🚇","light_rail":"🚈","station":"🚉","tram":"🚊","monorail":"🚝","mountain_railway":"🚞","train":"🚋","bus":"🚌","oncoming_bus":"🚍","trolleybus":"🚎","minibus":"🚐","ambulance":"🚑","fire_engine":"🚒","police_car":"🚓","oncoming_police_car":"🚔","taxi":"🚕","oncoming_taxi":"🚖","car":"🚗","red_car":"🚗","oncoming_automobile":"🚘","blue_car":"🚙","pickup_truck":"🛻","truck":"🚚","articulated_lorry":"🚛","tractor":"🚜","racing_car":"🏎️","motorcycle":"🏍️","motor_scooter":"🛵","manual_wheelchair":"🦽","motorized_wheelchair":"🦼","auto_rickshaw":"🛺","bike":"🚲","kick_scooter":"🛴","skateboard":"🛹","roller_skate":"🛼","busstop":"🚏","motorway":"🛣️","railway_track":"🛤️","oil_drum":"🛢️","fuelpump":"⛽","wheel":"🛞","rotating_light":"🚨","traffic_light":"🚥","vertical_traffic_light":"🚦","stop_sign":"🛑","construction":"🚧","anchor":"⚓","ring_buoy":"🛟","boat":"⛵","sailboat":"⛵","canoe":"🛶","speedboat":"🚤","passenger_ship":"🛳️","ferry":"⛴️","motor_boat":"🛥️","ship":"🚢","airplane":"✈️","small_airplane":"🛩️","flight_departure":"🛫","flight_arrival":"🛬","parachute":"🪂","seat":"💺","helicopter":"🚁","suspension_railway":"🚟","mountain_cableway":"🚠","aerial_tramway":"🚡","artificial_satellite":"🛰️","rocket":"🚀","flying_saucer":"🛸","bellhop_bell":"🛎️","luggage":"🧳","hourglass":"⌛","hourglass_flowing_sand":"⏳","watch":"⌚","alarm_clock":"⏰","stopwatch":"⏱️","timer_clock":"⏲️","mantelpiece_clock":"🕰️","clock12":"🕛","clock1230":"🕧","clock1":"🕐","clock130":"🕜","clock2":"🕑","clock230":"🕝","clock3":"🕒","clock330":"🕞","clock4":"🕓","clock430":"🕟","clock5":"🕔","clock530":"🕠","clock6":"🕕","clock630":"🕡","clock7":"🕖","clock730":"🕢","clock8":"🕗","clock830":"🕣","clock9":"🕘","clock930":"🕤","clock10":"🕙","clock1030":"🕥","clock11":"🕚","clock1130":"🕦","new_moon":"🌑","waxing_crescent_moon":"🌒","first_quarter_moon":"🌓","moon":"🌔","waxing_gibbous_moon":"🌔","full_moon":"🌕","waning_gibbous_moon":"🌖","last_quarter_moon":"🌗","waning_crescent_moon":"🌘","crescent_moon":"🌙","new_moon_with_face":"🌚","first_quarter_moon_with_face":"🌛","last_quarter_moon_with_face":"🌜","thermometer":"🌡️","sunny":"☀️","full_moon_with_face":"🌝","sun_with_face":"🌞","ringed_planet":"🪐","star":"⭐","star2":"🌟","stars":"🌠","milky_way":"🌌","cloud":"☁️","partly_sunny":"⛅","cloud_with_lightning_and_rain":"⛈️","sun_behind_small_cloud":"🌤️","sun_behind_large_cloud":"🌥️","sun_behind_rain_cloud":"🌦️","cloud_with_rain":"🌧️","cloud_with_snow":"🌨️","cloud_with_lightning":"🌩️","tornado":"🌪️","fog":"🌫️","wind_face":"🌬️","cyclone":"🌀","rainbow":"🌈","closed_umbrella":"🌂","open_umbrella":"☂️","umbrella":"☔","parasol_on_ground":"⛱️","zap":"⚡","snowflake":"❄️","snowman_with_snow":"☃️","snowman":"⛄","comet":"☄️","fire":"🔥","droplet":"💧","ocean":"🌊","jack_o_lantern":"🎃","christmas_tree":"🎄","fireworks":"🎆","sparkler":"🎇","firecracker":"🧨","sparkles":"✨","balloon":"🎈","tada":"🎉","confetti_ball":"🎊","tanabata_tree":"🎋","bamboo":"🎍","dolls":"🎎","flags":"🎏","wind_chime":"🎐","rice_scene":"🎑","red_envelope":"🧧","ribbon":"🎀","gift":"🎁","reminder_ribbon":"🎗️","tickets":"🎟️","ticket":"🎫","medal_military":"🎖️","trophy":"🏆","medal_sports":"🏅","1st_place_medal":"🥇","2nd_place_medal":"🥈","3rd_place_medal":"🥉","soccer":"⚽","baseball":"⚾","softball":"🥎","basketball":"🏀","volleyball":"🏐","football":"🏈","rugby_football":"🏉","tennis":"🎾","flying_disc":"🥏","bowling":"🎳","cricket_game":"🏏","field_hockey":"🏑","ice_hockey":"🏒","lacrosse":"🥍","ping_pong":"🏓","badminton":"🏸","boxing_glove":"🥊","martial_arts_uniform":"🥋","goal_net":"🥅","golf":"⛳","ice_skate":"⛸️","fishing_pole_and_fish":"🎣","diving_mask":"🤿","running_shirt_with_sash":"🎽","ski":"🎿","sled":"🛷","curling_stone":"🥌","dart":"🎯","yo_yo":"🪀","kite":"🪁","gun":"🔫","8ball":"🎱","crystal_ball":"🔮","magic_wand":"🪄","video_game":"🎮","joystick":"🕹️","slot_machine":"🎰","game_die":"🎲","jigsaw":"🧩","teddy_bear":"🧸","pinata":"🪅","mirror_ball":"🪩","nesting_dolls":"🪆","spades":"♠️","hearts":"♥️","diamonds":"♦️","clubs":"♣️","chess_pawn":"♟️","black_joker":"🃏","mahjong":"🀄","flower_playing_cards":"🎴","performing_arts":"🎭","framed_picture":"🖼️","art":"🎨","thread":"🧵","sewing_needle":"🪡","yarn":"🧶","knot":"🪢","eyeglasses":"👓","dark_sunglasses":"🕶️","goggles":"🥽","lab_coat":"🥼","safety_vest":"🦺","necktie":"👔","shirt":"👕","tshirt":"👕","jeans":"👖","scarf":"🧣","gloves":"🧤","coat":"🧥","socks":"🧦","dress":"👗","kimono":"👘","sari":"🥻","one_piece_swimsuit":"🩱","swim_brief":"🩲","shorts":"🩳","bikini":"👙","womans_clothes":"👚","folding_hand_fan":"🪭","purse":"👛","handbag":"👜","pouch":"👝","shopping":"🛍️","school_satchel":"🎒","thong_sandal":"🩴","mans_shoe":"👞","shoe":"👞","athletic_shoe":"👟","hiking_boot":"🥾","flat_shoe":"🥿","high_heel":"👠","sandal":"👡","ballet_shoes":"🩰","boot":"👢","hair_pick":"🪮","crown":"👑","womans_hat":"👒","tophat":"🎩","mortar_board":"🎓","billed_cap":"🧢","military_helmet":"🪖","rescue_worker_helmet":"⛑️","prayer_beads":"📿","lipstick":"💄","ring":"💍","gem":"💎","mute":"🔇","speaker":"🔈","sound":"🔉","loud_sound":"🔊","loudspeaker":"📢","mega":"📣","postal_horn":"📯","bell":"🔔","no_bell":"🔕","musical_score":"🎼","musical_note":"🎵","notes":"🎶","studio_microphone":"🎙️","level_slider":"🎚️","control_knobs":"🎛️","microphone":"🎤","headphones":"🎧","radio":"📻","saxophone":"🎷","accordion":"🪗","guitar":"🎸","musical_keyboard":"🎹","trumpet":"🎺","violin":"🎻","banjo":"🪕","drum":"🥁","long_drum":"🪘","maracas":"🪇","flute":"🪈","iphone":"📱","calling":"📲","phone":"☎️","telephone":"☎️","telephone_receiver":"📞","pager":"📟","fax":"📠","battery":"🔋","low_battery":"🪫","electric_plug":"🔌","computer":"💻","desktop_computer":"🖥️","printer":"🖨️","keyboard":"⌨️","computer_mouse":"🖱️","trackball":"🖲️","minidisc":"💽","floppy_disk":"💾","cd":"💿","dvd":"📀","abacus":"🧮","movie_camera":"🎥","film_strip":"🎞️","film_projector":"📽️","clapper":"🎬","tv":"📺","camera":"📷","camera_flash":"📸","video_camera":"📹","vhs":"📼","mag":"🔍","mag_right":"🔎","candle":"🕯️","bulb":"💡","flashlight":"🔦","izakaya_lantern":"🏮","lantern":"🏮","diya_lamp":"🪔","notebook_with_decorative_cover":"📔","closed_book":"📕","book":"📖","open_book":"📖","green_book":"📗","blue_book":"📘","orange_book":"📙","books":"📚","notebook":"📓","ledger":"📒","page_with_curl":"📃","scroll":"📜","page_facing_up":"📄","newspaper":"📰","newspaper_roll":"🗞️","bookmark_tabs":"📑","bookmark":"🔖","label":"🏷️","moneybag":"💰","coin":"🪙","yen":"💴","dollar":"💵","euro":"💶","pound":"💷","money_with_wings":"💸","credit_card":"💳","receipt":"🧾","chart":"💹","envelope":"✉️","email":"📧","e-mail":"📧","incoming_envelope":"📨","envelope_with_arrow":"📩","outbox_tray":"📤","inbox_tray":"📥","package":"📦","mailbox":"📫","mailbox_closed":"📪","mailbox_with_mail":"📬","mailbox_with_no_mail":"📭","postbox":"📮","ballot_box":"🗳️","pencil2":"✏️","black_nib":"✒️","fountain_pen":"🖋️","pen":"🖊️","paintbrush":"🖌️","crayon":"🖍️","memo":"📝","pencil":"📝","briefcase":"💼","file_folder":"📁","open_file_folder":"📂","card_index_dividers":"🗂️","date":"📅","calendar":"📆","spiral_notepad":"🗒️","spiral_calendar":"🗓️","card_index":"📇","chart_with_upwards_trend":"📈","chart_with_downwards_trend":"📉","bar_chart":"📊","clipboard":"📋","pushpin":"📌","round_pushpin":"📍","paperclip":"📎","paperclips":"🖇️","straight_ruler":"📏","triangular_ruler":"📐","scissors":"✂️","card_file_box":"🗃️","file_cabinet":"🗄️","wastebasket":"🗑️","lock":"🔒","unlock":"🔓","lock_with_ink_pen":"🔏","closed_lock_with_key":"🔐","key":"🔑","old_key":"🗝️","hammer":"🔨","axe":"🪓","pick":"⛏️","hammer_and_pick":"⚒️","hammer_and_wrench":"🛠️","dagger":"🗡️","crossed_swords":"⚔️","bomb":"💣","boomerang":"🪃","bow_and_arrow":"🏹","shield":"🛡️","carpentry_saw":"🪚","wrench":"🔧","screwdriver":"🪛","nut_and_bolt":"🔩","gear":"⚙️","clamp":"🗜️","balance_scale":"⚖️","probing_cane":"🦯","link":"🔗","chains":"⛓️","hook":"🪝","toolbox":"🧰","magnet":"🧲","ladder":"🪜","alembic":"⚗️","test_tube":"🧪","petri_dish":"🧫","dna":"🧬","microscope":"🔬","telescope":"🔭","satellite":"📡","syringe":"💉","drop_of_blood":"🩸","pill":"💊","adhesive_bandage":"🩹","crutch":"🩼","stethoscope":"🩺","x_ray":"🩻","door":"🚪","elevator":"🛗","mirror":"🪞","window":"🪟","bed":"🛏️","couch_and_lamp":"🛋️","chair":"🪑","toilet":"🚽","plunger":"🪠","shower":"🚿","bathtub":"🛁","mouse_trap":"🪤","razor":"🪒","lotion_bottle":"🧴","safety_pin":"🧷","broom":"🧹","basket":"🧺","roll_of_paper":"🧻","bucket":"🪣","soap":"🧼","bubbles":"🫧","toothbrush":"🪥","sponge":"🧽","fire_extinguisher":"🧯","shopping_cart":"🛒","smoking":"🚬","coffin":"⚰️","headstone":"🪦","funeral_urn":"⚱️","nazar_amulet":"🧿","hamsa":"🪬","moyai":"🗿","placard":"🪧","identification_card":"🪪","atm":"🏧","put_litter_in_its_place":"🚮","potable_water":"🚰","wheelchair":"♿","mens":"🚹","womens":"🚺","restroom":"🚻","baby_symbol":"🚼","wc":"🚾","passport_control":"🛂","customs":"🛃","baggage_claim":"🛄","left_luggage":"🛅","warning":"⚠️","children_crossing":"🚸","no_entry":"⛔","no_entry_sign":"🚫","no_bicycles":"🚳","no_smoking":"🚭","do_not_litter":"🚯","non-potable_water":"🚱","no_pedestrians":"🚷","no_mobile_phones":"📵","underage":"🔞","radioactive":"☢️","biohazard":"☣️","arrow_up":"⬆️","arrow_upper_right":"↗️","arrow_right":"➡️","arrow_lower_right":"↘️","arrow_down":"⬇️","arrow_lower_left":"↙️","arrow_left":"⬅️","arrow_upper_left":"↖️","arrow_up_down":"↕️","left_right_arrow":"↔️","leftwards_arrow_with_hook":"↩️","arrow_right_hook":"↪️","arrow_heading_up":"⤴️","arrow_heading_down":"⤵️","arrows_clockwise":"🔃","arrows_counterclockwise":"🔄","back":"🔙","end":"🔚","on":"🔛","soon":"🔜","top":"🔝","place_of_worship":"🛐","atom_symbol":"⚛️","om":"🕉️","star_of_david":"✡️","wheel_of_dharma":"☸️","yin_yang":"☯️","latin_cross":"✝️","orthodox_cross":"☦️","star_and_crescent":"☪️","peace_symbol":"☮️","menorah":"🕎","six_pointed_star":"🔯","khanda":"🪯","aries":"♈","taurus":"♉","gemini":"♊","cancer":"♋","leo":"♌","virgo":"♍","libra":"♎","scorpius":"♏","sagittarius":"♐","capricorn":"♑","aquarius":"♒","pisces":"♓","ophiuchus":"⛎","twisted_rightwards_arrows":"🔀","repeat":"🔁","repeat_one":"🔂","arrow_forward":"▶️","fast_forward":"⏩","next_track_button":"⏭️","play_or_pause_button":"⏯️","arrow_backward":"◀️","rewind":"⏪","previous_track_button":"⏮️","arrow_up_small":"🔼","arrow_double_up":"⏫","arrow_down_small":"🔽","arrow_double_down":"⏬","pause_button":"⏸️","stop_button":"⏹️","record_button":"⏺️","eject_button":"⏏️","cinema":"🎦","low_brightness":"🔅","high_brightness":"🔆","signal_strength":"📶","wireless":"🛜","vibration_mode":"📳","mobile_phone_off":"📴","female_sign":"♀️","male_sign":"♂️","transgender_symbol":"⚧️","heavy_multiplication_x":"✖️","heavy_plus_sign":"➕","heavy_minus_sign":"➖","heavy_division_sign":"➗","heavy_equals_sign":"🟰","infinity":"♾️","bangbang":"‼️","interrobang":"⁉️","question":"❓","grey_question":"❔","grey_exclamation":"❕","exclamation":"❗","heavy_exclamation_mark":"❗","wavy_dash":"〰️","currency_exchange":"💱","heavy_dollar_sign":"💲","medical_symbol":"⚕️","recycle":"♻️","fleur_de_lis":"⚜️","trident":"🔱","name_badge":"📛","beginner":"🔰","o":"⭕","white_check_mark":"✅","ballot_box_with_check":"☑️","heavy_check_mark":"✔️","x":"❌","negative_squared_cross_mark":"❎","curly_loop":"➰","loop":"➿","part_alternation_mark":"〽️","eight_spoked_asterisk":"✳️","eight_pointed_black_star":"✴️","sparkle":"❇️","copyright":"©️","registered":"®️","tm":"™️","hash":"#️⃣","asterisk":"*️⃣","zero":"0️⃣","one":"1️⃣","two":"2️⃣","three":"3️⃣","four":"4️⃣","five":"5️⃣","six":"6️⃣","seven":"7️⃣","eight":"8️⃣","nine":"9️⃣","keycap_ten":"🔟","capital_abcd":"🔠","abcd":"🔡","symbols":"🔣","abc":"🔤","a":"🅰️","ab":"🆎","b":"🅱️","cl":"🆑","cool":"🆒","free":"🆓","information_source":"ℹ️","id":"🆔","m":"Ⓜ️","new":"🆕","ng":"🆖","o2":"🅾️","ok":"🆗","parking":"🅿️","sos":"🆘","up":"🆙","vs":"🆚","koko":"🈁","sa":"🈂️","u6708":"🈷️","u6709":"🈶","u6307":"🈯","ideograph_advantage":"🉐","u5272":"🈹","u7121":"🈚","u7981":"🈲","accept":"🉑","u7533":"🈸","u5408":"🈴","u7a7a":"🈳","congratulations":"㊗️","secret":"㊙️","u55b6":"🈺","u6e80":"🈵","red_circle":"🔴","orange_circle":"🟠","yellow_circle":"🟡","green_circle":"🟢","large_blue_circle":"🔵","purple_circle":"🟣","brown_circle":"🟤","black_circle":"⚫","white_circle":"⚪","red_square":"🟥","orange_square":"🟧","yellow_square":"🟨","green_square":"🟩","blue_square":"🟦","purple_square":"🟪","brown_square":"🟫","black_large_square":"⬛","white_large_square":"⬜","black_medium_square":"◼️","white_medium_square":"◻️","black_medium_small_square":"◾","white_medium_small_square":"◽","black_small_square":"▪️","white_small_square":"▫️","large_orange_diamond":"🔶","large_blue_diamond":"🔷","small_orange_diamond":"🔸","small_blue_diamond":"🔹","small_red_triangle":"🔺","small_red_triangle_down":"🔻","diamond_shape_with_a_dot_inside":"💠","radio_button":"🔘","white_square_button":"🔳","black_square_button":"🔲","checkered_flag":"🏁","triangular_flag_on_post":"🚩","crossed_flags":"🎌","black_flag":"🏴","white_flag":"🏳️","rainbow_flag":"🏳️‍🌈","transgender_flag":"🏳️‍⚧️","pirate_flag":"🏴‍☠️","ascension_island":"🇦🇨","andorra":"🇦🇩","united_arab_emirates":"🇦🇪","afghanistan":"🇦🇫","antigua_barbuda":"🇦🇬","anguilla":"🇦🇮","albania":"🇦🇱","armenia":"🇦🇲","angola":"🇦🇴","antarctica":"🇦🇶","argentina":"🇦🇷","american_samoa":"🇦🇸","austria":"🇦🇹","australia":"🇦🇺","aruba":"🇦🇼","aland_islands":"🇦🇽","azerbaijan":"🇦🇿","bosnia_herzegovina":"🇧🇦","barbados":"🇧🇧","bangladesh":"🇧🇩","belgium":"🇧🇪","burkina_faso":"🇧🇫","bulgaria":"🇧🇬","bahrain":"🇧🇭","burundi":"🇧🇮","benin":"🇧🇯","st_barthelemy":"🇧🇱","bermuda":"🇧🇲","brunei":"🇧🇳","bolivia":"🇧🇴","caribbean_netherlands":"🇧🇶","brazil":"🇧🇷","bahamas":"🇧🇸","bhutan":"🇧🇹","bouvet_island":"🇧🇻","botswana":"🇧🇼","belarus":"🇧🇾","belize":"🇧🇿","canada":"🇨🇦","cocos_islands":"🇨🇨","congo_kinshasa":"🇨🇩","central_african_republic":"🇨🇫","congo_brazzaville":"🇨🇬","switzerland":"🇨🇭","cote_divoire":"🇨🇮","cook_islands":"🇨🇰","chile":"🇨🇱","cameroon":"🇨🇲","cn":"🇨🇳","colombia":"🇨🇴","clipperton_island":"🇨🇵","costa_rica":"🇨🇷","cuba":"🇨🇺","cape_verde":"🇨🇻","curacao":"🇨🇼","christmas_island":"🇨🇽","cyprus":"🇨🇾","czech_republic":"🇨🇿","de":"🇩🇪","diego_garcia":"🇩🇬","djibouti":"🇩🇯","denmark":"🇩🇰","dominica":"🇩🇲","dominican_republic":"🇩🇴","algeria":"🇩🇿","ceuta_melilla":"🇪🇦","ecuador":"🇪🇨","estonia":"🇪🇪","egypt":"🇪🇬","western_sahara":"🇪🇭","eritrea":"🇪🇷","es":"🇪🇸","ethiopia":"🇪🇹","eu":"🇪🇺","european_union":"🇪🇺","finland":"🇫🇮","fiji":"🇫🇯","falkland_islands":"🇫🇰","micronesia":"🇫🇲","faroe_islands":"🇫🇴","fr":"🇫🇷","gabon":"🇬🇦","gb":"🇬🇧","uk":"🇬🇧","grenada":"🇬🇩","georgia":"🇬🇪","french_guiana":"🇬🇫","guernsey":"🇬🇬","ghana":"🇬🇭","gibraltar":"🇬🇮","greenland":"🇬🇱","gambia":"🇬🇲","guinea":"🇬🇳","guadeloupe":"🇬🇵","equatorial_guinea":"🇬🇶","greece":"🇬🇷","south_georgia_south_sandwich_islands":"🇬🇸","guatemala":"🇬🇹","guam":"🇬🇺","guinea_bissau":"🇬🇼","guyana":"🇬🇾","hong_kong":"🇭🇰","heard_mcdonald_islands":"🇭🇲","honduras":"🇭🇳","croatia":"🇭🇷","haiti":"🇭🇹","hungary":"🇭🇺","canary_islands":"🇮🇨","indonesia":"🇮🇩","ireland":"🇮🇪","israel":"🇮🇱","isle_of_man":"🇮🇲","india":"🇮🇳","british_indian_ocean_territory":"🇮🇴","iraq":"🇮🇶","iran":"🇮🇷","iceland":"🇮🇸","it":"🇮🇹","jersey":"🇯🇪","jamaica":"🇯🇲","jordan":"🇯🇴","jp":"🇯🇵","kenya":"🇰🇪","kyrgyzstan":"🇰🇬","cambodia":"🇰🇭","kiribati":"🇰🇮","comoros":"🇰🇲","st_kitts_nevis":"🇰🇳","north_korea":"🇰🇵","kr":"🇰🇷","kuwait":"🇰🇼","cayman_islands":"🇰🇾","kazakhstan":"🇰🇿","laos":"🇱🇦","lebanon":"🇱🇧","st_lucia":"🇱🇨","liechtenstein":"🇱🇮","sri_lanka":"🇱🇰","liberia":"🇱🇷","lesotho":"🇱🇸","lithuania":"🇱🇹","luxembourg":"🇱🇺","latvia":"🇱🇻","libya":"🇱🇾","morocco":"🇲🇦","monaco":"🇲🇨","moldova":"🇲🇩","montenegro":"🇲🇪","st_martin":"🇲🇫","madagascar":"🇲🇬","marshall_islands":"🇲🇭","macedonia":"🇲🇰","mali":"🇲🇱","myanmar":"🇲🇲","mongolia":"🇲🇳","macau":"🇲🇴","northern_mariana_islands":"🇲🇵","martinique":"🇲🇶","mauritania":"🇲🇷","montserrat":"🇲🇸","malta":"🇲🇹","mauritius":"🇲🇺","maldives":"🇲🇻","malawi":"🇲🇼","mexico":"🇲🇽","malaysia":"🇲🇾","mozambique":"🇲🇿","namibia":"🇳🇦","new_caledonia":"🇳🇨","niger":"🇳🇪","norfolk_island":"🇳🇫","nigeria":"🇳🇬","nicaragua":"🇳🇮","netherlands":"🇳🇱","norway":"🇳🇴","nepal":"🇳🇵","nauru":"🇳🇷","niue":"🇳🇺","new_zealand":"🇳🇿","oman":"🇴🇲","panama":"🇵🇦","peru":"🇵🇪","french_polynesia":"🇵🇫","papua_new_guinea":"🇵🇬","philippines":"🇵🇭","pakistan":"🇵🇰","poland":"🇵🇱","st_pierre_miquelon":"🇵🇲","pitcairn_islands":"🇵🇳","puerto_rico":"🇵🇷","palestinian_territories":"🇵🇸","portugal":"🇵🇹","palau":"🇵🇼","paraguay":"🇵🇾","qatar":"🇶🇦","reunion":"🇷🇪","romania":"🇷🇴","serbia":"🇷🇸","ru":"🇷🇺","rwanda":"🇷🇼","saudi_arabia":"🇸🇦","solomon_islands":"🇸🇧","seychelles":"🇸🇨","sudan":"🇸🇩","sweden":"🇸🇪","singapore":"🇸🇬","st_helena":"🇸🇭","slovenia":"🇸🇮","svalbard_jan_mayen":"🇸🇯","slovakia":"🇸🇰","sierra_leone":"🇸🇱","san_marino":"🇸🇲","senegal":"🇸🇳","somalia":"🇸🇴","suriname":"🇸🇷","south_sudan":"🇸🇸","sao_tome_principe":"🇸🇹","el_salvador":"🇸🇻","sint_maarten":"🇸🇽","syria":"🇸🇾","swaziland":"🇸🇿","tristan_da_cunha":"🇹🇦","turks_caicos_islands":"🇹🇨","chad":"🇹🇩","french_southern_territories":"🇹🇫","togo":"🇹🇬","thailand":"🇹🇭","tajikistan":"🇹🇯","tokelau":"🇹🇰","timor_leste":"🇹🇱","turkmenistan":"🇹🇲","tunisia":"🇹🇳","tonga":"🇹🇴","tr":"🇹🇷","trinidad_tobago":"🇹🇹","tuvalu":"🇹🇻","taiwan":"🇹🇼","tanzania":"🇹🇿","ukraine":"🇺🇦","uganda":"🇺🇬","us_outlying_islands":"🇺🇲","united_nations":"🇺🇳","us":"🇺🇸","uruguay":"🇺🇾","uzbekistan":"🇺🇿","vatican_city":"🇻🇦","st_vincent_grenadines":"🇻🇨","venezuela":"🇻🇪","british_virgin_islands":"🇻🇬","us_virgin_islands":"🇻🇮","vietnam":"🇻🇳","vanuatu":"🇻🇺","wallis_futuna":"🇼🇫","samoa":"🇼🇸","kosovo":"🇽🇰","yemen":"🇾🇪","mayotte":"🇾🇹","south_africa":"🇿🇦","zambia":"🇿🇲","zimbabwe":"🇿🇼","england":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","scotland":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","wales":"🏴󠁧󠁢󠁷󠁬󠁳󠁿"};
+
+  const shortcodePattern = /:([+-]1|[a-z0-9_+-]+):/gi;
+  const skipSelector = "code, pre, kbd, samp, script, style, textarea";
+  const roots = document.querySelectorAll("[data-emoji-shortcodes]");
+
+  function renderShortcodes(value) {
+    return value.replace(shortcodePattern, (match, shortcode) => emojiShortcodes[shortcode.toLowerCase()] || match);
+  }
+
+  function enhance(root) {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !shortcodePattern.test(node.nodeValue)) return NodeFilter.FILTER_REJECT;
+        shortcodePattern.lastIndex = 0;
+        if (node.parentElement?.closest(skipSelector)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      },
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    for (const node of nodes) node.nodeValue = renderShortcodes(node.nodeValue || "");
+  }
+
+  for (const root of roots) enhance(root);
+})();</script><script type="module">var e=[`.prose h1[id]`,`.prose h2[id]`,`.prose h3[id]`,`.prose h4[id]`,`.prose h5[id]`,`.prose h6[id]`].join(`, `);document.querySelectorAll(e).forEach(e=>{if(e.querySelector(`a.heading-anchor`))return;let t=document.createElement(`a`);for(t.className=`heading-anchor`,t.href=`#${e.id}`;e.firstChild;)t.appendChild(e.firstChild);e.appendChild(t)});</script><script type="module" src="/_astro/EChartsEnhancer.astro_astro_type_script_index_0_lang.CVUOkBi5.js"></script><script type="module">[...document.querySelectorAll(`.prose pre > code`)].forEach(e=>{let t=e.parentElement;if(!t||t.parentElement?.classList.contains(`code-copy-frame`))return;let n=document.createElement(`div`),r=document.createElement(`button`);n.className=`code-copy-frame`,r.type=`button`,r.className=`code-copy-button`,r.textContent=`Copy`,r.setAttribute(`aria-label`,`Copy code`),t.replaceWith(n),n.append(r,t),r.addEventListener(`click`,async()=>{await navigator.clipboard.writeText(e.textContent||``),r.textContent=`Copied`,window.setTimeout(()=>{r.textContent=`Copy`},1200)})});</script><dialog class="search-dialog" data-search-dialog aria-label="Search"><section class="search-modal" data-search-root data-search-mode="modal" data-search-limit="8"><div class="search-modal-header"><p class="utility-note text-xs">full-text search</p><button class="search-close" type="button" data-search-close aria-label="Close search">Esc</button></div><label class="search-field"><span class="sr-only">Search posts</span><input data-search-input type="search" placeholder="Search posts..." autocomplete="off"></label><p class="search-status" data-search-status>Type at least 2 characters to search.</p><ol class="search-results" data-search-results></ol></section></dialog><script type="module" src="/_astro/SearchEnhancer.astro_astro_type_script_index_0_lang.BE8U6X6I.js"></script><script id="blog-theme-diagrams" type="application/json">{"mermaid":true,"plantuml":{"enabled":true,"serverUrl":"https://www.plantuml.com/plantuml/svg"}}</script><script type="module" src="/_astro/DiagramEnhancer.astro_astro_type_script_index_0_lang.DN3pt0_d.js"></script></body></html>
