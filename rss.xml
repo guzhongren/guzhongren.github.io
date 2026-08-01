@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>谷中仁的博客</title><description>全栈开发者的技术写作与知识沉淀</description><link>https://guzhongren.github.io/</link><language>zh-CN</language><item><title>“我的妈呢”</title><link>https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2zh-cn/</guid><pubDate>Wed, 29 Jul 2026 00:20:37 GMT</pubDate><content:encoded>&lt;p&gt;我从家辉买了1/4个西瓜回家，打开门，西西和她哥哥正坐在地上玩耍，她突然说：“我的妈呢！”&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>谷中仁的博客</title><description>全栈开发者的技术写作与知识沉淀</description><link>https://guzhongren.github.io/</link><language>zh-CN</language><item><title>“我的妈呢”</title><link>https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</guid><pubDate>Wed, 29 Jul 2026 00:20:37 GMT</pubDate><content:encoded>&lt;p&gt;我从家辉买了1/4个西瓜回家，打开门，西西和她哥哥正坐在地上玩耍，她突然说：“我的妈呢！”&lt;/p&gt;
 &lt;p&gt;我说：“妈妈在楼底下了。”&lt;/p&gt;
 &lt;p&gt;西西又说：“我的妈呢！”&lt;/p&gt;
 &lt;p&gt;我有说：“妈妈快上楼了。”&lt;/p&gt;
@@ -6,7 +6,7 @@
 &lt;p&gt;我吃完饭后，妈妈给她穿好了衣服，我就带着她骑车去永宁门了。&lt;/p&gt;
 &lt;p&gt;回来的路上在小雁塔和朱雀大街相交的十字路口，我们看到了西瓜，西西抬起手指着西瓜突然说：“我的妈呢！”&lt;/p&gt;
 &lt;p&gt;我愣了一下才反应过来，西西说的是西瓜的英语，不是在问她妈妈在哪，然后我笑着说：“Watermelon，西瓜的英语叫 Watermelon, 不是我的妈呢。”&lt;/p&gt;
-&lt;p&gt;在回家的路上，西西不停的说着 &lt;code&gt;Watermelon&lt;/code&gt;。&lt;/p&gt;</content:encoded></item><item><title>后端开发中的 DTO,Model,Entity</title><link>https://guzhongren.github.io/posts/2026/03/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84dtomodelentityzh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/03/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84dtomodelentityzh-cn/</guid><pubDate>Sun, 01 Mar 2026 10:59:37 GMT</pubDate><content:encoded>&lt;p&gt;AI 发展的太猛了，人人都是程序员，程序员成了最容易被代替的职业。一个被程序员写出来的程序来代替程序员了。&lt;/p&gt;
+&lt;p&gt;在回家的路上，西西不停的说着 &lt;code&gt;Watermelon&lt;/code&gt;。&lt;/p&gt;</content:encoded></item><item><title>后端开发中的 DTO,Model,Entity</title><link>https://guzhongren.github.io/posts/2026/03/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84dtomodelentity/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/03/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84dtomodelentity/</guid><pubDate>Sun, 01 Mar 2026 10:59:37 GMT</pubDate><content:encoded>&lt;p&gt;AI 发展的太猛了，人人都是程序员，程序员成了最容易被代替的职业。一个被程序员写出来的程序来代替程序员了。&lt;/p&gt;
 &lt;h2 id=&quot;可替代性&quot;&gt;可替代性&lt;/h2&gt;
 &lt;p&gt;程序运行之所以高效，是因为有良好的架构，算法等方法论的有效性集成。如果程序都有非专业人员来写，可能会面临很多问题，比如写出来的程序效率低下，安全性差，维护困难等问题。&lt;/p&gt;
 &lt;p&gt;可用不等于可维护，可持续演进。&lt;/p&gt;
@@ -30,7 +30,7 @@
 &lt;p&gt;Entity, 实体，是数据在数据库中的存储单元，它通常包含了业务数据，并提供对数据的操作方法。Entity 通常是一个 ORM（Object-Relational Mapping）对象，它与数据库表结构一一对应，包含了数据字段和 getter/setter 方法，并且通常还包含了数据库操作的方法。&lt;/p&gt;
 &lt;p&gt;Entity，通常只在数据库打交道，由 Service 层转换成 Entity 对象进行数据库操作，或者将数据库查询出来的 Entity 对象转换成 Model 对象进行业务逻辑处理。&lt;/p&gt;
 &lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
-&lt;p&gt;AI 发展很快，但架构层面的知识仍是所有高效架构的基础，比如在哪里使用 DTO，Model，Entity 等等。AI 可以帮助我们写代码，但它不能替代我们对架构的理解和设计能力。&lt;/p&gt;</content:encoded></item><item><title>AI 时代需要什么？</title><link>https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88zh-cn/</guid><pubDate>Fri, 06 Feb 2026 23:09:08 GMT</pubDate><content:encoded>&lt;p&gt;都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。&lt;/p&gt;
+&lt;p&gt;AI 发展很快，但架构层面的知识仍是所有高效架构的基础，比如在哪里使用 DTO，Model，Entity 等等。AI 可以帮助我们写代码，但它不能替代我们对架构的理解和设计能力。&lt;/p&gt;</content:encoded></item><item><title>AI 时代需要什么？</title><link>https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</guid><pubDate>Fri, 06 Feb 2026 23:09:08 GMT</pubDate><content:encoded>&lt;p&gt;都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。&lt;/p&gt;
 &lt;p&gt;如下是我参与的一个调查的回答，分享给大家：&lt;/p&gt;
 &lt;p&gt;{{&amp;#x3C; admonition type=question title=“This is a survey” open=false &gt;}}&lt;/p&gt;
 &lt;h2 id=&quot;as-an-engineer&quot;&gt;As an engineer:&lt;/h2&gt;
@@ -142,12 +142,12 @@
 &lt;li&gt;经验意味着能在模糊的需求里快速拆解出可交付的小目标，搭建迭代回路，让 AI 产出落地为产品价值。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;换句话说，AI 并不是真正把“思考”全盘接手，而是把大量机械化的认知任务交给了工具。最有价值的岗位，反而是能用更少的尝试把问题框定准确、能管理复杂系统、并对最终结果负责的人。&lt;/p&gt;
-&lt;p&gt;AI 把工具能力放大，但不会自动带来判断力、责任和对上下文的深刻理解。那些能把问题定义清楚、建立稳定回路、并持续学习的人，在未来会更有竞争力。我们要做的，不是和模型比赛写代码，而是学会用模型去解决更有价值的、更需要经验与判断力的问题。&lt;/p&gt;</content:encoded></item><item><title>“妈妈，你看，月。”</title><link>https://guzhongren.github.io/posts/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88zh-cn/</guid><pubDate>Thu, 22 Jan 2026 23:48:47 GMT</pubDate><content:encoded>&lt;p&gt;昨天晚上本来想让西西早点睡觉，所以我们就早早就上床了，假装要睡觉了，可西西还是很兴奋，在主卧，客厅，次卧之间不停跑，不停大声说话。&lt;/p&gt;
+&lt;p&gt;AI 把工具能力放大，但不会自动带来判断力、责任和对上下文的深刻理解。那些能把问题定义清楚、建立稳定回路、并持续学习的人，在未来会更有竞争力。我们要做的，不是和模型比赛写代码，而是学会用模型去解决更有价值的、更需要经验与判断力的问题。&lt;/p&gt;</content:encoded></item><item><title>“妈妈，你看，月。”</title><link>https://guzhongren.github.io/posts/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E5%A6%88%E5%A6%88%E4%BD%A0%E7%9C%8B%E6%9C%88/</guid><pubDate>Thu, 22 Jan 2026 23:48:47 GMT</pubDate><content:encoded>&lt;p&gt;昨天晚上本来想让西西早点睡觉，所以我们就早早就上床了，假装要睡觉了，可西西还是很兴奋，在主卧，客厅，次卧之间不停跑，不停大声说话。&lt;/p&gt;
 &lt;p&gt;妈妈骗她说：“外面有大灰狼，赶紧上来睡觉来。”&lt;/p&gt;
 &lt;p&gt;西西听到后，眼睛一瞪，然后慢吞吞地就上来了，上来之后又要进入她的睡觉流程了。首先拿起了她的巧虎书和巧虎笔，然后就开始点了。&lt;/p&gt;
 &lt;p&gt;突然看到最后一页，那一页是一首古诗，唐代王维的《山居秋暝》，里面有一句是 “明月松间照”, 西西看到“月” 后就兴奋了，叫到：“妈妈，你看，月。”&lt;/p&gt;
 &lt;p&gt;妈妈一看,果然是“月” 说道：“哇，西西真棒，都认识书上的字啦。” 然后娘两抱着亲了一下。&lt;/p&gt;
-&lt;p&gt;然后西西就更兴奋了，更睡不着了…&lt;/p&gt;</content:encoded></item><item><title>西西认识了很多字</title><link>https://guzhongren.github.io/posts/2026/01/%E8%A5%BF%E8%A5%BF%E8%AE%A4%E8%AF%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%AD%97zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E8%A5%BF%E8%A5%BF%E8%AE%A4%E8%AF%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%AD%97zh-cn/</guid><pubDate>Fri, 16 Jan 2026 23:19:45 GMT</pubDate><content:encoded>&lt;p&gt;每天下班吃完饭后，妈妈都会带着西西学习认字，她们会把学会的字贴在冰箱的一个门上，不认识的字留在下面，然后计划好明天要学哪些字；有时候奶奶也会教西西认识一些字。&lt;/p&gt;
+&lt;p&gt;然后西西就更兴奋了，更睡不着了…&lt;/p&gt;</content:encoded></item><item><title>西西认识了很多字</title><link>https://guzhongren.github.io/posts/2026/01/%E8%A5%BF%E8%A5%BF%E8%AE%A4%E8%AF%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%AD%97/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E8%A5%BF%E8%A5%BF%E8%AE%A4%E8%AF%86%E4%BA%86%E5%BE%88%E5%A4%9A%E5%AD%97/</guid><pubDate>Fri, 16 Jan 2026 23:19:45 GMT</pubDate><content:encoded>&lt;p&gt;每天下班吃完饭后，妈妈都会带着西西学习认字，她们会把学会的字贴在冰箱的一个门上，不认识的字留在下面，然后计划好明天要学哪些字；有时候奶奶也会教西西认识一些字。&lt;/p&gt;
 &lt;p&gt;有天下班到家，西西就拿着奶奶教她的飞机的飞给妈妈炫耀：“妈妈，你看，飞机的飞。” 说的时候可开心了。&lt;/p&gt;
 &lt;p&gt;妈妈也很惊讶，我回来，妈妈就给我也说了这事，然后西西又找到了飞机的飞给我炫耀她学到的字。&lt;/p&gt;
 &lt;hr&gt;
@@ -155,7 +155,7 @@
 &lt;p&gt;我站在她的后面说：“这么棒，都认识这么多字啦！” 不得不说，新脑子就是好使。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/life/xixi/font.70atzef0ee.webp&quot; alt=&quot;font&quot;&gt;
-昨天晚上，我们准备睡觉了，西西突然要找飞机的飞字，我们在客厅找了一会找到了， 然后妈妈就开始带着西西认字，并拍视频，妈妈让西西一个字一个字的拿起来，然后让西西对着手机摄像头叫出字的发音，刚开始，西西完全按照剧情在演，而且字发音都正确，说了一半后，整个场面就开始失控了; 原本认识的字现在故意说个错的发音，还故意做出鬼脸…&lt;/p&gt;</content:encoded></item><item><title>“我不喜欢我的爸爸了”</title><link>https://guzhongren.github.io/posts/2026/01/%E6%88%91%E4%B8%8D%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E7%88%B8%E7%88%B8%E4%BA%86zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E6%88%91%E4%B8%8D%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E7%88%B8%E7%88%B8%E4%BA%86zh-cn/</guid><pubDate>Tue, 06 Jan 2026 00:22:33 GMT</pubDate><content:encoded>&lt;p&gt;年底了还有好多假没有休完，媳妇也要去天津出差，于是我们决定去新疆玩七天，然后瞅中时机果断买了最便宜的机票，到点就飞了。&lt;/p&gt;
+昨天晚上，我们准备睡觉了，西西突然要找飞机的飞字，我们在客厅找了一会找到了， 然后妈妈就开始带着西西认字，并拍视频，妈妈让西西一个字一个字的拿起来，然后让西西对着手机摄像头叫出字的发音，刚开始，西西完全按照剧情在演，而且字发音都正确，说了一半后，整个场面就开始失控了; 原本认识的字现在故意说个错的发音，还故意做出鬼脸…&lt;/p&gt;</content:encoded></item><item><title>“我不喜欢我的爸爸了”</title><link>https://guzhongren.github.io/posts/2026/01/%E6%88%91%E4%B8%8D%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E7%88%B8%E7%88%B8%E4%BA%86/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/01/%E6%88%91%E4%B8%8D%E5%96%9C%E6%AC%A2%E6%88%91%E7%9A%84%E7%88%B8%E7%88%B8%E4%BA%86/</guid><pubDate>Tue, 06 Jan 2026 00:22:33 GMT</pubDate><content:encoded>&lt;p&gt;年底了还有好多假没有休完，媳妇也要去天津出差，于是我们决定去新疆玩七天，然后瞅中时机果断买了最便宜的机票，到点就飞了。&lt;/p&gt;
 &lt;p&gt;西西也完成了人生的第一次坐飞机；坐飞机前是兴奋的，坐飞机的时候是睡觉的，也没有那么兴奋了，连个天上，云朵都懒得看。&lt;/p&gt;
 &lt;p&gt;由于轻装简行，我就没有带剃须刀 🪒，所以七天下来我的胡子长得长长的，蹭西西地时候，西西就会说：“不要亲我！”哈哈，被嫌弃了。&lt;/p&gt;
 &lt;p&gt;三十一号，全家人都回家。一周没见妈妈，西西在高铁站就跟妈妈腻歪起来了，完全没我什么事了。&lt;/p&gt;
@@ -164,7 +164,7 @@
 &lt;p&gt;然后西西又说：“我喜欢我的妈妈。”&lt;/p&gt;
 &lt;p&gt;妈妈说：“为什么？”&lt;/p&gt;
 &lt;p&gt;西西说：“因为爸爸没刮胡子。”&lt;/p&gt;
-&lt;p&gt;我只能无语的笑笑。妈妈也只能跟着西西嫌弃，然后笑一笑。&lt;/p&gt;</content:encoded></item><item><title>“妈妈什么时候几天回来”</title><link>https://guzhongren.github.io/posts/2025/12/%E5%A6%88%E5%A6%88%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%87%A0%E5%A4%A9%E5%9B%9E%E6%9D%A5zh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/12/%E5%A6%88%E5%A6%88%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%87%A0%E5%A4%A9%E5%9B%9E%E6%9D%A5zh-cn/</guid><pubDate>Mon, 15 Dec 2025 00:22:00 GMT</pubDate><content:encoded>&lt;p&gt;周日早上，一家人吃了饭，西西，奶奶和我拿着我们在凯德广场领的免费的电影票去看定影了，西西第一次看电影，走进电影院后看到既高又大的电影院格外好奇，虽然早到了几分钟，但是我们参观了电影院的各个地方和看到了很多海报，玩偶…&lt;/p&gt;
+&lt;p&gt;我只能无语的笑笑。妈妈也只能跟着西西嫌弃，然后笑一笑。&lt;/p&gt;</content:encoded></item><item><title>“妈妈什么时候几天回来”</title><link>https://guzhongren.github.io/posts/2025/12/%E5%A6%88%E5%A6%88%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%87%A0%E5%A4%A9%E5%9B%9E%E6%9D%A5/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/12/%E5%A6%88%E5%A6%88%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%87%A0%E5%A4%A9%E5%9B%9E%E6%9D%A5/</guid><pubDate>Mon, 15 Dec 2025 00:22:00 GMT</pubDate><content:encoded>&lt;p&gt;周日早上，一家人吃了饭，西西，奶奶和我拿着我们在凯德广场领的免费的电影票去看定影了，西西第一次看电影，走进电影院后看到既高又大的电影院格外好奇，虽然早到了几分钟，但是我们参观了电影院的各个地方和看到了很多海报，玩偶…&lt;/p&gt;
 &lt;p&gt;电影开始了，我们进去坐到了第三排，因为后面都没有好位置了。&lt;/p&gt;
 &lt;p&gt;电影看了前半段，讲了一对父子在海上遭遇了海浪，被迫漂流到一个叫幸福岛的岛上，上面有几个会说话的动物，然后发生了一些了可笑的事。后来岛上要举行幸福节，父子俩想要拿出最好的礼物 -  小孩妈妈送他的大虾披风，但被风吹走了。他们找啊找，追啊追，最终披风被撕成了好几片，但小动物们并不知道这个披风对小孩的意义。&lt;/p&gt;
 &lt;p&gt;小孩在帐篷里和父亲聊天，小孩突然说：“我要回家。”&lt;/p&gt;
@@ -196,7 +196,7 @@
 &lt;p&gt;我说：“7 天，21 号。”&lt;/p&gt;
 &lt;p&gt;…&lt;/p&gt;
 &lt;p&gt;凌晨四点，我突然醒来，西西和往常一样，在枕头那上面横着睡着, 得亏家里还是二十三四度的样子，不然光着屁股就得冻感冒了。&lt;/p&gt;
-&lt;p&gt;老父亲依旧按规律的给西西掂了个尿然后就又呼呼大睡了。&lt;/p&gt;</content:encoded></item><item><title>“看，我会穿”</title><link>https://guzhongren.github.io/posts/2025/12/%E7%9C%8B%E6%88%91%E4%BC%9A%E7%A9%BFzh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/12/%E7%9C%8B%E6%88%91%E4%BC%9A%E7%A9%BFzh-cn/</guid><pubDate>Thu, 11 Dec 2025 00:18:32 GMT</pubDate><content:encoded>&lt;p&gt;昨天下午，西西早早就吃完饭了，我到楼下，西西打来了电话，第一句就是：“爸爸，你到哪了？”&lt;/p&gt;
+&lt;p&gt;老父亲依旧按规律的给西西掂了个尿然后就又呼呼大睡了。&lt;/p&gt;</content:encoded></item><item><title>“看，我会穿”</title><link>https://guzhongren.github.io/posts/2025/12/%E7%9C%8B%E6%88%91%E4%BC%9A%E7%A9%BF/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/12/%E7%9C%8B%E6%88%91%E4%BC%9A%E7%A9%BF/</guid><pubDate>Thu, 11 Dec 2025 00:18:32 GMT</pubDate><content:encoded>&lt;p&gt;昨天下午，西西早早就吃完饭了，我到楼下，西西打来了电话，第一句就是：“爸爸，你到哪了？”&lt;/p&gt;
 &lt;p&gt;我把手机转过来朝向小区说：“楼下了。”&lt;/p&gt;
 &lt;p&gt;西西说： “噢，爸爸到楼下了。”&lt;/p&gt;
 &lt;p&gt;我说：“我马上就上来了，挂了吧。”&lt;/p&gt;
@@ -212,7 +212,7 @@
 &lt;p&gt;西西说：“不需要。”&lt;/p&gt;
 &lt;p&gt;过了不到半分钟，西西就穿上了鞋子，然后平和地说：“看，我会穿。”&lt;/p&gt;
 &lt;p&gt;我只能附和说：“你真棒。”&lt;/p&gt;
-&lt;p&gt;然后西西屁颠屁颠地就去卫生间了。&lt;/p&gt;</content:encoded></item><item><title>“尿尿”</title><link>https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BFzh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BFzh-cn/</guid><pubDate>Tue, 25 Nov 2025 00:22:41 GMT</pubDate><content:encoded>&lt;p&gt;昨天回家我们吃完饭，西西就开始看她新一期巧的虎视频了。看视频的时候一会跟着视频说英语，一会拍手，一会又跳舞，一会又唱诗，玩的不亦乐乎。&lt;/p&gt;
+&lt;p&gt;然后西西屁颠屁颠地就去卫生间了。&lt;/p&gt;</content:encoded></item><item><title>“尿尿”</title><link>https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BF/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BF/</guid><pubDate>Tue, 25 Nov 2025 00:22:41 GMT</pubDate><content:encoded>&lt;p&gt;昨天回家我们吃完饭，西西就开始看她新一期巧的虎视频了。看视频的时候一会跟着视频说英语，一会拍手，一会又跳舞，一会又唱诗，玩的不亦乐乎。&lt;/p&gt;
 &lt;p&gt;看完了巧虎视频，她关掉了电视，我准备去主卧，看到他低着头走路，我好奇的说：“西西，你干嘛去？”&lt;/p&gt;
 &lt;p&gt;西西继续地址头，慢悠悠的说：“尿尿。”&lt;/p&gt;
 &lt;p&gt;听到西西说话，坐在沙发上的妈妈哈哈大笑起来，还嘲讽地说：“你娃长大了，不需要你了。”&lt;/p&gt;
@@ -222,7 +222,7 @@
 &lt;p&gt;西西还是一动不动地站着，然后又努力地提了一下屁股后面的裤子和前面的裤子，但提的地方不对，裤子始终提不起来，还时不时地发出声音：“哎哟，哎呦。”&lt;/p&gt;
 &lt;p&gt;最终，自己提裤子以失败告终，我不得不进去帮她提。&lt;/p&gt;
 &lt;p&gt;出来后，媳妇又嘲讽地说：“你娃已经不需要你了。”&lt;/p&gt;
-&lt;p&gt;我只能给她个眼神了。&lt;/p&gt;</content:encoded></item><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8Fzh-cn/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8Fzh-cn/</guid><pubDate>Thu, 20 Nov 2025 15:49:51 GMT</pubDate><content:encoded>&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;我只能给她个眼神了。&lt;/p&gt;</content:encoded></item><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</guid><pubDate>Thu, 20 Nov 2025 15:49:51 GMT</pubDate><content:encoded>&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
 &lt;p&gt;前几天入手了 OLED 版本最新的 Switch 一代，顺便破解了装了好多游戏，拿到手之后，发现好多游戏都不喜欢玩，为了玩射击类和动作类游戏，随即开始自己安装游戏，问同事要了他安装游戏的网盘资源，晚上在闲鱼上花了不到 3 块钱开了个夸克的会员下游戏。&lt;/p&gt;
 &lt;p&gt;游戏下载好之后就需要安装到 Switch 上了，接下来就把 Switch 和 我的 MacBook Pro 连接起来，准备安装游戏，但是 MacBook Pro 就是始终不识别我的 Switch SD 卡，估计是 SD 卡格式不识别。所以我就开始启用所谓的破解版的官方使用的 MTP 来安装游戏，但是 MacBook Pro 也是不能找到；&lt;/p&gt;
 &lt;p&gt;因为在 MTP 下面还有个 FTP, 我准备用 FTP 来传输，然后再安装游戏，但是 MacBook Pro 可以访问 Switch 的 FTP 服务器，但是，没有写的权限，又失败了。&lt;/p&gt;
