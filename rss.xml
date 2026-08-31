@@ -1,4 +1,220 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>谷中仁的博客</title><description>全栈开发者的技术写作与知识沉淀</description><link>https://guzhongren.github.io/</link><language>zh-CN</language><follow_challenge><feedId>1234234001292394496</feedId><userId>74619979585483776</userId></follow_challenge><item><title>“我的妈呢”</title><link>https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</guid><pubDate>Wed, 29 Jul 2026 00:20:37 GMT</pubDate><content:encoded>&lt;p&gt;我从家辉买了1/4个西瓜回家，打开门，西西和她哥哥正坐在地上玩耍，她突然说：“我的妈呢！”&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>谷中仁的博客</title><description>全栈开发者的技术写作与知识沉淀</description><link>https://guzhongren.github.io/</link><language>zh-CN</language><follow_challenge><feedId>1234234001292394496</feedId><userId>74619979585483776</userId></follow_challenge><item><title>“我不想去幼儿园了”</title><link>https://guzhongren.github.io/posts/2026/08/%E6%88%91%E4%B8%8D%E6%83%B3%E5%8E%BB%E5%B9%BC%E5%84%BF%E5%9B%AD%E4%BA%86/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/08/%E6%88%91%E4%B8%8D%E6%83%B3%E5%8E%BB%E5%B9%BC%E5%84%BF%E5%9B%AD%E4%BA%86/</guid><pubDate>Wed, 26 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;西西上幼儿园一周了，之前一周每天都是开开心心地说：“幼儿园太好玩了！”；
+妈妈问：“你在幼儿园想爸爸妈妈吗？”
+西西会说：“不想，幼儿园有老师，我想老师。”&lt;/p&gt;
+&lt;p&gt;这周每天回来妈妈依旧会问她：“幼儿园好玩么？”
+西西说：“不好玩。”
+妈妈说：“为什么？”
+西西说：“我不喜欢 coco 老师！”
+说这说这就开始号啕大哭。&lt;/p&gt;</content:encoded></item><item><title>人在基于AI交付的流程中是不可代替的</title><link>https://guzhongren.github.io/posts/2026/08/%E4%BA%BA%E5%9C%A8%E5%9F%BA%E4%BA%8Eai%E4%BA%A4%E4%BB%98%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%AD%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BB%A3%E6%9B%BF%E7%9A%84/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/08/%E4%BA%BA%E5%9C%A8%E5%9F%BA%E4%BA%8Eai%E4%BA%A4%E4%BB%98%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%AD%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BB%A3%E6%9B%BF%E7%9A%84/</guid><description>探讨人在基于 AI 的软件工程中的阻碍程度及建议</description><pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;现状&quot;&gt;现状&lt;/h2&gt;
+&lt;p&gt;2022 年 11 月 30 日，ChatGPT 以研究预览版的形式向公众开放。此后，AI 在代码补全、重构、测试和交付自动化方面快速发展。&lt;code&gt;Prompt&lt;/code&gt;、&lt;code&gt;Agent&lt;/code&gt;、&lt;code&gt;Harness&lt;/code&gt;、&lt;code&gt;Loop&lt;/code&gt; 和 &lt;code&gt;Graph&lt;/code&gt; 等方法，也在不断扩大 AI 可以处理的任务范围。&lt;/p&gt;
+&lt;p&gt;软件开发的速度因此得到明显提升。&lt;code&gt;Vibe Coding&lt;/code&gt; 等方式可以让人用很少的代码完成一个小功能，甚至完成一个简单应用。但是，在面向大量用户的软件交付中，人的作用仍然重要。&lt;/p&gt;
+&lt;p&gt;AI 可以替代大量执行工作，但暂时不能替代人来定义目标、接受风险、授予权限和承担结果。人在 AI 时代可能成为软件交付的瓶颈，但这不表示人必须亲自执行每一步操作。&lt;/p&gt;
+&lt;h2 id=&quot;软件交付流程中的-ai-参与度&quot;&gt;软件交付流程中的 AI 参与度&lt;/h2&gt;
+&lt;p&gt;软件交付流程大致包括&lt;code&gt;需求挖掘与设计&lt;/code&gt;、&lt;code&gt;编码实现&lt;/code&gt;、&lt;code&gt;测试&lt;/code&gt;、&lt;code&gt;部署&lt;/code&gt;、&lt;code&gt;监控与维护&lt;/code&gt;。不同业务对 AI 的依赖程度不同。&lt;/p&gt;
+&lt;h3 id=&quot;需求挖掘与设计&quot;&gt;需求挖掘与设计&lt;/h3&gt;
+&lt;p&gt;在需求阶段，AI 可以帮助团队&lt;code&gt;收集信息&lt;/code&gt;、&lt;code&gt;分析竞品&lt;/code&gt;、&lt;code&gt;整理会议内容&lt;/code&gt;和&lt;code&gt;生成用户故事&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 &lt;code&gt;B2C&lt;/code&gt; 或 &lt;code&gt;B2B&lt;/code&gt; 业务中，AI 可以访问公开的竞争产品，分析功能和用户流程，并生成改进建议。团队仍然需要检查数据来源、版权、隐私和服务条款。&lt;/li&gt;
+&lt;li&gt;对于没有现成产品参考的业务，AI 只能根据已有数据和团队提供的上下文进行推断。它可以提出假设，但不能把假设当成经过验证的需求。&lt;/li&gt;
+&lt;li&gt;对于临时的小需求，用户可以直接使用 &lt;code&gt;Prompt&lt;/code&gt; 让 AI 生成实现方案。此时人的工作可以很少，但仍然需要定义验收标准。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，AI 分析一个竞品后，建议增加“自动续费”功能。这个建议从产品角度看很合理，但它可能忽略不同地区的自动续费规则。产品负责人必须确认用户价值、合规要求和业务成本，然后决定是否立项。&lt;/p&gt;
+&lt;p&gt;因此，AI 可以生成需求产物，但领域人员必须确认需求真实、可行并且符合约束。&lt;/p&gt;
+&lt;h3 id=&quot;编码实现&quot;&gt;编码实现&lt;/h3&gt;
+&lt;p&gt;结合 &lt;a href=&quot;https://openai.com/index/harness-engineering/&quot;&gt;Harness Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[1]&lt;/sup&gt;&lt;/a&gt; 和相关 &lt;code&gt;Skill&lt;/code&gt;，AI 已经可以处理很多编码任务。一个需求经过规划后，可以进入标准化的 &lt;a href=&quot;https://addyosmani.com/blog/loop-engineering/&quot;&gt;Loop Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[2]&lt;/sup&gt;&lt;/a&gt; 流程，并由 AI 辅助完成端到端交付。&lt;/p&gt;
+&lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;准备代码仓库&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;切换到主分支并拉取最新代码。&lt;/li&gt;
+&lt;li&gt;检查工作区状态，确认没有未处理的改动。&lt;/li&gt;
+&lt;li&gt;以最新主分支作为本次任务的基线。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;创建特性分支&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用不超过 30 个英文字符的短语概括本次变更。&lt;/li&gt;
+&lt;li&gt;使用连字符连接单词，并将短语用于特性分支名。&lt;/li&gt;
+&lt;li&gt;基于最新主分支创建特性分支，例如 &lt;code&gt;fix-validation&lt;/code&gt; 或 &lt;code&gt;add-user-search&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;实现功能并提交&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在特性分支上完成编码实现。&lt;/li&gt;
+&lt;li&gt;遵循项目规范，并优先复用仓库中的模式、工具和测试方式。&lt;/li&gt;
+&lt;li&gt;补充单元测试、集成测试和必要的验证逻辑。&lt;/li&gt;
+&lt;li&gt;完成功能后提交变更，并保持每次提交聚焦。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;重构&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用重构工具改善代码结构。&lt;/li&gt;
+&lt;li&gt;只进行不改变行为的改进，例如减少重复逻辑、改善命名和拆分过长函数。&lt;/li&gt;
+&lt;li&gt;重构后重新运行测试，并修复由重构引入的问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;审查&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用独立审查流程检查当前分支相对主分支的变更。&lt;/li&gt;
+&lt;li&gt;重点检查功能正确性、测试覆盖、可维护性和回归风险。&lt;/li&gt;
+&lt;li&gt;汇总审查结果，并返回实现流程处理问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;修复审查问题&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修复审查发现的问题。&lt;/li&gt;
+&lt;li&gt;重新运行测试、重构和审查流程，直到没有明确的高优先级问题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;完成交付&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确认工作区干净。&lt;/li&gt;
+&lt;li&gt;推送特性分支并创建 Pull Request。&lt;/li&gt;
+&lt;li&gt;在 Pull Request 中说明变更内容、影响范围和验证结果。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个流程中的编码、测试和审查工作可以高度自动化。但是，AI 仍然需要人提供目标、约束和验收标准。&lt;/p&gt;
+&lt;p&gt;例如，AI 可以根据 Jira 任务生成支付接口、测试和 Pull Request。它仍然可能遗漏退款规则、幂等要求、权限边界或旧客户端兼容性。代码通过测试，不代表业务行为正确。人需要确认这些规则，并决定是否接受这次变更。&lt;/p&gt;
+&lt;h3 id=&quot;测试&quot;&gt;测试&lt;/h3&gt;
+&lt;p&gt;测试不仅检查代码是否运行，也检查系统是否满足真实业务的预期。单元测试和集成测试可以由 AI 辅助生成，但上线前仍需要在接近真实的环境中验证。&lt;/p&gt;
+&lt;p&gt;测试经常依赖 &lt;code&gt;VPN&lt;/code&gt;、&lt;code&gt;SSO&lt;/code&gt;、&lt;code&gt;上游服务&lt;/code&gt;、&lt;code&gt;下游服务&lt;/code&gt;、&lt;code&gt;流水线&lt;/code&gt;和&lt;code&gt;日志平台&lt;/code&gt;。这些依赖会限制 AI 的自动化范围。&lt;/p&gt;
+&lt;p&gt;例如，一个微服务系统需要通过 VPN 访问。测试人员先登录 SSO，再在流水线上部署上游服务、被测服务和下游服务。服务启动后，AI 可以发送请求、检查响应，并通过日志平台分析调用链路。如果这些平台提供 &lt;code&gt;MCP&lt;/code&gt; 或 &lt;code&gt;CLI&lt;/code&gt;，大部分检查都可以自动化。&lt;/p&gt;
+&lt;p&gt;但是，AI 仍然需要知道什么结果才符合业务要求。它可能看到接口返回 200，就认为测试成功，却没有发现订单没有进入清算系统。&lt;/p&gt;
+&lt;p&gt;对于前端变更，可以使用 &lt;a href=&quot;https://playwright.dev/docs/getting-started-mcp&quot;&gt;Playwright MCP&lt;sup class=&quot;ref-mark&quot;&gt;[3]&lt;/sup&gt;&lt;/a&gt; 或 &lt;a href=&quot;https://github.com/ChromeDevTools/chrome-devtools-mcp&quot;&gt;chrome-devtools-mcp&lt;sup class=&quot;ref-mark&quot;&gt;[4]&lt;/sup&gt;&lt;/a&gt; 自动执行浏览器操作。&lt;/p&gt;
+&lt;p&gt;例如，AI 可以确认点击“提交”后页面显示成功，但它可能没有发现用户连续点击两次后创建了两笔订单。人工需要确认关键业务流程、异常流程和数据结果。&lt;/p&gt;
+&lt;p&gt;AI 可以加速测试，但不能单独承担测试结论。测试结论必须由有业务责任的人接受。&lt;/p&gt;
+&lt;h3 id=&quot;部署&quot;&gt;部署&lt;/h3&gt;
+&lt;p&gt;AI 可以生成和审查 &lt;a href=&quot;https://en.wikipedia.org/wiki/Infrastructure_as_code&quot;&gt;IaC&lt;sup class=&quot;ref-mark&quot;&gt;[5]&lt;/sup&gt;&lt;/a&gt;，也可以查看流水线状态。低风险变更可以自动部署，高风险变更必须具备明确的授权和责任记录。&lt;/p&gt;
+&lt;p&gt;例如，AI 发现数据库性能下降，并修改 &lt;a href=&quot;https://developer.hashicorp.com/terraform&quot;&gt;Terraform&lt;sup class=&quot;ref-mark&quot;&gt;[6]&lt;/sup&gt;&lt;/a&gt; 来增大数据库实例。这个修改可能改善性能，也可能超出成本预算，或者破坏现有的多可用区配置。人需要审查变更影响，并决定是否授权。&lt;/p&gt;
+&lt;p&gt;AI 也可能通过修改白名单解决访问问题，但同时开放不应公开的管理端口。生产环境的部署必须限制 AI 的权限，并保留审计记录。&lt;/p&gt;
+&lt;p&gt;安全的部署流程通常包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最小权限和明确的操作范围；&lt;/li&gt;
+&lt;li&gt;自动化检查和策略审查；&lt;/li&gt;
+&lt;li&gt;灰度发布和健康检查；&lt;/li&gt;
+&lt;li&gt;失败后的自动回滚；&lt;/li&gt;
+&lt;li&gt;高风险变更的人类审批；&lt;/li&gt;
+&lt;li&gt;随时可用的人工接管方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此，人不必亲自点击每一个部署按钮，但高风险变更必须有可追责的人类授权。部署策略、权限边界和组织责任，才是这一阶段的主要约束。&lt;/p&gt;
+&lt;h3 id=&quot;监控与维护&quot;&gt;监控与维护&lt;/h3&gt;
+&lt;p&gt;监控可以分为静态监控和动态监控。&lt;/p&gt;
+&lt;p&gt;静态监控根据预先定义的条件检查系统。例如，&lt;a href=&quot;https://aws.amazon.com/cloudwatch/&quot;&gt;CloudWatch&lt;sup class=&quot;ref-mark&quot;&gt;[7]&lt;/sup&gt;&lt;/a&gt; 可以在最近 5 分钟内新增错误日志超过阈值时触发告警。&lt;/p&gt;
+&lt;p&gt;动态监控使用规则引擎或 AI 分析告警和系统行为。常见场景包括：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;事件和告警分诊&lt;/code&gt;：AI 分析告警和日志，判断优先级并合并重复事件。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;根因分析辅助&lt;/code&gt;：AI 关联日志、指标、Trace 和变更记录，提供排查建议。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;告警降噪&lt;/code&gt;：AI 识别低价值告警，减少重复通知。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;运行手册建议&lt;/code&gt;：AI 根据 Runbook 提供修复步骤，并执行低风险动作。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;行为漂移监控&lt;/code&gt;：团队使用 online monitoring、agent tracing 和 golden datasets 观察 AI 系统的生产行为。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;变更影响分析&lt;/code&gt;：AI 根据代码和配置变更推断可能受影响的服务。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，AI 认为某个错误告警长期没有造成明显影响，于是建议提高告警阈值。但这些错误实际代表消息持续进入死信队列。阈值调整后，系统可能数天都不会告警。&lt;/p&gt;
+&lt;p&gt;因此，AI 不能自由修改关键告警。阈值必须有上下限，变更必须可审计，并且必须支持回滚和人工接管。&lt;/p&gt;
+&lt;h2 id=&quot;评估模型&quot;&gt;评估模型&lt;/h2&gt;
+&lt;p&gt;基于简化的软件交付生命周期与 AI 在各个阶段的使用程度，可以建立一个 AI 参与程度的示意模型。这个模型只描述 AI 在各阶段的参与和自治程度，不代表生产环境必须采用相同的自治策略。&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;阶段&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 1（人工执行）&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 2（AI 辅助）&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 3（AI 协作）&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 4（AI 主导，人类审批）&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 5（受控自治）&lt;/code&gt;&lt;/th&gt;&lt;th&gt;&lt;code&gt;Level 6（完全自治） &lt;/code&gt;&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;需求与设计&lt;/td&gt;&lt;td&gt;人工访谈、分析并编写需求。&lt;/td&gt;&lt;td&gt;AI 整理会议、搜索资料并格式化需求。&lt;/td&gt;&lt;td&gt;AI 起草用户故事、流程图和验收标准，人进行确认。&lt;/td&gt;&lt;td&gt;AI 根据批准的业务上下文生成依赖、任务和策略，人进行签发。&lt;/td&gt;&lt;td&gt;AI 根据遥测和用户反馈发现需求并提出方案，人决定是否立项。&lt;/td&gt;&lt;td&gt;AI 自主发现问题、确定需求、制定方案并推动需求进入交付流程。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;编码实现&lt;/td&gt;&lt;td&gt;人工编写、测试并审查代码。&lt;/td&gt;&lt;td&gt;AI 提供代码补全、样板代码和局部测试。&lt;/td&gt;&lt;td&gt;AI 完成多文件修改、重构和 Pull Request 草稿，人进行审查。&lt;/td&gt;&lt;td&gt;AI 根据任务完成代码、测试、文档和策略检查，人批准合并。&lt;/td&gt;&lt;td&gt;AI 主动发现低风险技术债并发起修复，人保留合并和例外处理权。&lt;/td&gt;&lt;td&gt;AI 自主识别问题、修改代码、完成测试、合并变更并发布。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;测试&lt;/td&gt;&lt;td&gt;人工设计和执行单元、集成及 E2E 测试。&lt;/td&gt;&lt;td&gt;AI 根据提示生成局部测试和测试数据。&lt;/td&gt;&lt;td&gt;AI 根据设计和验收标准生成并执行完整测试套件。&lt;/td&gt;&lt;td&gt;AI 连接测试环境、浏览器、接口和日志系统，自动验证技术结果，人确认关键业务结果。&lt;/td&gt;&lt;td&gt;AI 持续生成异常场景、执行混沌测试并处理低风险问题，人接管高影响问题。&lt;/td&gt;&lt;td&gt;AI 自主生成测试、构造异常场景、判断结果并修复问题。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;部署&lt;/td&gt;&lt;td&gt;人工维护配置并执行部署。&lt;/td&gt;&lt;td&gt;AI 生成脚本、配置和故障排查建议。&lt;/td&gt;&lt;td&gt;AI 分析变更影响并建议部署策略，人执行或批准部署。&lt;/td&gt;&lt;td&gt;AI 在策略约束下自动完成测试环境和灰度部署，生产部署需要人工审批。&lt;/td&gt;&lt;td&gt;AI 在明确边界内执行渐进式发布、健康检查和自动回滚，人保留紧急接管权。&lt;/td&gt;&lt;td&gt;AI 自主选择部署策略、调整基础设施、扩缩容并执行回滚。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;监控与维护&lt;/td&gt;&lt;td&gt;人工维护静态阈值和监控面板。&lt;/td&gt;&lt;td&gt;AI 将自然语言转换为查询，并生成告警摘要。&lt;/td&gt;&lt;td&gt;AI 关联告警、日志、指标和变更记录，起草 RCA。&lt;/td&gt;&lt;td&gt;AI 定位可能的故障提交，并执行经过授权的低风险修复，人批准高风险操作。&lt;/td&gt;&lt;td&gt;AI 在阈值、权限和回滚边界内进行预测性扩容和自动修复，人负责异常接管。&lt;/td&gt;&lt;td&gt;AI 自主发现异常、定位根因、修复系统并验证修复结果。&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;p&gt;使用这个模型时，需要注意三点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;各阶段分别评估&lt;/strong&gt;：同一个团队可以在编码阶段达到较高等级，但在生产部署和支付故障处理阶段仍然保持较低等级。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;能力不等于权限&lt;/strong&gt;：更高等级表示 AI 具备更强的分析、生成或执行能力，不表示 AI 自动获得生产操作权限。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自治不等于推荐策略&lt;/strong&gt;：实际授权需要根据业务影响、数据敏感性、变更范围、回滚能力和审计要求决定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;例如，一个支付系统可以在编码阶段达到 Level 4。AI 可以根据 Jira 任务生成代码、测试和 Pull Request。但是，生产部署仍然需要人工审批，数据迁移和故障回滚仍然需要人工接管。因此，AI 能力等级较高，不代表整个交付流程已经完全自治。&lt;/p&gt;
+&lt;p&gt;这个例子说明，AI 的能力、AI 的权限和人的责任是三个不同概念。人的介入点应当由风险决定，而不是由流程步骤机械决定。&lt;/p&gt;
+&lt;p&gt;Level 6 表示 AI 在技术上具备端到端自治能力。它是评估模型的理论上限，不表示组织应当取消人类治理。对于支付、医疗、金融和安全等高风险系统，完全自治仍然需要受到法律、组织政策和系统边界的约束。&lt;/p&gt;
+&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;在简化的软件交付生命周期中，AI 可以参与需求、编码、测试、部署和监控。但是，如果没有适当的人类介入，系统会产生以下风险：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;需求错误&lt;/strong&gt;：AI 生成的需求可能违背业务规则、合规要求或现实条件。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试误判&lt;/strong&gt;：AI 通过技术检查，但没有确认真实业务结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部署风险&lt;/strong&gt;：AI 修改基础设施、访问策略或白名单时，可能造成服务中断或信息泄漏。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;监控失效&lt;/strong&gt;：AI 调整告警条件后，可能掩盖真实故障。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;责任不清&lt;/strong&gt;：发生线上事故后，组织仍然需要明确谁批准了变更，谁接受了风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这些问题不表示 AI 没有价值。它们说明 AI 的执行权限必须与风险等级匹配。&lt;/p&gt;
+&lt;h2 id=&quot;方案&quot;&gt;方案&lt;/h2&gt;
+&lt;p&gt;问题不能完全消除，但可以通过流程和工具降低风险。&lt;strong&gt;核心原则&lt;/strong&gt;是：&lt;code&gt;人负责目标&lt;/code&gt;、&lt;code&gt;边界&lt;/code&gt;、&lt;code&gt;授权和责任&lt;/code&gt;，AI 负责&lt;code&gt;分析&lt;/code&gt;、&lt;code&gt;生&lt;/code&gt;成、&lt;code&gt;执行&lt;/code&gt;和&lt;code&gt;反馈&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;需求挖掘与设计&lt;/strong&gt;：AI 生成需求、流程和依赖关系。产品负责人和领域专家确认用户价值、业务规则、合规要求和资源成本。只有经过授权的需求，才能进入实现阶段。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;编码实现&lt;/strong&gt;：AI 可以完成代码生成、测试生成、重构和 Pull Request 准备。人需要提供验收标准，并审查安全、数据、权限和兼容性风险。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;测试&lt;/strong&gt;：将环境准备、接口调用、浏览器操作、日志查询和链路分析尽量代码化。对于关键业务结果，保留人工验收和风险确认。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部署&lt;/strong&gt;：对低风险变更使用自动化发布。对生产基础设施、权限策略、数据迁移和高影响变更，保留人工授权、审计、灰度和回滚机制。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;监控与维护&lt;/strong&gt;：让 AI 分析告警、提供 RCA 和执行低风险修复。对告警阈值、扩容策略、数据修复和大范围回滚设置边界，并保留人工接管。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;事故响应&lt;/strong&gt;：AI 可以快速整理时间线、关联日志和提出修复建议。事故负责人必须判断业务影响，决定是否回滚、降级或暂停自动化操作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样做的目标不是让人阻塞所有操作，而是让人在真正需要判断的地方介入。自动化流程应当减少人工等待，而不是绕过必要的授权。&lt;/p&gt;
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+&lt;p&gt;AI 正在改变软件交付的分工。它可以&lt;code&gt;生成需求草稿&lt;/code&gt;、&lt;code&gt;编写代码&lt;/code&gt;、&lt;code&gt;执行测试&lt;/code&gt;、&lt;code&gt;分析告警&lt;/code&gt;，甚至完成部分&lt;code&gt;部署和修复&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;但是，软件交付不只有技术执行。它还涉及&lt;code&gt;业务目标&lt;/code&gt;、&lt;code&gt;合规要求&lt;/code&gt;、&lt;code&gt;风险接受&lt;/code&gt;、&lt;code&gt;权限授权&lt;/code&gt;和&lt;code&gt;事故责任&lt;/code&gt;。AI 可以&lt;code&gt;提供建议&lt;/code&gt;和&lt;code&gt;执行动&lt;/code&gt;作，却不能独立决定组织愿意承担什么后果。&lt;/p&gt;
+&lt;p&gt;因此，人不会消失。人的角色会从直接执行者转变为&lt;code&gt;目标定义者&lt;/code&gt;、&lt;code&gt;边界设计者&lt;/code&gt;、&lt;code&gt;风险审批者&lt;/code&gt;和&lt;code&gt;责任主体&lt;/code&gt;。优秀的软件交付流程，不是让人参与每一步，而是让 AI 在明确边界内自动工作，并让人在高风险决策点可靠地介入。&lt;/p&gt;&lt;section class=&quot;post-references&quot;&gt;&lt;p class=&quot;post-references-title&quot;&gt;参考&lt;/p&gt;&lt;ul class=&quot;post-references-list&quot;&gt;&lt;li&gt;Harness Engineering: &lt;a href=&quot;https://openai.com/index/harness-engineering/&quot;&gt;https://openai.com/index/harness-engineering/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Loop Engineering: &lt;a href=&quot;https://addyosmani.com/blog/loop-engineering/&quot;&gt;https://addyosmani.com/blog/loop-engineering/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Playwright MCP: &lt;a href=&quot;https://playwright.dev/docs/getting-started-mcp&quot;&gt;https://playwright.dev/docs/getting-started-mcp&lt;/a&gt;&lt;/li&gt;&lt;li&gt;chrome-devtools-mcp: &lt;a href=&quot;https://github.com/ChromeDevTools/chrome-devtools-mcp&quot;&gt;https://github.com/ChromeDevTools/chrome-devtools-mcp&lt;/a&gt;&lt;/li&gt;&lt;li&gt;IaC: &lt;a href=&quot;https://en.wikipedia.org/wiki/Infrastructure_as_code&quot;&gt;https://en.wikipedia.org/wiki/Infrastructure_as_code&lt;/a&gt;&lt;/li&gt;&lt;li&gt;Terraform: &lt;a href=&quot;https://developer.hashicorp.com/terraform&quot;&gt;https://developer.hashicorp.com/terraform&lt;/a&gt;&lt;/li&gt;&lt;li&gt;CloudWatch: &lt;a href=&quot;https://aws.amazon.com/cloudwatch/&quot;&gt;https://aws.amazon.com/cloudwatch/&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;</content:encoded></item><item><title>“我的妈呢”</title><link>https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/07/%E6%88%91%E7%9A%84%E5%A6%88%E5%91%A2/</guid><pubDate>Wed, 29 Jul 2026 00:20:37 GMT</pubDate><content:encoded>&lt;p&gt;我从家辉买了1/4个西瓜回家，打开门，西西和她哥哥正坐在地上玩耍，她突然说：“我的妈呢！”&lt;/p&gt;
 &lt;p&gt;我说：“妈妈在楼底下了。”&lt;/p&gt;
 &lt;p&gt;西西又说：“我的妈呢！”&lt;/p&gt;
 &lt;p&gt;我有说：“妈妈快上楼了。”&lt;/p&gt;
@@ -212,26 +428,4 @@
 &lt;p&gt;西西说：“不需要。”&lt;/p&gt;
 &lt;p&gt;过了不到半分钟，西西就穿上了鞋子，然后平和地说：“看，我会穿。”&lt;/p&gt;
 &lt;p&gt;我只能附和说：“你真棒。”&lt;/p&gt;
-&lt;p&gt;然后西西屁颠屁颠地就去卫生间了。&lt;/p&gt;</content:encoded></item><item><title>“尿尿”</title><link>https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BF/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E5%B0%BF%E5%B0%BF/</guid><pubDate>Tue, 25 Nov 2025 00:22:41 GMT</pubDate><content:encoded>&lt;p&gt;昨天回家我们吃完饭，西西就开始看她新一期巧的虎视频了。看视频的时候一会跟着视频说英语，一会拍手，一会又跳舞，一会又唱诗，玩的不亦乐乎。&lt;/p&gt;
-&lt;p&gt;看完了巧虎视频，她关掉了电视，我准备去主卧，看到他低着头走路，我好奇的说：“西西，你干嘛去？”&lt;/p&gt;
-&lt;p&gt;西西继续地址头，慢悠悠的说：“尿尿。”&lt;/p&gt;
-&lt;p&gt;听到西西说话，坐在沙发上的妈妈哈哈大笑起来，还嘲讽地说：“你娃长大了，不需要你了。”&lt;/p&gt;
-&lt;p&gt;西西还是低着头，找到了奶奶给她做的花色拖鞋，慢悠悠地穿上走进了卫生间，我们也没进去帮她脱裤子。&lt;/p&gt;
-&lt;p&gt;过了一会，我在卫生间门口看西西是不是已经把裤子都提好了。但我头一伸，西西看到之后就不提了，直接撒娇说：“爸爸，你帮我提一下，我不会提。”&lt;/p&gt;
-&lt;p&gt;我站在门外说：“屁股后面提一下，前面提一下就好了。”&lt;/p&gt;
-&lt;p&gt;西西还是一动不动地站着，然后又努力地提了一下屁股后面的裤子和前面的裤子，但提的地方不对，裤子始终提不起来，还时不时地发出声音：“哎哟，哎呦。”&lt;/p&gt;
-&lt;p&gt;最终，自己提裤子以失败告终，我不得不进去帮她提。&lt;/p&gt;
-&lt;p&gt;出来后，媳妇又嘲讽地说：“你娃已经不需要你了。”&lt;/p&gt;
-&lt;p&gt;我只能给她个眼神了。&lt;/p&gt;</content:encoded></item><item><title>通过 openMTP 在 Switch 上安装游戏</title><link>https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2025/11/%E9%80%9A%E8%BF%87openmtp%E5%9C%A8switch%E4%B8%8A%E5%AE%89%E8%A3%85%E6%B8%B8%E6%88%8F/</guid><pubDate>Thu, 20 Nov 2025 15:49:51 GMT</pubDate><content:encoded>&lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
-&lt;p&gt;前几天入手了 OLED 版本最新的 Switch 一代，顺便破解了装了好多游戏，拿到手之后，发现好多游戏都不喜欢玩，为了玩射击类和动作类游戏，随即开始自己安装游戏，问同事要了他安装游戏的网盘资源，晚上在闲鱼上花了不到 3 块钱开了个夸克的会员下游戏。&lt;/p&gt;
-&lt;p&gt;游戏下载好之后就需要安装到 Switch 上了，接下来就把 Switch 和 我的 MacBook Pro 连接起来，准备安装游戏，但是 MacBook Pro 就是始终不识别我的 Switch SD 卡，估计是 SD 卡格式不识别。所以我就开始启用所谓的破解版的官方使用的 MTP 来安装游戏，但是 MacBook Pro 也是不能找到；&lt;/p&gt;
-&lt;p&gt;因为在 MTP 下面还有个 FTP, 我准备用 FTP 来传输，然后再安装游戏，但是 MacBook Pro 可以访问 Switch 的 FTP 服务器，但是，没有写的权限，又失败了。&lt;/p&gt;
-&lt;h2 id=&quot;解决思路&quot;&gt;解决思路&lt;/h2&gt;
-&lt;p&gt;网上有很多说用一个&lt;a href=&quot;https://commander-one.com/&quot;&gt;Commander one&lt;sup class=&quot;ref-mark&quot;&gt;[1]&lt;/sup&gt;&lt;/a&gt; 可以安装在 MacBook 上，然后就可以找到 Switch 的 MTP 设备，然后就可以安装游戏了。好消息是确实可以找到 Switch 的 MTP 设备，坏消息是，拷贝游戏到 Switch 时，会探窗框说继续免费使用拷贝，但是没有任何进度。好无语啊，连个提示都没有，这不应该是一个商业公司开发的产品。&lt;/p&gt;
-&lt;p&gt;没有什么是能难到程序员的。于是我就在 GitHub 上搜 MTP, 果然有个 &lt;a href=&quot;https://github.com/ganeshrvel/openmtp&quot;&gt;OpenMTP&lt;sup class=&quot;ref-mark&quot;&gt;[2]&lt;/sup&gt;&lt;/a&gt; 的项目，打开一看，README 文档也写的不错，直接就有 Homebrew 的安装命令，毫不犹豫的就尝试安装，果然有些开源的产品做的就是非常的懂用户体验，尤其是给程序员用的。&lt;/p&gt;
-&lt;pre class=&quot;astro-code github-dark&quot; style=&quot;background-color:#24292e;color:#e1e4e8; overflow-x: auto;&quot; tabindex=&quot;0&quot; data-language=&quot;bash&quot;&gt;&lt;code&gt;&lt;span class=&quot;line&quot;&gt;&lt;span style=&quot;color:#B392F0&quot;&gt;brew&lt;/span&gt;&lt;span style=&quot;color:#9ECBFF&quot;&gt; install&lt;/span&gt;&lt;span style=&quot;color:#79B8FF&quot;&gt; --cask&lt;/span&gt;&lt;span style=&quot;color:#9ECBFF&quot;&gt; openmtp&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&quot;最终方案&quot;&gt;最终方案&lt;/h2&gt;
-&lt;p&gt;因为 OpenMTP 使用起来非常简单，只要要找对目标磁盘，直接将要拷贝的文件（游戏）拖拽到目标磁盘就可以了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/Tools/mtp/openMTP-switch.2yysbj8l4m.webp&quot; alt=&quot;OpenMTP&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
-&lt;p&gt;Commander One 可能是个好软件，但是在复制游戏到目标磁盘的时候不可用，但开源世界总有代替的东西，有时候可能很直接，拿来就可以用，有时候需要多个工具组合一下，但最终都可以解决问题。程序员的世界就是这样，永远不会缺少解决问题的工具。&lt;/p&gt;&lt;section class=&quot;post-references&quot;&gt;&lt;p class=&quot;post-references-title&quot;&gt;参考&lt;/p&gt;&lt;ul class=&quot;post-references-list&quot;&gt;&lt;li&gt;Commander one: &lt;a href=&quot;https://commander-one.com/&quot;&gt;https://commander-one.com/&lt;/a&gt;&lt;/li&gt;&lt;li&gt;OpenMTP: &lt;a href=&quot;https://github.com/ganeshrvel/openmtp&quot;&gt;https://github.com/ganeshrvel/openmtp&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/section&gt;</content:encoded></item></channel></rss>
+&lt;p&gt;然后西西屁颠屁颠地就去卫生间了。&lt;/p&gt;</content:encoded></item></channel></rss>
