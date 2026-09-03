@@ -211,7 +211,7 @@
 &lt;p&gt;这些问题不表示 AI 没有价值。它们说明 AI 的执行权限必须与风险等级匹配。&lt;/p&gt;
 &lt;h2 id=&quot;方案&quot;&gt;方案&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433094.4clmt1ytz9.webp&quot; alt=&quot;1788433094&quot;&gt;&lt;/p&gt;
-&lt;p&gt;问题不能完全消除，但可以通过流程和工具降低风险。&lt;strong&gt;核心原则&lt;/strong&gt;是：&lt;code&gt;人负责目标&lt;/code&gt;、&lt;code&gt;边界&lt;/code&gt;、&lt;code&gt;授权和责任&lt;/code&gt;，AI 负责&lt;code&gt;分析&lt;/code&gt;、&lt;code&gt;生&lt;/code&gt;成、&lt;code&gt;执行&lt;/code&gt;和&lt;code&gt;反馈&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;问题不能完全消除，但可以通过流程和工具降低风险。&lt;strong&gt;核心原则&lt;/strong&gt;是：&lt;code&gt;人负责目标&lt;/code&gt;、&lt;code&gt;边界&lt;/code&gt;、&lt;code&gt;授权和责任&lt;/code&gt;，AI 负责&lt;code&gt;分析&lt;/code&gt;、&lt;code&gt;生成&lt;/code&gt;、&lt;code&gt;执行&lt;/code&gt;和&lt;code&gt;反馈&lt;/code&gt;。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;需求挖掘与设计&lt;/strong&gt;：AI 生成需求、流程和依赖关系。产品负责人和领域专家确认用户价值、业务规则、合规要求和资源成本。只有经过授权的需求，才能进入实现阶段。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;编码实现&lt;/strong&gt;：AI 可以完成代码生成、测试生成、重构和 Pull Request 准备。人需要提供验收标准，并审查安全、数据、权限和兼容性风险。&lt;/li&gt;
