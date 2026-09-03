@@ -6,13 +6,16 @@
 妈妈说：“为什么？”
 西西说：“我不喜欢 coco 老师！”
 说这说这就开始号啕大哭。&lt;/p&gt;</content:encoded></item><item><title>人在基于AI交付的流程中是不可代替的</title><link>https://guzhongren.github.io/posts/2026/08/%E4%BA%BA%E5%9C%A8%E5%9F%BA%E4%BA%8Eai%E4%BA%A4%E4%BB%98%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%AD%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BB%A3%E6%9B%BF%E7%9A%84/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/08/%E4%BA%BA%E5%9C%A8%E5%9F%BA%E4%BA%8Eai%E4%BA%A4%E4%BB%98%E7%9A%84%E6%B5%81%E7%A8%8B%E4%B8%AD%E6%98%AF%E4%B8%8D%E5%8F%AF%E4%BB%A3%E6%9B%BF%E7%9A%84/</guid><description>探讨人在基于 AI 的软件工程中的阻碍程度及建议</description><pubDate>Fri, 21 Aug 2026 00:00:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;现状&quot;&gt;现状&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433040.pg35j31fh.webp&quot; alt=&quot;history&quot;&gt;&lt;/p&gt;
 &lt;p&gt;2022 年 11 月 30 日，ChatGPT 以研究预览版的形式向公众开放。此后，AI 在代码补全、重构、测试和交付自动化方面快速发展。&lt;code&gt;Prompt&lt;/code&gt;、&lt;code&gt;Agent&lt;/code&gt;、&lt;code&gt;Harness&lt;/code&gt;、&lt;code&gt;Loop&lt;/code&gt; 和 &lt;code&gt;Graph&lt;/code&gt; 等方法，也在不断扩大 AI 可以处理的任务范围。&lt;/p&gt;
 &lt;p&gt;软件开发的速度因此得到明显提升。&lt;code&gt;Vibe Coding&lt;/code&gt; 等方式可以让人用很少的代码完成一个小功能，甚至完成一个简单应用。但是，在面向大量用户的软件交付中，人的作用仍然重要。&lt;/p&gt;
 &lt;p&gt;AI 可以替代大量执行工作，但暂时不能替代人来定义目标、接受风险、授予权限和承担结果。人在 AI 时代可能成为软件交付的瓶颈，但这不表示人必须亲自执行每一步操作。&lt;/p&gt;
 &lt;h2 id=&quot;软件交付流程中的-ai-参与度&quot;&gt;软件交付流程中的 AI 参与度&lt;/h2&gt;
-&lt;p&gt;软件交付流程大致包括&lt;code&gt;需求挖掘与设计&lt;/code&gt;、&lt;code&gt;编码实现&lt;/code&gt;、&lt;code&gt;测试&lt;/code&gt;、&lt;code&gt;部署&lt;/code&gt;、&lt;code&gt;监控与维护&lt;/code&gt;。不同业务对 AI 的依赖程度不同。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433045.icva3gw05.webp&quot; alt=&quot;1788433045&quot;&gt;
+软件交付流程大致包括&lt;code&gt;需求挖掘与设计&lt;/code&gt;、&lt;code&gt;编码实现&lt;/code&gt;、&lt;code&gt;测试&lt;/code&gt;、&lt;code&gt;部署&lt;/code&gt;、&lt;code&gt;监控与维护&lt;/code&gt;。不同业务对 AI 的依赖程度不同。&lt;/p&gt;
 &lt;h3 id=&quot;需求挖掘与设计&quot;&gt;需求挖掘与设计&lt;/h3&gt;
-&lt;p&gt;在需求阶段，AI 可以帮助团队&lt;code&gt;收集信息&lt;/code&gt;、&lt;code&gt;分析竞品&lt;/code&gt;、&lt;code&gt;整理会议内容&lt;/code&gt;和&lt;code&gt;生成用户故事&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433052.1764u44f1d.webp&quot; alt=&quot;1788433052&quot;&gt;
+在需求阶段，AI 可以帮助团队&lt;code&gt;收集信息&lt;/code&gt;、&lt;code&gt;分析竞品&lt;/code&gt;、&lt;code&gt;整理会议内容&lt;/code&gt;和&lt;code&gt;生成用户故事&lt;/code&gt;。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;在 &lt;code&gt;B2C&lt;/code&gt; 或 &lt;code&gt;B2B&lt;/code&gt; 业务中，AI 可以访问公开的竞争产品，分析功能和用户流程，并生成改进建议。团队仍然需要检查数据来源、版权、隐私和服务条款。&lt;/li&gt;
 &lt;li&gt;对于没有现成产品参考的业务，AI 只能根据已有数据和团队提供的上下文进行推断。它可以提出假设，但不能把假设当成经过验证的需求。&lt;/li&gt;
@@ -21,7 +24,8 @@
 &lt;p&gt;例如，AI 分析一个竞品后，建议增加“自动续费”功能。这个建议从产品角度看很合理，但它可能忽略不同地区的自动续费规则。产品负责人必须确认用户价值、合规要求和业务成本，然后决定是否立项。&lt;/p&gt;
 &lt;p&gt;因此，AI 可以生成需求产物，但领域人员必须确认需求真实、可行并且符合约束。&lt;/p&gt;
 &lt;h3 id=&quot;编码实现&quot;&gt;编码实现&lt;/h3&gt;
-&lt;p&gt;结合 &lt;a href=&quot;https://openai.com/index/harness-engineering/&quot;&gt;Harness Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[1]&lt;/sup&gt;&lt;/a&gt; 和相关 &lt;code&gt;Skill&lt;/code&gt;，AI 已经可以处理很多编码任务。一个需求经过规划后，可以进入标准化的 &lt;a href=&quot;https://addyosmani.com/blog/loop-engineering/&quot;&gt;Loop Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[2]&lt;/sup&gt;&lt;/a&gt; 流程，并由 AI 辅助完成端到端交付。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433058.9kgxg1rtwm.webp&quot; alt=&quot;1788433058&quot;&gt;
+结合 &lt;a href=&quot;https://openai.com/index/harness-engineering/&quot;&gt;Harness Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[1]&lt;/sup&gt;&lt;/a&gt; 和相关 &lt;code&gt;Skill&lt;/code&gt;，AI 已经可以处理很多编码任务。一个需求经过规划后，可以进入标准化的 &lt;a href=&quot;https://addyosmani.com/blog/loop-engineering/&quot;&gt;Loop Engineering&lt;sup class=&quot;ref-mark&quot;&gt;[2]&lt;/sup&gt;&lt;/a&gt; 流程，并由 AI 辅助完成端到端交付。&lt;/p&gt;
 &lt;h4 id=&quot;流程&quot;&gt;流程&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -84,6 +88,7 @@
 &lt;p&gt;这个流程中的编码、测试和审查工作可以高度自动化。但是，AI 仍然需要人提供目标、约束和验收标准。&lt;/p&gt;
 &lt;p&gt;例如，AI 可以根据 Jira 任务生成支付接口、测试和 Pull Request。它仍然可能遗漏退款规则、幂等要求、权限边界或旧客户端兼容性。代码通过测试，不代表业务行为正确。人需要确认这些规则，并决定是否接受这次变更。&lt;/p&gt;
 &lt;h3 id=&quot;测试&quot;&gt;测试&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433065.4ubohn07jg.webp&quot; alt=&quot;1788433065&quot;&gt;&lt;/p&gt;
 &lt;p&gt;测试不仅检查代码是否运行，也检查系统是否满足真实业务的预期。单元测试和集成测试可以由 AI 辅助生成，但上线前仍需要在接近真实的环境中验证。&lt;/p&gt;
 &lt;p&gt;测试经常依赖 &lt;code&gt;VPN&lt;/code&gt;、&lt;code&gt;SSO&lt;/code&gt;、&lt;code&gt;上游服务&lt;/code&gt;、&lt;code&gt;下游服务&lt;/code&gt;、&lt;code&gt;流水线&lt;/code&gt;和&lt;code&gt;日志平台&lt;/code&gt;。这些依赖会限制 AI 的自动化范围。&lt;/p&gt;
 &lt;p&gt;例如，一个微服务系统需要通过 VPN 访问。测试人员先登录 SSO，再在流水线上部署上游服务、被测服务和下游服务。服务启动后，AI 可以发送请求、检查响应，并通过日志平台分析调用链路。如果这些平台提供 &lt;code&gt;MCP&lt;/code&gt; 或 &lt;code&gt;CLI&lt;/code&gt;，大部分检查都可以自动化。&lt;/p&gt;
@@ -92,6 +97,7 @@
 &lt;p&gt;例如，AI 可以确认点击“提交”后页面显示成功，但它可能没有发现用户连续点击两次后创建了两笔订单。人工需要确认关键业务流程、异常流程和数据结果。&lt;/p&gt;
 &lt;p&gt;AI 可以加速测试，但不能单独承担测试结论。测试结论必须由有业务责任的人接受。&lt;/p&gt;
 &lt;h3 id=&quot;部署&quot;&gt;部署&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433071.6bhtje4ca8.webp&quot; alt=&quot;1788433071&quot;&gt;&lt;/p&gt;
 &lt;p&gt;AI 可以生成和审查 &lt;a href=&quot;https://en.wikipedia.org/wiki/Infrastructure_as_code&quot;&gt;IaC&lt;sup class=&quot;ref-mark&quot;&gt;[5]&lt;/sup&gt;&lt;/a&gt;，也可以查看流水线状态。低风险变更可以自动部署，高风险变更必须具备明确的授权和责任记录。&lt;/p&gt;
 &lt;p&gt;例如，AI 发现数据库性能下降，并修改 &lt;a href=&quot;https://developer.hashicorp.com/terraform&quot;&gt;Terraform&lt;sup class=&quot;ref-mark&quot;&gt;[6]&lt;/sup&gt;&lt;/a&gt; 来增大数据库实例。这个修改可能改善性能，也可能超出成本预算，或者破坏现有的多可用区配置。人需要审查变更影响，并决定是否授权。&lt;/p&gt;
 &lt;p&gt;AI 也可能通过修改白名单解决访问问题，但同时开放不应公开的管理端口。生产环境的部署必须限制 AI 的权限，并保留审计记录。&lt;/p&gt;
@@ -106,6 +112,7 @@
 &lt;/ul&gt;
 &lt;p&gt;因此，人不必亲自点击每一个部署按钮，但高风险变更必须有可追责的人类授权。部署策略、权限边界和组织责任，才是这一阶段的主要约束。&lt;/p&gt;
 &lt;h3 id=&quot;监控与维护&quot;&gt;监控与维护&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433077.86uec0grwa.webp&quot; alt=&quot;1788433077&quot;&gt;&lt;/p&gt;
 &lt;p&gt;监控可以分为静态监控和动态监控。&lt;/p&gt;
 &lt;p&gt;静态监控根据预先定义的条件检查系统。例如，&lt;a href=&quot;https://aws.amazon.com/cloudwatch/&quot;&gt;CloudWatch&lt;sup class=&quot;ref-mark&quot;&gt;[7]&lt;/sup&gt;&lt;/a&gt; 可以在最近 5 分钟内新增错误日志超过阈值时触发告警。&lt;/p&gt;
 &lt;p&gt;动态监控使用规则引擎或 AI 分析告警和系统行为。常见场景包括：&lt;/p&gt;
@@ -120,7 +127,8 @@
 &lt;p&gt;例如，AI 认为某个错误告警长期没有造成明显影响，于是建议提高告警阈值。但这些错误实际代表消息持续进入死信队列。阈值调整后，系统可能数天都不会告警。&lt;/p&gt;
 &lt;p&gt;因此，AI 不能自由修改关键告警。阈值必须有上下限，变更必须可审计，并且必须支持回滚和人工接管。&lt;/p&gt;
 &lt;h2 id=&quot;评估模型&quot;&gt;评估模型&lt;/h2&gt;
-&lt;p&gt;基于简化的软件交付生命周期与 AI 在各个阶段的使用程度，可以建立一个 AI 参与程度的示意模型。这个模型只描述 AI 在各阶段的参与和自治程度，不代表生产环境必须采用相同的自治策略。&lt;/p&gt;
+&lt;p&gt;基于简化的软件交付生命周期与 AI 在各个阶段的使用程度，可以建立一个 AI 参与程度的示意模型。这个模型只描述 AI 在各阶段的参与和自治程度，不代表生产环境必须采用相同的自治策略。
+&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433083.41yszwjltp.webp&quot; alt=&quot;1788433083&quot;&gt;&lt;/p&gt;
 
 
 
@@ -191,6 +199,7 @@
 &lt;p&gt;这个例子说明，AI 的能力、AI 的权限和人的责任是三个不同概念。人的介入点应当由风险决定，而不是由流程步骤机械决定。&lt;/p&gt;
 &lt;p&gt;Level 6 表示 AI 在技术上具备端到端自治能力。它是评估模型的理论上限，不表示组织应当取消人类治理。对于支付、医疗、金融和安全等高风险系统，完全自治仍然需要受到法律、组织政策和系统边界的约束。&lt;/p&gt;
 &lt;h2 id=&quot;问题&quot;&gt;问题&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433089.26m87a7682.webp&quot; alt=&quot;1788433089&quot;&gt;&lt;/p&gt;
 &lt;p&gt;在简化的软件交付生命周期中，AI 可以参与需求、编码、测试、部署和监控。但是，如果没有适当的人类介入，系统会产生以下风险：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;需求错误&lt;/strong&gt;：AI 生成的需求可能违背业务规则、合规要求或现实条件。&lt;/li&gt;
@@ -201,6 +210,7 @@
 &lt;/ul&gt;
 &lt;p&gt;这些问题不表示 AI 没有价值。它们说明 AI 的执行权限必须与风险等级匹配。&lt;/p&gt;
 &lt;h2 id=&quot;方案&quot;&gt;方案&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://cdn.jsdelivr.net/gh/guzhongren/picx-images-hosting@master/AI/Hunman-in-Loop/1788433094.4clmt1ytz9.webp&quot; alt=&quot;1788433094&quot;&gt;&lt;/p&gt;
 &lt;p&gt;问题不能完全消除，但可以通过流程和工具降低风险。&lt;strong&gt;核心原则&lt;/strong&gt;是：&lt;code&gt;人负责目标&lt;/code&gt;、&lt;code&gt;边界&lt;/code&gt;、&lt;code&gt;授权和责任&lt;/code&gt;，AI 负责&lt;code&gt;分析&lt;/code&gt;、&lt;code&gt;生&lt;/code&gt;成、&lt;code&gt;执行&lt;/code&gt;和&lt;code&gt;反馈&lt;/code&gt;。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;需求挖掘与设计&lt;/strong&gt;：AI 生成需求、流程和依赖关系。产品负责人和领域专家确认用户价值、业务规则、合规要求和资源成本。只有经过授权的需求，才能进入实现阶段。&lt;/li&gt;
@@ -248,11 +258,11 @@
 &lt;h2 id=&quot;结论&quot;&gt;结论&lt;/h2&gt;
 &lt;p&gt;AI 发展很快，但架构层面的知识仍是所有高效架构的基础，比如在哪里使用 DTO，Model，Entity 等等。AI 可以帮助我们写代码，但它不能替代我们对架构的理解和设计能力。&lt;/p&gt;</content:encoded></item><item><title>AI 时代需要什么？</title><link>https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</link><guid isPermaLink="true">https://guzhongren.github.io/posts/2026/02/ai%E6%97%B6%E4%BB%A3%E9%9C%80%E8%A6%81%E4%BB%80%E4%B9%88/</guid><pubDate>Fri, 06 Feb 2026 23:09:08 GMT</pubDate><content:encoded>&lt;p&gt;都说过去的 2025 年是 AI 元年，各种大模型和工具争相涌现，一股百家争鸣的镜像；项目原因，在 2025 年年底浅浅的在正式项目中简单的使用了一下，那时候，AI 在编程领域已经是强到离谱，让人不经怀疑：一小撮程序员搞出了一个可以替代程序员的怪物，那作为程序员的我们还能做什么呢？我们应该是最最容易被代替的那一波人。而现在，我已经开始大规模使用 AI 来帮我写代码完成工作，通常 3 个点的卡，我基本就是 1 个小时整理业务背景及需求，然后交个 Agent 帮我 Plan 我的需求和实现计划，然后用几分钟生成代码，单元测试，集成测试等，最后再花个半小时做代码 review 和测试验证，整个流程下来，效率提升了至少 5 倍以上。&lt;/p&gt;
 &lt;p&gt;如下是我参与的一个调查的回答，分享给大家：&lt;/p&gt;
-&lt;p&gt;{{&amp;#x3C; admonition type=question title=“This is a survey” open=false &gt;}}&lt;/p&gt;
+&lt;blockquote class=&quot;callout callout-question&quot; data-callout=&quot;question&quot;&gt;
+&lt;p&gt;&lt;strong&gt;❓ This is a survey&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&quot;as-an-engineer&quot;&gt;As an engineer:&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What you used AI for (be specific)&lt;/p&gt;
+&lt;li&gt;What you used AI for (be specific)
 &lt;ul&gt;
 &lt;li&gt;A:
 &lt;ul&gt;
@@ -266,15 +276,13 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;What you did without AI&lt;/p&gt;
+&lt;li&gt;What you did without AI
 &lt;ul&gt;
 &lt;li&gt;A: operation on the source code, e.e. create branch, commit code, push code, create PR, review PR, merge PR, deploy code, monitor the production system, etc.&lt;/li&gt;
 &lt;li&gt;Operation of the JIRA card, it should be operated by AI and MCP… just need to try.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Something AI helped with that surprised you&lt;/p&gt;
+&lt;li&gt;Something AI helped with that surprised you
 &lt;ul&gt;
 &lt;li&gt;A:
 &lt;ul&gt;
@@ -288,26 +296,23 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Something AI failed at&lt;/p&gt;
+&lt;li&gt;Something AI failed at
 &lt;ul&gt;
 &lt;li&gt;A: Generate the not good code when the prompt is short and leak of business background, tech stack, especially in the &lt;code&gt;glean chat&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;One moment where you realized the workflow was better or worse than&lt;/p&gt;
+&lt;li&gt;One moment where you realized the workflow was better or worse than
 &lt;ul&gt;
 &lt;li&gt;A: [Better] Test &amp;#x26; verify &amp;#x26; fix automatically with unit-test and integration test every time after generating code&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Rough time: did it speed them up, slow them down, or no change?&lt;/p&gt;
+&lt;li&gt;Rough time: did it speed them up, slow them down, or no change?
 &lt;ul&gt;
 &lt;li&gt;A: [speed them up] at most time, especially when generating code and test cases, and the time for review code is also reduced a lot.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;{{&amp;#x3C; /admonition &gt;}}&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;h2 id=&quot;ai-时代你需要什么样的能力&quot;&gt;AI 时代，你需要什么样的能力？&lt;/h2&gt;
 &lt;p&gt;AI 时代，什么样的能力不会被替代，而是被需要？我觉得有如下三点：&lt;/p&gt;
 &lt;h3 id=&quot;定义问题&quot;&gt;定义问题&lt;/h3&gt;
